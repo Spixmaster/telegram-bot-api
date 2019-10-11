@@ -2,12 +2,8 @@
 
 namespace tgbot
 {
-	Bot::Bot(const std::string &token)
-	{
-		m_token = token;
-		m_endpnts = std::make_shared<Endpoints>(token);
-		m_event_handler = std::make_shared<EventHandler>(token);
-	}
+	Bot::Bot(const std::string &token) : m_token(token), m_endpnts(std::make_shared<Endpoints>(token)), m_event_handler(std::make_shared<EventHandler>(token))
+	{}
 
 	std::string Bot::get_token()
 	{
