@@ -2,9 +2,9 @@
 #define BOT_H
 
 #include <string>
-#include "Endpoints.h"
+#include "tgbot/Endpoints.h"
 #include <memory>
-#include "EventHandler.h"
+#include "tgbot/EventHandler.h"
 
 namespace tgbot
 {
