@@ -1,5 +1,5 @@
-#ifndef TYPES_KEYBOARDBUTTON_H
-#define TYPES_KEYBOARDBUTTON_H
+#ifndef TGBOT_TYPES_KEYBOARDBUTTON_H
+#define TGBOT_TYPES_KEYBOARDBUTTON_H
 
 #include <string>
 #include <rapidjson/document.h>

@@ -1,5 +1,5 @@
-#ifndef TYPES_ANIMATION_H
-#define TYPES_ANIMATION_H
+#ifndef TGBOT_TYPES_ANIMATION_H
+#define TGBOT_TYPES_ANIMATION_H
 
 #include <string>
 #include "tgbot/types/PhotoSize.h"

@@ -1,5 +1,5 @@
-#ifndef TYPES_LOCATION_H
-#define TYPES_LOCATION_H
+#ifndef TGBOT_TYPES_LOCATION_H
+#define TGBOT_TYPES_LOCATION_H
 
 #include <rapidjson/document.h>
 #include <memory>

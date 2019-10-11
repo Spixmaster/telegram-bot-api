@@ -1,5 +1,5 @@
-#ifndef TYPES_CHOSENINLINERESULT_H
-#define TYPES_CHOSENINLINERESULT_H
+#ifndef TGBOT_TYPES_CHOSENINLINERESULT_H
+#define TGBOT_TYPES_CHOSENINLINERESULT_H
 
 #include <string>
 #include "tgbot/types/User.h"

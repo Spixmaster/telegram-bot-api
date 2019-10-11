@@ -1,5 +1,5 @@
-#ifndef TYPES_FILE_H
-#define TYPES_FILE_H
+#ifndef TGBOT_TYPES_FILE_H
+#define TGBOT_TYPES_FILE_H
 
 #include <string>
 #include <rapidjson/document.h>

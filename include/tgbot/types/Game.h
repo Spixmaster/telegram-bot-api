@@ -1,5 +1,5 @@
-#ifndef TYPES_GAME_H
-#define TYPES_GAME_H
+#ifndef TGBOT_TYPES_GAME_H
+#define TGBOT_TYPES_GAME_H
 
 #include <string>
 #include <vector>

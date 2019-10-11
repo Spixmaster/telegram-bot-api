@@ -1,5 +1,5 @@
-#ifndef TYPES_INPUTMEDIAVIDEO_H
-#define TYPES_INPUTMEDIAVIDEO_H
+#ifndef TGBOT_TYPES_INPUTMEDIAVIDEO_H
+#define TGBOT_TYPES_INPUTMEDIAVIDEO_H
 
 #include <string>
 #include "InputMedia.h"

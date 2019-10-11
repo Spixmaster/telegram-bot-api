@@ -1,5 +1,5 @@
-#ifndef BOT_H
-#define BOT_H
+#ifndef TGBOT_BOT_H
+#define TGBOT_BOT_H
 
 #include <string>
 #include "tgbot/Endpoints.h"

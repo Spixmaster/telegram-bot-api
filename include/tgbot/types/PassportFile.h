@@ -1,5 +1,5 @@
-#ifndef TYPES_PASSPORTFILE_H
-#define TYPES_PASSPORTFILE_H
+#ifndef TGBOT_TYPES_PASSPORTFILE_H
+#define TGBOT_TYPES_PASSPORTFILE_H
 
 #include <string>
 #include <rapidjson/document.h>

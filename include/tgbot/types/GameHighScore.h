@@ -1,5 +1,5 @@
-#ifndef TYPES_GAMEHIGHSCORE_H
-#define TYPES_GAMEHIGHSCORE_H
+#ifndef TGBOT_TYPES_GAMEHIGHSCORE_H
+#define TGBOT_TYPES_GAMEHIGHSCORE_H
 
 #include "tgbot/types/User.h"
 #include <rapidjson/document.h>

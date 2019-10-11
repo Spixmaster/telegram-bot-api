@@ -1,5 +1,5 @@
-#ifndef TYPES_CHATPERMISSIONS_H
-#define TYPES_CHATPERMISSIONS_H
+#ifndef TGBOT_TYPES_CHATPERMISSIONS_H
+#define TGBOT_TYPES_CHATPERMISSIONS_H
 
 #include <rapidjson/document.h>
 #include <memory>

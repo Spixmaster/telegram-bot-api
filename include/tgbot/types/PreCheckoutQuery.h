@@ -1,5 +1,5 @@
-#ifndef TYPES_PRECHECKOUTQUERY_H
-#define TYPES_PRECHECKOUTQUERY_H
+#ifndef TGBOT_TYPES_PRECHECKOUTQUERY_H
+#define TGBOT_TYPES_PRECHECKOUTQUERY_H
 
 #include <string>
 #include "tgbot/types/User.h"

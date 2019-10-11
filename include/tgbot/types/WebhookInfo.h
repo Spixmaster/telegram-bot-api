@@ -1,5 +1,5 @@
-#ifndef TYPES_WEBHOOKINFO_H
-#define TYPES_WEBHOOKINFO_H_
+#ifndef TGBOT_TYPES_WEBHOOKINFO_H
+#define TGBOT_TYPES_WEBHOOKINFO_H_
 
 #include <string>
 #include <vector>

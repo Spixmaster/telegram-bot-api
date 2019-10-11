@@ -1,5 +1,5 @@
-#ifndef TYPES_USERPROFILEPHOTOS_H
-#define TYPES_USERPROFILEPHOTOS_H
+#ifndef TGBOT_TYPES_USERPROFILEPHOTOS_H
+#define TGBOT_TYPES_USERPROFILEPHOTOS_H
 
 #include "tgbot/types/PhotoSize.h"
 #include <vector>

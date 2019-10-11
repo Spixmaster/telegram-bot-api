@@ -1,5 +1,5 @@
-#ifndef TYPES_REPLYKEYBOARDREMOVE_H
-#define TYPES_REPLYKEYBOARDREMOVE_H
+#ifndef TGBOT_TYPES_REPLYKEYBOARDREMOVE_H
+#define TGBOT_TYPES_REPLYKEYBOARDREMOVE_H
 
 #include <rapidjson/document.h>
 #include "tgbot/special_tools.h"

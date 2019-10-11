@@ -1,5 +1,5 @@
-#ifndef TYPES_REPLYKEYBOARDMARKUP_H
-#define TYPES_REPLYKEYBOARDMARKUP_H
+#ifndef TGBOT_TYPES_REPLYKEYBOARDMARKUP_H
+#define TGBOT_TYPES_REPLYKEYBOARDMARKUP_H
 
 #include "tgbot/types/KeyboardButton.h"
 #include <vector>

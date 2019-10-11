@@ -1,5 +1,5 @@
-#ifndef HTTPARG_H
-#define HTTPARG_H
+#ifndef TGBOT_HTTPARG_H
+#define TGBOT_HTTPARG_H
 
 #include <string>
 #include <memory>

@@ -1,5 +1,5 @@
-#ifndef TYPES_FORCEREPLY_H
-#define TYPES_FORCEREPLY_H
+#ifndef TGBOT_TYPES_FORCEREPLY_H
+#define TGBOT_TYPES_FORCEREPLY_H
 
 #include <rapidjson/document.h>
 #include <memory>

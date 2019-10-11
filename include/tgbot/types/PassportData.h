@@ -1,5 +1,5 @@
-#ifndef TYPES_PASSPORTDATA_H
-#define TYPES_PASSPORTDATA_H
+#ifndef TGBOT_TYPES_PASSPORTDATA_H
+#define TGBOT_TYPES_PASSPORTDATA_H
 
 #include <vector>
 #include "tgbot/types/EncryptedPassportElement.h"

@@ -1,5 +1,5 @@
-#ifndef HTTP_INPUTFILE_H
-#define HTTP_INPUTFILE_H
+#ifndef TGBOT_HTTP_INPUTFILE_H
+#define TGBOT_HTTP_INPUTFILE_H
 
 #include <memory>
 

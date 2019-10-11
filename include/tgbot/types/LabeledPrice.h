@@ -1,5 +1,5 @@
-#ifndef TYPES_LABELEDPRICE_H
-#define TYPES_LABELEDPRICE_H
+#ifndef TGBOT_TYPES_LABELEDPRICE_H
+#define TGBOT_TYPES_LABELEDPRICE_H
 
 #include <string>
 #include <rapidjson/document.h>

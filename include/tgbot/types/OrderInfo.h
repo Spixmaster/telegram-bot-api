@@ -1,5 +1,5 @@
-#ifndef TYPES_ORDERINFO_H
-#define TYPES_ORDERINFO_H
+#ifndef TGBOT_TYPES_ORDERINFO_H
+#define TGBOT_TYPES_ORDERINFO_H
 
 #include <string>
 #include "tgbot/types/ShippingAddress.h"

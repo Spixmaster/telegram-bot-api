@@ -1,5 +1,5 @@
-#ifndef TYPES_STICKERSET_H
-#define TYPES_STICKERSET_H
+#ifndef TGBOT_TYPES_STICKERSET_H
+#define TGBOT_TYPES_STICKERSET_H
 
 #include <string>
 #include <vector>

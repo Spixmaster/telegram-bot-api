@@ -1,5 +1,5 @@
-#ifndef TYPES_INLINEQUERY_H
-#define TYPES_INLINEQUERY_H
+#ifndef TGBOT_TYPES_INLINEQUERY_H
+#define TGBOT_TYPES_INLINEQUERY_H
 
 #include <string>
 #include "tgbot/types/User.h"

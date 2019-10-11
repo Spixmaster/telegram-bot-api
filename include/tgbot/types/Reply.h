@@ -1,5 +1,5 @@
-#ifndef TYPES_REPLY_H
-#define TYPES_REPLY_H
+#ifndef TGBOT_TYPES_REPLY_H
+#define TGBOT_TYPES_REPLY_H
 
 #include <memory>
 

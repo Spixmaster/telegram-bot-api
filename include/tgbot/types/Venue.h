@@ -1,5 +1,5 @@
-#ifndef TYPES_VENUE_H
-#define TYPES_VENUE_H
+#ifndef TGBOT_TYPES_VENUE_H
+#define TGBOT_TYPES_VENUE_H
 
 #include <string>
 #include "tgbot/types/Location.h"

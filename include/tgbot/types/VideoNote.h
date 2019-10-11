@@ -1,5 +1,5 @@
-#ifndef TYPES_VIDEONOTE_H
-#define TYPES_VIDEONOTE_H
+#ifndef TGBOT_TYPES_VIDEONOTE_H
+#define TGBOT_TYPES_VIDEONOTE_H
 
 #include <string>
 #include "tgbot/types/PhotoSize.h"

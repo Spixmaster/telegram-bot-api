@@ -1,5 +1,5 @@
-#ifndef TYPES_AUDIO_H
-#define TYPES_AUDIO_H
+#ifndef TGBOT_TYPES_AUDIO_H
+#define TGBOT_TYPES_AUDIO_H
 
 #include <string>
 #include "tgbot/types/PhotoSize.h"
