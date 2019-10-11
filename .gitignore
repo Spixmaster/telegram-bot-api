@@ -1,0 +1,11 @@
+#eclipse settings
+.cproject
+.project
+.settings/
+
+#Linux
+.directory
+
+#builts
+Debug/
+Release/
