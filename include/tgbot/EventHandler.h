@@ -2,7 +2,7 @@
 #define EVENTHANDLER_H
 
 #include <string>
-#include "Endpoints.h"
+#include "tgbot/Endpoints.h"
 #include <memory>
 #include "tgbot/types/Update.h"
 #include <functional>

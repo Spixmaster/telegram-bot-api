@@ -3,10 +3,8 @@
 
 namespace tgbot
 {
-	EventHandler::EventHandler(const std::string &token)
-	{
-		m_endpnts = std::make_shared<Endpoints>(token);
-	}
+	EventHandler::EventHandler(const std::string &token) : m_endpnts(std::make_shared<Endpoints>(token))
+	{}
 
 	void EventHandler::long_poll()
 	{
