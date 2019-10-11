@@ -1,5 +1,5 @@
-#ifndef TYPES_CALLBACKQUERY_H
-#define TYPES_CALLBACKQUERY_H
+#ifndef TGBOT_TYPES_CALLBACKQUERY_H
+#define TGBOT_TYPES_CALLBACKQUERY_H
 
 #include <string>
 #include "tgbot/types/User.h"

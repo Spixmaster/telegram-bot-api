@@ -1,5 +1,5 @@
-#ifndef TYPES_RESPONSEPARAMETERS_H
-#define TYPES_RESPONSEPARAMETERS_H
+#ifndef TGBOT_TYPES_RESPONSEPARAMETERS_H
+#define TGBOT_TYPES_RESPONSEPARAMETERS_H
 
 #include <rapidjson/document.h>
 #include "tgbot/special_tools.h"

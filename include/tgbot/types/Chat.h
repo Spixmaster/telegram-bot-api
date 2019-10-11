@@ -1,5 +1,5 @@
-#ifndef TYPES_CHAT_H
-#define TYPES_CHAT_H
+#ifndef TGBOT_TYPES_CHAT_H
+#define TGBOT_TYPES_CHAT_H
 
 #include <string>
 #include "tgbot/types/ChatPhoto.h"

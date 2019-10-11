@@ -1,5 +1,5 @@
-#ifndef TYPES_CHATMEMBER_H
-#define TYPES_CHATMEMBER_H
+#ifndef TGBOT_TYPES_CHATMEMBER_H
+#define TGBOT_TYPES_CHATMEMBER_H
 
 #include <string>
 #include "tgbot/types/User.h"

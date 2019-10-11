@@ -1,5 +1,5 @@
-#ifndef TYPES_INPUTMEDIAPHOTO_H
-#define TYPES_INPUTMEDIAPHOTO_H
+#ifndef TGBOT_TYPES_INPUTMEDIAPHOTO_H
+#define TGBOT_TYPES_INPUTMEDIAPHOTO_H
 
 #include <string>
 #include "tgbot/types/InputMedia.h"

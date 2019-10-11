@@ -1,5 +1,5 @@
-#ifndef TYPES_VOICE_H
-#define TYPES_VOICE_H
+#ifndef TGBOT_TYPES_VOICE_H
+#define TGBOT_TYPES_VOICE_H
 
 #include <string>
 #include <memory>

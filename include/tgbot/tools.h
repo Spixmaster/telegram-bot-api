@@ -1,5 +1,5 @@
-#ifndef TOOLS_H
-#define TOOLS_H
+#ifndef TGBOT_TOOLS_H
+#define TGBOT_TOOLS_H
 
 #include <string>
 #include <vector>

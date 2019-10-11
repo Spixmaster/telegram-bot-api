@@ -1,5 +1,5 @@
-#ifndef TYPES_INVOICE_H
-#define TYPES_INVOICE_H
+#ifndef TGBOT_TYPES_INVOICE_H
+#define TGBOT_TYPES_INVOICE_H
 
 #include <string>
 #include <memory>

@@ -1,5 +1,5 @@
-#ifndef TYPES_SHIPPINGOPTION_H
-#define TYPES_SHIPPINGOPTION_H
+#ifndef TGBOT_TYPES_SHIPPINGOPTION_H
+#define TGBOT_TYPES_SHIPPINGOPTION_H
 
 #include <string>
 #include <vector>

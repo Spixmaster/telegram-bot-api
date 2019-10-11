@@ -1,5 +1,5 @@
-#ifndef HTTP_HTTPCLIENT_H
-#define HTTP_HTTPCLIENT_H
+#ifndef TGBOT_HTTP_HTTPCLIENT_H
+#define TGBOT_HTTP_HTTPCLIENT_H
 
 #include <string>
 #include <memory>

@@ -1,5 +1,5 @@
-#ifndef EVENTHANDLER_H
-#define EVENTHANDLER_H
+#ifndef TGBOT_EVENTHANDLER_H
+#define TGBOT_EVENTHANDLER_H
 
 #include <string>
 #include "tgbot/Endpoints.h"

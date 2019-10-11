@@ -1,5 +1,5 @@
-#ifndef TYPES_UPDATE_H
-#define TYPES_UPDATE_H
+#ifndef TGBOT_TYPES_UPDATE_H
+#define TGBOT_TYPES_UPDATE_H
 
 #include <string>
 #include "tgbot/types/Message.h"

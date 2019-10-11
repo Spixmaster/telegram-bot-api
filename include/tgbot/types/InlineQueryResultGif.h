@@ -1,5 +1,5 @@
-#ifndef TYPES_INLINEQUERYRESULTGIF_H
-#define TYPES_INLINEQUERYRESULTGIF_H
+#ifndef TGBOT_TYPES_INLINEQUERYRESULTGIF_H
+#define TGBOT_TYPES_INLINEQUERYRESULTGIF_H
 
 #include <string>
 #include "tgbot/types/InlineKeyboardMarkup.h"

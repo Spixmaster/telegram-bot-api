@@ -1,5 +1,5 @@
-#ifndef TYPES_MESSAGEENTITY_H
-#define TYPES_MESSAGEENTITY_H
+#ifndef TGBOT_TYPES_MESSAGEENTITY_H
+#define TGBOT_TYPES_MESSAGEENTITY_H
 
 #include <string>
 #include "tgbot/special_tools.h"

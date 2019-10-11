@@ -1,5 +1,5 @@
-#ifndef TYPES_INLINEKEYBOARDMARKUP_H
-#define TYPES_INLINEKEYBOARDMARKUP_H
+#ifndef TGBOT_TYPES_INLINEKEYBOARDMARKUP_H
+#define TGBOT_TYPES_INLINEKEYBOARDMARKUP_H
 
 #include "tgbot/types/InlineKeyboardButton.h"
 #include <vector>

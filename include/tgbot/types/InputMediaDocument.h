@@ -1,5 +1,5 @@
-#ifndef TYPES_INPUTMEDIADOCUMENT_H
-#define TYPES_INPUTMEDIADOCUMENT_H
+#ifndef TGBOT_TYPES_INPUTMEDIADOCUMENT_H
+#define TGBOT_TYPES_INPUTMEDIADOCUMENT_H
 
 #include <string>
 #include "tgbot/types/InputMedia.h"

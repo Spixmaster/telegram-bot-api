@@ -1,5 +1,5 @@
-#ifndef TYPES_USER_H
-#define TYPES_USER_H
+#ifndef TGBOT_TYPES_USER_H
+#define TGBOT_TYPES_USER_H
 
 #include <string>
 #include <memory>

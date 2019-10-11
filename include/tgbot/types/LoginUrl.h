@@ -1,5 +1,5 @@
-#ifndef TYPES_LOGINURL_H
-#define TYPES_LOGINURL_H
+#ifndef TGBOT_TYPES_LOGINURL_H
+#define TGBOT_TYPES_LOGINURL_H
 
 #include <string>
 #include <memory>

@@ -1,5 +1,5 @@
-#ifndef TYPES_MARKPOSITION_H
-#define TYPES_MARKPOSITION_H
+#ifndef TGBOT_TYPES_MARKPOSITION_H
+#define TGBOT_TYPES_MARKPOSITION_H
 
 #include <string>
 #include <memory>

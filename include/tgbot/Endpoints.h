@@ -1,5 +1,5 @@
-#ifndef ENDPOINTS_H
-#define ENDPOINTS_H
+#ifndef TGBOT_ENDPOINTS_H
+#define TGBOT_ENDPOINTS_H
 
 #include <string>
 #include "tgbot/types/User.h"

@@ -1,5 +1,5 @@
-#ifndef TYPES_STICKER_H
-#define TYPES_STICKER_H
+#ifndef TGBOT_TYPES_STICKER_H
+#define TGBOT_TYPES_STICKER_H
 
 #include <string>
 #include "tgbot/types/PhotoSize.h"

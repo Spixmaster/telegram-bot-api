@@ -1,5 +1,5 @@
-#ifndef TYPES_POLL_H
-#define TYPES_POLL_H
+#ifndef TGBOT_TYPES_POLL_H
+#define TGBOT_TYPES_POLL_H
 
 #include <string>
 #include "tgbot/types/PollOption.h"

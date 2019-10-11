@@ -1,5 +1,5 @@
-#ifndef TYPES_CONTACT_H
-#define TYPES_CONTACT_H
+#ifndef TGBOT_TYPES_CONTACT_H
+#define TGBOT_TYPES_CONTACT_H
 
 #include <string>
 #include <memory>

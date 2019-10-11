@@ -1,5 +1,5 @@
-#ifndef TYPES_SHIPPINGADDRESS_H
-#define TYPES_SHIPPINGADDRESS_H
+#ifndef TGBOT_TYPES_SHIPPINGADDRESS_H
+#define TGBOT_TYPES_SHIPPINGADDRESS_H
 
 #include <string>
 #include <rapidjson/document.h>

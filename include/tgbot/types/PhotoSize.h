@@ -1,5 +1,5 @@
-#ifndef TYPES_PHOTOSIZE_H
-#define TYPES_PHOTOSIZE_H
+#ifndef TGBOT_TYPES_PHOTOSIZE_H
+#define TGBOT_TYPES_PHOTOSIZE_H
 
 #include <string>
 #include "rapidjson/document.h"

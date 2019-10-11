@@ -1,5 +1,5 @@
-#ifndef SPECIAL_TOOLS_H
-#define SPECIAL_TOOLS_H
+#ifndef TGBOT_SPECIAL_TOOLS_H
+#define TGBOT_SPECIAL_TOOLS_H
 
 #include <string>
 #include <rapidjson/document.h>

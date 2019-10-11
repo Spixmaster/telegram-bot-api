@@ -1,5 +1,5 @@
-#ifndef TYPES_CHATPHOTO_H
-#define TYPES_CHATPHOTO_H
+#ifndef TGBOT_TYPES_CHATPHOTO_H
+#define TGBOT_TYPES_CHATPHOTO_H
 
 #include <string>
 #include <rapidjson/document.h>

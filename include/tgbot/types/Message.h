@@ -1,5 +1,5 @@
-#ifndef TYPES_MESSAGE_H
-#define TYPES_MESSAGE_H
+#ifndef TGBOT_TYPES_MESSAGE_H
+#define TGBOT_TYPES_MESSAGE_H
 
 #include <string>
 #include "tgbot/types/User.h"

@@ -1,5 +1,5 @@
-#ifndef TYPES_SHIPPINGQUERY_H
-#define TYPES_SHIPPINGQUERY_H
+#ifndef TGBOT_TYPES_SHIPPINGQUERY_H
+#define TGBOT_TYPES_SHIPPINGQUERY_H
 
 #include <string>
 #include "tgbot/types/User.h"

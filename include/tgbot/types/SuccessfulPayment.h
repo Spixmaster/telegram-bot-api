@@ -1,5 +1,5 @@
-#ifndef TYPES_SUCCESSFULPAYMENT_H
-#define TYPES_SUCCESSFULPAYMENT_H
+#ifndef TGBOT_TYPES_SUCCESSFULPAYMENT_H
+#define TGBOT_TYPES_SUCCESSFULPAYMENT_H
 
 #include <string>
 #include "tgbot/types/OrderInfo.h"

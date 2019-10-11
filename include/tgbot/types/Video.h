@@ -1,5 +1,5 @@
-#ifndef TYPES_VIDEO_H
-#define TYPES_VIDEO_H
+#ifndef TGBOT_TYPES_VIDEO_H
+#define TGBOT_TYPES_VIDEO_H
 
 #include <string>
 #include "tgbot/types/PhotoSize.h"

@@ -1,5 +1,5 @@
-#ifndef TYPES_DOCUMENT_H
-#define TYPES_DOCUMENT_H
+#ifndef TGBOT_TYPES_DOCUMENT_H
+#define TGBOT_TYPES_DOCUMENT_H
 
 #include <string>
 #include "tgbot/types/PhotoSize.h"

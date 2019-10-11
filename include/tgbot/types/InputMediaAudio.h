@@ -1,5 +1,5 @@
-#ifndef TYPES_INPUTMEDIAAUDIO_H
-#define TYPES_INPUTMEDIAAUDIO_H
+#ifndef TGBOT_TYPES_INPUTMEDIAAUDIO_H
+#define TGBOT_TYPES_INPUTMEDIAAUDIO_H
 
 #include <string>
 #include "tgbot/types/InputMedia.h"

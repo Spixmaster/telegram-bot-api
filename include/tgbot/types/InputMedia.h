@@ -1,5 +1,5 @@
-#ifndef TYPES_INPUTMEDIA_H
-#define TYPES_INPUTMEDIA_H
+#ifndef TGBOT_TYPES_INPUTMEDIA_H
+#define TGBOT_TYPES_INPUTMEDIA_H
 
 #include <memory>
 
