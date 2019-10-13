@@ -25,7 +25,7 @@ namespace tgbot
 					keyboard.at(row).resize(keyboard_array[row].GetArray().Size());
 
 					for(std::size_t column = 0; column < keyboard_array[row].GetArray().Size(); ++column)
-						keyboard.at(row).at(column) = std::make_shared<KeyboardButton>(special_tools::get_json_obj_as_string(keyboard_array[row][column]));
+						keyboard.at(row).at(column) = std::make_shared<KeyboardButton>(SpecialTools::get_json_obj_as_string(keyboard_array[row][column]));
 				}
 
 		if(doc.HasMember("resize_keyboard"))

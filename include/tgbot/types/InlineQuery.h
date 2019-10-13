@@ -5,7 +5,7 @@
 #include "tgbot/types/User.h"
 #include "tgbot/types/Location.h"
 #include <rapidjson/document.h>
-#include "tgbot/special_tools.h"
+#include "tgbot/SpecialTools.h"
 #include <memory>
 
 namespace tgbot

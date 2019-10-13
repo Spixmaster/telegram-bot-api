@@ -6,7 +6,7 @@
 #include "tgbot/types/PhotoSize.h"
 #include "tgbot/types/MessageEntity.h"
 #include "tgbot/types/Animation.h"
-#include "tgbot/special_tools.h"
+#include "tgbot/SpecialTools.h"
 #include <memory>
 
 namespace tgbot

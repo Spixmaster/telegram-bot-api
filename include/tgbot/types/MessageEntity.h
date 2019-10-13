@@ -2,7 +2,7 @@
 #define TGBOT_TYPES_MESSAGEENTITY_H
 
 #include <string>
-#include "tgbot/special_tools.h"
+#include "tgbot/SpecialTools.h"
 #include <memory>
 #include "tgbot/types/User.h"
 

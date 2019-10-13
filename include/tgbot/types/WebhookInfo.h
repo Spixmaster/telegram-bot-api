@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 #include <rapidjson/document.h>
-#include "tgbot/special_tools.h"
+#include "tgbot/SpecialTools.h"
 #include <memory>
 
 namespace tgbot

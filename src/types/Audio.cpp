@@ -30,7 +30,7 @@ namespace tgbot
 			file_size = doc["file_size"].GetInt();
 
 		if(doc.HasMember("thumb"))
-			thumb = std::make_shared<PhotoSize>(special_tools::get_json_obj_as_string(doc["thumb"]));
+			thumb = std::make_shared<PhotoSize>(SpecialTools::get_json_obj_as_string(doc["thumb"]));
 	}
 
 	std::string Audio::parse_to_json() const

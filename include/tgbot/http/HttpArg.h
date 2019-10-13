@@ -7,6 +7,8 @@
 #include <variant>
 #include "tgbot/http/InputFile.h"
 
+//@brief simply a container for a key value pair of http arguments
+
 namespace tgbot
 {
 	struct HttpArg

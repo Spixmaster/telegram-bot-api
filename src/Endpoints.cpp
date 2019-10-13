@@ -1,7 +1,7 @@
+#include <tgbot/SpecialTools.h>
 #include "tgbot/http/HttpClient.h"
 #include "tgbot/http/InputFile.h"
 #include "tgbot/Endpoints.h"
-#include "tgbot/special_tools.h"
 #include "tgbot/types/ReplyKeyboardRemove.h"
 #include "tgbot/types/User.h"
 #include <iostream>
@@ -54,7 +54,7 @@ namespace tgbot
 			{
 				const rapidjson::Value &array = doc["result"].GetArray();
 				for(std::size_t j = 0; j< array.Size(); ++j)
-					updates.push_back(std::make_shared<Update>(special_tools::get_json_obj_as_string(array[j])));
+					updates.push_back(std::make_shared<Update>(SpecialTools::get_json_obj_as_string(array[j])));
 			}
 		}
 
@@ -127,7 +127,7 @@ namespace tgbot
 		WebhookInfo::ptr webhook_info = std::make_shared<WebhookInfo>();
 
 		if(doc.HasMember("result"))
-			webhook_info = std::make_shared<WebhookInfo>(special_tools::get_json_obj_as_string(doc["result"]));
+			webhook_info = std::make_shared<WebhookInfo>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 		return webhook_info;
 	}
@@ -143,7 +143,7 @@ namespace tgbot
 		User::ptr usr = std::make_shared<User>();
 
 		if(doc.HasMember("result"))
-			usr = std::make_shared<User>(special_tools::get_json_obj_as_string(doc["result"]));
+			usr = std::make_shared<User>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 		return usr;
 	}
@@ -170,7 +170,7 @@ namespace tgbot
 		Message::ptr msg = std::make_shared<Message>();
 
 		if(doc.HasMember("result"))
-			msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+			msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 		return msg;
 	}
@@ -193,7 +193,7 @@ namespace tgbot
 		Message::ptr msg = std::make_shared<Message>();
 
 		if(doc.HasMember("result"))
-			msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+			msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 		return msg;
 	}
@@ -222,7 +222,7 @@ namespace tgbot
 			Message::ptr msg = std::make_shared<Message>();
 
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+				msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 			return msg;
 		}
@@ -247,7 +247,7 @@ namespace tgbot
 			Message::ptr msg = std::make_shared<Message>();
 
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+				msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 			return msg;
 		}
@@ -282,7 +282,7 @@ namespace tgbot
 			Message::ptr msg = std::make_shared<Message>();
 
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+				msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 			return msg;
 		}
@@ -311,7 +311,7 @@ namespace tgbot
 			Message::ptr msg = std::make_shared<Message>();
 
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+				msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 			return msg;
 		}
@@ -340,7 +340,7 @@ namespace tgbot
 			Message::ptr msg = std::make_shared<Message>();
 
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+				msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 			return msg;
 		}
@@ -370,7 +370,7 @@ namespace tgbot
 			Message::ptr msg = std::make_shared<Message>();
 
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+				msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 			return msg;
 		}
@@ -401,7 +401,7 @@ namespace tgbot
 			Message::ptr msg = std::make_shared<Message>();
 
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+				msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 			return msg;
 		}
@@ -427,7 +427,7 @@ namespace tgbot
 			Message::ptr msg = std::make_shared<Message>();
 
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+				msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 			return msg;
 		}
@@ -453,7 +453,7 @@ namespace tgbot
 			Message::ptr msg = std::make_shared<Message>();
 
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+				msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 			return msg;
 		}
@@ -480,7 +480,7 @@ namespace tgbot
 			Message::ptr msg = std::make_shared<Message>();
 
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+				msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 			return msg;
 		}
@@ -516,7 +516,7 @@ namespace tgbot
 			Message::ptr msg = std::make_shared<Message>();
 
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+				msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 			return msg;
 		}
@@ -546,7 +546,7 @@ namespace tgbot
 			Message::ptr msg = std::make_shared<Message>();
 
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+				msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 			return msg;
 		}
@@ -576,7 +576,7 @@ namespace tgbot
 			Message::ptr msg = std::make_shared<Message>();
 
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+				msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 			return msg;
 		}
@@ -607,7 +607,7 @@ namespace tgbot
 			Message::ptr msg = std::make_shared<Message>();
 
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+				msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 			return msg;
 		}
@@ -642,7 +642,7 @@ namespace tgbot
 			Message::ptr msg = std::make_shared<Message>();
 
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+				msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 			return msg;
 		}
@@ -671,7 +671,7 @@ namespace tgbot
 			Message::ptr msg = std::make_shared<Message>();
 
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+				msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 			return msg;
 		}
@@ -700,7 +700,7 @@ namespace tgbot
 			Message::ptr msg = std::make_shared<Message>();
 
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+				msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 			return msg;
 		}
@@ -730,7 +730,7 @@ namespace tgbot
 			Message::ptr msg = std::make_shared<Message>();
 
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+				msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 			return msg;
 		}
@@ -761,7 +761,7 @@ namespace tgbot
 			Message::ptr msg = std::make_shared<Message>();
 
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+				msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 			return msg;
 		}
@@ -788,7 +788,7 @@ namespace tgbot
 			Message::ptr msg = std::make_shared<Message>();
 
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+				msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 			return msg;
 		}
@@ -819,7 +819,7 @@ namespace tgbot
 			Message::ptr msg = std::make_shared<Message>();
 
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+				msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 			return msg;
 		}
@@ -845,7 +845,7 @@ namespace tgbot
 			Message::ptr msg = std::make_shared<Message>();
 
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+				msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 			return msg;
 		}
@@ -871,7 +871,7 @@ namespace tgbot
 			Message::ptr msg = std::make_shared<Message>();
 
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+				msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 			return msg;
 		}
@@ -898,7 +898,7 @@ namespace tgbot
 			Message::ptr msg = std::make_shared<Message>();
 
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+				msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 			return msg;
 		}
@@ -974,7 +974,7 @@ namespace tgbot
 			{
 				const rapidjson::Value &array = doc["result"].GetArray();
 				for(std::size_t j = 0; j< array.Size(); ++j)
-					msgs.push_back(std::make_shared<Message>(special_tools::get_json_obj_as_string(array[j])));
+					msgs.push_back(std::make_shared<Message>(SpecialTools::get_json_obj_as_string(array[j])));
 			}
 		}
 
@@ -1003,7 +1003,7 @@ namespace tgbot
 		Message::ptr msg = std::make_shared<Message>();
 
 		if(doc.HasMember("result"))
-			msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+			msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 		return msg;
 	}
@@ -1029,7 +1029,7 @@ namespace tgbot
 		Message::ptr msg = std::make_shared<Message>();
 
 		if(doc.HasMember("result"))
-			msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+			msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 		return msg;
 	}
@@ -1053,7 +1053,7 @@ namespace tgbot
 		Message::ptr msg = std::make_shared<Message>();
 
 		if(doc.HasMember("result"))
-			msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+			msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 		return msg;
 	}
@@ -1084,7 +1084,7 @@ namespace tgbot
 		Message::ptr msg = std::make_shared<Message>();
 
 		if(doc.HasMember("result"))
-			msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+			msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 		return msg;
 	}
@@ -1112,7 +1112,7 @@ namespace tgbot
 		Message::ptr msg = std::make_shared<Message>();
 
 		if(doc.HasMember("result"))
-			msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+			msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 		return msg;
 	}
@@ -1152,7 +1152,7 @@ namespace tgbot
 		Message::ptr msg = std::make_shared<Message>();
 
 		if(doc.HasMember("result"))
-			msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+			msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 		return msg;
 	}
@@ -1194,7 +1194,7 @@ namespace tgbot
 		UserProfilePhotos::ptr usr_profile_photos = std::make_shared<UserProfilePhotos>();
 
 		if(doc.HasMember("result"))
-			usr_profile_photos = std::make_shared<UserProfilePhotos>(special_tools::get_json_obj_as_string(doc["result"]));
+			usr_profile_photos = std::make_shared<UserProfilePhotos>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 		return usr_profile_photos;
 	}
@@ -1214,7 +1214,7 @@ namespace tgbot
 		File::ptr file = std::make_shared<File>();
 
 		if(doc.HasMember("result"))
-			file = std::make_shared<File>(special_tools::get_json_obj_as_string(doc["result"]));
+			file = std::make_shared<File>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 		return file;
 	}
@@ -1490,7 +1490,7 @@ namespace tgbot
 		Chat::ptr chat = std::make_shared<Chat>();
 
 		if(doc.HasMember("result"))
-			chat = std::make_shared<Chat>(special_tools::get_json_obj_as_string(doc["result"]));
+			chat = std::make_shared<Chat>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 		return chat;
 	}
@@ -1515,7 +1515,7 @@ namespace tgbot
 			{
 				const rapidjson::Value &array = doc["result"].GetArray();
 				for(std::size_t j = 0; j< array.Size(); ++j)
-					admins.push_back(std::make_shared<ChatMember>(special_tools::get_json_obj_as_string(array[j])));
+					admins.push_back(std::make_shared<ChatMember>(SpecialTools::get_json_obj_as_string(array[j])));
 			}
 		}
 
@@ -1555,7 +1555,7 @@ namespace tgbot
 		ChatMember::ptr chat_member = std::make_shared<ChatMember>();
 
 		if(doc.HasMember("result"))
-			chat_member = std::make_shared<ChatMember>(special_tools::get_json_obj_as_string(doc["result"]));
+			chat_member = std::make_shared<ChatMember>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 		return chat_member;
 	}
@@ -1642,7 +1642,7 @@ namespace tgbot
 		Message::ptr msg = std::make_shared<Message>();
 
 		if(doc.HasMember("result"))
-			msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+			msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 		return msg;
 	}
@@ -1668,7 +1668,7 @@ namespace tgbot
 		Message::ptr msg = std::make_shared<Message>();
 
 		if(doc.HasMember("result"))
-			msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+			msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 		return msg;
 	}
@@ -1775,7 +1775,7 @@ namespace tgbot
 		Message::ptr msg = std::make_shared<Message>();
 
 		if(doc.HasMember("result"))
-			msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+			msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 		return msg;
 	}
@@ -1798,7 +1798,7 @@ namespace tgbot
 		Message::ptr msg = std::make_shared<Message>();
 
 		if(doc.HasMember("result"))
-			msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+			msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 		return msg;
 	}
@@ -1820,7 +1820,7 @@ namespace tgbot
 		Poll::ptr poll = std::make_shared<Poll>();
 
 		if(doc.HasMember("result"))
-			poll = std::make_shared<Poll>(special_tools::get_json_obj_as_string(doc["result"]));
+			poll = std::make_shared<Poll>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 		return poll;
 	}
@@ -1866,7 +1866,7 @@ namespace tgbot
 			Message::ptr msg = std::make_shared<Message>();
 
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+				msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 			return msg;
 		}
@@ -1889,7 +1889,7 @@ namespace tgbot
 			Message::ptr msg = std::make_shared<Message>();
 
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+				msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 			return msg;
 		}
@@ -1910,7 +1910,7 @@ namespace tgbot
 		StickerSet::ptr sticker_set = std::make_shared<StickerSet>();
 
 		if(doc.HasMember("result"))
-			sticker_set = std::make_shared<StickerSet>(special_tools::get_json_obj_as_string(doc["result"]));
+			sticker_set = std::make_shared<StickerSet>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 		return sticker_set;
 	}
@@ -1931,7 +1931,7 @@ namespace tgbot
 		File::ptr file = std::make_shared<File>();
 
 		if(doc.HasMember("result"))
-			file = std::make_shared<File>(special_tools::get_json_obj_as_string(doc["result"]));
+			file = std::make_shared<File>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 		return file;
 	}
@@ -2179,7 +2179,7 @@ namespace tgbot
 		Message::ptr msg = std::make_shared<Message>();
 
 		if(doc.HasMember("result"))
-			msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+			msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 		return msg;
 	}
@@ -2305,7 +2305,7 @@ namespace tgbot
 		Message::ptr msg = std::make_shared<Message>();
 
 		if(doc.HasMember("result"))
-			msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+			msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 		return msg;
 	}
@@ -2332,7 +2332,7 @@ namespace tgbot
 		Message::ptr msg = std::make_shared<Message>();
 
 		if(doc.HasMember("result"))
-			msg = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["result"]));
+			msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
 		return msg;
 	}
@@ -2360,7 +2360,7 @@ namespace tgbot
 			{
 				const rapidjson::Value &array = doc["result"].GetArray();
 				for(std::size_t j = 0; j< array.Size(); ++j)
-					game_high_score.push_back(std::make_shared<GameHighScore>(special_tools::get_json_obj_as_string(array[j])));
+					game_high_score.push_back(std::make_shared<GameHighScore>(SpecialTools::get_json_obj_as_string(array[j])));
 			}
 		}
 

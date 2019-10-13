@@ -25,7 +25,7 @@ namespace tgbot
 			shipping_option_id = doc["shipping_option_id"].GetString();
 
 		if(doc.HasMember("order_info"))
-			order_info = std::make_shared<OrderInfo>(special_tools::get_json_obj_as_string(doc["order_info"]));
+			order_info = std::make_shared<OrderInfo>(SpecialTools::get_json_obj_as_string(doc["order_info"]));
 
 		if(doc.HasMember("telegram_payment_charge_id"))
 			telegram_payment_charge_id = doc["telegram_payment_charge_id"].GetString();

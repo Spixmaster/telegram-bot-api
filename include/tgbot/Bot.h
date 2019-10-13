@@ -6,6 +6,11 @@
 #include <memory>
 #include "tgbot/EventHandler.h"
 
+/*
+ * @brief this object represent the Telegram bot
+ * @brief it contains all endpoints and knows how to process incoming information
+ */
+
 namespace tgbot
 {
 	class Bot

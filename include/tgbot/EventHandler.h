@@ -12,6 +12,14 @@
 #include "tgbot/types/CallbackQuery.h"
 #include <unordered_map>
 
+/*
+ * @brief entry of every Bot is function EventHandler::long_poll() which simply makes a request getUpdates() via the Endpoints object; therefore, it needs to be run
+ * 			in an endless loop for always fetching new incoming data
+ * @brief each new update is processed by this->handle_update()
+ * @brief this->handle_update calls proper vector which contains the functions which shall be called for that specific event
+ * @brief all function which start with on_...() simply add the function given as argument to the proper vector
+ */
+
 namespace tgbot
 {
 	class EventHandler

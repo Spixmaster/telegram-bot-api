@@ -24,7 +24,7 @@ namespace tgbot
 				inline_keyboard.at(row).resize(keyboard_array[row].GetArray().Size());
 
 				for(std::size_t column = 0; column < keyboard_array[row].GetArray().Size(); ++column)
-					inline_keyboard.at(row).at(column) = std::make_shared<InlineKeyboardButton>(special_tools::get_json_obj_as_string(keyboard_array[row][column]));
+					inline_keyboard.at(row).at(column) = std::make_shared<InlineKeyboardButton>(SpecialTools::get_json_obj_as_string(keyboard_array[row][column]));
 			}
 	}
 

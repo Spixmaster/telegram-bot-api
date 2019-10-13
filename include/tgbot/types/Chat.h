@@ -4,7 +4,7 @@
 #include <string>
 #include "tgbot/types/ChatPhoto.h"
 #include "tgbot/types/ChatPermissions.h"
-#include "tgbot/special_tools.h"
+#include "tgbot/SpecialTools.h"
 #include <memory>
 
 namespace tgbot

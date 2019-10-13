@@ -24,7 +24,7 @@ namespace tgbot
 			url = doc["url"].GetString();
 
 		if(doc.HasMember("user"))
-			user = std::make_shared<User>(special_tools::get_json_obj_as_string(doc["user"]));
+			user = std::make_shared<User>(SpecialTools::get_json_obj_as_string(doc["user"]));
 	}
 
 	std::string MessageEntity::parse_to_json() const
