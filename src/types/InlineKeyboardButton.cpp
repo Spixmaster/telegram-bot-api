@@ -19,7 +19,7 @@ namespace tgbot
 			url = doc["url"].GetString();
 
 		if(doc.HasMember("login_url"))
-			login_url = std::make_shared<LoginUrl>(special_tools::get_json_obj_as_string(doc["login_url"]));
+			login_url = std::make_shared<LoginUrl>(SpecialTools::get_json_obj_as_string(doc["login_url"]));
 
 		if(doc.HasMember("callback_data"))
 			callback_data = doc["callback_data"].GetString();

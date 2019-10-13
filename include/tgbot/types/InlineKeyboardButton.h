@@ -4,7 +4,7 @@
 #include <string>
 #include "tgbot/types/LoginUrl.h"
 #include "tgbot/types/CallbackGame.h"
-#include "tgbot/special_tools.h"
+#include "tgbot/SpecialTools.h"
 #include <memory>
 
 namespace tgbot

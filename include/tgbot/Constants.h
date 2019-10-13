@@ -4,6 +4,11 @@
 #include <string>
 #include <memory>
 
+/*
+ * @brief container of all constants in the programme
+ * @brief it is a monostate
+ */
+
 namespace tgbot
 {
 	struct Constants

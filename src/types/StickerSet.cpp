@@ -28,7 +28,7 @@ namespace tgbot
 			{
 				sticker.resize(doc["sticker"].GetArray().Size());
 
-				sticker.at(j) = std::make_shared<Sticker>(special_tools::get_json_obj_as_string(doc["sticker"][j]));
+				sticker.at(j) = std::make_shared<Sticker>(SpecialTools::get_json_obj_as_string(doc["sticker"][j]));
 			}
 	}
 

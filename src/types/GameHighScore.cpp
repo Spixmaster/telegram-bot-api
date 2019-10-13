@@ -15,7 +15,7 @@ namespace tgbot
 			position = doc["position"].GetInt();
 
 		if(doc.HasMember("user"))
-			user = std::make_shared<User>(special_tools::get_json_obj_as_string(doc["user"]));
+			user = std::make_shared<User>(SpecialTools::get_json_obj_as_string(doc["user"]));
 
 		if(doc.HasMember("score"))
 			score = doc["score"].GetInt();

@@ -3,7 +3,7 @@
 
 #include "tgbot/types/PhotoSize.h"
 #include <vector>
-#include "tgbot/special_tools.h"
+#include "tgbot/SpecialTools.h"
 #include <memory>
 
 namespace tgbot

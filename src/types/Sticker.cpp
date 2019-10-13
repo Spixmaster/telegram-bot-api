@@ -1,4 +1,4 @@
-#include "tgbot/special_tools.h"
+#include <tgbot/SpecialTools.h>
 #include "tgbot/types/Sticker.h"
 
 namespace tgbot
@@ -25,7 +25,7 @@ namespace tgbot
 			is_animated = doc["is_animated"].GetBool();
 
 		if(doc.HasMember("thumb"))
-			thumb = std::make_shared<PhotoSize>(special_tools::get_json_obj_as_string(doc["thumb"]));
+			thumb = std::make_shared<PhotoSize>(SpecialTools::get_json_obj_as_string(doc["thumb"]));
 
 		if(doc.HasMember("emoji"))
 			emoji = doc["emoji"].GetString();
@@ -34,7 +34,7 @@ namespace tgbot
 			set_name = doc["set_name"].GetString();
 
 		if(doc.HasMember("mask_position"))
-			mask_position = std::make_shared<MaskPosition>(special_tools::get_json_obj_as_string(doc["mask_position"]));
+			mask_position = std::make_shared<MaskPosition>(SpecialTools::get_json_obj_as_string(doc["mask_position"]));
 
 		if(doc.HasMember("file_size"))
 			file_size = doc["file_size"].GetInt();

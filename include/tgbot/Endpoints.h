@@ -30,6 +30,8 @@
 #include "tgbot/types/Update.h"
 #include "tgbot/types/WebhookInfo.h"
 
+//@brief contains all endpoints for the Telegram Bot Api
+
 namespace tgbot
 {
 	class Endpoints

@@ -3,7 +3,7 @@
 #include <rapidjson/document.h>
 #include <tgbot/http/HttpClient.h>
 #include <tgbot/http/InputFile.h>
-#include "tgbot/special_tools.h"
+#include <tgbot/SpecialTools.h>
 
 namespace tgbot
 {

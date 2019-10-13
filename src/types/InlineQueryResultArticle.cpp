@@ -22,7 +22,7 @@ namespace tgbot
 			title = doc["title"].GetString();
 
 		if(doc.HasMember("reply_markup"))
-			reply_markup = std::make_shared<InlineKeyboardMarkup>(special_tools::get_json_obj_as_string(doc["reply_markup"]));
+			reply_markup = std::make_shared<InlineKeyboardMarkup>(SpecialTools::get_json_obj_as_string(doc["reply_markup"]));
 
 		if(doc.HasMember("url"))
 			url = doc["url"].GetString();

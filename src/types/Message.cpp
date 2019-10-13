@@ -1,4 +1,4 @@
-#include "tgbot/special_tools.h"
+#include <tgbot/SpecialTools.h>
 #include "tgbot/types/Chat.h"
 #include "tgbot/types/Message.h"
 
@@ -21,19 +21,19 @@ namespace tgbot
 			message_id = doc["message_id"].GetInt();
 
 		if(doc.HasMember("from"))
-			from = std::make_shared<User>(special_tools::get_json_obj_as_string(doc["from"]));
+			from = std::make_shared<User>(SpecialTools::get_json_obj_as_string(doc["from"]));
 
 		if(doc.HasMember("date"))
 			date = doc["date"].GetInt();
 
 		if(doc.HasMember("chat"))
-			chat = std::make_shared<Chat>(special_tools::get_json_obj_as_string(doc["chat"]));
+			chat = std::make_shared<Chat>(SpecialTools::get_json_obj_as_string(doc["chat"]));
 
 		if(doc.HasMember("forward_from"))
-			forward_from = std::make_shared<User>(special_tools::get_json_obj_as_string(doc["forward_from"]));
+			forward_from = std::make_shared<User>(SpecialTools::get_json_obj_as_string(doc["forward_from"]));
 
 		if(doc.HasMember("forward_from_chat"))
-			forward_from_chat = std::make_shared<Chat>(special_tools::get_json_obj_as_string(doc["forward_from_chat"]));
+			forward_from_chat = std::make_shared<Chat>(SpecialTools::get_json_obj_as_string(doc["forward_from_chat"]));
 
 		if(doc.HasMember("forward_from_message_id"))
 			forward_from_message_id = doc["forward_from_message_id"].GetInt();
@@ -48,7 +48,7 @@ namespace tgbot
 			forward_date = doc["forward_date"].GetInt();
 
 		if(doc.HasMember("reply_to_message"))
-			reply_to_message = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["reply_to_message"]));
+			reply_to_message = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["reply_to_message"]));
 
 		if(doc.HasMember("edit_date"))
 			edit_date = doc["edit_date"].GetInt();
@@ -67,7 +67,7 @@ namespace tgbot
 			{
 				entities.resize(doc["entities"].GetArray().Size());
 
-				entities.at(j) = std::make_shared<MessageEntity>(special_tools::get_json_obj_as_string(doc["entities"][j]));
+				entities.at(j) = std::make_shared<MessageEntity>(SpecialTools::get_json_obj_as_string(doc["entities"][j]));
 			}
 
 		if(doc.HasMember("caption_entities"))
@@ -75,66 +75,66 @@ namespace tgbot
 			{
 				caption_entities.resize(doc["caption_entities"].GetArray().Size());
 
-				caption_entities.at(j) = std::make_shared<MessageEntity>(special_tools::get_json_obj_as_string(doc["caption_entities"][j]));
+				caption_entities.at(j) = std::make_shared<MessageEntity>(SpecialTools::get_json_obj_as_string(doc["caption_entities"][j]));
 			}
 
 		if(doc.HasMember("audio"))
-			audio = std::make_shared<Audio>(special_tools::get_json_obj_as_string(doc["audio"]));
+			audio = std::make_shared<Audio>(SpecialTools::get_json_obj_as_string(doc["audio"]));
 
 		if(doc.HasMember("document"))
-			document = std::make_shared<Document>(special_tools::get_json_obj_as_string(doc["document"]));
+			document = std::make_shared<Document>(SpecialTools::get_json_obj_as_string(doc["document"]));
 
 		if(doc.HasMember("animation"))
-			animation = std::make_shared<Animation>(special_tools::get_json_obj_as_string(doc["animation"]));
+			animation = std::make_shared<Animation>(SpecialTools::get_json_obj_as_string(doc["animation"]));
 
 		if(doc.HasMember("game"))
-			game = std::make_shared<Game>(special_tools::get_json_obj_as_string(doc["game"]));
+			game = std::make_shared<Game>(SpecialTools::get_json_obj_as_string(doc["game"]));
 
 		if(doc.HasMember("photo"))
 			for(std::size_t j = 0; j < doc["photo"].GetArray().Size(); ++j)
 			{
 				photo.resize(doc["photo"].GetArray().Size());
 
-				photo.at(j) = std::make_shared<PhotoSize>(special_tools::get_json_obj_as_string(doc["photo"][j]));
+				photo.at(j) = std::make_shared<PhotoSize>(SpecialTools::get_json_obj_as_string(doc["photo"][j]));
 			}
 
 		if(doc.HasMember("sticker"))
-			sticker = std::make_shared<Sticker>(special_tools::get_json_obj_as_string(doc["sticker"]));
+			sticker = std::make_shared<Sticker>(SpecialTools::get_json_obj_as_string(doc["sticker"]));
 
 		if(doc.HasMember("video"))
-			video = std::make_shared<Video>(special_tools::get_json_obj_as_string(doc["video"]));
+			video = std::make_shared<Video>(SpecialTools::get_json_obj_as_string(doc["video"]));
 
 		if(doc.HasMember("voice"))
-			voice = std::make_shared<Voice>(special_tools::get_json_obj_as_string(doc["voice"]));
+			voice = std::make_shared<Voice>(SpecialTools::get_json_obj_as_string(doc["voice"]));
 
 		if(doc.HasMember("video_note"))
-			video_note = std::make_shared<VideoNote>(special_tools::get_json_obj_as_string(doc["video_note"]));
+			video_note = std::make_shared<VideoNote>(SpecialTools::get_json_obj_as_string(doc["video_note"]));
 
 		if(doc.HasMember("caption"))
 			caption = doc["caption"].GetString();
 
 		if(doc.HasMember("contact"))
-			contact = std::make_shared<Contact>(special_tools::get_json_obj_as_string(doc["contact"]));
+			contact = std::make_shared<Contact>(SpecialTools::get_json_obj_as_string(doc["contact"]));
 
 		if(doc.HasMember("location"))
-			location = std::make_shared<Location>(special_tools::get_json_obj_as_string(doc["location"]));
+			location = std::make_shared<Location>(SpecialTools::get_json_obj_as_string(doc["location"]));
 
 		if(doc.HasMember("venue"))
-			venue = std::make_shared<Venue>(special_tools::get_json_obj_as_string(doc["venue"]));
+			venue = std::make_shared<Venue>(SpecialTools::get_json_obj_as_string(doc["venue"]));
 
 		if(doc.HasMember("poll"))
-			poll = std::make_shared<Poll>(special_tools::get_json_obj_as_string(doc["poll"]));
+			poll = std::make_shared<Poll>(SpecialTools::get_json_obj_as_string(doc["poll"]));
 
 		if(doc.HasMember("new_chat_members"))
 			for(std::size_t j = 0; j < doc["new_chat_members"].GetArray().Size(); ++j)
 			{
 				new_chat_members.resize(doc["new_chat_members"].GetArray().Size());
 
-				new_chat_members.at(j) = std::make_shared<User>(special_tools::get_json_obj_as_string(doc["new_chat_members"][j]));
+				new_chat_members.at(j) = std::make_shared<User>(SpecialTools::get_json_obj_as_string(doc["new_chat_members"][j]));
 			}
 
 		if(doc.HasMember("left_chat_member"))
-			left_chat_member = std::make_shared<User>(special_tools::get_json_obj_as_string(doc["left_chat_member"]));
+			left_chat_member = std::make_shared<User>(SpecialTools::get_json_obj_as_string(doc["left_chat_member"]));
 
 		if(doc.HasMember("new_chat_title"))
 			new_chat_title = doc["new_chat_title"].GetString();
@@ -144,7 +144,7 @@ namespace tgbot
 			{
 				new_chat_photo.resize(doc["new_chat_photo"].GetArray().Size());
 
-				new_chat_photo.at(j) = std::make_shared<PhotoSize>(special_tools::get_json_obj_as_string(doc["new_chat_photo"][j]));
+				new_chat_photo.at(j) = std::make_shared<PhotoSize>(SpecialTools::get_json_obj_as_string(doc["new_chat_photo"][j]));
 			}
 
 		if(doc.HasMember("delete_chat_phtot"))
@@ -166,22 +166,22 @@ namespace tgbot
 			migrate_from_chat_id = doc["migrate_from_chat_id"].GetInt();
 
 		if(doc.HasMember("pinned_message"))
-			pinned_message = std::make_shared<Message>(special_tools::get_json_obj_as_string(doc["pinned_message"]));
+			pinned_message = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["pinned_message"]));
 
 		if(doc.HasMember("invoice"))
-			invoice = std::make_shared<Invoice>(special_tools::get_json_obj_as_string(doc["invoice"]));
+			invoice = std::make_shared<Invoice>(SpecialTools::get_json_obj_as_string(doc["invoice"]));
 
 		if(doc.HasMember("successful_payment"))
-			successful_payment = std::make_shared<SuccessfulPayment>(special_tools::get_json_obj_as_string(doc["successful_payment"]));
+			successful_payment = std::make_shared<SuccessfulPayment>(SpecialTools::get_json_obj_as_string(doc["successful_payment"]));
 
 		if(doc.HasMember("connected_website"))
 			connected_website = doc["connected_website"].GetString();
 
 		if(doc.HasMember("passport_data"))
-			passport_data = std::make_shared<PassportData>(special_tools::get_json_obj_as_string(doc["passport_data"]));
+			passport_data = std::make_shared<PassportData>(SpecialTools::get_json_obj_as_string(doc["passport_data"]));
 
 		if(doc.HasMember("reply_markup"))
-			reply_markup = std::make_shared<InlineKeyboardMarkup>(special_tools::get_json_obj_as_string(doc["reply_markup"]));
+			reply_markup = std::make_shared<InlineKeyboardMarkup>(SpecialTools::get_json_obj_as_string(doc["reply_markup"]));
 	}
 
 	std::string Message::parse_to_json() const

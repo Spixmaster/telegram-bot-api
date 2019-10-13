@@ -5,6 +5,8 @@
 #include <memory>
 #include "tgbot/http/HttpArg.h"
 
+//@brief class does all http request
+
 namespace tgbot
 {
 	class HttpClient

@@ -24,7 +24,7 @@
 #include "tgbot/types/PassportData.h"
 #include "tgbot/types/InlineKeyboardMarkup.h"
 #include <rapidjson/document.h>
-#include "tgbot/special_tools.h"
+#include "tgbot/SpecialTools.h"
 #include "tgbot/types/Chat.h"
 #include <memory>
 

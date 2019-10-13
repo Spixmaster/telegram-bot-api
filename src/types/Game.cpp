@@ -22,7 +22,7 @@ namespace tgbot
 			{
 				photo.resize(doc["photo"].GetArray().Size());
 
-				photo.at(j) = std::make_shared<PhotoSize>(special_tools::get_json_obj_as_string(doc["thumb"][j]));
+				photo.at(j) = std::make_shared<PhotoSize>(SpecialTools::get_json_obj_as_string(doc["thumb"][j]));
 			}
 
 		if(doc.HasMember("text"))
@@ -33,11 +33,11 @@ namespace tgbot
 			{
 				text_entities.resize(doc["text_entities"].GetArray().Size());
 
-				text_entities.at(j) = std::make_shared<MessageEntity>(special_tools::get_json_obj_as_string(doc["text_entities"][j]));
+				text_entities.at(j) = std::make_shared<MessageEntity>(SpecialTools::get_json_obj_as_string(doc["text_entities"][j]));
 			}
 
 		if(doc.HasMember("animation"))
-			animation = std::make_shared<Animation>(special_tools::get_json_obj_as_string(doc["animation"]));
+			animation = std::make_shared<Animation>(SpecialTools::get_json_obj_as_string(doc["animation"]));
 	}
 
 	std::string Game::parse_to_json() const

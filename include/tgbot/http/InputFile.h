@@ -3,6 +3,8 @@
 
 #include <memory>
 
+//@brief represents a file which shall be uploaded by a http request via multipart/form
+
 namespace tgbot
 {
 	struct InputFile
