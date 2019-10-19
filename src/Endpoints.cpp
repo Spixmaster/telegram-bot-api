@@ -1545,6 +1545,7 @@ namespace tgbot
 		//http args
 		std::vector<HttpArg> http_args;
 		http_args.push_back(HttpArg("chat_id", chat_id));
+		http_args.push_back(HttpArg("user_id", user_id));
 
 		HttpClient http_client("https://api.telegram.org/bot" + m_token + "/getChatMember", http_args);
 		std::string json = http_client.send_post_req();
