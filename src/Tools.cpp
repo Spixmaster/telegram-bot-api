@@ -329,7 +329,6 @@ namespace tgbot
 		}
 	}
 
-	//todo int64_t zu long gewechselt
 	std::string Tools::get_last_lns_file(const std::string &file, const int &ln_nums)
 	{
 		if(Tools::file_exists(file))
