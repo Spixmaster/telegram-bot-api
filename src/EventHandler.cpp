@@ -53,6 +53,7 @@ namespace tgbot
 					}
 				}
 				//non command message
+				else
 				{
 					for(std::size_t j = 0; j < m_on_non_cmd_msg_listener_ls.size(); ++j)
 					{
@@ -92,6 +93,7 @@ namespace tgbot
 					}
 				}
 				//non command message
+				else
 				{
 					for(std::size_t j = 0; j < m_on_non_cmd_msg_listener_ls.size(); ++j)
 					{
@@ -131,6 +133,7 @@ namespace tgbot
 					}
 				}
 				//non command message
+				else
 				{
 					for(std::size_t j = 0; j < m_on_non_cmd_msg_listener_ls.size(); ++j)
 					{
@@ -170,6 +173,7 @@ namespace tgbot
 					}
 				}
 				//non command message
+				else
 				{
 					for(std::size_t j = 0; j < m_on_non_cmd_msg_listener_ls.size(); ++j)
 					{

@@ -1314,7 +1314,7 @@ namespace tgbot
 		http_args.push_back(HttpArg("chat_id", chat_id));
 		http_args.push_back(HttpArg("permissions", permissions->parse_to_json()));
 
-		HttpClient http_client("https://api.telegram.org/bot" + m_token + "/restrictChatMember", http_args);
+		HttpClient http_client("https://api.telegram.org/bot" + m_token + "/setChatPermissions", http_args);
 		std::string json = http_client.send_post_req();
 
 		rapidjson::Document doc;
@@ -1546,7 +1546,7 @@ namespace tgbot
 		std::vector<HttpArg> http_args;
 		http_args.push_back(HttpArg("chat_id", chat_id));
 
-		HttpClient http_client("https://api.telegram.org/bot" + m_token + "/getChatMembersCount", http_args);
+		HttpClient http_client("https://api.telegram.org/bot" + m_token + "/getChatMember", http_args);
 		std::string json = http_client.send_post_req();
 
 		rapidjson::Document doc;
