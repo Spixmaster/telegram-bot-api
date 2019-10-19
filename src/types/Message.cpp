@@ -39,7 +39,7 @@ namespace tgbot
 			forward_from_message_id = doc["forward_from_message_id"].GetInt();
 
 		if(doc.HasMember("forward_signature"))
-			forward_signature = doc["forward_signature"].GetInt();
+			forward_signature = doc["forward_signature"].GetString();
 
 		if(doc.HasMember("forward_sender_name"))
 			forward_sender_name = doc["forward_sender_name"].GetString();
