@@ -123,6 +123,9 @@ namespace tgbot
 		{
 			std::cerr << "Error: Request's status code is not 200!" << std::endl;
 
+			//so that the parsing does not complain that the response is not a json object
+			response = "{}";
+
 			rapidjson::Document doc;
 			doc.Parse(response.c_str());
 			if(doc.HasMember("description"))
