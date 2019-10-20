@@ -4,6 +4,7 @@
 #include <tgbot/http/HttpClient.h>
 #include <tgbot/http/InputFile.h>
 #include <tgbot/SpecialTools.h>
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -57,6 +58,15 @@ namespace tgbot
 		if(http_code != 200)
 		{
 			std::cerr << "Error: Request's status code is not 200!" << std::endl;
+
+			//so that the parsing does not complain that the response is not a json object
+			if(!Tools::starts_w(response, "{") || !Tools::ends_w(response, "}"))
+				response = "{}";
+
+			rapidjson::Document doc;
+			doc.Parse(response.c_str());
+			if(doc.HasMember("description"))
+				std::cerr << doc["description"].GetString() << std::endl;
 			//so that assertion does not fail that the response is a json object as Message(std::string json) is built with the response
 			return "{}";
 		}
@@ -124,7 +134,8 @@ namespace tgbot
 			std::cerr << "Error: Request's status code is not 200!" << std::endl;
 
 			//so that the parsing does not complain that the response is not a json object
-			response = "{}";
+			if(!Tools::starts_w(response, "{") || !Tools::ends_w(response, "}"))
+				response = "{}";
 
 			rapidjson::Document doc;
 			doc.Parse(response.c_str());
