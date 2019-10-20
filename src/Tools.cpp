@@ -1,5 +1,5 @@
-#include "tgbot/Tools.h"
-#include "tgbot/Constants.h"
+#include "Tools.h"
+#include "Constants.h"
 #include <iostream>
 #include <fstream>
 #include <cmath>
@@ -85,15 +85,14 @@ namespace tgbot
 				{
 					std::string cur_ln;
 					std::getline(inf, cur_ln);
-					if(cur_ln != "")
-						cont.append(cur_ln + "\n");
+					cont.append(cur_ln + "\n");
 				}
 			}
 			return cont;
 		}
 		else
 		{
-			tgbot::Constants::file_non_existent(file);
+			Constants::file_non_existent(file);
 			return "";
 		}
 	}
@@ -124,7 +123,7 @@ namespace tgbot
 		}
 		else
 		{
-			tgbot::Constants::file_non_existent(file);
+			Constants::file_non_existent(file);
 			return "";
 		}
 	}
@@ -157,7 +156,7 @@ namespace tgbot
 		}
 		else
 		{
-			tgbot::Constants::file_non_existent(file);
+			Constants::file_non_existent(file);
 			return 0;
 		}
 	}
@@ -202,7 +201,7 @@ namespace tgbot
 		}
 		else
 		{
-			tgbot::Constants::file_non_existent(file);
+			Constants::file_non_existent(file);
 			return "";
 		}
 	}
@@ -265,7 +264,7 @@ namespace tgbot
 		}
 		else
 		{
-			tgbot::Constants::file_non_existent(file);
+			Constants::file_non_existent(file);
 			return false;
 		}
 	}
@@ -324,7 +323,7 @@ namespace tgbot
 		}
 		else
 		{
-			tgbot::Constants::file_non_existent(file);
+			Constants::file_non_existent(file);
 			return "";
 		}
 	}
@@ -370,7 +369,7 @@ namespace tgbot
 		}
 		else
 		{
-			tgbot::Constants::file_non_existent(file);
+			Constants::file_non_existent(file);
 			return "";
 		}
 	}
@@ -466,7 +465,7 @@ namespace tgbot
 		}
 		else
 		{
-			tgbot::Constants::file_non_existent(file);
+			Constants::file_non_existent(file);
 			return "";
 		}
 	}
@@ -492,7 +491,7 @@ namespace tgbot
 			}
 		}
 		else
-			tgbot::Constants::file_non_existent(file);
+			Constants::file_non_existent(file);
 		return 0;
 	}
 
