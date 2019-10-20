@@ -1,5 +1,5 @@
-#ifndef TOOLS_H
-#define TOOLS_H
+#ifndef TGBOT_TOOLS_H
+#define TGBOT_TOOLS_H
 
 #include <string>
 #include <vector>
@@ -49,10 +49,10 @@ namespace tgbot
 		static std::vector<std::string> get_args_w_lns(const std::string &str);
 
 		/*
-		 * @brief neglects empty lines
+		 * @brief considers empty lines
 		 * @param file: path to file whose content we want
 		 * @return everything from file in string
-		 * @return new line included at end
+		 * @return new line included at end which is important as when appending stuff I assume that it goes into a new line
 		 */
 		static std::string get_file_cont(const std::string &file);
 
