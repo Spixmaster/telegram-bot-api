@@ -49,23 +49,15 @@ namespace tgbot
 		static std::vector<std::string> get_args_w_lns(const std::string &str);
 
 		/*
-		 * @brief neglects empty lines
-		 * @param file: path to file whose content we want
-		 * @return everything from file in string
-		 * @return new line included at end which is important as when appending stuff I assume that it goes into a new line
-		 */
-		static std::string get_file_cont_wo_lns(const std::string &file);
-
-		/*
 		 * @brief considers empty lines
 		 * @param file: path to file whose content we want
 		 * @return everything from file in string
 		 * @return new line included at end which is important as when appending stuff I assume that it goes into a new line
 		 */
-		static std::string get_file_cont_w_lns(const std::string &file);
+		static std::string get_file_cont(const std::string &file);
 
 		/*
-		 * @brief neglects empty lines
+		 * @brief considers empty lines
 		 * @param file: path to file whose content we want
 		 * @param srch: string whose line shall not be included
 		 * @return everything but the line which contains the search string

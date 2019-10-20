@@ -72,33 +72,7 @@ namespace tgbot
 		return args;
 	}
 
-	std::string Tools::get_file_cont_wo_lns(const std::string &file)
-	{
-		if(Tools::file_exists(file))
-		{
-			std::ifstream inf(file);
-			std::string cont;
-
-			if(inf.is_open())
-			{
-				while (!inf.eof())
-				{
-					std::string cur_ln;
-					std::getline(inf, cur_ln);
-					if(cur_ln != "")
-						cont.append(cur_ln + "\n");
-				}
-			}
-			return cont;
-		}
-		else
-		{
-			Constants::file_non_existent(file);
-			return "";
-		}
-	}
-
-	std::string Tools::get_file_cont_w_lns(const std::string &file)
+	std::string Tools::get_file_cont(const std::string &file)
 	{
 		if(Tools::file_exists(file))
 		{
@@ -113,7 +87,16 @@ namespace tgbot
 					std::getline(inf, cur_ln);
 					cont.append(cur_ln + "\n");
 				}
+
+				/*
+				 * we need to do this as there is always a trailing \n at the end of the file
+				 * if we would not do this the file would be filled with one more empty line each time
+				 * condition: pop_back of empty string crashes the programme
+				 */
+				if(cont.size() > 0)
+					cont.pop_back();
 			}
+
 			return cont;
 		}
 		else
@@ -141,10 +124,19 @@ namespace tgbot
 					//srch in line
 					if((found = cur_ln.find(srch)) != std::string::npos)
 						continue;
-					else if(cur_ln != "")
+					else
 						cont.append(cur_ln + "\n");
 				}
+
+				/*
+				 * we need to do this as there is always a trailing \n at the end of the file
+				 * if we would not do this the file would be filled with one more empty line each time
+				 * condition: pop_back of empty string crashes the programme
+				 */
+				if(cont.size() > 0)
+					cont.pop_back();
 			}
+
 			return cont;
 		}
 		else
