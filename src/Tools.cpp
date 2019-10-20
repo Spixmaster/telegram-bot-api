@@ -72,7 +72,33 @@ namespace tgbot
 		return args;
 	}
 
-	std::string Tools::get_file_cont(const std::string &file)
+	std::string Tools::get_file_cont_wo_lns(const std::string &file)
+	{
+		if(Tools::file_exists(file))
+		{
+			std::ifstream inf(file);
+			std::string cont;
+
+			if(inf.is_open())
+			{
+				while (!inf.eof())
+				{
+					std::string cur_ln;
+					std::getline(inf, cur_ln);
+					if(cur_ln != "")
+						cont.append(cur_ln + "\n");
+				}
+			}
+			return cont;
+		}
+		else
+		{
+			Constants::file_non_existent(file);
+			return "";
+		}
+	}
+
+	std::string Tools::get_file_cont_w_lns(const std::string &file)
 	{
 		if(Tools::file_exists(file))
 		{
