@@ -4,6 +4,7 @@
 #include <string>
 #include <memory>
 #include "tgbot/http/HttpArg.h"
+#include "tgbot/http/HttpResponse.h"
 
 //@brief class does all http request
 
@@ -38,13 +39,13 @@ namespace tgbot
 		 * @brief makes a simple get request
 		 * @return the server response
 		 */
-		std::string send_get_req();
+		HttpResponse send_get_req();
 
 		/*
 		 * @brief makes a post request
 		 * @return the server response
 		 */
-		std::string send_post_req();
+		HttpResponse send_post_req();
 	};
 }
 

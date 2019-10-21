@@ -29,7 +29,7 @@ namespace tgbot
 	HttpClient::HttpClient(const std::string &url, const std::vector<HttpArg> &http_args) : m_url(url), m_http_args(http_args)
 	{}
 
-	std::string HttpClient::send_get_req()
+	HttpResponse HttpClient::send_get_req()
 	{
 		//###Curl###
 		//beginning
@@ -67,14 +67,21 @@ namespace tgbot
 			doc.Parse(response.c_str());
 			if(doc.HasMember("description"))
 				std::cerr << doc["description"].GetString() << std::endl;
+
 			//so that assertion does not fail that the response is a json object as Message(std::string json) is built with the response
-			return "{}";
+			HttpResponse r;
+			r.response = "{}";
+			r.status_code = http_code;
+			return r;
 		}
 
-		return response;
+		HttpResponse r;
+		r.response = response;
+		r.status_code = http_code;
+		return r;
 	}
 
-	std::string HttpClient::send_post_req()
+	HttpResponse HttpClient::send_post_req()
 	{
 		//###Curl###
 		//beginning
@@ -141,10 +148,17 @@ namespace tgbot
 			doc.Parse(response.c_str());
 			if(doc.HasMember("description"))
 				std::cerr << doc["description"].GetString() << std::endl;
+
 			//so that assertion does not fail that the response is a json object as Message(std::string json) is built with the response
-			return "{}";
+			HttpResponse r;
+			r.response = "{}";
+			r.status_code = http_code;
+			return r;
 		}
 
-		return response;
+		HttpResponse r;
+		r.response = response;
+		r.status_code = http_code;
+		return r;
 	}
 }
