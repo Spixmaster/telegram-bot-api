@@ -155,8 +155,8 @@ namespace tgbot
 			if(Tools::starts_w(response, "{"))
 				std::cout << "starts with {" << std::endl << std::endl;
 
-			if(Tools::starts_w(response, "}"))
-				std::cout << "starts with }" << std::endl << std::endl;
+			if(Tools::ends_w(response, "}"))
+				std::cout << "ends with }" << std::endl << std::endl;
 
 			//so that assertion does not fail that the response is a json object as Message(std::string json) is built with the response
 			HttpResponse r;
