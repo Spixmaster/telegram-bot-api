@@ -149,6 +149,15 @@ namespace tgbot
 					std::cerr << doc["description"].GetString() << std::endl;
 			}
 
+			//todo
+			std::cout << response << std::endl << std::endl << std::endl;
+
+			if(Tools::starts_w(response, "{"))
+				std::cout << "starts with {" << std::endl << std::endl;
+
+			if(Tools::starts_w(response, "}"))
+				std::cout << "starts with }" << std::endl << std::endl;
+
 			//so that assertion does not fail that the response is a json object as Message(std::string json) is built with the response
 			HttpResponse r;
 			r.response = "{}";
