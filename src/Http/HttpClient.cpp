@@ -59,14 +59,14 @@ namespace tgbot
 		{
 			std::cerr << "Error: Request's status code is not 200!" << std::endl;
 
-			//so that the parsing does not complain that the response is not a json object
-			if(!Tools::starts_w(response, "{") || !Tools::ends_w(response, "}"))
-				response = "{}";
-
-			rapidjson::Document doc;
-			doc.Parse(response.c_str());
-			if(doc.HasMember("description"))
-				std::cerr << doc["description"].GetString() << std::endl;
+			//condition that we probably have a json object
+			if(!(Tools::starts_w(response, "{") && Tools::ends_w(response, "}")))
+			{
+				rapidjson::Document doc;
+				doc.Parse(response.c_str());
+				if(doc.HasMember("description"))
+					std::cerr << doc["description"].GetString() << std::endl;
+			}
 
 			//so that assertion does not fail that the response is a json object as Message(std::string json) is built with the response
 			HttpResponse r;
@@ -140,14 +140,14 @@ namespace tgbot
 		{
 			std::cerr << "Error: Request's status code is not 200!" << std::endl;
 
-			//so that the parsing does not complain that the response is not a json object
-			if(!Tools::starts_w(response, "{") || !Tools::ends_w(response, "}"))
-				response = "{}";
-
-			rapidjson::Document doc;
-			doc.Parse(response.c_str());
-			if(doc.HasMember("description"))
-				std::cerr << doc["description"].GetString() << std::endl;
+			//condition that we probably have a json object
+			if(!(Tools::starts_w(response, "{") && Tools::ends_w(response, "}")))
+			{
+				rapidjson::Document doc;
+				doc.Parse(response.c_str());
+				if(doc.HasMember("description"))
+					std::cerr << doc["description"].GetString() << std::endl;
+			}
 
 			//so that assertion does not fail that the response is a json object as Message(std::string json) is built with the response
 			HttpResponse r;
