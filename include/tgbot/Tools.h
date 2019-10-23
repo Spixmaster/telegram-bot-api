@@ -183,6 +183,7 @@ namespace tgbot
 		static long long get_int_ln_end (const std::string &entry);
 
 		/*
+		 * @brief first line is line 1 (not 0)
 		 * @brief gets line "ln_num" of the file "file"
 		 * @brief e.g. gets line 5 of file
 		 * @param file: path to file whose content we want
