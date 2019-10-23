@@ -4,8 +4,8 @@
 
 namespace tgbot
 {
-	std::string Constants::version = "1.0.41";
-	std::string Constants::release = "22.Oct.2019";
+	std::string Constants::version = "1.0.42";
+	std::string Constants::release = "23.Oct.2019";
 
 	void Constants::file_non_existent(const std::string &file)
 	{
