@@ -42,6 +42,8 @@ namespace tgbot
 
 		//options
 		curl_easy_setopt(curl, CURLOPT_URL, m_url.c_str());
+		curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 30L);
+		curl_easy_setopt(curl, CURLOPT_TIMEOUT, 120L);
 
 		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
 		curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response);
@@ -96,6 +98,8 @@ namespace tgbot
 
 		//options
 		curl_easy_setopt(curl, CURLOPT_URL, m_url.c_str());
+		curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 30L);
+		curl_easy_setopt(curl, CURLOPT_TIMEOUT, 120L);
 
 		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
 		curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response);
