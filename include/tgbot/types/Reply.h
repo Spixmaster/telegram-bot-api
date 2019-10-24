@@ -14,7 +14,7 @@ namespace tgbot
 		virtual ~Reply();
 
 		//member functions
-		virtual std::string parse_to_json();
+		virtual std::string parse_to_json() const;
 	};
 }
 

@@ -5,7 +5,7 @@ namespace tgbot
 	Reply::~Reply()
 	{}
 
-	std::string Reply::parse_to_json()
+	std::string Reply::parse_to_json() const
 	{
 		std::string json = "{";
 
