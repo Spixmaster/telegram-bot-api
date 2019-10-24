@@ -160,6 +160,10 @@ namespace tgbot
 			return r;
 		}
 
+		//todo
+		std::cout << "response: " << std::endl;
+		std::cout << response << std::endl;
+
 		HttpResponse r;
 		r.response = response;
 		r.status_code = http_code;
