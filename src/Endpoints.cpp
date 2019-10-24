@@ -172,10 +172,6 @@ namespace tgbot
 		if(doc.HasMember("result"))
 			msg = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["result"]));
 
-		//todo
-		std::cout << "reply_markup->parse_to_json()" << std::endl;
-		std::cout << reply_markup->parse_to_json() << std::endl;
-
 		return msg;
 	}
 
