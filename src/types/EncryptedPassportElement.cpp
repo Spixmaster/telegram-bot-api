@@ -77,7 +77,10 @@ namespace tgbot
 			files_cont.append(", ");
 		}
 
-		//if size() == 0 pop_back() would crash the programme
+		/*
+		 * if size() == 0 pop_back() would crash the programme
+		 * files and not files_cont in condition as in that case we would destroy the json array
+		 */
 		if(files.size() > 0)
 		{
 			//finish json array
@@ -109,7 +112,10 @@ namespace tgbot
 			translation_cont.append(", ");
 		}
 
-		//if size() == 0 pop_back() would crash the programme
+		/*
+		 * if size() == 0 pop_back() would crash the programme
+		 * translation and not translation_cont in condition as in that case we would destroy the json array
+		 */
 		if(translation.size() > 0)
 		{
 			//finish json array

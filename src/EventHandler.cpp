@@ -37,7 +37,9 @@ namespace tgbot
 					//get argument 0
 					std::vector<std::string> args = Tools::get_args(update->message->text);
 					//cut off first char
-					std::string cmd = Tools::cut_off_first_char(args.at(0));
+					std::string cmd;
+					if(args.size() >= 1)
+						cmd = Tools::cut_off_first_char(args.at(0));
 
 					//known command
 					if(!(m_on_cmd_listener_ls.find(cmd) == m_on_cmd_listener_ls.end()))
@@ -77,7 +79,9 @@ namespace tgbot
 					//get argument 0
 					std::vector<std::string> args = Tools::get_args(update->edited_message->text);
 					//cut off first char
-					std::string cmd = Tools::cut_off_first_char(args.at(0));
+					std::string cmd;
+					if(args.size() >= 1)
+						cmd = Tools::cut_off_first_char(args.at(0));
 
 					//known command
 					if(!(m_on_cmd_listener_ls.find(cmd) == m_on_cmd_listener_ls.end()))
@@ -117,7 +121,9 @@ namespace tgbot
 					//get argument 0
 					std::vector<std::string> args = Tools::get_args(update->channel_post->text);
 					//cut off first char
-					std::string cmd = Tools::cut_off_first_char(args.at(0));
+					std::string cmd;
+					if(args.size() >= 1)
+						cmd = Tools::cut_off_first_char(args.at(0));
 
 					//known command
 					if(!(m_on_cmd_listener_ls.find(cmd) == m_on_cmd_listener_ls.end()))
@@ -157,7 +163,9 @@ namespace tgbot
 					//get argument 0
 					std::vector<std::string> args = Tools::get_args(update->edited_channel_post->text);
 					//cut off first char
-					std::string cmd = Tools::cut_off_first_char(args.at(0));
+					std::string cmd;
+					if(args.size() >= 1)
+						cmd = Tools::cut_off_first_char(args.at(0));
 
 					//known command
 					if(!(m_on_cmd_listener_ls.find(cmd) == m_on_cmd_listener_ls.end()))

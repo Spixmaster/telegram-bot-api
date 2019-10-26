@@ -24,7 +24,10 @@ namespace tgbot
 			allowed_updates_json.append(", ");
 		}
 
-		//if size() == 0 pop_back() would crash the programme
+		/*
+		 * if size() == 0 pop_back() would crash the programme
+		 * allowed_updates and not allowed_updates_json in condition as in that case we would destroy the json array
+		 */
 		if(allowed_updates.size() > 0)
 		{
 			//finish json array
@@ -74,7 +77,10 @@ namespace tgbot
 			allowed_updates_json.append(", ");
 		}
 
-		//if size() == 0 pop_back() would crash the programme
+		/*
+		 * if size() == 0 pop_back() would crash the programme
+		 * allowed_updates and not allowed_updates_json in condition as in that case we would destroy the json array
+		 */
 		if(allowed_updates.size() > 0)
 		{
 			//finish json array
@@ -937,7 +943,10 @@ namespace tgbot
 			media_json.append(", ");
 		}
 
-		//if size() == 0 pop_back() would crash the programme
+		/*
+		 * if size() == 0 pop_back() would crash the programme
+		 * media and not media_json in condition as in that case we would destroy the json array
+		 */
 		if(media.size() > 0)
 		{
 			//finish json array
@@ -1121,24 +1130,27 @@ namespace tgbot
 			const int &reply_to_message_id, const Reply::ptr &reply_markup) const
 	{
 		//create json array of options
-		std::string json_options = "[";
+		std::string options_json = "[";
 		for(std::size_t j = 0; j < options.size(); ++j)
-			json_options.append("\"" + options.at(j) + "\", ");
+			options_json.append("\"" + options.at(j) + "\", ");
 
-		//if size() == 0 pop_back() would crash the programme
+		/*
+		 * if size() == 0 pop_back() would crash the programme
+		 * options and not options_json in condition as in that case we would destroy the json array
+		 */
 		if(options.size() > 0)
 		{
 			//finish json array
-			json_options.pop_back();
-			json_options.pop_back();
+			options_json.pop_back();
+			options_json.pop_back();
 		}
-		json_options.append("]");
+		options_json.append("]");
 
 		//http args
 		std::vector<HttpArg> http_args;
 		http_args.push_back(HttpArg("chat_id", chat_id));
 		http_args.push_back(HttpArg("question", question));
-		http_args.push_back(HttpArg("options", json_options));
+		http_args.push_back(HttpArg("options", options_json));
 		http_args.push_back(HttpArg("disable_notification", disable_notification));
 		http_args.push_back(HttpArg("reply_to_message_id", reply_to_message_id));
 		http_args.push_back(HttpArg("reply_markup", reply_markup->parse_to_json()));
@@ -2088,7 +2100,10 @@ namespace tgbot
 			results_json.append(", ");
 		}
 
-		//if size() == 0 pop_back() would crash the programme
+		/*
+		 * if size() == 0 pop_back() would crash the programme
+		 * results and not results_json in condition as in that case we would destroy the json array
+		 */
 		if(results.size() > 0)
 		{
 			//finish json array
@@ -2136,7 +2151,10 @@ namespace tgbot
 			prices_json.append(", ");
 		}
 
-		//if size() == 0 pop_back() would crash the programme
+		/*
+		 * if size() == 0 pop_back() would crash the programme
+		 * prices and not prices_json in condition as in that case we would destroy the json array
+		 */
 		if(prices.size() > 0)
 		{
 			//finish json array
@@ -2199,7 +2217,10 @@ namespace tgbot
 			shipping_options_json.append(", ");
 		}
 
-		//if size() == 0 pop_back() would crash the programme
+		/*
+		 * if size() == 0 pop_back() would crash the programme
+		 * shipping_options and not shipping_options_json in condition as in that case we would destroy the json array
+		 */
 		if(shipping_options.size() > 0)
 		{
 			//finish json array
@@ -2260,7 +2281,10 @@ namespace tgbot
 			errors_json.append(", ");
 		}
 
-		//if size() == 0 pop_back() would crash the programme
+		/*
+		 * if size() == 0 pop_back() would crash the programme
+		 * errors and not errors_json in condition as in that case we would destroy the json array
+		 */
 		if(errors.size() > 0)
 		{
 			//finish json array

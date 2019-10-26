@@ -46,7 +46,10 @@ namespace tgbot
 			prices_cont.append(", ");
 		}
 
-		//if size() == 0 pop_back() would crash the programme
+		/*
+		 * if size() == 0 pop_back() would crash the programme
+		 * prices and not prices_cont in condition as in that case we would destroy the json array
+		 */
 		if(prices.size() > 0)
 		{
 			//finish json array

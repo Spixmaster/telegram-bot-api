@@ -49,7 +49,10 @@ namespace tgbot
 			file_hashes_cont.append(", ");
 		}
 
-		//if size() == 0 pop_back() would crash the programme
+		/*
+		 * if size() == 0 pop_back() would crash the programme
+		 * file_hashes and not file_hashes_cont in condition as in that case we would destroy the json array
+		 */
 		if(file_hashes.size() > 0)
 		{
 			//finish json array
