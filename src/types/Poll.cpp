@@ -50,7 +50,10 @@ namespace tgbot
 			options_cont.append(", ");
 		}
 
-		//if size() == 0 pop_back() would crash the programme
+		/*
+		 * if size() == 0 pop_back() would crash the programme
+		 * options and not options_cont in condition as in that case we would destroy the json array
+		 */
 		if(options.size() > 0)
 		{
 			//finish json array

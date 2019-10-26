@@ -60,7 +60,10 @@ namespace tgbot
 			photo_cont.append(", ");
 		}
 
-		//if size() == 0 pop_back() would crash the programme
+		/*
+		 * if size() == 0 pop_back() would crash the programme
+		 * photo and not photo_cont in condition as in that case we would destroy the json array
+		 */
 		if(photo.size() > 0)
 		{
 			//finish json array
@@ -84,7 +87,10 @@ namespace tgbot
 			text_entities_cont.append(", ");
 		}
 
-		//if size() == 0 pop_back() would crash the programme
+		/*
+		 * if size() == 0 pop_back() would crash the programme
+		 * text_entities and not text_entities_cont in condition as in that case we would destroy the json array
+		 */
 		if(text_entities.size() > 0)
 		{
 			//finish json array

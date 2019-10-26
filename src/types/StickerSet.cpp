@@ -62,7 +62,10 @@ namespace tgbot
 			sticker_cont.append(", ");
 		}
 
-		//if size() == 0 pop_back() would crash the programme
+		/*
+		 * if size() == 0 pop_back() would crash the programme
+		 * sticker and not sticker_cont in condition as in that case we would destroy the json array
+		 */
 		if(sticker.size() > 0)
 		{
 			//finish json array

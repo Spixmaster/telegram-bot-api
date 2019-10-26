@@ -256,7 +256,10 @@ namespace tgbot
 			entities_cont.append(", ");
 		}
 
-		//if size() == 0 pop_back() would crash the programme
+		/*
+		 * if size() == 0 pop_back() would crash the programme
+		 * entities and not entities_cont in condition as in that case we would destroy the json array
+		 */
 		if(entities.size() > 0)
 		{
 			//finish json array
@@ -276,7 +279,10 @@ namespace tgbot
 			caption_entities_cont.append(", ");
 		}
 
-		//if size() == 0 pop_back() would crash the programme
+		/*
+		 * if size() == 0 pop_back() would crash the programme
+		 * caption_entities and not caption_entities_cont in condition as in that case we would destroy the json array
+		 */
 		if(caption_entities.size() > 0)
 		{
 			//finish json array
@@ -312,7 +318,10 @@ namespace tgbot
 			photo_cont.append(", ");
 		}
 
-		//if size() == 0 pop_back() would crash the programme
+		/*
+		 * if size() == 0 pop_back() would crash the programme
+		 * photo and not photo_cont in condition as in that case we would destroy the json array
+		 */
 		if(photo.size() > 0)
 		{
 			//finish json array
@@ -368,7 +377,10 @@ namespace tgbot
 			new_chat_members_cont.append(", ");
 		}
 
-		//if size() == 0 pop_back() would crash the programme
+		/*
+		 * if size() == 0 pop_back() would crash the programme
+		 * new_chat_members and not new_chat_members_cont in condition as in that case we would destroy the json array
+		 */
 		if(new_chat_members.size() > 0)
 		{
 			//finish json array
@@ -396,7 +408,10 @@ namespace tgbot
 			new_chat_photo_cont.append(", ");
 		}
 
-		//if size() == 0 pop_back() would crash the programme
+		/*
+		 * if size() == 0 pop_back() would crash the programme
+		 * new_chat_photo and not new_chat_photo_cont in condition as in that case we would destroy the json array
+		 */
 		if(new_chat_photo.size() > 0)
 		{
 			//finish json array

@@ -76,7 +76,10 @@ namespace tgbot
 			allowed_updates_cont.append(", ");
 		}
 
-		//if size() == 0 pop_back() would crash the programme
+		/*
+		 * if size() == 0 pop_back() would crash the programme
+		 * allowed_updates and not allowed_updates_cont in condition as in that case we would destroy the json array
+		 */
 		if(allowed_updates.size() > 0)
 		{
 			//finish json array

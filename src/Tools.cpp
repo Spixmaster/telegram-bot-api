@@ -226,7 +226,7 @@ namespace tgbot
 
 	char Tools::get_first_char(const std::string &str)
 	{
-		if(str != "")
+		if(str.size() >= 1)
 		{
 			return str.at(0);
 		}

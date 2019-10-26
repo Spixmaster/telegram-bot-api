@@ -80,8 +80,11 @@ namespace tgbot
 		}
 
 		//remove ", "
-		json.pop_back();
-		json.pop_back();
+		if(json.size() > 0)
+		{
+			json.pop_back();
+			json.pop_back();
+		}
 
 		json.append("], ");
 
