@@ -33,7 +33,7 @@ namespace tgbot
 	{
 		//###Curl###
 		//beginning
-		curl_global_init(CURL_GLOBAL_DEFAULT);
+		curl_global_init(CURL_GLOBAL_ALL);
 		CURL *curl;
 		CURLcode result;
 		curl = curl_easy_init();
@@ -90,7 +90,7 @@ namespace tgbot
 	{
 		//###Curl###
 		//beginning
-		curl_global_init(CURL_GLOBAL_DEFAULT);
+		curl_global_init(CURL_GLOBAL_ALL);
 		CURL *curl;
 		CURLcode result;
 		curl_mime *form = NULL;
