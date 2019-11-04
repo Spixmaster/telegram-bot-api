@@ -40,41 +40,44 @@ namespace tgbot
 		std::string response;
 		long http_code = 0;
 
-		//options
-		curl_easy_setopt(curl, CURLOPT_URL, m_url.c_str());
-		curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 30L);
-		curl_easy_setopt(curl, CURLOPT_TIMEOUT, 120L);
-
-		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
-		curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response);
-
-		//end
-		result = curl_easy_perform(curl);
-		curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &http_code);
-		curl_easy_cleanup(curl);
-		curl_global_cleanup();
-
-		if(result != CURLE_OK)
-				std::cerr << "curl_easy_perform() failed: " << curl_easy_strerror(result) << std::endl;
-
-		if(http_code != 200)
+		if(curl)
 		{
-			std::cerr << "Error: Request's status code is not 200!" << std::endl;
+			//options
+			curl_easy_setopt(curl, CURLOPT_URL, m_url.c_str());
+			curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 30L);
+			curl_easy_setopt(curl, CURLOPT_TIMEOUT, 120L);
 
-			//condition that we probably have a json object
-			if(Tools::starts_w(response, "{") && Tools::ends_w(response, "}"))
+			curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
+			curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response);
+
+			//end
+			result = curl_easy_perform(curl);
+			curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &http_code);
+			curl_easy_cleanup(curl);
+			curl_global_cleanup();
+
+			if(result != CURLE_OK)
+					std::cerr << "curl_easy_perform() failed: " << curl_easy_strerror(result) << std::endl;
+
+			if(http_code != 200)
 			{
-				rapidjson::Document doc;
-				doc.Parse(response.c_str());
-				if(doc.HasMember("description"))
-					std::cerr << doc["description"].GetString() << std::endl;
-			}
+				std::cerr << "Error: Request's status code is not 200!" << std::endl;
 
-			//so that assertion does not fail that the response is a json object as Message(std::string json) is built with the response
-			HttpResponse r;
-			r.response = "{}";
-			r.status_code = http_code;
-			return r;
+				//condition that we probably have a json object
+				if(Tools::starts_w(response, "{") && Tools::ends_w(response, "}"))
+				{
+					rapidjson::Document doc;
+					doc.Parse(response.c_str());
+					if(doc.HasMember("description"))
+						std::cerr << doc["description"].GetString() << std::endl;
+				}
+
+				//so that assertion does not fail that the response is a json object as Message(std::string json) is built with the response
+				HttpResponse r;
+				r.response = "{}";
+				r.status_code = http_code;
+				return r;
+			}
 		}
 
 		HttpResponse r;
@@ -96,68 +99,71 @@ namespace tgbot
 		std::string response;
 		long http_code = 0;
 
-		//options
-		curl_easy_setopt(curl, CURLOPT_URL, m_url.c_str());
-		curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 30L);
-		curl_easy_setopt(curl, CURLOPT_TIMEOUT, 120L);
-
-		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
-		curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response);
-
-		//form
-		form = curl_mime_init(curl);
-			//add each field
-		for (std::size_t j = 0; j < m_http_args.size(); ++j)
+		if(curl)
 		{
-			if(std::holds_alternative<long long>(m_http_args.at(j).m_value))
+			//options
+			curl_easy_setopt(curl, CURLOPT_URL, m_url.c_str());
+			curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 30L);
+			curl_easy_setopt(curl, CURLOPT_TIMEOUT, 120L);
+
+			curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
+			curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response);
+
+			//form
+			form = curl_mime_init(curl);
+				//add each field
+			for (std::size_t j = 0; j < m_http_args.size(); ++j)
 			{
-				field = curl_mime_addpart(form);
-				curl_mime_name(field, m_http_args.at(j).m_key.c_str());
-				curl_mime_data(field, std::to_string(std::get<long long>(m_http_args.at(j).m_value)).c_str(), CURL_ZERO_TERMINATED);
+				if(std::holds_alternative<long long>(m_http_args.at(j).m_value))
+				{
+					field = curl_mime_addpart(form);
+					curl_mime_name(field, m_http_args.at(j).m_key.c_str());
+					curl_mime_data(field, std::to_string(std::get<long long>(m_http_args.at(j).m_value)).c_str(), CURL_ZERO_TERMINATED);
+				}
+				else if(std::holds_alternative<std::string>(m_http_args.at(j).m_value))
+				{
+					field = curl_mime_addpart(form);
+					curl_mime_name(field, m_http_args.at(j).m_key.c_str());
+					curl_mime_data(field, std::get<std::string>(m_http_args.at(j).m_value).c_str(), CURL_ZERO_TERMINATED);
+				}
+				//value is type of InputFile::ptr
+				else
+				{
+					field = curl_mime_addpart(form);
+					curl_mime_name(field, m_http_args.at(j).m_key.c_str());
+					curl_mime_filedata(field, std::get<InputFile::ptr>(m_http_args.at(j).m_value)->m_path.c_str());
+				}
 			}
-			else if(std::holds_alternative<std::string>(m_http_args.at(j).m_value))
+			curl_easy_setopt(curl, CURLOPT_MIMEPOST, form);
+
+			//end
+			result = curl_easy_perform(curl);
+			curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &http_code);
+			curl_easy_cleanup(curl);
+			curl_global_cleanup();
+
+			if(result != CURLE_OK)
+					std::cerr << "curl_easy_perform() failed: " << curl_easy_strerror(result) << std::endl;
+
+			if(http_code != 200)
 			{
-				field = curl_mime_addpart(form);
-				curl_mime_name(field, m_http_args.at(j).m_key.c_str());
-				curl_mime_data(field, std::get<std::string>(m_http_args.at(j).m_value).c_str(), CURL_ZERO_TERMINATED);
+				std::cerr << "Error: Request's status code is not 200!" << std::endl;
+
+				//condition that we probably have a json object
+				if(Tools::starts_w(response, "{") && Tools::ends_w(response, "}"))
+				{
+					rapidjson::Document doc;
+					doc.Parse(response.c_str());
+					if(doc.HasMember("description"))
+						std::cerr << doc["description"].GetString() << std::endl;
+				}
+
+				//so that assertion does not fail that the response is a json object as Message(std::string json) is built with the response
+				HttpResponse r;
+				r.response = "{}";
+				r.status_code = http_code;
+				return r;
 			}
-			//value is type of InputFile::ptr
-			else
-			{
-				field = curl_mime_addpart(form);
-				curl_mime_name(field, m_http_args.at(j).m_key.c_str());
-				curl_mime_filedata(field, std::get<InputFile::ptr>(m_http_args.at(j).m_value)->m_path.c_str());
-			}
-		}
-		curl_easy_setopt(curl, CURLOPT_MIMEPOST, form);
-
-		//end
-		result = curl_easy_perform(curl);
-		curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &http_code);
-		curl_easy_cleanup(curl);
-		curl_global_cleanup();
-
-		if(result != CURLE_OK)
-				std::cerr << "curl_easy_perform() failed: " << curl_easy_strerror(result) << std::endl;
-
-		if(http_code != 200)
-		{
-			std::cerr << "Error: Request's status code is not 200!" << std::endl;
-
-			//condition that we probably have a json object
-			if(Tools::starts_w(response, "{") && Tools::ends_w(response, "}"))
-			{
-				rapidjson::Document doc;
-				doc.Parse(response.c_str());
-				if(doc.HasMember("description"))
-					std::cerr << doc["description"].GetString() << std::endl;
-			}
-
-			//so that assertion does not fail that the response is a json object as Message(std::string json) is built with the response
-			HttpResponse r;
-			r.response = "{}";
-			r.status_code = http_code;
-			return r;
 		}
 
 		HttpResponse r;
