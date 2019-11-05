@@ -26,7 +26,7 @@ namespace tgbot
 
 	HttpResponse HttpClient::send_get_req()
 	{
-		Poco::Net::HTTPResponse::HTTPStatus http_response_code;
+		Poco::Net::HTTPResponse::HTTPStatus http_response_code = Poco::Net::HTTPResponse::HTTPStatus::HTTP_BAD_REQUEST;
 		std::string http_response_txt;
 
 		try
@@ -95,7 +95,7 @@ namespace tgbot
 
 	HttpResponse HttpClient::send_post_req()
 	{
-		Poco::Net::HTTPResponse::HTTPStatus http_response_code;
+		Poco::Net::HTTPResponse::HTTPStatus http_response_code = Poco::Net::HTTPResponse::HTTPStatus::HTTP_BAD_REQUEST;;
 		std::string http_response_txt;
 
 		try
