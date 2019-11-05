@@ -18,20 +18,20 @@ namespace tgbot
 
 	private:
 		//member variables
-		std::string m_url;
+		std::string m_uri;
 		std::vector<HttpArg> m_http_args;
 
 	public:
 		//constructors
 
-		//@param url: to which server the request shall be sent
-		HttpClient(const std::string &url);
+		//@param uri: to which server the request shall be sent
+		HttpClient(const std::string &uri);
 
 		/*
-		 * @param url: to which server the request shall be sent
+		 * @param uri: to which server the request shall be sent
 		 * @param http_args: http args which are sent with the request
 		 */
-		HttpClient(const std::string &url, const std::vector<HttpArg> &http_args);
+		HttpClient(const std::string &uri, const std::vector<HttpArg> &http_args);
 
 		//member functions
 
