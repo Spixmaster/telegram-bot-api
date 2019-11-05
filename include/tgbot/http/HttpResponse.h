@@ -14,8 +14,8 @@ namespace tgbot
 		typedef std::shared_ptr<HttpResponse> ptr;
 
 		//member variables
-		std::string response;
-		int status_code = 0;
+		std::string code;
+		std::string txt;
 	};
 }
 
