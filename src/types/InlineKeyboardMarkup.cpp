@@ -49,7 +49,7 @@ namespace tgbot
 				json.append(", ");
 
 				//option is stated
-				if(inline_keyboard.at(j).at(k)->url != "")
+				if(!inline_keyboard.at(j).at(k)->url.empty())
 				{
 					json.append("\"url\": \"" + inline_keyboard.at(j).at(k)->url + "\"");
 					json.append("}");
@@ -68,17 +68,17 @@ namespace tgbot
 
 					json.append("}");
 				}
-				else if(inline_keyboard.at(j).at(k)->callback_data != "")
+				else if(!inline_keyboard.at(j).at(k)->callback_data.empty())
 				{
 					json.append("\"callback_data\": \"" + inline_keyboard.at(j).at(k)->callback_data + "\"");
 					json.append("}");
 				}
-				else if(inline_keyboard.at(j).at(k)->switch_inline_query != "")
+				else if(!inline_keyboard.at(j).at(k)->switch_inline_query.empty())
 				{
 					json.append("\"switch_inline_query\": \"" + inline_keyboard.at(j).at(k)->switch_inline_query + "\"");
 					json.append("}");
 				}
-				else if(inline_keyboard.at(j).at(k)->switch_inline_query_current_chat != "")
+				else if(!inline_keyboard.at(j).at(k)->switch_inline_query_current_chat.empty())
 				{
 					json.append("\"switch_inline_query_current_chat\": \"" + inline_keyboard.at(j).at(k)->switch_inline_query_current_chat + "\"");
 					json.append("}");
