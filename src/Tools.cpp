@@ -31,8 +31,8 @@ namespace tgbot
 				word += str.at(j);
 
 			//detect words
-			//&& word != "" --> so that e. g. several spaces would not add an empty slot in args
-			if((str.at(j) == ' ' || str.at(j) == '\n') && word != "")
+			//&& !word.empty() --> so that e. g. several spaces would not add an empty slot in args
+			if((str.at(j) == ' ' || str.at(j) == '\n') && !word.empty())
 			{
 				args.push_back(word);
 				word = "";
@@ -326,7 +326,7 @@ namespace tgbot
 							break;
 						std::string cache;
 						std::getline(inf, cache);
-						if(cache != "")
+						if(!cache.empty())
 							str.append(cache + "\n");
 						++count;
 					}
@@ -370,7 +370,7 @@ namespace tgbot
 						{
 							std::string cache;
 							std::getline(inf, cache);
-							if(cache != "")
+							if(!cache.empty())
 								str.append(cache + "\n");
 
 							++count;
@@ -394,7 +394,7 @@ namespace tgbot
 
 	long long Tools::get_int_ln_end (const std::string &entry)
 	{
-		if(entry != "")
+		if(!entry.empty())
 		{
 			long long number = 0;
 			bool is_neg = false;
@@ -502,7 +502,7 @@ namespace tgbot
 					std::string cache;
 					std::getline(inf, cache);
 
-					if(cache != "")
+					if(!cache.empty())
 						++x;
 				}
 				return x;

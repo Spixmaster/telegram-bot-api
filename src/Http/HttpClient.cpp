@@ -112,7 +112,7 @@ namespace tgbot
 		        "ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH");
 			Poco::Net::HTTPSClientSession session(uri.getHost(), uri.getPort(), context);
 			session.setTimeout(Poco::Timespan(150L, 0L));
-			Poco::Net::HTTPRequest req(Poco::Net::HTTPRequest::HTTP_GET, path_query, Poco::Net::HTTPMessage::HTTP_1_1);
+			Poco::Net::HTTPRequest req(Poco::Net::HTTPRequest::HTTP_POST, path_query, Poco::Net::HTTPMessage::HTTP_1_1);
 
 				//html form
 			Poco::Net::HTMLForm form(Poco::Net::HTMLForm::ENCODING_MULTIPART);
