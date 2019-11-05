@@ -49,10 +49,9 @@ namespace tgbot
 
 			//response
 			Poco::Net::HTTPResponse response;
-			http_response_code = response.getStatus();
-
 			std::ostringstream oss;
 			std::istream  &in = session.receiveResponse(response);
+			http_response_code = response.getStatus();
 			Poco::StreamCopier::copyStream(in, oss);
 			http_response_txt = oss.str();
 
@@ -116,8 +115,7 @@ namespace tgbot
 			Poco::Net::HTTPRequest req(Poco::Net::HTTPRequest::HTTP_GET, path_query, Poco::Net::HTTPMessage::HTTP_1_1);
 
 				//html form
-			Poco::Net::HTMLForm form;
-			form.setEncoding(Poco::Net::HTMLForm::ENCODING_MULTIPART);
+			Poco::Net::HTMLForm form(Poco::Net::HTMLForm::ENCODING_MULTIPART);
 					//add each field
 			for (std::size_t j = 0; j < m_http_args.size(); ++j)
 			{
@@ -135,10 +133,9 @@ namespace tgbot
 
 			//response
 			Poco::Net::HTTPResponse response;
-			http_response_code = response.getStatus();
-
 			std::ostringstream oss;
 			std::istream  &in = session.receiveResponse(response);
+			http_response_code = response.getStatus();
 			Poco::StreamCopier::copyStream(in, oss);
 			http_response_txt = oss.str();
 
