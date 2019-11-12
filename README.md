@@ -59,3 +59,14 @@ int main()
 	return EXIT_SUCCESS;
 }
 ```
+
+## Known Errors
+The function editMessageMedia() does not work properly although it should as the principle is the same as with other functions. The issue may be from Telegram's side.
+
+## FAQ
+* Q: Can I run a bot with this API which runs 24/7.
+⋅⋅⋅* A: Yes, you can. I can assure you that as I do it myself. There is not a single memory leak so you RAM will not bloat. Additionally, the http requests are completely safe.
+Even if you do wrong action like trying to delete messages with a bot who does not have admin rights and if you send wrong requests to the Telegram server the proper messages will be output to the sterr.
+
+* Q: What happens at night when the internal ip changes or my Internet connection is interrupted due to a blackout or similar?
+⋅⋅⋅* A: The Http client is completely safe. It will just connect again as soon as a connection can be established again.
