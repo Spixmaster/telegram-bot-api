@@ -1,5 +1,7 @@
 # telegram-bot-api
 C++ library for the Telegram bot API.
+Current state: Bot API 4.4 (up to date)
+See the [Telegram documentation](https://core.telegram.org/bots/api)
 
 ## Usage
 ### Dependencies
@@ -16,7 +18,7 @@ For this, do the following steps:
 4. make -j4
 5. sudo make install
 
-#### Libraries that need to be linked (-l)
+#### Libraries that need to be linked (option -l)
 * PocoFoundation
 * PocoNetSSL
 * PocoNet
