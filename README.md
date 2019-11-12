@@ -1,16 +1,20 @@
 # telegram-bot-api
 C++ library for the Telegram bot API.
+
 Current state: Bot API 4.4 (up to date)
+
 See the [Telegram documentation](https://core.telegram.org/bots/api)
 
 ## Usage
 ### Dependencies
 You need to use a C++17 compiler.
+
 The following packages need to be installed:
 ```sh
 sudo apt install libpoco-dev
 ```
 Moreover, [rapdijson](https://github.com/Tencent/rapidjson) needs to be installed.
+
 For this, do the following steps:
 1. git clone https://github.com/Tencent/rapidjson
 2. cd rapidjson
