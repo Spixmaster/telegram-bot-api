@@ -5,6 +5,7 @@
 #include <cmath>
 #include <unistd.h>
 #include <limits.h>
+#include <rapidjson/document.h>
 
 namespace tgbot
 {
@@ -518,5 +519,14 @@ namespace tgbot
 	  char result[ PATH_MAX ];
 	  ssize_t count = readlink( "/proc/self/exe", result, PATH_MAX );
 	  return std::string( result, (count > 0) ? count : 0 );
+	}
+
+	bool Tools::is_json(const std::string &str)
+	{
+		rapidjson::Document doc;
+		doc.Parse(str.c_str());
+		if(doc.IsObject() || doc.IsArray())
+			return true;
+		return false;
 	}
 }
