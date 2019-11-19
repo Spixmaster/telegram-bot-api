@@ -1,5 +1,6 @@
 #include <tgbot/SpecialTools.h>
 #include "tgbot/types/Poll.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -11,23 +12,26 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("id"))
-			id = doc["id"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("id"))
+				id = doc["id"].GetString();
 
-		if(doc.HasMember("question"))
-			question = doc["question"].GetString();
+			if(doc.HasMember("question"))
+				question = doc["question"].GetString();
 
-		if(doc.HasMember("options"))
-			for(std::size_t j = 0; j < doc["options"].GetArray().Size(); ++j)
-			{
-				options.resize(doc["options"].GetArray().Size());
+			if(doc.HasMember("options"))
+				for(std::size_t j = 0; j < doc["options"].GetArray().Size(); ++j)
+				{
+					options.resize(doc["options"].GetArray().Size());
 
-				options.at(j) = std::make_shared<PollOption>(SpecialTools::get_json_obj_as_string(doc["options"][j]));
-			}
+					options.at(j) = std::make_shared<PollOption>(SpecialTools::get_json_as_string(doc["options"][j]));
+				}
 
-		if(doc.HasMember("is_closed"))
-			is_closed = doc["is_closed"].GetBool();
+			if(doc.HasMember("is_closed"))
+				is_closed = doc["is_closed"].GetBool();
+		}
 	}
 
 	std::string Poll::parse_to_json() const

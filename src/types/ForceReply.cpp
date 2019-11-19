@@ -1,4 +1,5 @@
 #include "tgbot/types/ForceReply.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -10,12 +11,15 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("force_reply"))
-			force_reply = doc["force_reply"].GetBool();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("force_reply"))
+				force_reply = doc["force_reply"].GetBool();
 
-		if(doc.HasMember("selective"))
-			selective = doc["selective"].GetBool();
+			if(doc.HasMember("selective"))
+				selective = doc["selective"].GetBool();
+		}
 	}
 
 	std::string ForceReply::parse_to_json() const

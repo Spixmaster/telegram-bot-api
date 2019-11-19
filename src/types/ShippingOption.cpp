@@ -1,4 +1,5 @@
 #include "tgbot/types/ShippingOption.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -10,20 +11,23 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("id"))
-			id = doc["id"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("id"))
+				id = doc["id"].GetString();
 
-		if(doc.HasMember("title"))
-			title = doc["title"].GetString();
+			if(doc.HasMember("title"))
+				title = doc["title"].GetString();
 
-		if(doc.HasMember("prices"))
-			for(std::size_t j = 0; j < doc["prices"].GetArray().Size(); ++j)
-			{
-				prices.resize(doc["prices"].GetArray().Size());
+			if(doc.HasMember("prices"))
+				for(std::size_t j = 0; j < doc["prices"].GetArray().Size(); ++j)
+				{
+					prices.resize(doc["prices"].GetArray().Size());
 
-				prices.at(j) = std::make_shared<LabeledPrice>(SpecialTools::get_json_obj_as_string(doc["prices"][j]));
-			}
+					prices.at(j) = std::make_shared<LabeledPrice>(SpecialTools::get_json_as_string(doc["prices"][j]));
+				}
+		}
 	}
 
 	std::string ShippingOption::parse_to_json() const

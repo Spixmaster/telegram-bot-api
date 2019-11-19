@@ -1,5 +1,6 @@
 #include <rapidjson/document.h>
 #include "tgbot/types/InputMediaAudio.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -11,27 +12,30 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("media"))
-			media = doc["media"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("media"))
+				media = doc["media"].GetString();
 
-		if(doc.HasMember("thumb"))
-			thumb = doc["thumb"].GetString();
+			if(doc.HasMember("thumb"))
+				thumb = doc["thumb"].GetString();
 
-		if(doc.HasMember("caption"))
-			caption = doc["caption"].GetString();
+			if(doc.HasMember("caption"))
+				caption = doc["caption"].GetString();
 
-		if(doc.HasMember("parse_mode"))
-			parse_mode = doc["parse_mode"].GetString();
+			if(doc.HasMember("parse_mode"))
+				parse_mode = doc["parse_mode"].GetString();
 
-		if(doc.HasMember("duration"))
-			duration = doc["duration"].GetInt();
+			if(doc.HasMember("duration"))
+				duration = doc["duration"].GetInt();
 
-		if(doc.HasMember("performer"))
-			performer = doc["performer"].GetString();
+			if(doc.HasMember("performer"))
+				performer = doc["performer"].GetString();
 
-		if(doc.HasMember("title"))
-			title = doc["title"].GetString();
+			if(doc.HasMember("title"))
+				title = doc["title"].GetString();
+		}
 	}
 
 	InputMediaAudio::InputMediaAudio(const std::variant<std::string, InputFile::ptr> &media, const std::variant<std::string, InputFile::ptr> &thumb, const std::string &caption,

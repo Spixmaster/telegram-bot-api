@@ -1,4 +1,5 @@
 #include "tgbot/types/InlineQueryResultGame.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -10,19 +11,23 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("type"))
-			type = doc["type"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("type"))
+				type = doc["type"].GetString();
 
-		if(doc.HasMember("id"))
-			id = doc["id"].GetString();
+			if(doc.HasMember("id"))
+				id = doc["id"].GetString();
 
-		if(doc.HasMember("game_short_name"))
-			game_short_name = doc["game_short_name"].GetString();
+			if(doc.HasMember("game_short_name"))
+				game_short_name = doc["game_short_name"].GetString();
 
-		if(doc.HasMember("reply_markup"))
-			reply_markup = std::make_shared<InlineKeyboardMarkup>(SpecialTools::get_json_obj_as_string(doc["reply_markup"]));
+			if(doc.HasMember("reply_markup"))
+				reply_markup = std::make_shared<InlineKeyboardMarkup>(SpecialTools::get_json_as_string(doc["reply_markup"]));
+		}
 	}
+
 	std::string InlineQueryResultGame::parse_to_json() const
 	{
 		std::string json = "{";

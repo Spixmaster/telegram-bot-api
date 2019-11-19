@@ -1,4 +1,5 @@
 #include "tgbot/types/SuccessfulPayment.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -11,27 +12,30 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("currency"))
-			currency = doc["currency"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("currency"))
+				currency = doc["currency"].GetString();
 
-		if(doc.HasMember("total_amount"))
-			total_amount = doc["total_amount"].GetInt();
+			if(doc.HasMember("total_amount"))
+				total_amount = doc["total_amount"].GetInt();
 
-		if(doc.HasMember("invoice_payload"))
-			invoice_payload = doc["invoice_payload"].GetString();
+			if(doc.HasMember("invoice_payload"))
+				invoice_payload = doc["invoice_payload"].GetString();
 
-		if(doc.HasMember("shipping_option_id"))
-			shipping_option_id = doc["shipping_option_id"].GetString();
+			if(doc.HasMember("shipping_option_id"))
+				shipping_option_id = doc["shipping_option_id"].GetString();
 
-		if(doc.HasMember("order_info"))
-			order_info = std::make_shared<OrderInfo>(SpecialTools::get_json_obj_as_string(doc["order_info"]));
+			if(doc.HasMember("order_info"))
+				order_info = std::make_shared<OrderInfo>(SpecialTools::get_json_as_string(doc["order_info"]));
 
-		if(doc.HasMember("telegram_payment_charge_id"))
-			telegram_payment_charge_id = doc["telegram_payment_charge_id"].GetString();
+			if(doc.HasMember("telegram_payment_charge_id"))
+				telegram_payment_charge_id = doc["telegram_payment_charge_id"].GetString();
 
-		if(doc.HasMember("provider_payment_charge_id"))
-			provider_payment_charge_id = doc["provider_payment_charge_id"].GetString();
+			if(doc.HasMember("provider_payment_charge_id"))
+				provider_payment_charge_id = doc["provider_payment_charge_id"].GetString();
+		}
 	}
 
 	std::string SuccessfulPayment::parse_to_json() const

@@ -1,4 +1,5 @@
 #include "tgbot/types/PreCheckoutQuery.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -10,27 +11,30 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("id"))
-			id = doc["id"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("id"))
+				id = doc["id"].GetString();
 
-		if(doc.HasMember("from"))
-			from = std::make_shared<User>(SpecialTools::get_json_obj_as_string(doc["from"]));
+			if(doc.HasMember("from"))
+				from = std::make_shared<User>(SpecialTools::get_json_as_string(doc["from"]));
 
-		if(doc.HasMember("currency"))
-			currency = doc["currency"].GetString();
+			if(doc.HasMember("currency"))
+				currency = doc["currency"].GetString();
 
-		if(doc.HasMember("total_amount"))
-			total_amount = doc["total_amount"].GetInt();
+			if(doc.HasMember("total_amount"))
+				total_amount = doc["total_amount"].GetInt();
 
-		if(doc.HasMember("invoice_payload"))
-			invoice_payload = doc["invoice_payload"].GetString();
+			if(doc.HasMember("invoice_payload"))
+				invoice_payload = doc["invoice_payload"].GetString();
 
-		if(doc.HasMember("shipping_option_id"))
-			shipping_option_id = doc["shipping_option_id"].GetString();
+			if(doc.HasMember("shipping_option_id"))
+				shipping_option_id = doc["shipping_option_id"].GetString();
 
-		if(doc.HasMember("order_info"))
-			order_info = std::make_shared<OrderInfo>(SpecialTools::get_json_obj_as_string(doc["order_info"]));
+			if(doc.HasMember("order_info"))
+				order_info = std::make_shared<OrderInfo>(SpecialTools::get_json_as_string(doc["order_info"]));
+		}
 	}
 
 	std::string PreCheckoutQuery::parse_to_json() const

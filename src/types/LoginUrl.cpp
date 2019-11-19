@@ -1,5 +1,6 @@
 #include <rapidjson/document.h>
 #include "tgbot/types/LoginUrl.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -11,18 +12,21 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("url"))
-			url = doc["url"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("url"))
+				url = doc["url"].GetString();
 
-		if(doc.HasMember("forward_text"))
-			forward_text = doc["forward_text"].GetString();
+			if(doc.HasMember("forward_text"))
+				forward_text = doc["forward_text"].GetString();
 
-		if(doc.HasMember("bot_username"))
-			bot_username = doc["bot_username"].GetString();
+			if(doc.HasMember("bot_username"))
+				bot_username = doc["bot_username"].GetString();
 
-		if(doc.HasMember("request_write_access"))
-			request_write_access = doc["request_write_access"].GetBool();
+			if(doc.HasMember("request_write_access"))
+				request_write_access = doc["request_write_access"].GetBool();
+		}
 	}
 
 	std::string LoginUrl::parse_to_json() const

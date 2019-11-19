@@ -1,4 +1,5 @@
 #include "tgbot/types/Location.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -10,12 +11,15 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("longitude"))
-			longitude = doc["longitude"].GetFloat();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("longitude"))
+				longitude = doc["longitude"].GetFloat();
 
-		if(doc.HasMember("latitude"))
-			latitude = doc["latitude"].GetFloat();
+			if(doc.HasMember("latitude"))
+				latitude = doc["latitude"].GetFloat();
+		}
 	}
 
 	std::string Location::parse_to_json() const

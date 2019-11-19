@@ -1,4 +1,5 @@
 #include "tgbot/types/LabeledPrice.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -10,12 +11,15 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("label"))
-			label = doc["label"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("label"))
+				label = doc["label"].GetString();
 
-		if(doc.HasMember("amount"))
-			amount = doc["amount"].GetInt();
+			if(doc.HasMember("amount"))
+				amount = doc["amount"].GetInt();
+		}
 	}
 
 	std::string LabeledPrice::parse_to_json() const

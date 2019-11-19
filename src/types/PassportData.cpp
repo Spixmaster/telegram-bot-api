@@ -1,4 +1,5 @@
 #include "tgbot/types/PassportData.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -10,17 +11,20 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("data"))
-			for(std::size_t j = 0; j < doc["data"].GetArray().Size(); ++j)
-			{
-				data.resize(doc["data"].GetArray().Size());
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("data"))
+				for(std::size_t j = 0; j < doc["data"].GetArray().Size(); ++j)
+				{
+					data.resize(doc["data"].GetArray().Size());
 
-				data.at(j) = std::make_shared<EncryptedPassportElement>(SpecialTools::get_json_obj_as_string(doc["data"][j]));
-			}
+					data.at(j) = std::make_shared<EncryptedPassportElement>(SpecialTools::get_json_as_string(doc["data"][j]));
+				}
 
-		if(doc.HasMember("credentials"))
-			credentials = std::make_shared<EncryptedCredentials>(SpecialTools::get_json_obj_as_string(doc["credentials"]));
+			if(doc.HasMember("credentials"))
+				credentials = std::make_shared<EncryptedCredentials>(SpecialTools::get_json_as_string(doc["credentials"]));
+		}
 	}
 
 	std::string PassportData::parse_to_json() const

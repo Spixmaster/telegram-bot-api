@@ -1,4 +1,5 @@
 #include "tgbot/types/OrderInfo.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -10,18 +11,21 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("name"))
-			name = doc["name"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("name"))
+				name = doc["name"].GetString();
 
-		if(doc.HasMember("phone_number"))
-			phone_number = doc["phone_number"].GetString();
+			if(doc.HasMember("phone_number"))
+				phone_number = doc["phone_number"].GetString();
 
-		if(doc.HasMember("email"))
-			email = doc["email"].GetString();
+			if(doc.HasMember("email"))
+				email = doc["email"].GetString();
 
-		if(doc.HasMember("shipping_address"))
-			shipping_address = std::make_shared<ShippingAddress>(SpecialTools::get_json_obj_as_string(doc["shipping_address"]));
+			if(doc.HasMember("shipping_address"))
+				shipping_address = std::make_shared<ShippingAddress>(SpecialTools::get_json_as_string(doc["shipping_address"]));
+		}
 	}
 
 	std::string OrderInfo::parse_to_json() const

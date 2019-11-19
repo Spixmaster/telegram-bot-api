@@ -1,4 +1,5 @@
 #include "tgbot/types/CallbackQuery.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -10,27 +11,30 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("id"))
-			id = doc["id"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("id"))
+				id = doc["id"].GetString();
 
-		if(doc.HasMember("from"))
-			from = std::make_shared<User>(SpecialTools::get_json_obj_as_string(doc["from"]));
+			if(doc.HasMember("from"))
+				from = std::make_shared<User>(SpecialTools::get_json_as_string(doc["from"]));
 
-		if(doc.HasMember("message"))
-			message = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["message"]));
+			if(doc.HasMember("message"))
+				message = std::make_shared<Message>(SpecialTools::get_json_as_string(doc["message"]));
 
-		if(doc.HasMember("inline_message_id"))
-			inline_message_id = doc["inline_message_id"].GetString();
+			if(doc.HasMember("inline_message_id"))
+				inline_message_id = doc["inline_message_id"].GetString();
 
-		if(doc.HasMember("chat_instance"))
-			chat_instance = doc["chat_instance"].GetString();
+			if(doc.HasMember("chat_instance"))
+				chat_instance = doc["chat_instance"].GetString();
 
-		if(doc.HasMember("data"))
-			data = doc["data"].GetString();
+			if(doc.HasMember("data"))
+				data = doc["data"].GetString();
 
-		if(doc.HasMember("game_short_name"))
-			game_short_name = doc["game_short_name"].GetString();
+			if(doc.HasMember("game_short_name"))
+				game_short_name = doc["game_short_name"].GetString();
+		}
 	}
 
 	std::string CallbackQuery::parse_to_json() const

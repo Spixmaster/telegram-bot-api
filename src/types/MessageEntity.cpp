@@ -1,4 +1,5 @@
 #include "tgbot/types/MessageEntity.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -10,21 +11,24 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("type"))
-			type = doc["type"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("type"))
+				type = doc["type"].GetString();
 
-		if(doc.HasMember("offset"))
-			offset = doc["offset"].GetInt();
+			if(doc.HasMember("offset"))
+				offset = doc["offset"].GetInt();
 
-		if(doc.HasMember("length"))
-			length = doc["length"].GetInt();
+			if(doc.HasMember("length"))
+				length = doc["length"].GetInt();
 
-		if(doc.HasMember("url"))
-			url = doc["url"].GetString();
+			if(doc.HasMember("url"))
+				url = doc["url"].GetString();
 
-		if(doc.HasMember("user"))
-			user = std::make_shared<User>(SpecialTools::get_json_obj_as_string(doc["user"]));
+			if(doc.HasMember("user"))
+				user = std::make_shared<User>(SpecialTools::get_json_as_string(doc["user"]));
+		}
 	}
 
 	std::string MessageEntity::parse_to_json() const

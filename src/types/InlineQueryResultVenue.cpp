@@ -1,4 +1,5 @@
 #include "tgbot/types/InlineQueryResultVenue.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -11,42 +12,45 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("type"))
-			type = doc["type"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("type"))
+				type = doc["type"].GetString();
 
-		if(doc.HasMember("id"))
-			id = doc["id"].GetString();
+			if(doc.HasMember("id"))
+				id = doc["id"].GetString();
 
-		if(doc.HasMember("latitude"))
-			latitude = doc["latitude"].GetFloat();
+			if(doc.HasMember("latitude"))
+				latitude = doc["latitude"].GetFloat();
 
-		if(doc.HasMember("longitude"))
-			longitude = doc["longitude"].GetFloat();
+			if(doc.HasMember("longitude"))
+				longitude = doc["longitude"].GetFloat();
 
-		if(doc.HasMember("title"))
-			title = doc["title"].GetString();
+			if(doc.HasMember("title"))
+				title = doc["title"].GetString();
 
-		if(doc.HasMember("address"))
-			address = doc["address"].GetString();
+			if(doc.HasMember("address"))
+				address = doc["address"].GetString();
 
-		if(doc.HasMember("foursquare_id"))
-			foursquare_id = doc["foursquare_id"].GetString();
+			if(doc.HasMember("foursquare_id"))
+				foursquare_id = doc["foursquare_id"].GetString();
 
-		if(doc.HasMember("foursquare_type"))
-			foursquare_type = doc["foursquare_type"].GetString();
+			if(doc.HasMember("foursquare_type"))
+				foursquare_type = doc["foursquare_type"].GetString();
 
-		if(doc.HasMember("reply_markup"))
-			reply_markup = std::make_shared<InlineKeyboardMarkup>(SpecialTools::get_json_obj_as_string(doc["reply_markup"]));
+			if(doc.HasMember("reply_markup"))
+				reply_markup = std::make_shared<InlineKeyboardMarkup>(SpecialTools::get_json_as_string(doc["reply_markup"]));
 
-		if(doc.HasMember("thumb_url"))
-			thumb_url = doc["thumb_url"].GetString();
+			if(doc.HasMember("thumb_url"))
+				thumb_url = doc["thumb_url"].GetString();
 
-		if(doc.HasMember("thumb_width"))
-			thumb_width = doc["thumb_width"].GetInt();
+			if(doc.HasMember("thumb_width"))
+				thumb_width = doc["thumb_width"].GetInt();
 
-		if(doc.HasMember("thumb_height"))
-			thumb_height = doc["thumb_height"].GetInt();
+			if(doc.HasMember("thumb_height"))
+				thumb_height = doc["thumb_height"].GetInt();
+		}
 	}
 
 	std::string InlineQueryResultVenue::parse_to_json() const

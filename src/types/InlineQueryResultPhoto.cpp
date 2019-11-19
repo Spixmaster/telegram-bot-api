@@ -1,5 +1,6 @@
 #include <rapidjson/document.h>
 #include "tgbot/types/InlineQueryResultPhoto.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -12,36 +13,39 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("type"))
-			type = doc["type"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("type"))
+				type = doc["type"].GetString();
 
-		if(doc.HasMember("id"))
-			id = doc["id"].GetString();
+			if(doc.HasMember("id"))
+				id = doc["id"].GetString();
 
-		if(doc.HasMember("photo_url"))
-			photo_url = doc["photo_url"].GetString();
+			if(doc.HasMember("photo_url"))
+				photo_url = doc["photo_url"].GetString();
 
-		if(doc.HasMember("thumb_url"))
-			thumb_url = doc["thumb_url"].GetString();
+			if(doc.HasMember("thumb_url"))
+				thumb_url = doc["thumb_url"].GetString();
 
-		if(doc.HasMember("photo_width"))
-			photo_width = doc["photo_width"].GetInt();
+			if(doc.HasMember("photo_width"))
+				photo_width = doc["photo_width"].GetInt();
 
-		if(doc.HasMember("photo_height"))
-			photo_height = doc["photo_height"].GetInt();
+			if(doc.HasMember("photo_height"))
+				photo_height = doc["photo_height"].GetInt();
 
-		if(doc.HasMember("title"))
-			title = doc["title"].GetString();
+			if(doc.HasMember("title"))
+				title = doc["title"].GetString();
 
-		if(doc.HasMember("description"))
-			description = doc["description"].GetString();
+			if(doc.HasMember("description"))
+				description = doc["description"].GetString();
 
-		if(doc.HasMember("caption"))
-			caption = doc["caption"].GetString();
+			if(doc.HasMember("caption"))
+				caption = doc["caption"].GetString();
 
-		if(doc.HasMember("parse_mode"))
-			parse_mode = doc["parse_mode"].GetString();
+			if(doc.HasMember("parse_mode"))
+				parse_mode = doc["parse_mode"].GetString();
+		}
 	}
 
 	std::string InlineQueryResultPhoto::parse_to_json() const

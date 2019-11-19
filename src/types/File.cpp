@@ -1,4 +1,5 @@
 #include "tgbot/types/File.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -10,15 +11,18 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("file_id"))
-			file_id = doc["file_id"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("file_id"))
+				file_id = doc["file_id"].GetString();
 
-		if(doc.HasMember("file_size"))
-			file_size = doc["file_size"].GetInt();
+			if(doc.HasMember("file_size"))
+				file_size = doc["file_size"].GetInt();
 
-		if(doc.HasMember("file_path"))
-			file_path = doc["file_path"].GetString();
+			if(doc.HasMember("file_path"))
+				file_path = doc["file_path"].GetString();
+		}
 	}
 
 	std::string File::parse_to_json() const

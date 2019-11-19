@@ -1,5 +1,6 @@
 #include <rapidjson/document.h>
 #include "tgbot/types/Invoice.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -11,21 +12,24 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("title"))
-			title = doc["title"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("title"))
+				title = doc["title"].GetString();
 
-		if(doc.HasMember("description"))
-			description = doc["description"].GetString();
+			if(doc.HasMember("description"))
+				description = doc["description"].GetString();
 
-		if(doc.HasMember("start_parameter"))
-			start_parameter = doc["start_parameter"].GetString();
+			if(doc.HasMember("start_parameter"))
+				start_parameter = doc["start_parameter"].GetString();
 
-		if(doc.HasMember("currency"))
-			currency = doc["currency"].GetString();
+			if(doc.HasMember("currency"))
+				currency = doc["currency"].GetString();
 
-		if(doc.HasMember("total_amount"))
-			total_amount = doc["total_amount"].GetInt();
+			if(doc.HasMember("total_amount"))
+				total_amount = doc["total_amount"].GetInt();
+		}
 	}
 
 	std::string Invoice::parse_to_json() const

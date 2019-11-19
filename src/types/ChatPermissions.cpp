@@ -1,4 +1,5 @@
 #include "tgbot/types/ChatPermissions.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -11,30 +12,33 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("can_send_messages"))
-			can_send_messages = doc["can_send_messages"].GetBool();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("can_send_messages"))
+				can_send_messages = doc["can_send_messages"].GetBool();
 
-		if(doc.HasMember("can_send_media_messages"))
-			can_send_media_messages = doc["can_send_media_messages"].GetBool();
+			if(doc.HasMember("can_send_media_messages"))
+				can_send_media_messages = doc["can_send_media_messages"].GetBool();
 
-		if(doc.HasMember("can_send_polls"))
-			can_send_polls = doc["can_send_polls"].GetBool();
+			if(doc.HasMember("can_send_polls"))
+				can_send_polls = doc["can_send_polls"].GetBool();
 
-		if(doc.HasMember("can_send_other_messages"))
-			can_send_other_messages = doc["can_send_other_messages"].GetBool();
+			if(doc.HasMember("can_send_other_messages"))
+				can_send_other_messages = doc["can_send_other_messages"].GetBool();
 
-		if(doc.HasMember("can_add_web_page_preview"))
-			can_add_web_page_preview = doc["can_add_web_page_preview"].GetBool();
+			if(doc.HasMember("can_add_web_page_preview"))
+				can_add_web_page_preview = doc["can_add_web_page_preview"].GetBool();
 
-		if(doc.HasMember("can_change_info"))
-			can_change_info = doc["can_change_info"].GetBool();
+			if(doc.HasMember("can_change_info"))
+				can_change_info = doc["can_change_info"].GetBool();
 
-		if(doc.HasMember("can_invite_users"))
-			can_invite_users = doc["can_invite_users"].GetBool();
+			if(doc.HasMember("can_invite_users"))
+				can_invite_users = doc["can_invite_users"].GetBool();
 
-		if(doc.HasMember("can_pin_messages"))
-			can_pin_messages = doc["can_pin_messages"].GetBool();
+			if(doc.HasMember("can_pin_messages"))
+				can_pin_messages = doc["can_pin_messages"].GetBool();
+		}
 	}
 
 	std::string ChatPermissions::parse_to_json()

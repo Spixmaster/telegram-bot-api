@@ -1,4 +1,5 @@
 #include "tgbot/types/ChatMember.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -12,57 +13,60 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("user"))
-			user = std::make_shared<User>(SpecialTools::get_json_obj_as_string(doc["user"]));
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("user"))
+				user = std::make_shared<User>(SpecialTools::get_json_as_string(doc["user"]));
 
-		if(doc.HasMember("status"))
-			status = doc["status"].GetString();
+			if(doc.HasMember("status"))
+				status = doc["status"].GetString();
 
-		if(doc.HasMember("until_date"))
-			until_date = doc["until_date"].GetInt();
+			if(doc.HasMember("until_date"))
+				until_date = doc["until_date"].GetInt();
 
-		if(doc.HasMember("can_be_edited"))
-			can_be_edited = doc["can_be_edited"].GetBool();
+			if(doc.HasMember("can_be_edited"))
+				can_be_edited = doc["can_be_edited"].GetBool();
 
-		if(doc.HasMember("can_post_messages"))
-			can_post_messages = doc["can_post_messages"].GetBool();
+			if(doc.HasMember("can_post_messages"))
+				can_post_messages = doc["can_post_messages"].GetBool();
 
-		if(doc.HasMember("can_edit_messages"))
-			can_edit_messages = doc["can_edit_messages"].GetBool();
+			if(doc.HasMember("can_edit_messages"))
+				can_edit_messages = doc["can_edit_messages"].GetBool();
 
-		if(doc.HasMember("can_delete_messages"))
-			can_delete_messages = doc["can_delete_messages"].GetBool();
+			if(doc.HasMember("can_delete_messages"))
+				can_delete_messages = doc["can_delete_messages"].GetBool();
 
-		if(doc.HasMember("can_restrict_members"))
-			can_restrict_members = doc["can_restrict_members"].GetBool();
+			if(doc.HasMember("can_restrict_members"))
+				can_restrict_members = doc["can_restrict_members"].GetBool();
 
-		if(doc.HasMember("can_promote_members"))
-			can_promote_members = doc["can_promote_members"].GetBool();
+			if(doc.HasMember("can_promote_members"))
+				can_promote_members = doc["can_promote_members"].GetBool();
 
-		if(doc.HasMember("can_change_info"))
-			can_change_info = doc["can_change_info"].GetBool();
+			if(doc.HasMember("can_change_info"))
+				can_change_info = doc["can_change_info"].GetBool();
 
-		if(doc.HasMember("can_invite_users"))
-			can_invite_users = doc["can_invite_users"].GetBool();
+			if(doc.HasMember("can_invite_users"))
+				can_invite_users = doc["can_invite_users"].GetBool();
 
-		if(doc.HasMember("is_member"))
-			is_member = doc["is_member"].GetBool();
+			if(doc.HasMember("is_member"))
+				is_member = doc["is_member"].GetBool();
 
-		if(doc.HasMember("can_send_messages"))
-			can_send_messages = doc["can_send_messages"].GetBool();
+			if(doc.HasMember("can_send_messages"))
+				can_send_messages = doc["can_send_messages"].GetBool();
 
-		if(doc.HasMember("can_send_media_messages"))
-			can_send_media_messages = doc["can_send_media_messages"].GetBool();
+			if(doc.HasMember("can_send_media_messages"))
+				can_send_media_messages = doc["can_send_media_messages"].GetBool();
 
-		if(doc.HasMember("can_send_polls"))
-			can_send_polls = doc["can_send_polls"].GetBool();
+			if(doc.HasMember("can_send_polls"))
+				can_send_polls = doc["can_send_polls"].GetBool();
 
-		if(doc.HasMember("can_send_other_messages"))
-			can_send_other_messages = doc["can_send_other_messages"].GetBool();
+			if(doc.HasMember("can_send_other_messages"))
+				can_send_other_messages = doc["can_send_other_messages"].GetBool();
 
-		if(doc.HasMember("can_add_web_page_previews"))
-			can_add_web_page_previews = doc["can_add_web_page_previews"].GetBool();
+			if(doc.HasMember("can_add_web_page_previews"))
+				can_add_web_page_previews = doc["can_add_web_page_previews"].GetBool();
+		}
 	}
 
 	std::string ChatMember::parse_to_json() const

@@ -1,5 +1,6 @@
 #include <tgbot/SpecialTools.h>
 #include "tgbot/types/ShippingQuery.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -11,18 +12,21 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("id"))
-			id = doc["id"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("id"))
+				id = doc["id"].GetString();
 
-		if(doc.HasMember("from"))
-			from = std::make_shared<User>(SpecialTools::get_json_obj_as_string(doc["from"]));
+			if(doc.HasMember("from"))
+				from = std::make_shared<User>(SpecialTools::get_json_as_string(doc["from"]));
 
-		if(doc.HasMember("invoice_payload"))
-			invoice_payload = doc["invoice_payload"].GetString();
+			if(doc.HasMember("invoice_payload"))
+				invoice_payload = doc["invoice_payload"].GetString();
 
-		if(doc.HasMember("shipping_address"))
-			shipping_address = std::make_shared<ShippingAddress>(SpecialTools::get_json_obj_as_string(doc["shipping_address"]));
+			if(doc.HasMember("shipping_address"))
+				shipping_address = std::make_shared<ShippingAddress>(SpecialTools::get_json_as_string(doc["shipping_address"]));
+		}
 	}
 
 	std::string ShippingQuery::parse_to_json() const

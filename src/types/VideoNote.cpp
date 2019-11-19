@@ -1,5 +1,6 @@
 #include <tgbot/SpecialTools.h>
 #include "tgbot/types/VideoNote.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -11,21 +12,24 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("file_id"))
-			file_id = doc["file_id"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("file_id"))
+				file_id = doc["file_id"].GetString();
 
-		if(doc.HasMember("length"))
-			length = doc["length"].GetInt();
+			if(doc.HasMember("length"))
+				length = doc["length"].GetInt();
 
-		if(doc.HasMember("duration"))
-			duration = doc["duration"].GetInt();
+			if(doc.HasMember("duration"))
+				duration = doc["duration"].GetInt();
 
-		if(doc.HasMember("thumb"))
-			thumb = std::make_shared<PhotoSize>(SpecialTools::get_json_obj_as_string(doc["thumb"]));
+			if(doc.HasMember("thumb"))
+				thumb = std::make_shared<PhotoSize>(SpecialTools::get_json_as_string(doc["thumb"]));
 
-		if(doc.HasMember("file_size"))
-			file_size = doc["file_size"].GetInt();
+			if(doc.HasMember("file_size"))
+				file_size = doc["file_size"].GetInt();
+		}
 	}
 
 	std::string VideoNote::parse_to_json() const

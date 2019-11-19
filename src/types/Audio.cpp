@@ -1,4 +1,5 @@
 #include "tgbot/types/Audio.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -10,27 +11,30 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("file_id"))
-			file_id = doc["file_id"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("file_id"))
+				file_id = doc["file_id"].GetString();
 
-		if(doc.HasMember("duration"))
-			duration = doc["duration"].GetInt();
+			if(doc.HasMember("duration"))
+				duration = doc["duration"].GetInt();
 
-		if(doc.HasMember("performer"))
-			performer = doc["performer"].GetString();
+			if(doc.HasMember("performer"))
+				performer = doc["performer"].GetString();
 
-		if(doc.HasMember("title"))
-			title = doc["title"].GetString();
+			if(doc.HasMember("title"))
+				title = doc["title"].GetString();
 
-		if(doc.HasMember("mime_type"))
-			mime_type = doc["mime_type"].GetString();
+			if(doc.HasMember("mime_type"))
+				mime_type = doc["mime_type"].GetString();
 
-		if(doc.HasMember("file_size"))
-			file_size = doc["file_size"].GetInt();
+			if(doc.HasMember("file_size"))
+				file_size = doc["file_size"].GetInt();
 
-		if(doc.HasMember("thumb"))
-			thumb = std::make_shared<PhotoSize>(SpecialTools::get_json_obj_as_string(doc["thumb"]));
+			if(doc.HasMember("thumb"))
+				thumb = std::make_shared<PhotoSize>(SpecialTools::get_json_as_string(doc["thumb"]));
+		}
 	}
 
 	std::string Audio::parse_to_json() const

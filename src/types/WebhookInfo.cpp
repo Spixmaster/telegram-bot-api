@@ -1,4 +1,5 @@
 #include "tgbot/types/WebhookInfo.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -11,32 +12,35 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("url"))
-			url = doc["url"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("url"))
+				url = doc["url"].GetString();
 
-		if(doc.HasMember("has_custom_certificate"))
-			has_custom_certificate = doc["has_custom_certificate"].GetBool();
+			if(doc.HasMember("has_custom_certificate"))
+				has_custom_certificate = doc["has_custom_certificate"].GetBool();
 
-		if(doc.HasMember("pending_update_count"))
-			pending_update_count = doc["pending_update_count"].GetInt();
+			if(doc.HasMember("pending_update_count"))
+				pending_update_count = doc["pending_update_count"].GetInt();
 
-		if(doc.HasMember("last_error_date"))
-			last_error_date = doc["last_error_date"].GetInt();
+			if(doc.HasMember("last_error_date"))
+				last_error_date = doc["last_error_date"].GetInt();
 
-		if(doc.HasMember("last_error_message"))
-			last_error_message = doc["last_error_message"].GetString();
+			if(doc.HasMember("last_error_message"))
+				last_error_message = doc["last_error_message"].GetString();
 
-		if(doc.HasMember("max_connections"))
-			max_connections = doc["max_connections"].GetInt();
+			if(doc.HasMember("max_connections"))
+				max_connections = doc["max_connections"].GetInt();
 
-		if(doc.HasMember("allowed_updates"))
-			for(std::size_t j = 0; j < doc["allowed_updates"].GetArray().Size(); ++j)
-			{
-				allowed_updates.resize(doc["allowed_updates"].GetArray().Size());
+			if(doc.HasMember("allowed_updates"))
+				for(std::size_t j = 0; j < doc["allowed_updates"].GetArray().Size(); ++j)
+				{
+					allowed_updates.resize(doc["allowed_updates"].GetArray().Size());
 
-				allowed_updates.at(j) = doc["photo"][j].GetString();
-			}
+					allowed_updates.at(j) = doc["photo"][j].GetString();
+				}
+		}
 	}
 
 	std::string WebhookInfo::parse_to_json() const
