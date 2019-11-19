@@ -1,4 +1,5 @@
 #include "tgbot/types/Update.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
