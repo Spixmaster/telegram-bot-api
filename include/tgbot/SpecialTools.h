@@ -23,9 +23,9 @@ namespace tgbot
 		/*
 		 * @brief expects a rapidjson::Value and turns it back into a string
 		 * @param the Value which shall be converted
-		 * @return the string of the json object
+		 * @return the string of the json
 		 */
-		static std::string get_json_obj_as_string(const rapidjson::Value &val);
+		static std::string get_json_as_string(const rapidjson::Value &val);
 	};
 }
 

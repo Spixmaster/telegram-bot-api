@@ -1,4 +1,5 @@
 #include "tgbot/types/InputTextMessageContent.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -10,15 +11,18 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("message_tex"))
-			message_text = doc["message_tex"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("message_tex"))
+				message_text = doc["message_tex"].GetString();
 
-		if(doc.HasMember("parse_mode"))
-			parse_mode = doc["parse_mode"].GetString();
+			if(doc.HasMember("parse_mode"))
+				parse_mode = doc["parse_mode"].GetString();
 
-		if(doc.HasMember("disable_web_page_preview"))
-			disable_web_page_preview = doc["disable_web_page_preview"].GetBool();
+			if(doc.HasMember("disable_web_page_preview"))
+				disable_web_page_preview = doc["disable_web_page_preview"].GetBool();
+		}
 	}
 
 	std::string InputTextMessageContent::parse_to_json() const

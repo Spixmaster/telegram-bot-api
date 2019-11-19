@@ -1,4 +1,5 @@
 #include "tgbot/types/ResponseParameters.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -10,12 +11,15 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("migrate_to_chat_id"))
-			migrate_to_chat_id = doc["migrate_to_chat_id"].GetInt();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("migrate_to_chat_id"))
+				migrate_to_chat_id = doc["migrate_to_chat_id"].GetInt();
 
-		if(doc.HasMember("retry_after"))
-			retry_after = doc["retry_after"].GetInt();
+			if(doc.HasMember("retry_after"))
+				retry_after = doc["retry_after"].GetInt();
+		}
 	}
 
 	std::string ResponseParameters::parse_to_json() const

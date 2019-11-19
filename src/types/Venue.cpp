@@ -1,5 +1,6 @@
 #include <tgbot/SpecialTools.h>
 #include "tgbot/types/Venue.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -11,21 +12,24 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("location"))
-			location = std::make_shared<Location>(SpecialTools::get_json_obj_as_string(doc["location"]));
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("location"))
+				location = std::make_shared<Location>(SpecialTools::get_json_as_string(doc["location"]));
 
-		if(doc.HasMember("title"))
-			title = doc["title"].GetString();
+			if(doc.HasMember("title"))
+				title = doc["title"].GetString();
 
-		if(doc.HasMember("address"))
-			address = doc["address"].GetString();
+			if(doc.HasMember("address"))
+				address = doc["address"].GetString();
 
-		if(doc.HasMember("foursquare_id"))
-			foursquare_id = doc["foursquare_id"].GetString();
+			if(doc.HasMember("foursquare_id"))
+				foursquare_id = doc["foursquare_id"].GetString();
 
-		if(doc.HasMember("foursquare_type"))
-			foursquare_type = doc["foursquare_type"].GetString();
+			if(doc.HasMember("foursquare_type"))
+				foursquare_type = doc["foursquare_type"].GetString();
+		}
 	}
 
 	std::string Venue::parse_to_json() const

@@ -1,5 +1,6 @@
 #include <rapidjson/document.h>
 #include "tgbot/types/EncryptedCredentials.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -11,15 +12,18 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("data"))
-			data = doc["data"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("data"))
+				data = doc["data"].GetString();
 
-		if(doc.HasMember("hash"))
-			hash = doc["hash"].GetString();
+			if(doc.HasMember("hash"))
+				hash = doc["hash"].GetString();
 
-		if(doc.HasMember("secret"))
-			secret = doc["secret"].GetString();
+			if(doc.HasMember("secret"))
+				secret = doc["secret"].GetString();
+		}
 	}
 
 	std::string EncryptedCredentials::parse_to_json() const

@@ -10,7 +10,7 @@
 
 namespace tgbot
 {
-	std::string SpecialTools::get_json_obj_as_string(const rapidjson::Value &val)
+	std::string SpecialTools::get_json_as_string(const rapidjson::Value &val)
 	{
 		rapidjson::StringBuffer sb;
 		rapidjson::Writer<rapidjson::StringBuffer> writer(sb);

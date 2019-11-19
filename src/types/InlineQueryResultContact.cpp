@@ -1,4 +1,5 @@
 #include "tgbot/types/InlineQueryResultContact.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -11,36 +12,39 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("type"))
-			type = doc["type"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("type"))
+				type = doc["type"].GetString();
 
-		if(doc.HasMember("id"))
-			id = doc["id"].GetString();
+			if(doc.HasMember("id"))
+				id = doc["id"].GetString();
 
-		if(doc.HasMember("phone_number"))
-			phone_number = doc["phone_number"].GetString();
+			if(doc.HasMember("phone_number"))
+				phone_number = doc["phone_number"].GetString();
 
-		if(doc.HasMember("first_name"))
-			first_name = doc["first_name"].GetString();
+			if(doc.HasMember("first_name"))
+				first_name = doc["first_name"].GetString();
 
-		if(doc.HasMember("last_name"))
-			last_name = doc["last_name"].GetString();
+			if(doc.HasMember("last_name"))
+				last_name = doc["last_name"].GetString();
 
-		if(doc.HasMember("vcard"))
-			vcard = doc["vcard"].GetString();
+			if(doc.HasMember("vcard"))
+				vcard = doc["vcard"].GetString();
 
-		if(doc.HasMember("reply_markup"))
-			reply_markup = std::make_shared<InlineKeyboardMarkup>(SpecialTools::get_json_obj_as_string(doc["reply_markup"]));
+			if(doc.HasMember("reply_markup"))
+				reply_markup = std::make_shared<InlineKeyboardMarkup>(SpecialTools::get_json_as_string(doc["reply_markup"]));
 
-		if(doc.HasMember("thumb_url"))
-			thumb_url = doc["thumb_url"].GetString();
+			if(doc.HasMember("thumb_url"))
+				thumb_url = doc["thumb_url"].GetString();
 
-		if(doc.HasMember("thumb_width"))
-			thumb_width = doc["thumb_width"].GetInt();
+			if(doc.HasMember("thumb_width"))
+				thumb_width = doc["thumb_width"].GetInt();
 
-		if(doc.HasMember("thumb_height"))
-			thumb_height = doc["thumb_height"].GetInt();
+			if(doc.HasMember("thumb_height"))
+				thumb_height = doc["thumb_height"].GetInt();
+		}
 	}
 
 	std::string InlineQueryResultContact::parse_to_json() const

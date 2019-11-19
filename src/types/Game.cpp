@@ -1,4 +1,5 @@
 #include "tgbot/types/Game.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -10,34 +11,36 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("title"))
-			title = doc["title"].GetString();
+		if(Tools::is_json(json))
+		{
+			if(doc.HasMember("title"))
+				title = doc["title"].GetString();
 
-		if(doc.HasMember("description"))
-			description = doc["description"].GetString();
+			if(doc.HasMember("description"))
+				description = doc["description"].GetString();
 
-		if(doc.HasMember("photo"))
-			for(std::size_t j = 0; j < doc["photo"].GetArray().Size(); ++j)
-			{
-				photo.resize(doc["photo"].GetArray().Size());
+			if(doc.HasMember("photo"))
+				for(std::size_t j = 0; j < doc["photo"].GetArray().Size(); ++j)
+				{
+					photo.resize(doc["photo"].GetArray().Size());
 
-				photo.at(j) = std::make_shared<PhotoSize>(SpecialTools::get_json_obj_as_string(doc["thumb"][j]));
-			}
+					photo.at(j) = std::make_shared<PhotoSize>(SpecialTools::get_json_as_string(doc["thumb"][j]));
+				}
 
-		if(doc.HasMember("text"))
-			text = doc["text"].GetString();
+			if(doc.HasMember("text"))
+				text = doc["text"].GetString();
 
-		if(doc.HasMember("text_entities"))
-			for(std::size_t j = 0; j < doc["text_entities"].GetArray().Size(); ++j)
-			{
-				text_entities.resize(doc["text_entities"].GetArray().Size());
+			if(doc.HasMember("text_entities"))
+				for(std::size_t j = 0; j < doc["text_entities"].GetArray().Size(); ++j)
+				{
+					text_entities.resize(doc["text_entities"].GetArray().Size());
 
-				text_entities.at(j) = std::make_shared<MessageEntity>(SpecialTools::get_json_obj_as_string(doc["text_entities"][j]));
-			}
+					text_entities.at(j) = std::make_shared<MessageEntity>(SpecialTools::get_json_as_string(doc["text_entities"][j]));
+				}
 
-		if(doc.HasMember("animation"))
-			animation = std::make_shared<Animation>(SpecialTools::get_json_obj_as_string(doc["animation"]));
+			if(doc.HasMember("animation"))
+				animation = std::make_shared<Animation>(SpecialTools::get_json_as_string(doc["animation"]));
+		}
 	}
 
 	std::string Game::parse_to_json() const

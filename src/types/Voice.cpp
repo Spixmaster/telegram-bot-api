@@ -1,5 +1,6 @@
 #include <rapidjson/document.h>
 #include "tgbot/types/Voice.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -11,18 +12,21 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("file_id"))
-			file_id = doc["file_id"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("file_id"))
+				file_id = doc["file_id"].GetString();
 
-		if(doc.HasMember("duration"))
-			duration = doc["duration"].GetInt();
+			if(doc.HasMember("duration"))
+				duration = doc["duration"].GetInt();
 
-		if(doc.HasMember("mime_type"))
-			mime_type = doc["mime_type"].GetString();
+			if(doc.HasMember("mime_type"))
+				mime_type = doc["mime_type"].GetString();
 
-		if(doc.HasMember("file_size"))
-			file_size = doc["file_size"].GetInt();
+			if(doc.HasMember("file_size"))
+				file_size = doc["file_size"].GetInt();
+		}
 	}
 
 	std::string Voice::parse_to_json() const

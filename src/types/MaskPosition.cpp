@@ -1,5 +1,6 @@
 #include <rapidjson/document.h>
 #include "tgbot/types/MaskPosition.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -11,18 +12,21 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("point"))
-			point = doc["point"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("point"))
+				point = doc["point"].GetString();
 
-		if(doc.HasMember("x_shift"))
-			x_shift = doc["x_shift"].GetFloat();
+			if(doc.HasMember("x_shift"))
+				x_shift = doc["x_shift"].GetFloat();
 
-		if(doc.HasMember("y_shift"))
-			y_shift = doc["y_shift"].GetFloat();
+			if(doc.HasMember("y_shift"))
+				y_shift = doc["y_shift"].GetFloat();
 
-		if(doc.HasMember("number"))
-			number = doc["number"].GetFloat();
+			if(doc.HasMember("number"))
+				number = doc["number"].GetFloat();
+		}
 	}
 
 	std::string MaskPosition::parse_to_json() const

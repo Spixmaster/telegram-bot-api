@@ -1,4 +1,5 @@
 #include "tgbot/types/InputVenueMessageContent.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -10,24 +11,27 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("latitude"))
-			latitude = doc["latitude"].GetFloat();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("latitude"))
+				latitude = doc["latitude"].GetFloat();
 
-		if(doc.HasMember("longitude"))
-			longitude = doc["longitude"].GetFloat();
+			if(doc.HasMember("longitude"))
+				longitude = doc["longitude"].GetFloat();
 
-		if(doc.HasMember("title"))
-			title = doc["title"].GetString();
+			if(doc.HasMember("title"))
+				title = doc["title"].GetString();
 
-		if(doc.HasMember("address"))
-			address = doc["address"].GetString();
+			if(doc.HasMember("address"))
+				address = doc["address"].GetString();
 
-		if(doc.HasMember("foursquare_id"))
-			foursquare_id = doc["foursquare_id"].GetString();
+			if(doc.HasMember("foursquare_id"))
+				foursquare_id = doc["foursquare_id"].GetString();
 
-		if(doc.HasMember("foursquare_type"))
-			foursquare_type = doc["foursquare_type"].GetString();
+			if(doc.HasMember("foursquare_type"))
+				foursquare_type = doc["foursquare_type"].GetString();
+		}
 	}
 
 	std::string InputVenueMessageContent::parse_to_json() const

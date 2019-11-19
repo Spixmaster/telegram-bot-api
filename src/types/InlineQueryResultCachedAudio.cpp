@@ -1,4 +1,5 @@
 #include "tgbot/types/InlineQueryResultCachedAudio.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -10,24 +11,27 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("type"))
-			type = doc["type"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("type"))
+				type = doc["type"].GetString();
 
-		if(doc.HasMember("id"))
-			id = doc["id"].GetString();
+			if(doc.HasMember("id"))
+				id = doc["id"].GetString();
 
-		if(doc.HasMember("audio_file_id"))
-			audio_file_id = doc["audio_file_id"].GetString();
+			if(doc.HasMember("audio_file_id"))
+				audio_file_id = doc["audio_file_id"].GetString();
 
-		if(doc.HasMember("caption"))
-			caption = doc["caption"].GetString();
+			if(doc.HasMember("caption"))
+				caption = doc["caption"].GetString();
 
-		if(doc.HasMember("parse_mode"))
-			parse_mode = doc["parse_mode"].GetString();
+			if(doc.HasMember("parse_mode"))
+				parse_mode = doc["parse_mode"].GetString();
 
-		if(doc.HasMember("reply_markup"))
-			reply_markup = std::make_shared<InlineKeyboardMarkup>(SpecialTools::get_json_obj_as_string(doc["reply_markup"]));
+			if(doc.HasMember("reply_markup"))
+				reply_markup = std::make_shared<InlineKeyboardMarkup>(SpecialTools::get_json_as_string(doc["reply_markup"]));
+		}
 	}
 
 	std::string InlineQueryResultCachedAudio::parse_to_json() const

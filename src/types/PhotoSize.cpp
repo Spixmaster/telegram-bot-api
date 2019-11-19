@@ -1,4 +1,5 @@
 #include "tgbot/types/PhotoSize.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -10,18 +11,21 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("file_id"))
-			file_id = doc["file_id"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("file_id"))
+				file_id = doc["file_id"].GetString();
 
-		if(doc.HasMember("width"))
-			width = doc["width"].GetInt();
+			if(doc.HasMember("width"))
+				width = doc["width"].GetInt();
 
-		if(doc.HasMember("height"))
-			height = doc["height"].GetInt();
+			if(doc.HasMember("height"))
+				height = doc["height"].GetInt();
 
-		if(doc.HasMember("file_size"))
-			file_size = doc["file_size"].GetInt();
+			if(doc.HasMember("file_size"))
+				file_size = doc["file_size"].GetInt();
+		}
 	}
 
 	std::string PhotoSize::parse_to_json() const

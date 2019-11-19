@@ -1,4 +1,5 @@
 #include "tgbot/types/InlineKeyboardButton.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -11,30 +12,33 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("text"))
-			text = doc["text"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("text"))
+				text = doc["text"].GetString();
 
-		if(doc.HasMember("url"))
-			url = doc["url"].GetString();
+			if(doc.HasMember("url"))
+				url = doc["url"].GetString();
 
-		if(doc.HasMember("login_url"))
-			login_url = std::make_shared<LoginUrl>(SpecialTools::get_json_obj_as_string(doc["login_url"]));
+			if(doc.HasMember("login_url"))
+				login_url = std::make_shared<LoginUrl>(SpecialTools::get_json_as_string(doc["login_url"]));
 
-		if(doc.HasMember("callback_data"))
-			callback_data = doc["callback_data"].GetString();
+			if(doc.HasMember("callback_data"))
+				callback_data = doc["callback_data"].GetString();
 
-		if(doc.HasMember("switch_inline_query"))
-			switch_inline_query = doc["switch_inline_query"].GetString();
+			if(doc.HasMember("switch_inline_query"))
+				switch_inline_query = doc["switch_inline_query"].GetString();
 
-		if(doc.HasMember("switch_inline_query_current_chat"))
-			switch_inline_query_current_chat = doc["switch_inline_query_current_chat"].GetString();
+			if(doc.HasMember("switch_inline_query_current_chat"))
+				switch_inline_query_current_chat = doc["switch_inline_query_current_chat"].GetString();
 
-		if(doc.HasMember("callback_game"))
-			callback_game = std::make_shared<CallbackGame>();
+			if(doc.HasMember("callback_game"))
+				callback_game = std::make_shared<CallbackGame>();
 
-		if(doc.HasMember("pay"))
-			pay = doc["pay"].GetBool();
+			if(doc.HasMember("pay"))
+				pay = doc["pay"].GetBool();
+		}
 	}
 
 	std::string InlineKeyboardButton::parse_to_json() const

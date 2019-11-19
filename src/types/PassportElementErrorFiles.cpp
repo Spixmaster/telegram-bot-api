@@ -1,4 +1,5 @@
 #include "tgbot/types/PassportElementErrorFiles.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -10,23 +11,26 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("source"))
-			source = doc["source"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("source"))
+				source = doc["source"].GetString();
 
-		if(doc.HasMember("type"))
-			type = doc["type"].GetString();
+			if(doc.HasMember("type"))
+				type = doc["type"].GetString();
 
-		if(doc.HasMember("file_hashes"))
-			for(std::size_t j = 0; j < doc["file_hashes"].GetArray().Size(); ++j)
-			{
-				file_hashes.resize(doc["file_hashes"].GetArray().Size());
+			if(doc.HasMember("file_hashes"))
+				for(std::size_t j = 0; j < doc["file_hashes"].GetArray().Size(); ++j)
+				{
+					file_hashes.resize(doc["file_hashes"].GetArray().Size());
 
-				file_hashes.at(j) = doc["file_hashes"][j].GetString();
-			}
+					file_hashes.at(j) = doc["file_hashes"][j].GetString();
+				}
 
-		if(doc.HasMember("message"))
-			message = doc["message"].GetString();
+			if(doc.HasMember("message"))
+				message = doc["message"].GetString();
+		}
 	}
 
 	std::string PassportElementErrorFiles::parse_to_json() const

@@ -1,4 +1,5 @@
 #include "tgbot/types/StickerSet.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -10,26 +11,29 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("name"))
-			name = doc["name"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("name"))
+				name = doc["name"].GetString();
 
-		if(doc.HasMember("title"))
-			title = doc["title"].GetString();
+			if(doc.HasMember("title"))
+				title = doc["title"].GetString();
 
-		if(doc.HasMember("is_animated"))
-			is_animated = doc["is_animated"].GetBool();
+			if(doc.HasMember("is_animated"))
+				is_animated = doc["is_animated"].GetBool();
 
-		if(doc.HasMember("contains_masks"))
-			contains_masks = doc["contains_masks"].GetBool();
+			if(doc.HasMember("contains_masks"))
+				contains_masks = doc["contains_masks"].GetBool();
 
-		if(doc.HasMember("sticker"))
-			for(std::size_t j = 0; j < doc["sticker"].GetArray().Size(); ++j)
-			{
-				sticker.resize(doc["sticker"].GetArray().Size());
+			if(doc.HasMember("sticker"))
+				for(std::size_t j = 0; j < doc["sticker"].GetArray().Size(); ++j)
+				{
+					sticker.resize(doc["sticker"].GetArray().Size());
 
-				sticker.at(j) = std::make_shared<Sticker>(SpecialTools::get_json_obj_as_string(doc["sticker"][j]));
-			}
+					sticker.at(j) = std::make_shared<Sticker>(SpecialTools::get_json_as_string(doc["sticker"][j]));
+				}
+		}
 	}
 
 	std::string StickerSet::parse_to_json() const

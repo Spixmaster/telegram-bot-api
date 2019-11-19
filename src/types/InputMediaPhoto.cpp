@@ -1,5 +1,6 @@
 #include <rapidjson/document.h>
 #include "tgbot/types/InputMediaPhoto.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -11,15 +12,18 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("media"))
-			media = doc["media"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("media"))
+				media = doc["media"].GetString();
 
-		if(doc.HasMember("caption"))
-			caption = doc["caption"].GetString();
+			if(doc.HasMember("caption"))
+				caption = doc["caption"].GetString();
 
-		if(doc.HasMember("parse_mode"))
-			parse_mode = doc["parse_mode"].GetString();
+			if(doc.HasMember("parse_mode"))
+				parse_mode = doc["parse_mode"].GetString();
+		}
 	}
 
 	InputMediaPhoto::InputMediaPhoto(const std::variant<std::string, InputFile::ptr> &media, const std::string &caption, const std::string &parse_mode) : media(media),

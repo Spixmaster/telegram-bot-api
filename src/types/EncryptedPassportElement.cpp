@@ -1,4 +1,5 @@
 #include "tgbot/types/EncryptedPassportElement.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -10,43 +11,46 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("type"))
-			type = doc["type"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("type"))
+				type = doc["type"].GetString();
 
-		if(doc.HasMember("data"))
-			data = doc["data"].GetString();
+			if(doc.HasMember("data"))
+				data = doc["data"].GetString();
 
-		if(doc.HasMember("phone_number"))
-			phone_number = doc["phone_number"].GetString();
+			if(doc.HasMember("phone_number"))
+				phone_number = doc["phone_number"].GetString();
 
-		if(doc.HasMember("files"))
-			for(std::size_t j = 0; j < doc["files"].GetArray().Size(); ++j)
-			{
-				files.resize(doc["files"].GetArray().Size());
+			if(doc.HasMember("files"))
+				for(std::size_t j = 0; j < doc["files"].GetArray().Size(); ++j)
+				{
+					files.resize(doc["files"].GetArray().Size());
 
-				files.at(j) = std::make_shared<PassportFile>(SpecialTools::get_json_obj_as_string(doc["files"][j]));
-			}
+					files.at(j) = std::make_shared<PassportFile>(SpecialTools::get_json_as_string(doc["files"][j]));
+				}
 
-		if(doc.HasMember("front_side"))
-			front_side = std::make_shared<PassportFile>(SpecialTools::get_json_obj_as_string(doc["front_side"]));
+			if(doc.HasMember("front_side"))
+				front_side = std::make_shared<PassportFile>(SpecialTools::get_json_as_string(doc["front_side"]));
 
-		if(doc.HasMember("reverse_side"))
-			reverse_side = std::make_shared<PassportFile>(SpecialTools::get_json_obj_as_string(doc["reverse_side"]));
+			if(doc.HasMember("reverse_side"))
+				reverse_side = std::make_shared<PassportFile>(SpecialTools::get_json_as_string(doc["reverse_side"]));
 
-		if(doc.HasMember("selfie"))
-			selfie = std::make_shared<PassportFile>(SpecialTools::get_json_obj_as_string(doc["selfie"]));
+			if(doc.HasMember("selfie"))
+				selfie = std::make_shared<PassportFile>(SpecialTools::get_json_as_string(doc["selfie"]));
 
-		if(doc.HasMember("translation"))
-			for(std::size_t j = 0; j < doc["translation"].GetArray().Size(); ++j)
-			{
-				files.resize(doc["files"].GetArray().Size());
+			if(doc.HasMember("translation"))
+				for(std::size_t j = 0; j < doc["translation"].GetArray().Size(); ++j)
+				{
+					files.resize(doc["files"].GetArray().Size());
 
-				files.at(j) = std::make_shared<PassportFile>(SpecialTools::get_json_obj_as_string(doc["translation"][j]));
-			}
+					files.at(j) = std::make_shared<PassportFile>(SpecialTools::get_json_as_string(doc["translation"][j]));
+				}
 
-		if(doc.HasMember("hash"))
-			hash = doc["hash"].GetString();
+			if(doc.HasMember("hash"))
+				hash = doc["hash"].GetString();
+		}
 	}
 
 	std::string EncryptedPassportElement::parse_to_json() const

@@ -1,5 +1,6 @@
 #include <rapidjson/document.h>
 #include "tgbot/types/ReplyKeyboardMarkup.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -11,31 +12,34 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("keyboard"))
+		if(Tools::is_json(json))
+		{
+			//assignments
 			if(doc.HasMember("keyboard"))
-				for(std::size_t row = 0; row < doc["keyboard"].GetArray().Size(); ++row)
-				{
-					const rapidjson::Value &keyboard_array = doc["keyboard"].GetArray();
+				if(doc.HasMember("keyboard"))
+					for(std::size_t row = 0; row < doc["keyboard"].GetArray().Size(); ++row)
+					{
+						const rapidjson::Value &keyboard_array = doc["keyboard"].GetArray();
 
-					//reserve enough rows
-					keyboard.resize(keyboard_array.Size());
+						//reserve enough rows
+						keyboard.resize(keyboard_array.Size());
 
-					//reserve enough columns for each row
-					keyboard.at(row).resize(keyboard_array[row].GetArray().Size());
+						//reserve enough columns for each row
+						keyboard.at(row).resize(keyboard_array[row].GetArray().Size());
 
-					for(std::size_t column = 0; column < keyboard_array[row].GetArray().Size(); ++column)
-						keyboard.at(row).at(column) = std::make_shared<KeyboardButton>(SpecialTools::get_json_obj_as_string(keyboard_array[row][column]));
-				}
+						for(std::size_t column = 0; column < keyboard_array[row].GetArray().Size(); ++column)
+							keyboard.at(row).at(column) = std::make_shared<KeyboardButton>(SpecialTools::get_json_as_string(keyboard_array[row][column]));
+					}
 
-		if(doc.HasMember("resize_keyboard"))
-			resize_keyboard = doc["resize_keyboard"].GetBool();
+			if(doc.HasMember("resize_keyboard"))
+				resize_keyboard = doc["resize_keyboard"].GetBool();
 
-		if(doc.HasMember("one_time_keyboard"))
-			one_time_keyboard = doc["one_time_keyboard"].GetBool();
+			if(doc.HasMember("one_time_keyboard"))
+				one_time_keyboard = doc["one_time_keyboard"].GetBool();
 
-		if(doc.HasMember("selective"))
-			selective = doc["selective"].GetBool();
+			if(doc.HasMember("selective"))
+				selective = doc["selective"].GetBool();
+		}
 	}
 
 	ReplyKeyboardMarkup::ReplyKeyboardMarkup(const std::vector<std::vector<KeyboardButton::ptr>> &keyboard) : keyboard(keyboard), resize_keyboard(), one_time_keyboard(),

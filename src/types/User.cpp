@@ -1,5 +1,6 @@
 #include "tgbot/types/User.h"
 #include <rapidjson/document.h>
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -11,24 +12,27 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("id"))
-			id = doc["id"].GetInt();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("id"))
+				id = doc["id"].GetInt();
 
-		if(doc.HasMember("is_bot"))
-			is_bot = doc["is_bot"].GetBool();
+			if(doc.HasMember("is_bot"))
+				is_bot = doc["is_bot"].GetBool();
 
-		if(doc.HasMember("first_name"))
-			first_name = doc["first_name"].GetString();
+			if(doc.HasMember("first_name"))
+				first_name = doc["first_name"].GetString();
 
-		if(doc.HasMember("last_name"))
-			last_name = doc["last_name"].GetString();
+			if(doc.HasMember("last_name"))
+				last_name = doc["last_name"].GetString();
 
-		if(doc.HasMember("username"))
-			username = doc["username"].GetString();
+			if(doc.HasMember("username"))
+				username = doc["username"].GetString();
 
-		if(doc.HasMember("language_code"))
-			language_code = doc["language_code"].GetString();
+			if(doc.HasMember("language_code"))
+				language_code = doc["language_code"].GetString();
+		}
 	}
 
 	std::string User::parse_to_json() const

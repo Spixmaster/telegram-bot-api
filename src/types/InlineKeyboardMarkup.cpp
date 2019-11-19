@@ -1,5 +1,6 @@
 #include "tgbot/types/InlineKeyboardMarkup.h"
 #include <iostream>
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -11,21 +12,24 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("inline_keyboard"))
-			for(std::size_t row = 0; row < doc["inline_keyboard"].GetArray().Size(); ++row)
-			{
-				const rapidjson::Value &keyboard_array = doc["inline_keyboard"].GetArray();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("inline_keyboard"))
+				for(std::size_t row = 0; row < doc["inline_keyboard"].GetArray().Size(); ++row)
+				{
+					const rapidjson::Value &keyboard_array = doc["inline_keyboard"].GetArray();
 
-				//reserve enough rows
-				inline_keyboard.resize(keyboard_array.Size());
+					//reserve enough rows
+					inline_keyboard.resize(keyboard_array.Size());
 
-				//reserve enough columns for each row
-				inline_keyboard.at(row).resize(keyboard_array[row].GetArray().Size());
+					//reserve enough columns for each row
+					inline_keyboard.at(row).resize(keyboard_array[row].GetArray().Size());
 
-				for(std::size_t column = 0; column < keyboard_array[row].GetArray().Size(); ++column)
-					inline_keyboard.at(row).at(column) = std::make_shared<InlineKeyboardButton>(SpecialTools::get_json_obj_as_string(keyboard_array[row][column]));
-			}
+					for(std::size_t column = 0; column < keyboard_array[row].GetArray().Size(); ++column)
+						inline_keyboard.at(row).at(column) = std::make_shared<InlineKeyboardButton>(SpecialTools::get_json_as_string(keyboard_array[row][column]));
+				}
+		}
 	}
 
 	InlineKeyboardMarkup::InlineKeyboardMarkup(const std::vector<std::vector<InlineKeyboardButton::ptr>> &keyboard) : inline_keyboard(keyboard)

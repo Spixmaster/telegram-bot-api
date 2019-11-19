@@ -1,4 +1,5 @@
 #include "tgbot/types/ChosenInlineResult.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -10,21 +11,24 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("result_id"))
-			result_id = doc["result_id"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("result_id"))
+				result_id = doc["result_id"].GetString();
 
-		if(doc.HasMember("from"))
-			from = std::make_shared<User>(SpecialTools::get_json_obj_as_string(doc["from"]));
+			if(doc.HasMember("from"))
+				from = std::make_shared<User>(SpecialTools::get_json_as_string(doc["from"]));
 
-		if(doc.HasMember("location"))
-			location = std::make_shared<Location>(SpecialTools::get_json_obj_as_string(doc["location"]));
+			if(doc.HasMember("location"))
+				location = std::make_shared<Location>(SpecialTools::get_json_as_string(doc["location"]));
 
-		if(doc.HasMember("inline_message_id"))
-			inline_message_id = doc["inline_message_id"].GetString();
+			if(doc.HasMember("inline_message_id"))
+				inline_message_id = doc["inline_message_id"].GetString();
 
-		if(doc.HasMember("query"))
-			query = doc["query"].GetString();
+			if(doc.HasMember("query"))
+				query = doc["query"].GetString();
+		}
 	}
 
 	std::string ChosenInlineResult::parse_to_json() const

@@ -59,14 +59,12 @@ namespace tgbot
 			{
 				std::cerr << "Error: Request's http code is not 200!" << std::endl;
 
-				//condition that we probably have a json object
-				if(Tools::starts_w(http_response_txt, "{") && Tools::ends_w(http_response_txt, "}"))
-				{
-					rapidjson::Document doc;
-					doc.Parse(http_response_txt.c_str());
+				rapidjson::Document doc;
+				doc.Parse(http_response_txt.c_str());
+
+				if(Tools::is_json(http_response_txt))
 					if(doc.HasMember("description"))
 						std::cerr << doc["description"].GetString() << std::endl;
-				}
 
 				//so that assertion does not fail that the response is a json object as Message(std::string json) is built with the response
 				HttpResponse http_response;
@@ -143,14 +141,12 @@ namespace tgbot
 			{
 				std::cerr << "Error: Request's http code is not 200!" << std::endl;
 
-				//condition that we probably have a json object
-				if(Tools::starts_w(http_response_txt, "{") && Tools::ends_w(http_response_txt, "}"))
-				{
-					rapidjson::Document doc;
-					doc.Parse(http_response_txt.c_str());
+				rapidjson::Document doc;
+				doc.Parse(http_response_txt.c_str());
+
+				if(Tools::is_json(http_response_txt))
 					if(doc.HasMember("description"))
 						std::cerr << doc["description"].GetString() << std::endl;
-				}
 
 				//so that assertion does not fail that the response is a json object as Message(std::string json) is built with the response
 				HttpResponse http_response;

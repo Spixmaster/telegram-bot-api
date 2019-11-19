@@ -1,5 +1,6 @@
 #include "tgbot/types/UserProfilePhotos.h"
 #include <iostream>
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -11,23 +12,26 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("total_count"))
-			total_count = doc["total_count"].GetInt();
-
-		if(doc.HasMember("photos"))
+		if(Tools::is_json(json))
 		{
-			/*
-			 * photos are stored in an array a with multiple arrays b
-			 * each array b represent one photo json object as the photo exists in several sizes
-			 */
-			const rapidjson::Value &json_photo_array = doc["photos"].GetArray();
+			//assignments
+			if(doc.HasMember("total_count"))
+				total_count = doc["total_count"].GetInt();
 
-			//iterate through all photos
-			for(std::size_t j = 0; j < json_photo_array.Size(); ++j)
-				//iterate through all PhotoSizes of one photo
-				for(std::size_t k = 0; k < json_photo_array[j].GetArray().Size(); ++k)
-					photos.push_back(std::make_shared<PhotoSize>(SpecialTools::get_json_obj_as_string(json_photo_array[j][k])));
+			if(doc.HasMember("photos"))
+			{
+				/*
+				 * photos are stored in an array a with multiple arrays b
+				 * each array b represent one photo json object as the photo exists in several sizes
+				 */
+				const rapidjson::Value &json_photo_array = doc["photos"].GetArray();
+
+				//iterate through all photos
+				for(std::size_t j = 0; j < json_photo_array.Size(); ++j)
+					//iterate through all PhotoSizes of one photo
+					for(std::size_t k = 0; k < json_photo_array[j].GetArray().Size(); ++k)
+						photos.push_back(std::make_shared<PhotoSize>(SpecialTools::get_json_as_string(json_photo_array[j][k])));
+			}
 		}
 	}
 

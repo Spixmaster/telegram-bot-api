@@ -1,5 +1,6 @@
 #include <rapidjson/document.h>
 #include "tgbot/types/PollOption.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -11,12 +12,15 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("text"))
-			text = doc["text"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("text"))
+				text = doc["text"].GetString();
 
-		if(doc.HasMember("voter_count"))
-			voter_count = doc["voter_count"].GetInt();
+			if(doc.HasMember("voter_count"))
+				voter_count = doc["voter_count"].GetInt();
+		}
 	}
 
 	std::string PollOption::parse_to_json() const

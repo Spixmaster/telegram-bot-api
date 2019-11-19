@@ -1,4 +1,5 @@
 #include "tgbot/types/ChatPhoto.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -10,12 +11,15 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("small_file_id"))
-			small_file_id = doc["small_file_id"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("small_file_id"))
+				small_file_id = doc["small_file_id"].GetString();
 
-		if(doc.HasMember("big_file_id"))
-			big_file_id = doc["big_file_id"].GetString();
+			if(doc.HasMember("big_file_id"))
+				big_file_id = doc["big_file_id"].GetString();
+		}
 	}
 
 	std::string ChatPhoto::parse_to_json() const

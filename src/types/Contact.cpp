@@ -1,5 +1,6 @@
 #include <rapidjson/document.h>
 #include "tgbot/types/Contact.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -11,21 +12,24 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("phone_number"))
-			phone_number = doc["phone_number"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("phone_number"))
+				phone_number = doc["phone_number"].GetString();
 
-		if(doc.HasMember("first_name"))
-			first_name = doc["first_name"].GetString();
+			if(doc.HasMember("first_name"))
+				first_name = doc["first_name"].GetString();
 
-		if(doc.HasMember("last_name"))
-			last_name = doc["last_name"].GetString();
+			if(doc.HasMember("last_name"))
+				last_name = doc["last_name"].GetString();
 
-		if(doc.HasMember("user_id"))
-			user_id = doc["user_id"].GetInt();
+			if(doc.HasMember("user_id"))
+				user_id = doc["user_id"].GetInt();
 
-		if(doc.HasMember("vcard"))
-			vcard = doc["vcard"].GetString();
+			if(doc.HasMember("vcard"))
+				vcard = doc["vcard"].GetString();
+		}
 	}
 
 	std::string Contact::parse_to_json() const

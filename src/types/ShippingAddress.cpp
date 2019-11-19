@@ -1,4 +1,5 @@
 #include "tgbot/types/ShippingAddress.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -10,24 +11,27 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("country_code"))
-			country_code = doc["country_code"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("country_code"))
+				country_code = doc["country_code"].GetString();
 
-		if(doc.HasMember("state"))
-			state = doc["state"].GetString();
+			if(doc.HasMember("state"))
+				state = doc["state"].GetString();
 
-		if(doc.HasMember("city"))
-			city = doc["city"].GetString();
+			if(doc.HasMember("city"))
+				city = doc["city"].GetString();
 
-		if(doc.HasMember("street_line1"))
-			street_line1 = doc["street_line1"].GetString();
+			if(doc.HasMember("street_line1"))
+				street_line1 = doc["street_line1"].GetString();
 
-		if(doc.HasMember("street_line2"))
-			street_line2 = doc["street_line2"].GetString();
+			if(doc.HasMember("street_line2"))
+				street_line2 = doc["street_line2"].GetString();
 
-		if(doc.HasMember("postcode"))
-			postcode = doc["postcode"].GetString();
+			if(doc.HasMember("postcode"))
+				postcode = doc["postcode"].GetString();
+		}
 	}
 
 	std::string ShippingAddress::parse_to_json() const

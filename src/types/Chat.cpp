@@ -3,6 +3,7 @@
 #include "tgbot/types/ChatPhoto.h"
 #include "tgbot/types/Message.h"
 #include <memory>
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -15,45 +16,48 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("id"))
-			id = doc["id"].GetInt64();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("id"))
+				id = doc["id"].GetInt64();
 
-		if(doc.HasMember("type"))
-			type = doc["type"].GetString();
+			if(doc.HasMember("type"))
+				type = doc["type"].GetString();
 
-		if(doc.HasMember("title"))
-			title = doc["title"].GetString();
+			if(doc.HasMember("title"))
+				title = doc["title"].GetString();
 
-		if(doc.HasMember("username"))
-			username = doc["username"].GetString();
+			if(doc.HasMember("username"))
+				username = doc["username"].GetString();
 
-		if(doc.HasMember("first_name"))
-			first_name = doc["first_name"].GetString();
+			if(doc.HasMember("first_name"))
+				first_name = doc["first_name"].GetString();
 
-		if(doc.HasMember("last_name"))
-			last_name = doc["last_name"].GetString();
+			if(doc.HasMember("last_name"))
+				last_name = doc["last_name"].GetString();
 
-		if(doc.HasMember("photo"))
-			photo = std::make_shared<ChatPhoto>(SpecialTools::get_json_obj_as_string(doc["photo"]));
+			if(doc.HasMember("photo"))
+				photo = std::make_shared<ChatPhoto>(SpecialTools::get_json_as_string(doc["photo"]));
 
-		if(doc.HasMember("description"))
-			description = doc["description"].GetString();
+			if(doc.HasMember("description"))
+				description = doc["description"].GetString();
 
-		if(doc.HasMember("invite_link"))
-			invite_link = doc["invite_link"].GetString();
+			if(doc.HasMember("invite_link"))
+				invite_link = doc["invite_link"].GetString();
 
-		if(doc.HasMember("pinned_message"))
-			pinned_message = std::make_shared<Message>(SpecialTools::get_json_obj_as_string(doc["pinned_message"]));
+			if(doc.HasMember("pinned_message"))
+				pinned_message = std::make_shared<Message>(SpecialTools::get_json_as_string(doc["pinned_message"]));
 
-		if(doc.HasMember("permissions"))
-			permissions = std::make_shared<ChatPermissions>(SpecialTools::get_json_obj_as_string(doc["permissions"]));
+			if(doc.HasMember("permissions"))
+				permissions = std::make_shared<ChatPermissions>(SpecialTools::get_json_as_string(doc["permissions"]));
 
-		if(doc.HasMember("sticker_set_name"))
-			sticker_set_name = doc["sticker_set_name"].GetString();
+			if(doc.HasMember("sticker_set_name"))
+				sticker_set_name = doc["sticker_set_name"].GetString();
 
-		if(doc.HasMember("can_set_sticker_set"))
-			can_set_sticker_set = doc["can_set_sticker_set"].GetBool();
+			if(doc.HasMember("can_set_sticker_set"))
+				can_set_sticker_set = doc["can_set_sticker_set"].GetBool();
+		}
 	}
 
 	std::string Chat::parse_to_json() const

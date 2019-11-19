@@ -1,5 +1,6 @@
 #include <tgbot/SpecialTools.h>
 #include "tgbot/types/Video.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -11,27 +12,30 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("file_id"))
-			file_id = doc["file_id"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("file_id"))
+				file_id = doc["file_id"].GetString();
 
-		if(doc.HasMember("width"))
-			width = doc["width"].GetInt();
+			if(doc.HasMember("width"))
+				width = doc["width"].GetInt();
 
-		if(doc.HasMember("height"))
-			height = doc["height"].GetInt();
+			if(doc.HasMember("height"))
+				height = doc["height"].GetInt();
 
-		if(doc.HasMember("duration"))
-			duration = doc["duration"].GetInt();
+			if(doc.HasMember("duration"))
+				duration = doc["duration"].GetInt();
 
-		if(doc.HasMember("thumb"))
-			thumb = std::make_shared<PhotoSize>(SpecialTools::get_json_obj_as_string(doc["thumb"]));
+			if(doc.HasMember("thumb"))
+				thumb = std::make_shared<PhotoSize>(SpecialTools::get_json_as_string(doc["thumb"]));
 
-		if(doc.HasMember("mime_type"))
-			mime_type = doc["mime_type"].GetString();
+			if(doc.HasMember("mime_type"))
+				mime_type = doc["mime_type"].GetString();
 
-		if(doc.HasMember("file_size"))
-			file_size = doc["file_size"].GetInt();
+			if(doc.HasMember("file_size"))
+				file_size = doc["file_size"].GetInt();
+		}
 	}
 
 	std::string Video::parse_to_json() const

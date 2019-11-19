@@ -1,5 +1,6 @@
 #include <tgbot/SpecialTools.h>
 #include "tgbot/types/Sticker.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -11,33 +12,36 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("file_id"))
-			file_id = doc["file_id"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("file_id"))
+				file_id = doc["file_id"].GetString();
 
-		if(doc.HasMember("width"))
-			width = doc["width"].GetInt();
+			if(doc.HasMember("width"))
+				width = doc["width"].GetInt();
 
-		if(doc.HasMember("height"))
-			height = doc["height"].GetInt();
+			if(doc.HasMember("height"))
+				height = doc["height"].GetInt();
 
-		if(doc.HasMember("is_animated"))
-			is_animated = doc["is_animated"].GetBool();
+			if(doc.HasMember("is_animated"))
+				is_animated = doc["is_animated"].GetBool();
 
-		if(doc.HasMember("thumb"))
-			thumb = std::make_shared<PhotoSize>(SpecialTools::get_json_obj_as_string(doc["thumb"]));
+			if(doc.HasMember("thumb"))
+				thumb = std::make_shared<PhotoSize>(SpecialTools::get_json_as_string(doc["thumb"]));
 
-		if(doc.HasMember("emoji"))
-			emoji = doc["emoji"].GetString();
+			if(doc.HasMember("emoji"))
+				emoji = doc["emoji"].GetString();
 
-		if(doc.HasMember("set_name"))
-			set_name = doc["set_name"].GetString();
+			if(doc.HasMember("set_name"))
+				set_name = doc["set_name"].GetString();
 
-		if(doc.HasMember("mask_position"))
-			mask_position = std::make_shared<MaskPosition>(SpecialTools::get_json_obj_as_string(doc["mask_position"]));
+			if(doc.HasMember("mask_position"))
+				mask_position = std::make_shared<MaskPosition>(SpecialTools::get_json_as_string(doc["mask_position"]));
 
-		if(doc.HasMember("file_size"))
-			file_size = doc["file_size"].GetInt();
+			if(doc.HasMember("file_size"))
+				file_size = doc["file_size"].GetInt();
+		}
 	}
 
 	std::string Sticker::parse_to_json() const

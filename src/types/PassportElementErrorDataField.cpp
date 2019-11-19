@@ -1,4 +1,5 @@
 #include "tgbot/types/PassportElementErrorDataField.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -10,21 +11,24 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("source"))
-			source = doc["source"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("source"))
+				source = doc["source"].GetString();
 
-		if(doc.HasMember("type"))
-			type = doc["type"].GetString();
+			if(doc.HasMember("type"))
+				type = doc["type"].GetString();
 
-		if(doc.HasMember("field_name"))
-			field_name = doc["field_name"].GetString();
+			if(doc.HasMember("field_name"))
+				field_name = doc["field_name"].GetString();
 
-		if(doc.HasMember("data_hash"))
-			data_hash = doc["data_hash"].GetString();
+			if(doc.HasMember("data_hash"))
+				data_hash = doc["data_hash"].GetString();
 
-		if(doc.HasMember("message"))
-			message = doc["message"].GetString();
+			if(doc.HasMember("message"))
+				message = doc["message"].GetString();
+		}
 	}
 
 	std::string PassportElementErrorDataField::parse_to_json() const

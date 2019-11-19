@@ -1,4 +1,5 @@
 #include "tgbot/types/GameHighScore.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -10,15 +11,18 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("position"))
-			position = doc["position"].GetInt();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("position"))
+				position = doc["position"].GetInt();
 
-		if(doc.HasMember("user"))
-			user = std::make_shared<User>(SpecialTools::get_json_obj_as_string(doc["user"]));
+			if(doc.HasMember("user"))
+				user = std::make_shared<User>(SpecialTools::get_json_as_string(doc["user"]));
 
-		if(doc.HasMember("score"))
-			score = doc["score"].GetInt();
+			if(doc.HasMember("score"))
+				score = doc["score"].GetInt();
+		}
 	}
 
 	std::string GameHighScore::parse_to_json() const

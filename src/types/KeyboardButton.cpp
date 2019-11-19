@@ -1,4 +1,5 @@
 #include "tgbot/types/KeyboardButton.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -10,15 +11,18 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("text"))
-			text = doc["text"].GetString();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("text"))
+				text = doc["text"].GetString();
 
-		if(doc.HasMember("request_contact"))
-			request_contact = doc["request_contact"].GetBool();
+			if(doc.HasMember("request_contact"))
+				request_contact = doc["request_contact"].GetBool();
 
-		if(doc.HasMember("request_location"))
-			request_location = doc["request_location"].GetBool();
+			if(doc.HasMember("request_location"))
+				request_location = doc["request_location"].GetBool();
+		}
 	}
 
 	std::string KeyboardButton::parse_to_json() const

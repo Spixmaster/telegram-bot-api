@@ -1,4 +1,5 @@
 #include "tgbot/types/ReplyKeyboardRemove.h"
+#include "tgbot/Tools.h"
 
 namespace tgbot
 {
@@ -10,12 +11,15 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		//assignments
-		if(doc.HasMember("remove_keyboard"))
-			remove_keyboard = doc["remove_keyboard"].GetBool();
+		if(Tools::is_json(json))
+		{
+			//assignments
+			if(doc.HasMember("remove_keyboard"))
+				remove_keyboard = doc["remove_keyboard"].GetBool();
 
-		if(doc.HasMember("selective"))
-			selective = doc["selective"].GetBool();
+			if(doc.HasMember("selective"))
+				selective = doc["selective"].GetBool();
+		}
 	}
 
 	std::string ReplyKeyboardRemove::parse_to_json() const
