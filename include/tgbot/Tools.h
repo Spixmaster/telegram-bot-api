@@ -206,6 +206,13 @@ namespace tgbot
 		 * @return path to exe
 		 */
 		static std::string get_exe_path();
+
+		/*
+		 * @brief checks str whether it is a json object
+		 * @param str: string to be checked
+		 * @return true if it is a json object and otherwise false
+		 */
+		static bool is_json(const std::string &str);
 	};
 }
 
