@@ -1,5 +1,7 @@
 #include <tgbot/Tools.h>
 #include "tgbot/EventHandler.h"
+//todo
+#include <iostream>
 
 namespace tgbot
 {
@@ -13,6 +15,9 @@ namespace tgbot
 		//iterate through all the updates
 		for(std::size_t j = 0; j < updates.size(); ++j)
 		{
+			//todo
+			std::cout << updates.at(j)->message << std::endl;
+
 			m_offset = updates.at(j)->update_id + 1;
 			handle_update(updates.at(j));
 		}
