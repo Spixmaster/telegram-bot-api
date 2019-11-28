@@ -11,7 +11,7 @@ namespace tgbot
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
 
-		if(Tools::is_json(json))
+		if(doc.IsObject())
 		{
 			//assignments
 			if(doc.HasMember("id"))

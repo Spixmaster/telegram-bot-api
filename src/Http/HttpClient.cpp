@@ -62,7 +62,7 @@ namespace tgbot
 				rapidjson::Document doc;
 				doc.Parse(http_response_txt.c_str());
 
-				if(Tools::is_json(http_response_txt))
+				if(doc.IsObject())
 					if(doc.HasMember("description"))
 						std::cerr << doc["description"].GetString() << std::endl;
 
@@ -144,7 +144,7 @@ namespace tgbot
 				rapidjson::Document doc;
 				doc.Parse(http_response_txt.c_str());
 
-				if(Tools::is_json(http_response_txt))
+				if(doc.IsObject())
 					if(doc.HasMember("description"))
 						std::cerr << doc["description"].GetString() << std::endl;
 
