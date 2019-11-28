@@ -520,13 +520,4 @@ namespace tgbot
 	  ssize_t count = readlink( "/proc/self/exe", result, PATH_MAX );
 	  return std::string( result, (count > 0) ? count : 0 );
 	}
-
-	bool Tools::is_json(const std::string &str)
-	{
-		rapidjson::Document doc;
-		doc.Parse(str.c_str());
-		if(doc.IsObject() || doc.IsArray())
-			return true;
-		return false;
-	}
 }
