@@ -29,11 +29,10 @@ make -j4
 sudo make install
 ```
 
-#### tools
-Use this as a git submodule: [tools](https://github.com/Spixmaster/tools)
+#### submodules
 ```sh
-cd to/your/git/repository
-git submodule add https://github.com/Spixmaster/tools
+git submodule init
+git submodul update
 ```
 
 #### Libraries that need to be linked (option -l)
