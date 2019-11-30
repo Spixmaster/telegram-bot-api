@@ -28,10 +28,10 @@ make -j4
 sudo make install
 ```
 
-#### submodules
+#### Submodules
 ```sh
 git submodule init
-git submodul update
+git submodule update
 ```
 
 #### Libraries that need to be linked (option -l)
@@ -40,6 +40,8 @@ git submodul update
 * PocoNet
 
 ### Example
+Also, look in the examples folder.
+
 ```cpp
 #include "tgbot/Bot.h"
 #include <memory>
