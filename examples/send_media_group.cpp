@@ -6,8 +6,8 @@ int main()
 	tgbot::Bot::ptr bot = std::make_shared<tgbot::Bot>("your-bot-token");
 
 	//files
-	tgbot::InputFile::ptr file0 = std::make_shared<tgbot::InputFile>("/path/to/a/file");
-	tgbot::InputFile::ptr file1 = std::make_shared<tgbot::InputFile>("/path/to/a/file");
+	tgbot::tools::InputFile::ptr file0 = std::make_shared<tgbot::InputFile>("/path/to/a/file");
+	tgbot::tools::InputFile::ptr file1 = std::make_shared<tgbot::InputFile>("/path/to/a/file");
 
 	//create media group
 	std::vector<std::variant<tgbot::InputMediaPhoto::ptr, tgbot::InputMediaVideo::ptr>> v;

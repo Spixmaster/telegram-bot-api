@@ -1,7 +1,7 @@
 #include <tgbot/SpecialTools.h>
 #include "tgbot/types/Chat.h"
 #include "tgbot/types/Message.h"
-#include "tgbot/Tools.h"
+#include "tools/Tools.h"
 
 namespace tgbot
 {

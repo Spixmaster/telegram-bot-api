@@ -23,7 +23,7 @@ namespace tgbot
 		//member functions
 
 		/*
-		 * @brief put an error message out to stderr
+		 * @brief puts an error message out to stderr
 		 * @param file: the filename which is included in the error message
 		 */
 		static void file_non_existent(const std::string &file);

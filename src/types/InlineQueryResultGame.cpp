@@ -1,5 +1,5 @@
 #include "tgbot/types/InlineQueryResultGame.h"
-#include "tgbot/Tools.h"
+#include "tools/Tools.h"
 
 namespace tgbot
 {

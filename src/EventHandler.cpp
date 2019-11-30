@@ -1,4 +1,4 @@
-#include <tgbot/Tools.h>
+#include "tools/Tools.h"
 #include "tgbot/EventHandler.h"
 
 namespace tgbot
@@ -32,14 +32,14 @@ namespace tgbot
 				}
 
 				//see whether command
-				if(Tools::starts_w(update->message->text, "/"))
+				if(tools::Tools::starts_w(update->message->text, "/"))
 				{
 					//get argument 0
-					std::vector<std::string> args = Tools::get_args(update->message->text);
+					std::vector<std::string> args = tools::Tools::get_args(update->message->text);
 					//cut off first char
 					std::string cmd;
 					if(args.size() >= 1)
-						cmd = Tools::cut_off_first_char(args.at(0));
+						cmd = tools::Tools::cut_off_first_char(args.at(0));
 
 					//known command
 					if(!(m_on_cmd_listener_ls.find(cmd) == m_on_cmd_listener_ls.end()))
@@ -74,14 +74,14 @@ namespace tgbot
 				}
 
 				//see whether command
-				if(Tools::starts_w(update->edited_message->text, "/"))
+				if(tools::Tools::starts_w(update->edited_message->text, "/"))
 				{
 					//get argument 0
-					std::vector<std::string> args = Tools::get_args(update->edited_message->text);
+					std::vector<std::string> args = tools::Tools::get_args(update->edited_message->text);
 					//cut off first char
 					std::string cmd;
 					if(args.size() >= 1)
-						cmd = Tools::cut_off_first_char(args.at(0));
+						cmd = tools::Tools::cut_off_first_char(args.at(0));
 
 					//known command
 					if(!(m_on_cmd_listener_ls.find(cmd) == m_on_cmd_listener_ls.end()))
@@ -116,14 +116,14 @@ namespace tgbot
 				}
 
 				//see whether command
-				if(Tools::starts_w(update->channel_post->text, "/"))
+				if(tools::Tools::starts_w(update->channel_post->text, "/"))
 				{
 					//get argument 0
-					std::vector<std::string> args = Tools::get_args(update->channel_post->text);
+					std::vector<std::string> args = tools::Tools::get_args(update->channel_post->text);
 					//cut off first char
 					std::string cmd;
 					if(args.size() >= 1)
-						cmd = Tools::cut_off_first_char(args.at(0));
+						cmd = tools::Tools::cut_off_first_char(args.at(0));
 
 					//known command
 					if(!(m_on_cmd_listener_ls.find(cmd) == m_on_cmd_listener_ls.end()))
@@ -158,14 +158,14 @@ namespace tgbot
 				}
 
 				//see whether command
-				if(Tools::starts_w(update->edited_channel_post->text, "/"))
+				if(tools::Tools::starts_w(update->edited_channel_post->text, "/"))
 				{
 					//get argument 0
-					std::vector<std::string> args = Tools::get_args(update->edited_channel_post->text);
+					std::vector<std::string> args = tools::Tools::get_args(update->edited_channel_post->text);
 					//cut off first char
 					std::string cmd;
 					if(args.size() >= 1)
-						cmd = Tools::cut_off_first_char(args.at(0));
+						cmd = tools::Tools::cut_off_first_char(args.at(0));
 
 					//known command
 					if(!(m_on_cmd_listener_ls.find(cmd) == m_on_cmd_listener_ls.end()))

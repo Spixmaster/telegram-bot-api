@@ -5,7 +5,7 @@
 #include "tgbot/types/InputMedia.h"
 #include <memory>
 #include <variant>
-#include "tgbot/http/InputFile.h"
+#include "tools/http/InputFile.h"
 
 namespace tgbot
 {
@@ -16,8 +16,8 @@ namespace tgbot
 
 		//member variables
 		const std::string type = "animation";
-		std::variant<std::string, InputFile::ptr> media;
-		std::variant<std::string, InputFile::ptr> thumb;
+		std::variant<std::string, tools::InputFile::ptr> media;
+		std::variant<std::string, tools::InputFile::ptr> thumb;
 		std::string caption;
 		std::string parse_mode;
 		int width = -1;
@@ -37,7 +37,7 @@ namespace tgbot
 		//@param width: animation's width
 		//@param height: animation's height
 		//@param duration: animation's duration
-		InputMediaAnimation(const std::variant<std::string, InputFile::ptr> &media, const std::variant<std::string, InputFile::ptr> &thumb, const std::string &caption = "",
+		InputMediaAnimation(const std::variant<std::string, tools::InputFile::ptr> &media, const std::variant<std::string, tools::InputFile::ptr> &thumb, const std::string &caption = "",
 				const std::string &parse_mode = "", const int &width = -1, const int &height = -1, const int &duration = -1);
 
 		//member functions

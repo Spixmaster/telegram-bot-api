@@ -1,6 +1,6 @@
 #include <tgbot/SpecialTools.h>
 #include "tgbot/types/Video.h"
-#include "tgbot/Tools.h"
+#include "tools/Tools.h"
 
 namespace tgbot
 {

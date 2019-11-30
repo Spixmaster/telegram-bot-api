@@ -9,3 +9,6 @@
 #builts
 Debug/
 Release/
+
+#submodules
+tools/

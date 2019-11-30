@@ -1,5 +1,5 @@
 #include "tgbot/types/InlineQueryResultCachedSticker.h"
-#include "tgbot/Tools.h"
+#include "tools/Tools.h"
 
 namespace tgbot
 {
