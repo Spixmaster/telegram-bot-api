@@ -6,21 +6,34 @@ Current state: Bot API 4.4 (up to date)
 See the [Telegram documentation](https://core.telegram.org/bots/api).
 
 ## Usage
-### Dependencies
+### Compiler
 You need to use a C++17 compiler.
 
+### Dependencies
+#### Poco
 The following packages need to be installed:
 ```sh
 sudo apt install libpoco-dev
 ```
+
+#### rapidjson
 Moreover, [rapdijson](https://github.com/Tencent/rapidjson) needs to be installed.
 
 For this, do the following steps:
-1. git clone https://github.com/Tencent/rapidjson
-2. cd rapidjson
-3. cmake .
-4. make -j4
-5. sudo make install
+```sh
+git clone https://github.com/Tencent/rapidjson
+cd rapidjson
+cmake .
+make -j4
+sudo make install
+```
+
+#### tools
+Use this as a git submodule: [tools](https://github.com/Spixmaster/tools)
+```sh
+cd to/your/git/repository
+git submodule add https://github.com/Spixmaster/tools
+```
 
 #### Libraries that need to be linked (option -l)
 * PocoFoundation

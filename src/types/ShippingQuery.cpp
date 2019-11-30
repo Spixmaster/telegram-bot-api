@@ -1,6 +1,6 @@
 #include <tgbot/SpecialTools.h>
 #include "tgbot/types/ShippingQuery.h"
-#include "tgbot/Tools.h"
+#include "tools/Tools.h"
 
 namespace tgbot
 {

@@ -1,6 +1,6 @@
 #include <rapidjson/document.h>
 #include "tgbot/types/InlineQueryResultCachedDocument.h"
-#include "tgbot/Tools.h"
+#include "tools/Tools.h"
 
 namespace tgbot
 {

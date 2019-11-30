@@ -4,13 +4,13 @@
 #include <string>
 #include "tgbot/types/User.h"
 #include <memory>
-#include "tgbot/http/HttpArg.h"
+#include "tools/http/HttpArg.h"
 #include <vector>
 #include "tgbot/types/Message.h"
 #include "tgbot/types/ReplyKeyboardMarkup.h"
 #include "tgbot/types/ForceReply.h"
 #include "tgbot/types/ReplyKeyboardRemove.h"
-#include "tgbot/http/InputFile.h"
+#include "tools/http/InputFile.h"
 #include <variant>
 #include "tgbot/types/InputMediaPhoto.h"
 #include "tgbot/types/InputMediaVideo.h"
@@ -81,7 +81,7 @@ namespace tgbot
 		 * 				before the call to the setWebhook, so unwanted updates may be received for a short period of time.
 		 * @return true on success
 		 */
-		bool setWebhook(const std::string &url, const InputFile::ptr &certificate = std::make_shared<InputFile>(""), const int &max_connections = 40,
+		bool setWebhook(const std::string &url, const tools::InputFile::ptr &certificate = std::make_shared<tools::InputFile>(""), const int &max_connections = 40,
 				const std::vector<std::string> &allowed_updates = std::vector<std::string>()) const;
 
 		/*
@@ -137,7 +137,7 @@ namespace tgbot
 		 * @param reply_markup: keyboard which is sent with the photo
 		 * @return sent message
 		 */
-		Message::ptr sendPhoto(const long long &chat_id, const std::variant<std::string, InputFile::ptr> &photo, const std::string &caption = "", const std::string &parse_mode = "",
+		Message::ptr sendPhoto(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &photo, const std::string &caption = "", const std::string &parse_mode = "",
 				const bool &disable_notification = false, const int &reply_to_message_id = 0, const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
 
 		/*
@@ -155,7 +155,7 @@ namespace tgbot
 		 * @param reply_markup: keyboard which is sent with the audio
 		 * @return sent message
 		 */
-		Message::ptr sendAudio(const long long &chat_id, const std::variant<std::string, InputFile::ptr> &audio, const std::variant<std::string, InputFile::ptr> &thumb,
+		Message::ptr sendAudio(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &audio, const std::variant<std::string, tools::InputFile::ptr> &thumb,
 				const std::string &caption = "", const std::string &parse_mode = "", const int &duration = 0, const std::string &performer = "",
 				const std::string &title = "", const bool &disable_notification = false, const int &reply_to_message_id = 0,
 				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
@@ -172,7 +172,7 @@ namespace tgbot
 		 * @param reply_markup: keyboard which is sent with the audio
 		 * @return sent message
 		 */
-		Message::ptr sendDocument(const long long &chat_id, const std::variant<std::string, InputFile::ptr> &document, const std::variant<std::string, InputFile::ptr> &thumb,
+		Message::ptr sendDocument(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &document, const std::variant<std::string, tools::InputFile::ptr> &thumb,
 				const std::string &caption = "", const std::string &parse_mode = "", const bool &disable_notification = false, const int &reply_to_message_id = 0,
 				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
 
@@ -192,7 +192,7 @@ namespace tgbot
 		 * @param reply_markup: keyboard which is sent with the audio
 		 * @return sent message
 		 */
-		Message::ptr sendVideo(const long long &chat_id, const std::variant<std::string, InputFile::ptr> &video, const std::variant<std::string, InputFile::ptr> &thumb,
+		Message::ptr sendVideo(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &video, const std::variant<std::string, tools::InputFile::ptr> &thumb,
 				const int &duration = 0, const int &width = 0, const int &height = 0, const std::string &caption = "", const std::string &parse_mode = "",
 				const bool &supports_streaming = false, const bool &disable_notification = false, const int &reply_to_message_id = 0,
 				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
@@ -212,7 +212,7 @@ namespace tgbot
 		 * @param reply_markup: keyboard which is sent with the audio
 		 * @return sent message
 		 */
-		Message::ptr sendAnimation(const long long &chat_id, const std::variant<std::string, InputFile::ptr> &animation, const std::variant<std::string, InputFile::ptr> &thumb,
+		Message::ptr sendAnimation(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &animation, const std::variant<std::string, tools::InputFile::ptr> &thumb,
 				const int &duration = 0, const int &width = 0, const int &height = 0, const std::string &caption = "", const std::string &parse_mode = "",
 				const bool &disable_notification = false, const int &reply_to_message_id = 0, const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
 
@@ -228,7 +228,7 @@ namespace tgbot
 		 * @param reply_markup: keyboard which is sent with the voice message
 		 * @return sent message
 		 */
-		Message::ptr sendVoice(const long long &chat_id, const std::variant<std::string, InputFile::ptr> &voice, const std::string &caption = "", const std::string &parse_mode = "",
+		Message::ptr sendVoice(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &voice, const std::string &caption = "", const std::string &parse_mode = "",
 				const int &duration = 0, const bool &disable_notification = false, const int &reply_to_message_id = 0,
 				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
 
@@ -244,7 +244,7 @@ namespace tgbot
 		 * @param reply_markup: keyboard which is sent with the video note
 		 * @return sent message
 		 */
-		Message::ptr sendVideoNote(const long long &chat_id, const std::variant<std::string, InputFile::ptr> &video_note, const std::variant<std::string, InputFile::ptr> &thumb,
+		Message::ptr sendVideoNote(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &video_note, const std::variant<std::string, tools::InputFile::ptr> &thumb,
 				const int &duration = 0, const int &length = 0, const bool &disable_notification = false, const int &reply_to_message_id = 0,
 				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
 
@@ -437,7 +437,7 @@ namespace tgbot
 		 * @param photo: photo which shall be used as a group photo
 		 * @return true on success
 		 */
-		bool setChatPhoto(const long long &chat_id, const InputFile::ptr &photo) const;
+		bool setChatPhoto(const long long &chat_id, const tools::InputFile::ptr &photo) const;
 
 		/*
 		 * @brief deletes the photo of a group
@@ -616,7 +616,7 @@ namespace tgbot
 		 * @param reply_markup: keyboard which is sent with the sticker
 		 * @return sent message
 		 */
-		Message::ptr sendSticker(const long long &chat_id, const std::variant<std::string, InputFile::ptr> &sticker, const bool &disable_notification = false,
+		Message::ptr sendSticker(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &sticker, const bool &disable_notification = false,
 				const int &reply_to_message_id = 0, const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
 
 		/*
@@ -632,7 +632,7 @@ namespace tgbot
 		 * @param png_sticker: the sticker itself
 		 * @return File object
 		 */
-		File::ptr uploadStickerFile(const int &user_id, const InputFile::ptr &png_sticker) const;
+		File::ptr uploadStickerFile(const int &user_id, const tools::InputFile::ptr &png_sticker) const;
 
 		/*
 		 * @brief uploads a new sticker
@@ -645,7 +645,7 @@ namespace tgbot
 		 * @param mask_position: A JSON-serialized object for position where the mask should be placed on faces
 		 * @return true on success
 		 */
-		bool createNewStickerSet(const int &user_id, const std::string &name, const std::string &title, const std::variant<std::string, InputFile::ptr> &png_sticker,
+		bool createNewStickerSet(const int &user_id, const std::string &name, const std::string &title, const std::variant<std::string, tools::InputFile::ptr> &png_sticker,
 				const std::string &emojis, const bool &contains_mask = false, const MaskPosition::ptr &mask_position = std::make_shared<MaskPosition>()) const;
 
 		/*
@@ -658,7 +658,7 @@ namespace tgbot
 		 * @param mask_position: A JSON-serialized object for position where the mask should be placed on faces
 		 * @return true on success
 		 */
-		bool addStickerToSet(const int &user_id, const std::string &name, const std::string &title, const std::variant<std::string, InputFile::ptr> &png_sticker,
+		bool addStickerToSet(const int &user_id, const std::string &name, const std::string &title, const std::variant<std::string, tools::InputFile::ptr> &png_sticker,
 				const std::string &emojis, const MaskPosition::ptr &mask_position = std::make_shared<MaskPosition>()) const;
 
 		/*

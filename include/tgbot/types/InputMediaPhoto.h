@@ -5,7 +5,7 @@
 #include "tgbot/types/InputMedia.h"
 #include <memory>
 #include <variant>
-#include "tgbot/http/InputFile.h"
+#include "tools/http/InputFile.h"
 
 namespace tgbot
 {
@@ -16,7 +16,7 @@ namespace tgbot
 
 		//member variables
 		const std::string type = "photo";
-		std::variant<std::string, InputFile::ptr> media;
+		std::variant<std::string, tools::InputFile::ptr> media;
 		std::string caption;
 		std::string parse_mode;
 
@@ -29,7 +29,7 @@ namespace tgbot
 		//@param media: source of the photo
 		//@param caption: caption under photo
 		//@param parse_mode: how caption is parsed
-		InputMediaPhoto(const std::variant<std::string, InputFile::ptr> &media, const std::string &caption = "", const std::string &parse_mode = "");
+		InputMediaPhoto(const std::variant<std::string, tools::InputFile::ptr> &media, const std::string &caption = "", const std::string &parse_mode = "");
 
 		//member functions
 

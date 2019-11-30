@@ -1,6 +1,6 @@
 #include <rapidjson/document.h>
 #include "tgbot/types/InputMediaPhoto.h"
-#include "tgbot/Tools.h"
+#include "tools/Tools.h"
 
 namespace tgbot
 {
@@ -26,7 +26,7 @@ namespace tgbot
 		}
 	}
 
-	InputMediaPhoto::InputMediaPhoto(const std::variant<std::string, InputFile::ptr> &media, const std::string &caption, const std::string &parse_mode) : media(media),
+	InputMediaPhoto::InputMediaPhoto(const std::variant<std::string, tools::InputFile::ptr> &media, const std::string &caption, const std::string &parse_mode) : media(media),
 			caption(caption), parse_mode(parse_mode)
 	{}
 
@@ -47,7 +47,7 @@ namespace tgbot
 		//of type InputFile
 		else
 		{
-			json.append("\"media\": \"attach://" + std::get<InputFile::ptr>(media)->m_path + "\"");
+			json.append("\"media\": \"attach://" + std::get<tools::InputFile::ptr>(media)->m_path + "\"");
 			json.append(", ");
 		}
 

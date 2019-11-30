@@ -1,6 +1,6 @@
 #include <rapidjson/document.h>
 #include "tgbot/types/InputMediaVideo.h"
-#include "tgbot/Tools.h"
+#include "tools/Tools.h"
 
 namespace tgbot
 {
@@ -41,7 +41,7 @@ namespace tgbot
 		}
 	}
 
-	InputMediaVideo::InputMediaVideo(const std::variant<std::string, InputFile::ptr> &media, const std::variant<std::string, InputFile::ptr> &thumb, const std::string &caption,
+	InputMediaVideo::InputMediaVideo(const std::variant<std::string, tools::InputFile::ptr> &media, const std::variant<std::string, tools::InputFile::ptr> &thumb, const std::string &caption,
 				const std::string &parse_mode, const int &width, const int &height, const int &duration, const bool & supports_streaming) : media(media), thumb(thumb),
 						caption(caption), parse_mode(parse_mode), width(width), height(height), duration(duration), supports_streaming(supports_streaming)
 	{}
@@ -63,7 +63,7 @@ namespace tgbot
 		//of type InputFile
 		else
 		{
-			json.append("\"media\": \"attach://" + std::get<InputFile::ptr>(media)->m_path + "\"");
+			json.append("\"media\": \"attach://" + std::get<tools::InputFile::ptr>(media)->m_path + "\"");
 			json.append(", ");
 		}
 
@@ -76,7 +76,7 @@ namespace tgbot
 		//of type InputFile
 		else
 		{
-			json.append("\"thumb\": \"attach://" + std::get<InputFile::ptr>(thumb)->m_path + "\"");
+			json.append("\"thumb\": \"attach://" + std::get<tools::InputFile::ptr>(thumb)->m_path + "\"");
 			json.append(", ");
 		}
 

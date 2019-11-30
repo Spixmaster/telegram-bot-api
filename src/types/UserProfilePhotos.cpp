@@ -1,6 +1,6 @@
 #include "tgbot/types/UserProfilePhotos.h"
 #include <iostream>
-#include "tgbot/Tools.h"
+#include "tools/Tools.h"
 
 namespace tgbot
 {

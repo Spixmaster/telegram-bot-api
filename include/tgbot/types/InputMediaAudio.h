@@ -5,7 +5,7 @@
 #include "tgbot/types/InputMedia.h"
 #include <memory>
 #include <variant>
-#include "tgbot/http/InputFile.h"
+#include "tools/http/InputFile.h"
 
 namespace tgbot
 {
@@ -16,8 +16,8 @@ namespace tgbot
 
 		//member variables
 		const std::string type = "audio";
-		std::variant<std::string, InputFile::ptr> media;
-		std::variant<std::string, InputFile::ptr> thumb;
+		std::variant<std::string, tools::InputFile::ptr> media;
+		std::variant<std::string, tools::InputFile::ptr> thumb;
 		std::string caption;
 		std::string parse_mode;
 		int duration = -1;
@@ -37,7 +37,7 @@ namespace tgbot
 		//@param duration: audio's duration
 		//@param performer: audio's performer
 		//@param title: audio's title
-		InputMediaAudio(const std::variant<std::string, InputFile::ptr> &media, const std::variant<std::string, InputFile::ptr> &thumb, const std::string &caption = "",
+		InputMediaAudio(const std::variant<std::string, tools::InputFile::ptr> &media, const std::variant<std::string, tools::InputFile::ptr> &thumb, const std::string &caption = "",
 				const std::string &parse_mode = "", const int &duration = -1, const std::string &performer = "", const std::string &title = "");
 
 		//member functions

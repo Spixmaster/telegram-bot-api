@@ -3,7 +3,7 @@
 #include "tgbot/types/ChatPhoto.h"
 #include "tgbot/types/Message.h"
 #include <memory>
-#include "tgbot/Tools.h"
+#include "tools/Tools.h"
 
 namespace tgbot
 {
