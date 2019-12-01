@@ -18,7 +18,7 @@ namespace tgbot
 		}
 	}
 
-	void EventHandler::handle_update(const Update::ptr &update)
+	void EventHandler::handle_update(const Update::ptr &update) const
 	{
 		if (update->message != nullptr || update->edited_message != nullptr || update->channel_post != nullptr || update->edited_channel_post != nullptr)
 		{

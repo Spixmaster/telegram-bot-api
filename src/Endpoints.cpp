@@ -66,7 +66,8 @@ namespace tgbot
 		return updates;
 	}
 
-	bool Endpoints::setWebhook(const std::string &url, const tools::InputFile::ptr &certificate, const int &max_connections, const std::vector<std::string> &allowed_updates) const
+	bool Endpoints::setWebhook(const std::string &url, const tools::InputFile::ptr &certificate, const int &max_connections,
+			const std::vector<std::string> &allowed_updates) const
 	{
 		//go through vector to build up the json array
 		std::string allowed_updates_json = "[";
@@ -212,8 +213,8 @@ namespace tgbot
 		return msg;
 	}
 
-	Message::ptr Endpoints::sendPhoto(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &photo, const std::string &caption, const std::string &parse_mode,
-			const bool &disable_notification, const int &reply_to_message_id, const Reply::ptr &reply_markup) const
+	Message::ptr Endpoints::sendPhoto(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &photo, const std::string &caption,
+			const std::string &parse_mode, const bool &disable_notification, const int &reply_to_message_id, const Reply::ptr &reply_markup) const
 	{
 		if(std::holds_alternative<std::string>(photo))
 		{
@@ -269,9 +270,10 @@ namespace tgbot
 		}
 	}
 
-	Message::ptr Endpoints::sendAudio(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &audio, const std::variant<std::string, tools::InputFile::ptr> &thumb,
-			const std::string &caption, const std::string &parse_mode, const int &duration, const std::string &performer, const std::string &title,
-			const bool &disable_notification, const int &reply_to_message_id, const Reply::ptr &reply_markup) const
+	Message::ptr Endpoints::sendAudio(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &audio,
+			const std::variant<std::string, tools::InputFile::ptr> &thumb, const std::string &caption, const std::string &parse_mode,
+			const int &duration, const std::string &performer, const std::string &title, const bool &disable_notification, const int &reply_to_message_id,
+			const Reply::ptr &reply_markup) const
 	{
 		if(std::holds_alternative<std::string>(audio) && std::holds_alternative<std::string>(thumb))
 		{
@@ -396,8 +398,9 @@ namespace tgbot
 		}
 	}
 
-	Message::ptr Endpoints::sendDocument(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &document, const std::variant<std::string, tools::InputFile::ptr> &thumb,
-			const std::string &caption, const std::string &parse_mode, const bool &disable_notification, const int &reply_to_message_id, const Reply::ptr &reply_markup) const
+	Message::ptr Endpoints::sendDocument(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &document,
+			const std::variant<std::string, tools::InputFile::ptr> &thumb, const std::string &caption, const std::string &parse_mode,
+			const bool &disable_notification, const int &reply_to_message_id, const Reply::ptr &reply_markup) const
 	{
 		if(std::holds_alternative<std::string>(document) && std::holds_alternative<std::string>(thumb))
 		{
@@ -510,9 +513,10 @@ namespace tgbot
 		}
 	}
 
-	Message::ptr Endpoints::sendVideo(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &video, const std::variant<std::string, tools::InputFile::ptr> &thumb,
-			const int &duration, const int &width, const int &height, const std::string &caption, const std::string &parse_mode,const bool &supports_streaming,
-			const bool &disable_notification, const int &reply_to_message_id, const Reply::ptr &reply_markup) const
+	Message::ptr Endpoints::sendVideo(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &video,
+			const std::variant<std::string, tools::InputFile::ptr> &thumb, const int &duration, const int &width, const int &height, const std::string &caption,
+			const std::string &parse_mode,const bool &supports_streaming, const bool &disable_notification, const int &reply_to_message_id,
+			const Reply::ptr &reply_markup) const
 	{
 		if(std::holds_alternative<std::string>(video) && std::holds_alternative<std::string>(thumb))
 		{
@@ -641,8 +645,9 @@ namespace tgbot
 		}
 	}
 
-	Message::ptr Endpoints::sendAnimation(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &animation, const std::variant<std::string, tools::InputFile::ptr> &thumb,
-			const int &duration, const int &width, const int &height, const std::string &caption, const std::string &parse_mode, const bool &disable_notification,
+	Message::ptr Endpoints::sendAnimation(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &animation,
+			const std::variant<std::string, tools::InputFile::ptr> &thumb, const int &duration, const int &width, const int &height,
+			const std::string &caption, const std::string &parse_mode, const bool &disable_notification,
 			const int &reply_to_message_id, const Reply::ptr &reply_markup) const
 	{
 		if(std::holds_alternative<std::string>(animation) && std::holds_alternative<std::string>(thumb))
@@ -768,8 +773,8 @@ namespace tgbot
 		}
 	}
 
-	Message::ptr Endpoints::sendVoice(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &voice, const std::string &caption, const std::string &parse_mode,
-			const int &duration, const bool &disable_notification, const int &reply_to_message_id, const Reply::ptr &reply_markup) const
+	Message::ptr Endpoints::sendVoice(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &voice, const std::string &caption,
+			const std::string &parse_mode, const int &duration, const bool &disable_notification, const int &reply_to_message_id, const Reply::ptr &reply_markup) const
 	{
 		if(std::holds_alternative<std::string>(voice))
 		{
@@ -828,8 +833,9 @@ namespace tgbot
 		}
 	}
 
-	Message::ptr Endpoints::sendVideoNote(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &video_note, const std::variant<std::string, tools::InputFile::ptr> &thumb,
-			const int &duration, const int &length, const bool &disable_notification, const int &reply_to_message_id, const Reply::ptr &reply_markup) const
+	Message::ptr Endpoints::sendVideoNote(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &video_note,
+			const std::variant<std::string, tools::InputFile::ptr> &thumb, const int &duration, const int &length, const bool &disable_notification,
+			const int &reply_to_message_id, const Reply::ptr &reply_markup) const
 	{
 		if(std::holds_alternative<std::string>(video_note) && std::holds_alternative<std::string>(thumb))
 		{
@@ -1336,8 +1342,9 @@ namespace tgbot
 		return false;
 	}
 
-	bool Endpoints::promoteChatMember(const long long &chat_id, const int &user_id, const bool &can_change_info, const bool &can_post_messages, const bool &can_edit_messages,
-			const bool &can_delete_messages, const bool &can_invite_users, const bool &can_restrict_members, const bool &can_pin_messages, const bool &can_promote_members) const
+	bool Endpoints::promoteChatMember(const long long &chat_id, const int &user_id, const bool &can_change_info, const bool &can_post_messages,
+			const bool &can_edit_messages, const bool &can_delete_messages, const bool &can_invite_users, const bool &can_restrict_members,
+			const bool &can_pin_messages, const bool &can_promote_members) const
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -2021,8 +2028,9 @@ namespace tgbot
 		return file;
 	}
 
-	bool Endpoints::createNewStickerSet(const int &user_id, const std::string &name, const std::string &title, const std::variant<std::string, tools::InputFile::ptr> &png_sticker,
-			const std::string &emojis, const bool &contains_mask, const MaskPosition::ptr &mask_position) const
+	bool Endpoints::createNewStickerSet(const int &user_id, const std::string &name, const std::string &title,
+			const std::variant<std::string, tools::InputFile::ptr> &png_sticker, const std::string &emojis, const bool &contains_mask,
+			const MaskPosition::ptr &mask_position) const
 	{
 		if(std::holds_alternative<std::string>(png_sticker))
 		{
@@ -2074,8 +2082,8 @@ namespace tgbot
 		}
 	}
 
-	bool Endpoints::addStickerToSet(const int &user_id, const std::string &name, const std::string &title, const std::variant<std::string, tools::InputFile::ptr> &png_sticker,
-			const std::string &emojis, const MaskPosition::ptr &mask_position) const
+	bool Endpoints::addStickerToSet(const int &user_id, const std::string &name, const std::string &title,
+			const std::variant<std::string, tools::InputFile::ptr> &png_sticker, const std::string &emojis, const MaskPosition::ptr &mask_position) const
 	{
 		if(std::holds_alternative<std::string>(png_sticker))
 		{
@@ -2213,11 +2221,12 @@ namespace tgbot
 		return false;
 	}
 
-	Message::ptr Endpoints::sendInvoice(const long long &chat_id, const std::string &title, const std::string &description, const std::string &payload, const std::string &provider_token,
-			const std::string &start_parameter, const std::string &currency, const std::vector<LabeledPrice::ptr> &prices, const std::string &provider_data,
-			const std::string &photo_url, const int &photo_size, const int &photo_width, const int &photo_height, const bool &need_name, const bool &need_phone_number,
-			const bool &need_email, const bool &need_shipping_address, const bool &send_phone_number_to_provider, const bool &send_email_to_provider,
-			const bool &is_flexible, const bool &disable_notification, const int &reply_to_message_id, const Reply::ptr &reply_markup) const
+	Message::ptr Endpoints::sendInvoice(const long long &chat_id, const std::string &title, const std::string &description, const std::string &payload,
+			const std::string &provider_token, const std::string &start_parameter, const std::string &currency, const std::vector<LabeledPrice::ptr> &prices,
+			const std::string &provider_data, const std::string &photo_url, const int &photo_size, const int &photo_width, const int &photo_height,
+			const bool &need_name, const bool &need_phone_number, const bool &need_email, const bool &need_shipping_address,
+			const bool &send_phone_number_to_provider, const bool &send_email_to_provider, const bool &is_flexible, const bool &disable_notification,
+			const int &reply_to_message_id, const Reply::ptr &reply_markup) const
 	{
 		//go through vector to build up the json array
 		std::string prices_json = "[";
@@ -2447,7 +2456,8 @@ namespace tgbot
 		return msg;
 	}
 
-	std::vector<GameHighScore::ptr> Endpoints::getGameHighScores(const int &user_id, const long long &chat_id, const int &message_id , const std::string &inline_message_id) const
+	std::vector<GameHighScore::ptr> Endpoints::getGameHighScores(const int &user_id, const long long &chat_id, const int &message_id ,
+			const std::string &inline_message_id) const
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
