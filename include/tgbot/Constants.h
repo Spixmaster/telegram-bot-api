@@ -17,16 +17,8 @@ namespace tgbot
 		typedef std::shared_ptr<Constants> ptr;
 
 		//member variables
-		static std::string version;
-		static std::string release;
-
-		//member functions
-
-		/*
-		 * @brief puts an error message out to stderr
-		 * @param file: the filename which is included in the error message
-		 */
-		static void file_non_existent(const std::string &file);
+		static const std::string version;
+		static const std::string release;
 	};
 }
 
