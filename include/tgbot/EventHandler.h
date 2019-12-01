@@ -74,7 +74,7 @@ namespace tgbot
 		 * @brief get called by long_poll() which sends this function an update
 		 * @brief calls all the corresponding vector of listener elements
 		 */
-		void handle_update(const Update::ptr &update);
+		void handle_update(const Update::ptr &update) const;
 
 	public:
 		//@brief adds the listener to proper lister list

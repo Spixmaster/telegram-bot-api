@@ -228,8 +228,8 @@ namespace tgbot
 		 * @param reply_markup: keyboard which is sent with the voice message
 		 * @return sent message
 		 */
-		Message::ptr sendVoice(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &voice, const std::string &caption = "", const std::string &parse_mode = "",
-				const int &duration = 0, const bool &disable_notification = false, const int &reply_to_message_id = 0,
+		Message::ptr sendVoice(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &voice, const std::string &caption = "",
+				const std::string &parse_mode = "", const int &duration = 0, const bool &disable_notification = false, const int &reply_to_message_id = 0,
 				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
 
 		/*
@@ -244,9 +244,9 @@ namespace tgbot
 		 * @param reply_markup: keyboard which is sent with the video note
 		 * @return sent message
 		 */
-		Message::ptr sendVideoNote(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &video_note, const std::variant<std::string, tools::InputFile::ptr> &thumb,
-				const int &duration = 0, const int &length = 0, const bool &disable_notification = false, const int &reply_to_message_id = 0,
-				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
+		Message::ptr sendVideoNote(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &video_note,
+				const std::variant<std::string, tools::InputFile::ptr> &thumb, const int &duration = 0, const int &length = 0,
+				const bool &disable_notification = false, const int &reply_to_message_id = 0, const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
 
 		/*
 		 * @brief sends a media group to the chat
@@ -414,7 +414,8 @@ namespace tgbot
 		 * @return true on success
 		 */
 		bool promoteChatMember(const long long &chat_id, const int &user_id, const bool &can_change_info, const bool &can_post_messages, const bool &can_edit_messages,
-				const bool &can_delete_messages, const bool &can_invite_users, const bool &can_restrict_members, const bool &can_pin_messages, const bool &can_promote_members) const;
+				const bool &can_delete_messages, const bool &can_invite_users, const bool &can_restrict_members, const bool &can_pin_messages,
+				const bool &can_promote_members) const;
 
 		/*
 		 * @brief sets default permissions an entire group
@@ -577,8 +578,9 @@ namespace tgbot
 		 * @param reply_markup: keyboard which is sent with the message
 		 * @return new edited Message
 		 */
-		Message::ptr editMessageMedia(const std::variant<InputMediaAnimation::ptr, InputMediaAudio::ptr, InputMediaDocument::ptr, InputMediaPhoto::ptr, InputMediaVideo::ptr> &media,
-				const long long &chat_id = 0, const int &message_id = 0, const std::string &inline_message_id = "", const Reply::ptr reply_markup = std::make_shared<Reply>()) const;
+		Message::ptr editMessageMedia(const std::variant<InputMediaAnimation::ptr, InputMediaAudio::ptr, InputMediaDocument::ptr, InputMediaPhoto::ptr,
+				InputMediaVideo::ptr> &media, const long long &chat_id = 0, const int &message_id = 0, const std::string &inline_message_id = "",
+				const Reply::ptr reply_markup = std::make_shared<Reply>()) const;
 
 		/*
 		 * @brief edits an already sent keyboard
@@ -588,7 +590,8 @@ namespace tgbot
 		 * @param inline_message_id: id of message which contains an inline keyboard
 		 * @return new edited Message
 		 */
-		Message::ptr editMessageReplyMarkup(const Reply::ptr &reply_markup, const long long &chat_id = 0, const int &message_id = 0, const std::string &inline_message_id = "") const;
+		Message::ptr editMessageReplyMarkup(const Reply::ptr &reply_markup, const long long &chat_id = 0, const int &message_id = 0,
+				const std::string &inline_message_id = "") const;
 
 		/*
 		 * @brief stops a running poll
@@ -691,8 +694,9 @@ namespace tgbot
 		 * 			only A-Z, a-z, 0-9, _ and - are allowed.
 		 * @return true on success
 		 */
-		bool answerInlineQuery(const std::string &inline_query_id, const std::vector<InlineQueryResult::ptr> &results, const int &cache_time = 300, const bool &is_personal = false,
-				const std::string &next_offset = "", const std::string &switch_pm_text = "", const std::string &switch_pm_parameter = "") const;
+		bool answerInlineQuery(const std::string &inline_query_id, const std::vector<InlineQueryResult::ptr> &results, const int &cache_time = 300,
+				const bool &is_personal = false, const std::string &next_offset = "", const std::string &switch_pm_text = "",
+				const std::string &switch_pm_parameter = "") const;
 
 		/*
 		 * @brief sends an invoice to the chat
@@ -723,11 +727,12 @@ namespace tgbot
 		 * @param reply_markup: keyboard which is sent with the invoice
 		 * @return sent message
 		 */
-		Message::ptr sendInvoice(const long long &chat_id, const std::string &title, const std::string &description, const std::string &payload, const std::string &provider_token,
-				const std::string &start_parameter, const std::string &currency, const std::vector<LabeledPrice::ptr> &prices, const std::string &provider_data = "",
-				const std::string &photo_url = "", const int &photo_size = 0, const int &photo_width = 0, const int &photo_height = 0, const bool &need_name = false,
-				const bool &need_phone_number = false, const bool &need_email = false, const bool &need_shipping_address = false, const bool &send_phone_number_to_provider = false,
-				const bool &send_email_to_provider = false, const bool &is_flexible = false, const bool &disable_notification = false, const int &reply_to_message_id = 0,
+		Message::ptr sendInvoice(const long long &chat_id, const std::string &title, const std::string &description, const std::string &payload,
+				const std::string &provider_token, const std::string &start_parameter, const std::string &currency, const std::vector<LabeledPrice::ptr> &prices,
+				const std::string &provider_data = "", const std::string &photo_url = "", const int &photo_size = 0, const int &photo_width = 0,
+				const int &photo_height = 0, const bool &need_name = false, const bool &need_phone_number = false, const bool &need_email = false,
+				const bool &need_shipping_address = false, const bool &send_phone_number_to_provider = false, const bool &send_email_to_provider = false,
+				const bool &is_flexible = false, const bool &disable_notification = false, const int &reply_to_message_id = 0,
 				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
 
 		/*
@@ -740,8 +745,8 @@ namespace tgbot
 		 * 			(e.g. "Sorry, delivery to your desired address is unavailable'). Telegram will display this message to the user.
 		 * @return true on success
 		 */
-		bool answerShippingQuery(const std::string &shipping_query_id, const bool &ok, const std::vector<ShippingOption::ptr> &shipping_options = std::vector<ShippingOption::ptr>(),
-				const std::string &error_message = "") const;
+		bool answerShippingQuery(const std::string &shipping_query_id, const bool &ok,
+				const std::vector<ShippingOption::ptr> &shipping_options = std::vector<ShippingOption::ptr>(), const std::string &error_message = "") const;
 
 		/*
 		 * @brief answers a pre checkout query
@@ -796,7 +801,8 @@ namespace tgbot
 		 * @param inline_message_id: id of the inline message
 		 * @return sent Message
 		 */
-		std::vector<GameHighScore::ptr> getGameHighScores(const int &user_id, const long long &chat_id = 0, const int &message_id = 0, const std::string &inline_message_id = "") const;
+		std::vector<GameHighScore::ptr> getGameHighScores(const int &user_id, const long long &chat_id = 0, const int &message_id = 0,
+				const std::string &inline_message_id = "") const;
 	};
 }
 
