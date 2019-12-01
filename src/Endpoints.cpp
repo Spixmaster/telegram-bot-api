@@ -45,7 +45,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("allowed_updates", allowed_updates_json));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/getUpdates", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -100,7 +100,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("allowed_updates", allowed_updates_json));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/setWebhook", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -175,7 +175,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendMessage", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -199,7 +199,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("disable_notification", disable_notification));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/forwardMessage", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -229,7 +229,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 			tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendPhoto", http_args);
-			std::string json = http_client.send_post_req().txt;
+			std::string json = http_client.send_post_req_multipart().txt;
 
 			rapidjson::Document doc;
 			doc.Parse(json.c_str());
@@ -255,7 +255,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 			tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendPhoto", http_args);
-			std::string json = http_client.send_post_req().txt;
+			std::string json = http_client.send_post_req_multipart().txt;
 
 			rapidjson::Document doc;
 			doc.Parse(json.c_str());
@@ -292,7 +292,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 			tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendAudio", http_args);
-			std::string json = http_client.send_post_req().txt;
+			std::string json = http_client.send_post_req_multipart().txt;
 
 			rapidjson::Document doc;
 			doc.Parse(json.c_str());
@@ -322,7 +322,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 			tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendAudio", http_args);
-			std::string json = http_client.send_post_req().txt;
+			std::string json = http_client.send_post_req_multipart().txt;
 
 			rapidjson::Document doc;
 			doc.Parse(json.c_str());
@@ -352,7 +352,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 			tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendAudio", http_args);
-			std::string json = http_client.send_post_req().txt;
+			std::string json = http_client.send_post_req_multipart().txt;
 
 			rapidjson::Document doc;
 			doc.Parse(json.c_str());
@@ -383,7 +383,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 			tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendAudio", http_args);
-			std::string json = http_client.send_post_req().txt;
+			std::string json = http_client.send_post_req_multipart().txt;
 
 			rapidjson::Document doc;
 			doc.Parse(json.c_str());
@@ -416,7 +416,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 			tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendDocument", http_args);
-			std::string json = http_client.send_post_req().txt;
+			std::string json = http_client.send_post_req_multipart().txt;
 
 			rapidjson::Document doc;
 			doc.Parse(json.c_str());
@@ -443,7 +443,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 			tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendDocument", http_args);
-			std::string json = http_client.send_post_req().txt;
+			std::string json = http_client.send_post_req_multipart().txt;
 
 			rapidjson::Document doc;
 			doc.Parse(json.c_str());
@@ -470,7 +470,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 			tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendDocument", http_args);
-			std::string json = http_client.send_post_req().txt;
+			std::string json = http_client.send_post_req_multipart().txt;
 
 			rapidjson::Document doc;
 			doc.Parse(json.c_str());
@@ -498,7 +498,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 			tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendDocument", http_args);
-			std::string json = http_client.send_post_req().txt;
+			std::string json = http_client.send_post_req_multipart().txt;
 
 			rapidjson::Document doc;
 			doc.Parse(json.c_str());
@@ -536,7 +536,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 			tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendVideo", http_args);
-			std::string json = http_client.send_post_req().txt;
+			std::string json = http_client.send_post_req_multipart().txt;
 
 			rapidjson::Document doc;
 			doc.Parse(json.c_str());
@@ -567,7 +567,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 			tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendVideo", http_args);
-			std::string json = http_client.send_post_req().txt;
+			std::string json = http_client.send_post_req_multipart().txt;
 
 			rapidjson::Document doc;
 			doc.Parse(json.c_str());
@@ -598,7 +598,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 			tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendVideo", http_args);
-			std::string json = http_client.send_post_req().txt;
+			std::string json = http_client.send_post_req_multipart().txt;
 
 			rapidjson::Document doc;
 			doc.Parse(json.c_str());
@@ -630,7 +630,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 			tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendVideo", http_args);
-			std::string json = http_client.send_post_req().txt;
+			std::string json = http_client.send_post_req_multipart().txt;
 
 			rapidjson::Document doc;
 			doc.Parse(json.c_str());
@@ -667,7 +667,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 			tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendAnimation", http_args);
-			std::string json = http_client.send_post_req().txt;
+			std::string json = http_client.send_post_req_multipart().txt;
 
 			rapidjson::Document doc;
 			doc.Parse(json.c_str());
@@ -697,7 +697,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 			tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendAnimation", http_args);
-			std::string json = http_client.send_post_req().txt;
+			std::string json = http_client.send_post_req_multipart().txt;
 
 			rapidjson::Document doc;
 			doc.Parse(json.c_str());
@@ -727,7 +727,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 			tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendAnimation", http_args);
-			std::string json = http_client.send_post_req().txt;
+			std::string json = http_client.send_post_req_multipart().txt;
 
 			rapidjson::Document doc;
 			doc.Parse(json.c_str());
@@ -758,7 +758,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 			tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendAnimation", http_args);
-			std::string json = http_client.send_post_req().txt;
+			std::string json = http_client.send_post_req_multipart().txt;
 
 			rapidjson::Document doc;
 			doc.Parse(json.c_str());
@@ -790,7 +790,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 			tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendVoice", http_args);
-			std::string json = http_client.send_post_req().txt;
+			std::string json = http_client.send_post_req_multipart().txt;
 
 			rapidjson::Document doc;
 			doc.Parse(json.c_str());
@@ -818,7 +818,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 			tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendVoice", http_args);
-			std::string json = http_client.send_post_req().txt;
+			std::string json = http_client.send_post_req_multipart().txt;
 
 			rapidjson::Document doc;
 			doc.Parse(json.c_str());
@@ -851,7 +851,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 			tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendVideoNote", http_args);
-			std::string json = http_client.send_post_req().txt;
+			std::string json = http_client.send_post_req_multipart().txt;
 
 			rapidjson::Document doc;
 			doc.Parse(json.c_str());
@@ -878,7 +878,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 			tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendVideoNote", http_args);
-			std::string json = http_client.send_post_req().txt;
+			std::string json = http_client.send_post_req_multipart().txt;
 
 			rapidjson::Document doc;
 			doc.Parse(json.c_str());
@@ -905,7 +905,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 			tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendVideoNote", http_args);
-			std::string json = http_client.send_post_req().txt;
+			std::string json = http_client.send_post_req_multipart().txt;
 
 			rapidjson::Document doc;
 			doc.Parse(json.c_str());
@@ -933,7 +933,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 			tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendVideoNote", http_args);
-			std::string json = http_client.send_post_req().txt;
+			std::string json = http_client.send_post_req_multipart().txt;
 
 			rapidjson::Document doc;
 			doc.Parse(json.c_str());
@@ -1008,7 +1008,7 @@ namespace tgbot
 		}
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendMediaGroup", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1043,7 +1043,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendLocation", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1070,7 +1070,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/editMessageLiveLocation", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1095,7 +1095,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/stopMessageLiveLocation", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1127,7 +1127,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendVenue", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1156,7 +1156,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendContact", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1200,7 +1200,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendPoll", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1222,7 +1222,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("action", action));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendChatAction", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1244,7 +1244,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("limit", limit));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/getUserProfilePhotos", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1265,7 +1265,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("file_id", file_id));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/getFile", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1288,7 +1288,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("until_date", until_date));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/kickChatMember", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1308,7 +1308,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("user_id", user_id));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/unbanChatMember", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1330,7 +1330,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("until_date", until_date));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/restrictChatMember", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1360,7 +1360,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("can_promote_members", can_promote_members));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/promoteChatMember", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1380,7 +1380,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("permissions", permissions->parse_to_json()));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/setChatPermissions", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1399,7 +1399,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("chat_id", chat_id));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/exportChatInviteLink", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1419,7 +1419,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("photo", photo));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/setChatPhoto", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1438,7 +1438,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("chat_id", chat_id));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/deleteChatPhoto", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1458,7 +1458,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("title", title));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/setChatTitle", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1478,7 +1478,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("description", description));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/setChatDescription", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1499,7 +1499,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("description", disable_notification));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/pinChatMessage", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1518,7 +1518,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("chat_id", chat_id));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/unpinChatMessage", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1537,7 +1537,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("chat_id", chat_id));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/leaveChat", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1556,7 +1556,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("chat_id", chat_id));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/getChat", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1577,7 +1577,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("chat_id", chat_id));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/getChatAdministrators", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1605,7 +1605,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("chat_id", chat_id));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/getChatMembersCount", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1625,7 +1625,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("user_id", user_id));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/getChatMember", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1647,7 +1647,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("sticker_set_name", sticker_set_name));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/setChatStickerSet", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1666,7 +1666,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("chat_id", chat_id));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/deleteChatStickerSet", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1690,7 +1690,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("cache_time", cache_time));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/answerCallbackQuery", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1716,7 +1716,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/editMessageText", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1743,7 +1743,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/editMessageCaption", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1851,7 +1851,7 @@ namespace tgbot
 		}
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/editMessageMedia", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1875,7 +1875,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("inline_message_id", inline_message_id));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/editMessageReplyMarkup", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1898,7 +1898,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/stopPoll", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1920,7 +1920,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("message_id", message_id));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/deleteMessage", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -1946,7 +1946,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 			tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendSticker", http_args);
-			std::string json = http_client.send_post_req().txt;
+			std::string json = http_client.send_post_req_multipart().txt;
 
 			rapidjson::Document doc;
 			doc.Parse(json.c_str());
@@ -1970,7 +1970,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 			tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendSticker", http_args);
-			std::string json = http_client.send_post_req().txt;
+			std::string json = http_client.send_post_req_multipart().txt;
 
 			rapidjson::Document doc;
 			doc.Parse(json.c_str());
@@ -1992,7 +1992,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("name", name));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/getStickerSet", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -2014,7 +2014,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("png_sticker", png_sticker));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/uploadStickerFile", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -2045,7 +2045,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("mask_position", mask_position->parse_to_json()));
 
 			tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/createNewStickerSet", http_args);
-			std::string json = http_client.send_post_req().txt;
+			std::string json = http_client.send_post_req_multipart().txt;
 
 			rapidjson::Document doc;
 			doc.Parse(json.c_str());
@@ -2069,7 +2069,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("mask_position", mask_position->parse_to_json()));
 
 			tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/createNewStickerSet", http_args);
-			std::string json = http_client.send_post_req().txt;
+			std::string json = http_client.send_post_req_multipart().txt;
 
 			rapidjson::Document doc;
 			doc.Parse(json.c_str());
@@ -2097,7 +2097,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("mask_position", mask_position->parse_to_json()));
 
 			tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/addStickerToSet", http_args);
-			std::string json = http_client.send_post_req().txt;
+			std::string json = http_client.send_post_req_multipart().txt;
 
 			rapidjson::Document doc;
 			doc.Parse(json.c_str());
@@ -2120,7 +2120,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("mask_position", mask_position->parse_to_json()));
 
 			tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/addStickerToSet", http_args);
-			std::string json = http_client.send_post_req().txt;
+			std::string json = http_client.send_post_req_multipart().txt;
 
 			rapidjson::Document doc;
 			doc.Parse(json.c_str());
@@ -2141,7 +2141,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("position", position));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/setStickerPositionInSet", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -2160,7 +2160,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("sticker", sticker));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/deleteStickerFromSet", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -2209,7 +2209,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("switch_pm_parameter", switch_pm_parameter));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/answerInlineQuery", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -2278,7 +2278,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendInvoice", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -2326,7 +2326,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("error_message", error_message));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/answerShippingQuery", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -2347,7 +2347,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("error_message", error_message));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/answerPreCheckoutQuery", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -2390,7 +2390,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("errors", errors_json));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/setPassportDataErrors", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -2414,7 +2414,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendGame", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -2442,7 +2442,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("inline_message_id", inline_message_id));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/setGameScore", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
@@ -2467,7 +2467,7 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("inline_message_id", inline_message_id));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/getGameHighScores", http_args);
-		std::string json = http_client.send_post_req().txt;
+		std::string json = http_client.send_post_req_multipart().txt;
 
 		rapidjson::Document doc;
 		doc.Parse(json.c_str());
