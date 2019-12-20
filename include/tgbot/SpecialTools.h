@@ -19,7 +19,6 @@ namespace tgbot
 		typedef std::shared_ptr<SpecialTools> ptr;
 
 		//member functions
-
 		/*
 		 * @brief expects a rapidjson::Value and turns it back into a string
 		 * @param the Value which shall be converted

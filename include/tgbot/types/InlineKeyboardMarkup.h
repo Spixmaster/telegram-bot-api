@@ -6,6 +6,8 @@
 #include <memory>
 #include "tgbot/types/Reply.h"
 
+//@brief represents on object in the Telegram bot api
+
 namespace tgbot
 {
 	struct InlineKeyboardMarkup : public Reply
@@ -26,7 +28,6 @@ namespace tgbot
 		InlineKeyboardMarkup(const std::vector<std::vector<InlineKeyboardButton::ptr>> &keyboard);
 
 		//member functions
-
 		/*
 		 * @brief parses an itself to a json object
 		 * @return json object of itself as a string

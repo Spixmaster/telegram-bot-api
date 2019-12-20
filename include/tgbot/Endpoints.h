@@ -42,8 +42,7 @@ namespace tgbot
 
 	private:
 		//member variables
-		//needed for the endpoints
-		std::string m_token;
+		std::string m_token; //needed for the endpoints
 
 	public:
 		//constructors
@@ -51,7 +50,6 @@ namespace tgbot
 		Endpoints(const std::string &token);
 
 		//member functions
-
 		/*
 		 * @brief get updates for the bot
 		 * @param offset: Identifier of the first update to be returned. Must be greater by one than the highest among the identifiers of previously received updates.
@@ -137,8 +135,9 @@ namespace tgbot
 		 * @param reply_markup: keyboard which is sent with the photo
 		 * @return sent message
 		 */
-		Message::ptr sendPhoto(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &photo, const std::string &caption = "", const std::string &parse_mode = "",
-				const bool &disable_notification = false, const int &reply_to_message_id = 0, const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
+		Message::ptr sendPhoto(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &photo, const std::string &caption = "",
+				const std::string &parse_mode = "", const bool &disable_notification = false, const int &reply_to_message_id = 0,
+				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
 
 		/*
 		 * @brief sends an audio to the chat
@@ -155,9 +154,9 @@ namespace tgbot
 		 * @param reply_markup: keyboard which is sent with the audio
 		 * @return sent message
 		 */
-		Message::ptr sendAudio(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &audio, const std::variant<std::string, tools::InputFile::ptr> &thumb,
-				const std::string &caption = "", const std::string &parse_mode = "", const int &duration = 0, const std::string &performer = "",
-				const std::string &title = "", const bool &disable_notification = false, const int &reply_to_message_id = 0,
+		Message::ptr sendAudio(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &audio, const std::variant<std::string,
+				tools::InputFile::ptr> &thumb, const std::string &caption = "", const std::string &parse_mode = "", const int &duration = 0,
+				const std::string &performer = "", const std::string &title = "", const bool &disable_notification = false, const int &reply_to_message_id = 0,
 				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
 
 		/*
@@ -192,9 +191,9 @@ namespace tgbot
 		 * @param reply_markup: keyboard which is sent with the audio
 		 * @return sent message
 		 */
-		Message::ptr sendVideo(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &video, const std::variant<std::string, tools::InputFile::ptr> &thumb,
-				const int &duration = 0, const int &width = 0, const int &height = 0, const std::string &caption = "", const std::string &parse_mode = "",
-				const bool &supports_streaming = false, const bool &disable_notification = false, const int &reply_to_message_id = 0,
+		Message::ptr sendVideo(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &video, const std::variant<std::string,
+				tools::InputFile::ptr> &thumb, const int &duration = 0, const int &width = 0, const int &height = 0, const std::string &caption = "",
+				const std::string &parse_mode = "", const bool &supports_streaming = false, const bool &disable_notification = false, const int &reply_to_message_id = 0,
 				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
 
 		/*
@@ -212,9 +211,10 @@ namespace tgbot
 		 * @param reply_markup: keyboard which is sent with the audio
 		 * @return sent message
 		 */
-		Message::ptr sendAnimation(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &animation, const std::variant<std::string, tools::InputFile::ptr> &thumb,
-				const int &duration = 0, const int &width = 0, const int &height = 0, const std::string &caption = "", const std::string &parse_mode = "",
-				const bool &disable_notification = false, const int &reply_to_message_id = 0, const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
+		Message::ptr sendAnimation(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &animation,
+				const std::variant<std::string, tools::InputFile::ptr> &thumb, const int &duration = 0, const int &width = 0, const int &height = 0,
+				const std::string &caption = "", const std::string &parse_mode = "", const bool &disable_notification = false, const int &reply_to_message_id = 0,
+				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
 
 		/*
 		 * @brief sends a voice message to the chat

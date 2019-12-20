@@ -28,4 +28,29 @@ namespace tgbot
 				vcard = doc["vcard"].GetString();
 		}
 	}
+
+	std::string InputContactMessageContent::parse_to_json() const
+	{
+		std::string json = "{";
+
+		//field phone_number
+		json.append("\"phone_number\": \"" + phone_number + "\"");
+		json.append(", ");
+
+		//field first_name
+		json.append("\"first_name\": \"" + first_name + "\"");
+		json.append(", ");
+
+		//field last_name
+		json.append("\"last_name\": \"" + last_name + "\"");
+		json.append(", ");
+
+		//field vcard
+		json.append("\"vcard\": \"" + vcard + "\"");
+		json.append(", ");
+
+		json.append("}");
+
+		return json;
+	}
 }

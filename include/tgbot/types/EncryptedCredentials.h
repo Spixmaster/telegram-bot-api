@@ -4,6 +4,8 @@
 #include <string>
 #include <memory>
 
+//@brief represents on object in the Telegram bot api
+
 namespace tgbot
 {
 	struct EncryptedCredentials
@@ -23,7 +25,6 @@ namespace tgbot
 		EncryptedCredentials(const std::string &json);
 
 		//member functions
-
 		/*
 		 * @brief converts a itself into a json object
 		 * @return the json object as a string

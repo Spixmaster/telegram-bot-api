@@ -5,6 +5,8 @@
 #include "tgbot/types/PhotoSize.h"
 #include "tgbot/types/MaskPosition.h"
 
+//@brief represents on object in the Telegram bot api
+
 namespace tgbot
 {
 	struct Sticker
@@ -30,7 +32,6 @@ namespace tgbot
 		Sticker(const std::string &json);
 
 		//member functions
-
 		/*
 		 * @brief converts a itself into a json object
 		 * @return the json object as a string

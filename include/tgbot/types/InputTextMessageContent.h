@@ -1,10 +1,12 @@
-#ifndef TGBOT_INCLUDE_TYPES_INPUTTEXTMESSAGECONTENT_H_
-#define TGBOT_INCLUDE_TYPES_INPUTTEXTMESSAGECONTENT_H_
+#ifndef TGBOT_TYPES_INPUTTEXTMESSAGECONTENT_H
+#define TGBOT_TYPES_INPUTTEXTMESSAGECONTENT_H
 
 #include <string>
 #include "InputMessageContent.h"
 #include "rapidjson/document.h"
 #include <memory>
+
+//@brief represents on object in the Telegram bot api
 
 namespace tgbot
 {
@@ -25,7 +27,6 @@ namespace tgbot
 		InputTextMessageContent(const std::string &json);
 
 		//member functions
-
 		/*
 		 * @brief converts a itself into a json object
 		 * @return the json object as a string
