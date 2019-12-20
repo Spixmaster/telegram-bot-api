@@ -7,6 +7,8 @@
 #include "InlineQueryResult.h"
 #include <memory>
 
+//@brief represents on object in the Telegram bot api
+
 namespace tgbot
 {
 	struct InlineQueryResultCachedMpeg4Gif : public InlineQueryResult
@@ -31,7 +33,6 @@ namespace tgbot
 		InlineQueryResultCachedMpeg4Gif(const std::string &json);
 
 		//member functions
-
 		/*
 		 * @brief converts a itself into a json object
 		 * @return the json object as a string

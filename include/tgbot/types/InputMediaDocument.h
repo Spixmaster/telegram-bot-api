@@ -7,6 +7,8 @@
 #include <variant>
 #include "tools/http/InputFile.h"
 
+//@brief represents on object in the Telegram bot api
+
 namespace tgbot
 {
 	struct InputMediaDocument : public InputMedia
@@ -35,7 +37,6 @@ namespace tgbot
 				const std::string &parse_mode = "");
 
 		//member functions
-
 		/*
 		 * @brief parses itself into json equivalent
 		 * @return json object of itself as a string

@@ -31,8 +31,7 @@ namespace tgbot
 	private:
 		//member variables
 		Endpoints::ptr m_endpnts;
-		//is used for getUpdates() function of member variable m_endpnts
-		int m_offset = 0;
+		int m_offset = 0; //is used for getUpdates() function of member variable m_endpnts
 		//listener elements
 		typedef std::function<void (const Message::ptr)> m_message_listener_element;
 		typedef std::function<void (const Message::ptr)> m_edited_message_listener_element;

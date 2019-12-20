@@ -6,6 +6,8 @@
 #include <memory>
 #include "tgbot/types/Reply.h"
 
+//@brief represents on object in the Telegram bot api
+
 namespace tgbot
 {
 	struct ReplyKeyboardRemove : public Reply
@@ -24,7 +26,6 @@ namespace tgbot
 		ReplyKeyboardRemove(const std::string &json);
 
 		//member functions
-
 		/*
 		 * @brief parses the itself into its json equivalent
 		 * @return return a string which represents a itself

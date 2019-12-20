@@ -3,6 +3,8 @@
 
 #include <memory>
 
+//@brief represents on object in the Telegram bot api
+
 namespace tgbot
 {
 	struct InputMedia
@@ -14,7 +16,6 @@ namespace tgbot
 		virtual ~InputMedia();
 
 		//member functions
-
 		/*
 		 * @brief parses itself into json equivalent
 		 * @return json object of the itself as a string
