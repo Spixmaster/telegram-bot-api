@@ -242,7 +242,7 @@ namespace tgbot
 
 			return msg;
 		}
-		else
+		else if(std::holds_alternative<tools::InputFile::ptr>(photo))
 		{
 			//http args
 			std::vector<tools::HttpArg> http_args;
@@ -268,6 +268,9 @@ namespace tgbot
 
 			return msg;
 		}
+
+		Message::ptr msg = std::make_shared<Message>();
+		return msg;
 	}
 
 	Message::ptr Endpoints::sendAudio(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &audio,
@@ -365,8 +368,7 @@ namespace tgbot
 
 			return msg;
 		}
-		//both are of type InputFile
-		else
+		else if(std::holds_alternative<tools::InputFile::ptr>(audio) && std::holds_alternative<tools::InputFile::ptr>(thumb))
 		{
 			//http args
 			std::vector<tools::HttpArg> http_args;
@@ -396,6 +398,9 @@ namespace tgbot
 
 			return msg;
 		}
+
+		Message::ptr msg = std::make_shared<Message>();
+		return msg;
 	}
 
 	Message::ptr Endpoints::sendDocument(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &document,
@@ -483,8 +488,7 @@ namespace tgbot
 
 			return msg;
 		}
-		//both are of type InputFile
-		else
+		else if(std::holds_alternative<tools::InputFile::ptr>(document) && std::holds_alternative<tools::InputFile::ptr>(thumb))
 		{
 			//http args
 			std::vector<tools::HttpArg> http_args;
@@ -511,6 +515,9 @@ namespace tgbot
 
 			return msg;
 		}
+
+		Message::ptr msg = std::make_shared<Message>();
+		return msg;
 	}
 
 	Message::ptr Endpoints::sendVideo(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &video,
@@ -611,8 +618,7 @@ namespace tgbot
 
 			return msg;
 		}
-		//both are of type InputFile
-		else
+		else if(std::holds_alternative<tools::InputFile::ptr>(video) && std::holds_alternative<tools::InputFile::ptr>(thumb))
 		{
 			//http args
 			std::vector<tools::HttpArg> http_args;
@@ -643,6 +649,9 @@ namespace tgbot
 
 			return msg;
 		}
+
+		Message::ptr msg = std::make_shared<Message>();
+		return msg;
 	}
 
 	Message::ptr Endpoints::sendAnimation(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &animation,
@@ -740,8 +749,7 @@ namespace tgbot
 
 			return msg;
 		}
-		//both are of type InputFile
-		else
+		else if(std::holds_alternative<tools::InputFile::ptr>(animation) && std::holds_alternative<tools::InputFile::ptr>(thumb))
 		{
 			//http args
 			std::vector<tools::HttpArg> http_args;
@@ -771,6 +779,9 @@ namespace tgbot
 
 			return msg;
 		}
+
+		Message::ptr msg = std::make_shared<Message>();
+		return msg;
 	}
 
 	Message::ptr Endpoints::sendVoice(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &voice, const std::string &caption,
@@ -803,8 +814,7 @@ namespace tgbot
 
 			return msg;
 		}
-		//of type InputFile
-		else
+		else if(std::holds_alternative<tools::InputFile::ptr>(voice))
 		{
 			//http args
 			std::vector<tools::HttpArg> http_args;
@@ -831,6 +841,9 @@ namespace tgbot
 
 			return msg;
 		}
+
+		Message::ptr msg = std::make_shared<Message>();
+		return msg;
 	}
 
 	Message::ptr Endpoints::sendVideoNote(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &video_note,
@@ -918,8 +931,7 @@ namespace tgbot
 
 			return msg;
 		}
-		//both are of type InputFile
-		else
+		else if(std::holds_alternative<tools::InputFile::ptr>(video_note) && std::holds_alternative<tools::InputFile::ptr>(thumb))
 		{
 			//http args
 			std::vector<tools::HttpArg> http_args;
@@ -946,6 +958,9 @@ namespace tgbot
 
 			return msg;
 		}
+
+		Message::ptr msg = std::make_shared<Message>();
+		return msg;
 	}
 
 	std::vector<Message::ptr> Endpoints::sendMediaGroup(const long long &chat_id, const std::vector<std::variant<InputMediaPhoto::ptr, InputMediaVideo::ptr>> &media,
@@ -967,8 +982,7 @@ namespace tgbot
 				if(std::holds_alternative<tools::InputFile::ptr>(std::get<InputMediaPhoto::ptr>(media.at(j))->media))
 					files_to_upload.push_back(std::get<tools::InputFile::ptr>(std::get<InputMediaPhoto::ptr>(media.at(j))->media)->m_path);
 			}
-			//is InputMediaVideo
-			else
+			else if(std::holds_alternative<InputMediaVideo::ptr>(media.at(j)))
 			{
 				media_json.append(std::get<InputMediaVideo::ptr>(media.at(j))->parse_to_json());
 
@@ -1824,7 +1838,7 @@ namespace tgbot
 				files_to_upload.push_back(std::get<tools::InputFile::ptr>(std::get<InputMediaPhoto::ptr>(media)->media)->m_path);
 		}
 		//InputMediaVideo
-		else
+		else if(std::holds_alternative<InputMediaVideo::ptr>(media))
 		{
 			media_json = std::get<InputMediaVideo::ptr>(media)->parse_to_json();
 
@@ -1959,7 +1973,7 @@ namespace tgbot
 
 			return msg;
 		}
-		else
+		else if(std::holds_alternative<tools::InputFile::ptr>(sticker))
 		{
 			//http args
 			std::vector<tools::HttpArg> http_args;
@@ -1983,6 +1997,9 @@ namespace tgbot
 
 			return msg;
 		}
+
+		Message::ptr msg = std::make_shared<Message>();
+		return msg;
 	}
 
 	StickerSet::ptr Endpoints::getStickerSet(const std::string &name) const
@@ -2056,7 +2073,7 @@ namespace tgbot
 
 			return false;
 		}
-		else
+		else if(std::holds_alternative<tools::InputFile::ptr>(png_sticker))
 		{
 			//http args
 			std::vector<tools::HttpArg> http_args;
@@ -2080,6 +2097,9 @@ namespace tgbot
 
 			return false;
 		}
+
+		Message::ptr msg = std::make_shared<Message>();
+		return msg;
 	}
 
 	bool Endpoints::addStickerToSet(const int &user_id, const std::string &name, const std::string &title,
@@ -2108,7 +2128,7 @@ namespace tgbot
 
 			return false;
 		}
-		else
+		else if(std::holds_alternative<tools::InputFile::ptr>(png_sticker))
 		{
 			//http args
 			std::vector<tools::HttpArg> http_args;
@@ -2131,6 +2151,9 @@ namespace tgbot
 
 			return false;
 		}
+
+		Message::ptr msg = std::make_shared<Message>();
+		return msg;
 	}
 
 	bool Endpoints::setStickerPositionInSet(const std::string &sticker, const int &position) const

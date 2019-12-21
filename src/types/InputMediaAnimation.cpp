@@ -57,8 +57,7 @@ namespace tgbot
 			json.append("\"media\": \"" + std::get<std::string>(media) + "\"");
 			json.append(", ");
 		}
-		//of type InputFile
-		else
+		else if(std::holds_alternative<tools::InputFile::ptr>(media))
 		{
 			json.append("\"media\": \"attach://" + std::get<tools::InputFile::ptr>(media)->m_path + "\"");
 			json.append(", ");
@@ -70,8 +69,7 @@ namespace tgbot
 			json.append("\"thumb\": \"" + std::get<std::string>(thumb) + "\"");
 			json.append(", ");
 		}
-		//of type InputFile
-		else
+		else if(std::holds_alternative<tools::InputFile::ptr>(thumb))
 		{
 			json.append("\"thumb\": \"attach://" + std::get<tools::InputFile::ptr>(thumb)->m_path + "\"");
 			json.append(", ");
