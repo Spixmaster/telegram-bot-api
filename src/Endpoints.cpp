@@ -2098,8 +2098,7 @@ namespace tgbot
 			return false;
 		}
 
-		Message::ptr msg = std::make_shared<Message>();
-		return msg;
+		return false;
 	}
 
 	bool Endpoints::addStickerToSet(const int &user_id, const std::string &name, const std::string &title,
@@ -2152,8 +2151,7 @@ namespace tgbot
 			return false;
 		}
 
-		Message::ptr msg = std::make_shared<Message>();
-		return msg;
+		return false;
 	}
 
 	bool Endpoints::setStickerPositionInSet(const std::string &sticker, const int &position) const
