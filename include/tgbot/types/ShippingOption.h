@@ -4,7 +4,6 @@
 #include <string>
 #include <vector>
 #include "tgbot/types/LabeledPrice.h"
-#include "tgbot/SpecialTools.h"
 #include <memory>
 
 //@brief represents on object in the Telegram bot api

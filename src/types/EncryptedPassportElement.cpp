@@ -28,24 +28,24 @@ namespace tgbot
 				{
 					files.resize(doc["files"].GetArray().Size());
 
-					files.at(j) = std::make_shared<PassportFile>(SpecialTools::get_json_as_string(doc["files"][j]));
+					files.at(j) = std::make_shared<PassportFile>(tools::Tools::get_json_as_string(doc["files"][j]));
 				}
 
 			if(doc.HasMember("front_side"))
-				front_side = std::make_shared<PassportFile>(SpecialTools::get_json_as_string(doc["front_side"]));
+				front_side = std::make_shared<PassportFile>(tools::Tools::get_json_as_string(doc["front_side"]));
 
 			if(doc.HasMember("reverse_side"))
-				reverse_side = std::make_shared<PassportFile>(SpecialTools::get_json_as_string(doc["reverse_side"]));
+				reverse_side = std::make_shared<PassportFile>(tools::Tools::get_json_as_string(doc["reverse_side"]));
 
 			if(doc.HasMember("selfie"))
-				selfie = std::make_shared<PassportFile>(SpecialTools::get_json_as_string(doc["selfie"]));
+				selfie = std::make_shared<PassportFile>(tools::Tools::get_json_as_string(doc["selfie"]));
 
 			if(doc.HasMember("translation"))
 				for(std::size_t j = 0; j < doc["translation"].GetArray().Size(); ++j)
 				{
 					files.resize(doc["files"].GetArray().Size());
 
-					files.at(j) = std::make_shared<PassportFile>(SpecialTools::get_json_as_string(doc["translation"][j]));
+					files.at(j) = std::make_shared<PassportFile>(tools::Tools::get_json_as_string(doc["translation"][j]));
 				}
 
 			if(doc.HasMember("hash"))

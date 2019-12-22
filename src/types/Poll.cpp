@@ -1,4 +1,3 @@
-#include <tgbot/SpecialTools.h>
 #include "tgbot/types/Poll.h"
 #include "tools/Tools.h"
 
@@ -26,7 +25,7 @@ namespace tgbot
 				{
 					options.resize(doc["options"].GetArray().Size());
 
-					options.at(j) = std::make_shared<PollOption>(SpecialTools::get_json_as_string(doc["options"][j]));
+					options.at(j) = std::make_shared<PollOption>(tools::Tools::get_json_as_string(doc["options"][j]));
 				}
 
 			if(doc.HasMember("is_closed"))

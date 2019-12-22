@@ -1,4 +1,3 @@
-#include <tgbot/SpecialTools.h>
 #include "tgbot/types/Video.h"
 #include "tools/Tools.h"
 
@@ -28,7 +27,7 @@ namespace tgbot
 				duration = doc["duration"].GetInt();
 
 			if(doc.HasMember("thumb"))
-				thumb = std::make_shared<PhotoSize>(SpecialTools::get_json_as_string(doc["thumb"]));
+				thumb = std::make_shared<PhotoSize>(tools::Tools::get_json_as_string(doc["thumb"]));
 
 			if(doc.HasMember("mime_type"))
 				mime_type = doc["mime_type"].GetString();

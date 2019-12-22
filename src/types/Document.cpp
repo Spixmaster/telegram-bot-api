@@ -18,7 +18,7 @@ namespace tgbot
 				file_id = doc["file_id"].GetString();
 
 			if(doc.HasMember("thumb"))
-				thumb = std::make_shared<PhotoSize>(SpecialTools::get_json_as_string(doc["thumb"]));
+				thumb = std::make_shared<PhotoSize>(tools::Tools::get_json_as_string(doc["thumb"]));
 
 			if(doc.HasMember("file_name"))
 				file_name = doc["file_name"].GetString();

@@ -5,7 +5,6 @@
 #include "tgbot/types/InlineKeyboardMarkup.h"
 #include "tgbot/types/InputMessageContent.h"
 #include "tgbot/types/InlineQueryResult.h"
-#include "tgbot/SpecialTools.h"
 #include <memory>
 
 //@brief represents on object in the Telegram bot api

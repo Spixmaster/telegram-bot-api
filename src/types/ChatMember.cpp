@@ -17,7 +17,7 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("user"))
-				user = std::make_shared<User>(SpecialTools::get_json_as_string(doc["user"]));
+				user = std::make_shared<User>(tools::Tools::get_json_as_string(doc["user"]));
 
 			if(doc.HasMember("status"))
 				status = doc["status"].GetString();

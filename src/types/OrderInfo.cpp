@@ -24,7 +24,7 @@ namespace tgbot
 				email = doc["email"].GetString();
 
 			if(doc.HasMember("shipping_address"))
-				shipping_address = std::make_shared<ShippingAddress>(SpecialTools::get_json_as_string(doc["shipping_address"]));
+				shipping_address = std::make_shared<ShippingAddress>(tools::Tools::get_json_as_string(doc["shipping_address"]));
 		}
 	}
 

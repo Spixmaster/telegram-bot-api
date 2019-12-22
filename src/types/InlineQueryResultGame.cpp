@@ -24,7 +24,7 @@ namespace tgbot
 				game_short_name = doc["game_short_name"].GetString();
 
 			if(doc.HasMember("reply_markup"))
-				reply_markup = std::make_shared<InlineKeyboardMarkup>(SpecialTools::get_json_as_string(doc["reply_markup"]));
+				reply_markup = std::make_shared<InlineKeyboardMarkup>(tools::Tools::get_json_as_string(doc["reply_markup"]));
 		}
 	}
 

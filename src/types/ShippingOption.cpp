@@ -25,7 +25,7 @@ namespace tgbot
 				{
 					prices.resize(doc["prices"].GetArray().Size());
 
-					prices.at(j) = std::make_shared<LabeledPrice>(SpecialTools::get_json_as_string(doc["prices"][j]));
+					prices.at(j) = std::make_shared<LabeledPrice>(tools::Tools::get_json_as_string(doc["prices"][j]));
 				}
 		}
 	}

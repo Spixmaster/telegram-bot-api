@@ -3,7 +3,6 @@
 
 #include "tgbot/types/KeyboardButton.h"
 #include <vector>
-#include "tgbot/SpecialTools.h"
 #include <memory>
 #include "tgbot/types/Reply.h"
 

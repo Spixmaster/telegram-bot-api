@@ -40,7 +40,7 @@ namespace tgbot
 				description = doc["mime_type"].GetString();
 
 			if(doc.HasMember("reply_markup"))
-				reply_markup = std::make_shared<InlineKeyboardMarkup>(SpecialTools::get_json_as_string(doc["reply_markup"]));
+				reply_markup = std::make_shared<InlineKeyboardMarkup>(tools::Tools::get_json_as_string(doc["reply_markup"]));
 
 			if(doc.HasMember("thumb_url"))
 				thumb_url = doc["thumb_url"].GetString();

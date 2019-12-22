@@ -33,7 +33,7 @@ namespace tgbot
 				live_period = doc["live_period"].GetInt();
 
 			if(doc.HasMember("reply_markup"))
-				reply_markup = std::make_shared<InlineKeyboardMarkup>(SpecialTools::get_json_as_string(doc["reply_markup"]));
+				reply_markup = std::make_shared<InlineKeyboardMarkup>(tools::Tools::get_json_as_string(doc["reply_markup"]));
 		}
 	}
 

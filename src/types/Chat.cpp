@@ -1,4 +1,3 @@
-#include <tgbot/SpecialTools.h>
 #include "tgbot/types/Chat.h"
 #include "tgbot/types/ChatPhoto.h"
 #include "tgbot/types/Message.h"
@@ -38,7 +37,7 @@ namespace tgbot
 				last_name = doc["last_name"].GetString();
 
 			if(doc.HasMember("photo"))
-				photo = std::make_shared<ChatPhoto>(SpecialTools::get_json_as_string(doc["photo"]));
+				photo = std::make_shared<ChatPhoto>(tools::Tools::get_json_as_string(doc["photo"]));
 
 			if(doc.HasMember("description"))
 				description = doc["description"].GetString();
@@ -47,10 +46,10 @@ namespace tgbot
 				invite_link = doc["invite_link"].GetString();
 
 			if(doc.HasMember("pinned_message"))
-				pinned_message = std::make_shared<Message>(SpecialTools::get_json_as_string(doc["pinned_message"]));
+				pinned_message = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["pinned_message"]));
 
 			if(doc.HasMember("permissions"))
-				permissions = std::make_shared<ChatPermissions>(SpecialTools::get_json_as_string(doc["permissions"]));
+				permissions = std::make_shared<ChatPermissions>(tools::Tools::get_json_as_string(doc["permissions"]));
 
 			if(doc.HasMember("sticker_set_name"))
 				sticker_set_name = doc["sticker_set_name"].GetString();
