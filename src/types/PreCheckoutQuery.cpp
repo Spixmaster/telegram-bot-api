@@ -18,7 +18,7 @@ namespace tgbot
 				id = doc["id"].GetString();
 
 			if(doc.HasMember("from"))
-				from = std::make_shared<User>(SpecialTools::get_json_as_string(doc["from"]));
+				from = std::make_shared<User>(tools::Tools::get_json_as_string(doc["from"]));
 
 			if(doc.HasMember("currency"))
 				currency = doc["currency"].GetString();
@@ -33,7 +33,7 @@ namespace tgbot
 				shipping_option_id = doc["shipping_option_id"].GetString();
 
 			if(doc.HasMember("order_info"))
-				order_info = std::make_shared<OrderInfo>(SpecialTools::get_json_as_string(doc["order_info"]));
+				order_info = std::make_shared<OrderInfo>(tools::Tools::get_json_as_string(doc["order_info"]));
 		}
 	}
 

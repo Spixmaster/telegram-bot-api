@@ -19,11 +19,11 @@ namespace tgbot
 				{
 					data.resize(doc["data"].GetArray().Size());
 
-					data.at(j) = std::make_shared<EncryptedPassportElement>(SpecialTools::get_json_as_string(doc["data"][j]));
+					data.at(j) = std::make_shared<EncryptedPassportElement>(tools::Tools::get_json_as_string(doc["data"][j]));
 				}
 
 			if(doc.HasMember("credentials"))
-				credentials = std::make_shared<EncryptedCredentials>(SpecialTools::get_json_as_string(doc["credentials"]));
+				credentials = std::make_shared<EncryptedCredentials>(tools::Tools::get_json_as_string(doc["credentials"]));
 		}
 	}
 

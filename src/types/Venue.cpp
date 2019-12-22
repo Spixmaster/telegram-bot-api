@@ -1,4 +1,3 @@
-#include <tgbot/SpecialTools.h>
 #include "tgbot/types/Venue.h"
 #include "tools/Tools.h"
 
@@ -16,7 +15,7 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("location"))
-				location = std::make_shared<Location>(SpecialTools::get_json_as_string(doc["location"]));
+				location = std::make_shared<Location>(tools::Tools::get_json_as_string(doc["location"]));
 
 			if(doc.HasMember("title"))
 				title = doc["title"].GetString();

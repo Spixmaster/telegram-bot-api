@@ -30,7 +30,7 @@ namespace tgbot
 				for(std::size_t j = 0; j < json_photo_array.Size(); ++j)
 					//iterate through all PhotoSizes of one photo
 					for(std::size_t k = 0; k < json_photo_array[j].GetArray().Size(); ++k)
-						photos.push_back(std::make_shared<PhotoSize>(SpecialTools::get_json_as_string(json_photo_array[j][k])));
+						photos.push_back(std::make_shared<PhotoSize>(tools::Tools::get_json_as_string(json_photo_array[j][k])));
 			}
 		}
 	}

@@ -4,7 +4,6 @@
 #include <string>
 #include "tgbot/types/LoginUrl.h"
 #include "tgbot/types/CallbackGame.h"
-#include "tgbot/SpecialTools.h"
 #include <memory>
 
 //@brief represents on object in the Telegram bot api

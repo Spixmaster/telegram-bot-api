@@ -3,7 +3,6 @@
 
 #include "tgbot/types/PhotoSize.h"
 #include <vector>
-#include "tgbot/SpecialTools.h"
 #include <memory>
 
 //@brief represents on object in the Telegram bot api

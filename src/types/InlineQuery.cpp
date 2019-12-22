@@ -18,10 +18,10 @@ namespace tgbot
 				id = doc["id"].GetString();
 
 			if(doc.HasMember("from"))
-				from = std::make_shared<User>(SpecialTools::get_json_as_string(doc["from"]));
+				from = std::make_shared<User>(tools::Tools::get_json_as_string(doc["from"]));
 
 			if(doc.HasMember("location"))
-				location = std::make_shared<Location>(SpecialTools::get_json_as_string(doc["location"]));
+				location = std::make_shared<Location>(tools::Tools::get_json_as_string(doc["location"]));
 
 			if(doc.HasMember("query"))
 				query = doc["query"].GetString();

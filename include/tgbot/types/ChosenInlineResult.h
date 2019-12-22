@@ -5,7 +5,6 @@
 #include "tgbot/types/User.h"
 #include "tgbot/types/Location.h"
 #include <rapidjson/document.h>
-#include "tgbot/SpecialTools.h"
 #include <memory>
 
 //@brief represents on object in the Telegram bot api

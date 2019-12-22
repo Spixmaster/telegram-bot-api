@@ -2,7 +2,6 @@
 #define TGBOT_TYPES_REPLYKEYBOARDREMOVE_H
 
 #include <rapidjson/document.h>
-#include "tgbot/SpecialTools.h"
 #include <memory>
 #include "tgbot/types/Reply.h"
 

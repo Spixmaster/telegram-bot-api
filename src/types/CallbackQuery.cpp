@@ -18,10 +18,10 @@ namespace tgbot
 				id = doc["id"].GetString();
 
 			if(doc.HasMember("from"))
-				from = std::make_shared<User>(SpecialTools::get_json_as_string(doc["from"]));
+				from = std::make_shared<User>(tools::Tools::get_json_as_string(doc["from"]));
 
 			if(doc.HasMember("message"))
-				message = std::make_shared<Message>(SpecialTools::get_json_as_string(doc["message"]));
+				message = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["message"]));
 
 			if(doc.HasMember("inline_message_id"))
 				inline_message_id = doc["inline_message_id"].GetString();
