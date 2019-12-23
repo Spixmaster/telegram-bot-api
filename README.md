@@ -1,17 +1,33 @@
 # telegram-bot-api
-C++ library for the Telegram bot API.
+A C++ library for the Telegram bot API.
 
 Current state: Bot API 4.4 (up to date)
 
 See the [Telegram documentation](https://core.telegram.org/bots/api).
 
 ## Usage
+You can only use this project in your own ones. Thus, no main is included.
+
+### As a submodule
+```sh
+cd to/your/project
+git submodule add *link to this repo*
+```
+
+### As a contributor
+#### eclipse
+* clone the project to anywhere
+* create a new eclipse project
+* right click on the project > Import > General > File System
+* select all content from the cloned project
+
 ### Compiler
 You need to use a C++17 compiler.
 
 ### Dependencies
-#### Poco
 The following packages need to be installed:
+
+#### Poco
 ```sh
 sudo apt install libpoco-dev
 ```
@@ -28,6 +44,11 @@ make -j4
 sudo make install
 ```
 
+#### boost
+```sh
+sudo apt install libboost-all-dev
+```
+
 #### Submodules
 ```sh
 git submodule init
@@ -38,6 +59,8 @@ git submodule update
 * PocoFoundation
 * PocoNetSSL
 * PocoNet
+* PocoCrypto
+* boost_iostreams
 
 ### Example
 Also, look in the examples folder.
