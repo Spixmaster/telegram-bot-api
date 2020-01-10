@@ -349,7 +349,7 @@ namespace tgbot
 		 * @brief changes bot's status for 5 seconds
 		 * @param chat_id: states chat id to which the proper status will be shown
 		 * @param action: look up on Telgram bot api documentation which strings are allowed; changes the bot's status properly
-		 * @return "true" on success
+		 * @return true on success
 		 */
 		bool sendChatAction(const long long &chat_id, const std::string &action) const;
 
