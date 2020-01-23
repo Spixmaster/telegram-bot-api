@@ -52,15 +52,24 @@ namespace tgbot
 		std::vector<Update::ptr> updates;
 
 		if(doc.IsObject())
+		{
 			if(doc.HasMember("result"))
 			{
 				if(doc["result"].IsArray())
 				{
 					const rapidjson::Value &array = doc["result"].GetArray();
+
 					for(std::size_t j = 0; j< array.Size(); ++j)
 						updates.push_back(std::make_shared<Update>(tools::Tools::get_json_as_string(array[j])));
 				}
+				else
+					std::cerr << "Error: The field \"result\" is not a json array." << std::endl;
 			}
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		}
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return updates;
 	}
@@ -106,7 +115,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				return doc["result"].GetBool();
+				if(doc["result"].IsBool())
+					return doc["result"].GetBool();
+				else
+					std::cerr << "Error: Field \"result\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return false;
 	}
@@ -121,7 +137,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				return doc["result"].GetBool();
+				if(doc["result"].IsBool())
+					return doc["result"].GetBool();
+				else
+					std::cerr << "Error: Field \"result\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return false;
 	}
@@ -138,7 +161,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				webhook_info = std::make_shared<WebhookInfo>(tools::Tools::get_json_as_string(doc["result"]));
+				if(doc["result"].IsObject())
+					webhook_info = std::make_shared<WebhookInfo>(tools::Tools::get_json_as_string(doc["result"]));
+				else
+					std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return webhook_info;
 	}
@@ -155,7 +185,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				usr = std::make_shared<User>(tools::Tools::get_json_as_string(doc["result"]));
+				if(doc["result"].IsObject())
+					usr = std::make_shared<User>(tools::Tools::get_json_as_string(doc["result"]));
+				else
+					std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return usr;
 	}
@@ -183,7 +220,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+				if(doc["result"].IsObject())
+					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+				else
+					std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return msg;
 	}
@@ -207,7 +251,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+				if(doc["result"].IsObject())
+					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+				else
+					std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return msg;
 	}
@@ -237,7 +288,14 @@ namespace tgbot
 
 			if(doc.IsObject())
 				if(doc.HasMember("result"))
-					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					if(doc["result"].IsObject())
+						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					else
+						std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+				else
+					std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+			else
+				std::cerr << "Error: The server response is not a json object." << std::endl;
 
 			return msg;
 		}
@@ -263,7 +321,14 @@ namespace tgbot
 
 			if(doc.IsObject())
 				if(doc.HasMember("result"))
-					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					if(doc["result"].IsObject())
+						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					else
+						std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+				else
+					std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+			else
+				std::cerr << "Error: The server response is not a json object." << std::endl;
 
 			return msg;
 		}
@@ -303,7 +368,14 @@ namespace tgbot
 
 			if(doc.IsObject())
 				if(doc.HasMember("result"))
-					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					if(doc["result"].IsObject())
+						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					else
+						std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+				else
+					std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+			else
+				std::cerr << "Error: The server response is not a json object." << std::endl;
 
 			return msg;
 		}
@@ -333,7 +405,14 @@ namespace tgbot
 
 			if(doc.IsObject())
 				if(doc.HasMember("result"))
-					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					if(doc["result"].IsObject())
+						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					else
+						std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+				else
+					std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+			else
+				std::cerr << "Error: The server response is not a json object." << std::endl;
 
 			return msg;
 		}
@@ -363,7 +442,14 @@ namespace tgbot
 
 			if(doc.IsObject())
 				if(doc.HasMember("result"))
-					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					if(doc["result"].IsObject())
+						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					else
+						std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+				else
+					std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+			else
+				std::cerr << "Error: The server response is not a json object." << std::endl;
 
 			return msg;
 		}
@@ -393,7 +479,14 @@ namespace tgbot
 
 			if(doc.IsObject())
 				if(doc.HasMember("result"))
-					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					if(doc["result"].IsObject())
+						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					else
+						std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+				else
+					std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+			else
+				std::cerr << "Error: The server response is not a json object." << std::endl;
 
 			return msg;
 		}
@@ -429,7 +522,14 @@ namespace tgbot
 
 			if(doc.IsObject())
 				if(doc.HasMember("result"))
-					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					if(doc["result"].IsObject())
+						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					else
+						std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+				else
+					std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+			else
+				std::cerr << "Error: The server response is not a json object." << std::endl;
 
 			return msg;
 		}
@@ -456,7 +556,14 @@ namespace tgbot
 
 			if(doc.IsObject())
 				if(doc.HasMember("result"))
-					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					if(doc["result"].IsObject())
+						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					else
+						std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+				else
+					std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+			else
+				std::cerr << "Error: The server response is not a json object." << std::endl;
 
 			return msg;
 		}
@@ -483,7 +590,14 @@ namespace tgbot
 
 			if(doc.IsObject())
 				if(doc.HasMember("result"))
-					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					if(doc["result"].IsObject())
+						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					else
+						std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+				else
+					std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+			else
+				std::cerr << "Error: The server response is not a json object." << std::endl;
 
 			return msg;
 		}
@@ -510,7 +624,14 @@ namespace tgbot
 
 			if(doc.IsObject())
 				if(doc.HasMember("result"))
-					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					if(doc["result"].IsObject())
+						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					else
+						std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+				else
+					std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+			else
+				std::cerr << "Error: The server response is not a json object." << std::endl;
 
 			return msg;
 		}
@@ -551,7 +672,14 @@ namespace tgbot
 
 			if(doc.IsObject())
 				if(doc.HasMember("result"))
-					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					if(doc["result"].IsObject())
+						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					else
+						std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+				else
+					std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+			else
+				std::cerr << "Error: The server response is not a json object." << std::endl;
 
 			return msg;
 		}
@@ -582,7 +710,14 @@ namespace tgbot
 
 			if(doc.IsObject())
 				if(doc.HasMember("result"))
-					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					if(doc["result"].IsObject())
+						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					else
+						std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+				else
+					std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+			else
+				std::cerr << "Error: The server response is not a json object." << std::endl;
 
 			return msg;
 		}
@@ -613,7 +748,14 @@ namespace tgbot
 
 			if(doc.IsObject())
 				if(doc.HasMember("result"))
-					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					if(doc["result"].IsObject())
+						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					else
+						std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+				else
+					std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+			else
+				std::cerr << "Error: The server response is not a json object." << std::endl;
 
 			return msg;
 		}
@@ -644,7 +786,14 @@ namespace tgbot
 
 			if(doc.IsObject())
 				if(doc.HasMember("result"))
-					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					if(doc["result"].IsObject())
+						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					else
+						std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+				else
+					std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+			else
+				std::cerr << "Error: The server response is not a json object." << std::endl;
 
 			return msg;
 		}
@@ -684,7 +833,14 @@ namespace tgbot
 
 			if(doc.IsObject())
 				if(doc.HasMember("result"))
-					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					if(doc["result"].IsObject())
+						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					else
+						std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+				else
+					std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+			else
+				std::cerr << "Error: The server response is not a json object." << std::endl;
 
 			return msg;
 		}
@@ -714,7 +870,14 @@ namespace tgbot
 
 			if(doc.IsObject())
 				if(doc.HasMember("result"))
-					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					if(doc["result"].IsObject())
+						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					else
+						std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+				else
+					std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+			else
+				std::cerr << "Error: The server response is not a json object." << std::endl;
 
 			return msg;
 		}
@@ -744,7 +907,14 @@ namespace tgbot
 
 			if(doc.IsObject())
 				if(doc.HasMember("result"))
-					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					if(doc["result"].IsObject())
+						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					else
+						std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+				else
+					std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+			else
+				std::cerr << "Error: The server response is not a json object." << std::endl;
 
 			return msg;
 		}
@@ -774,7 +944,14 @@ namespace tgbot
 
 			if(doc.IsObject())
 				if(doc.HasMember("result"))
-					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					if(doc["result"].IsObject())
+						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					else
+						std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+				else
+					std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+			else
+				std::cerr << "Error: The server response is not a json object." << std::endl;
 
 			return msg;
 		}
@@ -809,7 +986,14 @@ namespace tgbot
 
 			if(doc.IsObject())
 				if(doc.HasMember("result"))
-					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					if(doc["result"].IsObject())
+						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					else
+						std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+				else
+					std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+			else
+				std::cerr << "Error: The server response is not a json object." << std::endl;
 
 			return msg;
 		}
@@ -836,7 +1020,14 @@ namespace tgbot
 
 			if(doc.IsObject())
 				if(doc.HasMember("result"))
-					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					if(doc["result"].IsObject())
+						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					else
+						std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+				else
+					std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+			else
+				std::cerr << "Error: The server response is not a json object." << std::endl;
 
 			return msg;
 		}
@@ -872,7 +1063,14 @@ namespace tgbot
 
 			if(doc.IsObject())
 				if(doc.HasMember("result"))
-					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					if(doc["result"].IsObject())
+						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					else
+						std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+				else
+					std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+			else
+				std::cerr << "Error: The server response is not a json object." << std::endl;
 
 			return msg;
 		}
@@ -899,7 +1097,14 @@ namespace tgbot
 
 			if(doc.IsObject())
 				if(doc.HasMember("result"))
-					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					if(doc["result"].IsObject())
+						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					else
+						std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+				else
+					std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+			else
+				std::cerr << "Error: The server response is not a json object." << std::endl;
 
 			return msg;
 		}
@@ -926,7 +1131,14 @@ namespace tgbot
 
 			if(doc.IsObject())
 				if(doc.HasMember("result"))
-					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					if(doc["result"].IsObject())
+						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					else
+						std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+				else
+					std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+			else
+				std::cerr << "Error: The server response is not a json object." << std::endl;
 
 			return msg;
 		}
@@ -953,7 +1165,14 @@ namespace tgbot
 
 			if(doc.IsObject())
 				if(doc.HasMember("result"))
-					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					if(doc["result"].IsObject())
+						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					else
+						std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+				else
+					std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+			else
+				std::cerr << "Error: The server response is not a json object." << std::endl;
 
 			return msg;
 		}
@@ -1030,14 +1249,27 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-			{
 				if(doc["result"].IsArray())
 				{
 					const rapidjson::Value &array = doc["result"].GetArray();
+
 					for(std::size_t j = 0; j< array.Size(); ++j)
-						msgs.push_back(std::make_shared<Message>(tools::Tools::get_json_as_string(array[j])));
+					{
+						if(array[j].IsObject())
+							msgs.push_back(std::make_shared<Message>(tools::Tools::get_json_as_string(array[j])));
+						else
+						{
+							std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+							continue;
+						}
+					}
 				}
-			}
+				else
+					std::cerr << "Error: Field \"result\" does not contain a json array." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return msgs;
 	}
@@ -1065,7 +1297,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+				if(doc["result"].IsObject())
+					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+				else
+					std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return msg;
 	}
@@ -1092,7 +1331,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+				if(doc["result"].IsObject())
+					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+				else
+					std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return msg;
 	}
@@ -1117,7 +1363,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+				if(doc["result"].IsObject())
+					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+				else
+					std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return msg;
 	}
@@ -1149,7 +1402,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+				if(doc["result"].IsObject())
+					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+				else
+					std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return msg;
 	}
@@ -1178,7 +1438,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+				if(doc["result"].IsObject())
+					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+				else
+					std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return msg;
 	}
@@ -1222,7 +1489,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+				if(doc["result"].IsObject())
+					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+				else
+					std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return msg;
 	}
@@ -1242,7 +1516,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				return doc["result"].GetBool();
+				if(doc["result"].IsBool())
+					return doc["result"].GetBool();
+				else
+					std::cerr << "Error: Field \"result\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return false;
 	}
@@ -1266,7 +1547,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				usr_profile_photos = std::make_shared<UserProfilePhotos>(tools::Tools::get_json_as_string(doc["result"]));
+				if(doc["result"].IsObject())
+					usr_profile_photos = std::make_shared<UserProfilePhotos>(tools::Tools::get_json_as_string(doc["result"]));
+				else
+					std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return usr_profile_photos;
 	}
@@ -1287,7 +1575,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				file = std::make_shared<File>(tools::Tools::get_json_as_string(doc["result"]));
+				if(doc["result"].IsObject())
+					file = std::make_shared<File>(tools::Tools::get_json_as_string(doc["result"]));
+				else
+					std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return file;
 	}
@@ -1308,7 +1603,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				return doc["result"].GetBool();
+				if(doc["result"].IsBool())
+					return doc["result"].GetBool();
+				else
+					std::cerr << "Error: Field \"result\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return false;
 	}
@@ -1328,7 +1630,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				return doc["result"].GetBool();
+				if(doc["result"].IsBool())
+					return doc["result"].GetBool();
+				else
+					std::cerr << "Error: Field \"result\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return false;
 	}
@@ -1350,7 +1659,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				return doc["result"].GetBool();
+				if(doc["result"].IsBool())
+					return doc["result"].GetBool();
+				else
+					std::cerr << "Error: Field \"result\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return false;
 	}
@@ -1380,7 +1696,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				return doc["result"].GetBool();
+				if(doc["result"].IsBool())
+					return doc["result"].GetBool();
+				else
+					std::cerr << "Error: Field \"result\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return false;
 	}
@@ -1400,7 +1723,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				return doc["result"].GetBool();
+				if(doc["result"].IsBool())
+					return doc["result"].GetBool();
+				else
+					std::cerr << "Error: Field \"result\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return false;
 	}
@@ -1419,7 +1749,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				return doc["result"].GetBool();
+				if(doc["result"].IsBool())
+					return doc["result"].GetBool();
+				else
+					std::cerr << "Error: Field \"result\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return false;
 	}
@@ -1439,7 +1776,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				return doc["result"].GetBool();
+				if(doc["result"].IsBool())
+					return doc["result"].GetBool();
+				else
+					std::cerr << "Error: Field \"result\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return false;
 	}
@@ -1458,7 +1802,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				return doc["result"].GetBool();
+				if(doc["result"].IsBool())
+					return doc["result"].GetBool();
+				else
+					std::cerr << "Error: Field \"result\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return false;
 	}
@@ -1478,7 +1829,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				return doc["result"].GetBool();
+				if(doc["result"].IsBool())
+					return doc["result"].GetBool();
+				else
+					std::cerr << "Error: Field \"result\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return false;
 	}
@@ -1498,7 +1856,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				return doc["result"].GetBool();
+				if(doc["result"].IsBool())
+					return doc["result"].GetBool();
+				else
+					std::cerr << "Error: Field \"result\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return false;
 	}
@@ -1519,7 +1884,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				return doc["result"].GetBool();
+				if(doc["result"].IsBool())
+					return doc["result"].GetBool();
+				else
+					std::cerr << "Error: Field \"result\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return false;
 	}
@@ -1538,7 +1910,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				return doc["result"].GetBool();
+				if(doc["result"].IsBool())
+					return doc["result"].GetBool();
+				else
+					std::cerr << "Error: Field \"result\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return false;
 	}
@@ -1557,7 +1936,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				return doc["result"].GetBool();
+				if(doc["result"].IsBool())
+					return doc["result"].GetBool();
+				else
+					std::cerr << "Error: Field \"result\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return false;
 	}
@@ -1578,7 +1964,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				chat = std::make_shared<Chat>(tools::Tools::get_json_as_string(doc["result"]));
+				if(doc["result"].IsObject())
+					chat = std::make_shared<Chat>(tools::Tools::get_json_as_string(doc["result"]));
+				else
+					std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return chat;
 	}
@@ -1599,14 +1992,27 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-			{
 				if(doc["result"].IsArray())
 				{
 					const rapidjson::Value &array = doc["result"].GetArray();
+
 					for(std::size_t j = 0; j< array.Size(); ++j)
-						admins.push_back(std::make_shared<ChatMember>(tools::Tools::get_json_as_string(array[j])));
+					{
+						if(array[j].IsObject())
+							admins.push_back(std::make_shared<ChatMember>(tools::Tools::get_json_as_string(array[j])));
+						else
+						{
+							std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+							continue;
+						}
+					}
 				}
-			}
+				else
+					std::cerr << "Error: Field \"result\" does not contain a json array." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return admins;
 	}
@@ -1625,7 +2031,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				return doc["result"].GetInt();
+				if(doc["result"].IsInt())
+					return doc["result"].GetInt();
+				else
+					std::cerr << "Error: Field \"result\" does not contain an int." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return 0;
 	}
@@ -1647,7 +2060,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				chat_member = std::make_shared<ChatMember>(tools::Tools::get_json_as_string(doc["result"]));
+				if(doc["result"].IsObject())
+					chat_member = std::make_shared<ChatMember>(tools::Tools::get_json_as_string(doc["result"]));
+				else
+					std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return chat_member;
 	}
@@ -1667,7 +2087,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				return doc["result"].GetBool();
+				if(doc["result"].IsBool())
+					return doc["result"].GetBool();
+				else
+					std::cerr << "Error: Field \"result\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return false;
 	}
@@ -1686,7 +2113,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				return doc["result"].GetBool();
+				if(doc["result"].IsBool())
+					return doc["result"].GetBool();
+				else
+					std::cerr << "Error: Field \"result\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return false;
 	}
@@ -1710,7 +2144,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				return doc["result"].GetBool();
+				if(doc["result"].IsBool())
+					return doc["result"].GetBool();
+				else
+					std::cerr << "Error: Field \"result\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return false;
 	}
@@ -1738,7 +2179,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+				if(doc["result"].IsObject())
+					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+				else
+					std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return msg;
 	}
@@ -1765,7 +2213,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+				if(doc["result"].IsObject())
+					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+				else
+					std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return msg;
 	}
@@ -1873,7 +2328,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+				if(doc["result"].IsObject())
+					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+				else
+					std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return msg;
 	}
@@ -1897,7 +2359,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+				if(doc["result"].IsObject())
+					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+				else
+					std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return msg;
 	}
@@ -1920,7 +2389,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				poll = std::make_shared<Poll>(tools::Tools::get_json_as_string(doc["result"]));
+				if(doc["result"].IsObject())
+					poll = std::make_shared<Poll>(tools::Tools::get_json_as_string(doc["result"]));
+				else
+					std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return poll;
 	}
@@ -1940,7 +2416,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				return doc["result"].GetBool();
+				if(doc["result"].IsBool())
+					return doc["result"].GetBool();
+				else
+					std::cerr << "Error: Field \"result\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return false;
 	}
@@ -1968,7 +2451,14 @@ namespace tgbot
 
 			if(doc.IsObject())
 				if(doc.HasMember("result"))
-					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					if(doc["result"].IsObject())
+						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					else
+						std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+				else
+					std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+			else
+				std::cerr << "Error: The server response is not a json object." << std::endl;
 
 			return msg;
 		}
@@ -1992,7 +2482,14 @@ namespace tgbot
 
 			if(doc.IsObject())
 				if(doc.HasMember("result"))
-					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					if(doc["result"].IsObject())
+						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+					else
+						std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+				else
+					std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+			else
+				std::cerr << "Error: The server response is not a json object." << std::endl;
 
 			return msg;
 		}
@@ -2017,7 +2514,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				sticker_set = std::make_shared<StickerSet>(tools::Tools::get_json_as_string(doc["result"]));
+				if(doc["result"].IsObject())
+					sticker_set = std::make_shared<StickerSet>(tools::Tools::get_json_as_string(doc["result"]));
+				else
+					std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return sticker_set;
 	}
@@ -2039,7 +2543,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				file = std::make_shared<File>(tools::Tools::get_json_as_string(doc["result"]));
+				if(doc["result"].IsObject())
+					file = std::make_shared<File>(tools::Tools::get_json_as_string(doc["result"]));
+				else
+					std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return file;
 	}
@@ -2068,7 +2579,14 @@ namespace tgbot
 
 			if(doc.IsObject())
 				if(doc.HasMember("result"))
-					return doc["result"].GetBool();
+					if(doc["result"].IsBool())
+						return doc["result"].GetBool();
+					else
+						std::cerr << "Error: Field \"result\" does not contain a bool." << std::endl;
+				else
+					std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+			else
+				std::cerr << "Error: The server response is not a json object." << std::endl;
 
 			return false;
 		}
@@ -2092,7 +2610,14 @@ namespace tgbot
 
 			if(doc.IsObject())
 				if(doc.HasMember("result"))
-					return doc["result"].GetBool();
+					if(doc["result"].IsBool())
+						return doc["result"].GetBool();
+					else
+						std::cerr << "Error: Field \"result\" does not contain a bool." << std::endl;
+				else
+					std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+			else
+				std::cerr << "Error: The server response is not a json object." << std::endl;
 
 			return false;
 		}
@@ -2122,7 +2647,14 @@ namespace tgbot
 
 			if(doc.IsObject())
 				if(doc.HasMember("result"))
-					return doc["result"].GetBool();
+					if(doc["result"].IsBool())
+						return doc["result"].GetBool();
+					else
+						std::cerr << "Error: Field \"result\" does not contain a bool." << std::endl;
+				else
+					std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+			else
+				std::cerr << "Error: The server response is not a json object." << std::endl;
 
 			return false;
 		}
@@ -2145,7 +2677,14 @@ namespace tgbot
 
 			if(doc.IsObject())
 				if(doc.HasMember("result"))
-					return doc["result"].GetBool();
+					if(doc["result"].IsBool())
+						return doc["result"].GetBool();
+					else
+						std::cerr << "Error: Field \"result\" does not contain a bool." << std::endl;
+				else
+					std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+			else
+				std::cerr << "Error: The server response is not a json object." << std::endl;
 
 			return false;
 		}
@@ -2168,7 +2707,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				return doc["result"].GetBool();
+				if(doc["result"].IsBool())
+					return doc["result"].GetBool();
+				else
+					std::cerr << "Error: Field \"result\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return false;
 	}
@@ -2187,7 +2733,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				return doc["result"].GetBool();
+				if(doc["result"].IsBool())
+					return doc["result"].GetBool();
+				else
+					std::cerr << "Error: Field \"result\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return false;
 	}
@@ -2236,7 +2789,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				return doc["result"].GetBool();
+				if(doc["result"].IsBool())
+					return doc["result"].GetBool();
+				else
+					std::cerr << "Error: Field \"result\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return false;
 	}
@@ -2307,7 +2867,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+				if(doc["result"].IsObject())
+					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+				else
+					std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return msg;
 	}
@@ -2353,7 +2920,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				return doc["result"].GetBool();
+				if(doc["result"].IsBool())
+					return doc["result"].GetBool();
+				else
+					std::cerr << "Error: Field \"result\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return false;
 	}
@@ -2374,7 +2948,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				return doc["result"].GetBool();
+				if(doc["result"].IsBool())
+					return doc["result"].GetBool();
+				else
+					std::cerr << "Error: Field \"result\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return false;
 	}
@@ -2417,7 +2998,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				return doc["result"].GetBool();
+				if(doc["result"].IsBool())
+					return doc["result"].GetBool();
+				else
+					std::cerr << "Error: Field \"result\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return false;
 	}
@@ -2443,7 +3031,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+				if(doc["result"].IsObject())
+					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+				else
+					std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return msg;
 	}
@@ -2471,7 +3066,14 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-				msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+				if(doc["result"].IsObject())
+					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+				else
+					std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return msg;
 	}
@@ -2496,14 +3098,27 @@ namespace tgbot
 
 		if(doc.IsObject())
 			if(doc.HasMember("result"))
-			{
 				if(doc["result"].IsArray())
 				{
 					const rapidjson::Value &array = doc["result"].GetArray();
+
 					for(std::size_t j = 0; j< array.Size(); ++j)
-						game_high_score.push_back(std::make_shared<GameHighScore>(tools::Tools::get_json_as_string(array[j])));
+					{
+						if(array[j].IsObject())
+							game_high_score.push_back(std::make_shared<GameHighScore>(tools::Tools::get_json_as_string(array[j])));
+						else
+						{
+							std::cerr << "Error: Field \"result\" does not contain a json object." << std::endl;
+							continue;
+						}
+					}
 				}
-			}
+				else
+					std::cerr << "Error: Field \"result\" does not contain a json array." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
 
 		return game_high_score;
 	}
