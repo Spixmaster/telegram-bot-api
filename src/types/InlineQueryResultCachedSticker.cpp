@@ -1,5 +1,6 @@
 #include "tgbot/types/InlineQueryResultCachedSticker.h"
 #include "tools/Tools.h"
+#include <iostream>
 
 namespace tgbot
 {
@@ -15,13 +16,28 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("type"))
-				type = doc["type"].GetString();
+				if(doc["type"].IsString())
+					type = doc["type"].GetString();
+				else
+					std::cerr << "Error: Field \"type\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"type\"." << std::endl;
 
 			if(doc.HasMember("id"))
-				id = doc["id"].GetString();
+				if(doc["id"].IsString())
+					id = doc["id"].GetString();
+				else
+					std::cerr << "Error: Field \"id\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"id\"." << std::endl;
 
 			if(doc.HasMember("sticker_file_id"))
-				sticker_file_id = doc["sticker_file_id"].GetString();
+				if(doc["sticker_file_id"].IsString())
+					sticker_file_id = doc["sticker_file_id"].GetString();
+				else
+					std::cerr << "Error: Field \"sticker_file_id\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"sticker_file_id\"." << std::endl;
 
 			if(doc.HasMember("reply_markup"))
 				reply_markup = std::make_shared<InlineKeyboardMarkup>(tools::Tools::get_json_as_string(doc["reply_markup"]));
