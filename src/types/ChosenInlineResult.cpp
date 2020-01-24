@@ -1,5 +1,6 @@
 #include "tgbot/types/ChosenInlineResult.h"
 #include "tools/Tools.h"
+#include <iostream>
 
 namespace tgbot
 {
@@ -15,19 +16,44 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("result_id"))
-				result_id = doc["result_id"].GetString();
+				if(doc["result_id"].IsString())
+					result_id = doc["result_id"].GetString();
+				else
+					std::cerr << "Error: Field \"result_id\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result_id\"." << std::endl;
 
 			if(doc.HasMember("from"))
-				from = std::make_shared<User>(tools::Tools::get_json_as_string(doc["from"]));
+				if(doc["from"].IsObject())
+					from = std::make_shared<User>(tools::Tools::get_json_as_string(doc["from"]));
+				else
+					std::cerr << "Error: Field \"from\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"from\"." << std::endl;
 
 			if(doc.HasMember("location"))
-				location = std::make_shared<Location>(tools::Tools::get_json_as_string(doc["location"]));
+				if(doc["location"].IsObject())
+					location = std::make_shared<Location>(tools::Tools::get_json_as_string(doc["location"]));
+				else
+					std::cerr << "Error: Field \"location\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"location\"." << std::endl;
 
 			if(doc.HasMember("inline_message_id"))
-				inline_message_id = doc["inline_message_id"].GetString();
+				if(doc["inline_message_id"].IsString())
+					inline_message_id = doc["inline_message_id"].GetString();
+				else
+					std::cerr << "Error: Field \"inline_message_id\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"inline_message_id\"." << std::endl;
 
 			if(doc.HasMember("query"))
-				query = doc["query"].GetString();
+				if(doc["query"].IsString())
+					query = doc["query"].GetString();
+				else
+					std::cerr << "Error: Field \"query\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"query\"." << std::endl;
 		}
 	}
 

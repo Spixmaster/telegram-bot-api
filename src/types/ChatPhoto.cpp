@@ -1,5 +1,6 @@
 #include "tgbot/types/ChatPhoto.h"
 #include "tools/Tools.h"
+#include <iostream>
 
 namespace tgbot
 {
@@ -15,10 +16,20 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("small_file_id"))
-				small_file_id = doc["small_file_id"].GetString();
+				if(doc["small_file_id"].IsString())
+					small_file_id = doc["small_file_id"].GetString();
+				else
+					std::cerr << "Error: Field \"small_file_id\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"small_file_id\"." << std::endl;
 
 			if(doc.HasMember("big_file_id"))
-				big_file_id = doc["big_file_id"].GetString();
+				if(doc["big_file_id"].IsString())
+					big_file_id = doc["big_file_id"].GetString();
+				else
+					std::cerr << "Error: Field \"big_file_id\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"big_file_id\"." << std::endl;
 		}
 	}
 

@@ -1,5 +1,6 @@
 #include "tgbot/types/File.h"
 #include "tools/Tools.h"
+#include <iostream>
 
 namespace tgbot
 {
@@ -15,13 +16,28 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("file_id"))
-				file_id = doc["file_id"].GetString();
+				if(doc["file_id"].IsString())
+					file_id = doc["file_id"].GetString();
+				else
+					std::cerr << "Error: Field \"file_id\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"file_id\"." << std::endl;
 
 			if(doc.HasMember("file_size"))
-				file_size = doc["file_size"].GetInt();
+				if(doc["file_size"].IsInt())
+					file_size = doc["file_size"].GetInt();
+				else
+					std::cerr << "Error: Field \"file_size\" does not contain an int." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"file_size\"." << std::endl;
 
 			if(doc.HasMember("file_path"))
-				file_path = doc["file_path"].GetString();
+				if(doc["file_path"].IsString())
+					file_path = doc["file_path"].GetString();
+				else
+					std::cerr << "Error: Field \"file_path\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"file_path\"." << std::endl;
 		}
 	}
 

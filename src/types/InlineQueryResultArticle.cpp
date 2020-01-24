@@ -1,5 +1,6 @@
 #include "tgbot/types/InlineQueryResultArticle.h"
 #include "tools/Tools.h"
+#include <iostream>
 
 namespace tgbot
 {
@@ -16,19 +17,41 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("type"))
-				type = doc["type"].GetString();
+				if(doc["type"].IsString())
+					type = doc["type"].GetString();
+				else
+					std::cerr << "Error: Field \"type\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"type\"." << std::endl;
 
 			if(doc.HasMember("id"))
 				id = doc["id"].GetString();
+			if(doc.HasMember("file_id"))
+				if(doc["file_id"].IsString())
+					file_id = doc["file_id"].GetString();
+				else
+					std::cerr << "Error: Field \"file_id\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"file_id\"." << std::endl;
 
 			if(doc.HasMember("title"))
-				title = doc["title"].GetString();
+				if(doc["title"].IsString())
+					title = doc["title"].GetString();
+				else
+					std::cerr << "Error: Field \"title\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"title\"." << std::endl;
 
 			if(doc.HasMember("reply_markup"))
 				reply_markup = std::make_shared<InlineKeyboardMarkup>(tools::Tools::get_json_as_string(doc["reply_markup"]));
 
 			if(doc.HasMember("url"))
-				url = doc["url"].GetString();
+				if(doc["url"].IsString())
+					url = doc["url"].GetString();
+				else
+					std::cerr << "Error: Field \"url\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"url\"." << std::endl;
 
 			if(doc.HasMember("hide_url"))
 				hide_url = doc["hide_url"].GetBool();

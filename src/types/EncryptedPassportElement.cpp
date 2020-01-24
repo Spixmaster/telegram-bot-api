@@ -1,5 +1,6 @@
 #include "tgbot/types/EncryptedPassportElement.h"
 #include "tools/Tools.h"
+#include <iostream>
 
 namespace tgbot
 {
@@ -15,41 +16,97 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("type"))
-				type = doc["type"].GetString();
+				if(doc["type"].IsString())
+					type = doc["type"].GetString();
+				else
+					std::cerr << "Error: Field \"type\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"type\"." << std::endl;
 
 			if(doc.HasMember("data"))
-				data = doc["data"].GetString();
+				if(doc["data"].IsString())
+					data = doc["data"].GetString();
+				else
+					std::cerr << "Error: Field \"data\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"data\"." << std::endl;
 
 			if(doc.HasMember("phone_number"))
-				phone_number = doc["phone_number"].GetString();
+				if(doc["phone_number"].IsString())
+					phone_number = doc["phone_number"].GetString();
+				else
+					std::cerr << "Error: Field \"phone_number\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"phone_number\"." << std::endl;
 
+			//todo
 			if(doc.HasMember("files"))
-				for(std::size_t j = 0; j < doc["files"].GetArray().Size(); ++j)
+				if(doc["files"].IsArray())
 				{
 					files.resize(doc["files"].GetArray().Size());
 
-					files.at(j) = std::make_shared<PassportFile>(tools::Tools::get_json_as_string(doc["files"][j]));
+					for(std::size_t j = 0; j < doc["files"].GetArray().Size(); ++j)
+					{
+						if(doc["files"][j].IsObject())
+							files.at(j) = std::make_shared<PassportFile>(tools::Tools::get_json_as_string(doc["files"][j]));
+						else
+							std::cerr << "Error: Field \"files\"'s json array's element is not a json object." << std::endl;
+					}
 				}
+				else
+					std::cerr << "Error: Field \"files\" does not contain a json array." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"files\"." << std::endl;
 
 			if(doc.HasMember("front_side"))
-				front_side = std::make_shared<PassportFile>(tools::Tools::get_json_as_string(doc["front_side"]));
+				if(doc["front_side"].IsObject())
+					front_side = std::make_shared<PassportFile>(tools::Tools::get_json_as_string(doc["front_side"]));
+				else
+					std::cerr << "Error: Field \"front_side\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"front_side\"." << std::endl;
 
 			if(doc.HasMember("reverse_side"))
-				reverse_side = std::make_shared<PassportFile>(tools::Tools::get_json_as_string(doc["reverse_side"]));
+				if(doc["reverse_side"].IsObject())
+					reverse_side = std::make_shared<PassportFile>(tools::Tools::get_json_as_string(doc["reverse_side"]));
+				else
+					std::cerr << "Error: Field \"reverse_side\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"reverse_side\"." << std::endl;
 
 			if(doc.HasMember("selfie"))
-				selfie = std::make_shared<PassportFile>(tools::Tools::get_json_as_string(doc["selfie"]));
+				if(doc["selfie"].IsObject())
+					selfie = std::make_shared<PassportFile>(tools::Tools::get_json_as_string(doc["selfie"]));
+				else
+					std::cerr << "Error: Field \"selfie\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"selfie\"." << std::endl;
 
 			if(doc.HasMember("translation"))
-				for(std::size_t j = 0; j < doc["translation"].GetArray().Size(); ++j)
+				if(doc["translation"].IsArray())
 				{
 					files.resize(doc["files"].GetArray().Size());
 
-					files.at(j) = std::make_shared<PassportFile>(tools::Tools::get_json_as_string(doc["translation"][j]));
+					for(std::size_t j = 0; j < doc["translation"].GetArray().Size(); ++j)
+					{
+						if(doc["translation"][j].IsObject())
+							files.at(j) = std::make_shared<PassportFile>(tools::Tools::get_json_as_string(doc["translation"][j]));
+						else
+							std::cerr << "Error: Field \"translation\"'s json array's element is not a json object." << std::endl;
+					}
 				}
+				else
+					std::cerr << "Error: Field \"translation\" does not contain a json array." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"translation\"." << std::endl;
 
 			if(doc.HasMember("hash"))
-				hash = doc["hash"].GetString();
+				if(doc["hash"].IsString())
+					hash = doc["hash"].GetString();
+				else
+					std::cerr << "Error: Field \"hash\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"hash\"." << std::endl;
 		}
 	}
 

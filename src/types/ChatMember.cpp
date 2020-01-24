@@ -1,5 +1,6 @@
 #include "tgbot/types/ChatMember.h"
 #include "tools/Tools.h"
+#include <iostream>
 
 namespace tgbot
 {
@@ -17,55 +18,140 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("user"))
-				user = std::make_shared<User>(tools::Tools::get_json_as_string(doc["user"]));
+				if(doc["user"].IsObject())
+					user = std::make_shared<User>(tools::Tools::get_json_as_string(doc["user"]));
+				else
+					std::cerr << "Error: Field \"user\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"user\"." << std::endl;
 
 			if(doc.HasMember("status"))
-				status = doc["status"].GetString();
+				if(doc["status"].IsString())
+					status = doc["status"].GetString();
+				else
+					std::cerr << "Error: Field \"status\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"status\"." << std::endl;
 
 			if(doc.HasMember("until_date"))
-				until_date = doc["until_date"].GetInt();
+				if(doc["until_date"].IsInt())
+					until_date = doc["until_date"].GetInt();
+				else
+					std::cerr << "Error: Field \"until_date\" does not contain an int." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"until_date\"." << std::endl;
 
 			if(doc.HasMember("can_be_edited"))
-				can_be_edited = doc["can_be_edited"].GetBool();
+				if(doc["can_be_edited"].IsBool())
+					can_be_edited = doc["can_be_edited"].GetBool();
+				else
+					std::cerr << "Error: Field \"can_be_edited\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"can_be_edited\"." << std::endl;
 
 			if(doc.HasMember("can_post_messages"))
-				can_post_messages = doc["can_post_messages"].GetBool();
+				if(doc["can_post_messages"].IsBool())
+					can_post_messages = doc["can_post_messages"].GetBool();
+				else
+					std::cerr << "Error: Field \"can_post_messages\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"can_post_messages\"." << std::endl;
 
 			if(doc.HasMember("can_edit_messages"))
-				can_edit_messages = doc["can_edit_messages"].GetBool();
+				if(doc["can_edit_messages"].IsBool())
+					can_edit_messages = doc["can_edit_messages"].GetBool();
+				else
+					std::cerr << "Error: Field \"can_edit_messages\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"can_edit_messages\"." << std::endl;
 
 			if(doc.HasMember("can_delete_messages"))
-				can_delete_messages = doc["can_delete_messages"].GetBool();
+				if(doc["can_delete_messages"].IsBool())
+					can_delete_messages = doc["can_delete_messages"].GetBool();
+				else
+					std::cerr << "Error: Field \"can_delete_messages\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"can_delete_messages\"." << std::endl;
 
 			if(doc.HasMember("can_restrict_members"))
-				can_restrict_members = doc["can_restrict_members"].GetBool();
+				if(doc["can_restrict_members"].IsBool())
+					can_restrict_members = doc["can_restrict_members"].GetBool();
+				else
+					std::cerr << "Error: Field \"can_restrict_members\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"can_restrict_members\"." << std::endl;
 
 			if(doc.HasMember("can_promote_members"))
-				can_promote_members = doc["can_promote_members"].GetBool();
+				if(doc["can_promote_members"].IsBool())
+					can_promote_members = doc["can_promote_members"].GetBool();
+				else
+					std::cerr << "Error: Field \"can_promote_members\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"can_promote_members\"." << std::endl;
 
 			if(doc.HasMember("can_change_info"))
-				can_change_info = doc["can_change_info"].GetBool();
+				if(doc["can_change_info"].IsBool())
+					can_change_info = doc["can_change_info"].GetBool();
+				else
+					std::cerr << "Error: Field \"can_change_info\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"can_change_info\"." << std::endl;
 
 			if(doc.HasMember("can_invite_users"))
-				can_invite_users = doc["can_invite_users"].GetBool();
+				if(doc["can_invite_users"].IsBool())
+					can_invite_users = doc["can_invite_users"].GetBool();
+				else
+					std::cerr << "Error: Field \"can_invite_users\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"can_invite_users\"." << std::endl;
 
 			if(doc.HasMember("is_member"))
-				is_member = doc["is_member"].GetBool();
+				if(doc["is_member"].IsBool())
+					is_member = doc["is_member"].GetBool();
+				else
+					std::cerr << "Error: Field \"is_member\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"is_member\"." << std::endl;
 
 			if(doc.HasMember("can_send_messages"))
-				can_send_messages = doc["can_send_messages"].GetBool();
+				if(doc["can_send_messages"].IsBool())
+					can_send_messages = doc["can_send_messages"].GetBool();
+				else
+					std::cerr << "Error: Field \"can_send_messages\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"can_send_messages\"." << std::endl;
 
 			if(doc.HasMember("can_send_media_messages"))
-				can_send_media_messages = doc["can_send_media_messages"].GetBool();
+				if(doc["can_send_media_messages"].IsBool())
+					can_send_media_messages = doc["can_send_media_messages"].GetBool();
+				else
+					std::cerr << "Error: Field \"can_send_media_messages\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"can_send_media_messages\"." << std::endl;
 
 			if(doc.HasMember("can_send_polls"))
-				can_send_polls = doc["can_send_polls"].GetBool();
+				if(doc["can_send_polls"].IsBool())
+					can_send_polls = doc["can_send_polls"].GetBool();
+				else
+					std::cerr << "Error: Field \"can_send_polls\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"can_send_polls\"." << std::endl;
 
 			if(doc.HasMember("can_send_other_messages"))
-				can_send_other_messages = doc["can_send_other_messages"].GetBool();
+				if(doc["can_send_other_messages"].IsBool())
+					can_send_other_messages = doc["can_send_other_messages"].GetBool();
+				else
+					std::cerr << "Error: Field \"can_send_other_messages\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"can_send_other_messages\"." << std::endl;
 
 			if(doc.HasMember("can_add_web_page_previews"))
-				can_add_web_page_previews = doc["can_add_web_page_previews"].GetBool();
+				if(doc["can_add_web_page_previews"].IsBool())
+					can_add_web_page_previews = doc["can_add_web_page_previews"].GetBool();
+				else
+					std::cerr << "Error: Field \"can_add_web_page_previews\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"can_add_web_page_previews\"." << std::endl;
 		}
 	}
 
