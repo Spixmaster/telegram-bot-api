@@ -1,5 +1,6 @@
 #include "tgbot/types/ForceReply.h"
 #include "tools/Tools.h"
+#include <iostream>
 
 namespace tgbot
 {
@@ -15,10 +16,20 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("force_reply"))
-				force_reply = doc["force_reply"].GetBool();
+				if(doc["force_reply"].IsBool())
+					force_reply = doc["force_reply"].GetBool();
+				else
+					std::cerr << "Error: Field \"force_reply\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"force_reply\"." << std::endl;
 
 			if(doc.HasMember("selective"))
-				selective = doc["selective"].GetBool();
+				if(doc["selective"].IsBool())
+					selective = doc["selective"].GetBool();
+				else
+					std::cerr << "Error: Field \"selective\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"selective\"." << std::endl;
 		}
 	}
 

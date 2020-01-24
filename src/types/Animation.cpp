@@ -1,5 +1,6 @@
 #include "tgbot/types/Animation.h"
 #include "tools/Tools.h"
+#include <iostream>
 
 namespace tgbot
 {
@@ -15,25 +16,60 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("file_id"))
-				file_id = doc["file_id"].GetString();
+				if(doc["file_id"].IsString())
+					file_id = doc["file_id"].GetString();
+				else
+					std::cerr << "Error: Field \"file_id\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"file_id\"." << std::endl;
 
 			if(doc.HasMember("width"))
-				width = doc["width"].GetInt();
+				if(doc["width"].IsInt())
+					width = doc["width"].GetInt();
+				else
+					std::cerr << "Error: Field \"width\" does not contain an int." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"width\"." << std::endl;
 
 			if(doc.HasMember("height"))
-				height = doc["height"].GetInt();
+				if(doc["height"].IsInt())
+					height = doc["height"].GetInt();
+				else
+					std::cerr << "Error: Field \"height\" does not contain an int." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"height\"." << std::endl;
 
 			if(doc.HasMember("duration"))
-				duration = doc["duration"].GetInt();
+				if(doc["duration"].IsInt())
+					duration = doc["duration"].GetInt();
+				else
+					std::cerr << "Error: Field \"duration\" does not contain an int." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"duration\"." << std::endl;
 
 			if(doc.HasMember("thumb"))
-				thumb = std::make_shared<PhotoSize>(tools::Tools::get_json_as_string(doc["thumb"]));
+				if(doc["thumb"].IsObject())
+					thumb = std::make_shared<PhotoSize>(tools::Tools::get_json_as_string(doc["thumb"]));
+				else
+					std::cerr << "Error: Field \"thumb\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"thumb\"." << std::endl;
 
 			if(doc.HasMember("file_name"))
-				file_name = doc["file_name"].GetString();
+				if(doc["file_name"].IsString())
+					file_name = doc["file_name"].GetString();
+				else
+					std::cerr << "Error: Field \"file_name\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"file_name\"." << std::endl;
 
 			if(doc.HasMember("mime_type"))
-				mime_type = doc["mime_type"].GetString();
+				if(doc["mime_type"].IsString())
+					mime_type = doc["mime_type"].GetString();
+				else
+					std::cerr << "Error: Field \"mime_type\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"mime_type\"." << std::endl;
 		}
 	}
 

@@ -1,6 +1,7 @@
 #include <rapidjson/document.h>
 #include "tgbot/types/EncryptedCredentials.h"
 #include "tools/Tools.h"
+#include <iostream>
 
 namespace tgbot
 {
@@ -16,13 +17,28 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("data"))
-				data = doc["data"].GetString();
+				if(doc["data"].IsString())
+					data = doc["data"].GetString();
+				else
+					std::cerr << "Error: Field \"data\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"data\"." << std::endl;
 
 			if(doc.HasMember("hash"))
-				hash = doc["hash"].GetString();
+				if(doc["hash"].IsString())
+					hash = doc["hash"].GetString();
+				else
+					std::cerr << "Error: Field \"hash\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"hash\"." << std::endl;
 
 			if(doc.HasMember("secret"))
-				secret = doc["secret"].GetString();
+				if(doc["secret"].IsString())
+					secret = doc["secret"].GetString();
+				else
+					std::cerr << "Error: Field \"secret\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"secret\"." << std::endl;
 		}
 	}
 

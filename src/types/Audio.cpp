@@ -1,5 +1,6 @@
 #include "tgbot/types/Audio.h"
 #include "tools/Tools.h"
+#include <iostream>
 
 namespace tgbot
 {
@@ -15,25 +16,60 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("file_id"))
-				file_id = doc["file_id"].GetString();
+				if(doc["file_id"].IsString())
+					file_id = doc["file_id"].GetString();
+				else
+					std::cerr << "Error: Field \"file_id\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"file_id\"." << std::endl;
 
 			if(doc.HasMember("duration"))
-				duration = doc["duration"].GetInt();
+				if(doc["duration"].IsInt())
+					duration = doc["duration"].GetInt();
+				else
+					std::cerr << "Error: Field \"duration\" does not contain an int." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"duration\"." << std::endl;
 
 			if(doc.HasMember("performer"))
-				performer = doc["performer"].GetString();
+				if(doc["performer"].IsString())
+					performer = doc["performer"].GetString();
+				else
+					std::cerr << "Error: Field \"performer\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"performer\"." << std::endl;
 
 			if(doc.HasMember("title"))
-				title = doc["title"].GetString();
+				if(doc["title"].IsString())
+					title = doc["title"].GetString();
+				else
+					std::cerr << "Error: Field \"title\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"title\"." << std::endl;
 
 			if(doc.HasMember("mime_type"))
-				mime_type = doc["mime_type"].GetString();
+				if(doc["mime_type"].IsString())
+					mime_type = doc["mime_type"].GetString();
+				else
+					std::cerr << "Error: Field \"mime_type\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"mime_type\"." << std::endl;
 
 			if(doc.HasMember("file_size"))
-				file_size = doc["file_size"].GetInt();
+				if(doc["file_size"].IsInt())
+					file_size = doc["file_size"].GetInt();
+				else
+					std::cerr << "Error: Field \"file_size\" does not contain an int." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"file_size\"." << std::endl;
 
 			if(doc.HasMember("thumb"))
-				thumb = std::make_shared<PhotoSize>(tools::Tools::get_json_as_string(doc["thumb"]));
+				if(doc["thumb"].IsObject())
+					thumb = std::make_shared<PhotoSize>(tools::Tools::get_json_as_string(doc["thumb"]));
+				else
+					std::cerr << "Error: Field \"thumb\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"thumb\"." << std::endl;
 		}
 	}
 

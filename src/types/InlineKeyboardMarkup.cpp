@@ -16,19 +16,36 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("inline_keyboard"))
-				for(std::size_t row = 0; row < doc["inline_keyboard"].GetArray().Size(); ++row)
+				if(doc["inline_keyboard"].IsArray())
 				{
-					const rapidjson::Value &keyboard_array = doc["inline_keyboard"].GetArray();
+					for(std::size_t row = 0; row < doc["inline_keyboard"].GetArray().Size(); ++row)
+					{
+						const rapidjson::Value &keyboard_array = doc["inline_keyboard"].GetArray();
 
-					//reserve enough rows
-					inline_keyboard.resize(keyboard_array.Size());
+						//reserve enough rows
+						inline_keyboard.resize(keyboard_array.Size());
 
-					//reserve enough columns for each row
-					inline_keyboard.at(row).resize(keyboard_array[row].GetArray().Size());
+						if(keyboard_array[row].IsArray())
+						{
+							//reserve enough columns for each row
+							inline_keyboard.at(row).resize(keyboard_array[row].GetArray().Size());
 
-					for(std::size_t column = 0; column < keyboard_array[row].GetArray().Size(); ++column)
-						inline_keyboard.at(row).at(column) = std::make_shared<InlineKeyboardButton>(tools::Tools::get_json_as_string(keyboard_array[row][column]));
+							for(std::size_t column = 0; column < keyboard_array[row].GetArray().Size(); ++column)
+							{
+								if(keyboard_array[row][column].IsObject())
+									inline_keyboard.at(row).at(column) = std::make_shared<InlineKeyboardButton>(tools::Tools::get_json_as_string(keyboard_array[row][column]));
+								else
+									std::cerr << "Error: Field \"inline_keyboard\"'s json array's array element is not a json object." << std::endl;
+							}
+						}
+						else
+							std::cerr << "Error: Field \"inline_keyboard\"'s json array does not contain a json array." << std::endl;
+					}
 				}
+				else
+					std::cerr << "Error: Field \"inline_keyboard\" does not contain a json array." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"inline_keyboard\"." << std::endl;
 		}
 	}
 

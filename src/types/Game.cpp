@@ -1,5 +1,6 @@
 #include "tgbot/types/Game.h"
 #include "tools/Tools.h"
+#include <iostream>
 
 namespace tgbot
 {
@@ -14,32 +15,72 @@ namespace tgbot
 		if(doc.IsObject())
 		{
 			if(doc.HasMember("title"))
-				title = doc["title"].GetString();
+				if(doc["title"].IsString())
+					title = doc["title"].GetString();
+				else
+					std::cerr << "Error: Field \"title\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"title\"." << std::endl;
 
 			if(doc.HasMember("description"))
-				description = doc["description"].GetString();
+				if(doc["description"].IsString())
+					description = doc["description"].GetString();
+				else
+					std::cerr << "Error: Field \"description\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"description\"." << std::endl;
 
 			if(doc.HasMember("photo"))
-				for(std::size_t j = 0; j < doc["photo"].GetArray().Size(); ++j)
+				if(doc["photo"].IsArray())
 				{
 					photo.resize(doc["photo"].GetArray().Size());
 
-					photo.at(j) = std::make_shared<PhotoSize>(tools::Tools::get_json_as_string(doc["thumb"][j]));
+					for(std::size_t j = 0; j < doc["photo"].GetArray().Size(); ++j)
+					{
+						if(doc["photo"][j].IsObject())
+							photo.at(j) = std::make_shared<PhotoSize>(tools::Tools::get_json_as_string(doc["photo"][j]));
+						else
+							std::cerr << "Error: Field \"photo\"'s json array's element is not a json object." << std::endl;
+					}
 				}
+				else
+					std::cerr << "Error: Field \"photo\" does not contain a json array." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"photo\"." << std::endl;
 
 			if(doc.HasMember("text"))
-				text = doc["text"].GetString();
+				if(doc["text"].IsString())
+					text = doc["text"].GetString();
+				else
+					std::cerr << "Error: Field \"text\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"text\"." << std::endl;
 
 			if(doc.HasMember("text_entities"))
-				for(std::size_t j = 0; j < doc["text_entities"].GetArray().Size(); ++j)
+				if(doc["text_entities"].IsArray())
 				{
 					text_entities.resize(doc["text_entities"].GetArray().Size());
 
-					text_entities.at(j) = std::make_shared<MessageEntity>(tools::Tools::get_json_as_string(doc["text_entities"][j]));
+					for(std::size_t j = 0; j < doc["text_entities"].GetArray().Size(); ++j)
+					{
+						if(doc["text_entities"][j].IsObject())
+							text_entities.at(j) = std::make_shared<MessageEntity>(tools::Tools::get_json_as_string(doc["text_entities"][j]));
+						else
+							std::cerr << "Error: Field \"text_entities\"'s json array's element is not a json object." << std::endl;
+					}
 				}
+				else
+					std::cerr << "Error: Field \"text_entities\" does not contain a json array." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"text_entities\"." << std::endl;
 
 			if(doc.HasMember("animation"))
-				animation = std::make_shared<Animation>(tools::Tools::get_json_as_string(doc["animation"]));
+				if(doc["animation"].IsObject())
+					animation = std::make_shared<Animation>(tools::Tools::get_json_as_string(doc["animation"]));
+				else
+					std::cerr << "Error: Field \"animation\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"animation\"." << std::endl;
 		}
 	}
 
