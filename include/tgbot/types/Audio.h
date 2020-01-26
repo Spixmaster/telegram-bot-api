@@ -17,6 +17,7 @@ namespace tgbot
 
 		//member variables
 		std::string file_id;
+		std::string file_unique_id;
 		int duration = -1;
 		std::string performer;
 		std::string title;

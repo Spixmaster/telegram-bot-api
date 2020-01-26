@@ -12,6 +12,12 @@ namespace tgbot
 		//pointer of itself
 		typedef std::shared_ptr<InputMessageContent> ptr;
 
+		//constructors
+		InputMessageContent();
+
+		//@param json: json object of InputMessageContent
+		InputMessageContent(const std::string &json);
+
 		//destructors
 		virtual ~InputMessageContent();
 

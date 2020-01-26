@@ -20,6 +20,9 @@ namespace tgbot
 		std::string last_name;
 		std::string username;
 		std::string language_code;
+		bool can_join_groups;
+		bool can_read_all_group_messages;
+		bool supports_inline_queries;
 
 		//constructors
 		User();

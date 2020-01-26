@@ -1,6 +1,7 @@
 #include <rapidjson/document.h>
 #include "tgbot/types/InputMediaAudio.h"
 #include "tools/Tools.h"
+#include <iostream>
 
 namespace tgbot
 {
@@ -16,30 +17,67 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("media"))
-				media = doc["media"].GetString();
+				if(doc["media"].IsString())
+					media = doc["media"].GetString();
+				else
+					std::cerr << "Error: Field \"media\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"media\"." << std::endl;
 
 			if(doc.HasMember("thumb"))
-				thumb = doc["thumb"].GetString();
+				if(doc["thumb"].IsString())
+					thumb = doc["thumb"].GetString();
+				else
+					std::cerr << "Error: Field \"thumb\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"thumb\"." << std::endl;
 
 			if(doc.HasMember("caption"))
-				caption = doc["caption"].GetString();
+				if(doc["caption"].IsString())
+					caption = doc["caption"].GetString();
+				else
+					std::cerr << "Error: Field \"caption\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"caption\"." << std::endl;
 
 			if(doc.HasMember("parse_mode"))
-				parse_mode = doc["parse_mode"].GetString();
+				if(doc["parse_mode"].IsString())
+					parse_mode = doc["parse_mode"].GetString();
+				else
+					std::cerr << "Error: Field \"parse_mode\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"parse_mode\"." << std::endl;
 
 			if(doc.HasMember("duration"))
-				duration = doc["duration"].GetInt();
+				if(doc["duration"].IsInt())
+					duration = doc["duration"].GetInt();
+				else
+					std::cerr << "Error: Field \"duration\" does not contain an int." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"duration\"." << std::endl;
 
 			if(doc.HasMember("performer"))
-				performer = doc["performer"].GetString();
+				if(doc["performer"].IsString())
+					performer = doc["performer"].GetString();
+				else
+					std::cerr << "Error: Field \"performer\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"performer\"." << std::endl;
 
 			if(doc.HasMember("title"))
-				title = doc["title"].GetString();
+				if(doc["title"].IsString())
+					title = doc["title"].GetString();
+				else
+					std::cerr << "Error: Field \"title\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"title\"." << std::endl;
 		}
+		else
+			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
 	}
 
-	InputMediaAudio::InputMediaAudio(const std::variant<std::string, tools::InputFile::ptr> &media, const std::variant<std::string, tools::InputFile::ptr> &thumb, const std::string &caption,
-				const std::string &parse_mode, const int &duration, const std::string &performer, const std::string &title) :
+	InputMediaAudio::InputMediaAudio(const std::variant<std::string, tools::InputFile::ptr> &media, const std::variant<std::string, tools::InputFile::ptr> &thumb,
+			const std::string &caption, const std::string &parse_mode, const int &duration, const std::string &performer, const std::string &title) :
 					media(media), thumb(thumb), caption(caption), parse_mode(parse_mode), duration(duration), performer(performer), title(title)
 	{}
 

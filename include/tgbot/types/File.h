@@ -16,6 +16,7 @@ namespace tgbot
 
 		//member variables
 		std::string file_id;
+		std::string file_unique_id;
 		int file_size = -1;
 		std::string file_path;
 

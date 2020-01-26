@@ -1,6 +1,7 @@
 #include <rapidjson/document.h>
 #include "tgbot/types/InputMediaDocument.h"
 #include "tools/Tools.h"
+#include <iostream>
 
 namespace tgbot
 {
@@ -16,17 +17,39 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("media"))
-				media = doc["media"].GetString();
+				if(doc["media"].IsString())
+					media = doc["media"].GetString();
+				else
+					std::cerr << "Error: Field \"media\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"media\"." << std::endl;
 
 			if(doc.HasMember("thumb"))
-				thumb = doc["thumb"].GetString();
+				if(doc["thumb"].IsString())
+					thumb = doc["thumb"].GetString();
+				else
+					std::cerr << "Error: Field \"thumb\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"thumb\"." << std::endl;
 
 			if(doc.HasMember("caption"))
-				caption = doc["caption"].GetString();
+				if(doc["caption"].IsString())
+					caption = doc["caption"].GetString();
+				else
+					std::cerr << "Error: Field \"caption\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"caption\"." << std::endl;
 
 			if(doc.HasMember("parse_mode"))
-				parse_mode = doc["parse_mode"].GetString();
+				if(doc["parse_mode"].IsString())
+					parse_mode = doc["parse_mode"].GetString();
+				else
+					std::cerr << "Error: Field \"parse_mode\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"parse_mode\"." << std::endl;
 		}
+		else
+			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
 	}
 
 	InputMediaDocument::InputMediaDocument(const std::variant<std::string, tools::InputFile::ptr> &media, const std::variant<std::string, tools::InputFile::ptr> &thumb, const std::string &caption,

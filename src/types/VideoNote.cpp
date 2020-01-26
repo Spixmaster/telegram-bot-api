@@ -1,9 +1,10 @@
 #include "tgbot/types/VideoNote.h"
 #include "tools/Tools.h"
+#include <iostream>
 
 namespace tgbot
 {
-	VideoNote::VideoNote() : file_id(), length(), duration(), thumb(), file_size()
+	VideoNote::VideoNote() : file_id(), file_unique_id(), length(), duration(), thumb(), file_size()
 	{}
 
 	VideoNote::VideoNote(const std::string &json)
@@ -15,20 +16,55 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("file_id"))
-				file_id = doc["file_id"].GetString();
+				if(doc["file_id"].IsString())
+					file_id = doc["file_id"].GetString();
+				else
+					std::cerr << "Error: Field \"file_id\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"file_id\"." << std::endl;
+
+			if(doc.HasMember("file_unique_id"))
+				if(doc["file_unique_id"].IsString())
+					file_unique_id = doc["file_unique_id"].GetString();
+				else
+					std::cerr << "Error: Field \"file_unique_id\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"file_unique_id\"." << std::endl;
 
 			if(doc.HasMember("length"))
-				length = doc["length"].GetInt();
+				if(doc["length"].IsInt())
+					length = doc["length"].GetInt();
+				else
+					std::cerr << "Error: Field \"length\" does not contain an int." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"length\"." << std::endl;
 
 			if(doc.HasMember("duration"))
-				duration = doc["duration"].GetInt();
+				if(doc["duration"].IsInt())
+					duration = doc["duration"].GetInt();
+				else
+					std::cerr << "Error: Field \"duration\" does not contain an int." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"duration\"." << std::endl;
 
 			if(doc.HasMember("thumb"))
-				thumb = std::make_shared<PhotoSize>(tools::Tools::get_json_as_string(doc["thumb"]));
+				if(doc["thumb"].IsObject())
+					thumb = std::make_shared<PhotoSize>(tools::Tools::get_json_as_string(doc["thumb"]));
+				else
+					std::cerr << "Error: Field \"thumb\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"thumb\"." << std::endl;
 
 			if(doc.HasMember("file_size"))
-				file_size = doc["file_size"].GetInt();
+				if(doc["file_size"].IsInt())
+					file_size = doc["file_size"].GetInt();
+				else
+					std::cerr << "Error: Field \"file_size\" does not contain an int." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"file_size\"." << std::endl;
 		}
+		else
+			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
 	}
 
 	std::string VideoNote::parse_to_json() const
@@ -37,6 +73,10 @@ namespace tgbot
 
 		//field file_id
 		json.append("\"file_id\": \"" + file_id + "\"");
+		json.append(", ");
+
+		//field file_unique_id
+		json.append("\"file_unique_id\": \"" + file_unique_id + "\"");
 		json.append(", ");
 
 		//field length

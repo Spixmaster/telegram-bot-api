@@ -16,7 +16,9 @@ namespace tgbot
 
 		//member variables
 		std::string small_file_id;
+		std::string small_file_unique_id;
 		std::string big_file_id;
+		std::string big_file_unique_id;
 
 		//constructors
 		ChatPhoto();

@@ -1,5 +1,10 @@
 #include "tgbot/Bot.h"
 
+/*
+ * ###this project###
+ * in some constructors (mainly for field "thumb"), I only look for a string value although InputFile would also be possible but I do not know how they would arrange that
+ */
+
 namespace tgbot
 {
 	Bot::Bot(const std::string &token) : m_token(token), m_endpnts(std::make_shared<Endpoints>(token)), m_event_handler(std::make_shared<EventHandler>(token))

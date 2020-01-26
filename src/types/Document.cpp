@@ -4,7 +4,7 @@
 
 namespace tgbot
 {
-	Document::Document() : file_id(), thumb(), file_name(), mime_type(), file_size()
+	Document::Document() : file_id(), file_unique_id(), thumb(), file_name(), mime_type(), file_size()
 	{}
 
 	Document::Document(const std::string &json)
@@ -22,6 +22,14 @@ namespace tgbot
 					std::cerr << "Error: Field \"file_id\" does not contain a string." << std::endl;
 			else
 				std::cerr << "Error: There is no field \"file_id\"." << std::endl;
+
+			if(doc.HasMember("file_unique_id"))
+				if(doc["file_unique_id"].IsString())
+					file_unique_id = doc["file_unique_id"].GetString();
+				else
+					std::cerr << "Error: Field \"file_unique_id\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"file_unique_id\"." << std::endl;
 
 			if(doc.HasMember("thumb"))
 				if(doc["thumb"].IsObject())
@@ -55,6 +63,8 @@ namespace tgbot
 			else
 				std::cerr << "Error: There is no field \"file_size\"." << std::endl;
 		}
+		else
+			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
 	}
 
 	std::string Document::parse_to_json() const
@@ -63,6 +73,10 @@ namespace tgbot
 
 		//field file_id
 		json.append("\"file_id\": \"" + file_id + "\"");
+		json.append(", ");
+
+		//field file_unique_id
+		json.append("\"file_unique_id\": \"" + file_unique_id + "\"");
 		json.append(", ");
 
 		//field thumb

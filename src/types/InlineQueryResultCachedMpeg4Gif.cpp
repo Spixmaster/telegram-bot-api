@@ -72,6 +72,8 @@ namespace tgbot
 			else
 				std::cerr << "Error: There is no field \"reply_markup\"." << std::endl;
 		}
+		else
+			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
 	}
 
 	std::string InlineQueryResultCachedMpeg4Gif::parse_to_json() const

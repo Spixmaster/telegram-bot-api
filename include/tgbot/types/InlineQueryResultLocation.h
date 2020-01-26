@@ -25,6 +25,9 @@ namespace tgbot
 		int live_period = -1;
 		InlineKeyboardMarkup::ptr reply_markup;
 		InputMessageContent::ptr input_message_content;
+		std::string thumb_url;
+		int thumb_width = -1;
+		int thumb_height = -1;
 
 		//constructors
 		InlineQueryResultLocation();

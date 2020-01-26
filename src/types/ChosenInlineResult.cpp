@@ -55,6 +55,8 @@ namespace tgbot
 			else
 				std::cerr << "Error: There is no field \"query\"." << std::endl;
 		}
+		else
+			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
 	}
 
 	std::string ChosenInlineResult::parse_to_json() const

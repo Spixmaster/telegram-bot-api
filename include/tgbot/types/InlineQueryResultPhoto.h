@@ -4,6 +4,8 @@
 #include <string>
 #include "tgbot/types/InlineQueryResult.h"
 #include <memory>
+#include "tgbot/types/InlineKeyboardMarkup.h"
+#include "tgbot/types/InputMessageContent.h"
 
 //@brief represents on object in the Telegram bot api
 
@@ -25,6 +27,8 @@ namespace tgbot
 		std::string description;
 		std::string caption;
 		std::string parse_mode;
+		InlineKeyboardMarkup::ptr reply_markup;
+		InputMessageContent::ptr input_message_content;
 
 		//constructors
 		InlineQueryResultPhoto();

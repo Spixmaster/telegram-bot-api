@@ -1,10 +1,11 @@
 #include <rapidjson/document.h>
 #include "tgbot/types/MaskPosition.h"
 #include "tools/Tools.h"
+#include <iostream>
 
 namespace tgbot
 {
-	MaskPosition::MaskPosition() : point(), x_shift(), y_shift(), number()
+	MaskPosition::MaskPosition() : point(), x_shift(), y_shift(), scale()
 	{}
 
 	MaskPosition::MaskPosition(const std::string &json)
@@ -16,17 +17,39 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("point"))
-				point = doc["point"].GetString();
+				if(doc["point"].IsString())
+					point = doc["point"].GetString();
+				else
+					std::cerr << "Error: Field \"point\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"point\"." << std::endl;
 
 			if(doc.HasMember("x_shift"))
-				x_shift = doc["x_shift"].GetFloat();
+				if(doc["x_shift"].IsFloat())
+					x_shift = doc["x_shift"].GetFloat();
+				else
+					std::cerr << "Error: Field \"x_shift\" does not contain a float." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"x_shift\"." << std::endl;
 
 			if(doc.HasMember("y_shift"))
-				y_shift = doc["y_shift"].GetFloat();
+				if(doc["y_shift"].IsFloat())
+					y_shift = doc["y_shift"].GetFloat();
+				else
+					std::cerr << "Error: Field \"y_shift\" does not contain a float." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"y_shift\"." << std::endl;
 
-			if(doc.HasMember("number"))
-				number = doc["number"].GetFloat();
+			if(doc.HasMember("scale"))
+				if(doc["scale"].IsFloat())
+					scale = doc["scale"].GetFloat();
+				else
+					std::cerr << "Error: Field \"scale\" does not contain a float." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"scale\"." << std::endl;
 		}
+		else
+			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
 	}
 
 	std::string MaskPosition::parse_to_json() const
@@ -45,8 +68,8 @@ namespace tgbot
 		json.append("\"y_shift\": " + std::to_string(y_shift));
 		json.append(", ");
 
-		//field number
-		json.append("\"number\": " + std::to_string(number));
+		//field scale
+		json.append("\"scale\": " + std::to_string(scale));
 
 		json.append("}");
 

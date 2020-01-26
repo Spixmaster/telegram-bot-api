@@ -29,6 +29,7 @@ namespace tgbot
 		std::string invite_link;
 		std::shared_ptr<Message> pinned_message;
 		ChatPermissions::ptr permissions;
+		int slow_mode_delay = -1;
 		std::string sticker_set_name;
 		bool can_set_sticker_set;
 

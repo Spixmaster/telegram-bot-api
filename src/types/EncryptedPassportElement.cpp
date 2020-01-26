@@ -39,7 +39,6 @@ namespace tgbot
 			else
 				std::cerr << "Error: There is no field \"phone_number\"." << std::endl;
 
-			//todo
 			if(doc.HasMember("files"))
 				if(doc["files"].IsArray())
 				{
@@ -85,12 +84,12 @@ namespace tgbot
 			if(doc.HasMember("translation"))
 				if(doc["translation"].IsArray())
 				{
-					files.resize(doc["files"].GetArray().Size());
+					translation.resize(doc["translation"].GetArray().Size());
 
 					for(std::size_t j = 0; j < doc["translation"].GetArray().Size(); ++j)
 					{
 						if(doc["translation"][j].IsObject())
-							files.at(j) = std::make_shared<PassportFile>(tools::Tools::get_json_as_string(doc["translation"][j]));
+							translation.at(j) = std::make_shared<PassportFile>(tools::Tools::get_json_as_string(doc["translation"][j]));
 						else
 							std::cerr << "Error: Field \"translation\"'s json array's element is not a json object." << std::endl;
 					}
@@ -108,6 +107,8 @@ namespace tgbot
 			else
 				std::cerr << "Error: There is no field \"hash\"." << std::endl;
 		}
+		else
+			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
 	}
 
 	std::string EncryptedPassportElement::parse_to_json() const

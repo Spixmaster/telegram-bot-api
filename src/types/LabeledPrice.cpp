@@ -1,5 +1,6 @@
 #include "tgbot/types/LabeledPrice.h"
 #include "tools/Tools.h"
+#include <iostream>
 
 namespace tgbot
 {
@@ -15,11 +16,23 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("label"))
-				label = doc["label"].GetString();
+				if(doc["label"].IsString())
+					label = doc["label"].GetString();
+				else
+					std::cerr << "Error: Field \"label\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"label\"." << std::endl;
 
 			if(doc.HasMember("amount"))
-				amount = doc["amount"].GetInt();
+				if(doc["amount"].IsInt())
+					amount = doc["amount"].GetInt();
+				else
+					std::cerr << "Error: Field \"amount\" does not contain an int." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"amount\"." << std::endl;
 		}
+		else
+			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
 	}
 
 	std::string LabeledPrice::parse_to_json() const

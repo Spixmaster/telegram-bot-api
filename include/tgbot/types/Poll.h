@@ -20,7 +20,12 @@ namespace tgbot
 		std::string id;
 		std::string question;
 		std::vector<PollOption::ptr> options;
+		int total_voter_count = -1;
 		bool is_closed;
+		bool is_anonymous;
+		std::string type;
+		bool allows_multiple_answers;
+		int correct_option_id = -1;
 
 		//constructors
 		Poll();

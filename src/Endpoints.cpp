@@ -337,9 +337,9 @@ namespace tgbot
 		return msg;
 	}
 
-	Message::ptr Endpoints::sendAudio(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &audio,
-			const std::variant<std::string, tools::InputFile::ptr> &thumb, const std::string &caption, const std::string &parse_mode,
-			const int &duration, const std::string &performer, const std::string &title, const bool &disable_notification, const int &reply_to_message_id,
+	Message::ptr Endpoints::sendAudio(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &audio, const std::string &caption,
+			const std::string &parse_mode, const int &duration, const std::string &performer, const std::string &title,
+			const std::variant<std::string, tools::InputFile::ptr> &thumb, const bool &disable_notification, const int &reply_to_message_id,
 			const Reply::ptr &reply_markup) const
 	{
 		if(std::holds_alternative<std::string>(audio) && std::holds_alternative<std::string>(thumb))
@@ -348,12 +348,12 @@ namespace tgbot
 			std::vector<tools::HttpArg> http_args;
 			http_args.push_back(tools::HttpArg("chat_id", chat_id));
 			http_args.push_back(tools::HttpArg("audio", std::get<std::string>(audio)));
-			http_args.push_back(tools::HttpArg("thumb", std::get<std::string>(thumb)));
 			http_args.push_back(tools::HttpArg("caption", caption));
 			http_args.push_back(tools::HttpArg("parse_mode", parse_mode));
 			http_args.push_back(tools::HttpArg("duration", duration));
 			http_args.push_back(tools::HttpArg("performer", performer));
 			http_args.push_back(tools::HttpArg("title", title));
+			http_args.push_back(tools::HttpArg("thumb", std::get<std::string>(thumb)));
 			http_args.push_back(tools::HttpArg("disable_notification", disable_notification));
 			http_args.push_back(tools::HttpArg("reply_to_message_id", reply_to_message_id));
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
@@ -385,12 +385,12 @@ namespace tgbot
 			std::vector<tools::HttpArg> http_args;
 			http_args.push_back(tools::HttpArg("chat_id", chat_id));
 			http_args.push_back(tools::HttpArg("audio", std::get<tools::InputFile::ptr>(audio)));
-			http_args.push_back(tools::HttpArg("thumb", std::get<std::string>(thumb)));
 			http_args.push_back(tools::HttpArg("caption", caption));
 			http_args.push_back(tools::HttpArg("parse_mode", parse_mode));
 			http_args.push_back(tools::HttpArg("duration", duration));
 			http_args.push_back(tools::HttpArg("performer", performer));
 			http_args.push_back(tools::HttpArg("title", title));
+			http_args.push_back(tools::HttpArg("thumb", std::get<std::string>(thumb)));
 			http_args.push_back(tools::HttpArg("disable_notification", disable_notification));
 			http_args.push_back(tools::HttpArg("reply_to_message_id", reply_to_message_id));
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
@@ -422,12 +422,12 @@ namespace tgbot
 			std::vector<tools::HttpArg> http_args;
 			http_args.push_back(tools::HttpArg("chat_id", chat_id));
 			http_args.push_back(tools::HttpArg("audio", std::get<std::string>(audio)));
-			http_args.push_back(tools::HttpArg("thumb", std::get<tools::InputFile::ptr>(thumb)));
 			http_args.push_back(tools::HttpArg("caption", caption));
 			http_args.push_back(tools::HttpArg("parse_mode", parse_mode));
 			http_args.push_back(tools::HttpArg("duration", duration));
 			http_args.push_back(tools::HttpArg("performer", performer));
 			http_args.push_back(tools::HttpArg("title", title));
+			http_args.push_back(tools::HttpArg("thumb", std::get<tools::InputFile::ptr>(thumb)));
 			http_args.push_back(tools::HttpArg("disable_notification", disable_notification));
 			http_args.push_back(tools::HttpArg("reply_to_message_id", reply_to_message_id));
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
@@ -459,12 +459,12 @@ namespace tgbot
 			std::vector<tools::HttpArg> http_args;
 			http_args.push_back(tools::HttpArg("chat_id", chat_id));
 			http_args.push_back(tools::HttpArg("audio", std::get<tools::InputFile::ptr>(audio)));
-			http_args.push_back(tools::HttpArg("thumb", std::get<tools::InputFile::ptr>(thumb)));
 			http_args.push_back(tools::HttpArg("caption", caption));
 			http_args.push_back(tools::HttpArg("parse_mode", parse_mode));
 			http_args.push_back(tools::HttpArg("duration", duration));
 			http_args.push_back(tools::HttpArg("performer", performer));
 			http_args.push_back(tools::HttpArg("title", title));
+			http_args.push_back(tools::HttpArg("thumb", std::get<tools::InputFile::ptr>(thumb)));
 			http_args.push_back(tools::HttpArg("disable_notification", disable_notification));
 			http_args.push_back(tools::HttpArg("reply_to_message_id", reply_to_message_id));
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
@@ -640,9 +640,9 @@ namespace tgbot
 		return msg;
 	}
 
-	Message::ptr Endpoints::sendVideo(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &video,
-			const std::variant<std::string, tools::InputFile::ptr> &thumb, const int &duration, const int &width, const int &height, const std::string &caption,
-			const std::string &parse_mode,const bool &supports_streaming, const bool &disable_notification, const int &reply_to_message_id,
+	Message::ptr Endpoints::sendVideo(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &video, const int &duration, const int &width,
+			const int &height, const std::variant<std::string, tools::InputFile::ptr> &thumb, const std::string &caption,
+			const std::string &parse_mode, const bool &supports_streaming, const bool &disable_notification, const int &reply_to_message_id,
 			const Reply::ptr &reply_markup) const
 	{
 		if(std::holds_alternative<std::string>(video) && std::holds_alternative<std::string>(thumb))
@@ -651,10 +651,10 @@ namespace tgbot
 			std::vector<tools::HttpArg> http_args;
 			http_args.push_back(tools::HttpArg("chat_id", chat_id));
 			http_args.push_back(tools::HttpArg("video", std::get<std::string>(video)));
-			http_args.push_back(tools::HttpArg("thumb", std::get<std::string>(thumb)));
 			http_args.push_back(tools::HttpArg("duration", duration));
 			http_args.push_back(tools::HttpArg("width", width));
 			http_args.push_back(tools::HttpArg("height", height));
+			http_args.push_back(tools::HttpArg("thumb", std::get<std::string>(thumb)));
 			http_args.push_back(tools::HttpArg("caption", caption));
 			http_args.push_back(tools::HttpArg("parse_mode", parse_mode));
 			http_args.push_back(tools::HttpArg("supports_streaming", supports_streaming));
@@ -689,10 +689,10 @@ namespace tgbot
 			std::vector<tools::HttpArg> http_args;
 			http_args.push_back(tools::HttpArg("chat_id", chat_id));
 			http_args.push_back(tools::HttpArg("video", std::get<tools::InputFile::ptr>(video)));
-			http_args.push_back(tools::HttpArg("thumb", std::get<std::string>(thumb)));
 			http_args.push_back(tools::HttpArg("duration", duration));
 			http_args.push_back(tools::HttpArg("width", width));
 			http_args.push_back(tools::HttpArg("height", height));
+			http_args.push_back(tools::HttpArg("thumb", std::get<std::string>(thumb)));
 			http_args.push_back(tools::HttpArg("caption", caption));
 			http_args.push_back(tools::HttpArg("parse_mode", parse_mode));
 			http_args.push_back(tools::HttpArg("supports_streaming", supports_streaming));
@@ -727,10 +727,10 @@ namespace tgbot
 			std::vector<tools::HttpArg> http_args;
 			http_args.push_back(tools::HttpArg("chat_id", chat_id));
 			http_args.push_back(tools::HttpArg("video", std::get<std::string>(video)));
-			http_args.push_back(tools::HttpArg("thumb", std::get<tools::InputFile::ptr>(thumb)));
 			http_args.push_back(tools::HttpArg("duration", duration));
 			http_args.push_back(tools::HttpArg("width", width));
 			http_args.push_back(tools::HttpArg("height", height));
+			http_args.push_back(tools::HttpArg("thumb", std::get<tools::InputFile::ptr>(thumb)));
 			http_args.push_back(tools::HttpArg("caption", caption));
 			http_args.push_back(tools::HttpArg("parse_mode", parse_mode));
 			http_args.push_back(tools::HttpArg("supports_streaming", supports_streaming));
@@ -765,10 +765,10 @@ namespace tgbot
 			std::vector<tools::HttpArg> http_args;
 			http_args.push_back(tools::HttpArg("chat_id", chat_id));
 			http_args.push_back(tools::HttpArg("video", std::get<tools::InputFile::ptr>(video)));
-			http_args.push_back(tools::HttpArg("thumb", std::get<tools::InputFile::ptr>(thumb)));
 			http_args.push_back(tools::HttpArg("duration", duration));
 			http_args.push_back(tools::HttpArg("width", width));
 			http_args.push_back(tools::HttpArg("height", height));
+			http_args.push_back(tools::HttpArg("thumb", std::get<tools::InputFile::ptr>(thumb)));
 			http_args.push_back(tools::HttpArg("caption", caption));
 			http_args.push_back(tools::HttpArg("parse_mode", parse_mode));
 			http_args.push_back(tools::HttpArg("supports_streaming", supports_streaming));
@@ -803,9 +803,9 @@ namespace tgbot
 	}
 
 	Message::ptr Endpoints::sendAnimation(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &animation,
-			const std::variant<std::string, tools::InputFile::ptr> &thumb, const int &duration, const int &width, const int &height,
-			const std::string &caption, const std::string &parse_mode, const bool &disable_notification,
-			const int &reply_to_message_id, const Reply::ptr &reply_markup) const
+			const int &duration, const int &width, const int &height, const std::variant<std::string, tools::InputFile::ptr> &thumb,
+			const std::string &caption, const std::string &parse_mode, const bool &disable_notification, const int &reply_to_message_id,
+			const Reply::ptr &reply_markup) const
 	{
 		if(std::holds_alternative<std::string>(animation) && std::holds_alternative<std::string>(thumb))
 		{
@@ -813,10 +813,10 @@ namespace tgbot
 			std::vector<tools::HttpArg> http_args;
 			http_args.push_back(tools::HttpArg("chat_id", chat_id));
 			http_args.push_back(tools::HttpArg("animation", std::get<std::string>(animation)));
-			http_args.push_back(tools::HttpArg("thumb", std::get<std::string>(thumb)));
 			http_args.push_back(tools::HttpArg("duration", duration));
 			http_args.push_back(tools::HttpArg("width", width));
 			http_args.push_back(tools::HttpArg("height", height));
+			http_args.push_back(tools::HttpArg("thumb", std::get<std::string>(thumb)));
 			http_args.push_back(tools::HttpArg("caption", caption));
 			http_args.push_back(tools::HttpArg("parse_mode", parse_mode));
 			http_args.push_back(tools::HttpArg("disable_notification", disable_notification));
@@ -850,10 +850,10 @@ namespace tgbot
 			std::vector<tools::HttpArg> http_args;
 			http_args.push_back(tools::HttpArg("chat_id", chat_id));
 			http_args.push_back(tools::HttpArg("animation", std::get<tools::InputFile::ptr>(animation)));
-			http_args.push_back(tools::HttpArg("thumb", std::get<std::string>(thumb)));
 			http_args.push_back(tools::HttpArg("duration", duration));
 			http_args.push_back(tools::HttpArg("width", width));
 			http_args.push_back(tools::HttpArg("height", height));
+			http_args.push_back(tools::HttpArg("thumb", std::get<std::string>(thumb)));
 			http_args.push_back(tools::HttpArg("caption", caption));
 			http_args.push_back(tools::HttpArg("parse_mode", parse_mode));
 			http_args.push_back(tools::HttpArg("disable_notification", disable_notification));
@@ -887,10 +887,10 @@ namespace tgbot
 			std::vector<tools::HttpArg> http_args;
 			http_args.push_back(tools::HttpArg("chat_id", chat_id));
 			http_args.push_back(tools::HttpArg("animation", std::get<std::string>(animation)));
-			http_args.push_back(tools::HttpArg("thumb", std::get<tools::InputFile::ptr>(thumb)));
 			http_args.push_back(tools::HttpArg("duration", duration));
 			http_args.push_back(tools::HttpArg("width", width));
 			http_args.push_back(tools::HttpArg("height", height));
+			http_args.push_back(tools::HttpArg("thumb", std::get<tools::InputFile::ptr>(thumb)));
 			http_args.push_back(tools::HttpArg("caption", caption));
 			http_args.push_back(tools::HttpArg("parse_mode", parse_mode));
 			http_args.push_back(tools::HttpArg("disable_notification", disable_notification));
@@ -924,10 +924,10 @@ namespace tgbot
 			std::vector<tools::HttpArg> http_args;
 			http_args.push_back(tools::HttpArg("chat_id", chat_id));
 			http_args.push_back(tools::HttpArg("animation", std::get<tools::InputFile::ptr>(animation)));
-			http_args.push_back(tools::HttpArg("thumb", std::get<tools::InputFile::ptr>(thumb)));
 			http_args.push_back(tools::HttpArg("duration", duration));
 			http_args.push_back(tools::HttpArg("width", width));
 			http_args.push_back(tools::HttpArg("height", height));
+			http_args.push_back(tools::HttpArg("thumb", std::get<tools::InputFile::ptr>(thumb)));
 			http_args.push_back(tools::HttpArg("caption", caption));
 			http_args.push_back(tools::HttpArg("parse_mode", parse_mode));
 			http_args.push_back(tools::HttpArg("disable_notification", disable_notification));
@@ -1037,8 +1037,8 @@ namespace tgbot
 	}
 
 	Message::ptr Endpoints::sendVideoNote(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &video_note,
-			const std::variant<std::string, tools::InputFile::ptr> &thumb, const int &duration, const int &length, const bool &disable_notification,
-			const int &reply_to_message_id, const Reply::ptr &reply_markup) const
+			const int &duration, const int &length, const std::variant<std::string, tools::InputFile::ptr> &thumb,
+			const bool &disable_notification, const int &reply_to_message_id, const Reply::ptr &reply_markup) const
 	{
 		if(std::holds_alternative<std::string>(video_note) && std::holds_alternative<std::string>(thumb))
 		{
@@ -1046,9 +1046,9 @@ namespace tgbot
 			std::vector<tools::HttpArg> http_args;
 			http_args.push_back(tools::HttpArg("chat_id", chat_id));
 			http_args.push_back(tools::HttpArg("video_note", std::get<std::string>(video_note)));
-			http_args.push_back(tools::HttpArg("thumb", std::get<std::string>(thumb)));
 			http_args.push_back(tools::HttpArg("duration", duration));
 			http_args.push_back(tools::HttpArg("length", length));
+			http_args.push_back(tools::HttpArg("thumb", std::get<std::string>(thumb)));
 			http_args.push_back(tools::HttpArg("disable_notification", disable_notification));
 			http_args.push_back(tools::HttpArg("reply_to_message_id", reply_to_message_id));
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
@@ -1080,9 +1080,9 @@ namespace tgbot
 			std::vector<tools::HttpArg> http_args;
 			http_args.push_back(tools::HttpArg("chat_id", chat_id));
 			http_args.push_back(tools::HttpArg("video_note", std::get<tools::InputFile::ptr>(video_note)));
-			http_args.push_back(tools::HttpArg("thumb", std::get<std::string>(thumb)));
 			http_args.push_back(tools::HttpArg("duration", duration));
 			http_args.push_back(tools::HttpArg("length", length));
+			http_args.push_back(tools::HttpArg("thumb", std::get<std::string>(thumb)));
 			http_args.push_back(tools::HttpArg("disable_notification", disable_notification));
 			http_args.push_back(tools::HttpArg("reply_to_message_id", reply_to_message_id));
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
@@ -1114,9 +1114,9 @@ namespace tgbot
 			std::vector<tools::HttpArg> http_args;
 			http_args.push_back(tools::HttpArg("chat_id", chat_id));
 			http_args.push_back(tools::HttpArg("video_note", std::get<std::string>(video_note)));
-			http_args.push_back(tools::HttpArg("thumb", std::get<tools::InputFile::ptr>(thumb)));
 			http_args.push_back(tools::HttpArg("duration", duration));
 			http_args.push_back(tools::HttpArg("length", length));
+			http_args.push_back(tools::HttpArg("thumb", std::get<tools::InputFile::ptr>(thumb)));
 			http_args.push_back(tools::HttpArg("disable_notification", disable_notification));
 			http_args.push_back(tools::HttpArg("reply_to_message_id", reply_to_message_id));
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
@@ -1148,9 +1148,9 @@ namespace tgbot
 			std::vector<tools::HttpArg> http_args;
 			http_args.push_back(tools::HttpArg("chat_id", chat_id));
 			http_args.push_back(tools::HttpArg("video_note", std::get<tools::InputFile::ptr>(video_note)));
-			http_args.push_back(tools::HttpArg("thumb", std::get<tools::InputFile::ptr>(thumb)));
 			http_args.push_back(tools::HttpArg("duration", duration));
 			http_args.push_back(tools::HttpArg("length", length));
+			http_args.push_back(tools::HttpArg("thumb", std::get<tools::InputFile::ptr>(thumb)));
 			http_args.push_back(tools::HttpArg("disable_notification", disable_notification));
 			http_args.push_back(tools::HttpArg("reply_to_message_id", reply_to_message_id));
 			http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
@@ -1182,7 +1182,7 @@ namespace tgbot
 	}
 
 	std::vector<Message::ptr> Endpoints::sendMediaGroup(const long long &chat_id, const std::vector<std::variant<InputMediaPhoto::ptr, InputMediaVideo::ptr>> &media,
-			const bool &disable_notification, const int &reply_to_message_id, const Reply::ptr &reply_markup) const
+			const bool &disable_notification, const int &reply_to_message_id) const
 	{
 		//vector contains all paths to files which still need to be uploaded
 		std::vector<std::string> files_to_upload;
@@ -1231,7 +1231,6 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("media", media_json));
 		http_args.push_back(tools::HttpArg("disable_notification", disable_notification));
 		http_args.push_back(tools::HttpArg("reply_to_message_id", reply_to_message_id));
-		http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 			//plus files which need to be uploaded
 		for(std::size_t j = 0; j < files_to_upload.size(); ++j)
 		{
@@ -1450,8 +1449,9 @@ namespace tgbot
 		return msg;
 	}
 
-	Message::ptr Endpoints::sendPoll(const long long &chat_id, const std::string &question, const std::vector<std::string> &options, const bool &disable_notification,
-			const int &reply_to_message_id, const Reply::ptr &reply_markup) const
+	Message::ptr Endpoints::sendPoll(const long long &chat_id, const std::string &question, const std::vector<std::string> &options, const bool &is_anonymous,
+			const std::string &type, const bool &allows_multiple_answers, const int correct_option_id, const bool &is_closed,
+			const bool &disable_notification, const int &reply_to_message_id, const Reply::ptr &reply_markup) const
 	{
 		//create json array of options
 		std::string options_json = "[";
@@ -1475,6 +1475,12 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("chat_id", chat_id));
 		http_args.push_back(tools::HttpArg("question", question));
 		http_args.push_back(tools::HttpArg("options", options_json));
+		http_args.push_back(tools::HttpArg("is_anonymous", is_anonymous));
+		http_args.push_back(tools::HttpArg("type", type));
+		http_args.push_back(tools::HttpArg("allows_multiple_answers", allows_multiple_answers));
+		if(correct_option_id != -1)
+			http_args.push_back(tools::HttpArg("correct_option_id", correct_option_id));
+		http_args.push_back(tools::HttpArg("is_closed", is_closed));
 		http_args.push_back(tools::HttpArg("disable_notification", disable_notification));
 		http_args.push_back(tools::HttpArg("reply_to_message_id", reply_to_message_id));
 		http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
@@ -1689,6 +1695,34 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("can_promote_members", can_promote_members));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/promoteChatMember", http_args);
+		std::string json = http_client.send_post_req_multipart().m_body;
+
+		rapidjson::Document doc;
+		doc.Parse(json.c_str());
+
+		if(doc.IsObject())
+			if(doc.HasMember("result"))
+				if(doc["result"].IsBool())
+					return doc["result"].GetBool();
+				else
+					std::cerr << "Error: Field \"result\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"result\" in the json object." << std::endl;
+		else
+			std::cerr << "Error: The server response is not a json object." << std::endl;
+
+		return false;
+	}
+
+	bool Endpoints::setChatAdministratorCustomTitle(const long long &chat_id, const int &user_id, const std::string &custom_title) const
+	{
+		//http args
+		std::vector<tools::HttpArg> http_args;
+		http_args.push_back(tools::HttpArg("chat_id", chat_id));
+		http_args.push_back(tools::HttpArg("user_id", user_id));
+		http_args.push_back(tools::HttpArg("custom_title", custom_title));
+
+		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/setChatAdministratorCustomTitle", http_args);
 		std::string json = http_client.send_post_req_multipart().m_body;
 
 		rapidjson::Document doc;
@@ -2625,8 +2659,8 @@ namespace tgbot
 		return false;
 	}
 
-	bool Endpoints::addStickerToSet(const int &user_id, const std::string &name, const std::string &title,
-			const std::variant<std::string, tools::InputFile::ptr> &png_sticker, const std::string &emojis, const MaskPosition::ptr &mask_position) const
+	bool Endpoints::addStickerToSet(const int &user_id, const std::string &name, const std::variant<std::string, tools::InputFile::ptr> &png_sticker,
+			const std::string &emojis, const MaskPosition::ptr &mask_position) const
 	{
 		if(std::holds_alternative<std::string>(png_sticker))
 		{
@@ -2634,7 +2668,6 @@ namespace tgbot
 			std::vector<tools::HttpArg> http_args;
 			http_args.push_back(tools::HttpArg("user_id", user_id));
 			http_args.push_back(tools::HttpArg("name", name));
-			http_args.push_back(tools::HttpArg("title", title));
 			http_args.push_back(tools::HttpArg("png_sticker", std::get<std::string>(png_sticker)));
 			http_args.push_back(tools::HttpArg("emojis", emojis));
 			http_args.push_back(tools::HttpArg("mask_position", mask_position->parse_to_json()));
@@ -2664,7 +2697,6 @@ namespace tgbot
 			std::vector<tools::HttpArg> http_args;
 			http_args.push_back(tools::HttpArg("user_id", user_id));
 			http_args.push_back(tools::HttpArg("name", name));
-			http_args.push_back(tools::HttpArg("title", title));
 			http_args.push_back(tools::HttpArg("png_sticker", std::get<tools::InputFile::ptr>(png_sticker)));
 			http_args.push_back(tools::HttpArg("emojis", emojis));
 			http_args.push_back(tools::HttpArg("mask_position", mask_position->parse_to_json()));

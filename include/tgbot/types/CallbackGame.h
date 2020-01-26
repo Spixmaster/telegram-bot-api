@@ -12,6 +12,12 @@ namespace tgbot
 		//pointer of itself
 		typedef std::shared_ptr<CallbackGame> ptr;
 
+		//constructors
+		CallbackGame();
+
+		//@param json: json object of CallbackGame
+		CallbackGame(const std::string &json);
+
 		//member functions
 		/*
 		 * @brief converts a itself into a json object

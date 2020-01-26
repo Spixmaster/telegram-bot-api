@@ -7,7 +7,7 @@
 
 namespace tgbot
 {
-	Chat::Chat() : id(), type(), title(), username(), first_name(), last_name(), photo(), description(), invite_link(), pinned_message(), permissions(),
+	Chat::Chat() : id(), type(), title(), username(), first_name(), last_name(), photo(), description(), invite_link(), pinned_message(), permissions(), slow_mode_delay(),
 			sticker_set_name(), can_set_sticker_set()
 	{}
 
@@ -107,6 +107,14 @@ namespace tgbot
 			else
 				std::cerr << "Error: There is no field \"permissions\"." << std::endl;
 
+			if(doc.HasMember("slow_mode_delay"))
+				if(doc["slow_mode_delay"].IsInt())
+					slow_mode_delay = doc["slow_mode_delay"].GetInt();
+				else
+					std::cerr << "Error: Field \"slow_mode_delay\" does not contain an int." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"slow_mode_delay\"." << std::endl;
+
 			if(doc.HasMember("sticker_set_name"))
 				if(doc["sticker_set_name"].IsString())
 					sticker_set_name = doc["sticker_set_name"].GetString();
@@ -123,6 +131,8 @@ namespace tgbot
 			else
 				std::cerr << "Error: There is no field \"can_set_sticker_set\"." << std::endl;
 		}
+		else
+			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
 	}
 
 	std::string Chat::parse_to_json() const
@@ -171,6 +181,10 @@ namespace tgbot
 
 		//field permissions
 		json.append("\"permissions\": " + permissions->parse_to_json());
+		json.append(", ");
+
+		//field slow_mode_delay
+		json.append("\"slow_mode_delay\": \"" + std::to_string(slow_mode_delay) + "\"");
 		json.append(", ");
 
 		//field sticker_set_name

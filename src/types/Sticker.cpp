@@ -1,9 +1,10 @@
 #include "tgbot/types/Sticker.h"
 #include "tools/Tools.h"
+#include <iostream>
 
 namespace tgbot
 {
-	Sticker::Sticker() : file_id(), width(), height(), is_animated(), thumb(), emoji(), set_name(), mask_position(), file_size()
+	Sticker::Sticker() : file_id(), file_unique_id(), width(), height(), is_animated(), thumb(), emoji(), set_name(), mask_position(), file_size()
 	{}
 
 	Sticker::Sticker(const std::string &json)
@@ -15,32 +16,87 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("file_id"))
-				file_id = doc["file_id"].GetString();
+				if(doc["file_id"].IsString())
+					file_id = doc["file_id"].GetString();
+				else
+					std::cerr << "Error: Field \"file_id\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"file_id\"." << std::endl;
+
+			if(doc.HasMember("file_unique_id"))
+				if(doc["file_unique_id"].IsString())
+					file_unique_id = doc["file_unique_id"].GetString();
+				else
+					std::cerr << "Error: Field \"file_unique_id\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"file_unique_id\"." << std::endl;
 
 			if(doc.HasMember("width"))
-				width = doc["width"].GetInt();
+				if(doc["width"].IsInt())
+					width = doc["width"].GetInt();
+				else
+					std::cerr << "Error: Field \"width\" does not contain an int." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"width\"." << std::endl;
 
 			if(doc.HasMember("height"))
-				height = doc["height"].GetInt();
+				if(doc["height"].IsInt())
+					width = doc["height"].GetInt();
+				else
+					std::cerr << "Error: Field \"height\" does not contain an int." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"height\"." << std::endl;
 
 			if(doc.HasMember("is_animated"))
-				is_animated = doc["is_animated"].GetBool();
+				if(doc["is_animated"].IsBool())
+					is_animated = doc["is_animated"].GetBool();
+				else
+					std::cerr << "Error: Field \"is_animated\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"is_animated\"." << std::endl;
 
 			if(doc.HasMember("thumb"))
-				thumb = std::make_shared<PhotoSize>(tools::Tools::get_json_as_string(doc["thumb"]));
+				if(doc["thumb"].IsObject())
+					thumb = std::make_shared<PhotoSize>(tools::Tools::get_json_as_string(doc["thumb"]));
+				else
+					std::cerr << "Error: Field \"thumb\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"thumb\"." << std::endl;
 
 			if(doc.HasMember("emoji"))
-				emoji = doc["emoji"].GetString();
+				if(doc["emoji"].IsString())
+					emoji = doc["emoji"].GetString();
+				else
+					std::cerr << "Error: Field \"emoji\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"emoji\"." << std::endl;
 
 			if(doc.HasMember("set_name"))
-				set_name = doc["set_name"].GetString();
+				if(doc["set_name"].IsString())
+					file_id = doc["set_name"].GetString();
+				else
+					std::cerr << "Error: Field \"set_name\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"set_name\"." << std::endl;
 
 			if(doc.HasMember("mask_position"))
-				mask_position = std::make_shared<MaskPosition>(tools::Tools::get_json_as_string(doc["mask_position"]));
+				if(doc["mask_position"].IsObject())
+					mask_position = std::make_shared<MaskPosition>(tools::Tools::get_json_as_string(doc["mask_position"]));
+				else
+					std::cerr << "Error: Field \"mask_position\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"mask_position\"." << std::endl;
 
 			if(doc.HasMember("file_size"))
-				file_size = doc["file_size"].GetInt();
+				if(doc["file_size"].IsInt())
+					width = doc["file_size"].GetInt();
+				else
+					std::cerr << "Error: Field \"file_size\" does not contain an int." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"file_size\"." << std::endl;
 		}
+		else
+			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
 	}
 
 	std::string Sticker::parse_to_json() const
@@ -49,6 +105,10 @@ namespace tgbot
 
 		//field file_id
 		json.append("\"file_id\": \"" + file_id + "\"");
+		json.append(", ");
+
+		//field file_unique_id
+		json.append("\"file_unique_id\": \"" + file_unique_id + "\"");
 		json.append(", ");
 
 		//field width

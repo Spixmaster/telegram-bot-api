@@ -11,6 +11,7 @@
 #include "tgbot/types/Poll.h"
 #include <rapidjson/document.h>
 #include <memory>
+#include "tgbot/types/PollAnswer.h"
 
 //@brief represents on object in the Telegram bot api
 
@@ -33,6 +34,7 @@ namespace tgbot
 		ShippingQuery::ptr shipping_query;
 		PreCheckoutQuery::ptr pre_checkout_query;
 		Poll::ptr poll;
+		PollAnswer::ptr poll_answer;
 
 		//constructors
 		Update();

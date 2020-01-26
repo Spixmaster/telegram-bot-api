@@ -16,7 +16,12 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("total_count"))
-				total_count = doc["total_count"].GetInt();
+				if(doc["total_count"].IsInt())
+					total_count = doc["total_count"].GetInt();
+				else
+					std::cerr << "Error: Field \"total_count\" does not contain an int." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"total_count\"." << std::endl;
 
 			if(doc.HasMember("photos"))
 			{
@@ -24,15 +29,36 @@ namespace tgbot
 				 * photos are stored in an array a with multiple arrays b
 				 * each array b represent one photo json object as the photo exists in several sizes
 				 */
-				const rapidjson::Value &json_photo_array = doc["photos"].GetArray();
+				if(doc["photos"].IsArray())
+				{
+					const rapidjson::Value &json_photo_array = doc["photos"].GetArray();
 
-				//iterate through all photos
-				for(std::size_t j = 0; j < json_photo_array.Size(); ++j)
-					//iterate through all PhotoSizes of one photo
-					for(std::size_t k = 0; k < json_photo_array[j].GetArray().Size(); ++k)
-						photos.push_back(std::make_shared<PhotoSize>(tools::Tools::get_json_as_string(json_photo_array[j][k])));
+					//iterate through all photos
+					for(std::size_t j = 0; j < json_photo_array.Size(); ++j)
+					{
+						if(json_photo_array[j].IsArray())
+						{
+							//iterate through all PhotoSizes of one photo
+							for(std::size_t k = 0; k < json_photo_array[j].GetArray().Size(); ++k)
+							{
+								if(doc["photos"][j][k].IsObject())
+									photos.push_back(std::make_shared<PhotoSize>(tools::Tools::get_json_as_string(json_photo_array[j][k])));
+								else
+									std::cerr << "Error: Field \"photos\"'s json array's element is not a json object." << std::endl;
+							}
+						}
+						else
+							std::cerr << "Error: Field \"photos\"'s json array does not contain a json array." << std::endl;
+					}
+				}
+				else
+					std::cerr << "Error: Field \"photos\" does not contain a json array." << std::endl;
 			}
+			else
+				std::cerr << "Error: There is no field \"photos\"." << std::endl;
 		}
+		else
+			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
 	}
 
 	std::string UserProfilePhotos::parse_to_json() const

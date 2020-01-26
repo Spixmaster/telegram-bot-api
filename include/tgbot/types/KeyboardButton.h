@@ -4,6 +4,7 @@
 #include <string>
 #include <rapidjson/document.h>
 #include <memory>
+#include "tgbot/types/KeyboardButtonPollType.h"
 
 //@brief represents on object in the Telegram bot api
 
@@ -18,6 +19,7 @@ namespace tgbot
 		std::string text;
 		bool request_contact = false;
 		bool request_location = false;
+		KeyboardButtonPollType::ptr request_poll;
 
 		//constructors
 		KeyboardButton();

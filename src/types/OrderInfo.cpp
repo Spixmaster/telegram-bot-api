@@ -1,5 +1,6 @@
 #include "tgbot/types/OrderInfo.h"
 #include "tools/Tools.h"
+#include <iostream>
 
 namespace tgbot
 {
@@ -15,17 +16,39 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("name"))
-				name = doc["name"].GetString();
+				if(doc["name"].IsString())
+					name = doc["name"].GetString();
+				else
+					std::cerr << "Error: Field \"name\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"name\"." << std::endl;
 
 			if(doc.HasMember("phone_number"))
-				phone_number = doc["phone_number"].GetString();
+				if(doc["phone_number"].IsString())
+					phone_number = doc["phone_number"].GetString();
+				else
+					std::cerr << "Error: Field \"phone_number\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"phone_number\"." << std::endl;
 
 			if(doc.HasMember("email"))
-				email = doc["email"].GetString();
+				if(doc["email"].IsString())
+					email = doc["email"].GetString();
+				else
+					std::cerr << "Error: Field \"email\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"email\"." << std::endl;
 
 			if(doc.HasMember("shipping_address"))
-				shipping_address = std::make_shared<ShippingAddress>(tools::Tools::get_json_as_string(doc["shipping_address"]));
+				if(doc["shipping_address"].IsObject())
+					shipping_address = std::make_shared<ShippingAddress>(tools::Tools::get_json_as_string(doc["shipping_address"]));
+				else
+					std::cerr << "Error: Field \"shipping_address\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"shipping_address\"." << std::endl;
 		}
+		else
+			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
 	}
 
 	std::string OrderInfo::parse_to_json() const
