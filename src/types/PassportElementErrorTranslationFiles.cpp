@@ -20,16 +20,12 @@ namespace tgbot
 					source = doc["source"].GetString();
 				else
 					std::cerr << "Error: Field \"source\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"source\"." << std::endl;
 
 			if(doc.HasMember("type"))
 				if(doc["type"].IsString())
 					type = doc["type"].GetString();
 				else
 					std::cerr << "Error: Field \"type\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"type\"." << std::endl;
 
 			if(doc.HasMember("file_hashes"))
 				if(doc["file_hashes"].IsArray())
@@ -46,16 +42,12 @@ namespace tgbot
 				}
 				else
 					std::cerr << "Error: Field \"file_hashes\" does not contain a json array." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"file_hashes\"." << std::endl;
 
 			if(doc.HasMember("message"))
 				if(doc["message"].IsString())
 					message = doc["message"].GetString();
 				else
 					std::cerr << "Error: Field \"message\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"message\"." << std::endl;
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

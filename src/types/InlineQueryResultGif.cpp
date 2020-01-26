@@ -21,88 +21,66 @@ namespace tgbot
 					type = doc["type"].GetString();
 				else
 					std::cerr << "Error: Field \"type\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"type\"." << std::endl;
 
 			if(doc.HasMember("id"))
 				if(doc["id"].IsString())
 					id = doc["id"].GetString();
 				else
 					std::cerr << "Error: Field \"id\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"id\"." << std::endl;
 
 			if(doc.HasMember("gif_url"))
 				if(doc["gif_url"].IsString())
 					gif_url = doc["gif_url"].GetString();
 				else
 					std::cerr << "Error: Field \"gif_url\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"gif_url\"." << std::endl;
 
 			if(doc.HasMember("caption"))
 				if(doc["caption"].IsInt())
 					caption = doc["caption"].GetInt();
 				else
 					std::cerr << "Error: Field \"caption\" does not contain an int." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"caption\"." << std::endl;
 
 			if(doc.HasMember("parse_mode"))
 				if(doc["parse_mode"].IsInt())
 					parse_mode = doc["parse_mode"].GetInt();
 				else
 					std::cerr << "Error: Field \"parse_mode\" does not contain an int." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"parse_mode\"." << std::endl;
 
 			if(doc.HasMember("gif_duration"))
 				if(doc["gif_duration"].IsInt())
 					gif_duration = doc["gif_duration"].GetInt();
 				else
 					std::cerr << "Error: Field \"gif_duration\" does not contain an int." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"gif_duration\"." << std::endl;
 
 			if(doc.HasMember("thumb_url"))
 				if(doc["thumb_url"].IsString())
 					thumb_url = doc["thumb_url"].GetString();
 				else
 					std::cerr << "Error: Field \"thumb_url\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"thumb_url\"." << std::endl;
 
 			if(doc.HasMember("title"))
 				if(doc["title"].IsString())
 					title = doc["title"].GetString();
 				else
 					std::cerr << "Error: Field \"title\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"title\"." << std::endl;
 
 			if(doc.HasMember("caption"))
 				if(doc["caption"].IsString())
 					caption = doc["caption"].GetString();
 				else
 					std::cerr << "Error: Field \"caption\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"caption\"." << std::endl;
 
 			if(doc.HasMember("parse_mode"))
 				if(doc["parse_mode"].IsString())
 					parse_mode = doc["parse_mode"].GetString();
 				else
 					std::cerr << "Error: Field \"parse_mode\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"parse_mode\"." << std::endl;
 
 			if(doc.HasMember("reply_markup"))
 				if(doc["reply_markup"].IsObject())
 					reply_markup = std::make_shared<InlineKeyboardMarkup>(tools::Tools::get_json_as_string(doc["reply_markup"]));
 				else
 					std::cerr << "Error: Field \"reply_markup\" does not contain a json object." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"reply_markup\"." << std::endl;
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

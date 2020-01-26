@@ -20,32 +20,24 @@ namespace tgbot
 					type = doc["type"].GetString();
 				else
 					std::cerr << "Error: Field \"type\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"type\"." << std::endl;
 
 			if(doc.HasMember("offset"))
 				if(doc["offset"].IsInt())
 					offset = doc["offset"].GetInt();
 				else
 					std::cerr << "Error: Field \"offset\" does not contain an int." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"offset\"." << std::endl;
 
 			if(doc.HasMember("length"))
 				if(doc["length"].IsInt())
 					length = doc["length"].GetInt();
 				else
 					std::cerr << "Error: Field \"length\" does not contain an int." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"length\"." << std::endl;
 
 			if(doc.HasMember("url"))
 				if(doc["url"].IsString())
 					url = doc["url"].GetString();
 				else
 					std::cerr << "Error: Field \"url\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"url\"." << std::endl;
 
 			if(doc.HasMember("user"))
 				user = std::make_shared<User>(tools::Tools::get_json_as_string(doc["user"]));
@@ -54,16 +46,12 @@ namespace tgbot
 					user = std::make_shared<User>(tools::Tools::get_json_as_string(doc["user"]));
 				else
 					std::cerr << "Error: Field \"user\" does not contain a json object." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"user\"." << std::endl;
 
 			if(doc.HasMember("language"))
 				if(doc["language"].IsString())
 					language = doc["language"].GetString();
 				else
 					std::cerr << "Error: Field \"language\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"language\"." << std::endl;
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

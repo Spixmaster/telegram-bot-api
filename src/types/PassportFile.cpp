@@ -20,32 +20,24 @@ namespace tgbot
 					file_id = doc["file_id"].GetString();
 				else
 					std::cerr << "Error: Field \"file_id\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"file_id\"." << std::endl;
 
 			if(doc.HasMember("file_unique_id"))
 				if(doc["file_unique_id"].IsString())
 					file_unique_id = doc["file_unique_id"].GetString();
 				else
 					std::cerr << "Error: Field \"file_unique_id\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"file_unique_id\"." << std::endl;
 
 			if(doc.HasMember("file_size"))
 				if(doc["file_size"].IsInt())
 					file_size = doc["file_size"].GetInt();
 				else
 					std::cerr << "Error: Field \"file_size\" does not contain an int." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"file_size\"." << std::endl;
 
 			if(doc.HasMember("file_date"))
 				if(doc["file_date"].IsInt())
 					file_date = doc["file_date"].GetInt();
 				else
 					std::cerr << "Error: Field \"file_date\" does not contain an int." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"file_date\"." << std::endl;
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

@@ -21,56 +21,42 @@ namespace tgbot
 					media = doc["media"].GetString();
 				else
 					std::cerr << "Error: Field \"media\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"media\"." << std::endl;
 
 			if(doc.HasMember("thumb"))
 				if(doc["thumb"].IsString())
 					thumb = doc["thumb"].GetString();
 				else
 					std::cerr << "Error: Field \"thumb\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"thumb\"." << std::endl;
 
 			if(doc.HasMember("caption"))
 				if(doc["caption"].IsString())
 					caption = doc["caption"].GetString();
 				else
 					std::cerr << "Error: Field \"caption\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"caption\"." << std::endl;
 
 			if(doc.HasMember("parse_mode"))
 				if(doc["parse_mode"].IsString())
 					parse_mode = doc["parse_mode"].GetString();
 				else
 					std::cerr << "Error: Field \"parse_mode\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"parse_mode\"." << std::endl;
 
 			if(doc.HasMember("width"))
 				if(doc["width"].IsInt())
 					width = doc["width"].GetInt();
 				else
 					std::cerr << "Error: Field \"width\" does not contain an int." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"width\"." << std::endl;
 
 			if(doc.HasMember("height"))
 				if(doc["height"].IsInt())
 					width = doc["height"].GetInt();
 				else
 					std::cerr << "Error: Field \"height\" does not contain an int." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"height\"." << std::endl;
 
 			if(doc.HasMember("duration"))
 				if(doc["duration"].IsInt())
 					duration = doc["duration"].GetInt();
 				else
 					std::cerr << "Error: Field \"duration\" does not contain an int." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"duration\"." << std::endl;
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

@@ -20,24 +20,18 @@ namespace tgbot
 					message_text = doc["message_text"].GetString();
 				else
 					std::cerr << "Error: Field \"message_text\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"message_text\"." << std::endl;
 
 			if(doc.HasMember("parse_mode"))
 				if(doc["parse_mode"].IsString())
 					parse_mode = doc["parse_mode"].GetString();
 				else
 					std::cerr << "Error: Field \"parse_mode\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"parse_mode\"." << std::endl;
 
 			if(doc.HasMember("disable_web_page_preview"))
 				if(doc["disable_web_page_preview"].IsBool())
 					disable_web_page_preview = doc["disable_web_page_preview"].GetBool();
 				else
 					std::cerr << "Error: Field \"disable_web_page_preview\" does not contain a bool." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"disable_web_page_preview\"." << std::endl;
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

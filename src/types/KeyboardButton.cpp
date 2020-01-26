@@ -20,32 +20,24 @@ namespace tgbot
 					text = doc["text"].GetString();
 				else
 					std::cerr << "Error: Field \"text\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"text\"." << std::endl;
 
 			if(doc.HasMember("request_contact"))
 				if(doc["request_contact"].IsBool())
 					request_contact = doc["request_contact"].GetBool();
 				else
 					std::cerr << "Error: Field \"request_contact\" does not contain a bool." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"request_contact\"." << std::endl;
 
 			if(doc.HasMember("request_location"))
 				if(doc["request_location"].IsBool())
 					request_location = doc["request_location"].GetBool();
 				else
 					std::cerr << "Error: Field \"request_location\" does not contain a bool." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"request_location\"." << std::endl;
 
 			if(doc.HasMember("request_poll"))
 				if(doc["request_poll"].IsObject())
 					request_poll = std::make_shared<KeyboardButtonPollType>(tools::Tools::get_json_as_string(doc["request_poll"]));
 				else
 					std::cerr << "Error: Field \"request_poll\" does not contain a json object." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"request_poll\"." << std::endl;
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

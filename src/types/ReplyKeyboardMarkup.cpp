@@ -45,32 +45,24 @@ namespace tgbot
 				}
 				else
 					std::cerr << "Error: Field \"keyboard\" does not contain a json array." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"keyboard\"." << std::endl;
 
 			if(doc.HasMember("resize_keyboard"))
 				if(doc["resize_keyboard"].IsBool())
 					resize_keyboard = doc["resize_keyboard"].GetBool();
 				else
 					std::cerr << "Error: Field \"resize_keyboard\" does not contain a bool." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"resize_keyboard\"." << std::endl;
 
 			if(doc.HasMember("one_time_keyboard"))
 				if(doc["one_time_keyboard"].IsBool())
 					one_time_keyboard = doc["one_time_keyboard"].GetBool();
 				else
 					std::cerr << "Error: Field \"one_time_keyboard\" does not contain a bool." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"one_time_keyboard\"." << std::endl;
 
 			if(doc.HasMember("selective"))
 				if(doc["selective"].IsBool())
 					selective = doc["selective"].GetBool();
 				else
 					std::cerr << "Error: Field \"selective\" does not contain a bool." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"selective\"." << std::endl;
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

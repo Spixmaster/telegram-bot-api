@@ -20,16 +20,12 @@ namespace tgbot
 					remove_keyboard = doc["remove_keyboard"].GetBool();
 				else
 					std::cerr << "Error: Field \"remove_keyboard\" does not contain a bool." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"remove_keyboard\"." << std::endl;
 
 			if(doc.HasMember("selective"))
 				if(doc["selective"].IsBool())
 					selective = doc["selective"].GetBool();
 				else
 					std::cerr << "Error: Field \"selective\" does not contain a bool." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"selective\"." << std::endl;
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

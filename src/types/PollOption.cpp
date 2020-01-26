@@ -21,16 +21,12 @@ namespace tgbot
 					text = doc["text"].GetString();
 				else
 					std::cerr << "Error: Field \"text\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"text\"." << std::endl;
 
 			if(doc.HasMember("voter_count"))
 				if(doc["voter_count"].IsInt())
 					voter_count = doc["voter_count"].GetInt();
 				else
 					std::cerr << "Error: Field \"voter_count\" does not contain an int." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"voter_count\"." << std::endl;
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

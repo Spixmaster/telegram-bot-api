@@ -20,16 +20,12 @@ namespace tgbot
 					force_reply = doc["force_reply"].GetBool();
 				else
 					std::cerr << "Error: Field \"force_reply\" does not contain a bool." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"force_reply\"." << std::endl;
 
 			if(doc.HasMember("selective"))
 				if(doc["selective"].IsBool())
 					selective = doc["selective"].GetBool();
 				else
 					std::cerr << "Error: Field \"selective\" does not contain a bool." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"selective\"." << std::endl;
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
