@@ -20,7 +20,7 @@ namespace tgbot
 		std::string city;
 		std::string street_line1;
 		std::string street_line2;
-		std::string postcode;
+		std::string post_code;
 
 		//constructors
 		ShippingAddress();

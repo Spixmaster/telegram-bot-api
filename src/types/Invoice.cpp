@@ -1,6 +1,7 @@
 #include <rapidjson/document.h>
 #include "tgbot/types/Invoice.h"
 #include "tools/Tools.h"
+#include <iostream>
 
 namespace tgbot
 {
@@ -16,20 +17,47 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("title"))
-				title = doc["title"].GetString();
+				if(doc["title"].IsString())
+					title = doc["title"].GetString();
+				else
+					std::cerr << "Error: Field \"title\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"title\"." << std::endl;
 
 			if(doc.HasMember("description"))
-				description = doc["description"].GetString();
+				if(doc["description"].IsString())
+					description = doc["description"].GetString();
+				else
+					std::cerr << "Error: Field \"description\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"description\"." << std::endl;
 
 			if(doc.HasMember("start_parameter"))
-				start_parameter = doc["start_parameter"].GetString();
+				if(doc["start_parameter"].IsString())
+					start_parameter = doc["start_parameter"].GetString();
+				else
+					std::cerr << "Error: Field \"start_parameter\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"start_parameter\"." << std::endl;
 
 			if(doc.HasMember("currency"))
-				currency = doc["currency"].GetString();
+				if(doc["currency"].IsString())
+					currency = doc["currency"].GetString();
+				else
+					std::cerr << "Error: Field \"currency\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"currency\"." << std::endl;
 
 			if(doc.HasMember("total_amount"))
-				total_amount = doc["total_amount"].GetInt();
+				if(doc["total_amount"].IsInt())
+					total_amount = doc["total_amount"].GetInt();
+				else
+					std::cerr << "Error: Field \"total_amount\" does not contain an int." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"total_amount\"." << std::endl;
 		}
+		else
+			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
 	}
 
 	std::string Invoice::parse_to_json() const

@@ -4,9 +4,9 @@
 
 namespace tgbot
 {
-	ChatMember::ChatMember() : user(), status(), until_date(), can_be_edited(), can_post_messages(), can_edit_messages(), can_delete_messages(), can_restrict_members(),
-			can_promote_members(), can_change_info(), can_invite_users(), is_member(), can_send_messages(), can_send_media_messages(), can_send_polls(),
-			can_send_other_messages(), can_add_web_page_previews()
+	ChatMember::ChatMember() : user(), status(), custom_title(), until_date(), can_be_edited(), can_post_messages(), can_edit_messages(), can_delete_messages(),
+			can_restrict_members(), can_promote_members(), can_change_info(), can_invite_users(), can_pin_messages(), is_member(), can_send_messages(), can_send_media_messages(),
+			can_send_polls(), can_send_other_messages(), can_add_web_page_previews()
 	{}
 
 	ChatMember::ChatMember(const std::string &json)
@@ -32,6 +32,14 @@ namespace tgbot
 					std::cerr << "Error: Field \"status\" does not contain a string." << std::endl;
 			else
 				std::cerr << "Error: There is no field \"status\"." << std::endl;
+
+			if(doc.HasMember("custom_title"))
+				if(doc["custom_title"].IsString())
+					custom_title = doc["custom_title"].GetString();
+				else
+					std::cerr << "Error: Field \"custom_title\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"custom_title\"." << std::endl;
 
 			if(doc.HasMember("until_date"))
 				if(doc["until_date"].IsInt())
@@ -105,6 +113,14 @@ namespace tgbot
 			else
 				std::cerr << "Error: There is no field \"can_invite_users\"." << std::endl;
 
+			if(doc.HasMember("can_pin_messages"))
+				if(doc["can_pin_messages"].IsBool())
+					can_pin_messages = doc["can_pin_messages"].GetBool();
+				else
+					std::cerr << "Error: Field \"can_pin_messages\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"can_pin_messages\"." << std::endl;
+
 			if(doc.HasMember("is_member"))
 				if(doc["is_member"].IsBool())
 					is_member = doc["is_member"].GetBool();
@@ -153,6 +169,8 @@ namespace tgbot
 			else
 				std::cerr << "Error: There is no field \"can_add_web_page_previews\"." << std::endl;
 		}
+		else
+			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
 	}
 
 	std::string ChatMember::parse_to_json() const

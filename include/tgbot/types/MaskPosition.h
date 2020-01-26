@@ -17,7 +17,7 @@ namespace tgbot
 		std::string point;
 		float x_shift = -1;
 		float y_shift = -1;
-		float number = -1;
+		float scale = -1;
 
 		//constructors
 		MaskPosition();

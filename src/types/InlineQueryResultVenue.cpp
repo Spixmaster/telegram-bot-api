@@ -1,5 +1,6 @@
 #include "tgbot/types/InlineQueryResultVenue.h"
 #include "tools/Tools.h"
+#include <iostream>
 
 namespace tgbot
 {
@@ -16,41 +17,103 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("type"))
-				type = doc["type"].GetString();
+				if(doc["type"].IsString())
+					type = doc["type"].GetString();
+				else
+					std::cerr << "Error: Field \"type\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"type\"." << std::endl;
 
 			if(doc.HasMember("id"))
-				id = doc["id"].GetString();
+				if(doc["id"].IsString())
+					id = doc["id"].GetString();
+				else
+					std::cerr << "Error: Field \"id\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"id\"." << std::endl;
 
 			if(doc.HasMember("latitude"))
-				latitude = doc["latitude"].GetFloat();
+				if(doc["latitude"].IsFloat())
+					latitude = doc["latitude"].GetFloat();
+				else
+					std::cerr << "Error: Field \"latitude\" does not contain a float." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"latitude\"." << std::endl;
 
 			if(doc.HasMember("longitude"))
-				longitude = doc["longitude"].GetFloat();
+				if(doc["longitude"].IsFloat())
+					longitude = doc["longitude"].GetFloat();
+				else
+					std::cerr << "Error: Field \"longitude\" does not contain a float." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"longitude\"." << std::endl;
 
 			if(doc.HasMember("title"))
-				title = doc["title"].GetString();
+				if(doc["title"].IsString())
+					title = doc["title"].GetString();
+				else
+					std::cerr << "Error: Field \"title\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"title\"." << std::endl;
 
 			if(doc.HasMember("address"))
-				address = doc["address"].GetString();
+				if(doc["address"].IsString())
+					address = doc["address"].GetString();
+				else
+					std::cerr << "Error: Field \"address\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"address\"." << std::endl;
 
 			if(doc.HasMember("foursquare_id"))
-				foursquare_id = doc["foursquare_id"].GetString();
+				if(doc["foursquare_id"].IsString())
+					foursquare_id = doc["foursquare_id"].GetString();
+				else
+					std::cerr << "Error: Field \"foursquare_id\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"foursquare_id\"." << std::endl;
 
 			if(doc.HasMember("foursquare_type"))
-				foursquare_type = doc["foursquare_type"].GetString();
+				if(doc["foursquare_type"].IsString())
+					foursquare_type = doc["foursquare_type"].GetString();
+				else
+					std::cerr << "Error: Field \"foursquare_type\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"foursquare_type\"." << std::endl;
 
 			if(doc.HasMember("reply_markup"))
-				reply_markup = std::make_shared<InlineKeyboardMarkup>(tools::Tools::get_json_as_string(doc["reply_markup"]));
+				if(doc["reply_markup"].IsObject())
+					reply_markup = std::make_shared<InlineKeyboardMarkup>(tools::Tools::get_json_as_string(doc["reply_markup"]));
+				else
+					std::cerr << "Error: Field \"reply_markup\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"reply_markup\"." << std::endl;
 
 			if(doc.HasMember("thumb_url"))
-				thumb_url = doc["thumb_url"].GetString();
+				if(doc["thumb_url"].IsString())
+					thumb_url = doc["thumb_url"].GetString();
+				else
+					std::cerr << "Error: Field \"thumb_url\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"thumb_url\"." << std::endl;
 
 			if(doc.HasMember("thumb_width"))
-				thumb_width = doc["thumb_width"].GetInt();
+				if(doc["thumb_width"].IsInt())
+					thumb_width = doc["thumb_width"].GetInt();
+				else
+					std::cerr << "Error: Field \"thumb_width\" does not contain an int." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"thumb_width\"." << std::endl;
 
 			if(doc.HasMember("thumb_height"))
-				thumb_height = doc["thumb_height"].GetInt();
+				if(doc["thumb_height"].IsInt())
+					thumb_height = doc["thumb_height"].GetInt();
+				else
+					std::cerr << "Error: Field \"thumb_height\" does not contain an int." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"thumb_height\"." << std::endl;
 		}
+		else
+			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
 	}
 
 	std::string InlineQueryResultVenue::parse_to_json() const

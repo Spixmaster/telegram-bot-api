@@ -1,5 +1,6 @@
 #include "tgbot/types/SuccessfulPayment.h"
 #include "tools/Tools.h"
+#include <iostream>
 
 namespace tgbot
 {
@@ -16,26 +17,63 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("currency"))
-				currency = doc["currency"].GetString();
+				if(doc["currency"].IsString())
+					currency = doc["currency"].GetString();
+				else
+					std::cerr << "Error: Field \"currency\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"currency\"." << std::endl;
 
 			if(doc.HasMember("total_amount"))
-				total_amount = doc["total_amount"].GetInt();
+				if(doc["total_amount"].IsInt())
+					total_amount = doc["total_amount"].GetInt();
+				else
+					std::cerr << "Error: Field \"total_amount\" does not contain an int." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"total_amount\"." << std::endl;
 
 			if(doc.HasMember("invoice_payload"))
-				invoice_payload = doc["invoice_payload"].GetString();
+				if(doc["invoice_payload"].IsString())
+					invoice_payload = doc["invoice_payload"].GetString();
+				else
+					std::cerr << "Error: Field \"invoice_payload\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"invoice_payload\"." << std::endl;
 
 			if(doc.HasMember("shipping_option_id"))
-				shipping_option_id = doc["shipping_option_id"].GetString();
+				if(doc["shipping_option_id"].IsString())
+					shipping_option_id = doc["shipping_option_id"].GetString();
+				else
+					std::cerr << "Error: Field \"shipping_option_id\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"shipping_option_id\"." << std::endl;
 
 			if(doc.HasMember("order_info"))
-				order_info = std::make_shared<OrderInfo>(tools::Tools::get_json_as_string(doc["order_info"]));
+				if(doc["order_info"].IsObject())
+					order_info = std::make_shared<OrderInfo>(tools::Tools::get_json_as_string(doc["order_info"]));
+				else
+					std::cerr << "Error: Field \"order_info\" does not contain a json object." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"order_info\"." << std::endl;
 
 			if(doc.HasMember("telegram_payment_charge_id"))
-				telegram_payment_charge_id = doc["telegram_payment_charge_id"].GetString();
+				if(doc["telegram_payment_charge_id"].IsString())
+					telegram_payment_charge_id = doc["telegram_payment_charge_id"].GetString();
+				else
+					std::cerr << "Error: Field \"telegram_payment_charge_id\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"telegram_payment_charge_id\"." << std::endl;
 
 			if(doc.HasMember("provider_payment_charge_id"))
-				provider_payment_charge_id = doc["provider_payment_charge_id"].GetString();
+				if(doc["provider_payment_charge_id"].IsString())
+					provider_payment_charge_id = doc["provider_payment_charge_id"].GetString();
+				else
+					std::cerr << "Error: Field \"provider_payment_charge_id\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"provider_payment_charge_id\"." << std::endl;
 		}
+		else
+			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
 	}
 
 	std::string SuccessfulPayment::parse_to_json() const

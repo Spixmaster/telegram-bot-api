@@ -1,5 +1,6 @@
 #include "tgbot/types/PassportElementErrorFiles.h"
 #include "tools/Tools.h"
+#include <iostream>
 
 namespace tgbot
 {
@@ -15,22 +16,49 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("source"))
-				source = doc["source"].GetString();
+				if(doc["source"].IsString())
+					source = doc["source"].GetString();
+				else
+					std::cerr << "Error: Field \"source\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"source\"." << std::endl;
 
 			if(doc.HasMember("type"))
-				type = doc["type"].GetString();
+				if(doc["type"].IsString())
+					type = doc["type"].GetString();
+				else
+					std::cerr << "Error: Field \"type\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"type\"." << std::endl;
 
 			if(doc.HasMember("file_hashes"))
-				for(std::size_t j = 0; j < doc["file_hashes"].GetArray().Size(); ++j)
+				if(doc["file_hashes"].IsArray())
 				{
 					file_hashes.resize(doc["file_hashes"].GetArray().Size());
 
-					file_hashes.at(j) = doc["file_hashes"][j].GetString();
+					for(std::size_t j = 0; j < doc["file_hashes"].GetArray().Size(); ++j)
+					{
+						if(doc["file_hashes"][j].IsString())
+							file_hashes.at(j) = doc["file_hashes"][j].GetString();
+						else
+							std::cerr << "Error: Field \"file_hashes\"'s json array's element is not a string." << std::endl;
+					}
 				}
+				else
+					std::cerr << "Error: Field \"file_hashes\" does not contain a json array." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"file_hashes\"." << std::endl;
 
 			if(doc.HasMember("message"))
-				message = doc["message"].GetString();
+				if(doc["message"].IsString())
+					message = doc["message"].GetString();
+				else
+					std::cerr << "Error: Field \"message\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"message\"." << std::endl;
 		}
+		else
+			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
 	}
 
 	std::string PassportElementErrorFiles::parse_to_json() const

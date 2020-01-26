@@ -1,5 +1,6 @@
 #include "tgbot/types/StickerSet.h"
 #include "tools/Tools.h"
+#include <iostream>
 
 namespace tgbot
 {
@@ -15,25 +16,57 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("name"))
-				name = doc["name"].GetString();
+				if(doc["name"].IsString())
+					name = doc["name"].GetString();
+				else
+					std::cerr << "Error: Field \"name\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"name\"." << std::endl;
 
 			if(doc.HasMember("title"))
-				title = doc["title"].GetString();
+				if(doc["title"].IsString())
+					title = doc["title"].GetString();
+				else
+					std::cerr << "Error: Field \"title\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"title\"." << std::endl;
 
 			if(doc.HasMember("is_animated"))
-				is_animated = doc["is_animated"].GetBool();
+				if(doc["is_animated"].IsBool())
+					is_animated = doc["is_animated"].GetBool();
+				else
+					std::cerr << "Error: Field \"is_animated\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"is_animated\"." << std::endl;
 
 			if(doc.HasMember("contains_masks"))
-				contains_masks = doc["contains_masks"].GetBool();
+				if(doc["contains_masks"].IsBool())
+					contains_masks = doc["contains_masks"].GetBool();
+				else
+					std::cerr << "Error: Field \"contains_masks\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"contains_masks\"." << std::endl;
 
 			if(doc.HasMember("sticker"))
-				for(std::size_t j = 0; j < doc["sticker"].GetArray().Size(); ++j)
+				if(doc["sticker"].IsArray())
 				{
 					sticker.resize(doc["sticker"].GetArray().Size());
 
-					sticker.at(j) = std::make_shared<Sticker>(tools::Tools::get_json_as_string(doc["sticker"][j]));
+					for(std::size_t j = 0; j < doc["sticker"].GetArray().Size(); ++j)
+					{
+						if(doc["sticker"][j].IsObject())
+							sticker.at(j) = std::make_shared<Sticker>(tools::Tools::get_json_as_string(doc["sticker"][j]));
+						else
+							std::cerr << "Error: Field \"sticker\"'s json array's element is not a json object." << std::endl;
+					}
 				}
+				else
+					std::cerr << "Error: Field \"sticker\" does not contain a json array." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"sticker\"." << std::endl;
 		}
+		else
+			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
 	}
 
 	std::string StickerSet::parse_to_json() const

@@ -1,5 +1,6 @@
 #include "tgbot/types/PassportElementErrorDataField.h"
 #include "tools/Tools.h"
+#include <iostream>
 
 namespace tgbot
 {
@@ -15,20 +16,47 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("source"))
-				source = doc["source"].GetString();
+				if(doc["source"].IsString())
+					source = doc["source"].GetString();
+				else
+					std::cerr << "Error: Field \"source\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"source\"." << std::endl;
 
 			if(doc.HasMember("type"))
-				type = doc["type"].GetString();
+				if(doc["type"].IsString())
+					type = doc["type"].GetString();
+				else
+					std::cerr << "Error: Field \"type\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"type\"." << std::endl;
 
 			if(doc.HasMember("field_name"))
-				field_name = doc["field_name"].GetString();
+				if(doc["field_name"].IsString())
+					field_name = doc["field_name"].GetString();
+				else
+					std::cerr << "Error: Field \"field_name\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"field_name\"." << std::endl;
 
 			if(doc.HasMember("data_hash"))
-				data_hash = doc["data_hash"].GetString();
+				if(doc["data_hash"].IsString())
+					data_hash = doc["data_hash"].GetString();
+				else
+					std::cerr << "Error: Field \"data_hash\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"data_hash\"." << std::endl;
 
 			if(doc.HasMember("message"))
-				message = doc["message"].GetString();
+				if(doc["message"].IsString())
+					message = doc["message"].GetString();
+				else
+					std::cerr << "Error: Field \"message\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"message\"." << std::endl;
 		}
+		else
+			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
 	}
 
 	std::string PassportElementErrorDataField::parse_to_json() const

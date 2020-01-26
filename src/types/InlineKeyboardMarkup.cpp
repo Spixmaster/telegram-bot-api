@@ -18,13 +18,13 @@ namespace tgbot
 			if(doc.HasMember("inline_keyboard"))
 				if(doc["inline_keyboard"].IsArray())
 				{
+					const rapidjson::Value &keyboard_array = doc["inline_keyboard"].GetArray();
+
+					//reserve enough rows
+					inline_keyboard.resize(keyboard_array.Size());
+
 					for(std::size_t row = 0; row < doc["inline_keyboard"].GetArray().Size(); ++row)
 					{
-						const rapidjson::Value &keyboard_array = doc["inline_keyboard"].GetArray();
-
-						//reserve enough rows
-						inline_keyboard.resize(keyboard_array.Size());
-
 						if(keyboard_array[row].IsArray())
 						{
 							//reserve enough columns for each row
@@ -47,6 +47,8 @@ namespace tgbot
 			else
 				std::cerr << "Error: There is no field \"inline_keyboard\"." << std::endl;
 		}
+		else
+			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
 	}
 
 	InlineKeyboardMarkup::InlineKeyboardMarkup(const std::vector<std::vector<InlineKeyboardButton::ptr>> &keyboard) : inline_keyboard(keyboard)

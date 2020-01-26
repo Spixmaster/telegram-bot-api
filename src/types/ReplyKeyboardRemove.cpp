@@ -1,5 +1,6 @@
 #include "tgbot/types/ReplyKeyboardRemove.h"
 #include "tools/Tools.h"
+#include <iostream>
 
 namespace tgbot
 {
@@ -15,11 +16,23 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("remove_keyboard"))
-				remove_keyboard = doc["remove_keyboard"].GetBool();
+				if(doc["remove_keyboard"].IsBool())
+					remove_keyboard = doc["remove_keyboard"].GetBool();
+				else
+					std::cerr << "Error: Field \"remove_keyboard\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"remove_keyboard\"." << std::endl;
 
 			if(doc.HasMember("selective"))
-				selective = doc["selective"].GetBool();
+				if(doc["selective"].IsBool())
+					selective = doc["selective"].GetBool();
+				else
+					std::cerr << "Error: Field \"selective\" does not contain a bool." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"selective\"." << std::endl;
 		}
+		else
+			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
 	}
 
 	std::string ReplyKeyboardRemove::parse_to_json() const

@@ -1,5 +1,6 @@
 #include "tgbot/types/WebhookInfo.h"
 #include "tools/Tools.h"
+#include <iostream>
 
 namespace tgbot
 {
@@ -16,31 +17,68 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("url"))
-				url = doc["url"].GetString();
+				if(doc["url"].IsString())
+					url = doc["url"].GetString();
+				else
+					std::cerr << "Error: Field \"url\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"url\"." << std::endl;
 
 			if(doc.HasMember("has_custom_certificate"))
 				has_custom_certificate = doc["has_custom_certificate"].GetBool();
 
 			if(doc.HasMember("pending_update_count"))
-				pending_update_count = doc["pending_update_count"].GetInt();
+				if(doc["pending_update_count"].IsInt())
+					pending_update_count = doc["pending_update_count"].GetInt();
+				else
+					std::cerr << "Error: Field \"pending_update_count\" does not contain an int." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"pending_update_count\"." << std::endl;
 
 			if(doc.HasMember("last_error_date"))
-				last_error_date = doc["last_error_date"].GetInt();
+				if(doc["last_error_date"].IsInt())
+					last_error_date = doc["last_error_date"].GetInt();
+				else
+					std::cerr << "Error: Field \"last_error_date\" does not contain an int." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"last_error_date\"." << std::endl;
 
 			if(doc.HasMember("last_error_message"))
-				last_error_message = doc["last_error_message"].GetString();
+				if(doc["last_error_message"].IsString())
+					last_error_message = doc["last_error_message"].GetString();
+				else
+					std::cerr << "Error: Field \"last_error_message\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"last_error_message\"." << std::endl;
 
 			if(doc.HasMember("max_connections"))
-				max_connections = doc["max_connections"].GetInt();
+				if(doc["max_connections"].IsInt())
+					max_connections = doc["max_connections"].GetInt();
+				else
+					std::cerr << "Error: Field \"max_connections\" does not contain an int." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"max_connections\"." << std::endl;
 
 			if(doc.HasMember("allowed_updates"))
-				for(std::size_t j = 0; j < doc["allowed_updates"].GetArray().Size(); ++j)
+				if(doc["allowed_updates"].IsArray())
 				{
 					allowed_updates.resize(doc["allowed_updates"].GetArray().Size());
 
-					allowed_updates.at(j) = doc["photo"][j].GetString();
+					for(std::size_t j = 0; j < doc["allowed_updates"].GetArray().Size(); ++j)
+					{
+						if(doc["allowed_updates"][j].IsObject())
+							allowed_updates.at(j) = doc["allowed_updates"][j].GetString();
+						else
+							std::cerr << "Error: Field \"allowed_updates\"'s json array's element is not a json object." << std::endl;
+					}
 				}
+				else
+					std::cerr << "Error: Field \"allowed_updates\" does not contain a json array." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"allowed_updates\"." << std::endl;
 		}
+		else
+			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
 	}
 
 	std::string WebhookInfo::parse_to_json() const

@@ -42,6 +42,8 @@ namespace tgbot
 			if(doc.HasMember("reply_markup"))
 				reply_markup = std::make_shared<InlineKeyboardMarkup>(tools::Tools::get_json_as_string(doc["reply_markup"]));
 		}
+		else
+			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
 	}
 
 	std::string InlineQueryResultCachedSticker::parse_to_json() const

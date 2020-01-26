@@ -16,6 +16,7 @@ namespace tgbot
 
 		//member variables
 		std::string file_id;
+		std::string file_unique_id;
 		PhotoSize::ptr thumb;
 		std::string file_name;
 		std::string mime_type;

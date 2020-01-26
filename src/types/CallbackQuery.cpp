@@ -71,6 +71,8 @@ namespace tgbot
 			else
 				std::cerr << "Error: There is no field \"game_short_name\"." << std::endl;
 		}
+		else
+			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
 	}
 
 	std::string CallbackQuery::parse_to_json() const

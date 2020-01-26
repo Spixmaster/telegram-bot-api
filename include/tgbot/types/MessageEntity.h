@@ -20,6 +20,7 @@ namespace tgbot
 		int length = -1;
 		std::string url;
 		User::ptr user;
+		std::string language;
 
 		//constructors
 		MessageEntity();

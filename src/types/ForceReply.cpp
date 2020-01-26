@@ -31,6 +31,8 @@ namespace tgbot
 			else
 				std::cerr << "Error: There is no field \"selective\"." << std::endl;
 		}
+		else
+			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
 	}
 
 	std::string ForceReply::parse_to_json() const

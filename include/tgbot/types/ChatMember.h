@@ -17,6 +17,7 @@ namespace tgbot
 		//member variables
 		User::ptr user;
 		std::string status;
+		std::string custom_title;
 		int until_date = -1;
 		bool can_be_edited;
 		bool can_post_messages;
@@ -26,6 +27,7 @@ namespace tgbot
 		bool can_promote_members;
 		bool can_change_info;
 		bool can_invite_users;
+		bool can_pin_messages;
 		bool is_member;
 		bool can_send_messages;
 		bool can_send_media_messages;

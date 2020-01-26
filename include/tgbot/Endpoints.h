@@ -143,20 +143,20 @@ namespace tgbot
 		 * @brief sends an audio to the chat
 		 * @param chat_id: states chat id to which the audio shall be sent
 		 * @param audio: audio which is sent; can be url, file_id to file on Telegram server, InputFile with file on own machine
-		 * @param thumb: thumbnail of the audio; can be url, file_id to file on Telegram server, InputFile with file on own machine
 		 * @param caption: caption of the audio
 		 * @param parse_mode: refers to the caption how it shall be parsed; either HTML of Markdown
 		 * @param duration: duration of the audio
 		 * @param performer: performer of the audio
 		 * @param title: title of the audio
+		 * @param thumb: thumbnail of the audio; can be url, file_id to file on Telegram server, InputFile with file on own machine
 		 * @param disable_notification: whether users shall be notified of the sent audio
 		 * @param reply_to_message_id: to which message this is a reply
 		 * @param reply_markup: keyboard which is sent with the audio
 		 * @return sent message
 		 */
-		Message::ptr sendAudio(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &audio, const std::variant<std::string,
-				tools::InputFile::ptr> &thumb, const std::string &caption = "", const std::string &parse_mode = "", const int &duration = 0,
-				const std::string &performer = "", const std::string &title = "", const bool &disable_notification = false, const int &reply_to_message_id = 0,
+		Message::ptr sendAudio(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &audio, const std::string &caption = "",
+				const std::string &parse_mode = "", const int &duration = 0, const std::string &performer = "", const std::string &title = "",
+				const std::variant<std::string, tools::InputFile::ptr> &thumb = "", const bool &disable_notification = false, const int &reply_to_message_id = 0,
 				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
 
 		/*
@@ -171,18 +171,18 @@ namespace tgbot
 		 * @param reply_markup: keyboard which is sent with the audio
 		 * @return sent message
 		 */
-		Message::ptr sendDocument(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &document, const std::variant<std::string, tools::InputFile::ptr> &thumb,
-				const std::string &caption = "", const std::string &parse_mode = "", const bool &disable_notification = false, const int &reply_to_message_id = 0,
-				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
+		Message::ptr sendDocument(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &document,
+				const std::variant<std::string, tools::InputFile::ptr> &thumb = "", const std::string &caption = "", const std::string &parse_mode = "",
+				const bool &disable_notification = false, const int &reply_to_message_id = 0, const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
 
 		/*
 		 * @brief sends a video to the chat
 		 * @param chat_id: states chat id to which the video shall be sent
 		 * @param video: video which is sent; can be url, file_id to file on Telegram server, InputFile with file on own machine
-		 * @param thumb: thumbnail of the video; can be url, file_id to file on Telegram server, InputFile with file on own machine
 		 * @param duration: video's duration
 		 * @param width: video's width
 		 * @param height: video's height
+		 * @param thumb: thumbnail of the video; can be url, file_id to file on Telegram server, InputFile with file on own machine
 		 * @param caption: caption of the video
 		 * @param parse_mode: refers to the caption how it shall be parsed; either HTML of Markdown
 		 * @param supports_streaming: state whether video is suitable for streaming
@@ -191,8 +191,8 @@ namespace tgbot
 		 * @param reply_markup: keyboard which is sent with the audio
 		 * @return sent message
 		 */
-		Message::ptr sendVideo(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &video, const std::variant<std::string,
-				tools::InputFile::ptr> &thumb, const int &duration = 0, const int &width = 0, const int &height = 0, const std::string &caption = "",
+		Message::ptr sendVideo(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &video, const int &duration = 0, const int &width = 0,
+				const int &height = 0, const std::variant<std::string, tools::InputFile::ptr> &thumb = "", const std::string &caption = "",
 				const std::string &parse_mode = "", const bool &supports_streaming = false, const bool &disable_notification = false, const int &reply_to_message_id = 0,
 				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
 
@@ -200,10 +200,10 @@ namespace tgbot
 		 * @brief sends a animation to the chat
 		 * @param chat_id: states chat id to which the animation shall be sent
 		 * @param animation: animation which is sent; can be url, file_id to file on Telegram server, InputFile with file on own machine
-		 * @param thumb: thumbnail of the animation; can be url, file_id to file on Telegram server, InputFile with file on own machine
 		 * @param duration: animation's duration
 		 * @param width: animation's width
 		 * @param height: animation's height
+		 * @param thumb: thumbnail of the animation; can be url, file_id to file on Telegram server, InputFile with file on own machine
 		 * @param caption: caption of the animation
 		 * @param parse_mode: refers to the caption how it shall be parsed; either HTML of Markdown
 		 * @param disable_notification: whether users shall be notified of the sent animation
@@ -212,7 +212,7 @@ namespace tgbot
 		 * @return sent message
 		 */
 		Message::ptr sendAnimation(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &animation,
-				const std::variant<std::string, tools::InputFile::ptr> &thumb, const int &duration = 0, const int &width = 0, const int &height = 0,
+				const int &duration = 0, const int &width = 0, const int &height = 0, const std::variant<std::string, tools::InputFile::ptr> &thumb = "",
 				const std::string &caption = "", const std::string &parse_mode = "", const bool &disable_notification = false, const int &reply_to_message_id = 0,
 				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
 
@@ -236,16 +236,16 @@ namespace tgbot
 		 * @brief sends a video note to the chat
 		 * @param chat_id: states chat id to which the video note shall be sent
 		 * @param video_note: video note which is sent; can be url, file_id to file on Telegram server, InputFile with file on own machine
-		 * @param thumb: thumbnail of the video note; can be url, file_id to file on Telegram server, InputFile with file on own machine
 		 * @param duration: video note's duration
 		 * @param length: video note's length
+		 * @param thumb: thumbnail of the video note; can be url, file_id to file on Telegram server, InputFile with file on own machine
 		 * @param disable_notification: whether users shall be notified of the sent video note
 		 * @param reply_to_message_id: to which message this is a reply
 		 * @param reply_markup: keyboard which is sent with the video note
 		 * @return sent message
 		 */
 		Message::ptr sendVideoNote(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &video_note,
-				const std::variant<std::string, tools::InputFile::ptr> &thumb, const int &duration = 0, const int &length = 0,
+				const int &duration = 0, const int &length = 0, const std::variant<std::string, tools::InputFile::ptr> &thumb = "",
 				const bool &disable_notification = false, const int &reply_to_message_id = 0, const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
 
 		/*
@@ -254,11 +254,10 @@ namespace tgbot
 		 * @param media: media vector which is sent; can be url, file_id to file on Telegram server, InputFile with file on own machine
 		 * @param disable_notification: whether users shall be notified of the sent media group
 		 * @param reply_to_message_id: to which message this is a reply
-		 * @param reply_markup: keyboard which is sent with the media group
 		 * @return vector of the sent messages
 		 */
 		std::vector<Message::ptr> sendMediaGroup(const long long &chat_id, const std::vector<std::variant<InputMediaPhoto::ptr, InputMediaVideo::ptr>> &media,
-				const bool &disable_notification = false, const int &reply_to_message_id = 0, const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
+				const bool &disable_notification = false, const int &reply_to_message_id = 0) const;
 
 		/*
 		 * @brief sends a location to the chat
@@ -312,7 +311,7 @@ namespace tgbot
 		 * @param reply_markup: keyboard which is sent with the venue
 		 * @return sent message
 		 */
-		Message::ptr sendVenue(const long long &chat_id, const float &latitude, const float &longitude, const std::string &title = "", const std::string &address = "",
+		Message::ptr sendVenue(const long long &chat_id, const float &latitude, const float &longitude, const std::string &title, const std::string &address,
 				const std::string &foursquare_id = "", const std::string &foursquare_type = "", const bool &disable_notification = false, const int &reply_to_message_id = 0,
 				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
 
@@ -321,8 +320,8 @@ namespace tgbot
 		 * @param chat_id: states chat id to which the contact shall be sent
 		 * @param phone_number: contact's phone number
 		 * @param first_name: contact's first name
-		 * @param first_name: contact's last name
-		 * @param first_name: contact's vcard
+		 * @param last_name: contact's last name
+		 * @param vcard: contact's vcard
 		 * @param disable_notification: whether users shall be notified of the sent contact
 		 * @param reply_to_message_id: to which message this is a reply
 		 * @param reply_markup: keyboard which is sent with the contact
@@ -337,12 +336,18 @@ namespace tgbot
 		 * @param chat_id: states chat id to which the poll shall be sent
 		 * @param question: poll's question
 		 * @param options: vector of arrays where every element represents one answer option
+		 * @param is_anonymous: true if poll needs to be anonymous
+		 * @param type: quiz's type, can be “quiz” or “regular”
+		 * @param allows_multiple_answers: whether multiple answers are allowed
+		 * @param correct_option_id: 0-based identifier of the correct answer option, required for polls in quiz mode
+		 * @param is_closed: Pass true, if the poll needs to be immediately closed
 		 * @param disable_notification: whether users shall be notified of the sent poll
 		 * @param reply_to_message_id: to which message this is a reply
 		 * @param reply_markup: keyboard which is sent with the poll
 		 * @return sent message
 		 */
-		Message::ptr sendPoll(const long long &chat_id, const std::string &question, const std::vector<std::string> &options,
+		Message::ptr sendPoll(const long long &chat_id, const std::string &question, const std::vector<std::string> &options, const bool &is_anonymous = true,
+				const std::string &type = "regular", const bool &allows_multiple_answers = false, const int correct_option_id = -1, const bool &is_closed = false,
 				const bool &disable_notification = false, const int &reply_to_message_id = 0, const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
 
 		/*
@@ -419,6 +424,15 @@ namespace tgbot
 
 		/*
 		 * @brief sets default permissions an entire group
+		 * @param chat_id: chat in which the administrator's custom title shall be edited
+		 * @param user_id: administrator's user id
+		 * @param custom_title: the actual title
+		 * @return true on success
+		 */
+		bool setChatAdministratorCustomTitle(const long long &chat_id, const int &user_id, const std::string &custom_title) const;
+
+		/*
+		 * @brief sets default permissions an entire group
 		 * @param chat_id: chat in which the default permissions are edited
 		 * @param permissions: the default permissions by passing type ChatPermissions
 		 * @return true on success
@@ -461,7 +475,7 @@ namespace tgbot
 		 * @param description: the corresponding description
 		 * @return true on success
 		 */
-		bool setChatDescription(const long long &chat_id, const std::string &description) const;
+		bool setChatDescription(const long long &chat_id, const std::string &description = "") const;
 
 		/*
 		 * @brief pins a message in the group
@@ -603,7 +617,7 @@ namespace tgbot
 		Poll::ptr stopPoll(const long long &chat_id, const int &message_id, const Reply::ptr reply_markup = std::make_shared<Reply>()) const;
 
 		/*
-		 * @brief eletes a message
+		 * @brief deletes a message
 		 * @param chat_id: id of chat in which the message is which shall be deleted
 		 * @param message_id: id of message which shall be deleted
 		 * @return true on success
@@ -655,13 +669,12 @@ namespace tgbot
 		 * @brief adds a sticker to a created set by a bot
 		 * @param user_id: user id of sticker set owner
 		 * @param name: name of sticker set
-		 * @param title: sticker set title
 		 * @param png_sticker: the sticker itself
 		 * @param emojis: one or more emojis correspoding to the sticker
 		 * @param mask_position: A JSON-serialized object for position where the mask should be placed on faces
 		 * @return true on success
 		 */
-		bool addStickerToSet(const int &user_id, const std::string &name, const std::string &title, const std::variant<std::string, tools::InputFile::ptr> &png_sticker,
+		bool addStickerToSet(const int &user_id, const std::string &name, const std::variant<std::string, tools::InputFile::ptr> &png_sticker,
 				const std::string &emojis, const MaskPosition::ptr &mask_position = std::make_shared<MaskPosition>()) const;
 
 		/*

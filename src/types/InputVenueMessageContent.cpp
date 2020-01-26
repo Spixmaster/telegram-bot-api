@@ -1,5 +1,6 @@
 #include "tgbot/types/InputVenueMessageContent.h"
 #include "tools/Tools.h"
+#include <iostream>
 
 namespace tgbot
 {
@@ -15,23 +16,55 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("latitude"))
-				latitude = doc["latitude"].GetFloat();
+				if(doc["latitude"].IsFloat())
+					latitude = doc["latitude"].GetFloat();
+				else
+					std::cerr << "Error: Field \"latitude\" does not contain a float." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"latitude\"." << std::endl;
 
 			if(doc.HasMember("longitude"))
-				longitude = doc["longitude"].GetFloat();
+				if(doc["longitude"].IsFloat())
+					longitude = doc["longitude"].GetFloat();
+				else
+					std::cerr << "Error: Field \"longitude\" does not contain a float." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"longitude\"." << std::endl;
 
 			if(doc.HasMember("title"))
-				title = doc["title"].GetString();
+				if(doc["title"].IsString())
+					title = doc["title"].GetString();
+				else
+					std::cerr << "Error: Field \"title\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"title\"." << std::endl;
 
 			if(doc.HasMember("address"))
-				address = doc["address"].GetString();
+				if(doc["address"].IsString())
+					address = doc["address"].GetString();
+				else
+					std::cerr << "Error: Field \"address\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"address\"." << std::endl;
 
 			if(doc.HasMember("foursquare_id"))
-				foursquare_id = doc["foursquare_id"].GetString();
+				if(doc["foursquare_id"].IsString())
+					foursquare_id = doc["foursquare_id"].GetString();
+				else
+					std::cerr << "Error: Field \"foursquare_id\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"foursquare_id\"." << std::endl;
 
 			if(doc.HasMember("foursquare_type"))
-				foursquare_type = doc["foursquare_type"].GetString();
+				if(doc["foursquare_type"].IsString())
+					foursquare_type = doc["foursquare_type"].GetString();
+				else
+					std::cerr << "Error: Field \"foursquare_type\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"foursquare_type\"." << std::endl;
 		}
+		else
+			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
 	}
 
 	std::string InputVenueMessageContent::parse_to_json() const

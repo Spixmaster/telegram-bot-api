@@ -23,6 +23,7 @@ namespace tgbot
 		std::string title;
 		std::string caption;
 		std::string parse_mode;
+		int voice_duration;
 		InlineKeyboardMarkup::ptr reply_markup;
 		InputMessageContent::ptr input_message_content;
 

@@ -1,5 +1,6 @@
 #include "tgbot/types/ShippingOption.h"
 #include "tools/Tools.h"
+#include <iostream>
 
 namespace tgbot
 {
@@ -15,19 +16,41 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("id"))
-				id = doc["id"].GetString();
+				if(doc["id"].IsString())
+					id = doc["id"].GetString();
+				else
+					std::cerr << "Error: Field \"id\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"id\"." << std::endl;
 
 			if(doc.HasMember("title"))
-				title = doc["title"].GetString();
+				if(doc["title"].IsString())
+					title = doc["title"].GetString();
+				else
+					std::cerr << "Error: Field \"title\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"title\"." << std::endl;
 
 			if(doc.HasMember("prices"))
-				for(std::size_t j = 0; j < doc["prices"].GetArray().Size(); ++j)
+				if(doc["prices"].IsArray())
 				{
 					prices.resize(doc["prices"].GetArray().Size());
 
-					prices.at(j) = std::make_shared<LabeledPrice>(tools::Tools::get_json_as_string(doc["prices"][j]));
+					for(std::size_t j = 0; j < doc["prices"].GetArray().Size(); ++j)
+					{
+						if(doc["prices"][j].IsObject())
+							prices.at(j) = std::make_shared<LabeledPrice>(tools::Tools::get_json_as_string(doc["prices"][j]));
+						else
+							std::cerr << "Error: Field \"prices\"'s json array's element is not a json object." << std::endl;
+					}
 				}
+				else
+					std::cerr << "Error: Field \"prices\" does not contain a json array." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"prices\"." << std::endl;
 		}
+		else
+			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
 	}
 
 	std::string ShippingOption::parse_to_json() const

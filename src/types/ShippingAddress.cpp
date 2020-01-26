@@ -1,9 +1,10 @@
 #include "tgbot/types/ShippingAddress.h"
 #include "tools/Tools.h"
+#include <iostream>
 
 namespace tgbot
 {
-	ShippingAddress::ShippingAddress() : country_code(), state(), city(), street_line1(), street_line2(), postcode()
+	ShippingAddress::ShippingAddress() : country_code(), state(), city(), street_line1(), street_line2(), post_code()
 	{}
 
 	ShippingAddress::ShippingAddress(const std::string &json)
@@ -15,23 +16,55 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("country_code"))
-				country_code = doc["country_code"].GetString();
+				if(doc["country_code"].IsString())
+					country_code = doc["country_code"].GetString();
+				else
+					std::cerr << "Error: Field \"country_code\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"country_code\"." << std::endl;
 
 			if(doc.HasMember("state"))
-				state = doc["state"].GetString();
+				if(doc["state"].IsString())
+					state = doc["state"].GetString();
+				else
+					std::cerr << "Error: Field \"state\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"state\"." << std::endl;
 
 			if(doc.HasMember("city"))
-				city = doc["city"].GetString();
+				if(doc["city"].IsString())
+					city = doc["city"].GetString();
+				else
+					std::cerr << "Error: Field \"city\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"city\"." << std::endl;
 
 			if(doc.HasMember("street_line1"))
-				street_line1 = doc["street_line1"].GetString();
+				if(doc["street_line1"].IsString())
+					street_line1 = doc["street_line1"].GetString();
+				else
+					std::cerr << "Error: Field \"street_line1\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"street_line1\"." << std::endl;
 
 			if(doc.HasMember("street_line2"))
-				street_line2 = doc["street_line2"].GetString();
+				if(doc["street_line2"].IsString())
+					street_line2 = doc["street_line2"].GetString();
+				else
+					std::cerr << "Error: Field \"street_line2\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"street_line2\"." << std::endl;
 
-			if(doc.HasMember("postcode"))
-				postcode = doc["postcode"].GetString();
+			if(doc.HasMember("post_code"))
+				if(doc["post_code"].IsString())
+					post_code = doc["post_code"].GetString();
+				else
+					std::cerr << "Error: Field \"post_code\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"post_code\"." << std::endl;
 		}
+		else
+			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
 	}
 
 	std::string ShippingAddress::parse_to_json() const
@@ -58,8 +91,8 @@ namespace tgbot
 		json.append("\"street_line2\": \"" + street_line2 + "\"");
 		json.append(", ");
 
-		//field postcode
-		json.append("\"postcode\": \"" + postcode + "\"");
+		//field post_code
+		json.append("\"post_code\": \"" + post_code + "\"");
 
 		json.append("}");
 

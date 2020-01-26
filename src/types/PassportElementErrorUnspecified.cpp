@@ -1,5 +1,6 @@
 #include "tgbot/types/PassportElementErrorUnspecified.h"
 #include "tools/Tools.h"
+#include <iostream>
 
 namespace tgbot
 {
@@ -15,17 +16,39 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("source"))
-				source = doc["source"].GetString();
+				if(doc["source"].IsString())
+					source = doc["source"].GetString();
+				else
+					std::cerr << "Error: Field \"source\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"source\"." << std::endl;
 
 			if(doc.HasMember("type"))
-				type = doc["type"].GetString();
+				if(doc["type"].IsString())
+					type = doc["type"].GetString();
+				else
+					std::cerr << "Error: Field \"type\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"type\"." << std::endl;
 
 			if(doc.HasMember("element_hash"))
-				element_hash = doc["element_hash"].GetString();
+				if(doc["element_hash"].IsString())
+					element_hash = doc["element_hash"].GetString();
+				else
+					std::cerr << "Error: Field \"element_hash\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"element_hash\"." << std::endl;
 
 			if(doc.HasMember("message"))
-				message = doc["message"].GetString();
+				if(doc["message"].IsString())
+					message = doc["message"].GetString();
+				else
+					std::cerr << "Error: Field \"message\" does not contain a string." << std::endl;
+			else
+				std::cerr << "Error: There is no field \"message\"." << std::endl;
 		}
+		else
+			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
 	}
 
 	std::string PassportElementErrorUnspecified::parse_to_json() const
