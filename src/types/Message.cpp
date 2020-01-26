@@ -25,120 +25,90 @@ namespace tgbot
 					message_id = doc["message_id"].GetInt();
 				else
 					std::cerr << "Error: Field \"message_id\" does not contain an int." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"message_id\"." << std::endl;
 
 			if(doc.HasMember("from"))
 				if(doc["from"].IsObject())
 					from = std::make_shared<User>(tools::Tools::get_json_as_string(doc["from"]));
 				else
 					std::cerr << "Error: Field \"from\" does not contain a json object." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"from\"." << std::endl;
 
 			if(doc.HasMember("date"))
 				if(doc["date"].IsInt())
 					date = doc["date"].GetInt();
 				else
 					std::cerr << "Error: Field \"date\" does not contain an int." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"date\"." << std::endl;
 
 			if(doc.HasMember("chat"))
 				if(doc["chat"].IsObject())
 					chat = std::make_shared<Chat>(tools::Tools::get_json_as_string(doc["chat"]));
 				else
 					std::cerr << "Error: Field \"chat\" does not contain a json object." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"chat\"." << std::endl;
 
 			if(doc.HasMember("forward_from"))
 				if(doc["forward_from"].IsObject())
 					forward_from = std::make_shared<User>(tools::Tools::get_json_as_string(doc["forward_from"]));
 				else
 					std::cerr << "Error: Field \"forward_from\" does not contain a json object." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"forward_from\"." << std::endl;
 
 			if(doc.HasMember("forward_from_chat"))
 				if(doc["forward_from_chat"].IsObject())
 					forward_from_chat = std::make_shared<Chat>(tools::Tools::get_json_as_string(doc["forward_from_chat"]));
 				else
 					std::cerr << "Error: Field \"forward_from_chat\" does not contain a json object." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"forward_from_chat\"." << std::endl;
 
 			if(doc.HasMember("forward_from_message_id"))
 				if(doc["forward_from_message_id"].IsInt())
 					forward_from_message_id = doc["forward_from_message_id"].GetInt();
 				else
 					std::cerr << "Error: Field \"forward_from_message_id\" does not contain an int." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"forward_from_message_id\"." << std::endl;
 
 			if(doc.HasMember("forward_signature"))
 				if(doc["forward_signature"].IsString())
 					forward_signature = doc["forward_signature"].GetString();
 				else
 					std::cerr << "Error: Field \"forward_signature\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"forward_signature\"." << std::endl;
 
 			if(doc.HasMember("forward_sender_name"))
 				if(doc["forward_sender_name"].IsString())
 					forward_sender_name = doc["forward_sender_name"].GetString();
 				else
 					std::cerr << "Error: Field \"forward_sender_name\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"forward_sender_name\"." << std::endl;
 
 			if(doc.HasMember("forward_date"))
 				if(doc["forward_date"].IsInt())
 					forward_date = doc["forward_date"].GetInt();
 				else
 					std::cerr << "Error: Field \"forward_date\" does not contain an int." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"forward_date\"." << std::endl;
 
 			if(doc.HasMember("reply_to_message"))
 				if(doc["reply_to_message"].IsObject())
 					reply_to_message = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["reply_to_message"]));
 				else
 					std::cerr << "Error: Field \"reply_to_message\" does not contain a json object." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"reply_to_message\"." << std::endl;
 
 			if(doc.HasMember("edit_date"))
 				if(doc["edit_date"].IsInt())
 					edit_date = doc["edit_date"].GetInt();
 				else
 					std::cerr << "Error: Field \"edit_date\" does not contain an int." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"edit_date\"." << std::endl;
 
 			if(doc.HasMember("media_group_id"))
 				if(doc["media_group_id"].IsString())
 					media_group_id = doc["media_group_id"].GetString();
 				else
 					std::cerr << "Error: Field \"media_group_id\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"media_group_id\"." << std::endl;
 
 			if(doc.HasMember("author_signature"))
 				if(doc["author_signature "].IsString())
 					author_signature = doc["author_signature"].GetString();
 				else
 					std::cerr << "Error: Field \"author_signature\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"author_signature\"." << std::endl;
 
 			if(doc.HasMember("text"))
 				if(doc["text"].IsString())
 					text = doc["text"].GetString();
 				else
 					std::cerr << "Error: Field \"text\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"text\"." << std::endl;
 
 			if(doc.HasMember("entities"))
 				if(doc["entities"].IsArray())
@@ -155,8 +125,6 @@ namespace tgbot
 				}
 				else
 					std::cerr << "Error: Field \"entities\" does not contain a json array." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"entities\"." << std::endl;
 
 			if(doc.HasMember("caption_entities"))
 				if(doc["caption_entities"].IsArray())
@@ -173,40 +141,30 @@ namespace tgbot
 				}
 				else
 					std::cerr << "Error: Field \"caption_entities\" does not contain a json array." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"caption_entities\"." << std::endl;
 
 			if(doc.HasMember("audio"))
 				if(doc["audio"].IsObject())
 					audio = std::make_shared<Audio>(tools::Tools::get_json_as_string(doc["audio"]));
 				else
 					std::cerr << "Error: Field \"audio\" does not contain a json object." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"audio\"." << std::endl;
 
 			if(doc.HasMember("document"))
 				if(doc["document"].IsObject())
 					document = std::make_shared<Document>(tools::Tools::get_json_as_string(doc["document"]));
 				else
 					std::cerr << "Error: Field \"document\" does not contain a json object." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"document\"." << std::endl;
 
 			if(doc.HasMember("animation"))
 				if(doc["animation"].IsObject())
 					animation = std::make_shared<Animation>(tools::Tools::get_json_as_string(doc["animation"]));
 				else
 					std::cerr << "Error: Field \"animation\" does not contain a json object." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"animation\"." << std::endl;
 
 			if(doc.HasMember("game"))
 				if(doc["game"].IsObject())
 					game = std::make_shared<Game>(tools::Tools::get_json_as_string(doc["game"]));
 				else
 					std::cerr << "Error: Field \"game\" does not contain a json object." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"game\"." << std::endl;
 
 			if(doc.HasMember("photo"))
 				if(doc["photo"].IsArray())
@@ -223,80 +181,60 @@ namespace tgbot
 				}
 				else
 					std::cerr << "Error: Field \"photo\" does not contain a json array." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"photo\"." << std::endl;
 
 			if(doc.HasMember("sticker"))
 				if(doc["sticker"].IsObject())
 					sticker = std::make_shared<Sticker>(tools::Tools::get_json_as_string(doc["sticker"]));
 				else
 					std::cerr << "Error: Field \"sticker\" does not contain a json object." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"sticker\"." << std::endl;
 
 			if(doc.HasMember("video"))
 				if(doc["video"].IsObject())
 					video = std::make_shared<Video>(tools::Tools::get_json_as_string(doc["video"]));
 				else
 					std::cerr << "Error: Field \"video\" does not contain a json object." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"video\"." << std::endl;
 
 			if(doc.HasMember("voice"))
 				if(doc["voice"].IsObject())
 					voice = std::make_shared<Voice>(tools::Tools::get_json_as_string(doc["voice"]));
 				else
 					std::cerr << "Error: Field \"voice\" does not contain a json object." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"voice\"." << std::endl;
 
 			if(doc.HasMember("video_note"))
 				if(doc["video_note"].IsObject())
 					video_note = std::make_shared<VideoNote>(tools::Tools::get_json_as_string(doc["video_note"]));
 				else
 					std::cerr << "Error: Field \"video_note\" does not contain a json object." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"video_note\"." << std::endl;
 
 			if(doc.HasMember("caption"))
 				if(doc["caption"].IsString())
 					caption = doc["caption"].GetString();
 				else
 					std::cerr << "Error: Field \"caption\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"caption\"." << std::endl;
 
 			if(doc.HasMember("contact"))
 				if(doc["contact"].IsObject())
 					contact = std::make_shared<Contact>(tools::Tools::get_json_as_string(doc["contact"]));
 				else
 					std::cerr << "Error: Field \"contact\" does not contain a json object." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"contact\"." << std::endl;
 
 			if(doc.HasMember("location"))
 				if(doc["location"].IsObject())
 					location = std::make_shared<Location>(tools::Tools::get_json_as_string(doc["location"]));
 				else
 					std::cerr << "Error: Field \"location\" does not contain a json object." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"location\"." << std::endl;
 
 			if(doc.HasMember("venue"))
 				if(doc["venue"].IsObject())
 					venue = std::make_shared<Venue>(tools::Tools::get_json_as_string(doc["venue"]));
 				else
 					std::cerr << "Error: Field \"venue\" does not contain a json object." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"venue\"." << std::endl;
 
 			if(doc.HasMember("poll"))
 				if(doc["poll"].IsObject())
 					poll = std::make_shared<Poll>(tools::Tools::get_json_as_string(doc["poll"]));
 				else
 					std::cerr << "Error: Field \"poll\" does not contain a json object." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"poll\"." << std::endl;
 
 			if(doc.HasMember("new_chat_members"))
 				if(doc["new_chat_members"].IsArray())
@@ -311,26 +249,18 @@ namespace tgbot
 							std::cerr << "Error: Field \"new_chat_members\"'s json array's element is not a json object." << std::endl;
 					}
 				}
-				else
-					std::cerr << "Error: Field \"new_chat_members\" does not contain a json array." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"new_chat_members\"." << std::endl;
 
 			if(doc.HasMember("left_chat_member"))
 				if(doc["left_chat_member"].IsObject())
 					left_chat_member = std::make_shared<User>(tools::Tools::get_json_as_string(doc["left_chat_member"]));
 				else
 					std::cerr << "Error: Field \"left_chat_member\" does not contain a json object." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"left_chat_member\"." << std::endl;
 
 			if(doc.HasMember("new_chat_title"))
 				if(doc["new_chat_title"].IsString())
 					new_chat_title = doc["new_chat_title"].GetString();
 				else
 					std::cerr << "Error: Field \"new_chat_title\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"new_chat_title\"." << std::endl;
 
 			if(doc.HasMember("new_chat_photo"))
 				if(doc["new_chat_photo"].IsArray())
@@ -347,104 +277,78 @@ namespace tgbot
 				}
 				else
 					std::cerr << "Error: Field \"new_chat_photo\" does not contain a json array." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"new_chat_photo\"." << std::endl;
 
 			if(doc.HasMember("delete_chat_photo"))
 				if(doc["delete_chat_photo"].IsBool())
 					delete_chat_photo = doc["delete_chat_photo"].GetBool();
 				else
 					std::cerr << "Error: Field \"delete_chat_photo\" does not contain a bool." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"delete_chat_photo\"." << std::endl;
 
 			if(doc.HasMember("group_chat_created"))
 				if(doc["group_chat_created"].IsBool())
 					group_chat_created = doc["group_chat_created"].GetBool();
 				else
 					std::cerr << "Error: Field \"group_chat_created\" does not contain a bool." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"group_chat_created\"." << std::endl;
 
 			if(doc.HasMember("supergroup_chat_created"))
 				if(doc["supergroup_chat_created"].IsBool())
 					supergroup_chat_created = doc["supergroup_chat_created"].GetBool();
 				else
 					std::cerr << "Error: Field \"supergroup_chat_created\" does not contain a bool." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"supergroup_chat_created\"." << std::endl;
 
 			if(doc.HasMember("channel_chat_created"))
 				if(doc["channel_chat_created"].IsBool())
 					channel_chat_created = doc["channel_chat_created"].GetBool();
 				else
 					std::cerr << "Error: Field \"channel_chat_created\" does not contain a bool." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"channel_chat_created\"." << std::endl;
 
 			if(doc.HasMember("migrate_to_chat_id"))
 				if(doc["migrate_to_chat_id"].IsInt())
 					migrate_to_chat_id = doc["migrate_to_chat_id"].GetInt();
 				else
 					std::cerr << "Error: Field \"migrate_to_chat_id\" does not contain an int." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"migrate_to_chat_id\"." << std::endl;
 
 			if(doc.HasMember("migrate_from_chat_id"))
 				if(doc["migrate_from_chat_id"].IsInt())
 					migrate_from_chat_id = doc["migrate_from_chat_id"].GetInt();
 				else
 					std::cerr << "Error: Field \"migrate_from_chat_id\" does not contain an int." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"migrate_from_chat_id\"." << std::endl;
 
 			if(doc.HasMember("pinned_message"))
 				if(doc["pinned_message"].IsObject())
 					pinned_message = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["pinned_message"]));
 				else
 					std::cerr << "Error: Field \"pinned_message\" does not contain a json object." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"pinned_message\"." << std::endl;
 
 			if(doc.HasMember("invoice"))
 				if(doc["invoice"].IsObject())
 					invoice = std::make_shared<Invoice>(tools::Tools::get_json_as_string(doc["invoice"]));
 				else
 					std::cerr << "Error: Field \"invoice\" does not contain a json object." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"invoice\"." << std::endl;
 
 			if(doc.HasMember("successful_payment"))
 				if(doc["successful_payment"].IsObject())
 					successful_payment = std::make_shared<SuccessfulPayment>(tools::Tools::get_json_as_string(doc["successful_payment"]));
 				else
 					std::cerr << "Error: Field \"successful_payment\" does not contain a json object." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"successful_payment\"." << std::endl;
 
 			if(doc.HasMember("connected_website"))
 				if(doc["connected_website"].IsString())
 					connected_website = doc["connected_website"].GetString();
 				else
 					std::cerr << "Error: Field \"connected_website\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"connected_website\"." << std::endl;
 
 			if(doc.HasMember("passport_data"))
 				if(doc["passport_data"].IsObject())
 					passport_data = std::make_shared<PassportData>(tools::Tools::get_json_as_string(doc["passport_data"]));
 				else
 					std::cerr << "Error: Field \"passport_data\" does not contain a json object." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"passport_data\"." << std::endl;
 
 			if(doc.HasMember("reply_markup"))
 				if(doc["reply_markup"].IsObject())
 					reply_markup = std::make_shared<InlineKeyboardMarkup>(tools::Tools::get_json_as_string(doc["reply_markup"]));
 				else
 					std::cerr << "Error: Field \"reply_markup\" does not contain a json object." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"reply_markup\"." << std::endl;
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

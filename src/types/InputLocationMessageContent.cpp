@@ -21,24 +21,18 @@ namespace tgbot
 					latitude = doc["latitude"].GetFloat();
 				else
 					std::cerr << "Error: Field \"latitude\" does not contain a float." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"latitude\"." << std::endl;
 
 			if(doc.HasMember("longitude"))
 				if(doc["longitude"].IsFloat())
 					longitude = doc["longitude"].GetFloat();
 				else
 					std::cerr << "Error: Field \"longitude\" does not contain a float." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"longitude\"." << std::endl;
 
 			if(doc.HasMember("live_period"))
 				if(doc["live_period"].IsInt())
 					live_period = doc["live_period"].GetInt();
 				else
 					std::cerr << "Error: Field \"live_period\" does not contain an int." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"live_period\"." << std::endl;
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

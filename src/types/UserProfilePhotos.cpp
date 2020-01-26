@@ -20,8 +20,6 @@ namespace tgbot
 					total_count = doc["total_count"].GetInt();
 				else
 					std::cerr << "Error: Field \"total_count\" does not contain an int." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"total_count\"." << std::endl;
 
 			if(doc.HasMember("photos"))
 			{
@@ -54,8 +52,6 @@ namespace tgbot
 				else
 					std::cerr << "Error: Field \"photos\" does not contain a json array." << std::endl;
 			}
-			else
-				std::cerr << "Error: There is no field \"photos\"." << std::endl;
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

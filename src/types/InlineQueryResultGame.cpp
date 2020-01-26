@@ -20,32 +20,24 @@ namespace tgbot
 					type = doc["type"].GetString();
 				else
 					std::cerr << "Error: Field \"type\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"type\"." << std::endl;
 
 			if(doc.HasMember("id"))
 				if(doc["id"].IsString())
 					id = doc["id"].GetString();
 				else
 					std::cerr << "Error: Field \"id\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"id\"." << std::endl;
 
 			if(doc.HasMember("game_short_name"))
 				if(doc["game_short_name"].IsString())
 					game_short_name = doc["game_short_name"].GetString();
 				else
 					std::cerr << "Error: Field \"game_short_name\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"game_short_name\"." << std::endl;
 
 			if(doc.HasMember("reply_markup"))
 				if(doc["reply_markup"].IsObject())
 					reply_markup = std::make_shared<InlineKeyboardMarkup>(tools::Tools::get_json_as_string(doc["reply_markup"]));
 				else
 					std::cerr << "Error: Field \"reply_markup\" does not contain a json object." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"reply_markup\"." << std::endl;
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

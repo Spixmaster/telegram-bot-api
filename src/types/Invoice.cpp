@@ -21,40 +21,30 @@ namespace tgbot
 					title = doc["title"].GetString();
 				else
 					std::cerr << "Error: Field \"title\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"title\"." << std::endl;
 
 			if(doc.HasMember("description"))
 				if(doc["description"].IsString())
 					description = doc["description"].GetString();
 				else
 					std::cerr << "Error: Field \"description\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"description\"." << std::endl;
 
 			if(doc.HasMember("start_parameter"))
 				if(doc["start_parameter"].IsString())
 					start_parameter = doc["start_parameter"].GetString();
 				else
 					std::cerr << "Error: Field \"start_parameter\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"start_parameter\"." << std::endl;
 
 			if(doc.HasMember("currency"))
 				if(doc["currency"].IsString())
 					currency = doc["currency"].GetString();
 				else
 					std::cerr << "Error: Field \"currency\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"currency\"." << std::endl;
 
 			if(doc.HasMember("total_amount"))
 				if(doc["total_amount"].IsInt())
 					total_amount = doc["total_amount"].GetInt();
 				else
 					std::cerr << "Error: Field \"total_amount\" does not contain an int." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"total_amount\"." << std::endl;
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

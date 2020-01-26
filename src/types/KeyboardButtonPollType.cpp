@@ -19,8 +19,6 @@ namespace tgbot
 					type = doc["type"].GetString();
 				else
 					std::cerr << "Error: Field \"type\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"type\"." << std::endl;
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

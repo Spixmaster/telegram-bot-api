@@ -21,32 +21,24 @@ namespace tgbot
 					point = doc["point"].GetString();
 				else
 					std::cerr << "Error: Field \"point\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"point\"." << std::endl;
 
 			if(doc.HasMember("x_shift"))
 				if(doc["x_shift"].IsFloat())
 					x_shift = doc["x_shift"].GetFloat();
 				else
 					std::cerr << "Error: Field \"x_shift\" does not contain a float." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"x_shift\"." << std::endl;
 
 			if(doc.HasMember("y_shift"))
 				if(doc["y_shift"].IsFloat())
 					y_shift = doc["y_shift"].GetFloat();
 				else
 					std::cerr << "Error: Field \"y_shift\" does not contain a float." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"y_shift\"." << std::endl;
 
 			if(doc.HasMember("scale"))
 				if(doc["scale"].IsFloat())
 					scale = doc["scale"].GetFloat();
 				else
 					std::cerr << "Error: Field \"scale\" does not contain a float." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"scale\"." << std::endl;
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

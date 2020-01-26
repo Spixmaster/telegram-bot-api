@@ -19,16 +19,12 @@ namespace tgbot
 					title = doc["title"].GetString();
 				else
 					std::cerr << "Error: Field \"title\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"title\"." << std::endl;
 
 			if(doc.HasMember("description"))
 				if(doc["description"].IsString())
 					description = doc["description"].GetString();
 				else
 					std::cerr << "Error: Field \"description\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"description\"." << std::endl;
 
 			if(doc.HasMember("photo"))
 				if(doc["photo"].IsArray())
@@ -45,16 +41,12 @@ namespace tgbot
 				}
 				else
 					std::cerr << "Error: Field \"photo\" does not contain a json array." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"photo\"." << std::endl;
 
 			if(doc.HasMember("text"))
 				if(doc["text"].IsString())
 					text = doc["text"].GetString();
 				else
 					std::cerr << "Error: Field \"text\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"text\"." << std::endl;
 
 			if(doc.HasMember("text_entities"))
 				if(doc["text_entities"].IsArray())
@@ -71,16 +63,12 @@ namespace tgbot
 				}
 				else
 					std::cerr << "Error: Field \"text_entities\" does not contain a json array." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"text_entities\"." << std::endl;
 
 			if(doc.HasMember("animation"))
 				if(doc["animation"].IsObject())
 					animation = std::make_shared<Animation>(tools::Tools::get_json_as_string(doc["animation"]));
 				else
 					std::cerr << "Error: Field \"animation\" does not contain a json object." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"animation\"." << std::endl;
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

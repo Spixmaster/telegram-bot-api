@@ -21,88 +21,66 @@ namespace tgbot
 					type = doc["type"].GetString();
 				else
 					std::cerr << "Error: Field \"type\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"type\"." << std::endl;
 
 			if(doc.HasMember("id"))
 				if(doc["id"].IsString())
 					id = doc["id"].GetString();
 				else
 					std::cerr << "Error: Field \"id\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"id\"." << std::endl;
 
 			if(doc.HasMember("mpeg4_url"))
 				if(doc["mpeg4_url"].IsString())
 					mpeg4_url = doc["mpeg4_url"].GetString();
 				else
 					std::cerr << "Error: Field \"mpeg4_url\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"mpeg4_url\"." << std::endl;
 
 			if(doc.HasMember("mpeg4_width"))
 				if(doc["mpeg4_width"].IsInt())
 					mpeg4_width = doc["mpeg4_width"].GetInt();
 				else
 					std::cerr << "Error: Field \"mpeg4_width\" does not contain an int." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"mpeg4_width\"." << std::endl;
 
 			if(doc.HasMember("mpeg4_height"))
 				if(doc["mpeg4_height"].IsInt())
 					mpeg4_height = doc["mpeg4_height"].GetInt();
 				else
 					std::cerr << "Error: Field \"mpeg4_height\" does not contain an int." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"mpeg4_height\"." << std::endl;
 
 			if(doc.HasMember("mpeg4_duration"))
 				if(doc["mpeg4_duration"].IsInt())
 					mpeg4_duration = doc["mpeg4_duration"].GetInt();
 				else
 					std::cerr << "Error: Field \"mpeg4_duration\" does not contain an int." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"mpeg4_duration\"." << std::endl;
 
 			if(doc.HasMember("thumb_url"))
 				if(doc["thumb_url"].IsString())
 					thumb_url = doc["thumb_url"].GetString();
 				else
 					std::cerr << "Error: Field \"thumb_url\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"thumb_url\"." << std::endl;
 
 			if(doc.HasMember("title"))
 				if(doc["title"].IsString())
 					title = doc["title"].GetString();
 				else
 					std::cerr << "Error: Field \"title\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"title\"." << std::endl;
 
 			if(doc.HasMember("caption"))
 				if(doc["caption"].IsString())
 					caption = doc["caption"].GetString();
 				else
 					std::cerr << "Error: Field \"caption\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"caption\"." << std::endl;
 
 			if(doc.HasMember("parse_mode"))
 				if(doc["parse_mode"].IsString())
 					parse_mode = doc["parse_mode"].GetString();
 				else
 					std::cerr << "Error: Field \"parse_mode\" does not contain a string." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"parse_mode\"." << std::endl;
 
 			if(doc.HasMember("reply_markup"))
 				if(doc["reply_markup"].IsObject())
 					reply_markup = std::make_shared<InlineKeyboardMarkup>(tools::Tools::get_json_as_string(doc["reply_markup"]));
 				else
 					std::cerr << "Error: Field \"reply_markup\" does not contain a json object." << std::endl;
-			else
-				std::cerr << "Error: There is no field \"reply_markup\"." << std::endl;
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
