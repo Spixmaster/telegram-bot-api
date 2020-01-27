@@ -17,22 +17,28 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("media"))
+			{
 				if(doc["media"].IsString())
 					media = doc["media"].GetString();
 				else
 					std::cerr << "Error: Field \"media\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("caption"))
+			{
 				if(doc["caption"].IsString())
 					caption = doc["caption"].GetString();
 				else
 					std::cerr << "Error: Field \"caption\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("parse_mode"))
+			{
 				if(doc["parse_mode"].IsString())
 					parse_mode = doc["parse_mode"].GetString();
 				else
 					std::cerr << "Error: Field \"parse_mode\" does not contain a string." << std::endl;
+			}
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
