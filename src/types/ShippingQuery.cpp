@@ -16,28 +16,36 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("id"))
+			{
 				if(doc["id"].IsString())
 					id = doc["id"].GetString();
 				else
 					std::cerr << "Error: Field \"id\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("from"))
+			{
 				if(doc["from"].IsObject())
 					from = std::make_shared<User>(tools::Tools::get_json_as_string(doc["from"]));
 				else
 					std::cerr << "Error: Field \"from\" does not contain a json object." << std::endl;
+			}
 
 			if(doc.HasMember("invoice_payload"))
+			{
 				if(doc["invoice_payload"].IsString())
 					invoice_payload = doc["invoice_payload"].GetString();
 				else
 					std::cerr << "Error: Field \"invoice_payload\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("shipping_address"))
+			{
 				if(doc["shipping_address"].IsObject())
 					shipping_address = std::make_shared<ShippingAddress>(tools::Tools::get_json_as_string(doc["shipping_address"]));
 				else
 					std::cerr << "Error: Field \"shipping_address\" does not contain a json object." << std::endl;
+			}
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

@@ -16,40 +16,52 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("country_code"))
+			{
 				if(doc["country_code"].IsString())
 					country_code = doc["country_code"].GetString();
 				else
 					std::cerr << "Error: Field \"country_code\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("state"))
+			{
 				if(doc["state"].IsString())
 					state = doc["state"].GetString();
 				else
 					std::cerr << "Error: Field \"state\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("city"))
+			{
 				if(doc["city"].IsString())
 					city = doc["city"].GetString();
 				else
 					std::cerr << "Error: Field \"city\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("street_line1"))
+			{
 				if(doc["street_line1"].IsString())
 					street_line1 = doc["street_line1"].GetString();
 				else
 					std::cerr << "Error: Field \"street_line1\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("street_line2"))
+			{
 				if(doc["street_line2"].IsString())
 					street_line2 = doc["street_line2"].GetString();
 				else
 					std::cerr << "Error: Field \"street_line2\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("post_code"))
+			{
 				if(doc["post_code"].IsString())
 					post_code = doc["post_code"].GetString();
 				else
 					std::cerr << "Error: Field \"post_code\" does not contain a string." << std::endl;
+			}
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

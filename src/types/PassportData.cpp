@@ -16,6 +16,7 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("data"))
+			{
 				if(doc["data"].IsArray())
 				{
 					data.resize(doc["data"].GetArray().Size());
@@ -30,12 +31,15 @@ namespace tgbot
 				}
 				else
 					std::cerr << "Error: Field \"data\" does not contain a json array." << std::endl;
+			}
 
 			if(doc.HasMember("credentials"))
+			{
 				if(doc["credentials"].IsObject())
 					credentials = std::make_shared<EncryptedCredentials>(tools::Tools::get_json_as_string(doc["credentials"]));
 				else
 					std::cerr << "Error: Field \"credentials\" does not contain a json object." << std::endl;
+			}
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

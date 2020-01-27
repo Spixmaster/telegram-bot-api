@@ -16,18 +16,23 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("id"))
+			{
 				if(doc["id"].IsString())
 					id = doc["id"].GetString();
 				else
 					std::cerr << "Error: Field \"id\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("question"))
+			{
 				if(doc["question"].IsString())
 					question = doc["question"].GetString();
 				else
 					std::cerr << "Error: Field \"question\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("options"))
+			{
 				if(doc["options"].IsArray())
 				{
 					options.resize(doc["options"].GetArray().Size());
@@ -42,42 +47,55 @@ namespace tgbot
 				}
 				else
 					std::cerr << "Error: Field \"options\" does not contain a json array." << std::endl;
+			}
 
 			if(doc.HasMember("total_voter_count"))
+			{
 				if(doc["total_voter_count"].IsInt())
 					total_voter_count = doc["total_voter_count"].GetInt();
 				else
 					std::cerr << "Error: Field \"total_voter_count\" does not contain an int." << std::endl;
+			}
 
 			if(doc.HasMember("is_closed"))
+			{
 				if(doc["is_closed"].IsBool())
 					is_closed = doc["is_closed"].GetBool();
 				else
 					std::cerr << "Error: Field \"is_closed\" does not contain a bool." << std::endl;
+			}
 
 			if(doc.HasMember("is_anonymous"))
+			{
 				if(doc["is_anonymous"].IsBool())
 					is_anonymous = doc["is_anonymous"].GetBool();
 				else
 					std::cerr << "Error: Field \"is_anonymous\" does not contain a bool." << std::endl;
+			}
 
 			if(doc.HasMember("type"))
+			{
 				if(doc["type"].IsString())
 					type = doc["type"].GetString();
 				else
 					std::cerr << "Error: Field \"type\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("allows_multiple_answers"))
+			{
 				if(doc["allows_multiple_answers"].IsBool())
 					allows_multiple_answers = doc["allows_multiple_answers"].GetBool();
 				else
 					std::cerr << "Error: Field \"allows_multiple_answers\" does not contain a bool." << std::endl;
+			}
 
 			if(doc.HasMember("correct_option_id"))
+			{
 				if(doc["correct_option_id"].IsInt())
 					correct_option_id = doc["correct_option_id"].GetInt();
 				else
 					std::cerr << "Error: Field \"correct_option_id\" does not contain an int." << std::endl;
+			}
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

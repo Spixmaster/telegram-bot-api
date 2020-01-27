@@ -16,16 +16,20 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("migrate_to_chat_id"))
+			{
 				if(doc["migrate_to_chat_id"].IsInt())
 					migrate_to_chat_id = doc["migrate_to_chat_id"].GetInt();
 				else
 					std::cerr << "Error: Field \"migrate_to_chat_id\" does not contain an int." << std::endl;
+			}
 
 			if(doc.HasMember("retry_after"))
+			{
 				if(doc["retry_after"].IsInt())
 					retry_after = doc["retry_after"].GetInt();
 				else
 					std::cerr << "Error: Field \"retry_after\" does not contain an int." << std::endl;
+			}
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

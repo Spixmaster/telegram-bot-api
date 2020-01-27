@@ -16,10 +16,12 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("total_count"))
+			{
 				if(doc["total_count"].IsInt())
 					total_count = doc["total_count"].GetInt();
 				else
 					std::cerr << "Error: Field \"total_count\" does not contain an int." << std::endl;
+			}
 
 			if(doc.HasMember("photos"))
 			{

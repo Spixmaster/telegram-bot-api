@@ -17,52 +17,68 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("text"))
+			{
 				if(doc["text"].IsString())
 					text = doc["text"].GetString();
 				else
 					std::cerr << "Error: Field \"text\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("url"))
+			{
 				if(doc["url"].IsString())
 					url = doc["url"].GetString();
 				else
 					std::cerr << "Error: Field \"url\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("login_url"))
+			{
 				if(doc["login_url"].IsObject())
 					login_url = std::make_shared<LoginUrl>(tools::Tools::get_json_as_string(doc["login_url"]));
 				else
 					std::cerr << "Error: Field \"login_url\" does not contain a json object." << std::endl;
+			}
 
 			if(doc.HasMember("callback_data"))
+			{
 				if(doc["callback_data"].IsString())
 					callback_data = doc["callback_data"].GetString();
 				else
 					std::cerr << "Error: Field \"callback_data\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("switch_inline_query"))
+			{
 				if(doc["switch_inline_query"].IsString())
 					switch_inline_query = doc["switch_inline_query"].GetString();
 				else
 					std::cerr << "Error: Field \"switch_inline_query\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("switch_inline_query_current_chat"))
+			{
 				if(doc["switch_inline_query_current_chat"].IsString())
 					switch_inline_query_current_chat = doc["switch_inline_query_current_chat"].GetString();
 				else
 					std::cerr << "Error: Field \"switch_inline_query_current_chat\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("callback_game"))
+			{
 				if(doc["callback_game"].IsObject())
 					callback_game = std::make_shared<CallbackGame>(tools::Tools::get_json_as_string(doc["callback_game"]));
 				else
 					std::cerr << "Error: Field \"callback_game\" does not contain a json object." << std::endl;
+			}
 
 			if(doc.HasMember("pay"))
+			{
 				if(doc["pay"].IsBool())
 					pay = doc["pay"].GetBool();
 				else
 					std::cerr << "Error: Field \"pay\" does not contain a bool." << std::endl;
+			}
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

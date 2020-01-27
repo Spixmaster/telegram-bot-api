@@ -16,6 +16,7 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("inline_keyboard"))
+			{
 				if(doc["inline_keyboard"].IsArray())
 				{
 					const rapidjson::Value &keyboard_array = doc["inline_keyboard"].GetArray();
@@ -44,6 +45,7 @@ namespace tgbot
 				}
 				else
 					std::cerr << "Error: Field \"inline_keyboard\" does not contain a json array." << std::endl;
+			}
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

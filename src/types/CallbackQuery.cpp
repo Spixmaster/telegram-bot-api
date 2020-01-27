@@ -16,46 +16,60 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("id"))
+			{
 				if(doc["id"].IsString())
 					id = doc["id"].GetString();
 				else
 					std::cerr << "Error: Field \"id\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("from"))
+			{
 				if(doc["from"].IsObject())
 					from = std::make_shared<User>(tools::Tools::get_json_as_string(doc["from"]));
 				else
 					std::cerr << "Error: Field \"from\" does not contain a json object." << std::endl;
+			}
 
 			if(doc.HasMember("message"))
+			{
 				if(doc["message"].IsObject())
 					message = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["message"]));
 				else
 					std::cerr << "Error: Field \"message\" does not contain a json object." << std::endl;
+			}
 
 			if(doc.HasMember("inline_message_id"))
+			{
 				if(doc["inline_message_id"].IsString())
 					inline_message_id = doc["inline_message_id"].GetString();
 				else
 					std::cerr << "Error: Field \"inline_message_id\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("chat_instance"))
+			{
 				if(doc["chat_instance"].IsString())
 					chat_instance = doc["chat_instance"].GetString();
 				else
 					std::cerr << "Error: Field \"chat_instance\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("data"))
+			{
 				if(doc["data"].IsString())
 					data = doc["data"].GetString();
 				else
 					std::cerr << "Error: Field \"data\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("game_short_name"))
+			{
 				if(doc["game_short_name"].IsString())
 					game_short_name = doc["game_short_name"].GetString();
 				else
 					std::cerr << "Error: Field \"game_short_name\" does not contain a string." << std::endl;
+			}
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
