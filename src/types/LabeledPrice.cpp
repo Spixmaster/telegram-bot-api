@@ -16,16 +16,20 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("label"))
+			{
 				if(doc["label"].IsString())
 					label = doc["label"].GetString();
 				else
 					std::cerr << "Error: Field \"label\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("amount"))
+			{
 				if(doc["amount"].IsInt())
 					amount = doc["amount"].GetInt();
 				else
 					std::cerr << "Error: Field \"amount\" does not contain an int." << std::endl;
+			}
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

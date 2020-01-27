@@ -16,40 +16,52 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("type"))
+			{
 				if(doc["type"].IsString())
 					type = doc["type"].GetString();
 				else
 					std::cerr << "Error: Field \"type\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("id"))
+			{
 				if(doc["id"].IsString())
 					id = doc["id"].GetString();
 				else
 					std::cerr << "Error: Field \"id\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("audio_file_id"))
+			{
 				if(doc["audio_file_id"].IsString())
 					audio_file_id = doc["audio_file_id"].GetString();
 				else
 					std::cerr << "Error: Field \"audio_file_id\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("caption"))
+			{
 				if(doc["caption"].IsString())
 					caption = doc["caption"].GetString();
 				else
 					std::cerr << "Error: Field \"caption\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("parse_mode"))
+			{
 				if(doc["parse_mode"].IsString())
 					parse_mode = doc["parse_mode"].GetString();
 				else
 					std::cerr << "Error: Field \"parse_mode\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("reply_markup"))
+			{
 				if(doc["reply_markup"].IsObject())
 					reply_markup = std::make_shared<InlineKeyboardMarkup>(tools::Tools::get_json_as_string(doc["reply_markup"]));
 				else
 					std::cerr << "Error: Field \"reply_markup\" does not contain a json object." << std::endl;
+			}
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

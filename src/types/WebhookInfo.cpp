@@ -17,42 +17,55 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("url"))
+			{
 				if(doc["url"].IsString())
 					url = doc["url"].GetString();
 				else
 					std::cerr << "Error: Field \"url\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("has_custom_certificate"))
+			{
 				if(doc["has_custom_certificate"].IsBool())
 					has_custom_certificate = doc["has_custom_certificate"].GetBool();
 				else
 					std::cerr << "Error: Field \"has_custom_certificate\" does not contain a bool." << std::endl;
+			}
 
 			if(doc.HasMember("pending_update_count"))
+			{
 				if(doc["pending_update_count"].IsInt())
 					pending_update_count = doc["pending_update_count"].GetInt();
 				else
 					std::cerr << "Error: Field \"pending_update_count\" does not contain an int." << std::endl;
+			}
 
 			if(doc.HasMember("last_error_date"))
+			{
 				if(doc["last_error_date"].IsInt())
 					last_error_date = doc["last_error_date"].GetInt();
 				else
 					std::cerr << "Error: Field \"last_error_date\" does not contain an int." << std::endl;
+			}
 
 			if(doc.HasMember("last_error_message"))
+			{
 				if(doc["last_error_message"].IsString())
 					last_error_message = doc["last_error_message"].GetString();
 				else
 					std::cerr << "Error: Field \"last_error_message\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("max_connections"))
+			{
 				if(doc["max_connections"].IsInt())
 					max_connections = doc["max_connections"].GetInt();
 				else
 					std::cerr << "Error: Field \"max_connections\" does not contain an int." << std::endl;
+			}
 
 			if(doc.HasMember("allowed_updates"))
+			{
 				if(doc["allowed_updates"].IsArray())
 				{
 					allowed_updates.resize(doc["allowed_updates"].GetArray().Size());
@@ -67,6 +80,7 @@ namespace tgbot
 				}
 				else
 					std::cerr << "Error: Field \"allowed_updates\" does not contain a json array." << std::endl;
+			}
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

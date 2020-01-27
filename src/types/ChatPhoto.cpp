@@ -16,28 +16,36 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("small_file_id"))
+			{
 				if(doc["small_file_id"].IsString())
 					small_file_id = doc["small_file_id"].GetString();
 				else
 					std::cerr << "Error: Field \"small_file_id\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("small_file_unique_id"))
+			{
 				if(doc["small_file_unique_id"].IsString())
 					small_file_unique_id = doc["small_file_unique_id"].GetString();
 				else
 					std::cerr << "Error: Field \"small_file_unique_id\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("big_file_id"))
+			{
 				if(doc["big_file_id"].IsString())
 					big_file_id = doc["big_file_id"].GetString();
 				else
 					std::cerr << "Error: Field \"big_file_id\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("big_file_unique_id"))
+			{
 				if(doc["big_file_unique_id"].IsString())
 					big_file_id = doc["big_file_unique_id"].GetString();
 				else
 					std::cerr << "Error: Field \"big_file_unique_id\" does not contain a string." << std::endl;
+			}
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

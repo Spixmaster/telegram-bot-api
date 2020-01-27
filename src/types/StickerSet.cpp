@@ -16,30 +16,39 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("name"))
+			{
 				if(doc["name"].IsString())
 					name = doc["name"].GetString();
 				else
 					std::cerr << "Error: Field \"name\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("title"))
+			{
 				if(doc["title"].IsString())
 					title = doc["title"].GetString();
 				else
 					std::cerr << "Error: Field \"title\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("is_animated"))
+			{
 				if(doc["is_animated"].IsBool())
 					is_animated = doc["is_animated"].GetBool();
 				else
 					std::cerr << "Error: Field \"is_animated\" does not contain a bool." << std::endl;
+			}
 
 			if(doc.HasMember("contains_masks"))
+			{
 				if(doc["contains_masks"].IsBool())
 					contains_masks = doc["contains_masks"].GetBool();
 				else
 					std::cerr << "Error: Field \"contains_masks\" does not contain a bool." << std::endl;
+			}
 
 			if(doc.HasMember("sticker"))
+			{
 				if(doc["sticker"].IsArray())
 				{
 					sticker.resize(doc["sticker"].GetArray().Size());
@@ -54,6 +63,7 @@ namespace tgbot
 				}
 				else
 					std::cerr << "Error: Field \"sticker\" does not contain a json array." << std::endl;
+			}
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

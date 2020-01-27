@@ -16,18 +16,23 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("poll_id"))
+			{
 				if(doc["poll_id"].IsString())
 					poll_id = doc["poll_id"].GetString();
 				else
 					std::cerr << "Error: Field \"poll_id\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("user"))
+			{
 				if(doc["user"].IsObject())
 					user = std::make_shared<User>(tools::Tools::get_json_as_string(doc["user"]));
 				else
 					std::cerr << "Error: Field \"user\" does not contain a json object." << std::endl;
+			}
 
 			if(doc.HasMember("option_ids"))
+			{
 				if(doc["option_ids"].IsArray())
 				{
 					option_ids.resize(doc["option_ids"].GetArray().Size());
@@ -42,6 +47,7 @@ namespace tgbot
 				}
 				else
 					std::cerr << "Error: Field \"option_ids\" does not contain a json array." << std::endl;
+			}
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

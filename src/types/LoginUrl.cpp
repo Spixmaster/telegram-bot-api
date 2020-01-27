@@ -17,28 +17,36 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("url"))
+			{
 				if(doc["url"].IsString())
 					url = doc["url"].GetString();
 				else
 					std::cerr << "Error: Field \"url\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("forward_text"))
+			{
 				if(doc["forward_text"].IsString())
 					forward_text = doc["forward_text"].GetString();
 				else
 					std::cerr << "Error: Field \"forward_text\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("bot_username"))
+			{
 				if(doc["bot_username"].IsString())
 					bot_username = doc["bot_username"].GetString();
 				else
 					std::cerr << "Error: Field \"bot_username\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("request_write_access"))
+			{
 				if(doc["request_write_access"].IsBool())
 					request_write_access = doc["request_write_access"].GetBool();
 				else
 					std::cerr << "Error: Field \"request_write_access\" does not contain a bool." << std::endl;
+			}
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;

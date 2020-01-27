@@ -16,18 +16,23 @@ namespace tgbot
 		{
 			//assignments
 			if(doc.HasMember("id"))
+			{
 				if(doc["id"].IsString())
 					id = doc["id"].GetString();
 				else
 					std::cerr << "Error: Field \"id\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("title"))
+			{
 				if(doc["title"].IsString())
 					title = doc["title"].GetString();
 				else
 					std::cerr << "Error: Field \"title\" does not contain a string." << std::endl;
+			}
 
 			if(doc.HasMember("prices"))
+			{
 				if(doc["prices"].IsArray())
 				{
 					prices.resize(doc["prices"].GetArray().Size());
@@ -42,6 +47,7 @@ namespace tgbot
 				}
 				else
 					std::cerr << "Error: Field \"prices\" does not contain a json array." << std::endl;
+			}
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
