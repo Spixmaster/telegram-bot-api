@@ -130,7 +130,7 @@ namespace tgbot
 			json.append("], ");
 		}
 
-		//remove ", "
+		//if size() == 0 pop_back() would crash the programme
 		if(json.size() > 0)
 		{
 			json.pop_back();
