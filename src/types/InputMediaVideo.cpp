@@ -105,7 +105,6 @@ namespace tgbot
 			json.append(", ");
 		}
 
-
 		//field caption
 		json.append("\"caption\": \"" + caption + "\"");
 		json.append(", ");

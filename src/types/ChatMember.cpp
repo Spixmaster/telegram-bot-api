@@ -4,6 +4,7 @@
 
 namespace tgbot
 {
+//todo
 	ChatMember::ChatMember() : user(), status(), custom_title(), until_date(), can_be_edited(), can_post_messages(), can_edit_messages(), can_delete_messages(),
 			can_restrict_members(), can_promote_members(), can_change_info(), can_invite_users(), can_pin_messages(), is_member(), can_send_messages(), can_send_media_messages(),
 			can_send_polls(), can_send_other_messages(), can_add_web_page_previews()
@@ -113,6 +114,7 @@ namespace tgbot
 					std::cerr << "Error: Field \"can_invite_users\" does not contain a bool." << std::endl;
 			}
 
+			//todo
 			if(doc.HasMember("can_pin_messages"))
 			{
 				if(doc["can_pin_messages"].IsBool())
@@ -185,6 +187,10 @@ namespace tgbot
 		json.append("\"status\": \"" + status + "\"");
 		json.append(", ");
 
+		//field custom_title
+		json.append("\"custom_title\": \"" + custom_title + "\"");
+		json.append(", ");
+
 		//field until_date
 		json.append("\"until_date\": " + until_date);
 		json.append(", ");
@@ -227,6 +233,11 @@ namespace tgbot
 		//field can_invite_users
 		std::string can_invite_users_bool = can_invite_users ? "true" : "false";
 		json.append("\"can_invite_users\": " + can_invite_users_bool);
+		json.append(", ");
+
+		//field can_pin_messages
+		std::string can_pin_messages_bool = can_pin_messages ? "true" : "false";
+		json.append("\"can_pin_messages\": " + can_pin_messages_bool);
 		json.append(", ");
 
 		//field is_member

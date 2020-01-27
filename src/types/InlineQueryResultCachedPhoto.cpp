@@ -79,6 +79,14 @@ namespace tgbot
 				else
 					std::cerr << "Error: Field \"reply_markup\" does not contain a json object." << std::endl;
 			}
+
+			if(doc.HasMember("input_message_content"))
+			{
+				if(doc["input_message_content"].IsObject())
+					input_message_content = std::make_shared<InputMessageContent>(tools::Tools::get_json_as_string(doc["input_message_content"]));
+				else
+					std::cerr << "Error: Field \"input_message_content\" does not contain a json object." << std::endl;
+			}
 		}
 		else
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
@@ -102,6 +110,10 @@ namespace tgbot
 
 		//field title
 		json.append("\"title\": \"" + title + "\"");
+		json.append(", ");
+
+		//field description
+		json.append("\"description\": \"" + description + "\"");
 		json.append(", ");
 
 		//field caption
