@@ -4,7 +4,6 @@
 
 namespace tgbot
 {
-//todo
 	ChatMember::ChatMember() : user(), status(), custom_title(), until_date(), can_be_edited(), can_post_messages(), can_edit_messages(), can_delete_messages(),
 			can_restrict_members(), can_promote_members(), can_change_info(), can_invite_users(), can_pin_messages(), is_member(), can_send_messages(), can_send_media_messages(),
 			can_send_polls(), can_send_other_messages(), can_add_web_page_previews()
@@ -114,7 +113,6 @@ namespace tgbot
 					std::cerr << "Error: Field \"can_invite_users\" does not contain a bool." << std::endl;
 			}
 
-			//todo
 			if(doc.HasMember("can_pin_messages"))
 			{
 				if(doc["can_pin_messages"].IsBool())
