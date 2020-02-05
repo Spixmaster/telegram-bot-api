@@ -48,7 +48,7 @@ namespace tgbot
 			caption(caption), parse_mode(parse_mode)
 	{}
 
-	std::string InputMediaPhoto::parse_to_json() const
+	std::string InputMediaPhoto::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 

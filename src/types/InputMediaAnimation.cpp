@@ -81,7 +81,7 @@ namespace tgbot
 					parse_mode(parse_mode), width(width), height(height), duration(duration)
 	{}
 
-	std::string InputMediaAnimation::parse_to_json() const
+	std::string InputMediaAnimation::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 

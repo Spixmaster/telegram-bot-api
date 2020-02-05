@@ -80,7 +80,7 @@ namespace tgbot
 			selective()
 	{}
 
-	std::string ReplyKeyboardMarkup::parse_to_json() const
+	std::string ReplyKeyboardMarkup::parse_to_json() const noexcept
 	{
 		std::string json = "{\"keyboard\": [";
 

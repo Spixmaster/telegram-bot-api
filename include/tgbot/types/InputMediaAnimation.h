@@ -39,15 +39,15 @@ namespace tgbot
 		//@param width: animation's width
 		//@param height: animation's height
 		//@param duration: animation's duration
-		InputMediaAnimation(const std::variant<std::string, tools::InputFile::ptr> &media, const std::variant<std::string, tools::InputFile::ptr> &thumb, const std::string &caption = "",
-				const std::string &parse_mode = "", const int &width = -1, const int &height = -1, const int &duration = -1);
+		InputMediaAnimation(const std::variant<std::string, tools::InputFile::ptr> &media, const std::variant<std::string, tools::InputFile::ptr> &thumb,
+				const std::string &caption = "", const std::string &parse_mode = "", const int &width = -1, const int &height = -1, const int &duration = -1);
 
 		//member functions
 		/*
 		 * @brief parses itself into json equivalent
 		 * @return json object of itself as a string
 		 */
-		std::string parse_to_json() const;
+		std::string parse_to_json() const noexcept;
 	};
 }
 

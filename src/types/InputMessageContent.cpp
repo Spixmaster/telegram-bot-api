@@ -23,7 +23,7 @@ namespace tgbot
 	InputMessageContent::~InputMessageContent()
 	{}
 
-	std::string InputMessageContent::parse_to_json() const
+	std::string InputMessageContent::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 

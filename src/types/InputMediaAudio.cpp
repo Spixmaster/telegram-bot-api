@@ -81,7 +81,7 @@ namespace tgbot
 					media(media), thumb(thumb), caption(caption), parse_mode(parse_mode), duration(duration), performer(performer), title(title)
 	{}
 
-	std::string InputMediaAudio::parse_to_json() const
+	std::string InputMediaAudio::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 

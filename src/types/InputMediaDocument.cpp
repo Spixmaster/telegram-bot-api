@@ -56,7 +56,7 @@ namespace tgbot
 				const std::string &parse_mode) : media(media), thumb(thumb), caption(caption), parse_mode(parse_mode)
 	{}
 
-	std::string InputMediaDocument::parse_to_json() const
+	std::string InputMediaDocument::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 

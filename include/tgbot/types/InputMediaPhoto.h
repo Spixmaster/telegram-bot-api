@@ -38,7 +38,7 @@ namespace tgbot
 		 * @brief parses itself into json equivalent
 		 * @return json object of the itself as a string
 		 */
-		std::string parse_to_json() const;
+		std::string parse_to_json() const noexcept;
 	};
 }
 

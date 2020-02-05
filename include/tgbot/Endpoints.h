@@ -57,7 +57,8 @@ namespace tgbot
 		 * 				an offset higher than its update_id. The negative offset can be specified to retrieve updates starting from -offset update from the end
 		 * 				of the updates queue. All previous updates will forgotten.
 		 * @param limit: Limits the number of updates to be retrieved. Values between 1—100 are accepted. Defaults to 100.
-		 * @param timeout: Timeout in seconds for long polling. Defaults to 0, i.e. usual short polling. Should be positive, short polling should be used for testing purposes only.
+		 * @param timeout: Timeout in seconds for long polling. Defaults to 0, i.e. usual short polling. Should be positive,
+		 * 		short polling should be used for testing purposes only.
 		 * @param allowed_updates: List the types of updates you want your bot to receive. For example, specify [“message”, “edited_channel_post”, “callback_query”] to only
 		 * 				receive updates of these types. See Update for a complete list of available update types. Specify an empty list to receive all updates regardless
 		 * 				of type (default). If not specified, the previous setting will be used. Please note that this parameter doesn't affect updates created
@@ -65,7 +66,7 @@ namespace tgbot
 		 * @return Update object
 		 */
 		std::vector<Update::ptr> getUpdates(const int &offset, const int &limit = 100, const int &timeout = 0,
-				const std::vector<std::string> &allowed_updates = std::vector<std::string>()) const;
+				const std::vector<std::string> &allowed_updates = std::vector<std::string>()) const noexcept;
 
 		/*
 		 * @brief sets the webhook for the bot
@@ -73,32 +74,33 @@ namespace tgbot
 		 * @param certificate: Upload your public key certificate so that the root certificate in use can be checked.
 		 * @param max_connections: Maximum allowed number of simultaneous HTTPS connections to the webhook for update delivery, 1-100.
 		 * 				Defaults to 40. Use lower values to limit the load on your bot‘s server, and higher values to increase your bot’s throughput.
-		 * @param allowed_updates: List the types of updates you want your bot to receive. For example, specify [“message”, “edited_channel_post”, “callback_query”] to only receive
+		 * @param allowed_updates: List the types of updates you want your bot to receive. For example,
+		 * 		specify [“message”, “edited_channel_post”, “callback_query”] to only receive
 		 * 				updates of these types. See Update for a complete list of available update types. Specify an empty list to receive all updates regardless
 		 * 				of type (default). If not specified, the previous setting will be used. Please note that this parameter doesn't affect updates created
 		 * 				before the call to the setWebhook, so unwanted updates may be received for a short period of time.
 		 * @return true on success
 		 */
 		bool setWebhook(const std::string &url, const tools::InputFile::ptr &certificate = std::make_shared<tools::InputFile>(""), const int &max_connections = 40,
-				const std::vector<std::string> &allowed_updates = std::vector<std::string>()) const;
+				const std::vector<std::string> &allowed_updates = std::vector<std::string>()) const noexcept;
 
 		/*
 		 * @brief deletes the webhook
 		 * @return true on success
 		 */
-		bool deleteWebhook() const;
+		bool deleteWebhook() const noexcept;
 
 		/*
 		 * @brief gets webhook information
 		 * @return WebhookInfo object
 		 */
-		WebhookInfo::ptr getWebhookInfo() const;
+		WebhookInfo::ptr getWebhookInfo() const noexcept;
 
 		/*
 		 * @brief executes endpoint getMe
 		 * @return User object of the bot
 		 */
-		User::ptr getMe() const;
+		User::ptr getMe() const noexcept;
 
 		/*
 		 * @brief sends a message to the chat
@@ -112,7 +114,7 @@ namespace tgbot
 		 * @return sent message
 		 */
 		Message::ptr sendMessage(const long long &chat_id, const std::string &text, const std::string &parse_mode = "", const bool &disable_web_page_preview = true,
-				const bool &disable_notification = false, const int &reply_to_message_id = 0, const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
+				const bool &disable_notification = false, const int &reply_to_message_id = 0, const Reply::ptr &reply_markup = std::make_shared<Reply>()) const noexcept;
 
 		/*
 		 * @brief forwards a message from one chat to another
@@ -122,7 +124,7 @@ namespace tgbot
 		 * @param disable_notification: whether users shall be notified about the message
 		 * @return sent message
 		 */
-		Message::ptr forwardMessage(const long long &chat_id, const long long &from_chat_id, const int &message_id, const bool &disable_notification = false) const;
+		Message::ptr forwardMessage(const long long &chat_id, const long long &from_chat_id, const int &message_id, const bool &disable_notification = false) const noexcept;
 
 		/*
 		 * @brief sends a photo to the chat
@@ -137,7 +139,7 @@ namespace tgbot
 		 */
 		Message::ptr sendPhoto(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &photo, const std::string &caption = "",
 				const std::string &parse_mode = "", const bool &disable_notification = false, const int &reply_to_message_id = 0,
-				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
+				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const noexcept;
 
 		/*
 		 * @brief sends an audio to the chat
@@ -157,7 +159,7 @@ namespace tgbot
 		Message::ptr sendAudio(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &audio, const std::string &caption = "",
 				const std::string &parse_mode = "", const int &duration = 0, const std::string &performer = "", const std::string &title = "",
 				const std::variant<std::string, tools::InputFile::ptr> &thumb = "", const bool &disable_notification = false, const int &reply_to_message_id = 0,
-				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
+				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const noexcept;
 
 		/*
 		 * @brief sends a document to the chat
@@ -173,7 +175,7 @@ namespace tgbot
 		 */
 		Message::ptr sendDocument(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &document,
 				const std::variant<std::string, tools::InputFile::ptr> &thumb = "", const std::string &caption = "", const std::string &parse_mode = "",
-				const bool &disable_notification = false, const int &reply_to_message_id = 0, const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
+				const bool &disable_notification = false, const int &reply_to_message_id = 0, const Reply::ptr &reply_markup = std::make_shared<Reply>()) const noexcept;
 
 		/*
 		 * @brief sends a video to the chat
@@ -194,7 +196,7 @@ namespace tgbot
 		Message::ptr sendVideo(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &video, const int &duration = 0, const int &width = 0,
 				const int &height = 0, const std::variant<std::string, tools::InputFile::ptr> &thumb = "", const std::string &caption = "",
 				const std::string &parse_mode = "", const bool &supports_streaming = false, const bool &disable_notification = false, const int &reply_to_message_id = 0,
-				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
+				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const noexcept;
 
 		/*
 		 * @brief sends a animation to the chat
@@ -214,7 +216,7 @@ namespace tgbot
 		Message::ptr sendAnimation(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &animation,
 				const int &duration = 0, const int &width = 0, const int &height = 0, const std::variant<std::string, tools::InputFile::ptr> &thumb = "",
 				const std::string &caption = "", const std::string &parse_mode = "", const bool &disable_notification = false, const int &reply_to_message_id = 0,
-				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
+				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const noexcept;
 
 		/*
 		 * @brief sends a voice message to the chat
@@ -230,7 +232,7 @@ namespace tgbot
 		 */
 		Message::ptr sendVoice(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &voice, const std::string &caption = "",
 				const std::string &parse_mode = "", const int &duration = 0, const bool &disable_notification = false, const int &reply_to_message_id = 0,
-				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
+				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const noexcept;
 
 		/*
 		 * @brief sends a video note to the chat
@@ -246,7 +248,7 @@ namespace tgbot
 		 */
 		Message::ptr sendVideoNote(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &video_note,
 				const int &duration = 0, const int &length = 0, const std::variant<std::string, tools::InputFile::ptr> &thumb = "",
-				const bool &disable_notification = false, const int &reply_to_message_id = 0, const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
+				const bool &disable_notification = false, const int &reply_to_message_id = 0, const Reply::ptr &reply_markup = std::make_shared<Reply>()) const noexcept;
 
 		/*
 		 * @brief sends a media group to the chat
@@ -257,7 +259,7 @@ namespace tgbot
 		 * @return vector of the sent messages
 		 */
 		std::vector<Message::ptr> sendMediaGroup(const long long &chat_id, const std::vector<std::variant<InputMediaPhoto::ptr, InputMediaVideo::ptr>> &media,
-				const bool &disable_notification = false, const int &reply_to_message_id = 0) const;
+				const bool &disable_notification = false, const int &reply_to_message_id = 0) const noexcept;
 
 		/*
 		 * @brief sends a location to the chat
@@ -270,8 +272,8 @@ namespace tgbot
 		 * @param reply_markup: keyboard which is sent with the location
 		 * @return sent message
 		 */
-		Message::ptr sendLocation(const long long &chat_id, const float &latitude, const float &longitude, const int &live_period = 0, const bool &disable_notification = false,
-				const int &reply_to_message_id = 0, const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
+		Message::ptr sendLocation(const long long &chat_id, const float &latitude, const float &longitude, const int &live_period = 0,
+				const bool &disable_notification = false, const int &reply_to_message_id = 0, const Reply::ptr &reply_markup = std::make_shared<Reply>()) const noexcept;
 
 		/*
 		 * @brief edits the live locations
@@ -284,7 +286,7 @@ namespace tgbot
 		 * @return edited messages
 		 */
 		Message::ptr editMessageLiveLocation(const float &latitude, const float &longitude, const long long &chat_id = 0, const int &message_id = 0,
-				const std::string &inline_message_id = "", const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
+				const std::string &inline_message_id = "", const Reply::ptr &reply_markup = std::make_shared<Reply>()) const noexcept;
 
 		/*
 		 * @brief stops the live locations
@@ -295,7 +297,7 @@ namespace tgbot
 		 * @return edited messages
 		 */
 		Message::ptr stopMessageLiveLocation(const long long &chat_id = 0, const int &message_id = 0, const std::string &inline_message_id = "",
-				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
+				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const noexcept;
 
 		/*
 		 * @brief sends a venue to the chat
@@ -312,8 +314,8 @@ namespace tgbot
 		 * @return sent message
 		 */
 		Message::ptr sendVenue(const long long &chat_id, const float &latitude, const float &longitude, const std::string &title, const std::string &address,
-				const std::string &foursquare_id = "", const std::string &foursquare_type = "", const bool &disable_notification = false, const int &reply_to_message_id = 0,
-				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
+				const std::string &foursquare_id = "", const std::string &foursquare_type = "", const bool &disable_notification = false,
+				const int &reply_to_message_id = 0, const Reply::ptr &reply_markup = std::make_shared<Reply>()) const noexcept;
 
 		/*
 		 * @brief sends a contact to the chat
@@ -329,7 +331,7 @@ namespace tgbot
 		 */
 		Message::ptr sendContact(const long long &chat_id, const std::string &phone_number, const std::string &first_name, const std::string &last_name = "",
 				const std::string &vcard = "", const bool &disable_notification = false, const int &reply_to_message_id = 0,
-				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
+				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const noexcept;
 
 		/*
 		 * @brief sends a poll to the chat
@@ -348,7 +350,7 @@ namespace tgbot
 		 */
 		Message::ptr sendPoll(const long long &chat_id, const std::string &question, const std::vector<std::string> &options, const bool &is_anonymous = true,
 				const std::string &type = "regular", const bool &allows_multiple_answers = false, const int correct_option_id = -1, const bool &is_closed = false,
-				const bool &disable_notification = false, const int &reply_to_message_id = 0, const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
+				const bool &disable_notification = false, const int &reply_to_message_id = 0, const Reply::ptr &reply_markup = std::make_shared<Reply>()) const noexcept;
 
 		/*
 		 * @brief changes bot's status for 5 seconds
@@ -356,7 +358,7 @@ namespace tgbot
 		 * @param action: look up on Telgram bot api documentation which strings are allowed; changes the bot's status properly
 		 * @return true on success
 		 */
-		bool sendChatAction(const long long &chat_id, const std::string &action) const;
+		bool sendChatAction(const long long &chat_id, const std::string &action) const noexcept;
 
 		/*
 		 * @brief get user's profile photos
@@ -364,7 +366,7 @@ namespace tgbot
 		 * @param offset: index of photo which shall be returned starting with 0; pass -1 if all shall be got
 		 * @return UserProfilePhotos json object
 		 */
-		UserProfilePhotos::ptr getUserProfilePhotos(const int &user_id, const int &offset = 0, const int &limit = 100) const;
+		UserProfilePhotos::ptr getUserProfilePhotos(const int &user_id, const int &offset = 0, const int &limit = 100) const noexcept;
 
 		/*
 		 * @brief shows path on Telegram servers where file can be downloaded from
@@ -372,7 +374,7 @@ namespace tgbot
 		 * @param file_id: file id from file we want to get information from and download possibly
 		 * @return File
 		 */
-		File::ptr getFile(const std::string &file_id) const;
+		File::ptr getFile(const std::string &file_id) const noexcept;
 
 		/*
 		 * @brief bans/kicks a Telegram user
@@ -383,7 +385,7 @@ namespace tgbot
 		 * 		they are considered to be banned forever
 		 * @return true on success
 		 */
-		bool kickChatMember(const long long &chat_id, const int &user_id, const int &until_date = 0) const;
+		bool kickChatMember(const long long &chat_id, const int &user_id, const int &until_date = 0) const noexcept;
 
 		/*
 		 * @brief unbans a Telegram user
@@ -391,18 +393,19 @@ namespace tgbot
 		 * @param user_id: Telegram user which shall be unbanned
 		 * @return true on success
 		 */
-		bool unbanChatMember(const long long &chat_id, const int &user_id) const;
+		bool unbanChatMember(const long long &chat_id, const int &user_id) const noexcept;
 
 		/*
 		 * @brief sets permissions for the user
 		 * @param chat_id: chat in which the user's permissions are edited
 		 * @param user_id: Telegram user whose permissions shall be updated
 		 * @param permissions: object which contains all the abilities/permissions with the proper bool
-		 * @param user_id: Date when restrictions will be lifted for the user, unix time. If user is restricted for more than 366 days or less than 30 seconds from the current time,
+		 * @param user_id: Date when restrictions will be lifted for the user, unix time.
+		 * 		If user is restricted for more than 366 days or less than 30 seconds from the current time,
 		 * 		they are considered to be restricted forever
 		 * @return true on success
 		 */
-		bool restrictChatMember(const long long &chat_id, const int &user_id, const ChatPermissions::ptr &permissions, const int &until_date = 0) const;
+		bool restrictChatMember(const long long &chat_id, const int &user_id, const ChatPermissions::ptr &permissions, const int &until_date = 0) const noexcept;
 
 		/*
 		 * @brief sets permissions for the user
@@ -420,7 +423,7 @@ namespace tgbot
 		 */
 		bool promoteChatMember(const long long &chat_id, const int &user_id, const bool &can_change_info, const bool &can_post_messages, const bool &can_edit_messages,
 				const bool &can_delete_messages, const bool &can_invite_users, const bool &can_restrict_members, const bool &can_pin_messages,
-				const bool &can_promote_members) const;
+				const bool &can_promote_members) const noexcept;
 
 		/*
 		 * @brief sets default permissions an entire group
@@ -429,7 +432,7 @@ namespace tgbot
 		 * @param custom_title: the actual title
 		 * @return true on success
 		 */
-		bool setChatAdministratorCustomTitle(const long long &chat_id, const int &user_id, const std::string &custom_title) const;
+		bool setChatAdministratorCustomTitle(const long long &chat_id, const int &user_id, const std::string &custom_title) const noexcept;
 
 		/*
 		 * @brief sets default permissions an entire group
@@ -437,14 +440,14 @@ namespace tgbot
 		 * @param permissions: the default permissions by passing type ChatPermissions
 		 * @return true on success
 		 */
-		bool setChatPermissions(const long long &chat_id, const ChatPermissions::ptr &permissions) const;
+		bool setChatPermissions(const long long &chat_id, const ChatPermissions::ptr &permissions) const noexcept;
 
 		/*
 		 * @brief accesses group's invite link
 		 * @param chat_id: chat from which the invite link shall be got
 		 * @return true on success
 		 */
-		bool exportChatInviteLink(const long long &chat_id) const;
+		bool exportChatInviteLink(const long long &chat_id) const noexcept;
 
 		/*
 		 * @brief sets the photo of a group
@@ -452,14 +455,14 @@ namespace tgbot
 		 * @param photo: photo which shall be used as a group photo
 		 * @return true on success
 		 */
-		bool setChatPhoto(const long long &chat_id, const tools::InputFile::ptr &photo) const;
+		bool setChatPhoto(const long long &chat_id, const tools::InputFile::ptr &photo) const noexcept;
 
 		/*
 		 * @brief deletes the photo of a group
 		 * @param chat_id: chat in which group photo shall be deleted
 		 * @return true on success
 		 */
-		bool deleteChatPhoto(const long long &chat_id) const;
+		bool deleteChatPhoto(const long long &chat_id) const noexcept;
 
 		/*
 		 * @brief sets the title of a group
@@ -467,7 +470,7 @@ namespace tgbot
 		 * @param title: the corresponding title
 		 * @return true on success
 		 */
-		bool setChatTitle(const long long &chat_id, const std::string &title) const;
+		bool setChatTitle(const long long &chat_id, const std::string &title) const noexcept;
 
 		/*
 		 * @brief sets the description of a group
@@ -475,7 +478,7 @@ namespace tgbot
 		 * @param description: the corresponding description
 		 * @return true on success
 		 */
-		bool setChatDescription(const long long &chat_id, const std::string &description = "") const;
+		bool setChatDescription(const long long &chat_id, const std::string &description = "") const noexcept;
 
 		/*
 		 * @brief pins a message in the group
@@ -484,42 +487,42 @@ namespace tgbot
 		 * @param disable_notification: whether users shall be notified of the pinned message
 		 * @return true on success
 		 */
-		bool pinChatMessage(const long long &chat_id, const int &message_id, const bool &disable_notification = false) const;
+		bool pinChatMessage(const long long &chat_id, const int &message_id, const bool &disable_notification = false) const noexcept;
 
 		/*
 		 * @brief unpins the actual pin message in the group
 		 * @param chat_id: chat in which the pinned message shall be unpinned
 		 * @return true on success
 		 */
-		bool unpinChatMessage(const long long &chat_id) const;
+		bool unpinChatMessage(const long long &chat_id) const noexcept;
 
 		/*
 		 * @brief lets bot leave the chat
 		 * @param chat_id: id of chat which bot shall leave
 		 * @return true on success
 		 */
-		bool leaveChat(const long long &chat_id) const;
+		bool leaveChat(const long long &chat_id) const noexcept;
 
 		/*
 		 * @brief gets Chat object
 		 * @param chat_id: id of chat from which we want some information
 		 * @return true on success
 		 */
-		Chat::ptr getChat(const long long &chat_id) const;
+		Chat::ptr getChat(const long long &chat_id) const noexcept;
 
 		/*
 		 * @brief gets all administrators
 		 * @param chat_id: id of chat from which we want the admins
 		 * @return array with all the admins
 		 */
-		std::vector<ChatMember::ptr> getChatAdministrators(const long long &chat_id) const;
+		std::vector<ChatMember::ptr> getChatAdministrators(const long long &chat_id) const noexcept;
 
 		/*
 		 * @brief gets amount of group members
 		 * @param chat_id: id of chat from which we want the amount of group members
 		 * @return the amount as an integer
 		 */
-		int getChatMembersCount(const long long &chat_id) const;
+		int getChatMembersCount(const long long &chat_id) const noexcept;
 
 		/*
 		 * @brief gets ChatMember object of one group member
@@ -527,7 +530,7 @@ namespace tgbot
 		 * @param user_id: id of user whose information we want
 		 * @return ChatMember of user in the group
 		 */
-		ChatMember::ptr getChatMember(const long long &chat_id, const int &user_id) const;
+		ChatMember::ptr getChatMember(const long long &chat_id, const int &user_id) const noexcept;
 
 		/*
 		 * @brief sets a sticker set which can be used in the group
@@ -535,14 +538,14 @@ namespace tgbot
 		 * @param sticker_set_name: name of the sticker set which we enable in the chat
 		 * @return true on success
 		 */
-		bool setChatStickerSet(const long long &chat_id, const std::string &sticker_set_name) const;
+		bool setChatStickerSet(const long long &chat_id, const std::string &sticker_set_name) const noexcept;
 
 		/*
 		 * @brief deletes a sticker set which can be used in the group
 		 * @param chat_id: id of chat in which we want to delete the sticker set
 		 * @return true on success
 		 */
-		bool deleteChatStickerSet(const long long &chat_id) const;
+		bool deleteChatStickerSet(const long long &chat_id) const noexcept;
 
 		/*
 		 * @brief answers a callback query from an inline keyboard
@@ -554,7 +557,7 @@ namespace tgbot
 		 * @return true on success
 		 */
 		bool answerCallbackQuery(const std::string &callback_query_id, const std::string &text = "", const bool &show_alert = false, const std::string &url = "",
-				const int &cache_time = 0) const;
+				const int &cache_time = 0) const noexcept;
 
 		/*
 		 * @brief edits an already sent message
@@ -568,7 +571,7 @@ namespace tgbot
 		 * @return new edited Message
 		 */
 		Message::ptr editMessageText(const std::string &text, const long long &chat_id = 0, const int &message_id = 0, const std::string &inline_message_id = "",
-				const std::string &parse_mode = "", const bool &disable_web_page_preview = false, const Reply::ptr reply_markup = std::make_shared<Reply>()) const;
+				const std::string &parse_mode = "", const bool &disable_web_page_preview = false, const Reply::ptr reply_markup = std::make_shared<Reply>()) const noexcept;
 
 		/*
 		 * @brief edits an already sent message
@@ -581,7 +584,7 @@ namespace tgbot
 		 * @return new edited Message
 		 */
 		Message::ptr editMessageCaption(const long long &chat_id = 0, const int &message_id = 0, const std::string &inline_message_id = "", const std::string &caption = 0,
-				const std::string &parse_mode = "", const Reply::ptr reply_markup = std::make_shared<Reply>()) const;
+				const std::string &parse_mode = "", const Reply::ptr reply_markup = std::make_shared<Reply>()) const noexcept;
 
 		/*
 		 * @brief edits an already sent message media
@@ -594,7 +597,7 @@ namespace tgbot
 		 */
 		Message::ptr editMessageMedia(const std::variant<InputMediaAnimation::ptr, InputMediaAudio::ptr, InputMediaDocument::ptr, InputMediaPhoto::ptr,
 				InputMediaVideo::ptr> &media, const long long &chat_id = 0, const int &message_id = 0, const std::string &inline_message_id = "",
-				const Reply::ptr reply_markup = std::make_shared<Reply>()) const;
+				const Reply::ptr reply_markup = std::make_shared<Reply>()) const noexcept;
 
 		/*
 		 * @brief edits an already sent keyboard
@@ -605,7 +608,7 @@ namespace tgbot
 		 * @return new edited Message
 		 */
 		Message::ptr editMessageReplyMarkup(const Reply::ptr &reply_markup, const long long &chat_id = 0, const int &message_id = 0,
-				const std::string &inline_message_id = "") const;
+				const std::string &inline_message_id = "") const noexcept;
 
 		/*
 		 * @brief stops a running poll
@@ -614,7 +617,7 @@ namespace tgbot
 		 * @param reply_markup: keyboard which is sent with the message
 		 * @return Poll object with final results
 		 */
-		Poll::ptr stopPoll(const long long &chat_id, const int &message_id, const Reply::ptr reply_markup = std::make_shared<Reply>()) const;
+		Poll::ptr stopPoll(const long long &chat_id, const int &message_id, const Reply::ptr reply_markup = std::make_shared<Reply>()) const noexcept;
 
 		/*
 		 * @brief deletes a message
@@ -622,7 +625,7 @@ namespace tgbot
 		 * @param message_id: id of message which shall be deleted
 		 * @return true on success
 		 */
-		bool deleteMessage(const long long &chat_id, const int &message_id) const;
+		bool deleteMessage(const long long &chat_id, const int &message_id) const noexcept;
 
 		/*
 		 * @brief sends a sticker to the chat
@@ -634,14 +637,14 @@ namespace tgbot
 		 * @return sent message
 		 */
 		Message::ptr sendSticker(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &sticker, const bool &disable_notification = false,
-				const int &reply_to_message_id = 0, const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
+				const int &reply_to_message_id = 0, const Reply::ptr &reply_markup = std::make_shared<Reply>()) const noexcept;
 
 		/*
 		 * @brief gets a StickerSet
 		 * @param name: sticker set's name
 		 * @return StickerSet object
 		 */
-		StickerSet::ptr getStickerSet(const std::string &name) const;
+		StickerSet::ptr getStickerSet(const std::string &name) const noexcept;
 
 		/*
 		 * @brief uploads a new sticker
@@ -649,7 +652,7 @@ namespace tgbot
 		 * @param png_sticker: the sticker itself
 		 * @return File object
 		 */
-		File::ptr uploadStickerFile(const int &user_id, const tools::InputFile::ptr &png_sticker) const;
+		File::ptr uploadStickerFile(const int &user_id, const tools::InputFile::ptr &png_sticker) const noexcept;
 
 		/*
 		 * @brief uploads a new sticker
@@ -663,7 +666,7 @@ namespace tgbot
 		 * @return true on success
 		 */
 		bool createNewStickerSet(const int &user_id, const std::string &name, const std::string &title, const std::variant<std::string, tools::InputFile::ptr> &png_sticker,
-				const std::string &emojis, const bool &contains_mask = false, const MaskPosition::ptr &mask_position = std::make_shared<MaskPosition>()) const;
+				const std::string &emojis, const bool &contains_mask = false, const MaskPosition::ptr &mask_position = std::make_shared<MaskPosition>()) const noexcept;
 
 		/*
 		 * @brief adds a sticker to a created set by a bot
@@ -675,7 +678,7 @@ namespace tgbot
 		 * @return true on success
 		 */
 		bool addStickerToSet(const int &user_id, const std::string &name, const std::variant<std::string, tools::InputFile::ptr> &png_sticker,
-				const std::string &emojis, const MaskPosition::ptr &mask_position = std::make_shared<MaskPosition>()) const;
+				const std::string &emojis, const MaskPosition::ptr &mask_position = std::make_shared<MaskPosition>()) const noexcept;
 
 		/*
 		 * @brief moves a sticker in a set
@@ -683,14 +686,14 @@ namespace tgbot
 		 * @param position: New sticker position in the set, zero-based
 		 * @return true on success
 		 */
-		bool setStickerPositionInSet(const std::string &sticker, const int &position) const;
+		bool setStickerPositionInSet(const std::string &sticker, const int &position) const noexcept;
 
 		/*
 		 * @brief deletes a sticker from a set
 		 * @param sticker: file identifier of the sticker
 		 * @return true on success
 		 */
-		bool deleteStickerFromSet(const std::string &sticker) const;
+		bool deleteStickerFromSet(const std::string &sticker) const noexcept;
 
 		/*
 		 * @brief answers inline queries
@@ -709,7 +712,7 @@ namespace tgbot
 		 */
 		bool answerInlineQuery(const std::string &inline_query_id, const std::vector<InlineQueryResult::ptr> &results, const int &cache_time = 300,
 				const bool &is_personal = false, const std::string &next_offset = "", const std::string &switch_pm_text = "",
-				const std::string &switch_pm_parameter = "") const;
+				const std::string &switch_pm_parameter = "") const noexcept;
 
 		/*
 		 * @brief sends an invoice to the chat
@@ -746,7 +749,7 @@ namespace tgbot
 				const int &photo_height = 0, const bool &need_name = false, const bool &need_phone_number = false, const bool &need_email = false,
 				const bool &need_shipping_address = false, const bool &send_phone_number_to_provider = false, const bool &send_email_to_provider = false,
 				const bool &is_flexible = false, const bool &disable_notification = false, const int &reply_to_message_id = 0,
-				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const;
+				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const noexcept;
 
 		/*
 		 * @brief answers a shipping query
@@ -759,7 +762,7 @@ namespace tgbot
 		 * @return true on success
 		 */
 		bool answerShippingQuery(const std::string &shipping_query_id, const bool &ok,
-				const std::vector<ShippingOption::ptr> &shipping_options = std::vector<ShippingOption::ptr>(), const std::string &error_message = "") const;
+				const std::vector<ShippingOption::ptr> &shipping_options = std::vector<ShippingOption::ptr>(), const std::string &error_message = "") const noexcept;
 
 		/*
 		 * @brief answers a pre checkout query
@@ -770,7 +773,7 @@ namespace tgbot
 		 * 			Please choose a different color or garment!"). Telegram will display this message to the user.
 		 * @return true on success
 		 */
-		bool answerPreCheckoutQuery(const std::string &pre_checkout_query_id, const bool &ok, const std::string &error_message = "") const;
+		bool answerPreCheckoutQuery(const std::string &pre_checkout_query_id, const bool &ok, const std::string &error_message = "") const noexcept;
 
 		/*
 		 * @brief answers a pre checkout query
@@ -778,7 +781,7 @@ namespace tgbot
 		 * @param ok: array describing the errors
 		 * @return true on success
 		 */
-		bool setPassportDataErrors(const int &user_id, const bool &ok, const std::vector<PassportElementError::ptr> &errors) const;
+		bool setPassportDataErrors(const int &user_id, const bool &ok, const std::vector<PassportElementError::ptr> &errors) const noexcept;
 
 		/*
 		 * @brief send a game
@@ -790,7 +793,7 @@ namespace tgbot
 		 * @return sent Message
 		 */
 		Message::ptr sendGame(const long long &chat_id, const std::string &game_short_name, const bool &disable_notification = false, const int &reply_to_message_id = 0,
-				const InlineKeyboardMarkup::ptr &reply_markup = std::make_shared<InlineKeyboardMarkup>()) const;
+				const InlineKeyboardMarkup::ptr &reply_markup = std::make_shared<InlineKeyboardMarkup>()) const noexcept;
 
 		/*
 		 * @brief sets a game score
@@ -804,7 +807,7 @@ namespace tgbot
 		 * @return sent Message
 		 */
 		Message::ptr setGameScore(const int &user_id, const int &score, const bool &force = false, const bool &disable_edit_message = false, const long long &chat_id = 0,
-				const int &message_id = 0, const std::string &inline_message_id = "") const;
+				const int &message_id = 0, const std::string &inline_message_id = "") const noexcept;
 
 		/*
 		 * @brief gets a game score
@@ -815,7 +818,7 @@ namespace tgbot
 		 * @return sent Message
 		 */
 		std::vector<GameHighScore::ptr> getGameHighScores(const int &user_id, const long long &chat_id = 0, const int &message_id = 0,
-				const std::string &inline_message_id = "") const;
+				const std::string &inline_message_id = "") const noexcept;
 	};
 }
 

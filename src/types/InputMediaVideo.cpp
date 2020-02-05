@@ -89,7 +89,7 @@ namespace tgbot
 						caption(caption), parse_mode(parse_mode), width(width), height(height), duration(duration), supports_streaming(supports_streaming)
 	{}
 
-	std::string InputMediaVideo::parse_to_json() const
+	std::string InputMediaVideo::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
