@@ -41,15 +41,16 @@ namespace tgbot
 		//@param height: video's height
 		//@param duration: video's duration
 		//@param supports_streaming: whether video can be streamed
-		InputMediaVideo(const std::variant<std::string, tools::InputFile::ptr> &media, const std::variant<std::string, tools::InputFile::ptr> &thumb, const std::string &caption = "",
-				const std::string &parse_mode = "", const int &width = -1, const int &height = -1, const int &duration = -1, const bool & supports_streaming = false);
+		InputMediaVideo(const std::variant<std::string, tools::InputFile::ptr> &media, const std::variant<std::string, tools::InputFile::ptr> &thumb,
+				const std::string &caption = "", const std::string &parse_mode = "", const int &width = -1, const int &height = -1, const int &duration = -1,
+				const bool & supports_streaming = false);
 
 		//member functions
 		/*
 		 * @brief parses itself into json equivalent
 		 * @return json object of itself as a string
 		 */
-		std::string parse_to_json() const;
+		std::string parse_to_json() const noexcept;
 	};
 }
 

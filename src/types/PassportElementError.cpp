@@ -5,7 +5,7 @@ namespace tgbot
 	PassportElementError::~PassportElementError()
 	{}
 
-	std::string PassportElementError::parse_to_json() const
+	std::string PassportElementError::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 

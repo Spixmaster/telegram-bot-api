@@ -5,7 +5,7 @@ namespace tgbot
 	InlineQueryResult::~InlineQueryResult()
 	{}
 
-	std::string InlineQueryResult::parse_to_json() const
+	std::string InlineQueryResult::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 

@@ -54,7 +54,7 @@ namespace tgbot
 	InlineKeyboardMarkup::InlineKeyboardMarkup(const std::vector<std::vector<InlineKeyboardButton::ptr>> &keyboard) : inline_keyboard(keyboard)
 	{}
 
-	std::string InlineKeyboardMarkup::parse_to_json() const
+	std::string InlineKeyboardMarkup::parse_to_json() const noexcept
 	{
 		std::string json = "{\"inline_keyboard\": [";
 

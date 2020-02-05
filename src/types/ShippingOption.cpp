@@ -53,7 +53,7 @@ namespace tgbot
 			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
 	}
 
-	std::string ShippingOption::parse_to_json() const
+	std::string ShippingOption::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 

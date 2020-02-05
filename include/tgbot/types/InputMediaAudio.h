@@ -39,15 +39,15 @@ namespace tgbot
 		//@param duration: audio's duration
 		//@param performer: audio's performer
 		//@param title: audio's title
-		InputMediaAudio(const std::variant<std::string, tools::InputFile::ptr> &media, const std::variant<std::string, tools::InputFile::ptr> &thumb, const std::string &caption = "",
-				const std::string &parse_mode = "", const int &duration = -1, const std::string &performer = "", const std::string &title = "");
+		InputMediaAudio(const std::variant<std::string, tools::InputFile::ptr> &media, const std::variant<std::string, tools::InputFile::ptr> &thumb,
+				const std::string &caption = "", const std::string &parse_mode = "", const int &duration = -1, const std::string &performer = "", const std::string &title = "");
 
 		//member functions
 		/*
 		 * @brief parses itself into json equivalent
 		 * @return json object of itself as a string
 		 */
-		std::string parse_to_json() const;
+		std::string parse_to_json() const noexcept;
 	};
 }
 

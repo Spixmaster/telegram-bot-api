@@ -11,7 +11,7 @@ namespace tgbot
 	Endpoints::Endpoints(const std::string &token) : m_token(token)
 	{}
 
-	std::vector<Update::ptr> Endpoints::getUpdates(const int &offset, const int &limit, const int &timeout, const std::vector<std::string> &allowed_updates) const
+	std::vector<Update::ptr> Endpoints::getUpdates(const int &offset, const int &limit, const int &timeout, const std::vector<std::string> &allowed_updates) const noexcept
 	{
 		//go through vector to build up the json array
 		std::string allowed_updates_json = "[";
@@ -75,7 +75,7 @@ namespace tgbot
 	}
 
 	bool Endpoints::setWebhook(const std::string &url, const tools::InputFile::ptr &certificate, const int &max_connections,
-			const std::vector<std::string> &allowed_updates) const
+			const std::vector<std::string> &allowed_updates) const noexcept
 	{
 		//go through vector to build up the json array
 		std::string allowed_updates_json = "[";
@@ -127,7 +127,7 @@ namespace tgbot
 		return false;
 	}
 
-	bool Endpoints::deleteWebhook() const
+	bool Endpoints::deleteWebhook() const noexcept
 	{
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/deleteWebhook");
 		std::string json = http_client.send_get_req().m_body;
@@ -149,7 +149,7 @@ namespace tgbot
 		return false;
 	}
 
-	WebhookInfo::ptr Endpoints::getWebhookInfo() const
+	WebhookInfo::ptr Endpoints::getWebhookInfo() const noexcept
 	{
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/getWebhookInfo");
 		std::string json = http_client.send_get_req().m_body;
@@ -173,7 +173,7 @@ namespace tgbot
 		return webhook_info;
 	}
 
-	User::ptr Endpoints::getMe() const
+	User::ptr Endpoints::getMe() const noexcept
 	{
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/getMe");
 		std::string json = http_client.send_get_req().m_body;
@@ -198,7 +198,7 @@ namespace tgbot
 	}
 
 	Message::ptr Endpoints::sendMessage(const long long &chat_id, const std::string &text, const std::string &parse_mode, const bool &disable_web_page_preview,
-			const bool &disable_notification, const int &reply_to_message_id, const Reply::ptr &reply_markup) const
+			const bool &disable_notification, const int &reply_to_message_id, const Reply::ptr &reply_markup) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -232,7 +232,7 @@ namespace tgbot
 		return msg;
 	}
 
-	Message::ptr Endpoints::forwardMessage(const long long &chat_id, const long long &from_chat_id, const int &message_id, const bool &disable_notification) const
+	Message::ptr Endpoints::forwardMessage(const long long &chat_id, const long long &from_chat_id, const int &message_id, const bool &disable_notification) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -264,7 +264,7 @@ namespace tgbot
 	}
 
 	Message::ptr Endpoints::sendPhoto(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &photo, const std::string &caption,
-			const std::string &parse_mode, const bool &disable_notification, const int &reply_to_message_id, const Reply::ptr &reply_markup) const
+			const std::string &parse_mode, const bool &disable_notification, const int &reply_to_message_id, const Reply::ptr &reply_markup) const noexcept
 	{
 		if(std::holds_alternative<std::string>(photo))
 		{
@@ -340,7 +340,7 @@ namespace tgbot
 	Message::ptr Endpoints::sendAudio(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &audio, const std::string &caption,
 			const std::string &parse_mode, const int &duration, const std::string &performer, const std::string &title,
 			const std::variant<std::string, tools::InputFile::ptr> &thumb, const bool &disable_notification, const int &reply_to_message_id,
-			const Reply::ptr &reply_markup) const
+			const Reply::ptr &reply_markup) const noexcept
 	{
 		if(std::holds_alternative<std::string>(audio) && std::holds_alternative<std::string>(thumb))
 		{
@@ -497,7 +497,7 @@ namespace tgbot
 
 	Message::ptr Endpoints::sendDocument(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &document,
 			const std::variant<std::string, tools::InputFile::ptr> &thumb, const std::string &caption, const std::string &parse_mode,
-			const bool &disable_notification, const int &reply_to_message_id, const Reply::ptr &reply_markup) const
+			const bool &disable_notification, const int &reply_to_message_id, const Reply::ptr &reply_markup) const noexcept
 	{
 		if(std::holds_alternative<std::string>(document) && std::holds_alternative<std::string>(thumb))
 		{
@@ -643,7 +643,7 @@ namespace tgbot
 	Message::ptr Endpoints::sendVideo(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &video, const int &duration, const int &width,
 			const int &height, const std::variant<std::string, tools::InputFile::ptr> &thumb, const std::string &caption,
 			const std::string &parse_mode, const bool &supports_streaming, const bool &disable_notification, const int &reply_to_message_id,
-			const Reply::ptr &reply_markup) const
+			const Reply::ptr &reply_markup) const noexcept
 	{
 		if(std::holds_alternative<std::string>(video) && std::holds_alternative<std::string>(thumb))
 		{
@@ -805,7 +805,7 @@ namespace tgbot
 	Message::ptr Endpoints::sendAnimation(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &animation,
 			const int &duration, const int &width, const int &height, const std::variant<std::string, tools::InputFile::ptr> &thumb,
 			const std::string &caption, const std::string &parse_mode, const bool &disable_notification, const int &reply_to_message_id,
-			const Reply::ptr &reply_markup) const
+			const Reply::ptr &reply_markup) const noexcept
 	{
 		if(std::holds_alternative<std::string>(animation) && std::holds_alternative<std::string>(thumb))
 		{
@@ -961,7 +961,8 @@ namespace tgbot
 	}
 
 	Message::ptr Endpoints::sendVoice(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &voice, const std::string &caption,
-			const std::string &parse_mode, const int &duration, const bool &disable_notification, const int &reply_to_message_id, const Reply::ptr &reply_markup) const
+			const std::string &parse_mode, const int &duration, const bool &disable_notification, const int &reply_to_message_id,
+			const Reply::ptr &reply_markup) const noexcept
 	{
 		if(std::holds_alternative<std::string>(voice))
 		{
@@ -1038,7 +1039,7 @@ namespace tgbot
 
 	Message::ptr Endpoints::sendVideoNote(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &video_note,
 			const int &duration, const int &length, const std::variant<std::string, tools::InputFile::ptr> &thumb,
-			const bool &disable_notification, const int &reply_to_message_id, const Reply::ptr &reply_markup) const
+			const bool &disable_notification, const int &reply_to_message_id, const Reply::ptr &reply_markup) const noexcept
 	{
 		if(std::holds_alternative<std::string>(video_note) && std::holds_alternative<std::string>(thumb))
 		{
@@ -1182,7 +1183,7 @@ namespace tgbot
 	}
 
 	std::vector<Message::ptr> Endpoints::sendMediaGroup(const long long &chat_id, const std::vector<std::variant<InputMediaPhoto::ptr, InputMediaVideo::ptr>> &media,
-			const bool &disable_notification, const int &reply_to_message_id) const
+			const bool &disable_notification, const int &reply_to_message_id) const noexcept
 	{
 		//vector contains all paths to files which still need to be uploaded
 		std::vector<std::string> files_to_upload;
@@ -1274,7 +1275,7 @@ namespace tgbot
 	}
 
 	Message::ptr Endpoints::sendLocation(const long long &chat_id, const float &latitude, const float &longitude, const int &live_period, const bool &disable_notification,
-			const int &reply_to_message_id, const Reply::ptr &reply_markup) const
+			const int &reply_to_message_id, const Reply::ptr &reply_markup) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -1309,7 +1310,7 @@ namespace tgbot
 	}
 
 	Message::ptr Endpoints::editMessageLiveLocation(const float &latitude, const float &longitude, const long long &chat_id, const int &message_id,
-			const std::string &inline_message_id, const Reply::ptr &reply_markup) const
+			const std::string &inline_message_id, const Reply::ptr &reply_markup) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -1343,7 +1344,7 @@ namespace tgbot
 	}
 
 	Message::ptr Endpoints::stopMessageLiveLocation(const long long &chat_id, const int &message_id, const std::string &inline_message_id,
-			const Reply::ptr &reply_markup) const
+			const Reply::ptr &reply_markup) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -1376,7 +1377,7 @@ namespace tgbot
 
 	Message::ptr Endpoints::sendVenue(const long long &chat_id, const float &latitude, const float &longitude, const std::string &title, const std::string &address,
 			const std::string &foursquare_id, const std::string &foursquare_type, const bool &disable_notification, const int &reply_to_message_id,
-			const Reply::ptr &reply_markup) const
+			const Reply::ptr &reply_markup) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -1414,7 +1415,7 @@ namespace tgbot
 	}
 
 	Message::ptr Endpoints::sendContact(const long long &chat_id, const std::string &phone_number, const std::string &first_name, const std::string &last_name,
-			const std::string &vcard, const bool &disable_notification, const int &reply_to_message_id, const Reply::ptr &reply_markup) const
+			const std::string &vcard, const bool &disable_notification, const int &reply_to_message_id, const Reply::ptr &reply_markup) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -1451,7 +1452,7 @@ namespace tgbot
 
 	Message::ptr Endpoints::sendPoll(const long long &chat_id, const std::string &question, const std::vector<std::string> &options, const bool &is_anonymous,
 			const std::string &type, const bool &allows_multiple_answers, const int correct_option_id, const bool &is_closed,
-			const bool &disable_notification, const int &reply_to_message_id, const Reply::ptr &reply_markup) const
+			const bool &disable_notification, const int &reply_to_message_id, const Reply::ptr &reply_markup) const noexcept
 	{
 		//create json array of options
 		std::string options_json = "[";
@@ -1507,7 +1508,7 @@ namespace tgbot
 		return msg;
 	}
 
-	bool Endpoints::sendChatAction(const long long &chat_id, const std::string &action) const
+	bool Endpoints::sendChatAction(const long long &chat_id, const std::string &action) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -1534,7 +1535,7 @@ namespace tgbot
 		return false;
 	}
 
-	UserProfilePhotos::ptr Endpoints::getUserProfilePhotos(const int &user_id, const int &offset, const int &limit) const
+	UserProfilePhotos::ptr Endpoints::getUserProfilePhotos(const int &user_id, const int &offset, const int &limit) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -1565,7 +1566,7 @@ namespace tgbot
 		return usr_profile_photos;
 	}
 
-	File::ptr Endpoints::getFile(const std::string &file_id) const
+	File::ptr Endpoints::getFile(const std::string &file_id) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -1593,7 +1594,7 @@ namespace tgbot
 		return file;
 	}
 
-	bool Endpoints::kickChatMember(const long long &chat_id, const int &user_id, const int &until_date) const
+	bool Endpoints::kickChatMember(const long long &chat_id, const int &user_id, const int &until_date) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -1621,7 +1622,7 @@ namespace tgbot
 		return false;
 	}
 
-	bool Endpoints::unbanChatMember(const long long &chat_id, const int &user_id) const
+	bool Endpoints::unbanChatMember(const long long &chat_id, const int &user_id) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -1648,7 +1649,7 @@ namespace tgbot
 		return false;
 	}
 
-	bool Endpoints::restrictChatMember(const long long &chat_id, const int &user_id, const ChatPermissions::ptr &permissions, const int &until_date) const
+	bool Endpoints::restrictChatMember(const long long &chat_id, const int &user_id, const ChatPermissions::ptr &permissions, const int &until_date) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -1679,7 +1680,7 @@ namespace tgbot
 
 	bool Endpoints::promoteChatMember(const long long &chat_id, const int &user_id, const bool &can_change_info, const bool &can_post_messages,
 			const bool &can_edit_messages, const bool &can_delete_messages, const bool &can_invite_users, const bool &can_restrict_members,
-			const bool &can_pin_messages, const bool &can_promote_members) const
+			const bool &can_pin_messages, const bool &can_promote_members) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -1714,7 +1715,7 @@ namespace tgbot
 		return false;
 	}
 
-	bool Endpoints::setChatAdministratorCustomTitle(const long long &chat_id, const int &user_id, const std::string &custom_title) const
+	bool Endpoints::setChatAdministratorCustomTitle(const long long &chat_id, const int &user_id, const std::string &custom_title) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -1742,7 +1743,7 @@ namespace tgbot
 		return false;
 	}
 
-	bool Endpoints::setChatPermissions(const long long &chat_id, const ChatPermissions::ptr &permissions) const
+	bool Endpoints::setChatPermissions(const long long &chat_id, const ChatPermissions::ptr &permissions) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -1769,7 +1770,7 @@ namespace tgbot
 		return false;
 	}
 
-	bool Endpoints::exportChatInviteLink(const long long &chat_id) const
+	bool Endpoints::exportChatInviteLink(const long long &chat_id) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -1795,7 +1796,7 @@ namespace tgbot
 		return false;
 	}
 
-	bool Endpoints::setChatPhoto(const long long &chat_id, const tools::InputFile::ptr &photo) const
+	bool Endpoints::setChatPhoto(const long long &chat_id, const tools::InputFile::ptr &photo) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -1822,7 +1823,7 @@ namespace tgbot
 		return false;
 	}
 
-	bool Endpoints::deleteChatPhoto(const long long &chat_id) const
+	bool Endpoints::deleteChatPhoto(const long long &chat_id) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -1848,7 +1849,7 @@ namespace tgbot
 		return false;
 	}
 
-	bool Endpoints::setChatTitle(const long long &chat_id, const std::string &title) const
+	bool Endpoints::setChatTitle(const long long &chat_id, const std::string &title) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -1875,7 +1876,7 @@ namespace tgbot
 		return false;
 	}
 
-	bool Endpoints::setChatDescription(const long long &chat_id, const std::string &description) const
+	bool Endpoints::setChatDescription(const long long &chat_id, const std::string &description) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -1902,7 +1903,7 @@ namespace tgbot
 		return false;
 	}
 
-	bool Endpoints::pinChatMessage(const long long &chat_id, const int &message_id, const bool &disable_notification) const
+	bool Endpoints::pinChatMessage(const long long &chat_id, const int &message_id, const bool &disable_notification) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -1930,7 +1931,7 @@ namespace tgbot
 		return false;
 	}
 
-	bool Endpoints::unpinChatMessage(const long long &chat_id) const
+	bool Endpoints::unpinChatMessage(const long long &chat_id) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -1956,7 +1957,7 @@ namespace tgbot
 		return false;
 	}
 
-	bool Endpoints::leaveChat(const long long &chat_id) const
+	bool Endpoints::leaveChat(const long long &chat_id) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -1982,7 +1983,7 @@ namespace tgbot
 		return false;
 	}
 
-	Chat::ptr Endpoints::getChat(const long long &chat_id) const
+	Chat::ptr Endpoints::getChat(const long long &chat_id) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -2010,7 +2011,7 @@ namespace tgbot
 		return chat;
 	}
 
-	std::vector<ChatMember::ptr> Endpoints::getChatAdministrators(const long long &chat_id) const
+	std::vector<ChatMember::ptr> Endpoints::getChatAdministrators(const long long &chat_id) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -2051,7 +2052,7 @@ namespace tgbot
 		return admins;
 	}
 
-	int Endpoints::getChatMembersCount(const long long &chat_id) const
+	int Endpoints::getChatMembersCount(const long long &chat_id) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -2077,7 +2078,7 @@ namespace tgbot
 		return 0;
 	}
 
-	ChatMember::ptr Endpoints::getChatMember(const long long &chat_id, const int &user_id) const
+	ChatMember::ptr Endpoints::getChatMember(const long long &chat_id, const int &user_id) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -2106,7 +2107,7 @@ namespace tgbot
 		return chat_member;
 	}
 
-	bool Endpoints::setChatStickerSet(const long long &chat_id, const std::string &sticker_set_name) const
+	bool Endpoints::setChatStickerSet(const long long &chat_id, const std::string &sticker_set_name) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -2133,7 +2134,7 @@ namespace tgbot
 		return false;
 	}
 
-	bool Endpoints::deleteChatStickerSet(const long long &chat_id) const
+	bool Endpoints::deleteChatStickerSet(const long long &chat_id) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -2160,7 +2161,7 @@ namespace tgbot
 	}
 
 	bool Endpoints::answerCallbackQuery(const std::string &callback_query_id, const std::string &text, const bool &show_alert, const std::string &url,
-			const int &cache_time) const
+			const int &cache_time) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -2191,7 +2192,7 @@ namespace tgbot
 	}
 
 	Message::ptr Endpoints::editMessageText(const std::string &text, const long long &chat_id, const int &message_id, const std::string &inline_message_id,
-			const std::string &parse_mode, const bool &disable_web_page_preview, const Reply::ptr reply_markup) const
+			const std::string &parse_mode, const bool &disable_web_page_preview, const Reply::ptr reply_markup) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -2226,7 +2227,7 @@ namespace tgbot
 	}
 
 	Message::ptr Endpoints::editMessageCaption(const long long &chat_id, const int &message_id, const std::string &inline_message_id, const std::string &caption,
-			const std::string &parse_mode, const Reply::ptr reply_markup) const
+			const std::string &parse_mode, const Reply::ptr reply_markup) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -2265,7 +2266,7 @@ namespace tgbot
 	 */
 	Message::ptr Endpoints::editMessageMedia(
 			const std::variant<InputMediaAnimation::ptr, InputMediaAudio::ptr, InputMediaDocument::ptr, InputMediaPhoto::ptr, InputMediaVideo::ptr> &media,
-			const long long &chat_id, const int &message_id, const std::string &inline_message_id, const Reply::ptr reply_markup) const
+			const long long &chat_id, const int &message_id, const std::string &inline_message_id, const Reply::ptr reply_markup) const noexcept
 	{
 		//contains the paths to files which need to be uploaded
 		std::vector<std::string> files_to_upload;
@@ -2374,7 +2375,8 @@ namespace tgbot
 		return msg;
 	}
 
-	Message::ptr Endpoints::editMessageReplyMarkup(const Reply::ptr &reply_markup, const long long &chat_id, const int &message_id, const std::string &inline_message_id) const
+	Message::ptr Endpoints::editMessageReplyMarkup(const Reply::ptr &reply_markup, const long long &chat_id, const int &message_id,
+			const std::string &inline_message_id) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -2405,7 +2407,7 @@ namespace tgbot
 		return msg;
 	}
 
-	Poll::ptr Endpoints::stopPoll(const long long &chat_id, const int &message_id, const Reply::ptr reply_markup) const
+	Poll::ptr Endpoints::stopPoll(const long long &chat_id, const int &message_id, const Reply::ptr reply_markup) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -2435,7 +2437,7 @@ namespace tgbot
 		return poll;
 	}
 
-	bool Endpoints::deleteMessage(const long long &chat_id, const int &message_id) const
+	bool Endpoints::deleteMessage(const long long &chat_id, const int &message_id) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -2463,7 +2465,7 @@ namespace tgbot
 	}
 
 	Message::ptr Endpoints::sendSticker(const long long &chat_id, const std::variant<std::string, tools::InputFile::ptr> &sticker, const bool &disable_notification,
-			const int &reply_to_message_id, const Reply::ptr &reply_markup) const
+			const int &reply_to_message_id, const Reply::ptr &reply_markup) const noexcept
 	{
 		if(std::holds_alternative<std::string>(sticker))
 		{
@@ -2532,7 +2534,7 @@ namespace tgbot
 		return msg;
 	}
 
-	StickerSet::ptr Endpoints::getStickerSet(const std::string &name) const
+	StickerSet::ptr Endpoints::getStickerSet(const std::string &name) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -2560,7 +2562,7 @@ namespace tgbot
 		return sticker_set;
 	}
 
-	File::ptr Endpoints::uploadStickerFile(const int &user_id, const tools::InputFile::ptr &png_sticker) const
+	File::ptr Endpoints::uploadStickerFile(const int &user_id, const tools::InputFile::ptr &png_sticker) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -2591,7 +2593,7 @@ namespace tgbot
 
 	bool Endpoints::createNewStickerSet(const int &user_id, const std::string &name, const std::string &title,
 			const std::variant<std::string, tools::InputFile::ptr> &png_sticker, const std::string &emojis, const bool &contains_mask,
-			const MaskPosition::ptr &mask_position) const
+			const MaskPosition::ptr &mask_position) const noexcept
 	{
 		if(std::holds_alternative<std::string>(png_sticker))
 		{
@@ -2660,7 +2662,7 @@ namespace tgbot
 	}
 
 	bool Endpoints::addStickerToSet(const int &user_id, const std::string &name, const std::variant<std::string, tools::InputFile::ptr> &png_sticker,
-			const std::string &emojis, const MaskPosition::ptr &mask_position) const
+			const std::string &emojis, const MaskPosition::ptr &mask_position) const noexcept
 	{
 		if(std::holds_alternative<std::string>(png_sticker))
 		{
@@ -2724,7 +2726,7 @@ namespace tgbot
 		return false;
 	}
 
-	bool Endpoints::setStickerPositionInSet(const std::string &sticker, const int &position) const
+	bool Endpoints::setStickerPositionInSet(const std::string &sticker, const int &position) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -2751,7 +2753,7 @@ namespace tgbot
 		return false;
 	}
 
-	bool Endpoints::deleteStickerFromSet(const std::string &sticker) const
+	bool Endpoints::deleteStickerFromSet(const std::string &sticker) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -2778,7 +2780,7 @@ namespace tgbot
 	}
 
 	bool Endpoints::answerInlineQuery(const std::string &inline_query_id, const std::vector<InlineQueryResult::ptr> &results, const int &cache_time, const bool &is_personal,
-				const std::string &next_offset, const std::string &switch_pm_text, const std::string &switch_pm_parameter) const
+				const std::string &next_offset, const std::string &switch_pm_text, const std::string &switch_pm_parameter) const noexcept
 	{
 		//go through vector to build up the json array
 		std::string results_json = "[";
@@ -2838,7 +2840,7 @@ namespace tgbot
 			const std::string &provider_data, const std::string &photo_url, const int &photo_size, const int &photo_width, const int &photo_height,
 			const bool &need_name, const bool &need_phone_number, const bool &need_email, const bool &need_shipping_address,
 			const bool &send_phone_number_to_provider, const bool &send_email_to_provider, const bool &is_flexible, const bool &disable_notification,
-			const int &reply_to_message_id, const Reply::ptr &reply_markup) const
+			const int &reply_to_message_id, const Reply::ptr &reply_markup) const noexcept
 	{
 		//go through vector to build up the json array
 		std::string prices_json = "[";
@@ -2912,7 +2914,7 @@ namespace tgbot
 	}
 
 	bool Endpoints::answerShippingQuery(const std::string &shipping_query_id, const bool &ok, const std::vector<ShippingOption::ptr> &shipping_options,
-			const std::string &error_message) const
+			const std::string &error_message) const noexcept
 	{
 		//go through vector to build up the json array
 		std::string shipping_options_json = "[";
@@ -2964,7 +2966,7 @@ namespace tgbot
 		return false;
 	}
 
-	bool Endpoints::answerPreCheckoutQuery(const std::string &pre_checkout_query_id, const bool &ok, const std::string &error_message) const
+	bool Endpoints::answerPreCheckoutQuery(const std::string &pre_checkout_query_id, const bool &ok, const std::string &error_message) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -2992,7 +2994,7 @@ namespace tgbot
 		return false;
 	}
 
-	bool Endpoints::setPassportDataErrors(const int &user_id, const bool &ok, const std::vector<PassportElementError::ptr> &errors) const
+	bool Endpoints::setPassportDataErrors(const int &user_id, const bool &ok, const std::vector<PassportElementError::ptr> &errors) const noexcept
 	{
 		//go through vector to build up the json array
 		std::string errors_json = "[";
@@ -3043,7 +3045,7 @@ namespace tgbot
 	}
 
 	Message::ptr Endpoints::sendGame(const long long &chat_id, const std::string &game_short_name, const bool &disable_notification, const int &reply_to_message_id,
-			const InlineKeyboardMarkup::ptr &reply_markup) const
+			const InlineKeyboardMarkup::ptr &reply_markup) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -3076,7 +3078,7 @@ namespace tgbot
 	}
 
 	Message::ptr Endpoints::setGameScore(const int &user_id, const int &score, const bool &force, const bool &disable_edit_message, const long long &chat_id,
-			const int &message_id, const std::string &inline_message_id) const
+			const int &message_id, const std::string &inline_message_id) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;
@@ -3111,7 +3113,7 @@ namespace tgbot
 	}
 
 	std::vector<GameHighScore::ptr> Endpoints::getGameHighScores(const int &user_id, const long long &chat_id, const int &message_id ,
-			const std::string &inline_message_id) const
+			const std::string &inline_message_id) const noexcept
 	{
 		//http args
 		std::vector<tools::HttpArg> http_args;

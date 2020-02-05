@@ -35,19 +35,19 @@ namespace tgbot
 		 * @brief simply, returns the private member token
 		 * @return token
 		 */
-		std::string get_token() const;
+		std::string get_token() const noexcept;
 
 		/*
 		 * @brief simply, returns the private member endpnts
 		 * @return class Endpoints
 		 */
-		Endpoints::ptr get_endpnts() const;
+		Endpoints::ptr get_endpnts() const noexcept;
 
 		/*
 		 * @brief simply, returns the private member event_handler
 		 * @return class EventHandler
 		 */
-		EventHandler::ptr get_event_handler() const;
+		EventHandler::ptr get_event_handler() const noexcept;
 	};
 }
 
