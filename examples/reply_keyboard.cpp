@@ -6,7 +6,7 @@ int main()
 {
 	tgbot::Bot::ptr bot = std::make_shared<tgbot::Bot>("put your own token in here");
 
-	//########make reply keyboard##########################
+	//################make reply keyboard###################
 	std::vector<tgbot::KeyboardButton::ptr> row0;
 	std::vector<tgbot::KeyboardButton::ptr> row1;
 
@@ -31,9 +31,9 @@ int main()
 	tgbot::ReplyKeyboardMarkup::ptr keyboard_ptr = std::make_shared<tgbot::ReplyKeyboardMarkup>(keyboard);
 	keyboard_ptr->resize_keyboard = true;
 	keyboard_ptr->one_time_keyboard = true;
-	//######################################################
+	//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-	tgbot::Message::ptr msg = bot->endpnts.sendMessage(proper-chat-id,"<b>What's up!</b>", keyboard_ptr);
+	tgbot::Message::ptr msg = bot->get_endpnts().sendMessage(proper-chat-id,"<b>What's up!</b>", keyboard_ptr);
 
 	return EXIT_SUCCESS;
 }
