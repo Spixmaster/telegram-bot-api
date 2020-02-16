@@ -6,7 +6,7 @@ int main()
 {
 	tgbot::Bot::ptr bot = std::make_shared<tgbot::Bot>("put your key in here");
 
-	//########make inline keyboard##########################
+	//################make reply keyboard###################
 	std::vector<tgbot::InlineKeyboardButton::ptr> row0;
 	std::vector<tgbot::InlineKeyboardButton::ptr> row1;
 
