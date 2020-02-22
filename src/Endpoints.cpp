@@ -2260,10 +2260,7 @@ namespace tgbot
 		return msg;
 	}
 
-	/*
-	 * todo
-	 * editing a media by uploading a new image does not work although the principle is the same as with sendMediaGroup
-	 */
+	//todo editing a media by uploading a new image does not work although the principle is the same as with sendMediaGroup
 	Message::ptr Endpoints::editMessageMedia(
 			const std::variant<InputMediaAnimation::ptr, InputMediaAudio::ptr, InputMediaDocument::ptr, InputMediaPhoto::ptr, InputMediaVideo::ptr> &media,
 			const long long &chat_id, const int &message_id, const std::string &inline_message_id, const Reply::ptr reply_markup) const noexcept
