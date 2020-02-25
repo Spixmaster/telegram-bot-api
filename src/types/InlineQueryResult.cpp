@@ -1,4 +1,5 @@
 #include "tgbot/types/InlineQueryResult.h"
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {

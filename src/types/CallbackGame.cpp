@@ -1,6 +1,7 @@
 #include "tgbot/types/CallbackGame.h"
 #include <rapidjson/document.h>
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -17,7 +18,7 @@ namespace tgbot
 			//assignments
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string CallbackGame::parse_to_json() const noexcept

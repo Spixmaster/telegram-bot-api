@@ -1,6 +1,7 @@
 #include "tgbot/types/WebhookInfo.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -21,7 +22,7 @@ namespace tgbot
 				if(doc["url"].IsString())
 					url = doc["url"].GetString();
 				else
-					std::cerr << "Error: Field \"url\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("url") << std::endl;
 			}
 
 			if(doc.HasMember("has_custom_certificate"))
@@ -29,7 +30,7 @@ namespace tgbot
 				if(doc["has_custom_certificate"].IsBool())
 					has_custom_certificate = doc["has_custom_certificate"].GetBool();
 				else
-					std::cerr << "Error: Field \"has_custom_certificate\" does not contain a bool." << std::endl;
+					std::cerr << Messages::field_does_not_contain_bool("has_custom_certificate") << std::endl;
 			}
 
 			if(doc.HasMember("pending_update_count"))
@@ -37,7 +38,7 @@ namespace tgbot
 				if(doc["pending_update_count"].IsInt())
 					pending_update_count = doc["pending_update_count"].GetInt();
 				else
-					std::cerr << "Error: Field \"pending_update_count\" does not contain an int." << std::endl;
+					std::cerr << Messages::field_does_not_contain_int("pending_update_count") << std::endl;
 			}
 
 			if(doc.HasMember("last_error_date"))
@@ -45,7 +46,7 @@ namespace tgbot
 				if(doc["last_error_date"].IsInt())
 					last_error_date = doc["last_error_date"].GetInt();
 				else
-					std::cerr << "Error: Field \"last_error_date\" does not contain an int." << std::endl;
+					std::cerr << Messages::field_does_not_contain_int("last_error_date") << std::endl;
 			}
 
 			if(doc.HasMember("last_error_message"))
@@ -53,7 +54,7 @@ namespace tgbot
 				if(doc["last_error_message"].IsString())
 					last_error_message = doc["last_error_message"].GetString();
 				else
-					std::cerr << "Error: Field \"last_error_message\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("last_error_message") << std::endl;
 			}
 
 			if(doc.HasMember("max_connections"))
@@ -61,7 +62,7 @@ namespace tgbot
 				if(doc["max_connections"].IsInt())
 					max_connections = doc["max_connections"].GetInt();
 				else
-					std::cerr << "Error: Field \"max_connections\" does not contain an int." << std::endl;
+					std::cerr << Messages::field_does_not_contain_int("max_connections") << std::endl;
 			}
 
 			if(doc.HasMember("allowed_updates"))
@@ -75,15 +76,15 @@ namespace tgbot
 						if(doc["allowed_updates"][j].IsObject())
 							allowed_updates.at(j) = doc["allowed_updates"][j].GetString();
 						else
-							std::cerr << "Error: Field \"allowed_updates\"'s json array's element is not a json object." << std::endl;
+							std::cerr << Messages::field_element_does_not_contain_json_obj("allowed_updates") << std::endl;
 					}
 				}
 				else
-					std::cerr << "Error: Field \"allowed_updates\" does not contain a json array." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_arr("allowed_updates") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string WebhookInfo::parse_to_json() const noexcept

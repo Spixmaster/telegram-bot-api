@@ -1,6 +1,7 @@
 #include "tgbot/types/Location.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -20,7 +21,7 @@ namespace tgbot
 				if(doc["longitude"].IsFloat())
 					longitude = doc["longitude"].GetFloat();
 				else
-					std::cerr << "Error: Field \"longitude\" does not contain a float." << std::endl;
+					std::cerr << Messages::field_does_not_contain_float("longitude") << std::endl;
 			}
 
 			if(doc.HasMember("latitude"))
@@ -28,11 +29,11 @@ namespace tgbot
 				if(doc["latitude"].IsFloat())
 					latitude = doc["latitude"].GetFloat();
 				else
-					std::cerr << "Error: Field \"latitude\" does not contain a float." << std::endl;
+					std::cerr << Messages::field_does_not_contain_float("latitude") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string Location::parse_to_json() const noexcept

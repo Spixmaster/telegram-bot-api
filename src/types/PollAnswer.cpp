@@ -1,6 +1,7 @@
 #include "tgbot/types/PollAnswer.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -20,7 +21,7 @@ namespace tgbot
 				if(doc["poll_id"].IsString())
 					poll_id = doc["poll_id"].GetString();
 				else
-					std::cerr << "Error: Field \"poll_id\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("poll_id") << std::endl;
 			}
 
 			if(doc.HasMember("user"))
@@ -28,7 +29,7 @@ namespace tgbot
 				if(doc["user"].IsObject())
 					user = std::make_shared<User>(tools::Tools::get_json_as_string(doc["user"]));
 				else
-					std::cerr << "Error: Field \"user\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("user") << std::endl;
 			}
 
 			if(doc.HasMember("option_ids"))
@@ -42,15 +43,15 @@ namespace tgbot
 						if(doc["option_ids"][j].IsInt())
 							option_ids.at(j) = doc["option_ids"][j].GetInt();
 						else
-							std::cerr << "Error: Field \"option_ids\"'s json array's element is not an int." << std::endl;
+							std::cerr << Messages::field_element_does_not_contain_int("option_ids") << std::endl;
 					}
 				}
 				else
-					std::cerr << "Error: Field \"option_ids\" does not contain a json array." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_arr("option_ids") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string PollAnswer::parse_to_json() const noexcept

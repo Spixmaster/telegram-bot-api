@@ -1,6 +1,7 @@
 #include "tgbot/types/ResponseParameters.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -20,7 +21,7 @@ namespace tgbot
 				if(doc["migrate_to_chat_id"].IsInt())
 					migrate_to_chat_id = doc["migrate_to_chat_id"].GetInt();
 				else
-					std::cerr << "Error: Field \"migrate_to_chat_id\" does not contain an int." << std::endl;
+					std::cerr << Messages::field_does_not_contain_int("migrate_to_chat_id") << std::endl;
 			}
 
 			if(doc.HasMember("retry_after"))
@@ -28,11 +29,11 @@ namespace tgbot
 				if(doc["retry_after"].IsInt())
 					retry_after = doc["retry_after"].GetInt();
 				else
-					std::cerr << "Error: Field \"retry_after\" does not contain an int." << std::endl;
+					std::cerr << Messages::field_does_not_contain_int("retry_after") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string ResponseParameters::parse_to_json() const noexcept

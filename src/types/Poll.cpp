@@ -1,6 +1,7 @@
 #include "tgbot/types/Poll.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -20,7 +21,7 @@ namespace tgbot
 				if(doc["id"].IsString())
 					id = doc["id"].GetString();
 				else
-					std::cerr << "Error: Field \"id\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("id") << std::endl;
 			}
 
 			if(doc.HasMember("question"))
@@ -28,7 +29,7 @@ namespace tgbot
 				if(doc["question"].IsString())
 					question = doc["question"].GetString();
 				else
-					std::cerr << "Error: Field \"question\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("question") << std::endl;
 			}
 
 			if(doc.HasMember("options"))
@@ -42,11 +43,11 @@ namespace tgbot
 						if(doc["options"][j].IsObject())
 							options.at(j) = std::make_shared<PollOption>(tools::Tools::get_json_as_string(doc["options"][j]));
 						else
-							std::cerr << "Error: Field \"options\"'s json array's element is not a json object." << std::endl;
+							std::cerr << Messages::field_element_does_not_contain_json_obj("options") << std::endl;
 					}
 				}
 				else
-					std::cerr << "Error: Field \"options\" does not contain a json array." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_arr("options") << std::endl;
 			}
 
 			if(doc.HasMember("total_voter_count"))
@@ -54,7 +55,7 @@ namespace tgbot
 				if(doc["total_voter_count"].IsInt())
 					total_voter_count = doc["total_voter_count"].GetInt();
 				else
-					std::cerr << "Error: Field \"total_voter_count\" does not contain an int." << std::endl;
+					std::cerr << Messages::field_does_not_contain_int("total_voter_count") << std::endl;
 			}
 
 			if(doc.HasMember("is_closed"))
@@ -62,7 +63,7 @@ namespace tgbot
 				if(doc["is_closed"].IsBool())
 					is_closed = doc["is_closed"].GetBool();
 				else
-					std::cerr << "Error: Field \"is_closed\" does not contain a bool." << std::endl;
+					std::cerr << Messages::field_does_not_contain_bool("is_closed") << std::endl;
 			}
 
 			if(doc.HasMember("is_anonymous"))
@@ -70,7 +71,7 @@ namespace tgbot
 				if(doc["is_anonymous"].IsBool())
 					is_anonymous = doc["is_anonymous"].GetBool();
 				else
-					std::cerr << "Error: Field \"is_anonymous\" does not contain a bool." << std::endl;
+					std::cerr << Messages::field_does_not_contain_bool("is_anonymous") << std::endl;
 			}
 
 			if(doc.HasMember("type"))
@@ -78,7 +79,7 @@ namespace tgbot
 				if(doc["type"].IsString())
 					type = doc["type"].GetString();
 				else
-					std::cerr << "Error: Field \"type\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("type") << std::endl;
 			}
 
 			if(doc.HasMember("allows_multiple_answers"))
@@ -86,7 +87,7 @@ namespace tgbot
 				if(doc["allows_multiple_answers"].IsBool())
 					allows_multiple_answers = doc["allows_multiple_answers"].GetBool();
 				else
-					std::cerr << "Error: Field \"allows_multiple_answers\" does not contain a bool." << std::endl;
+					std::cerr << Messages::field_does_not_contain_bool("allows_multiple_answers") << std::endl;
 			}
 
 			if(doc.HasMember("correct_option_id"))
@@ -94,11 +95,11 @@ namespace tgbot
 				if(doc["correct_option_id"].IsInt())
 					correct_option_id = doc["correct_option_id"].GetInt();
 				else
-					std::cerr << "Error: Field \"correct_option_id\" does not contain an int." << std::endl;
+					std::cerr << Messages::field_does_not_contain_int("correct_option_id") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string Poll::parse_to_json() const noexcept

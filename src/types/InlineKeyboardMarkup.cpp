@@ -1,6 +1,7 @@
 #include "tgbot/types/InlineKeyboardMarkup.h"
 #include <iostream>
 #include "tools/Tools.h"
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -36,19 +37,19 @@ namespace tgbot
 								if(keyboard_array[row][column].IsObject())
 									inline_keyboard.at(row).at(column) = std::make_shared<InlineKeyboardButton>(tools::Tools::get_json_as_string(keyboard_array[row][column]));
 								else
-									std::cerr << "Error: Field \"inline_keyboard\"'s json array's array element is not a json object." << std::endl;
+									std::cerr << Messages::field_element_element_does_not_contain_json_obj("inline_keyboard") << std::endl;
 							}
 						}
 						else
-							std::cerr << "Error: Field \"inline_keyboard\"'s json array does not contain a json array." << std::endl;
+							std::cerr << Messages::field_does_not_contain_json_arr("inline_keyboard") << std::endl;
 					}
 				}
 				else
-					std::cerr << "Error: Field \"inline_keyboard\" does not contain a json array." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_arr("inline_keyboard") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	InlineKeyboardMarkup::InlineKeyboardMarkup(const std::vector<std::vector<InlineKeyboardButton::ptr>> &keyboard) : inline_keyboard(keyboard)

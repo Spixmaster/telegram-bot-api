@@ -1,6 +1,7 @@
 #include "tgbot/types/CallbackQuery.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -20,7 +21,7 @@ namespace tgbot
 				if(doc["id"].IsString())
 					id = doc["id"].GetString();
 				else
-					std::cerr << "Error: Field \"id\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("id") << std::endl;
 			}
 
 			if(doc.HasMember("from"))
@@ -28,7 +29,7 @@ namespace tgbot
 				if(doc["from"].IsObject())
 					from = std::make_shared<User>(tools::Tools::get_json_as_string(doc["from"]));
 				else
-					std::cerr << "Error: Field \"from\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("from") << std::endl;
 			}
 
 			if(doc.HasMember("message"))
@@ -36,7 +37,7 @@ namespace tgbot
 				if(doc["message"].IsObject())
 					message = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["message"]));
 				else
-					std::cerr << "Error: Field \"message\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("message") << std::endl;
 			}
 
 			if(doc.HasMember("inline_message_id"))
@@ -44,7 +45,7 @@ namespace tgbot
 				if(doc["inline_message_id"].IsString())
 					inline_message_id = doc["inline_message_id"].GetString();
 				else
-					std::cerr << "Error: Field \"inline_message_id\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("inline_message_id") << std::endl;
 			}
 
 			if(doc.HasMember("chat_instance"))
@@ -52,7 +53,7 @@ namespace tgbot
 				if(doc["chat_instance"].IsString())
 					chat_instance = doc["chat_instance"].GetString();
 				else
-					std::cerr << "Error: Field \"chat_instance\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("chat_instance") << std::endl;
 			}
 
 			if(doc.HasMember("data"))
@@ -60,7 +61,7 @@ namespace tgbot
 				if(doc["data"].IsString())
 					data = doc["data"].GetString();
 				else
-					std::cerr << "Error: Field \"data\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("data") << std::endl;
 			}
 
 			if(doc.HasMember("game_short_name"))
@@ -68,11 +69,11 @@ namespace tgbot
 				if(doc["game_short_name"].IsString())
 					game_short_name = doc["game_short_name"].GetString();
 				else
-					std::cerr << "Error: Field \"game_short_name\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("game_short_name") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string CallbackQuery::parse_to_json() const noexcept

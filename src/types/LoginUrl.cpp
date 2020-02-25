@@ -2,6 +2,7 @@
 #include "tgbot/types/LoginUrl.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -21,7 +22,7 @@ namespace tgbot
 				if(doc["url"].IsString())
 					url = doc["url"].GetString();
 				else
-					std::cerr << "Error: Field \"url\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("url") << std::endl;
 			}
 
 			if(doc.HasMember("forward_text"))
@@ -29,7 +30,7 @@ namespace tgbot
 				if(doc["forward_text"].IsString())
 					forward_text = doc["forward_text"].GetString();
 				else
-					std::cerr << "Error: Field \"forward_text\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("forward_text") << std::endl;
 			}
 
 			if(doc.HasMember("bot_username"))
@@ -37,7 +38,7 @@ namespace tgbot
 				if(doc["bot_username"].IsString())
 					bot_username = doc["bot_username"].GetString();
 				else
-					std::cerr << "Error: Field \"bot_username\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("bot_username") << std::endl;
 			}
 
 			if(doc.HasMember("request_write_access"))
@@ -45,11 +46,11 @@ namespace tgbot
 				if(doc["request_write_access"].IsBool())
 					request_write_access = doc["request_write_access"].GetBool();
 				else
-					std::cerr << "Error: Field \"request_write_access\" does not contain a bool." << std::endl;
+					std::cerr << Messages::field_does_not_contain_bool("request_write_access") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string LoginUrl::parse_to_json() const noexcept

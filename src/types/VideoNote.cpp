@@ -1,6 +1,7 @@
 #include "tgbot/types/VideoNote.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -20,7 +21,7 @@ namespace tgbot
 				if(doc["file_id"].IsString())
 					file_id = doc["file_id"].GetString();
 				else
-					std::cerr << "Error: Field \"file_id\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("file_id") << std::endl;
 			}
 
 			if(doc.HasMember("file_unique_id"))
@@ -28,7 +29,7 @@ namespace tgbot
 				if(doc["file_unique_id"].IsString())
 					file_unique_id = doc["file_unique_id"].GetString();
 				else
-					std::cerr << "Error: Field \"file_unique_id\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("file_unique_id") << std::endl;
 			}
 
 			if(doc.HasMember("length"))
@@ -36,7 +37,7 @@ namespace tgbot
 				if(doc["length"].IsInt())
 					length = doc["length"].GetInt();
 				else
-					std::cerr << "Error: Field \"length\" does not contain an int." << std::endl;
+					std::cerr << Messages::field_does_not_contain_int("length") << std::endl;
 			}
 
 			if(doc.HasMember("duration"))
@@ -44,7 +45,7 @@ namespace tgbot
 				if(doc["duration"].IsInt())
 					duration = doc["duration"].GetInt();
 				else
-					std::cerr << "Error: Field \"duration\" does not contain an int." << std::endl;
+					std::cerr << Messages::field_does_not_contain_int("duration") << std::endl;
 			}
 
 			if(doc.HasMember("thumb"))
@@ -52,7 +53,7 @@ namespace tgbot
 				if(doc["thumb"].IsObject())
 					thumb = std::make_shared<PhotoSize>(tools::Tools::get_json_as_string(doc["thumb"]));
 				else
-					std::cerr << "Error: Field \"thumb\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("thumb") << std::endl;
 			}
 
 			if(doc.HasMember("file_size"))
@@ -60,11 +61,11 @@ namespace tgbot
 				if(doc["file_size"].IsInt())
 					file_size = doc["file_size"].GetInt();
 				else
-					std::cerr << "Error: Field \"file_size\" does not contain an int." << std::endl;
+					std::cerr << Messages::field_does_not_contain_int("file_size") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string VideoNote::parse_to_json() const noexcept

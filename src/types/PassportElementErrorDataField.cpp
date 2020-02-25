@@ -1,6 +1,7 @@
 #include "tgbot/types/PassportElementErrorDataField.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -20,7 +21,7 @@ namespace tgbot
 				if(doc["source"].IsString())
 					source = doc["source"].GetString();
 				else
-					std::cerr << "Error: Field \"source\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("source") << std::endl;
 			}
 
 			if(doc.HasMember("type"))
@@ -28,7 +29,7 @@ namespace tgbot
 				if(doc["type"].IsString())
 					type = doc["type"].GetString();
 				else
-					std::cerr << "Error: Field \"type\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("type") << std::endl;
 			}
 
 			if(doc.HasMember("field_name"))
@@ -36,7 +37,7 @@ namespace tgbot
 				if(doc["field_name"].IsString())
 					field_name = doc["field_name"].GetString();
 				else
-					std::cerr << "Error: Field \"field_name\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("field_name") << std::endl;
 			}
 
 			if(doc.HasMember("data_hash"))
@@ -44,7 +45,7 @@ namespace tgbot
 				if(doc["data_hash"].IsString())
 					data_hash = doc["data_hash"].GetString();
 				else
-					std::cerr << "Error: Field \"data_hash\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("data_hash") << std::endl;
 			}
 
 			if(doc.HasMember("message"))
@@ -52,11 +53,11 @@ namespace tgbot
 				if(doc["message"].IsString())
 					message = doc["message"].GetString();
 				else
-					std::cerr << "Error: Field \"message\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("message") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string PassportElementErrorDataField::parse_to_json() const noexcept

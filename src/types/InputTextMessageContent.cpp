@@ -1,6 +1,7 @@
 #include "tgbot/types/InputTextMessageContent.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -20,7 +21,7 @@ namespace tgbot
 				if(doc["message_text"].IsString())
 					message_text = doc["message_text"].GetString();
 				else
-					std::cerr << "Error: Field \"message_text\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("message_text") << std::endl;
 			}
 
 			if(doc.HasMember("parse_mode"))
@@ -28,7 +29,7 @@ namespace tgbot
 				if(doc["parse_mode"].IsString())
 					parse_mode = doc["parse_mode"].GetString();
 				else
-					std::cerr << "Error: Field \"parse_mode\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("parse_mode") << std::endl;
 			}
 
 			if(doc.HasMember("disable_web_page_preview"))
@@ -36,11 +37,11 @@ namespace tgbot
 				if(doc["disable_web_page_preview"].IsBool())
 					disable_web_page_preview = doc["disable_web_page_preview"].GetBool();
 				else
-					std::cerr << "Error: Field \"disable_web_page_preview\" does not contain a bool." << std::endl;
+					std::cerr << Messages::field_does_not_contain_bool("disable_web_page_preview") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string InputTextMessageContent::parse_to_json() const noexcept

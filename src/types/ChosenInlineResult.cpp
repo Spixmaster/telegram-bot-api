@@ -1,6 +1,7 @@
 #include "tgbot/types/ChosenInlineResult.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -20,7 +21,7 @@ namespace tgbot
 				if(doc["result_id"].IsString())
 					result_id = doc["result_id"].GetString();
 				else
-					std::cerr << "Error: Field \"result_id\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("result_id") << std::endl;
 			}
 
 			if(doc.HasMember("from"))
@@ -28,7 +29,7 @@ namespace tgbot
 				if(doc["from"].IsObject())
 					from = std::make_shared<User>(tools::Tools::get_json_as_string(doc["from"]));
 				else
-					std::cerr << "Error: Field \"from\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("from") << std::endl;
 			}
 
 			if(doc.HasMember("location"))
@@ -36,7 +37,7 @@ namespace tgbot
 				if(doc["location"].IsObject())
 					location = std::make_shared<Location>(tools::Tools::get_json_as_string(doc["location"]));
 				else
-					std::cerr << "Error: Field \"location\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("location") << std::endl;
 			}
 
 			if(doc.HasMember("inline_message_id"))
@@ -44,7 +45,7 @@ namespace tgbot
 				if(doc["inline_message_id"].IsString())
 					inline_message_id = doc["inline_message_id"].GetString();
 				else
-					std::cerr << "Error: Field \"inline_message_id\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("inline_message_id") << std::endl;
 			}
 
 			if(doc.HasMember("query"))
@@ -52,11 +53,11 @@ namespace tgbot
 				if(doc["query"].IsString())
 					query = doc["query"].GetString();
 				else
-					std::cerr << "Error: Field \"query\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("query") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string ChosenInlineResult::parse_to_json() const noexcept

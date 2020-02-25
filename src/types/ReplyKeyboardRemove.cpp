@@ -1,6 +1,7 @@
 #include "tgbot/types/ReplyKeyboardRemove.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -20,7 +21,7 @@ namespace tgbot
 				if(doc["remove_keyboard"].IsBool())
 					remove_keyboard = doc["remove_keyboard"].GetBool();
 				else
-					std::cerr << "Error: Field \"remove_keyboard\" does not contain a bool." << std::endl;
+					std::cerr << Messages::field_does_not_contain_bool("remove_keyboard") << std::endl;
 			}
 
 			if(doc.HasMember("selective"))
@@ -28,11 +29,11 @@ namespace tgbot
 				if(doc["selective"].IsBool())
 					selective = doc["selective"].GetBool();
 				else
-					std::cerr << "Error: Field \"selective\" does not contain a bool." << std::endl;
+					std::cerr << Messages::field_does_not_contain_bool("selective") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string ReplyKeyboardRemove::parse_to_json() const noexcept

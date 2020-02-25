@@ -2,6 +2,7 @@
 #include "tgbot/types/InputMediaAnimation.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -21,7 +22,7 @@ namespace tgbot
 				if(doc["media"].IsString())
 					media = doc["media"].GetString();
 				else
-					std::cerr << "Error: Field \"media\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("media") << std::endl;
 			}
 
 			if(doc.HasMember("thumb"))
@@ -29,7 +30,7 @@ namespace tgbot
 				if(doc["thumb"].IsString())
 					thumb = doc["thumb"].GetString();
 				else
-					std::cerr << "Error: Field \"thumb\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("thumb") << std::endl;
 			}
 
 			if(doc.HasMember("caption"))
@@ -37,7 +38,7 @@ namespace tgbot
 				if(doc["caption"].IsString())
 					caption = doc["caption"].GetString();
 				else
-					std::cerr << "Error: Field \"caption\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("caption") << std::endl;
 			}
 
 			if(doc.HasMember("parse_mode"))
@@ -45,7 +46,7 @@ namespace tgbot
 				if(doc["parse_mode"].IsString())
 					parse_mode = doc["parse_mode"].GetString();
 				else
-					std::cerr << "Error: Field \"parse_mode\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("parse_mode") << std::endl;
 			}
 
 			if(doc.HasMember("width"))
@@ -53,7 +54,7 @@ namespace tgbot
 				if(doc["width"].IsInt())
 					width = doc["width"].GetInt();
 				else
-					std::cerr << "Error: Field \"width\" does not contain an int." << std::endl;
+					std::cerr << Messages::field_does_not_contain_int("width") << std::endl;
 			}
 
 			if(doc.HasMember("height"))
@@ -61,7 +62,7 @@ namespace tgbot
 				if(doc["height"].IsInt())
 					width = doc["height"].GetInt();
 				else
-					std::cerr << "Error: Field \"height\" does not contain an int." << std::endl;
+					std::cerr << Messages::field_does_not_contain_int("height") << std::endl;
 			}
 
 			if(doc.HasMember("duration"))
@@ -69,11 +70,11 @@ namespace tgbot
 				if(doc["duration"].IsInt())
 					duration = doc["duration"].GetInt();
 				else
-					std::cerr << "Error: Field \"duration\" does not contain an int." << std::endl;
+					std::cerr << Messages::field_does_not_contain_int("duration") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	InputMediaAnimation::InputMediaAnimation(const std::variant<std::string, tools::InputFile::ptr> &media, const std::variant<std::string, tools::InputFile::ptr> &thumb, const std::string &caption,

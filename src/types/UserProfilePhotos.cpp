@@ -1,6 +1,7 @@
 #include "tgbot/types/UserProfilePhotos.h"
 #include <iostream>
 #include "tools/Tools.h"
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -20,7 +21,7 @@ namespace tgbot
 				if(doc["total_count"].IsInt())
 					total_count = doc["total_count"].GetInt();
 				else
-					std::cerr << "Error: Field \"total_count\" does not contain an int." << std::endl;
+					std::cerr << Messages::field_does_not_contain_int("total_count") << std::endl;
 			}
 
 			if(doc.HasMember("photos"))
@@ -44,19 +45,19 @@ namespace tgbot
 								if(doc["photos"][j][k].IsObject())
 									photos.push_back(std::make_shared<PhotoSize>(tools::Tools::get_json_as_string(json_photo_array[j][k])));
 								else
-									std::cerr << "Error: Field \"photos\"'s json array's element is not a json object." << std::endl;
+									std::cerr << Messages::field_element_element_does_not_contain_json_obj("photos") << std::endl;
 							}
 						}
 						else
-							std::cerr << "Error: Field \"photos\"'s json array does not contain a json array." << std::endl;
+							std::cerr << Messages::Messages::field_element_does_not_contain_json_arr("photos") << std::endl;
 					}
 				}
 				else
-					std::cerr << "Error: Field \"photos\" does not contain a json array." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_arr("photos") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string UserProfilePhotos::parse_to_json() const noexcept

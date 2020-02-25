@@ -2,6 +2,7 @@
 #include "tgbot/types/MaskPosition.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -21,7 +22,7 @@ namespace tgbot
 				if(doc["point"].IsString())
 					point = doc["point"].GetString();
 				else
-					std::cerr << "Error: Field \"point\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("point") << std::endl;
 			}
 
 			if(doc.HasMember("x_shift"))
@@ -29,7 +30,7 @@ namespace tgbot
 				if(doc["x_shift"].IsFloat())
 					x_shift = doc["x_shift"].GetFloat();
 				else
-					std::cerr << "Error: Field \"x_shift\" does not contain a float." << std::endl;
+					std::cerr << Messages::field_does_not_contain_float("x_shift") << std::endl;
 			}
 
 			if(doc.HasMember("y_shift"))
@@ -37,7 +38,7 @@ namespace tgbot
 				if(doc["y_shift"].IsFloat())
 					y_shift = doc["y_shift"].GetFloat();
 				else
-					std::cerr << "Error: Field \"y_shift\" does not contain a float." << std::endl;
+					std::cerr << Messages::field_does_not_contain_float("y_shift") << std::endl;
 			}
 
 			if(doc.HasMember("scale"))
@@ -45,11 +46,11 @@ namespace tgbot
 				if(doc["scale"].IsFloat())
 					scale = doc["scale"].GetFloat();
 				else
-					std::cerr << "Error: Field \"scale\" does not contain a float." << std::endl;
+					std::cerr << Messages::field_does_not_contain_float("scale") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string MaskPosition::parse_to_json() const noexcept

@@ -1,5 +1,6 @@
 #include "tgbot/types/KeyboardButtonPollType.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -19,11 +20,11 @@ namespace tgbot
 				if(doc["type"].IsString())
 					type = doc["type"].GetString();
 				else
-					std::cerr << "Error: Field \"type\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("type") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string KeyboardButtonPollType::parse_to_json() const noexcept

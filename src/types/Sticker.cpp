@@ -1,6 +1,7 @@
 #include "tgbot/types/Sticker.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -20,7 +21,7 @@ namespace tgbot
 				if(doc["file_id"].IsString())
 					file_id = doc["file_id"].GetString();
 				else
-					std::cerr << "Error: Field \"file_id\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("file_id") << std::endl;
 			}
 
 			if(doc.HasMember("file_unique_id"))
@@ -28,7 +29,7 @@ namespace tgbot
 				if(doc["file_unique_id"].IsString())
 					file_unique_id = doc["file_unique_id"].GetString();
 				else
-					std::cerr << "Error: Field \"file_unique_id\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("file_unique_id") << std::endl;
 			}
 
 			if(doc.HasMember("width"))
@@ -36,7 +37,7 @@ namespace tgbot
 				if(doc["width"].IsInt())
 					width = doc["width"].GetInt();
 				else
-					std::cerr << "Error: Field \"width\" does not contain an int." << std::endl;
+					std::cerr << Messages::field_does_not_contain_int("width") << std::endl;
 			}
 
 			if(doc.HasMember("height"))
@@ -44,7 +45,7 @@ namespace tgbot
 				if(doc["height"].IsInt())
 					width = doc["height"].GetInt();
 				else
-					std::cerr << "Error: Field \"height\" does not contain an int." << std::endl;
+					std::cerr << Messages::field_does_not_contain_int("height") << std::endl;
 			}
 
 			if(doc.HasMember("is_animated"))
@@ -52,7 +53,7 @@ namespace tgbot
 				if(doc["is_animated"].IsBool())
 					is_animated = doc["is_animated"].GetBool();
 				else
-					std::cerr << "Error: Field \"is_animated\" does not contain a bool." << std::endl;
+					std::cerr << Messages::field_does_not_contain_bool("is_animated") << std::endl;
 			}
 
 			if(doc.HasMember("thumb"))
@@ -60,7 +61,7 @@ namespace tgbot
 				if(doc["thumb"].IsObject())
 					thumb = std::make_shared<PhotoSize>(tools::Tools::get_json_as_string(doc["thumb"]));
 				else
-					std::cerr << "Error: Field \"thumb\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("thumb") << std::endl;
 			}
 
 			if(doc.HasMember("emoji"))
@@ -68,7 +69,7 @@ namespace tgbot
 				if(doc["emoji"].IsString())
 					emoji = doc["emoji"].GetString();
 				else
-					std::cerr << "Error: Field \"emoji\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("emoji") << std::endl;
 			}
 
 			if(doc.HasMember("set_name"))
@@ -76,7 +77,7 @@ namespace tgbot
 				if(doc["set_name"].IsString())
 					file_id = doc["set_name"].GetString();
 				else
-					std::cerr << "Error: Field \"set_name\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("set_name") << std::endl;
 			}
 
 			if(doc.HasMember("mask_position"))
@@ -84,7 +85,7 @@ namespace tgbot
 				if(doc["mask_position"].IsObject())
 					mask_position = std::make_shared<MaskPosition>(tools::Tools::get_json_as_string(doc["mask_position"]));
 				else
-					std::cerr << "Error: Field \"mask_position\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("mask_position") << std::endl;
 			}
 
 			if(doc.HasMember("file_size"))
@@ -92,11 +93,11 @@ namespace tgbot
 				if(doc["file_size"].IsInt())
 					width = doc["file_size"].GetInt();
 				else
-					std::cerr << "Error: Field \"file_size\" does not contain an int." << std::endl;
+					std::cerr << Messages::field_does_not_contain_int("file_size") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string Sticker::parse_to_json() const noexcept
