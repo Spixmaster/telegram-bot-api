@@ -1,5 +1,5 @@
-#ifndef TGBOT_CONSTANTS_H
-#define TGBOT_CONSTANTS_H
+#ifndef TGBOT_CONSTANTS_CONSTANTS_H
+#define TGBOT_CONSTANTS_CONSTANTS_H
 
 #include <string>
 #include <memory>
