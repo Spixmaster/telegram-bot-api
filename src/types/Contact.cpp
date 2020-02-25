@@ -2,6 +2,7 @@
 #include "tgbot/types/Contact.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -21,7 +22,7 @@ namespace tgbot
 				if(doc["phone_number"].IsString())
 					phone_number = doc["phone_number"].GetString();
 				else
-					std::cerr << "Error: Field \"phone_number\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("phone_number") << std::endl;
 			}
 
 			if(doc.HasMember("first_name"))
@@ -29,7 +30,7 @@ namespace tgbot
 				if(doc["first_name"].IsString())
 					first_name = doc["first_name"].GetString();
 				else
-					std::cerr << "Error: Field \"first_name\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("first_name") << std::endl;
 			}
 
 			if(doc.HasMember("last_name"))
@@ -37,7 +38,7 @@ namespace tgbot
 				if(doc["last_name"].IsString())
 					last_name = doc["last_name"].GetString();
 				else
-					std::cerr << "Error: Field \"last_name\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("last_name") << std::endl;
 			}
 
 			if(doc.HasMember("user_id"))
@@ -45,7 +46,7 @@ namespace tgbot
 				if(doc["user_id"].IsInt())
 					user_id = doc["user_id"].GetInt();
 				else
-					std::cerr << "Error: Field \"user_id\" does not contain an int." << std::endl;
+					std::cerr << Messages::field_does_not_contain_int("user_id") << std::endl;
 			}
 
 			if(doc.HasMember("vcard"))
@@ -53,11 +54,11 @@ namespace tgbot
 				if(doc["vcard"].IsString())
 					vcard = doc["vcard"].GetString();
 				else
-					std::cerr << "Error: Field \"vcard\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("vcard") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string Contact::parse_to_json() const noexcept

@@ -1,6 +1,7 @@
 #include "tgbot/types/InlineQueryResultGame.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -20,7 +21,7 @@ namespace tgbot
 				if(doc["type"].IsString())
 					type = doc["type"].GetString();
 				else
-					std::cerr << "Error: Field \"type\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("type") << std::endl;
 			}
 
 			if(doc.HasMember("id"))
@@ -28,7 +29,7 @@ namespace tgbot
 				if(doc["id"].IsString())
 					id = doc["id"].GetString();
 				else
-					std::cerr << "Error: Field \"id\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("id") << std::endl;
 			}
 
 			if(doc.HasMember("game_short_name"))
@@ -36,7 +37,7 @@ namespace tgbot
 				if(doc["game_short_name"].IsString())
 					game_short_name = doc["game_short_name"].GetString();
 				else
-					std::cerr << "Error: Field \"game_short_name\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("game_short_name") << std::endl;
 			}
 
 			if(doc.HasMember("reply_markup"))
@@ -44,11 +45,11 @@ namespace tgbot
 				if(doc["reply_markup"].IsObject())
 					reply_markup = std::make_shared<InlineKeyboardMarkup>(tools::Tools::get_json_as_string(doc["reply_markup"]));
 				else
-					std::cerr << "Error: Field \"reply_markup\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("reply_markup") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string InlineQueryResultGame::parse_to_json() const noexcept

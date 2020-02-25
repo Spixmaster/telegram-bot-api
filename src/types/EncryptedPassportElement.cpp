@@ -1,6 +1,7 @@
 #include "tgbot/types/EncryptedPassportElement.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -20,7 +21,7 @@ namespace tgbot
 				if(doc["type"].IsString())
 					type = doc["type"].GetString();
 				else
-					std::cerr << "Error: Field \"type\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("type") << std::endl;
 			}
 
 			if(doc.HasMember("data"))
@@ -28,7 +29,7 @@ namespace tgbot
 				if(doc["data"].IsString())
 					data = doc["data"].GetString();
 				else
-					std::cerr << "Error: Field \"data\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("data") << std::endl;
 			}
 
 			if(doc.HasMember("phone_number"))
@@ -36,7 +37,7 @@ namespace tgbot
 				if(doc["phone_number"].IsString())
 					phone_number = doc["phone_number"].GetString();
 				else
-					std::cerr << "Error: Field \"phone_number\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("phone_number") << std::endl;
 			}
 
 			if(doc.HasMember("files"))
@@ -50,11 +51,11 @@ namespace tgbot
 						if(doc["files"][j].IsObject())
 							files.at(j) = std::make_shared<PassportFile>(tools::Tools::get_json_as_string(doc["files"][j]));
 						else
-							std::cerr << "Error: Field \"files\"'s json array's element is not a json object." << std::endl;
+							std::cerr << Messages::field_element_does_not_contain_json_obj("files") << std::endl;
 					}
 				}
 				else
-					std::cerr << "Error: Field \"files\" does not contain a json array." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_arr("files") << std::endl;
 			}
 
 			if(doc.HasMember("front_side"))
@@ -62,7 +63,7 @@ namespace tgbot
 				if(doc["front_side"].IsObject())
 					front_side = std::make_shared<PassportFile>(tools::Tools::get_json_as_string(doc["front_side"]));
 				else
-					std::cerr << "Error: Field \"front_side\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("front_side") << std::endl;
 			}
 
 			if(doc.HasMember("reverse_side"))
@@ -70,7 +71,7 @@ namespace tgbot
 				if(doc["reverse_side"].IsObject())
 					reverse_side = std::make_shared<PassportFile>(tools::Tools::get_json_as_string(doc["reverse_side"]));
 				else
-					std::cerr << "Error: Field \"reverse_side\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("reverse_side") << std::endl;
 			}
 
 			if(doc.HasMember("selfie"))
@@ -78,7 +79,7 @@ namespace tgbot
 				if(doc["selfie"].IsObject())
 					selfie = std::make_shared<PassportFile>(tools::Tools::get_json_as_string(doc["selfie"]));
 				else
-					std::cerr << "Error: Field \"selfie\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("selfie") << std::endl;
 			}
 
 			if(doc.HasMember("translation"))
@@ -92,11 +93,11 @@ namespace tgbot
 						if(doc["translation"][j].IsObject())
 							translation.at(j) = std::make_shared<PassportFile>(tools::Tools::get_json_as_string(doc["translation"][j]));
 						else
-							std::cerr << "Error: Field \"translation\"'s json array's element is not a json object." << std::endl;
+							std::cerr << Messages::field_element_does_not_contain_json_obj("translation") << std::endl;
 					}
 				}
 				else
-					std::cerr << "Error: Field \"translation\" does not contain a json array." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_arr("translation") << std::endl;
 			}
 
 			if(doc.HasMember("hash"))
@@ -104,11 +105,11 @@ namespace tgbot
 				if(doc["hash"].IsString())
 					hash = doc["hash"].GetString();
 				else
-					std::cerr << "Error: Field \"hash\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("hash") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string EncryptedPassportElement::parse_to_json() const noexcept

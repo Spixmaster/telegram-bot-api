@@ -72,38 +72,69 @@ namespace tgbot
 		/*
 		 * @brief get called by long_poll() which sends this function an update
 		 * @brief calls all the corresponding vector of listener elements
+		 * @param update: update object which is handled
 		 */
 		void handle_update(const Update::ptr &update) const noexcept;
 
 	public:
-		//@brief adds the listener to proper lister list
+		/*
+		 * @brief adds the listener to proper lister list
+		 * @param listener_element: listener to add
+		 */
 		void on_any_msg(const m_message_listener_element &listener_element) noexcept;
 
-		//@brief adds the listener to proper lister list
+		/*
+		 * @brief adds the listener to proper lister list
+		 * @param listener_element: listener to add
+		 */
 		void on_cmd(const std::string &cmd, const m_message_listener_element &listener_element) noexcept;
 
-		//@brief adds the listener to proper lister list
+		/*
+		 * @brief adds the listener to proper lister list
+		 * @param listener_element: listener to add
+		 */
 		void on_unknwn_cmd(const m_message_listener_element &listener_element) noexcept;
 
-		//@brief adds the listener to proper lister list
+		/*
+		 * @brief adds the listener to proper lister list
+		 * @param listener_element: listener to add
+		 */
 		void on_non_cmd_msg(const m_message_listener_element &listener_element) noexcept;
 
-		//@brief adds the listener to proper lister list
+		/*
+		 * @brief adds the listener to proper lister list
+		 * @param listener_element: listener to add
+		 */
 		void on_inline_query(const m_inline_query_listener_element &listener_element) noexcept;
 
-		//@brief adds the listener to proper lister list
+		/*
+		 * @brief adds the listener to proper lister list
+		 * @param listener_element: listener to add
+		 */
 		void on_chosen_inline_result(const m_chosen_inline_result_listener_element &listener_element) noexcept;
 
-		//@brief adds the listener to proper lister list
+		/*
+		 * @brief adds the listener to proper lister list
+		 * @param listener_element: listener to add
+		 */
 		void on_callback_query(const m_callback_query_listener_element &listener_element) noexcept;
 
-		//@brief adds the listener to proper lister list
+		/*
+		 * @brief adds the listener to proper lister list
+		 * @param listener_element: listener to add
+		 */
 		void on_shipping_query(const m_shipping_query_listener_element &listener_element) noexcept;
 
-		//@brief adds the listener to proper lister list
+		/*
+		 * @brief adds the listener to proper lister list
+		 * @param listener_element: listener to add
+		 */
 		void on_pre_checkout_query(const m_pre_checkout_query_listener_element &listener_element) noexcept;
 
-		//@brief adds the listener to proper lister list
+		/*
+		 * @brief adds the listener to proper lister list
+		 * @param listener_element: listener to add
+		 */
 		void on_poll_query(const m_poll_listener_element &listener_element) noexcept;
 	};
 }

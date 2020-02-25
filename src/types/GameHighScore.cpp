@@ -1,6 +1,7 @@
 #include "tgbot/types/GameHighScore.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -20,7 +21,7 @@ namespace tgbot
 				if(doc["position"].IsInt())
 					position = doc["position"].GetInt();
 				else
-					std::cerr << "Error: Field \"position\" does not contain an int." << std::endl;
+					std::cerr << Messages::field_does_not_contain_int("position") << std::endl;
 			}
 
 			if(doc.HasMember("user"))
@@ -28,7 +29,7 @@ namespace tgbot
 				if(doc["user"].IsObject())
 					user = std::make_shared<User>(tools::Tools::get_json_as_string(doc["user"]));
 				else
-					std::cerr << "Error: Field \"user\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("user") << std::endl;
 			}
 
 			if(doc.HasMember("score"))
@@ -36,11 +37,11 @@ namespace tgbot
 				if(doc["score"].IsInt())
 					score = doc["score"].GetInt();
 				else
-					std::cerr << "Error: Field \"score\" does not contain an int." << std::endl;
+					std::cerr << Messages::field_does_not_contain_int("score") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string GameHighScore::parse_to_json() const noexcept

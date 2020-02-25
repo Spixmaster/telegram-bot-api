@@ -1,6 +1,7 @@
 #include "tgbot/types/InlineQueryResultCachedAudio.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -20,7 +21,7 @@ namespace tgbot
 				if(doc["type"].IsString())
 					type = doc["type"].GetString();
 				else
-					std::cerr << "Error: Field \"type\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("type") << std::endl;
 			}
 
 			if(doc.HasMember("id"))
@@ -28,7 +29,7 @@ namespace tgbot
 				if(doc["id"].IsString())
 					id = doc["id"].GetString();
 				else
-					std::cerr << "Error: Field \"id\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("id") << std::endl;
 			}
 
 			if(doc.HasMember("audio_file_id"))
@@ -36,7 +37,7 @@ namespace tgbot
 				if(doc["audio_file_id"].IsString())
 					audio_file_id = doc["audio_file_id"].GetString();
 				else
-					std::cerr << "Error: Field \"audio_file_id\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("audio_file_id") << std::endl;
 			}
 
 			if(doc.HasMember("caption"))
@@ -44,7 +45,7 @@ namespace tgbot
 				if(doc["caption"].IsString())
 					caption = doc["caption"].GetString();
 				else
-					std::cerr << "Error: Field \"caption\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("caption") << std::endl;
 			}
 
 			if(doc.HasMember("parse_mode"))
@@ -52,7 +53,7 @@ namespace tgbot
 				if(doc["parse_mode"].IsString())
 					parse_mode = doc["parse_mode"].GetString();
 				else
-					std::cerr << "Error: Field \"parse_mode\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("parse_mode") << std::endl;
 			}
 
 			if(doc.HasMember("reply_markup"))
@@ -60,7 +61,7 @@ namespace tgbot
 				if(doc["reply_markup"].IsObject())
 					reply_markup = std::make_shared<InlineKeyboardMarkup>(tools::Tools::get_json_as_string(doc["reply_markup"]));
 				else
-					std::cerr << "Error: Field \"reply_markup\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("reply_markup") << std::endl;
 			}
 
 			if(doc.HasMember("input_message_content"))
@@ -68,11 +69,11 @@ namespace tgbot
 				if(doc["input_message_content"].IsObject())
 					input_message_content = std::make_shared<InputMessageContent>(tools::Tools::get_json_as_string(doc["input_message_content"]));
 				else
-					std::cerr << "Error: Field \"input_message_content\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("input_message_content") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string InlineQueryResultCachedAudio::parse_to_json() const noexcept

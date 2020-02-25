@@ -1,6 +1,7 @@
 #include "tgbot/types/Game.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -19,7 +20,7 @@ namespace tgbot
 				if(doc["title"].IsString())
 					title = doc["title"].GetString();
 				else
-					std::cerr << "Error: Field \"title\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("title") << std::endl;
 			}
 
 			if(doc.HasMember("description"))
@@ -27,7 +28,7 @@ namespace tgbot
 				if(doc["description"].IsString())
 					description = doc["description"].GetString();
 				else
-					std::cerr << "Error: Field \"description\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("description") << std::endl;
 			}
 
 			if(doc.HasMember("photo"))
@@ -41,11 +42,11 @@ namespace tgbot
 						if(doc["photo"][j].IsObject())
 							photo.at(j) = std::make_shared<PhotoSize>(tools::Tools::get_json_as_string(doc["photo"][j]));
 						else
-							std::cerr << "Error: Field \"photo\"'s json array's element is not a json object." << std::endl;
+							std::cerr << Messages::field_element_does_not_contain_json_obj("photo") << std::endl;
 					}
 				}
 				else
-					std::cerr << "Error: Field \"photo\" does not contain a json array." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_arr("photo") << std::endl;
 			}
 
 			if(doc.HasMember("text"))
@@ -53,7 +54,7 @@ namespace tgbot
 				if(doc["text"].IsString())
 					text = doc["text"].GetString();
 				else
-					std::cerr << "Error: Field \"text\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("text") << std::endl;
 			}
 
 			if(doc.HasMember("text_entities"))
@@ -67,11 +68,11 @@ namespace tgbot
 						if(doc["text_entities"][j].IsObject())
 							text_entities.at(j) = std::make_shared<MessageEntity>(tools::Tools::get_json_as_string(doc["text_entities"][j]));
 						else
-							std::cerr << "Error: Field \"text_entities\"'s json array's element is not a json object." << std::endl;
+							std::cerr << Messages::field_element_does_not_contain_json_obj("text_entities") << std::endl;
 					}
 				}
 				else
-					std::cerr << "Error: Field \"text_entities\" does not contain a json array." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_arr("text_entities") << std::endl;
 			}
 
 			if(doc.HasMember("animation"))
@@ -79,11 +80,11 @@ namespace tgbot
 				if(doc["animation"].IsObject())
 					animation = std::make_shared<Animation>(tools::Tools::get_json_as_string(doc["animation"]));
 				else
-					std::cerr << "Error: Field \"animation\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("animation") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string Game::parse_to_json() const noexcept

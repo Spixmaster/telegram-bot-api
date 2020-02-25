@@ -1,6 +1,7 @@
 #include "tgbot/types/ForceReply.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -20,7 +21,7 @@ namespace tgbot
 				if(doc["force_reply"].IsBool())
 					force_reply = doc["force_reply"].GetBool();
 				else
-					std::cerr << "Error: Field \"force_reply\" does not contain a bool." << std::endl;
+					std::cerr << Messages::field_does_not_contain_bool("force_reply") << std::endl;
 			}
 
 			if(doc.HasMember("selective"))
@@ -28,11 +29,11 @@ namespace tgbot
 				if(doc["selective"].IsBool())
 					selective = doc["selective"].GetBool();
 				else
-					std::cerr << "Error: Field \"selective\" does not contain a bool." << std::endl;
+					std::cerr << Messages::field_does_not_contain_bool("selective") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string ForceReply::parse_to_json() const noexcept

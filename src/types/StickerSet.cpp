@@ -1,6 +1,7 @@
 #include "tgbot/types/StickerSet.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -20,7 +21,7 @@ namespace tgbot
 				if(doc["name"].IsString())
 					name = doc["name"].GetString();
 				else
-					std::cerr << "Error: Field \"name\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("name") << std::endl;
 			}
 
 			if(doc.HasMember("title"))
@@ -28,7 +29,7 @@ namespace tgbot
 				if(doc["title"].IsString())
 					title = doc["title"].GetString();
 				else
-					std::cerr << "Error: Field \"title\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("title") << std::endl;
 			}
 
 			if(doc.HasMember("is_animated"))
@@ -36,7 +37,7 @@ namespace tgbot
 				if(doc["is_animated"].IsBool())
 					is_animated = doc["is_animated"].GetBool();
 				else
-					std::cerr << "Error: Field \"is_animated\" does not contain a bool." << std::endl;
+					std::cerr << Messages::field_does_not_contain_bool("is_animated") << std::endl;
 			}
 
 			if(doc.HasMember("contains_masks"))
@@ -44,7 +45,7 @@ namespace tgbot
 				if(doc["contains_masks"].IsBool())
 					contains_masks = doc["contains_masks"].GetBool();
 				else
-					std::cerr << "Error: Field \"contains_masks\" does not contain a bool." << std::endl;
+					std::cerr << Messages::field_does_not_contain_bool("contains_masks") << std::endl;
 			}
 
 			if(doc.HasMember("sticker"))
@@ -58,15 +59,15 @@ namespace tgbot
 						if(doc["sticker"][j].IsObject())
 							sticker.at(j) = std::make_shared<Sticker>(tools::Tools::get_json_as_string(doc["sticker"][j]));
 						else
-							std::cerr << "Error: Field \"sticker\"'s json array's element is not a json object." << std::endl;
+							std::cerr << Messages::field_element_does_not_contain_json_obj("sticker") << std::endl;
 					}
 				}
 				else
-					std::cerr << "Error: Field \"sticker\" does not contain a json array." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_arr("sticker") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string StickerSet::parse_to_json() const noexcept

@@ -2,6 +2,7 @@
 #include "tgbot/types/EncryptedCredentials.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -21,7 +22,7 @@ namespace tgbot
 				if(doc["data"].IsString())
 					data = doc["data"].GetString();
 				else
-					std::cerr << "Error: Field \"data\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("data") << std::endl;
 			}
 
 			if(doc.HasMember("hash"))
@@ -29,7 +30,7 @@ namespace tgbot
 				if(doc["hash"].IsString())
 					hash = doc["hash"].GetString();
 				else
-					std::cerr << "Error: Field \"hash\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("hash") << std::endl;
 			}
 
 			if(doc.HasMember("secret"))
@@ -37,11 +38,11 @@ namespace tgbot
 				if(doc["secret"].IsString())
 					secret = doc["secret"].GetString();
 				else
-					std::cerr << "Error: Field \"secret\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("secret") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string EncryptedCredentials::parse_to_json() const noexcept

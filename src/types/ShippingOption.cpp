@@ -1,6 +1,7 @@
 #include "tgbot/types/ShippingOption.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -20,7 +21,7 @@ namespace tgbot
 				if(doc["id"].IsString())
 					id = doc["id"].GetString();
 				else
-					std::cerr << "Error: Field \"id\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("id") << std::endl;
 			}
 
 			if(doc.HasMember("title"))
@@ -28,7 +29,7 @@ namespace tgbot
 				if(doc["title"].IsString())
 					title = doc["title"].GetString();
 				else
-					std::cerr << "Error: Field \"title\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("title") << std::endl;
 			}
 
 			if(doc.HasMember("prices"))
@@ -42,15 +43,15 @@ namespace tgbot
 						if(doc["prices"][j].IsObject())
 							prices.at(j) = std::make_shared<LabeledPrice>(tools::Tools::get_json_as_string(doc["prices"][j]));
 						else
-							std::cerr << "Error: Field \"prices\"'s json array's element is not a json object." << std::endl;
+							std::cerr << Messages::field_element_does_not_contain_json_obj("prices") << std::endl;
 					}
 				}
 				else
-					std::cerr << "Error: Field \"prices\" does not contain a json array." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_arr("prices") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string ShippingOption::parse_to_json() const noexcept

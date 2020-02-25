@@ -2,6 +2,7 @@
 #include "tgbot/types/Invoice.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -21,7 +22,7 @@ namespace tgbot
 				if(doc["title"].IsString())
 					title = doc["title"].GetString();
 				else
-					std::cerr << "Error: Field \"title\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("title") << std::endl;
 			}
 
 			if(doc.HasMember("description"))
@@ -29,7 +30,7 @@ namespace tgbot
 				if(doc["description"].IsString())
 					description = doc["description"].GetString();
 				else
-					std::cerr << "Error: Field \"description\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("description") << std::endl;
 			}
 
 			if(doc.HasMember("start_parameter"))
@@ -37,7 +38,7 @@ namespace tgbot
 				if(doc["start_parameter"].IsString())
 					start_parameter = doc["start_parameter"].GetString();
 				else
-					std::cerr << "Error: Field \"start_parameter\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("start_parameter") << std::endl;
 			}
 
 			if(doc.HasMember("currency"))
@@ -45,7 +46,7 @@ namespace tgbot
 				if(doc["currency"].IsString())
 					currency = doc["currency"].GetString();
 				else
-					std::cerr << "Error: Field \"currency\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("currency") << std::endl;
 			}
 
 			if(doc.HasMember("total_amount"))
@@ -53,11 +54,11 @@ namespace tgbot
 				if(doc["total_amount"].IsInt())
 					total_amount = doc["total_amount"].GetInt();
 				else
-					std::cerr << "Error: Field \"total_amount\" does not contain an int." << std::endl;
+					std::cerr << Messages::field_does_not_contain_int("total_amount") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string Invoice::parse_to_json() const noexcept

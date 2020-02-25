@@ -1,6 +1,7 @@
 #include "tgbot/types/Venue.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -20,7 +21,7 @@ namespace tgbot
 				if(doc["location"].IsObject())
 					location = std::make_shared<Location>(tools::Tools::get_json_as_string(doc["location"]));
 				else
-					std::cerr << "Error: Field \"location\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("location") << std::endl;
 			}
 
 			if(doc.HasMember("title"))
@@ -28,7 +29,7 @@ namespace tgbot
 				if(doc["title"].IsString())
 					title = doc["title"].GetString();
 				else
-					std::cerr << "Error: Field \"title\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("title") << std::endl;
 			}
 
 			if(doc.HasMember("address"))
@@ -36,7 +37,7 @@ namespace tgbot
 				if(doc["address"].IsString())
 					address = doc["address"].GetString();
 				else
-					std::cerr << "Error: Field \"address\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string(address) << std::endl;
 			}
 
 			if(doc.HasMember("foursquare_id"))
@@ -44,7 +45,7 @@ namespace tgbot
 				if(doc["foursquare_id"].IsString())
 					foursquare_id = doc["foursquare_id"].GetString();
 				else
-					std::cerr << "Error: Field \"foursquare_id\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("foursquare_id") << std::endl;
 			}
 
 			if(doc.HasMember("foursquare_type"))
@@ -52,11 +53,11 @@ namespace tgbot
 				if(doc["foursquare_type"].IsString())
 					foursquare_type = doc["foursquare_type"].GetString();
 				else
-					std::cerr << "Error: Field \"foursquare_type\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("foursquare_type") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string Venue::parse_to_json() const noexcept

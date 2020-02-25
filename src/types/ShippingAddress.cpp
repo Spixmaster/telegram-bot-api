@@ -1,6 +1,7 @@
 #include "tgbot/types/ShippingAddress.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -20,7 +21,7 @@ namespace tgbot
 				if(doc["country_code"].IsString())
 					country_code = doc["country_code"].GetString();
 				else
-					std::cerr << "Error: Field \"country_code\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("country_code") << std::endl;
 			}
 
 			if(doc.HasMember("state"))
@@ -28,7 +29,7 @@ namespace tgbot
 				if(doc["state"].IsString())
 					state = doc["state"].GetString();
 				else
-					std::cerr << "Error: Field \"state\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("state") << std::endl;
 			}
 
 			if(doc.HasMember("city"))
@@ -36,7 +37,7 @@ namespace tgbot
 				if(doc["city"].IsString())
 					city = doc["city"].GetString();
 				else
-					std::cerr << "Error: Field \"city\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("city") << std::endl;
 			}
 
 			if(doc.HasMember("street_line1"))
@@ -44,7 +45,7 @@ namespace tgbot
 				if(doc["street_line1"].IsString())
 					street_line1 = doc["street_line1"].GetString();
 				else
-					std::cerr << "Error: Field \"street_line1\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("street_line1") << std::endl;
 			}
 
 			if(doc.HasMember("street_line2"))
@@ -52,7 +53,7 @@ namespace tgbot
 				if(doc["street_line2"].IsString())
 					street_line2 = doc["street_line2"].GetString();
 				else
-					std::cerr << "Error: Field \"street_line2\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("street_line2") << std::endl;
 			}
 
 			if(doc.HasMember("post_code"))
@@ -60,11 +61,11 @@ namespace tgbot
 				if(doc["post_code"].IsString())
 					post_code = doc["post_code"].GetString();
 				else
-					std::cerr << "Error: Field \"post_code\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("post_code") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string ShippingAddress::parse_to_json() const noexcept

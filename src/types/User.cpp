@@ -2,6 +2,7 @@
 #include <rapidjson/document.h>
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -18,10 +19,10 @@ namespace tgbot
 			//assignments
 			if(doc.HasMember("id"))
 			{
-				if(doc["id"].IsInt())
-					id = doc["id"].GetInt();
+				if(doc["id"].IsInt64())
+					id = doc["id"].GetInt64();
 				else
-					std::cerr << "Error: Field \"id\" does not contain an int." << std::endl;
+					std::cerr << Messages::field_does_not_contain_int64("id") << std::endl;
 			}
 
 			if(doc.HasMember("is_bot"))
@@ -29,7 +30,7 @@ namespace tgbot
 				if(doc["is_bot"].IsBool())
 					is_bot = doc["is_bot"].GetBool();
 				else
-					std::cerr << "Error: Field \"is_bot\" does not contain a bool." << std::endl;
+					std::cerr << Messages::field_does_not_contain_bool("is_bot") << std::endl;
 			}
 
 			if(doc.HasMember("first_name"))
@@ -37,7 +38,7 @@ namespace tgbot
 				if(doc["first_name"].IsString())
 					first_name = doc["first_name"].GetString();
 				else
-					std::cerr << "Error: Field \"first_name\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("first_name") << std::endl;
 			}
 
 			if(doc.HasMember("last_name"))
@@ -45,7 +46,7 @@ namespace tgbot
 				if(doc["last_name"].IsString())
 					last_name = doc["last_name"].GetString();
 				else
-					std::cerr << "Error: Field \"last_name\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("last_name") << std::endl;
 			}
 
 			if(doc.HasMember("username"))
@@ -53,7 +54,7 @@ namespace tgbot
 				if(doc["username"].IsString())
 					username = doc["username"].GetString();
 				else
-					std::cerr << "Error: Field \"username\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("username") << std::endl;
 			}
 
 			if(doc.HasMember("language_code"))
@@ -61,7 +62,7 @@ namespace tgbot
 				if(doc["language_code"].IsString())
 					language_code = doc["language_code"].GetString();
 				else
-					std::cerr << "Error: Field \"language_code\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("language_code") << std::endl;
 			}
 
 			if(doc.HasMember("can_join_groups"))
@@ -69,7 +70,7 @@ namespace tgbot
 				if(doc["can_join_groups"].IsBool())
 					can_join_groups = doc["can_join_groups"].GetBool();
 				else
-					std::cerr << "Error: Field \"can_join_groups\" does not contain a bool." << std::endl;
+					std::cerr << Messages::field_does_not_contain_bool("can_join_groups") << std::endl;
 			}
 
 			if(doc.HasMember("can_read_all_group_messages"))
@@ -77,7 +78,7 @@ namespace tgbot
 				if(doc["can_read_all_group_messages"].IsBool())
 					can_read_all_group_messages = doc["can_read_all_group_messages"].GetBool();
 				else
-					std::cerr << "Error: Field \"can_read_all_group_messages\" does not contain a bool." << std::endl;
+					std::cerr << Messages::field_does_not_contain_bool("can_read_all_group_messages") << std::endl;
 			}
 
 			if(doc.HasMember("supports_inline_queries"))
@@ -85,11 +86,11 @@ namespace tgbot
 				if(doc["supports_inline_queries"].IsBool())
 					supports_inline_queries = doc["supports_inline_queries"].GetBool();
 				else
-					std::cerr << "Error: Field \"supports_inline_queries\" does not contain a bool." << std::endl;
+					std::cerr << Messages::field_does_not_contain_bool("supports_inline_queries") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string User::parse_to_json() const noexcept

@@ -2,6 +2,7 @@
 #include "tgbot/types/PollOption.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -21,7 +22,7 @@ namespace tgbot
 				if(doc["text"].IsString())
 					text = doc["text"].GetString();
 				else
-					std::cerr << "Error: Field \"text\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("text") << std::endl;
 			}
 
 			if(doc.HasMember("voter_count"))
@@ -29,11 +30,11 @@ namespace tgbot
 				if(doc["voter_count"].IsInt())
 					voter_count = doc["voter_count"].GetInt();
 				else
-					std::cerr << "Error: Field \"voter_count\" does not contain an int." << std::endl;
+					std::cerr << Messages::field_does_not_contain_int("voter_count") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string PollOption::parse_to_json() const noexcept

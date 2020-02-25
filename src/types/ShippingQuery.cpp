@@ -1,6 +1,7 @@
 #include "tgbot/types/ShippingQuery.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -20,7 +21,7 @@ namespace tgbot
 				if(doc["id"].IsString())
 					id = doc["id"].GetString();
 				else
-					std::cerr << "Error: Field \"id\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("id") << std::endl;
 			}
 
 			if(doc.HasMember("from"))
@@ -28,7 +29,7 @@ namespace tgbot
 				if(doc["from"].IsObject())
 					from = std::make_shared<User>(tools::Tools::get_json_as_string(doc["from"]));
 				else
-					std::cerr << "Error: Field \"from\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("from") << std::endl;
 			}
 
 			if(doc.HasMember("invoice_payload"))
@@ -36,7 +37,7 @@ namespace tgbot
 				if(doc["invoice_payload"].IsString())
 					invoice_payload = doc["invoice_payload"].GetString();
 				else
-					std::cerr << "Error: Field \"invoice_payload\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("invoice_payload") << std::endl;
 			}
 
 			if(doc.HasMember("shipping_address"))
@@ -44,11 +45,11 @@ namespace tgbot
 				if(doc["shipping_address"].IsObject())
 					shipping_address = std::make_shared<ShippingAddress>(tools::Tools::get_json_as_string(doc["shipping_address"]));
 				else
-					std::cerr << "Error: Field \"shipping_address\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("shipping_address") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string ShippingQuery::parse_to_json() const noexcept

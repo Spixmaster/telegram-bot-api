@@ -1,6 +1,7 @@
 #include "tgbot/types/Update.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -21,7 +22,7 @@ namespace tgbot
 				if(doc["update_id"].IsInt())
 					update_id = doc["update_id"].GetInt();
 				else
-					std::cerr << "Error: Field \"update_id\" does not contain an int." << std::endl;
+					std::cerr << Messages::field_does_not_contain_int("update_id") << std::endl;
 			}
 
 			if(doc.HasMember("message"))
@@ -29,7 +30,7 @@ namespace tgbot
 				if(doc["message"].IsObject())
 					message = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["message"]));
 				else
-					std::cerr << "Error: Field \"message\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("message") << std::endl;
 			}
 
 			if(doc.HasMember("edited_message"))
@@ -37,7 +38,7 @@ namespace tgbot
 				if(doc["edited_message"].IsObject())
 					edited_message = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["edited_message"]));
 				else
-					std::cerr << "Error: Field \"edited_message\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("edited_message") << std::endl;
 			}
 
 			if(doc.HasMember("channel_post"))
@@ -45,7 +46,7 @@ namespace tgbot
 				if(doc["channel_post"].IsObject())
 					channel_post = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["channel_post"]));
 				else
-					std::cerr << "Error: Field \"channel_post\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("channel_post") << std::endl;
 			}
 
 			if(doc.HasMember("edited_channel_post"))
@@ -53,7 +54,7 @@ namespace tgbot
 				if(doc["edited_channel_post"].IsObject())
 					edited_channel_post = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["edited_channel_post"]));
 				else
-					std::cerr << "Error: Field \"edited_channel_post\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("edited_channel_post") << std::endl;
 			}
 
 			if(doc.HasMember("inline_query"))
@@ -61,7 +62,7 @@ namespace tgbot
 				if(doc["inline_query"].IsObject())
 					inline_query = std::make_shared<InlineQuery>(tools::Tools::get_json_as_string(doc["inline_query"]));
 				else
-					std::cerr << "Error: Field \"inline_query\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("inline_query") << std::endl;
 			}
 
 			if(doc.HasMember("chosen_inline_result"))
@@ -69,7 +70,7 @@ namespace tgbot
 				if(doc["chosen_inline_result"].IsObject())
 					chosen_inline_result = std::make_shared<ChosenInlineResult>(tools::Tools::get_json_as_string(doc["chosen_inline_result"]));
 				else
-					std::cerr << "Error: Field \"chosen_inline_result\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("chosen_inline_result") << std::endl;
 			}
 
 			if(doc.HasMember("callback_query"))
@@ -77,7 +78,7 @@ namespace tgbot
 				if(doc["callback_query"].IsObject())
 					callback_query = std::make_shared<CallbackQuery>(tools::Tools::get_json_as_string(doc["callback_query"]));
 				else
-					std::cerr << "Error: Field \"callback_query\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("callback_query") << std::endl;
 			}
 
 			if(doc.HasMember("shipping_query"))
@@ -85,7 +86,7 @@ namespace tgbot
 				if(doc["shipping_query"].IsObject())
 					shipping_query = std::make_shared<ShippingQuery>(tools::Tools::get_json_as_string(doc["shipping_query"]));
 				else
-					std::cerr << "Error: Field \"shipping_query\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("shipping_query") << std::endl;
 			}
 
 			if(doc.HasMember("pre_checkout_query"))
@@ -93,7 +94,7 @@ namespace tgbot
 				if(doc["pre_checkout_query"].IsObject())
 					pre_checkout_query = std::make_shared<PreCheckoutQuery>(tools::Tools::get_json_as_string(doc["pre_checkout_query"]));
 				else
-					std::cerr << "Error: Field \"pre_checkout_query\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("pre_checkout_query") << std::endl;
 			}
 
 			if(doc.HasMember("poll"))
@@ -101,7 +102,7 @@ namespace tgbot
 				if(doc["poll"].IsObject())
 					poll = std::make_shared<Poll>(tools::Tools::get_json_as_string(doc["poll"]));
 				else
-					std::cerr << "Error: Field \"poll\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("poll") << std::endl;
 			}
 
 			if(doc.HasMember("poll_answer"))
@@ -109,11 +110,11 @@ namespace tgbot
 				if(doc["poll_answer"].IsObject())
 					poll_answer = std::make_shared<PollAnswer>(tools::Tools::get_json_as_string(doc["poll_answer"]));
 				else
-					std::cerr << "Error: Field \"poll_answer\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("poll_answer") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string Update::parse_to_json() const noexcept

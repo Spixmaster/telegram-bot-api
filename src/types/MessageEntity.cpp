@@ -1,6 +1,7 @@
 #include "tgbot/types/MessageEntity.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -20,7 +21,7 @@ namespace tgbot
 				if(doc["type"].IsString())
 					type = doc["type"].GetString();
 				else
-					std::cerr << "Error: Field \"type\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("type") << std::endl;
 			}
 
 			if(doc.HasMember("offset"))
@@ -28,7 +29,7 @@ namespace tgbot
 				if(doc["offset"].IsInt())
 					offset = doc["offset"].GetInt();
 				else
-					std::cerr << "Error: Field \"offset\" does not contain an int." << std::endl;
+					std::cerr << Messages::field_does_not_contain_int("offset") << std::endl;
 			}
 
 			if(doc.HasMember("length"))
@@ -36,7 +37,7 @@ namespace tgbot
 				if(doc["length"].IsInt())
 					length = doc["length"].GetInt();
 				else
-					std::cerr << "Error: Field \"length\" does not contain an int." << std::endl;
+					std::cerr << Messages::field_does_not_contain_int("length") << std::endl;
 			}
 
 			if(doc.HasMember("url"))
@@ -44,7 +45,7 @@ namespace tgbot
 				if(doc["url"].IsString())
 					url = doc["url"].GetString();
 				else
-					std::cerr << "Error: Field \"url\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("url") << std::endl;
 			}
 
 			if(doc.HasMember("user"))
@@ -52,7 +53,7 @@ namespace tgbot
 				if(doc["user"].IsObject())
 					user = std::make_shared<User>(tools::Tools::get_json_as_string(doc["user"]));
 				else
-					std::cerr << "Error: Field \"user\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("user") << std::endl;
 			}
 
 			if(doc.HasMember("language"))
@@ -60,11 +61,11 @@ namespace tgbot
 				if(doc["language"].IsString())
 					language = doc["language"].GetString();
 				else
-					std::cerr << "Error: Field \"language\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("language") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string MessageEntity::parse_to_json() const noexcept

@@ -1,6 +1,7 @@
 #include "tgbot/types/InlineQueryResultLocation.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -21,7 +22,7 @@ namespace tgbot
 				if(doc["type"].IsString())
 					type = doc["type"].GetString();
 				else
-					std::cerr << "Error: Field \"type\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("type") << std::endl;
 			}
 
 			if(doc.HasMember("id"))
@@ -29,7 +30,7 @@ namespace tgbot
 				if(doc["id"].IsString())
 					id = doc["id"].GetString();
 				else
-					std::cerr << "Error: Field \"id\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("id") << std::endl;
 			}
 
 			if(doc.HasMember("latitude"))
@@ -37,7 +38,7 @@ namespace tgbot
 				if(doc["latitude"].IsFloat())
 					latitude = doc["latitude"].GetFloat();
 				else
-					std::cerr << "Error: Field \"latitude\" does not contain a float." << std::endl;
+					std::cerr << Messages::field_does_not_contain_float("latitude") << std::endl;
 			}
 
 			if(doc.HasMember("longitude"))
@@ -45,7 +46,7 @@ namespace tgbot
 				if(doc["longitude"].IsFloat())
 					longitude = doc["longitude"].GetFloat();
 				else
-					std::cerr << "Error: Field \"longitude\" does not contain a float." << std::endl;
+					std::cerr << Messages::field_does_not_contain_float("longitude") << std::endl;
 			}
 
 			if(doc.HasMember("title"))
@@ -53,7 +54,7 @@ namespace tgbot
 				if(doc["title"].IsString())
 					title = doc["title"].GetString();
 				else
-					std::cerr << "Error: Field \"title\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("title") << std::endl;
 			}
 
 			if(doc.HasMember("live_period"))
@@ -61,7 +62,7 @@ namespace tgbot
 				if(doc["live_period"].IsInt())
 					live_period = doc["live_period"].GetInt();
 				else
-					std::cerr << "Error: Field \"live_period\" does not contain an int." << std::endl;
+					std::cerr << Messages::field_does_not_contain_int("live_period") << std::endl;
 			}
 
 			if(doc.HasMember("reply_markup"))
@@ -69,7 +70,7 @@ namespace tgbot
 				if(doc["reply_markup"].IsObject())
 					reply_markup = std::make_shared<InlineKeyboardMarkup>(tools::Tools::get_json_as_string(doc["reply_markup"]));
 				else
-					std::cerr << "Error: Field \"reply_markup\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("reply_markup") << std::endl;
 			}
 
 			if(doc.HasMember("input_message_content"))
@@ -77,7 +78,7 @@ namespace tgbot
 				if(doc["input_message_content"].IsObject())
 					input_message_content = std::make_shared<InputMessageContent>(tools::Tools::get_json_as_string(doc["input_message_content"]));
 				else
-					std::cerr << "Error: Field \"input_message_content\" does not contain a json object." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_obj("input_message_content") << std::endl;
 			}
 
 			if(doc.HasMember("thumb_url"))
@@ -85,7 +86,7 @@ namespace tgbot
 				if(doc["thumb_url"].IsString())
 					thumb_url = doc["thumb_url"].GetString();
 				else
-					std::cerr << "Error: Field \"thumb_url\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("thumb_url") << std::endl;
 			}
 
 			if(doc.HasMember("thumb_width"))
@@ -93,7 +94,7 @@ namespace tgbot
 				if(doc["thumb_width"].IsInt())
 					thumb_width = doc["thumb_width"].GetInt();
 				else
-					std::cerr << "Error: Field \"thumb_width\" does not contain an int." << std::endl;
+					std::cerr << Messages::field_does_not_contain_int("thumb_width") << std::endl;
 			}
 
 			if(doc.HasMember("thumb_height"))
@@ -101,11 +102,11 @@ namespace tgbot
 				if(doc["thumb_height"].IsInt())
 					thumb_height = doc["thumb_height"].GetInt();
 				else
-					std::cerr << "Error: Field \"thumb_height\" does not contain an int." << std::endl;
+					std::cerr << Messages::field_does_not_contain_int("thumb_height") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string InlineQueryResultLocation::parse_to_json() const noexcept

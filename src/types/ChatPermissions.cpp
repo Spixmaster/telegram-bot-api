@@ -1,6 +1,7 @@
 #include "tgbot/types/ChatPermissions.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -21,7 +22,7 @@ namespace tgbot
 				if(doc["can_send_messages"].IsBool())
 					can_send_messages = doc["can_send_messages"].GetBool();
 				else
-					std::cerr << "Error: Field \"can_send_messages\" does not contain a bool." << std::endl;
+					std::cerr << Messages::field_does_not_contain_bool("can_send_messages") << std::endl;
 			}
 
 			if(doc.HasMember("can_send_media_messages"))
@@ -29,7 +30,7 @@ namespace tgbot
 				if(doc["can_send_media_messages"].IsBool())
 					can_send_media_messages = doc["can_send_media_messages"].GetBool();
 				else
-					std::cerr << "Error: Field \"can_send_media_messages\" does not contain a bool." << std::endl;
+					std::cerr << Messages::field_does_not_contain_bool("can_send_media_messages") << std::endl;
 			}
 
 			if(doc.HasMember("can_send_polls"))
@@ -37,7 +38,7 @@ namespace tgbot
 				if(doc["can_send_polls"].IsBool())
 					can_send_polls = doc["can_send_polls"].GetBool();
 				else
-					std::cerr << "Error: Field \"can_send_polls\" does not contain a bool." << std::endl;
+					std::cerr << Messages::field_does_not_contain_bool("can_send_polls") << std::endl;
 			}
 
 			if(doc.HasMember("can_send_other_messages"))
@@ -45,7 +46,7 @@ namespace tgbot
 				if(doc["can_send_other_messages"].IsBool())
 					can_send_other_messages = doc["can_send_other_messages"].GetBool();
 				else
-					std::cerr << "Error: Field \"can_send_other_messages\" does not contain a bool." << std::endl;
+					std::cerr << Messages::field_does_not_contain_bool("can_send_other_messages") << std::endl;
 			}
 
 			if(doc.HasMember("can_add_web_page_preview"))
@@ -53,7 +54,7 @@ namespace tgbot
 				if(doc["can_add_web_page_preview"].IsBool())
 					can_add_web_page_preview = doc["can_add_web_page_preview"].GetBool();
 				else
-					std::cerr << "Error: Field \"can_add_web_page_preview\" does not contain a bool." << std::endl;
+					std::cerr << Messages::field_does_not_contain_bool("can_add_web_page_preview") << std::endl;
 			}
 
 			if(doc.HasMember("can_change_info"))
@@ -61,7 +62,7 @@ namespace tgbot
 				if(doc["can_change_info"].IsBool())
 					can_change_info = doc["can_change_info"].GetBool();
 				else
-					std::cerr << "Error: Field \"can_change_info\" does not contain a bool." << std::endl;
+					std::cerr << Messages::field_does_not_contain_bool("can_change_info") << std::endl;
 			}
 
 			if(doc.HasMember("can_invite_users"))
@@ -69,7 +70,7 @@ namespace tgbot
 				if(doc["can_invite_users"].IsBool())
 					can_invite_users = doc["can_invite_users"].GetBool();
 				else
-					std::cerr << "Error: Field \"can_invite_users\" does not contain a bool." << std::endl;
+					std::cerr << Messages::field_does_not_contain_bool("can_invite_users") << std::endl;
 			}
 
 			if(doc.HasMember("can_pin_messages"))
@@ -77,11 +78,11 @@ namespace tgbot
 				if(doc["can_pin_messages"].IsBool())
 					can_pin_messages = doc["can_pin_messages"].GetBool();
 				else
-					std::cerr << "Error: Field \"can_pin_messages\" does not contain a bool." << std::endl;
+					std::cerr << Messages::field_does_not_contain_bool("can_pin_messages") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string ChatPermissions::parse_to_json() const noexcept

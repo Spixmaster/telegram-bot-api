@@ -1,6 +1,7 @@
 #include "tgbot/types/PassportElementErrorReverseSide.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -20,7 +21,7 @@ namespace tgbot
 				if(doc["source"].IsString())
 					source = doc["source"].GetString();
 				else
-					std::cerr << "Error: Field \"source\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("source") << std::endl;
 			}
 
 			if(doc.HasMember("type"))
@@ -28,7 +29,7 @@ namespace tgbot
 				if(doc["type"].IsString())
 					type = doc["type"].GetString();
 				else
-					std::cerr << "Error: Field \"type\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("source") << std::endl;
 			}
 
 			if(doc.HasMember("file_hash"))
@@ -36,7 +37,7 @@ namespace tgbot
 				if(doc["file_hash"].IsString())
 					file_hash = doc["file_hash"].GetString();
 				else
-					std::cerr << "Error: Field \"file_hash\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("file_hash") << std::endl;
 			}
 
 			if(doc.HasMember("message"))
@@ -44,11 +45,11 @@ namespace tgbot
 				if(doc["message"].IsString())
 					message = doc["message"].GetString();
 				else
-					std::cerr << "Error: Field \"message\" does not contain a string." << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("message") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	std::string PassportElementErrorReverseSide::parse_to_json() const noexcept

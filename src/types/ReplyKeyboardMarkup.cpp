@@ -2,6 +2,7 @@
 #include "tgbot/types/ReplyKeyboardMarkup.h"
 #include "tools/Tools.h"
 #include <iostream>
+#include "tgbot/constants/Messages.h"
 
 namespace tgbot
 {
@@ -37,15 +38,15 @@ namespace tgbot
 								if(keyboard_array[row][column].IsObject())
 									keyboard.at(row).at(column) = std::make_shared<KeyboardButton>(tools::Tools::get_json_as_string(keyboard_array[row][column]));
 								else
-									std::cerr << "Error: Field \"keyboard\"'s json array's array element is not a json object." << std::endl;
+									std::cerr << Messages::field_element_element_does_not_contain_json_obj("keyboard") << std::endl;
 							}
 						}
 						else
-							std::cerr << "Error: Field \"keyboard\"'s json array does not contain a json array." << std::endl;
+							std::cerr << Messages::field_element_does_not_contain_json_arr("keyboard") << std::endl;
 					}
 				}
 				else
-					std::cerr << "Error: Field \"keyboard\" does not contain a json array." << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_arr("keyboard") << std::endl;
 			}
 
 			if(doc.HasMember("resize_keyboard"))
@@ -53,7 +54,7 @@ namespace tgbot
 				if(doc["resize_keyboard"].IsBool())
 					resize_keyboard = doc["resize_keyboard"].GetBool();
 				else
-					std::cerr << "Error: Field \"resize_keyboard\" does not contain a bool." << std::endl;
+					std::cerr << Messages::field_does_not_contain_bool("resize_keyboard") << std::endl;
 			}
 
 			if(doc.HasMember("one_time_keyboard"))
@@ -61,7 +62,7 @@ namespace tgbot
 				if(doc["one_time_keyboard"].IsBool())
 					one_time_keyboard = doc["one_time_keyboard"].GetBool();
 				else
-					std::cerr << "Error: Field \"one_time_keyboard\" does not contain a bool." << std::endl;
+					std::cerr << Messages::field_does_not_contain_bool("one_time_keyboard") << std::endl;
 			}
 
 			if(doc.HasMember("selective"))
@@ -69,11 +70,11 @@ namespace tgbot
 				if(doc["selective"].IsBool())
 					selective = doc["selective"].GetBool();
 				else
-					std::cerr << "Error: Field \"selective\" does not contain a bool." << std::endl;
+					std::cerr << Messages::field_does_not_contain_bool("selective") << std::endl;
 			}
 		}
 		else
-			std::cerr << "Error: The to the constructor passed string is not a json object." << std::endl;
+			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
 	ReplyKeyboardMarkup::ReplyKeyboardMarkup(const std::vector<std::vector<KeyboardButton::ptr>> &keyboard) : keyboard(keyboard), resize_keyboard(), one_time_keyboard(),
