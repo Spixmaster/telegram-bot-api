@@ -5,7 +5,7 @@
 #include <memory>
 
 /*
- * @brief class containts messages which are used throughout the programme
+ * @brief class contains messages which are used throughout the programme
  * @brief it is a monostate
  */
 
