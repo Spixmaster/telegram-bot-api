@@ -60,12 +60,12 @@ namespace tgbot
 		std::string json = "{\"inline_keyboard\": [";
 
 		//rows
-		for(size_t j = 0; j < inline_keyboard.size(); ++j)
+		for(std::size_t j = 0; j < inline_keyboard.size(); ++j)
 		{
 			json.append("[");
 
 			//columns in row
-			for(size_t k = 0; k < inline_keyboard.at(j).size(); ++k)
+			for(std::size_t k = 0; k < inline_keyboard.at(j).size(); ++k)
 			{
 				//button text is stated
 				json.append("{");
