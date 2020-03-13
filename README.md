@@ -106,4 +106,4 @@ The function editMessageMedia() does not work properly although it should as the
 If you send wrong requests to the Telegram servers like trying to delete messages with a bot which does not have admin rights the proper error messages will be output to stderr.
 ***
 * Q: What happens at night when the internal ip changes or my Internet connection is interrupted due to a blackout or similar?
-* A: The Http client is completely safe. It will just connect again as soon as a connection can be established again.
+* A: The Http client is completely safe. It will just connect again as soon as a connection can be established.
