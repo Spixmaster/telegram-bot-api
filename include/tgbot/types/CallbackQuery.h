@@ -21,12 +21,33 @@ namespace tgbot
 		typedef std::shared_ptr<CallbackQuery> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string id;
+		/**
+		 * @var
+		 */
 		User::ptr from;
+		/**
+		 * @var
+		 */
 		Message::ptr message;
+		/**
+		 * @var
+		 */
 		std::string inline_message_id;
+		/**
+		 * @var
+		 */
 		std::string chat_instance;
+		/**
+		 * @var
+		 */
 		std::string data;
+		/**
+		 * @var
+		 */
 		std::string game_short_name;
 
 		//Constructors

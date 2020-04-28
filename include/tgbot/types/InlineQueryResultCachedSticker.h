@@ -22,10 +22,25 @@ namespace tgbot
 		std::shared_ptr<InlineQueryResultCachedSticker> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string type;
+		/**
+		 * @var
+		 */
 		std::string id;
+		/**
+		 * @var
+		 */
 		std::string sticker_file_id;
+		/**
+		 * @var
+		 */
 		InlineKeyboardMarkup::ptr reply_markup;
+		/**
+		 * @var
+		 */
 		InputMessageContent::ptr input_message_content;
 
 		//Constructors

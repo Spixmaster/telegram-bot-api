@@ -19,10 +19,25 @@ namespace tgbot
 		typedef std::shared_ptr<Invoice> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string title;
+		/**
+		 * @var
+		 */
 		std::string description;
+		/**
+		 * @var
+		 */
 		std::string start_parameter;
+		/**
+		 * @var
+		 */
 		std::string currency;
+		/**
+		 * @var
+		 */
 		int total_amount = -1;
 
 		//Constructors

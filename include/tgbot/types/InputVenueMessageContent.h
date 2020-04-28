@@ -21,11 +21,29 @@ namespace tgbot
 		typedef std::shared_ptr<InputVenueMessageContent> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		float latitude = -1;
+		/**
+		 * @var
+		 */
 		float longitude = -1;
+		/**
+		 * @var
+		 */
 		std::string title;
+		/**
+		 * @var
+		 */
 		std::string address;
+		/**
+		 * @var
+		 */
 		std::string foursquare_id;
+		/**
+		 * @var
+		 */
 		std::string foursquare_type;
 
 		//Constructors

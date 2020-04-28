@@ -20,9 +20,21 @@ namespace tgbot
 		typedef std::shared_ptr<OrderInfo> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string name;
+		/**
+		 * @var
+		 */
 		std::string phone_number;
+		/**
+		 * @var
+		 */
 		std::string email;
+		/**
+		 * @var
+		 */
 		ShippingAddress::ptr shipping_address;
 
 		//Constructors

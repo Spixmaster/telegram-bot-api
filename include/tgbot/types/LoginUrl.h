@@ -19,9 +19,21 @@ namespace tgbot
 		typedef std::shared_ptr<LoginUrl> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string url;
+		/**
+		 * @var
+		 */
 		std::string forward_text;
+		/**
+		 * @var
+		 */
 		std::string bot_username;
+		/**
+		 * @var
+		 */
 		bool request_write_access;
 
 		//Constructors

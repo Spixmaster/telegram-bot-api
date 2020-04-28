@@ -20,7 +20,13 @@ namespace tgbot
 		typedef std::shared_ptr<ReplyKeyboardRemove> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		bool remove_keyboard;
+		/**
+		 * @var
+		 */
 		bool selective;
 
 		//Constructors

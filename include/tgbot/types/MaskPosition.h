@@ -19,9 +19,21 @@ namespace tgbot
 		typedef std::shared_ptr<MaskPosition> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string point;
+		/**
+		 * @var
+		 */
 		float x_shift = -1;
+		/**
+		 * @var
+		 */
 		float y_shift = -1;
+		/**
+		 * @var
+		 */
 		float scale = -1;
 
 		//Constructors

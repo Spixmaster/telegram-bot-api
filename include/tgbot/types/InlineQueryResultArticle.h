@@ -22,16 +22,49 @@ namespace tgbot
 		typedef std::shared_ptr<InlineQueryResultArticle> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string type;
+		/**
+		 * @var
+		 */
 		std::string id;
+		/**
+		 * @var
+		 */
 		std::string title;
+		/**
+		 * @var
+		 */
 		InputMessageContent::ptr input_message_content;
+		/**
+		 * @var
+		 */
 		InlineKeyboardMarkup::ptr reply_markup;
+		/**
+		 * @var
+		 */
 		std::string url;
+		/**
+		 * @var
+		 */
 		bool hide_url;
+		/**
+		 * @var
+		 */
 		std::string description;
+		/**
+		 * @var
+		 */
 		std::string thumb_url;
+		/**
+		 * @var
+		 */
 		int thumb_width = -1;
+		/**
+		 * @var
+		 */
 		int thumb_height = -1;
 
 		//Constructors

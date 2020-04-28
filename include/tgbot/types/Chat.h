@@ -23,19 +23,61 @@ namespace tgbot
 		typedef std::shared_ptr<Chat> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		long long id = -1;
+		/**
+		 * @var
+		 */
 		std::string type;
+		/**
+		 * @var
+		 */
 		std::string title;
+		/**
+		 * @var
+		 */
 		std::string username;
+		/**
+		 * @var
+		 */
 		std::string first_name;
+		/**
+		 * @var
+		 */
 		std::string last_name;
+		/**
+		 * @var
+		 */
 		ChatPhoto::ptr photo;
+		/**
+		 * @var
+		 */
 		std::string description;
+		/**
+		 * @var
+		 */
 		std::string invite_link;
+		/**
+		 * @var
+		 */
 		std::shared_ptr<Message> pinned_message;
+		/**
+		 * @var
+		 */
 		ChatPermissions::ptr permissions;
+		/**
+		 * @var
+		 */
 		int slow_mode_delay = -1;
+		/**
+		 * @var
+		 */
 		std::string sticker_set_name;
+		/**
+		 * @var
+		 */
 		bool can_set_sticker_set;
 
 		//Constructors

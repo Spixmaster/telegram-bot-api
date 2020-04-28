@@ -22,17 +22,53 @@ namespace tgbot
 		typedef std::shared_ptr<InlineQueryResultPhoto> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string type;
+		/**
+		 * @var
+		 */
 		std::string id;
+		/**
+		 * @var
+		 */
 		std::string photo_url;
+		/**
+		 * @var
+		 */
 		std::string thumb_url;
+		/**
+		 * @var
+		 */
 		int photo_width = -1;
+		/**
+		 * @var
+		 */
 		int photo_height = -1;
+		/**
+		 * @var
+		 */
 		std::string title;
+		/**
+		 * @var
+		 */
 		std::string description;
+		/**
+		 * @var
+		 */
 		std::string caption;
+		/**
+		 * @var
+		 */
 		std::string parse_mode;
+		/**
+		 * @var
+		 */
 		InlineKeyboardMarkup::ptr reply_markup;
+		/**
+		 * @var
+		 */
 		InputMessageContent::ptr input_message_content;
 
 		//Constructors

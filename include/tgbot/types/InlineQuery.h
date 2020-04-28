@@ -22,10 +22,25 @@ namespace tgbot
 		typedef std::shared_ptr<InlineQuery> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string id;
+		/**
+		 * @var
+		 */
 		User::ptr from;
+		/**
+		 * @var
+		 */
 		Location::ptr location;
+		/**
+		 * @var
+		 */
 		std::string query;
+		/**
+		 * @var
+		 */
 		std::string offset;
 
 		//Constructors

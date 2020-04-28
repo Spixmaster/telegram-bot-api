@@ -21,9 +21,21 @@ namespace tgbot
 		typedef std::shared_ptr<PassportElementErrorTranslationFile> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string source;
+		/**
+		 * @var
+		 */
 		std::string type;
+		/**
+		 * @var
+		 */
 		std::string file_hash;
+		/**
+		 * @var
+		 */
 		std::string message;
 
 		//Constructors

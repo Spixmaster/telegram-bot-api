@@ -20,8 +20,17 @@ namespace tgbot
 		typedef std::shared_ptr<InputLocationMessageContent> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		float latitude = -1;
+		/**
+		 * @var
+		 */
 		float longitude = -1;
+		/**
+		 * @var
+		 */
 		int live_period = -1;
 
 		//Constructors

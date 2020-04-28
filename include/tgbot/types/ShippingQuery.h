@@ -21,9 +21,21 @@ namespace tgbot
 		typedef std::shared_ptr<ShippingQuery> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string id;
+		/**
+		 * @var
+		 */
 		User::ptr from;
+		/**
+		 * @var
+		 */
 		std::string invoice_payload;
+		/**
+		 * @var
+		 */
 		ShippingAddress::ptr shipping_address;
 
 		//Constructors

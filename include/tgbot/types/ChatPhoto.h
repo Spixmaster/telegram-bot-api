@@ -20,9 +20,21 @@ namespace tgbot
 		typedef std::shared_ptr<ChatPhoto> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string small_file_id;
+		/**
+		 * @var
+		 */
 		std::string small_file_unique_id;
+		/**
+		 * @var
+		 */
 		std::string big_file_id;
+		/**
+		 * @var
+		 */
 		std::string big_file_unique_id;
 
 		//Constructors

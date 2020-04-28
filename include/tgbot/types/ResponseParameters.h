@@ -19,7 +19,13 @@ namespace tgbot
 		typedef std::shared_ptr<ResponseParameters> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		int migrate_to_chat_id = -1;
+		/**
+		 * @var
+		 */
 		int retry_after = -1;
 
 		//Constructors

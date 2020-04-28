@@ -21,8 +21,17 @@ namespace tgbot
 		typedef std::shared_ptr<ShippingOption> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string id;
+		/**
+		 * @var
+		 */
 		std::string title;
+		/**
+		 * @var
+		 */
 		std::vector<LabeledPrice::ptr> prices;
 
 		//Constructors

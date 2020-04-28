@@ -21,12 +21,33 @@ namespace tgbot
 		typedef std::shared_ptr<PreCheckoutQuery> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string id;
+		/**
+		 * @var
+		 */
 		User::ptr from;
+		/**
+		 * @var
+		 */
 		std::string currency;
+		/**
+		 * @var
+		 */
 		int total_amount = -1;
+		/**
+		 * @var
+		 */
 		std::string invoice_payload;
+		/**
+		 * @var
+		 */
 		std::string shipping_option_id;
+		/**
+		 * @var
+		 */
 		OrderInfo::ptr order_info;
 
 		//Constructors

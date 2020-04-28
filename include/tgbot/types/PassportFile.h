@@ -20,9 +20,21 @@ namespace tgbot
 		typedef std::shared_ptr<PassportFile> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string file_id;
+		/**
+		 * @var
+		 */
 		std::string file_unique_id;
+		/**
+		 * @var
+		 */
 		int file_size = -1;
+		/**
+		 * @var
+		 */
 		int file_date = -1;
 
 		//Constructors

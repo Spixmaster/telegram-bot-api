@@ -21,9 +21,21 @@ namespace tgbot
 		typedef std::shared_ptr<InlineQueryResultGame> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string type;
+		/**
+		 * @var
+		 */
 		std::string id;
+		/**
+		 * @var
+		 */
 		std::string game_short_name;
+		/**
+		 * @var
+		 */
 		InlineKeyboardMarkup::ptr reply_markup;
 
 		//Constructors

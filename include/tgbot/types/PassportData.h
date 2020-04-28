@@ -21,7 +21,13 @@ namespace tgbot
 		typedef std::shared_ptr<PassportData> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::vector<EncryptedPassportElement::ptr> data;
+		/**
+		 * @var
+		 */
 		EncryptedCredentials::ptr credentials;
 
 		//Constructors

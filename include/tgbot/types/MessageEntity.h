@@ -20,11 +20,29 @@ namespace tgbot
 		typedef std::shared_ptr<MessageEntity> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string type;
+		/**
+		 * @var
+		 */
 		int offset = -1;
+		/**
+		 * @var
+		 */
 		int length = -1;
+		/**
+		 * @var
+		 */
 		std::string url;
+		/**
+		 * @var
+		 */
 		User::ptr user;
+		/**
+		 * @var
+		 */
 		std::string language;
 
 		//Constructors

@@ -20,8 +20,17 @@ namespace tgbot
 		typedef std::shared_ptr<GameHighScore> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		int position = -1;
+		/**
+		 * @var
+		 */
 		User::ptr user;
+		/**
+		 * @var
+		 */
 		int score = -1;
 
 		//Constructors

@@ -19,8 +19,17 @@ namespace tgbot
 		typedef std::shared_ptr<EncryptedCredentials> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string data;
+		/**
+		 * @var
+		 */
 		std::string hash;
+		/**
+		 * @var
+		 */
 		std::string secret;
 
 		//Constructors

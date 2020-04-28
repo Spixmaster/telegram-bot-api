@@ -22,13 +22,37 @@ namespace tgbot
 		typedef std::shared_ptr<InputMediaAnimation> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		const std::string type = "animation";
+		/**
+		 * @var
+		 */
 		std::variant<std::string, tools::InputFile::ptr> media;
+		/**
+		 * @var
+		 */
 		std::variant<std::string, tools::InputFile::ptr> thumb;
+		/**
+		 * @var
+		 */
 		std::string caption;
+		/**
+		 * @var
+		 */
 		std::string parse_mode;
+		/**
+		 * @var
+		 */
 		int width = -1;
+		/**
+		 * @var
+		 */
 		int height = -1;
+		/**
+		 * @var
+		 */
 		int duration = -1;
 
 		//Constructors

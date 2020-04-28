@@ -21,13 +21,37 @@ namespace tgbot
 		typedef std::shared_ptr<Audio> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string file_id;
+		/**
+		 * @var
+		 */
 		std::string file_unique_id;
+		/**
+		 * @var
+		 */
 		int duration = -1;
+		/**
+		 * @var
+		 */
 		std::string performer;
+		/**
+		 * @var
+		 */
 		std::string title;
+		/**
+		 * @var
+		 */
 		std::string mime_type;
+		/**
+		 * @var
+		 */
 		int file_size = -1;
+		/**
+		 * @var
+		 */
 		PhotoSize::ptr thumb;
 
 		//Constructors

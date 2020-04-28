@@ -20,11 +20,29 @@ namespace tgbot
 		typedef std::shared_ptr<VideoNote> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string file_id;
+		/**
+		 * @var
+		 */
 		std::string file_unique_id;
+		/**
+		 * @var
+		 */
 		int length = -1;
+		/**
+		 * @var
+		 */
 		int duration = -1;
+		/**
+		 * @var
+		 */
 		PhotoSize::ptr thumb;
+		/**
+		 * @var
+		 */
 		int file_size = -1;
 
 		//Constructors

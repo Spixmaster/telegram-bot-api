@@ -21,8 +21,17 @@ namespace tgbot
 		typedef std::shared_ptr<PollAnswer> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string poll_id;
+		/**
+		 * @var
+		 */
 		User::ptr user;
+		/**
+		 * @var
+		 */
 		std::vector<int> option_ids;
 
 		//Constructors

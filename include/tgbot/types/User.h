@@ -19,14 +19,41 @@ namespace tgbot
 		typedef std::shared_ptr<User> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		long long id = -1;
+		/**
+		 * @var
+		 */
 		bool is_bot;
+		/**
+		 * @var
+		 */
 		std::string first_name;
+		/**
+		 * @var
+		 */
 		std::string last_name;
+		/**
+		 * @var
+		 */
 		std::string username;
+		/**
+		 * @var
+		 */
 		std::string language_code;
+		/**
+		 * @var
+		 */
 		bool can_join_groups;
+		/**
+		 * @var
+		 */
 		bool can_read_all_group_messages;
+		/**
+		 * @var
+		 */
 		bool supports_inline_queries;
 
 		//Constructors

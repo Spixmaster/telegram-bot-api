@@ -21,6 +21,9 @@ namespace tgbot
 		typedef std::shared_ptr<InlineKeyboardMarkup> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::vector<std::vector<InlineKeyboardButton::ptr>> inline_keyboard;
 
 		//Constructors

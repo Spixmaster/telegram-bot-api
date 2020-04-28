@@ -22,13 +22,37 @@ namespace tgbot
 		typedef std::shared_ptr<InlineQueryResultCachedMpeg4Gif> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string type;
+		/**
+		 * @var
+		 */
 		std::string id;
+		/**
+		 * @var
+		 */
 		std::string mpeg4_file_id;
+		/**
+		 * @var
+		 */
 		std::string title;
+		/**
+		 * @var
+		 */
 		std::string caption;
+		/**
+		 * @var
+		 */
 		std::string parse_mode;
+		/**
+		 * @var
+		 */
 		InlineKeyboardMarkup::ptr reply_markup;
+		/**
+		 * @var
+		 */
 		InputMessageContent::ptr input_message_content;
 
 		//Constructors

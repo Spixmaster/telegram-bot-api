@@ -20,7 +20,13 @@ namespace tgbot
 		typedef std::shared_ptr<UserProfilePhotos> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		int total_count = -1;
+		/**
+		 * @var
+		 */
 		std::vector<PhotoSize::ptr> photos;
 
 		//Constructors

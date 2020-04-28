@@ -20,10 +20,25 @@ namespace tgbot
 		typedef std::shared_ptr<PhotoSize> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string file_id;
+		/**
+		 * @var
+		 */
 		std::string file_unique_id;
+		/**
+		 * @var
+		 */
 		int width = -1;
+		/**
+		 * @var
+		 */
 		int height = -1;
+		/**
+		 * @var
+		 */
 		int file_size = -1;
 
 		//Constructors

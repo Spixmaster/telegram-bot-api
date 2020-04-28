@@ -20,15 +20,45 @@ namespace tgbot
 		typedef std::shared_ptr<Sticker> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string file_id;
+		/**
+		 * @var
+		 */
 		std::string file_unique_id;
+		/**
+		 * @var
+		 */
 		int width = -1;
+		/**
+		 * @var
+		 */
 		int height = -1;
+		/**
+		 * @var
+		 */
 		bool is_animated;
+		/**
+		 * @var
+		 */
 		PhotoSize::ptr thumb;
+		/**
+		 * @var
+		 */
 		std::string emoji;
+		/**
+		 * @var
+		 */
 		std::string set_name;
+		/**
+		 * @var
+		 */
 		MaskPosition::ptr mask_position;
+		/**
+		 * @var
+		 */
 		int file_size = -1;
 
 		//Constructors
