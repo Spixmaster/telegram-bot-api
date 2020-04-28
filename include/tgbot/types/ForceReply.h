@@ -5,26 +5,31 @@
 #include <memory>
 #include "tgbot/types/Reply.h"
 
-//@brief represents on object in the Telegram bot api
-
 namespace tgbot
 {
+	/**
+	 * @struct ForceReply
+	 */
 	struct ForceReply : public Reply
 	{
-		//pointer of itself
+		//Pointer of itself
+		/**
+		 * @var ptr
+		 * @brief A pointer of itself.
+		 */
 		typedef std::shared_ptr<ForceReply> ptr;
 
-		//member variables
+		//Member variables
 		bool force_reply = true;
 		bool selective = false;
 
-		//constructors
+		//Constructors
 		ForceReply();
 
 		//@param json: json object of ForceReply
 		ForceReply(const std::string &json);
 
-		//member functions
+		//Member functions
 		/*
 		 * @brief converts a itself into a json object
 		 * @return the json object as a string

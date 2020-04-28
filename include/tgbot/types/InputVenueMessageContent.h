@@ -6,16 +6,21 @@
 #include <rapidjson/document.h>
 #include <memory>
 
-//@brief represents on object in the Telegram bot api
-
 namespace tgbot
 {
+	/**
+	 * @struct InputVenueMessageContent
+	 */
 	struct InputVenueMessageContent : public InputMessageContent
 	{
-		//pointer of itself
+		//Pointer of itself
+		/**
+		 * @var ptr
+		 * @brief A pointer of itself.
+		 */
 		typedef std::shared_ptr<InputVenueMessageContent> ptr;
 
-		//member variables
+		//Member variables
 		float latitude = -1;
 		float longitude = -1;
 		std::string title;
@@ -23,13 +28,13 @@ namespace tgbot
 		std::string foursquare_id;
 		std::string foursquare_type;
 
-		//constructors
+		//Constructors
 		InputVenueMessageContent();
 
 		//@param json: json object of InputVenueMessageContent
 		InputVenueMessageContent(const std::string &json);
 
-		//member functions
+		//Member functions
 		/*
 		 * @brief converts a itself into a json object
 		 * @return the json object as a string

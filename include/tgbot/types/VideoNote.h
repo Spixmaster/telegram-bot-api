@@ -5,16 +5,21 @@
 #include "tgbot/types/PhotoSize.h"
 #include <memory>
 
-//@brief represents on object in the Telegram bot api
-
 namespace tgbot
 {
+	/**
+	 * @struct VideoNote
+	 */
 	struct VideoNote
 	{
-		//pointer of itself
+		//Pointer of itself
+		/**
+		 * @var ptr
+		 * @brief A pointer of itself.
+		 */
 		typedef std::shared_ptr<VideoNote> ptr;
 
-		//member variables
+		//Member variables
 		std::string file_id;
 		std::string file_unique_id;
 		int length = -1;
@@ -22,13 +27,13 @@ namespace tgbot
 		PhotoSize::ptr thumb;
 		int file_size = -1;
 
-		//constructors
+		//Constructors
 		VideoNote();
 
 		//@param json: json object of VideoNote
 		VideoNote(const std::string &json);
 
-		//member functions
+		//Member functions
 		/*
 		 * @brief converts a itself into a json object
 		 * @return the json object as a string

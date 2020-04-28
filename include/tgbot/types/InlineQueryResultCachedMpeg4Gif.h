@@ -7,16 +7,21 @@
 #include "InlineQueryResult.h"
 #include <memory>
 
-//@brief represents on object in the Telegram bot api
-
 namespace tgbot
 {
+	/**
+	 * @struct InlineQueryResultCachedMpeg4Gif
+	 */
 	struct InlineQueryResultCachedMpeg4Gif : public InlineQueryResult
 	{
-		//pointer of itself
+		//Pointer of itself
+		/**
+		 * @var ptr
+		 * @brief A pointer of itself.
+		 */
 		typedef std::shared_ptr<InlineQueryResultCachedMpeg4Gif> ptr;
 
-		//member variables
+		//Member variables
 		std::string type;
 		std::string id;
 		std::string mpeg4_file_id;
@@ -26,13 +31,13 @@ namespace tgbot
 		InlineKeyboardMarkup::ptr reply_markup;
 		InputMessageContent::ptr input_message_content;
 
-		//constructors
+		//Constructors
 		InlineQueryResultCachedMpeg4Gif();
 
 		//@param json: json object of InlineQueryResultCachedMpeg4Gif
 		InlineQueryResultCachedMpeg4Gif(const std::string &json);
 
-		//member functions
+		//Member functions
 		/*
 		 * @brief converts a itself into a json object
 		 * @return the json object as a string

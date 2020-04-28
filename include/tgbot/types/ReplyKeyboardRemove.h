@@ -5,26 +5,31 @@
 #include <memory>
 #include "tgbot/types/Reply.h"
 
-//@brief represents on object in the Telegram bot api
-
 namespace tgbot
 {
+	/**
+	 * @struct ReplyKeyboardRemove
+	 */
 	struct ReplyKeyboardRemove : public Reply
 	{
-		//pointer of itself
+		//Pointer of itself
+		/**
+		 * @var ptr
+		 * @brief A pointer of itself.
+		 */
 		typedef std::shared_ptr<ReplyKeyboardRemove> ptr;
 
-		//member variables
+		//Member variables
 		bool remove_keyboard;
 		bool selective;
 
-		//constructors
+		//Constructors
 		ReplyKeyboardRemove();
 
 		//@param json: json object of ReplyKeyboardRemove
 		ReplyKeyboardRemove(const std::string &json);
 
-		//member functions
+		//Member functions
 		/*
 		 * @brief parses the itself into its json equivalent
 		 * @return return a string which represents a itself

@@ -4,29 +4,34 @@
 #include <string>
 #include <memory>
 
-//@brief represents on object in the Telegram bot api
-
 namespace tgbot
 {
+	/**
+	 * @struct Contact
+	 */
 	struct Contact
 	{
-		//pointer of itself
+		//Pointer of itself
+		/**
+		 * @var ptr
+		 * @brief A pointer of itself.
+		 */
 		typedef std::shared_ptr<Contact> ptr;
 
-		//member variables
+		//Member variables
 		std::string phone_number;
 		std::string first_name;
 		std::string last_name;
 		int user_id = -1;
 		std::string vcard;
 
-		//constructors
+		//Constructors
 		Contact();
 
 		//@param json: json object of Contact
 		Contact(const std::string &json);
 
-		//member functions
+		//Member functions
 		/*
 		 * @brief converts a itself into a json object
 		 * @return the json object as a string

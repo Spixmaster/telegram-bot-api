@@ -4,16 +4,21 @@
 #include <string>
 #include <memory>
 
-//@brief represents on object in the Telegram bot api
-
 namespace tgbot
 {
+	/**
+	 * @struct User
+	 */
 	struct User
 	{
-		//pointer of itself
+		//Pointer of itself
+		/**
+		 * @var ptr
+		 * @brief A pointer of itself.
+		 */
 		typedef std::shared_ptr<User> ptr;
 
-		//member variables
+		//Member variables
 		long long id = -1;
 		bool is_bot;
 		std::string first_name;
@@ -24,13 +29,13 @@ namespace tgbot
 		bool can_read_all_group_messages;
 		bool supports_inline_queries;
 
-		//constructors
+		//Constructors
 		User();
 
 		//@param json: json object of User
 		User(const std::string &json);
 
-		//member functions
+		//Member functions
 		/*
 		 * @brief converts a itself into a json object
 		 * @return the json object as a string

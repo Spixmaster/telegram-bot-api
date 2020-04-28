@@ -3,19 +3,24 @@
 
 #include <memory>
 
-//@brief represents on object in the Telegram bot api
-
 namespace tgbot
 {
+	/**
+	 * @struct PassportElementError
+	 */
 	struct PassportElementError
 	{
-		//pointer of itself
+		//Pointer of itself
+		/**
+		 * @var ptr
+		 * @brief A pointer of itself.
+		 */
 		typedef std::shared_ptr<PassportElementError> ptr;
 
-		//destructors
+		//Destructors
 		virtual ~PassportElementError();
 
-		//member functions
+		//Member functions
 		/*
 		 * @brief converts a itself into a json object
 		 * @return the json object as a string

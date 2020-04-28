@@ -3,19 +3,24 @@
 
 #include <memory>
 
-//@brief represents on object in the Telegram bot api
-
 namespace tgbot
 {
+	/**
+	 * @struct InlineQueryResult
+	 */
 	struct InlineQueryResult
 	{
-		//pointer of itself
+		//Pointer of itself
+		/**
+		 * @var ptr
+		 * @brief A pointer of itself.
+		 */
 		typedef std::shared_ptr<InlineQueryResult> ptr;
 
-		//destructors
+		//Destructors
 		virtual ~InlineQueryResult();
 
-		//member functions
+		//Member functions
 		/*
 		 * @brief converts a itself into a json object
 		 * @return the json object as a string

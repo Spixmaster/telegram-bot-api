@@ -4,20 +4,32 @@
 #include <string>
 #include <memory>
 
-/*
- * @brief container of all constants in the programme
- * @brief it is a monostate
- */
-
 namespace tgbot
 {
+	/**
+	 * @struct Constants
+	 * @brief A container of all constants in the programme.
+	 * @details It is a monostate.
+	 */
 	struct Constants
 	{
-		//pointer of itself
+		//Pointer of itself
+		/**
+		 * @var ptr
+		 * @brief A pointer of itself.
+		 */
 		typedef std::shared_ptr<Constants> ptr;
 
-		//member variables
+		//Member variables
+		/**
+		 * @var version
+		 * @brief The version of the software.
+		 */
 		static const std::string version;
+		/**
+		 * @var release
+		 * @breif The release date of the current version.
+		 */
 		static const std::string release;
 	};
 }

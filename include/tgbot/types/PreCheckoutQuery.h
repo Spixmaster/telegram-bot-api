@@ -6,16 +6,21 @@
 #include "tgbot/types/OrderInfo.h"
 #include <memory>
 
-//@brief represents on object in the Telegram bot api
-
 namespace tgbot
 {
+	/**
+	 * @struct PreCheckoutQuery
+	 */
 	struct PreCheckoutQuery
 	{
-		//pointer of itself
+		//Pointer of itself
+		/**
+		 * @var ptr
+		 * @brief A pointer of itself.
+		 */
 		typedef std::shared_ptr<PreCheckoutQuery> ptr;
 
-		//member variables
+		//Member variables
 		std::string id;
 		User::ptr from;
 		std::string currency;
@@ -24,13 +29,13 @@ namespace tgbot
 		std::string shipping_option_id;
 		OrderInfo::ptr order_info;
 
-		//constructors
+		//Constructors
 		PreCheckoutQuery();
 
 		//@param json: json object of PreCheckoutQuery
 		PreCheckoutQuery(const std::string &json);
 
-		//member functions
+		//Member functions
 		/*
 		 * @brief converts a itself into a json object
 		 * @return the json object as a string

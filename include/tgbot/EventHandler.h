@@ -12,50 +12,102 @@
 #include "tgbot/types/CallbackQuery.h"
 #include <unordered_map>
 
-/*
- * @brief entry of every Bot is function EventHandler::long_poll() which simply makes a request getUpdates() via the Endpoints object; therefore, it needs to be run
- * 			in an endless loop for always fetching new incoming data
- * @brief each new update is processed by this->handle_update()
- * @brief this->handle_update calls proper vector which contains the functions which shall be called for that specific event
- * @brief all function which start with on_...() simply add the function given as argument to the proper vector
- */
-
 namespace tgbot
 {
+	/**
+	 * @EventHandler
+	 * @brief The event handler which handles incoming data.
+	 */
 	class EventHandler
 	{
 	public:
-		//pointer of itself
+		//Pointer of itself
+		/**
+		 * @var ptr
+		 * @brief A pointer of itself.
+		 */
 		typedef std::shared_ptr<EventHandler> ptr;
 
 	private:
-		//member variables
+		//Member variables
+		/**
+		 * @var m_endpnts
+		 * @brief An object of the class Endpoints is needed as the instance of this class need to send requests.
+		 */
 		Endpoints::ptr m_endpnts;
-		int m_offset = 0; //is used for getUpdates() function of member variable m_endpnts
-		//listener elements
+		/**
+		 * @var m_offset
+		 * @brief It is used for the getUpdates() function of the class Endpoints.
+		 */
+		int m_offset = 0;
+		//Listener elements
+		/**
+		 * @var m_message_listener_element
+		 * @brief An element which is added to the proper listener.
+		 */
 		typedef std::function<void (const Message::ptr)> m_message_listener_element;
+		/**
+		 * @var m_edited_message_listener_element
+		 * @brief An element which is added to the proper listener.
+		 */
 		typedef std::function<void (const Message::ptr)> m_edited_message_listener_element;
+		/**
+		 * @var m_channel_post_listener_element
+		 * @brief An element which is added to the proper listener.
+		 */
 		typedef std::function<void (const Message::ptr)> m_channel_post_listener_element;
+		/**
+		 * @var m_edited_channel_post_listener_element
+		 * @brief An element which is added to the proper listener.
+		 */
 		typedef std::function<void (const Message::ptr)> m_edited_channel_post_listener_element;
+		/**
+		 * @var m_inline_query_listener_element
+		 * @brief An element which is added to the proper listener.
+		 */
 		typedef std::function<void (const InlineQuery::ptr)> m_inline_query_listener_element;
+		/**
+		 * @var m_chosen_inline_result_listener_element
+		 * @brief An element which is added to the proper listener.
+		 */
 		typedef std::function<void (const ChosenInlineResult::ptr)> m_chosen_inline_result_listener_element;
+		/**
+		 * @var m_callback_query_listener_element
+		 * @brief An element which is added to the proper listener.
+		 */
 		typedef std::function<void (const CallbackQuery::ptr)> m_callback_query_listener_element;
+		/**
+		 * @var m_shipping_query_listener_element
+		 * @brief An element which is added to the proper listener.
+		 */
 		typedef std::function<void (const ShippingQuery::ptr)> m_shipping_query_listener_element;
+		/**
+		 * @var m_pre_checkout_query_listener_element
+		 * @brief An element which is added to the proper listener.
+		 */
 		typedef std::function<void (const PreCheckoutQuery::ptr)> m_pre_checkout_query_listener_element;
+		/**
+		 * @var m_poll_listener_element
+		 * @brief An element which is added to the proper listener.
+		 */
 		typedef std::function<void (const Poll::ptr)> m_poll_listener_element;
-		//vectors of listeners
-			//just for member variable message
+		/**
+		 * @var m_poll_answer_listener_element
+		 * @brief An element which is added to the proper listener.
+		 */
+		typedef std::function<void (const Poll::ptr)> m_poll_answer_listener_element;
+		//Vectors of listeners
 		std::vector<m_message_listener_element> m_on_any_msg_listener_ls;
 		std::unordered_map<std::string, m_message_listener_element> m_on_cmd_listener_ls;
 		std::vector<m_message_listener_element> m_on_unknwn_cmd_listener_ls;
 		std::vector<m_message_listener_element> m_on_non_cmd_msg_listener_ls;
-			//rest which is element of the Update object
 		std::vector<m_inline_query_listener_element> m_on_inline_query_listener_ls;
 		std::vector<m_chosen_inline_result_listener_element> m_on_chosen_inline_result_listener_ls;
 		std::vector<m_callback_query_listener_element> m_on_callback_query_listener_ls;
 		std::vector<m_shipping_query_listener_element> m_on_shipping_query_listener_ls;
 		std::vector<m_pre_checkout_query_listener_element> m_pre_checkout_query_listener_ls;
 		std::vector<m_poll_listener_element> m_poll_listener_ls;
+		std::vector<m_poll_answer_listener_element> m_poll_listener_ls;
 
 	public:
 		//constructors
@@ -135,7 +187,13 @@ namespace tgbot
 		 * @brief adds the listener to proper lister list
 		 * @param listener_element: listener to add
 		 */
-		void on_poll_query(const m_poll_listener_element &listener_element) noexcept;
+		void on_poll(const m_poll_listener_element &listener_element) noexcept;
+
+		/*
+		 * @brief adds the listener to proper lister list
+		 * @param listener_element: listener to add
+		 */
+		void on_poll_answer(const m_poll_listener_element &listener_element) noexcept;
 	};
 }
 

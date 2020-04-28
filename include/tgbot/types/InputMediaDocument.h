@@ -7,36 +7,43 @@
 #include <variant>
 #include "tools/http/InputFile.h"
 
-//@brief represents on object in the Telegram bot api
-
 namespace tgbot
 {
+	/**
+	 * @struct InputMediaDocument
+	 */
 	struct InputMediaDocument : public InputMedia
 	{
-		//pointer of itself
+		//Pointer of itself
+		/**
+		 * @var ptr
+		 * @brief A pointer of itself.
+		 */
 		typedef std::shared_ptr<InputMediaDocument> ptr;
 
-		//member variables
+		//Member variables
 		const std::string type = "document";
 		std::variant<std::string, tools::InputFile::ptr> media;
 		std::variant<std::string, tools::InputFile::ptr> thumb;
 		std::string caption;
 		std::string parse_mode;
 
-		//constructors
+		//Constructors
 		InputMediaDocument();
 
 		//@param json: json object of InputMediaDocument
 		InputMediaDocument(const std::string &json);
 
-		//@param media: source of the document
-		//@param thumb: source of the thumb
-		//@param caption: caption under document
-		//@param parse_mode: how caption is parsed
+		/**
+		 * @param media: source of the document
+		 * @param thumb: source of the thumb
+		 * @param caption: caption under document
+		 * @param parse_mode: how caption is parsed
+		 */
 		InputMediaDocument(const std::variant<std::string, tools::InputFile::ptr> &media, const std::variant<std::string, tools::InputFile::ptr> &thumb,
 				const std::string &caption = "", const std::string &parse_mode = "");
 
-		//member functions
+		//Member functions
 		/*
 		 * @brief parses itself into json equivalent
 		 * @return json object of itself as a string

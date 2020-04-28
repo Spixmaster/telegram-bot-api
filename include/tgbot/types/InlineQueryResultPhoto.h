@@ -7,16 +7,21 @@
 #include "tgbot/types/InlineKeyboardMarkup.h"
 #include "tgbot/types/InputMessageContent.h"
 
-//@brief represents on object in the Telegram bot api
-
 namespace tgbot
 {
+	/**
+	 * @struct InlineQueryResultPhoto
+	 */
 	struct InlineQueryResultPhoto : public InlineQueryResult
 	{
-		//pointer of itself
+		//Pointer of itself
+		/**
+		 * @var ptr
+		 * @brief A pointer of itself.
+		 */
 		typedef std::shared_ptr<InlineQueryResultPhoto> ptr;
 
-		//member variables
+		//Member variables
 		std::string type;
 		std::string id;
 		std::string photo_url;
@@ -30,13 +35,13 @@ namespace tgbot
 		InlineKeyboardMarkup::ptr reply_markup;
 		InputMessageContent::ptr input_message_content;
 
-		//constructors
+		//Constructors
 		InlineQueryResultPhoto();
 
 		//@param json: json object of InlineQueryResultPhoto
 		InlineQueryResultPhoto(const std::string &json);
 
-		//member functions
+		//Member functions
 		/*
 		 * @brief converts a itself into a json object
 		 * @return the json object as a string

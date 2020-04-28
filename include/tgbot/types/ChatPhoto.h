@@ -5,28 +5,33 @@
 #include <rapidjson/document.h>
 #include <memory>
 
-//@brief represents on object in the Telegram bot api
-
 namespace tgbot
 {
+	/**
+	 * @struct ChatPhoto
+	 */
 	struct ChatPhoto
 	{
-		//pointer of itself
+		//Pointer of itself
+		/**
+		 * @var ptr
+		 * @brief A pointer of itself.
+		 */
 		typedef std::shared_ptr<ChatPhoto> ptr;
 
-		//member variables
+		//Member variables
 		std::string small_file_id;
 		std::string small_file_unique_id;
 		std::string big_file_id;
 		std::string big_file_unique_id;
 
-		//constructors
+		//Constructors
 		ChatPhoto();
 
 		//@param json: json object of ChatPhoto
 		ChatPhoto(const std::string &json);
 
-		//member functions
+		//Member functions
 		/*
 		 * @brief converts a itself into a json object
 		 * @return the json object as a string

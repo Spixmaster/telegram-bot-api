@@ -239,6 +239,14 @@ namespace tgbot
 				element(update->poll);
 			}
 		}
+		else if (update->poll_answer != nullptr)
+		{
+			for(std::size_t j = 0; j < m_poll_answer_listener_ls.size(); ++j)
+			{
+				m_poll_listener_element element = m_poll_answer_listener_ls.at(j);
+				element(update->poll_answer);
+			}
+		}
 	}
 
 	void EventHandler::on_any_msg(const m_message_listener_element &listener_element) noexcept
