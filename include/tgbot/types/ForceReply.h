@@ -20,7 +20,13 @@ namespace tgbot
 		typedef std::shared_ptr<ForceReply> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		bool force_reply = true;
+		/**
+		 * @var
+		 */
 		bool selective = false;
 
 		//Constructors

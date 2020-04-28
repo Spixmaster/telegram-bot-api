@@ -21,8 +21,17 @@ namespace tgbot
 		typedef std::shared_ptr<InputTextMessageContent> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string message_text;
+		/**
+		 * @var
+		 */
 		std::string parse_mode;
+		/**
+		 * @var
+		 */
 		bool disable_web_page_preview;
 
 		//Constructors

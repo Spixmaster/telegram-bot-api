@@ -21,10 +21,25 @@ namespace tgbot
 		typedef std::shared_ptr<StickerSet> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string name;
+		/**
+		 * @var
+		 */
 		std::string title;
+		/**
+		 * @var
+		 */
 		bool is_animated;
+		/**
+		 * @var
+		 */
 		bool contains_masks;
+		/**
+		 * @var
+		 */
 		std::vector<Sticker::ptr> sticker;
 
 		//Constructors

@@ -20,11 +20,29 @@ namespace tgbot
 		typedef std::shared_ptr<Document> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string file_id;
+		/**
+		 * @var
+		 */
 		std::string file_unique_id;
+		/**
+		 * @var
+		 */
 		PhotoSize::ptr thumb;
+		/**
+		 * @var
+		 */
 		std::string file_name;
+		/**
+		 * @var
+		 */
 		std::string mime_type;
+		/**
+		 * @var
+		 */
 		int file_size = -1;
 
 		//Constructors

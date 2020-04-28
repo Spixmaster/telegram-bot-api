@@ -21,15 +21,45 @@ namespace tgbot
 		typedef std::shared_ptr<EncryptedPassportElement> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string type;
+		/**
+		 * @var
+		 */
 		std::string data;
+		/**
+		 * @var
+		 */
 		std::string phone_number;
+		/**
+		 * @var
+		 */
 		std::string email;
+		/**
+		 * @var
+		 */
 		std::vector<PassportFile::ptr> files;
+		/**
+		 * @var
+		 */
 		PassportFile::ptr front_side;
+		/**
+		 * @var
+		 */
 		PassportFile::ptr reverse_side;
+		/**
+		 * @var
+		 */
 		PassportFile::ptr selfie;
+		/**
+		 * @var
+		 */
 		std::vector<PassportFile::ptr> translation;
+		/**
+		 * @var
+		 */
 		std::string hash;
 
 		//Constructors

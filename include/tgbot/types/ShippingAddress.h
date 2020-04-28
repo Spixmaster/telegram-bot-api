@@ -21,11 +21,29 @@ namespace tgbot
 		typedef std::shared_ptr<ShippingAddress> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string country_code;
+		/**
+		 * @var
+		 */
 		std::string state;
+		/**
+		 * @var
+		 */
 		std::string city;
+		/**
+		 * @var
+		 */
 		std::string street_line1;
+		/**
+		 * @var
+		 */
 		std::string street_line2;
+		/**
+		 * @var
+		 */
 		std::string post_code;
 
 		//Constructors

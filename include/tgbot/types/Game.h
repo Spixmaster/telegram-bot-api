@@ -23,11 +23,29 @@ namespace tgbot
 		typedef std::shared_ptr<Game> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string title;
+		/**
+		 * @var
+		 */
 		std::string description;
+		/**
+		 * @var
+		 */
 		std::vector<PhotoSize::ptr> photo;
+		/**
+		 * @var
+		 */
 		std::string text;
+		/**
+		 * @var
+		 */
 		std::vector<MessageEntity::ptr> text_entities;
+		/**
+		 * @var
+		 */
 		Animation::ptr animation;
 
 		//Constructors

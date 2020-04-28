@@ -19,13 +19,37 @@ namespace tgbot
 		typedef std::shared_ptr<ChatPermissions> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		bool can_send_messages;
+		/**
+		 * @var
+		 */
 		bool can_send_media_messages;
+		/**
+		 * @var
+		 */
 		bool can_send_polls;
+		/**
+		 * @var
+		 */
 		bool can_send_other_messages;
+		/**
+		 * @var
+		 */
 		bool can_add_web_page_preview;
+		/**
+		 * @var
+		 */
 		bool can_change_info;
+		/**
+		 * @var
+		 */
 		bool can_invite_users;
+		/**
+		 * @var
+		 */
 		bool can_pin_messages;
 
 		//Constructors

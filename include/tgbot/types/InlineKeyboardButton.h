@@ -21,13 +21,37 @@ namespace tgbot
 		typedef std::shared_ptr<InlineKeyboardButton> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string text;
+		/**
+		 * @var
+		 */
 		std::string url;
+		/**
+		 * @var
+		 */
 		LoginUrl::ptr login_url;
+		/**
+		 * @var
+		 */
 		std::string callback_data;
+		/**
+		 * @var
+		 */
 		std::string switch_inline_query;
+		/**
+		 * @var
+		 */
 		std::string switch_inline_query_current_chat;
+		/**
+		 * @var
+		 */
 		CallbackGame::ptr callback_game;
+		/**
+		 * @var
+		 */
 		bool pay;
 
 		//Constructors

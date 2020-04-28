@@ -21,12 +21,33 @@ namespace tgbot
 		typedef std::shared_ptr<WebhookInfo> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string url;
+		/**
+		 * @var
+		 */
 		bool has_custom_certificate;
+		/**
+		 * @var
+		 */
 		int pending_update_count = -1;
+		/**
+		 * @var
+		 */
 		int last_error_date = -1;
+		/**
+		 * @var
+		 */
 		std::string last_error_message;
+		/**
+		 * @var
+		 */
 		int max_connections = -1;
+		/**
+		 * @var
+		 */
 		std::vector<std::string> allowed_updates;
 
 		//Constructors

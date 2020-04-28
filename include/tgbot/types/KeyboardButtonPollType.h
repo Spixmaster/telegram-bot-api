@@ -20,6 +20,9 @@ namespace tgbot
 		typedef std::shared_ptr<KeyboardButtonPollType> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string type;
 
 		//Constructors

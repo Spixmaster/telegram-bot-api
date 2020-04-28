@@ -22,9 +22,21 @@ namespace tgbot
 		typedef std::shared_ptr<InputMediaPhoto> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		const std::string type = "photo";
+		/**
+		 * @var
+		 */
 		std::variant<std::string, tools::InputFile::ptr> media;
+		/**
+		 * @var
+		 */
 		std::string caption;
+		/**
+		 * @var
+		 */
 		std::string parse_mode;
 
 		//Constructors

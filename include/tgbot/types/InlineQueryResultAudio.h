@@ -22,15 +22,41 @@ namespace tgbot
 		typedef std::shared_ptr<InlineQueryResultAudio> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string type;
+		/**
+		 * @var
+		 */
 		std::string id;
+		/**
+		 * @var
+		 */
 		std::string audio_url;
+		/**
+		 * @var
+		 */
 		std::string title;
+		/**
+		 * @var
+		 */
 		std::string caption;
+		/**
+		 * @var
+		 */
 		std::string parse_mode;
+		/**
+		 * @var
+		 */
 		std::string performer;
+		/**
+		 * @var
+		 */
 		int audio_duration = -1;
+
 		InlineKeyboardMarkup::ptr reply_markup;
+
 		InputMessageContent::ptr input_message_content;
 
 		//Constructors

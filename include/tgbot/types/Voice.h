@@ -19,10 +19,25 @@ namespace tgbot
 		typedef std::shared_ptr<Voice> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string file_id;
+		/**
+		 * @var
+		 */
 		std::string file_unique_id;
+		/**
+		 * @var
+		 */
 		int duration = -1;
+		/**
+		 * @var
+		 */
 		std::string mime_type;
+		/**
+		 * @var
+		 */
 		int file_size = -1;
 
 		//Constructors

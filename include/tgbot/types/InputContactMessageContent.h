@@ -20,9 +20,21 @@ namespace tgbot
 		typedef std::shared_ptr<InputContactMessageContent> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string phone_number;
+		/**
+		 * @var
+		 */
 		std::string first_name;
+		/**
+		 * @var
+		 */
 		std::string last_name;
+		/**
+		 * @var
+		 */
 		std::string vcard;
 
 		//Constructors

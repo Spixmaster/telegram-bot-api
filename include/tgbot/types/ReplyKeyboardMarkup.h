@@ -21,9 +21,21 @@ namespace tgbot
 		typedef std::shared_ptr<ReplyKeyboardMarkup> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::vector<std::vector<KeyboardButton::ptr>> keyboard;
+		/**
+		 * @var
+		 */
 		bool resize_keyboard = false;
+		/**
+		 * @var
+		 */
 		bool one_time_keyboard = false;
+		/**
+		 * @var
+		 */
 		bool selective = false;
 
 		//Constructors

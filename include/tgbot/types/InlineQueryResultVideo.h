@@ -22,19 +22,61 @@ namespace tgbot
 		typedef std::shared_ptr<InlineQueryResultVideo> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string type;
+		/**
+		 * @var
+		 */
 		std::string id;
+		/**
+		 * @var
+		 */
 		std::string video_url;
+		/**
+		 * @var
+		 */
 		std::string mime_type;
+		/**
+		 * @var
+		 */
 		std::string thumb_url;
+		/**
+		 * @var
+		 */
 		std::string title;
+		/**
+		 * @var
+		 */
 		std::string caption;
+		/**
+		 * @var
+		 */
 		std::string parse_mode;
+		/**
+		 * @var
+		 */
 		int video_width = -1;
+		/**
+		 * @var
+		 */
 		int video_height = -1;
+		/**
+		 * @var
+		 */
 		int video_duration = -1;
+		/**
+		 * @var
+		 */
 		std::string description;
+		/**
+		 * @var
+		 */
 		InlineKeyboardMarkup::ptr reply_markup;
+		/**
+		 * @var
+		 */
 		InputMessageContent::ptr input_message_content;
 
 		//Constructors

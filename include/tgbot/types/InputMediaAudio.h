@@ -22,13 +22,37 @@ namespace tgbot
 		typedef std::shared_ptr<InputMediaAudio> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		const std::string type = "audio";
+		/**
+		 * @var
+		 */
 		std::variant<std::string, tools::InputFile::ptr> media;
+		/**
+		 * @var
+		 */
 		std::variant<std::string, tools::InputFile::ptr> thumb;
+		/**
+		 * @var
+		 */
 		std::string caption;
+		/**
+		 * @var
+		 */
 		std::string parse_mode;
+		/**
+		 * @var
+		 */
 		int duration = -1;
+		/**
+		 * @var
+		 */
 		std::string performer;
+		/**
+		 * @var
+		 */
 		std::string title;
 
 		//Constructors

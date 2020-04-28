@@ -19,7 +19,13 @@ namespace tgbot
 		typedef std::shared_ptr<PollOption> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string text;
+		/**
+		 * @var
+		 */
 		int voter_count = -1;
 
 		//Constructors

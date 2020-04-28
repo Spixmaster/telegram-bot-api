@@ -20,10 +20,25 @@ namespace tgbot
 		typedef std::shared_ptr<PassportElementErrorDataField> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string source;
+		/**
+		 * @var
+		 */
 		std::string type;
+		/**
+		 * @var
+		 */
 		std::string field_name;
+		/**
+		 * @var
+		 */
 		std::string data_hash;
+		/**
+		 * @var
+		 */
 		std::string message;
 
 		//Constructors

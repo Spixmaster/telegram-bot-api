@@ -20,7 +20,13 @@ namespace tgbot
 		typedef std::shared_ptr<LabeledPrice> ptr;
 
 		//Member variables
+		/**
+		 * @var
+		 */
 		std::string label;
+		/**
+		 * @var
+		 */
 		int amount = -1;
 
 		//Constructors
