@@ -5,28 +5,33 @@
 #include "tgbot/types/ShippingAddress.h"
 #include <memory>
 
-//@brief represents on object in the Telegram bot api
-
 namespace tgbot
 {
+	/**
+	 * @struct OrderInfo
+	 */
 	struct OrderInfo
 	{
-		//pointer of itself
+		//Pointer of itself
+		/**
+		 * @var ptr
+		 * @brief A pointer of itself.
+		 */
 		typedef std::shared_ptr<OrderInfo> ptr;
 
-		//member variables
+		//Member variables
 		std::string name;
 		std::string phone_number;
 		std::string email;
 		ShippingAddress::ptr shipping_address;
 
-		//constructors
+		//Constructors
 		OrderInfo();
 
 		//@param json: json object of OrderInfo
 		OrderInfo(const std::string &json);
 
-		//member functions
+		//Member functions
 		/*
 		 * @brief converts a itself into a json object
 		 * @return the json object as a string

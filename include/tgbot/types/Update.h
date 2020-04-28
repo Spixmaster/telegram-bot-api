@@ -13,36 +13,79 @@
 #include <memory>
 #include "tgbot/types/PollAnswer.h"
 
-//@brief represents on object in the Telegram bot api
-
 namespace tgbot
 {
+	/**
+	 * @struct Update
+	 * @brief This object represents an incoming update.
+	 * @details At most one of the optional parameters can be present in any given update.
+	 */
 	struct Update
 	{
-		//pointer of itself
+		//Pointer of itself
+		/**
+		 * @var ptr
+		 * @brief A pointer of itself.
+		 */
 		typedef std::shared_ptr<Update> ptr;
 
-		//member variables
+		//Member variables
+		/**
+		 * @var
+		 */
 		int update_id = -1;
+		/**
+		 * @var
+		 */
 		Message::ptr message;
+		/**
+		 * @var
+		 */
 		Message::ptr edited_message;
+		/**
+		 * @var
+		 */
 		Message::ptr channel_post;
+		/**
+		 * @var
+		 */
 		Message::ptr edited_channel_post;
+		/**
+		 * @var
+		 */
 		InlineQuery::ptr inline_query;
+		/**
+		 * @var
+		 */
 		ChosenInlineResult::ptr chosen_inline_result;
+		/**
+		 * @var
+		 */
 		CallbackQuery::ptr callback_query;
+		/**
+		 * @var
+		 */
 		ShippingQuery::ptr shipping_query;
+		/**
+		 * @var
+		 */
 		PreCheckoutQuery::ptr pre_checkout_query;
+		/**
+		 * @var
+		 */
 		Poll::ptr poll;
+		/**
+		 * @var
+		 */
 		PollAnswer::ptr poll_answer;
 
-		//constructors
+		//Constructors
 		Update();
 
 		//@param json: json object of Update
 		Update(std::string json);
 
-		//member functions
+		//Member functions
 		/*
 		 * @brief converts a itself into a json object
 		 * @return the json object as a string

@@ -7,16 +7,21 @@
 #include <variant>
 #include "tools/http/InputFile.h"
 
-//@brief represents on object in the Telegram bot api
-
 namespace tgbot
 {
+	/**
+	 * @struct InputMediaAudio
+	 */
 	struct InputMediaAudio : public InputMedia
 	{
-		//pointer of itself
+		//Pointer of itself
+		/**
+		 * @var ptr
+		 * @brief A pointer of itself.
+		 */
 		typedef std::shared_ptr<InputMediaAudio> ptr;
 
-		//member variables
+		//Member variables
 		const std::string type = "audio";
 		std::variant<std::string, tools::InputFile::ptr> media;
 		std::variant<std::string, tools::InputFile::ptr> thumb;
@@ -26,23 +31,25 @@ namespace tgbot
 		std::string performer;
 		std::string title;
 
-		//constructors
+		//Constructors
 		InputMediaAudio();
 
 		//@param json: json object of InputMediaAudio
 		InputMediaAudio(const std::string &json);
 
-		//@param media: source of the audio
-		//@param thumb: source of the thumb
-		//@param caption: caption under audio
-		//@param parse_mode: how caption is parsed
-		//@param duration: audio's duration
-		//@param performer: audio's performer
-		//@param title: audio's title
+		/**
+		 * @param media: source of the audio
+		 * @param thumb: source of the thumb
+		 * @param caption: caption under audio
+		 * @param parse_mode: how caption is parsed
+		 * @param duration: audio's duration
+		 * @param performer: audio's performer
+		 * @param title: audio's title
+		 */
 		InputMediaAudio(const std::variant<std::string, tools::InputFile::ptr> &media, const std::variant<std::string, tools::InputFile::ptr> &thumb,
 				const std::string &caption = "", const std::string &parse_mode = "", const int &duration = -1, const std::string &performer = "", const std::string &title = "");
 
-		//member functions
+		//Member functions
 		/*
 		 * @brief parses itself into json equivalent
 		 * @return json object of itself as a string

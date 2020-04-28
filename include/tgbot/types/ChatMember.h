@@ -5,16 +5,21 @@
 #include "tgbot/types/User.h"
 #include <memory>
 
-//@brief represents on object in the Telegram bot api
-
 namespace tgbot
 {
+	/**
+	 * @struct ChatMember
+	 */
 	struct ChatMember
 	{
-		//pointer of itself
+		//Pointer of itself
+		/**
+		 * @var ptr
+		 * @brief A pointer of itself.
+		 */
 		typedef std::shared_ptr<ChatMember> ptr;
 
-		//member variables
+		//Member variables
 		User::ptr user;
 		std::string status;
 		std::string custom_title;
@@ -35,13 +40,13 @@ namespace tgbot
 		bool can_send_other_messages;
 		bool can_add_web_page_previews;
 
-		//constructors
+		//Constructors
 		ChatMember();
 
 		//@param json: json object of ChatMember
 		ChatMember(const std::string &json);
 
-		//member functions
+		//Member functions
 		/*
 		 * @brief converts a itself into a json object
 		 * @return the json object as a string

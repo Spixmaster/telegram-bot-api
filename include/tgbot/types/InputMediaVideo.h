@@ -7,16 +7,21 @@
 #include <variant>
 #include "tools/http/InputFile.h"
 
-//@brief represents on object in the Telegram bot api
-
 namespace tgbot
 {
+	/**
+	 * @struct InputMediaVideo
+	 */
 	struct InputMediaVideo : public InputMedia
 	{
-		//pointer of itself
+		//Pointer of itself
+		/**
+		 * @var ptr
+		 * @brief A pointer of itself.
+		 */
 		typedef std::shared_ptr<InputMediaVideo> ptr;
 
-		//member variables
+		//Member variables
 		const std::string type = "video";
 		std::variant<std::string, tools::InputFile::ptr> media;
 		std::variant<std::string, tools::InputFile::ptr> thumb;
@@ -27,25 +32,27 @@ namespace tgbot
 		int duration = -1;
 		bool supports_streaming;
 
-		//constructors
+		//Constructors
 		InputMediaVideo();
 
 		//@param json: json object of InputMediaVideo
 		InputMediaVideo(const std::string &json);
 
-		//@param media: source of the video
-		//@param thumb: source of the thumb
-		//@param caption: caption under video
-		//@param parse_mode: how caption is parsed
-		//@param width: video's width
-		//@param height: video's height
-		//@param duration: video's duration
-		//@param supports_streaming: whether video can be streamed
+		/**
+		 * @param media: source of the video
+		 * @param thumb: source of the thumb
+		 * @param caption: caption under video
+		 * @param parse_mode: how caption is parsed
+		 * @param width: video's width
+		 * @param height: video's height
+		 * @param duration: video's duration
+		 * @param supports_streaming: whether video can be streamed
+		 */
 		InputMediaVideo(const std::variant<std::string, tools::InputFile::ptr> &media, const std::variant<std::string, tools::InputFile::ptr> &thumb,
 				const std::string &caption = "", const std::string &parse_mode = "", const int &width = -1, const int &height = -1, const int &duration = -1,
 				const bool & supports_streaming = false);
 
-		//member functions
+		//Member functions
 		/*
 		 * @brief parses itself into json equivalent
 		 * @return json object of itself as a string

@@ -8,16 +8,21 @@
 #include "tgbot/types/Animation.h"
 #include <memory>
 
-//@brief represents on object in the Telegram bot api
-
 namespace tgbot
 {
+	/**
+	 * @struct Game
+	 */
 	struct Game
 	{
-		//pointer of itself
+		//Pointer of itself
+		/**
+		 * @var ptr
+		 * @brief A pointer of itself.
+		 */
 		typedef std::shared_ptr<Game> ptr;
 
-		//member variables
+		//Member variables
 		std::string title;
 		std::string description;
 		std::vector<PhotoSize::ptr> photo;
@@ -25,13 +30,13 @@ namespace tgbot
 		std::vector<MessageEntity::ptr> text_entities;
 		Animation::ptr animation;
 
-		//constructors
+		//Constructors
 		Game();
 
 		//@param json: json object of Game
 		Game(const std::string &json);
 
-		//member functions
+		//Member functions
 		/*
 		 * @brief converts a itself into a json object
 		 * @return the json object as a string

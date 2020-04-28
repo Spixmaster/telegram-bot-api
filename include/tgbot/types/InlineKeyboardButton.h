@@ -6,16 +6,21 @@
 #include "tgbot/types/CallbackGame.h"
 #include <memory>
 
-//@brief represents on object in the Telegram bot api
-
 namespace tgbot
 {
+	/**
+	 * @struct InlineKeyboardButton
+	 */
 	struct InlineKeyboardButton
 	{
-		//pointer of itself
+		//Pointer of itself
+		/**
+		 * @var ptr
+		 * @brief A pointer of itself.
+		 */
 		typedef std::shared_ptr<InlineKeyboardButton> ptr;
 
-		//member variables
+		//Member variables
 		std::string text;
 		std::string url;
 		LoginUrl::ptr login_url;
@@ -25,13 +30,13 @@ namespace tgbot
 		CallbackGame::ptr callback_game;
 		bool pay;
 
-		//constructors
+		//Constructors
 		InlineKeyboardButton();
 
 		//@param json: json object of InlineKeyboardButton
 		InlineKeyboardButton(const std::string &json);
 
-		//member functions
+		//Member functions
 		/*
 		 * @brief converts a itself into a json object
 		 * @return the json object as a string

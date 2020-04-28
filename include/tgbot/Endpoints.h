@@ -37,7 +37,11 @@ namespace tgbot
 	class Endpoints
 	{
 	public:
-		//pointer of itself
+		//Pointer of itself
+		/**
+		 * @var ptr
+		 * @brief A pointer of itself.
+		 */
 		typedef std::shared_ptr<Endpoints> ptr;
 
 	private:

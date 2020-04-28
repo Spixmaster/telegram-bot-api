@@ -5,26 +5,31 @@
 #include <rapidjson/document.h>
 #include <memory>
 
-//@brief represents on object in the Telegram bot api
-
 namespace tgbot
 {
+	/**
+	 * @struct LabeledPrice
+	 */
 	struct LabeledPrice
 	{
-		//pointer of itself
+		//Pointer of itself
+		/**
+		 * @var ptr
+		 * @brief A pointer of itself.
+		 */
 		typedef std::shared_ptr<LabeledPrice> ptr;
 
-		//member variables
+		//Member variables
 		std::string label;
 		int amount = -1;
 
-		//constructors
+		//Constructors
 		LabeledPrice();
 
 		//@param json: json object of LabeledPrice
 		LabeledPrice(const std::string &json);
 
-		//member functions
+		//Member functions
 		/*
 		 * @brief converts a itself into a json object
 		 * @return the json object as a string

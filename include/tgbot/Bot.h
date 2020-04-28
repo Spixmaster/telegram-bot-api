@@ -6,46 +6,64 @@
 #include <memory>
 #include "tgbot/EventHandler.h"
 
-/*
- * @brief this object represent the Telegram bot
- * @brief it contains all endpoints and knows how to process incoming information
- */
-
 namespace tgbot
 {
+	/**
+	 * @class Bot
+	 * @brief This class represents the Telegram bot.
+	 * @details It contains all endpoints and knows how to process incoming information.
+	 */
 	class Bot
 	{
 	public:
-		//pointer of itself
+		//Pointer of itself
+		/**
+		 * @var ptr
+		 * @brief A pointer of itself.
+		 */
 		typedef std::shared_ptr<Bot> ptr;
 
 	private:
-		//member variables
+		//Member variables
+		/**
+		 * @var m_token
+		 * @brief The bot token.
+		 */
 		std::string m_token;
+		/**
+		 * @var m_endpnts
+		 * @brief This object contains all endpoints.
+		 */
 		Endpoints::ptr m_endpnts;
+		/**
+		 * @var m_event_handler
+		 * @brief This object is responsible for handling the incoming events.
+		 */
 		EventHandler::ptr m_event_handler;
 
 	public:
-		//constructors
-		//@param token: token which is needed for endpoints
+		//Constructors
+		/**
+		 * @param token The Telegram bot token which is needed for the endpoints.
+		 */
 		Bot(const std::string &token);
 
-		//member functions
+		//Member functions
 		/*
-		 * @brief simply, returns the private member token
-		 * @return token
+		 * @brief Getter.
+		 * @return The Telegram bot token used by this bot.
 		 */
 		std::string get_token() const noexcept;
 
 		/*
-		 * @brief simply, returns the private member endpnts
-		 * @return class Endpoints
+		 * @brief Getter.
+		 * @return Endpoints
 		 */
 		Endpoints::ptr get_endpnts() const noexcept;
 
 		/*
-		 * @brief simply, returns the private member event_handler
-		 * @return class EventHandler
+		 * @brief Getter.
+		 * @return EventHandler
 		 */
 		EventHandler::ptr get_event_handler() const noexcept;
 	};

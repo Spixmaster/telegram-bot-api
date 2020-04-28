@@ -6,16 +6,21 @@
 #include <rapidjson/document.h>
 #include <memory>
 
-//@brief represents on object in the Telegram bot api
-
 namespace tgbot
 {
+	/**
+	 * @struct Animation
+	 */
 	struct Animation
 	{
-		//pointer of itself
+		//Pointer of itself
+		/**
+		 * @var ptr
+		 * @brief A pointer of itself.
+		 */
 		typedef std::shared_ptr<Animation> ptr;
 
-		//member variables
+		//Member variables
 		std::string file_id;
 		std::string file_unique_id;
 		int width = -1;
@@ -26,13 +31,13 @@ namespace tgbot
 		std::string mime_type;
 		int file_size;
 
-		//constructors
+		//Constructors
 		Animation();
 
 		//@param json: json object of Animation
 		Animation(const std::string &json);
 
-		//member functions
+		//Member functions
 		/*
 		 * @brief converts a itself into a json object
 		 * @return the json object as a string

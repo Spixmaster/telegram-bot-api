@@ -6,26 +6,31 @@
 #include "tgbot/types/EncryptedCredentials.h"
 #include <memory>
 
-//@brief represents on object in the Telegram bot api
-
 namespace tgbot
 {
+	/**
+	 * @struct PassportData
+	 */
 	struct PassportData
 	{
-		//pointer of itself
+		//Pointer of itself
+		/**
+		 * @var ptr
+		 * @brief A pointer of itself.
+		 */
 		typedef std::shared_ptr<PassportData> ptr;
 
-		//member variables
+		//Member variables
 		std::vector<EncryptedPassportElement::ptr> data;
 		EncryptedCredentials::ptr credentials;
 
-		//constructors
+		//Constructors
 		PassportData();
 
 		//@param json: json object of PassportData
 		PassportData(const std::string &json);
 
-		//member functions
+		//Member functions
 		/*
 		 * @brief converts a itself into a json object
 		 * @return the json object as a string
