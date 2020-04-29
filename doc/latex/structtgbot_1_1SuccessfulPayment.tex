@@ -1,0 +1,101 @@
+\hypertarget{structtgbot_1_1SuccessfulPayment}{}\doxysection{tgbot\+::Successful\+Payment Struct Reference}
+\label{structtgbot_1_1SuccessfulPayment}\index{tgbot::SuccessfulPayment@{tgbot::SuccessfulPayment}}
+
+
+This object contains basic information about a successful payment.  
+
+
+
+
+{\ttfamily \#include $<$Successful\+Payment.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1SuccessfulPayment_ae8140470fcade1190d86ea0ccb1143fc}\label{structtgbot_1_1SuccessfulPayment_ae8140470fcade1190d86ea0ccb1143fc}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1SuccessfulPayment}{Successful\+Payment}} $>$ \mbox{\hyperlink{structtgbot_1_1SuccessfulPayment_ae8140470fcade1190d86ea0ccb1143fc}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1SuccessfulPayment_a2be403dd2b173b7f29f30656e1a511c1}{Successful\+Payment}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1SuccessfulPayment_ad0e7a4f21470fd8ee49fbfb5370ed119}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1SuccessfulPayment_a27e805e66a434b4dbb66408f0f50980e}\label{structtgbot_1_1SuccessfulPayment_a27e805e66a434b4dbb66408f0f50980e}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1SuccessfulPayment_a27e805e66a434b4dbb66408f0f50980e}{currency}}
+\begin{DoxyCompactList}\small\item\em Three-\/letter I\+SO 4217 currency code. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structtgbot_1_1SuccessfulPayment_a543e50b044e5a79aa85a0c99e61f97b2}{total\+\_\+amount}}
+\begin{DoxyCompactList}\small\item\em Total price in the smallest units of the currency (integer, not float/double). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1SuccessfulPayment_ad9242004378021cd1ba876decc2c7939}\label{structtgbot_1_1SuccessfulPayment_ad9242004378021cd1ba876decc2c7939}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1SuccessfulPayment_ad9242004378021cd1ba876decc2c7939}{invoice\+\_\+payload}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classtgbot_1_1Bot}{Bot}} specified invoice payload. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1SuccessfulPayment_a7eaad3c1949db2f40bc29bc3f7eb54a5}\label{structtgbot_1_1SuccessfulPayment_a7eaad3c1949db2f40bc29bc3f7eb54a5}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1SuccessfulPayment_a7eaad3c1949db2f40bc29bc3f7eb54a5}{shipping\+\_\+option\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Optional. Identifier of the shipping option chosen by the user. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1SuccessfulPayment_ab44ac1cb43c9e28b7dc95c726eeda005}\label{structtgbot_1_1SuccessfulPayment_ab44ac1cb43c9e28b7dc95c726eeda005}} 
+\mbox{\hyperlink{structtgbot_1_1OrderInfo_a8cdc9ad8685897b6a28c8a3b724c4260}{Order\+Info\+::ptr}} \mbox{\hyperlink{structtgbot_1_1SuccessfulPayment_ab44ac1cb43c9e28b7dc95c726eeda005}{order\+\_\+info}}
+\begin{DoxyCompactList}\small\item\em Optional. Order info provided by the user. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1SuccessfulPayment_ab18a5f3ddd08c835a03e15327f529c65}\label{structtgbot_1_1SuccessfulPayment_ab18a5f3ddd08c835a03e15327f529c65}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1SuccessfulPayment_ab18a5f3ddd08c835a03e15327f529c65}{telegram\+\_\+payment\+\_\+charge\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Telegram payment identifier. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1SuccessfulPayment_adf12d63e3add267d4ecadfd659e581ca}\label{structtgbot_1_1SuccessfulPayment_adf12d63e3add267d4ecadfd659e581ca}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1SuccessfulPayment_adf12d63e3add267d4ecadfd659e581ca}{provider\+\_\+payment\+\_\+charge\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Provider payment identifier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object contains basic information about a successful payment. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1SuccessfulPayment_a2be403dd2b173b7f29f30656e1a511c1}\label{structtgbot_1_1SuccessfulPayment_a2be403dd2b173b7f29f30656e1a511c1}} 
+\index{tgbot::SuccessfulPayment@{tgbot::SuccessfulPayment}!SuccessfulPayment@{SuccessfulPayment}}
+\index{SuccessfulPayment@{SuccessfulPayment}!tgbot::SuccessfulPayment@{tgbot::SuccessfulPayment}}
+\doxysubsubsection{\texorpdfstring{SuccessfulPayment()}{SuccessfulPayment()}}
+{\footnotesize\ttfamily tgbot\+::\+Successful\+Payment\+::\+Successful\+Payment (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1SuccessfulPayment_ad0e7a4f21470fd8ee49fbfb5370ed119}\label{structtgbot_1_1SuccessfulPayment_ad0e7a4f21470fd8ee49fbfb5370ed119}} 
+\index{tgbot::SuccessfulPayment@{tgbot::SuccessfulPayment}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::SuccessfulPayment@{tgbot::SuccessfulPayment}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Successful\+Payment\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structtgbot_1_1SuccessfulPayment_a543e50b044e5a79aa85a0c99e61f97b2}\label{structtgbot_1_1SuccessfulPayment_a543e50b044e5a79aa85a0c99e61f97b2}} 
+\index{tgbot::SuccessfulPayment@{tgbot::SuccessfulPayment}!total\_amount@{total\_amount}}
+\index{total\_amount@{total\_amount}!tgbot::SuccessfulPayment@{tgbot::SuccessfulPayment}}
+\doxysubsubsection{\texorpdfstring{total\_amount}{total\_amount}}
+{\footnotesize\ttfamily tgbot\+::\+Successful\+Payment\+::total\+\_\+amount}
+
+
+
+Total price in the smallest units of the currency (integer, not float/double). 
+
+For example, for a price of US\$ 1.\+45 pass amount = 145.
+
+See the exp parameter in currencies.\+json, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Successful\+Payment.\+h\item 
+src/types/Successful\+Payment.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,4 @@
+<map id="tgbot::InputTextMessageContent" name="tgbot::InputTextMessageContent">
+<area shape="rect" id="node1" title="Represents the content of a text message to be sent as the result of an inline query." alt="" coords="5,80,239,107"/>
+<area shape="rect" id="node2" href="$structtgbot_1_1InputMessageContent.html" title="This object represents the content of a message to be sent as a result of an inline query...." alt="" coords="19,5,225,32"/>
+</map>

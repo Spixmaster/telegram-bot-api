@@ -1,0 +1,99 @@
+\hypertarget{structtgbot_1_1InputTextMessageContent}{}\doxysection{tgbot\+::Input\+Text\+Message\+Content Struct Reference}
+\label{structtgbot_1_1InputTextMessageContent}\index{tgbot::InputTextMessageContent@{tgbot::InputTextMessageContent}}
+
+
+Represents the content of a text message to be sent as the result of an inline query.  
+
+
+
+
+{\ttfamily \#include $<$Input\+Text\+Message\+Content.\+h$>$}
+
+
+
+Inheritance diagram for tgbot\+::Input\+Text\+Message\+Content\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{structtgbot_1_1InputTextMessageContent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for tgbot\+::Input\+Text\+Message\+Content\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{structtgbot_1_1InputTextMessageContent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InputTextMessageContent_a314d9b5f998899cba8ea30a110d20cf9}\label{structtgbot_1_1InputTextMessageContent_a314d9b5f998899cba8ea30a110d20cf9}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1InputTextMessageContent}{Input\+Text\+Message\+Content}} $>$ \mbox{\hyperlink{structtgbot_1_1InputTextMessageContent_a314d9b5f998899cba8ea30a110d20cf9}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1InputTextMessageContent_a1c927388c3cfed909bf5b75210826ebd}{Input\+Text\+Message\+Content}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InputTextMessageContent_a58f9a3fdf4eae0a0dec20542032a5677}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InputTextMessageContent_ace494f010bc21223aab500d4a8dc3193}\label{structtgbot_1_1InputTextMessageContent_ace494f010bc21223aab500d4a8dc3193}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InputTextMessageContent_ace494f010bc21223aab500d4a8dc3193}{message\+\_\+text}}
+\begin{DoxyCompactList}\small\item\em Text of the message to be sent, 1-\/4096 characters. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InputTextMessageContent_a546dca8764f121516c94c12051018552}\label{structtgbot_1_1InputTextMessageContent_a546dca8764f121516c94c12051018552}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InputTextMessageContent_a546dca8764f121516c94c12051018552}{parse\+\_\+mode}}
+\begin{DoxyCompactList}\small\item\em Optional. Mode for parsing entities in the message text. See formatting options for more details. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InputTextMessageContent_a22716ee3aba4b515a10bc3f06a58f14a}\label{structtgbot_1_1InputTextMessageContent_a22716ee3aba4b515a10bc3f06a58f14a}} 
+bool \mbox{\hyperlink{structtgbot_1_1InputTextMessageContent_a22716ee3aba4b515a10bc3f06a58f14a}{disable\+\_\+web\+\_\+page\+\_\+preview}}
+\begin{DoxyCompactList}\small\item\em Optional. Disables link previews for links in the sent message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the content of a text message to be sent as the result of an inline query. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InputTextMessageContent_a1c927388c3cfed909bf5b75210826ebd}\label{structtgbot_1_1InputTextMessageContent_a1c927388c3cfed909bf5b75210826ebd}} 
+\index{tgbot::InputTextMessageContent@{tgbot::InputTextMessageContent}!InputTextMessageContent@{InputTextMessageContent}}
+\index{InputTextMessageContent@{InputTextMessageContent}!tgbot::InputTextMessageContent@{tgbot::InputTextMessageContent}}
+\doxysubsubsection{\texorpdfstring{InputTextMessageContent()}{InputTextMessageContent()}}
+{\footnotesize\ttfamily tgbot\+::\+Input\+Text\+Message\+Content\+::\+Input\+Text\+Message\+Content (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InputTextMessageContent_a58f9a3fdf4eae0a0dec20542032a5677}\label{structtgbot_1_1InputTextMessageContent_a58f9a3fdf4eae0a0dec20542032a5677}} 
+\index{tgbot::InputTextMessageContent@{tgbot::InputTextMessageContent}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::InputTextMessageContent@{tgbot::InputTextMessageContent}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Input\+Text\+Message\+Content\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{structtgbot_1_1InputMessageContent_ac9997fd542b5c79c4c57a1036e73f277}{tgbot\+::\+Input\+Message\+Content}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Input\+Text\+Message\+Content.\+h\item 
+src/types/Input\+Text\+Message\+Content.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,93 @@
+\hypertarget{structtgbot_1_1Animation}{}\doxysection{tgbot\+::Animation Struct Reference}
+\label{structtgbot_1_1Animation}\index{tgbot::Animation@{tgbot::Animation}}
+
+
+This object represents an animation file (G\+IF or H.\+264/\+M\+P\+E\+G-\/4 A\+VC video without sound).  
+
+
+
+
+{\ttfamily \#include $<$Animation.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1Animation_af6a3da3a547cb4edf8bd2e2cf4d73998}\label{structtgbot_1_1Animation_af6a3da3a547cb4edf8bd2e2cf4d73998}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1Animation}{Animation}} $>$ \mbox{\hyperlink{structtgbot_1_1Animation_af6a3da3a547cb4edf8bd2e2cf4d73998}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1Animation_a1833358d2d3c4ec64ac6ee54b925b9f7}{Animation}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Animation_abeecaeb7202ae3afd850145c78d6c832}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1Animation_a40d8f55350a562c1dc52b11e580bbd2e}\label{structtgbot_1_1Animation_a40d8f55350a562c1dc52b11e580bbd2e}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Animation_a40d8f55350a562c1dc52b11e580bbd2e}{file\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Identifier for this file, which can be used to download or reuse the file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Animation_a17d580184d357e5803add9ea7d975bc2}\label{structtgbot_1_1Animation_a17d580184d357e5803add9ea7d975bc2}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Animation_a17d580184d357e5803add9ea7d975bc2}{file\+\_\+unique\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Unique identifier for this file, which is supposed to be the same over time and for different bots. Can\textquotesingle{}t be used to download or reuse the file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Animation_a88ef78450b8762d16ac3273ed0630959}\label{structtgbot_1_1Animation_a88ef78450b8762d16ac3273ed0630959}} 
+int \mbox{\hyperlink{structtgbot_1_1Animation_a88ef78450b8762d16ac3273ed0630959}{width}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structtgbot_1_1Video}{Video}} width as defined by sender. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Animation_ac1a7d91558e4f0df5334f7f546b130cc}\label{structtgbot_1_1Animation_ac1a7d91558e4f0df5334f7f546b130cc}} 
+int \mbox{\hyperlink{structtgbot_1_1Animation_ac1a7d91558e4f0df5334f7f546b130cc}{height}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structtgbot_1_1Video}{Video}} height as defined by sender. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Animation_a3ffcd4fe0198a34194e4b9552865385b}\label{structtgbot_1_1Animation_a3ffcd4fe0198a34194e4b9552865385b}} 
+int \mbox{\hyperlink{structtgbot_1_1Animation_a3ffcd4fe0198a34194e4b9552865385b}{duration}}
+\begin{DoxyCompactList}\small\item\em Duration of the video in seconds as defined by sender. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Animation_ab2259f8abd9cab2361eec16c76edf43e}\label{structtgbot_1_1Animation_ab2259f8abd9cab2361eec16c76edf43e}} 
+\mbox{\hyperlink{structtgbot_1_1PhotoSize_a5c9e46410c663fda470caa5f806781ad}{Photo\+Size\+::ptr}} \mbox{\hyperlink{structtgbot_1_1Animation_ab2259f8abd9cab2361eec16c76edf43e}{thumb}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1Animation}{Animation}} thumbnail as defined by sender. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Animation_a53b8b9a55068da7694c5eb24260d8348}\label{structtgbot_1_1Animation_a53b8b9a55068da7694c5eb24260d8348}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Animation_a53b8b9a55068da7694c5eb24260d8348}{file\+\_\+name}}
+\begin{DoxyCompactList}\small\item\em Optional. Original animation filename as defined by sender. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Animation_ab8ca83bfde980f555a4a66cfc77863a4}\label{structtgbot_1_1Animation_ab8ca83bfde980f555a4a66cfc77863a4}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Animation_ab8ca83bfde980f555a4a66cfc77863a4}{mime\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em Optional. M\+I\+ME type of the file as defined by sender. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Animation_a882f8e7239c4b605ae94637ebda809de}\label{structtgbot_1_1Animation_a882f8e7239c4b605ae94637ebda809de}} 
+int \mbox{\hyperlink{structtgbot_1_1Animation_a882f8e7239c4b605ae94637ebda809de}{file\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1File}{File}} size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object represents an animation file (G\+IF or H.\+264/\+M\+P\+E\+G-\/4 A\+VC video without sound). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1Animation_a1833358d2d3c4ec64ac6ee54b925b9f7}\label{structtgbot_1_1Animation_a1833358d2d3c4ec64ac6ee54b925b9f7}} 
+\index{tgbot::Animation@{tgbot::Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!tgbot::Animation@{tgbot::Animation}}
+\doxysubsubsection{\texorpdfstring{Animation()}{Animation()}}
+{\footnotesize\ttfamily tgbot\+::\+Animation\+::\+Animation (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1Animation_abeecaeb7202ae3afd850145c78d6c832}\label{structtgbot_1_1Animation_abeecaeb7202ae3afd850145c78d6c832}} 
+\index{tgbot::Animation@{tgbot::Animation}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::Animation@{tgbot::Animation}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Animation\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Animation.\+h\item 
+src/types/Animation.\+cpp\end{DoxyCompactItemize}

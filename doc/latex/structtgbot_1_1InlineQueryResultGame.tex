@@ -1,0 +1,107 @@
+\hypertarget{structtgbot_1_1InlineQueryResultGame}{}\doxysection{tgbot\+::Inline\+Query\+Result\+Game Struct Reference}
+\label{structtgbot_1_1InlineQueryResultGame}\index{tgbot::InlineQueryResultGame@{tgbot::InlineQueryResultGame}}
+
+
+Represents a \mbox{\hyperlink{structtgbot_1_1Game}{Game}}.  
+
+
+
+
+{\ttfamily \#include $<$Inline\+Query\+Result\+Game.\+h$>$}
+
+
+
+Inheritance diagram for tgbot\+::Inline\+Query\+Result\+Game\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{structtgbot_1_1InlineQueryResultGame__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for tgbot\+::Inline\+Query\+Result\+Game\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{structtgbot_1_1InlineQueryResultGame__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultGame_a164c6e81aeba0fc1468306cf8e8a1c54}\label{structtgbot_1_1InlineQueryResultGame_a164c6e81aeba0fc1468306cf8e8a1c54}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1InlineQueryResultGame}{Inline\+Query\+Result\+Game}} $>$ \mbox{\hyperlink{structtgbot_1_1InlineQueryResultGame_a164c6e81aeba0fc1468306cf8e8a1c54}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1InlineQueryResultGame_a242f471ed16d1e629325ff5519bc4ef6}{Inline\+Query\+Result\+Game}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultGame_ae0014ea677e10fc61c15b0d0140ce17a}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultGame_ae246dcebaceb44182892a64a8a2afc6e}\label{structtgbot_1_1InlineQueryResultGame_ae246dcebaceb44182892a64a8a2afc6e}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultGame_ae246dcebaceb44182892a64a8a2afc6e}{type}}
+\begin{DoxyCompactList}\small\item\em Type of the result, must be game. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultGame_acd60548f978a2c4c5912d251da791984}\label{structtgbot_1_1InlineQueryResultGame_acd60548f978a2c4c5912d251da791984}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultGame_acd60548f978a2c4c5912d251da791984}{id}}
+\begin{DoxyCompactList}\small\item\em Unique identifier for this result, 1-\/64 bytes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultGame_ad02683e3db86c3004a3e11856e5ed699}\label{structtgbot_1_1InlineQueryResultGame_ad02683e3db86c3004a3e11856e5ed699}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultGame_ad02683e3db86c3004a3e11856e5ed699}{game\+\_\+short\+\_\+name}}
+\begin{DoxyCompactList}\small\item\em Short name of the game. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultGame_a999b9688a03554ab56e58649f1022b9d}\label{structtgbot_1_1InlineQueryResultGame_a999b9688a03554ab56e58649f1022b9d}} 
+\mbox{\hyperlink{structtgbot_1_1InlineKeyboardMarkup_a6973beabdcfa398f58a1ad9bb74e6014}{Inline\+Keyboard\+Markup\+::ptr}} \mbox{\hyperlink{structtgbot_1_1InlineQueryResultGame_a999b9688a03554ab56e58649f1022b9d}{reply\+\_\+markup}}
+\begin{DoxyCompactList}\small\item\em Optional. Inline keyboard attached to the message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a \mbox{\hyperlink{structtgbot_1_1Game}{Game}}. 
+
+\begin{DoxyNote}{Note}
+This will only work in Telegram versions released after October 1, 2016. Older clients will not display any inline results if a game result is among them. 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultGame_a242f471ed16d1e629325ff5519bc4ef6}\label{structtgbot_1_1InlineQueryResultGame_a242f471ed16d1e629325ff5519bc4ef6}} 
+\index{tgbot::InlineQueryResultGame@{tgbot::InlineQueryResultGame}!InlineQueryResultGame@{InlineQueryResultGame}}
+\index{InlineQueryResultGame@{InlineQueryResultGame}!tgbot::InlineQueryResultGame@{tgbot::InlineQueryResultGame}}
+\doxysubsubsection{\texorpdfstring{InlineQueryResultGame()}{InlineQueryResultGame()}}
+{\footnotesize\ttfamily tgbot\+::\+Inline\+Query\+Result\+Game\+::\+Inline\+Query\+Result\+Game (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultGame_ae0014ea677e10fc61c15b0d0140ce17a}\label{structtgbot_1_1InlineQueryResultGame_ae0014ea677e10fc61c15b0d0140ce17a}} 
+\index{tgbot::InlineQueryResultGame@{tgbot::InlineQueryResultGame}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::InlineQueryResultGame@{tgbot::InlineQueryResultGame}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Inline\+Query\+Result\+Game\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{structtgbot_1_1InlineQueryResult_a7aa714c457e54ab6e51b1b0abc8c784c}{tgbot\+::\+Inline\+Query\+Result}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Inline\+Query\+Result\+Game.\+h\item 
+src/types/Inline\+Query\+Result\+Game.\+cpp\end{DoxyCompactItemize}

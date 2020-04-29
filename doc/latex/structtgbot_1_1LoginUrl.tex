@@ -1,0 +1,103 @@
+\hypertarget{structtgbot_1_1LoginUrl}{}\doxysection{tgbot\+::Login\+Url Struct Reference}
+\label{structtgbot_1_1LoginUrl}\index{tgbot::LoginUrl@{tgbot::LoginUrl}}
+
+
+This object represents a parameter of the inline keyboard button used to automatically authorize a user.  
+
+
+
+
+{\ttfamily \#include $<$Login\+Url.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1LoginUrl_ac7be628ca6a59dab7dcfdfa7f6ace804}\label{structtgbot_1_1LoginUrl_ac7be628ca6a59dab7dcfdfa7f6ace804}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1LoginUrl}{Login\+Url}} $>$ \mbox{\hyperlink{structtgbot_1_1LoginUrl_ac7be628ca6a59dab7dcfdfa7f6ace804}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1LoginUrl_a877e767be638ad8490608847bc0eea72}{Login\+Url}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1LoginUrl_a0a2d63315cd4cd9d05e7f13ac0208796}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1LoginUrl_ade5eab842fe8c17352fe5317749ccd77}{url}}
+\begin{DoxyCompactList}\small\item\em An H\+T\+TP U\+RL to be opened with user authorization data added to the query string when the button is pressed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1LoginUrl_a2361a0ae95c2fa36dfee5b9c76260c1f}\label{structtgbot_1_1LoginUrl_a2361a0ae95c2fa36dfee5b9c76260c1f}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1LoginUrl_a2361a0ae95c2fa36dfee5b9c76260c1f}{forward\+\_\+text}}
+\begin{DoxyCompactList}\small\item\em Optional. New text of the button in forwarded messages. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1LoginUrl_aeb4ba820131faca3eb4c2e495976c833}\label{structtgbot_1_1LoginUrl_aeb4ba820131faca3eb4c2e495976c833}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1LoginUrl_aeb4ba820131faca3eb4c2e495976c833}{bot\+\_\+username}}
+\begin{DoxyCompactList}\small\item\em Optional. Username of a bot, which will be used for user authorization. See Setting up a bot for more details. If not specified, the current bot\textquotesingle{}s username will be assumed. The url\textquotesingle{}s domain must be the same as the domain linked with the bot. See Linking your domain to the bot for more details. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1LoginUrl_a19de2ecd5a8c62368a505788fb526023}\label{structtgbot_1_1LoginUrl_a19de2ecd5a8c62368a505788fb526023}} 
+bool \mbox{\hyperlink{structtgbot_1_1LoginUrl_a19de2ecd5a8c62368a505788fb526023}{request\+\_\+write\+\_\+access}}
+\begin{DoxyCompactList}\small\item\em Optional. Pass True to request the permission for your bot to send messages to the user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object represents a parameter of the inline keyboard button used to automatically authorize a user. 
+
+Serves as a great replacement for the Telegram Login Widget when the user is coming from Telegram.
+
+All the user needs to do is tap/click a button and confirm that they want to log in\+:
+
+Telegram apps support these buttons as of version 5.\+7.
+
+Sample bot\+: @discussbot 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1LoginUrl_a877e767be638ad8490608847bc0eea72}\label{structtgbot_1_1LoginUrl_a877e767be638ad8490608847bc0eea72}} 
+\index{tgbot::LoginUrl@{tgbot::LoginUrl}!LoginUrl@{LoginUrl}}
+\index{LoginUrl@{LoginUrl}!tgbot::LoginUrl@{tgbot::LoginUrl}}
+\doxysubsubsection{\texorpdfstring{LoginUrl()}{LoginUrl()}}
+{\footnotesize\ttfamily tgbot\+::\+Login\+Url\+::\+Login\+Url (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1LoginUrl_a0a2d63315cd4cd9d05e7f13ac0208796}\label{structtgbot_1_1LoginUrl_a0a2d63315cd4cd9d05e7f13ac0208796}} 
+\index{tgbot::LoginUrl@{tgbot::LoginUrl}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::LoginUrl@{tgbot::LoginUrl}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Login\+Url\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structtgbot_1_1LoginUrl_ade5eab842fe8c17352fe5317749ccd77}\label{structtgbot_1_1LoginUrl_ade5eab842fe8c17352fe5317749ccd77}} 
+\index{tgbot::LoginUrl@{tgbot::LoginUrl}!url@{url}}
+\index{url@{url}!tgbot::LoginUrl@{tgbot::LoginUrl}}
+\doxysubsubsection{\texorpdfstring{url}{url}}
+{\footnotesize\ttfamily tgbot\+::\+Login\+Url\+::url}
+
+
+
+An H\+T\+TP U\+RL to be opened with user authorization data added to the query string when the button is pressed. 
+
+If the user refuses to provide authorization data, the original U\+RL without information about the user will be opened.
+
+The data added is the same as described in Receiving authorization data. \begin{DoxyNote}{Note}
+You must always check the hash of the received data to verify the authentication and the integrity of the data as described in Checking authorization. 
+\end{DoxyNote}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Login\+Url.\+h\item 
+src/types/Login\+Url.\+cpp\end{DoxyCompactItemize}

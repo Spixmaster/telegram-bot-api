@@ -1,0 +1,95 @@
+\hypertarget{structtgbot_1_1Invoice}{}\doxysection{tgbot\+::Invoice Struct Reference}
+\label{structtgbot_1_1Invoice}\index{tgbot::Invoice@{tgbot::Invoice}}
+
+
+This object contains basic information about an invoice.  
+
+
+
+
+{\ttfamily \#include $<$Invoice.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1Invoice_a91cd84541d180d366316684726523b5d}\label{structtgbot_1_1Invoice_a91cd84541d180d366316684726523b5d}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1Invoice}{Invoice}} $>$ \mbox{\hyperlink{structtgbot_1_1Invoice_a91cd84541d180d366316684726523b5d}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1Invoice_a91ebb837955a5111be148e09100e15ac}{Invoice}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Invoice_a0b274220e55d9fe24760e8c769af683e}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1Invoice_a072ea26dcf6a3ba2c6b7b40594383dc6}\label{structtgbot_1_1Invoice_a072ea26dcf6a3ba2c6b7b40594383dc6}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Invoice_a072ea26dcf6a3ba2c6b7b40594383dc6}{title}}
+\begin{DoxyCompactList}\small\item\em Product name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Invoice_a90f48333859b0bcffdcbf94024d73a48}\label{structtgbot_1_1Invoice_a90f48333859b0bcffdcbf94024d73a48}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Invoice_a90f48333859b0bcffdcbf94024d73a48}{description}}
+\begin{DoxyCompactList}\small\item\em Product description. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Invoice_a9d080734ddb6c7262dd9ee27e91c0be7}\label{structtgbot_1_1Invoice_a9d080734ddb6c7262dd9ee27e91c0be7}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Invoice_a9d080734ddb6c7262dd9ee27e91c0be7}{start\+\_\+parameter}}
+\begin{DoxyCompactList}\small\item\em Unique bot deep-\/linking parameter that can be used to generate this invoice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Invoice_a5dee6a9d44dc1567944a09f41faac051}\label{structtgbot_1_1Invoice_a5dee6a9d44dc1567944a09f41faac051}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Invoice_a5dee6a9d44dc1567944a09f41faac051}{currency}}
+\begin{DoxyCompactList}\small\item\em Three-\/letter I\+SO 4217 currency code. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structtgbot_1_1Invoice_a9287d6379cdd2d7bf5db1b6e5a4aad60}{total\+\_\+amount}}
+\begin{DoxyCompactList}\small\item\em Total price in the smallest units of the currency (integer, not float/double). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object contains basic information about an invoice. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1Invoice_a91ebb837955a5111be148e09100e15ac}\label{structtgbot_1_1Invoice_a91ebb837955a5111be148e09100e15ac}} 
+\index{tgbot::Invoice@{tgbot::Invoice}!Invoice@{Invoice}}
+\index{Invoice@{Invoice}!tgbot::Invoice@{tgbot::Invoice}}
+\doxysubsubsection{\texorpdfstring{Invoice()}{Invoice()}}
+{\footnotesize\ttfamily tgbot\+::\+Invoice\+::\+Invoice (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1Invoice_a0b274220e55d9fe24760e8c769af683e}\label{structtgbot_1_1Invoice_a0b274220e55d9fe24760e8c769af683e}} 
+\index{tgbot::Invoice@{tgbot::Invoice}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::Invoice@{tgbot::Invoice}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Invoice\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structtgbot_1_1Invoice_a9287d6379cdd2d7bf5db1b6e5a4aad60}\label{structtgbot_1_1Invoice_a9287d6379cdd2d7bf5db1b6e5a4aad60}} 
+\index{tgbot::Invoice@{tgbot::Invoice}!total\_amount@{total\_amount}}
+\index{total\_amount@{total\_amount}!tgbot::Invoice@{tgbot::Invoice}}
+\doxysubsubsection{\texorpdfstring{total\_amount}{total\_amount}}
+{\footnotesize\ttfamily tgbot\+::\+Invoice\+::total\+\_\+amount}
+
+
+
+Total price in the smallest units of the currency (integer, not float/double). 
+
+For example, for a price of US\$ 1.\+45 pass amount = 145.
+
+See the exp parameter in currencies.\+json, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Invoice.\+h\item 
+src/types/Invoice.\+cpp\end{DoxyCompactItemize}

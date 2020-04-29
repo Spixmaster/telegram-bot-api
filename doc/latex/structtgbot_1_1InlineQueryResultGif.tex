@@ -1,0 +1,130 @@
+\hypertarget{structtgbot_1_1InlineQueryResultGif}{}\doxysection{tgbot\+::Inline\+Query\+Result\+Gif Struct Reference}
+\label{structtgbot_1_1InlineQueryResultGif}\index{tgbot::InlineQueryResultGif@{tgbot::InlineQueryResultGif}}
+
+
+Represents a link to an animated G\+IF file.  
+
+
+
+
+{\ttfamily \#include $<$Inline\+Query\+Result\+Gif.\+h$>$}
+
+
+
+Inheritance diagram for tgbot\+::Inline\+Query\+Result\+Gif\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{structtgbot_1_1InlineQueryResultGif__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for tgbot\+::Inline\+Query\+Result\+Gif\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{structtgbot_1_1InlineQueryResultGif__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultGif_ab4441491b507f4599d6847d80f75b554}\label{structtgbot_1_1InlineQueryResultGif_ab4441491b507f4599d6847d80f75b554}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1InlineQueryResultGif}{Inline\+Query\+Result\+Gif}} $>$ \mbox{\hyperlink{structtgbot_1_1InlineQueryResultGif_ab4441491b507f4599d6847d80f75b554}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1InlineQueryResultGif_aa2daf785e09bbf87f33861e76346e48a}{Inline\+Query\+Result\+Gif}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultGif_a3a7695adf28e67a177c204342b77bc88}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultGif_a4e2b7181df6c156145c9ad9ff570a6d1}\label{structtgbot_1_1InlineQueryResultGif_a4e2b7181df6c156145c9ad9ff570a6d1}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultGif_a4e2b7181df6c156145c9ad9ff570a6d1}{type}}
+\begin{DoxyCompactList}\small\item\em Type of the result, must be gif. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultGif_a488d74f0da6a174afe0b5f18bac44ee4}\label{structtgbot_1_1InlineQueryResultGif_a488d74f0da6a174afe0b5f18bac44ee4}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultGif_a488d74f0da6a174afe0b5f18bac44ee4}{id}}
+\begin{DoxyCompactList}\small\item\em Unique identifier for this result, 1-\/64 bytes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultGif_a630093bd59218a946beb15c5c6278c1e}\label{structtgbot_1_1InlineQueryResultGif_a630093bd59218a946beb15c5c6278c1e}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultGif_a630093bd59218a946beb15c5c6278c1e}{gif\+\_\+url}}
+\begin{DoxyCompactList}\small\item\em A valid U\+RL for the G\+IF file. \mbox{\hyperlink{structtgbot_1_1File}{File}} size must not exceed 1MB. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultGif_a30e6a0d3dd0d0c257d23e48d955785b5}\label{structtgbot_1_1InlineQueryResultGif_a30e6a0d3dd0d0c257d23e48d955785b5}} 
+int \mbox{\hyperlink{structtgbot_1_1InlineQueryResultGif_a30e6a0d3dd0d0c257d23e48d955785b5}{gif\+\_\+width}}
+\begin{DoxyCompactList}\small\item\em Optional. Width of the G\+IF. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultGif_a9ae17e81aa90544798eb7e1ce4b5fc85}\label{structtgbot_1_1InlineQueryResultGif_a9ae17e81aa90544798eb7e1ce4b5fc85}} 
+int \mbox{\hyperlink{structtgbot_1_1InlineQueryResultGif_a9ae17e81aa90544798eb7e1ce4b5fc85}{gif\+\_\+height}}
+\begin{DoxyCompactList}\small\item\em Optional. Height of the G\+IF. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultGif_a5388f865f7413ee4e8ab10bb1d07070e}\label{structtgbot_1_1InlineQueryResultGif_a5388f865f7413ee4e8ab10bb1d07070e}} 
+int \mbox{\hyperlink{structtgbot_1_1InlineQueryResultGif_a5388f865f7413ee4e8ab10bb1d07070e}{gif\+\_\+duration}}
+\begin{DoxyCompactList}\small\item\em Optional. Duration of the G\+IF. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultGif_aec2e37274653bea1dd665761f1015b38}\label{structtgbot_1_1InlineQueryResultGif_aec2e37274653bea1dd665761f1015b38}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultGif_aec2e37274653bea1dd665761f1015b38}{thumb\+\_\+url}}
+\begin{DoxyCompactList}\small\item\em U\+RL of the static thumbnail for the result (jpeg or gif) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultGif_a3d0b0dedc33a199c248e7cc3f55aabec}\label{structtgbot_1_1InlineQueryResultGif_a3d0b0dedc33a199c248e7cc3f55aabec}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultGif_a3d0b0dedc33a199c248e7cc3f55aabec}{title}}
+\begin{DoxyCompactList}\small\item\em Optional. Title for the result. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultGif_ae9d9a54145642b4bd834442c5c018f81}\label{structtgbot_1_1InlineQueryResultGif_ae9d9a54145642b4bd834442c5c018f81}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultGif_ae9d9a54145642b4bd834442c5c018f81}{caption}}
+\begin{DoxyCompactList}\small\item\em Optional. Caption of the G\+IF file to be sent, 0-\/1024 characters after entities parsing. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultGif_a689d18f6f69141c736a59b08e56cdd82}\label{structtgbot_1_1InlineQueryResultGif_a689d18f6f69141c736a59b08e56cdd82}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultGif_a689d18f6f69141c736a59b08e56cdd82}{parse\+\_\+mode}}
+\begin{DoxyCompactList}\small\item\em Optional. Mode for parsing entities in the caption. See formatting options for more details. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultGif_af024d78ea265fd4e8f4d3eeb5c972b57}\label{structtgbot_1_1InlineQueryResultGif_af024d78ea265fd4e8f4d3eeb5c972b57}} 
+\mbox{\hyperlink{structtgbot_1_1InlineKeyboardMarkup_a6973beabdcfa398f58a1ad9bb74e6014}{Inline\+Keyboard\+Markup\+::ptr}} \mbox{\hyperlink{structtgbot_1_1InlineQueryResultGif_af024d78ea265fd4e8f4d3eeb5c972b57}{reply\+\_\+markup}}
+\begin{DoxyCompactList}\small\item\em Optional. Inline keyboard attached to the message. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultGif_a64bc2c05ad588f3239a193a5a4e5ca49}\label{structtgbot_1_1InlineQueryResultGif_a64bc2c05ad588f3239a193a5a4e5ca49}} 
+\mbox{\hyperlink{structtgbot_1_1InputMessageContent_a734b8fff62c96003068a9bc6ddb0d271}{Input\+Message\+Content\+::ptr}} \mbox{\hyperlink{structtgbot_1_1InlineQueryResultGif_a64bc2c05ad588f3239a193a5a4e5ca49}{input\+\_\+message\+\_\+content}}
+\begin{DoxyCompactList}\small\item\em Optional. Content of the message to be sent instead of the G\+IF animation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a link to an animated G\+IF file. 
+
+By default, this animated G\+IF file will be sent by the user with optional caption.
+
+Alternatively, you can use input\+\_\+message\+\_\+content to send a message with the specified content instead of the animation. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultGif_aa2daf785e09bbf87f33861e76346e48a}\label{structtgbot_1_1InlineQueryResultGif_aa2daf785e09bbf87f33861e76346e48a}} 
+\index{tgbot::InlineQueryResultGif@{tgbot::InlineQueryResultGif}!InlineQueryResultGif@{InlineQueryResultGif}}
+\index{InlineQueryResultGif@{InlineQueryResultGif}!tgbot::InlineQueryResultGif@{tgbot::InlineQueryResultGif}}
+\doxysubsubsection{\texorpdfstring{InlineQueryResultGif()}{InlineQueryResultGif()}}
+{\footnotesize\ttfamily tgbot\+::\+Inline\+Query\+Result\+Gif\+::\+Inline\+Query\+Result\+Gif (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultGif_a3a7695adf28e67a177c204342b77bc88}\label{structtgbot_1_1InlineQueryResultGif_a3a7695adf28e67a177c204342b77bc88}} 
+\index{tgbot::InlineQueryResultGif@{tgbot::InlineQueryResultGif}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::InlineQueryResultGif@{tgbot::InlineQueryResultGif}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Inline\+Query\+Result\+Gif\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{structtgbot_1_1InlineQueryResult_a7aa714c457e54ab6e51b1b0abc8c784c}{tgbot\+::\+Inline\+Query\+Result}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Inline\+Query\+Result\+Gif.\+h\item 
+src/types/Inline\+Query\+Result\+Gif.\+cpp\end{DoxyCompactItemize}

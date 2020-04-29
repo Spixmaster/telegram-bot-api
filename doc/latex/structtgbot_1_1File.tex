@@ -1,0 +1,83 @@
+\hypertarget{structtgbot_1_1File}{}\doxysection{tgbot\+::File Struct Reference}
+\label{structtgbot_1_1File}\index{tgbot::File@{tgbot::File}}
+
+
+This object represents a file ready to be downloaded. The file can be downloaded via the link \href{https://api.telegram.org/file/bot}{\texttt{ https\+://api.\+telegram.\+org/file/bot}}$<$token$>$/$<$file\+\_\+path$>$.  
+
+
+
+
+{\ttfamily \#include $<$File.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1File_a35d5b6b40400f685260e6bf076a07a83}\label{structtgbot_1_1File_a35d5b6b40400f685260e6bf076a07a83}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1File}{File}} $>$ \mbox{\hyperlink{structtgbot_1_1File_a35d5b6b40400f685260e6bf076a07a83}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1File_adc3cb214d0474ec0f90ba7395bf1d3cd}{File}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1File_a99f7fb25a7c3cef3f02c3396f3ee09cd}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1File_afa92e546bfb691debaa719e1fba38f2e}\label{structtgbot_1_1File_afa92e546bfb691debaa719e1fba38f2e}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1File_afa92e546bfb691debaa719e1fba38f2e}{file\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Identifier for this file, which can be used to download or reuse the file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1File_ae9c06ac164cb60b55452cbb84eafdc4a}\label{structtgbot_1_1File_ae9c06ac164cb60b55452cbb84eafdc4a}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1File_ae9c06ac164cb60b55452cbb84eafdc4a}{file\+\_\+unique\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Unique identifier for this file, which is supposed to be the same over time and for different bots. Can\textquotesingle{}t be used to download or reuse the file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1File_afb0a217a35ba65c5e61275a02b59eb4e}\label{structtgbot_1_1File_afb0a217a35ba65c5e61275a02b59eb4e}} 
+int \mbox{\hyperlink{structtgbot_1_1File_afb0a217a35ba65c5e61275a02b59eb4e}{file\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1File}{File}} size, if known. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1File_ac64c659b60f6a4cb8e07187f2ebdfdd5}\label{structtgbot_1_1File_ac64c659b60f6a4cb8e07187f2ebdfdd5}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1File_ac64c659b60f6a4cb8e07187f2ebdfdd5}{file\+\_\+path}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1File}{File}} path. Use \href{https://api.telegram.org/file/bot}{\texttt{ https\+://api.\+telegram.\+org/file/bot}}$<$token$>$/$<$file\+\_\+path$>$ to get the file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object represents a file ready to be downloaded. The file can be downloaded via the link \href{https://api.telegram.org/file/bot}{\texttt{ https\+://api.\+telegram.\+org/file/bot}}$<$token$>$/$<$file\+\_\+path$>$. 
+
+It is guaranteed that the link will be valid for at least 1 hour. When the link expires, a new one can be requested by calling get\+File. \begin{DoxyNote}{Note}
+Maximum file size to download is 20 MB 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1File_adc3cb214d0474ec0f90ba7395bf1d3cd}\label{structtgbot_1_1File_adc3cb214d0474ec0f90ba7395bf1d3cd}} 
+\index{tgbot::File@{tgbot::File}!File@{File}}
+\index{File@{File}!tgbot::File@{tgbot::File}}
+\doxysubsubsection{\texorpdfstring{File()}{File()}}
+{\footnotesize\ttfamily tgbot\+::\+File\+::\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1File_a99f7fb25a7c3cef3f02c3396f3ee09cd}\label{structtgbot_1_1File_a99f7fb25a7c3cef3f02c3396f3ee09cd}} 
+\index{tgbot::File@{tgbot::File}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::File@{tgbot::File}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+File\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/File.\+h\item 
+src/types/File.\+cpp\end{DoxyCompactItemize}

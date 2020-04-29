@@ -1,0 +1,112 @@
+\hypertarget{structtgbot_1_1ReplyKeyboardRemove}{}\doxysection{tgbot\+::Reply\+Keyboard\+Remove Struct Reference}
+\label{structtgbot_1_1ReplyKeyboardRemove}\index{tgbot::ReplyKeyboardRemove@{tgbot::ReplyKeyboardRemove}}
+
+
+Upon receiving a message with this object, Telegram clients will remove the current custom keyboard and display the default letter-\/keyboard.  
+
+
+
+
+{\ttfamily \#include $<$Reply\+Keyboard\+Remove.\+h$>$}
+
+
+
+Inheritance diagram for tgbot\+::Reply\+Keyboard\+Remove\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{structtgbot_1_1ReplyKeyboardRemove__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for tgbot\+::Reply\+Keyboard\+Remove\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{structtgbot_1_1ReplyKeyboardRemove__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1ReplyKeyboardRemove_aeb57b06b51935d30983a7fcc3f78904b}\label{structtgbot_1_1ReplyKeyboardRemove_aeb57b06b51935d30983a7fcc3f78904b}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1ReplyKeyboardRemove}{Reply\+Keyboard\+Remove}} $>$ \mbox{\hyperlink{structtgbot_1_1ReplyKeyboardRemove_aeb57b06b51935d30983a7fcc3f78904b}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1ReplyKeyboardRemove_a23934dbcb217e1ac339c24a3d1f33069}{Reply\+Keyboard\+Remove}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1ReplyKeyboardRemove_a0c79107df2198c526cb17577f5d97d64}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1ReplyKeyboardRemove_a03439012d2e802b5d90571c55bc36db7}\label{structtgbot_1_1ReplyKeyboardRemove_a03439012d2e802b5d90571c55bc36db7}} 
+bool \mbox{\hyperlink{structtgbot_1_1ReplyKeyboardRemove_a03439012d2e802b5d90571c55bc36db7}{remove\+\_\+keyboard}}
+\begin{DoxyCompactList}\small\item\em Requests clients to remove the custom keyboard (user will not be able to summon this keyboard; if you want to hide the keyboard from sight but keep it accessible, use one\+\_\+time\+\_\+keyboard in \mbox{\hyperlink{structtgbot_1_1ReplyKeyboardMarkup}{Reply\+Keyboard\+Markup}}) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structtgbot_1_1ReplyKeyboardRemove_abc7b64e6e6427cad3d633eba7ebe81a6}{selective}}
+\begin{DoxyCompactList}\small\item\em Optional. Use this parameter if you want to remove the keyboard for specific users only. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Upon receiving a message with this object, Telegram clients will remove the current custom keyboard and display the default letter-\/keyboard. 
+
+By default, custom keyboards are displayed until a new keyboard is sent by a bot. An exception is made for one-\/time keyboards that are hidden immediately after the user presses a button (see \mbox{\hyperlink{structtgbot_1_1ReplyKeyboardMarkup}{Reply\+Keyboard\+Markup}}). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1ReplyKeyboardRemove_a23934dbcb217e1ac339c24a3d1f33069}\label{structtgbot_1_1ReplyKeyboardRemove_a23934dbcb217e1ac339c24a3d1f33069}} 
+\index{tgbot::ReplyKeyboardRemove@{tgbot::ReplyKeyboardRemove}!ReplyKeyboardRemove@{ReplyKeyboardRemove}}
+\index{ReplyKeyboardRemove@{ReplyKeyboardRemove}!tgbot::ReplyKeyboardRemove@{tgbot::ReplyKeyboardRemove}}
+\doxysubsubsection{\texorpdfstring{ReplyKeyboardRemove()}{ReplyKeyboardRemove()}}
+{\footnotesize\ttfamily tgbot\+::\+Reply\+Keyboard\+Remove\+::\+Reply\+Keyboard\+Remove (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1ReplyKeyboardRemove_a0c79107df2198c526cb17577f5d97d64}\label{structtgbot_1_1ReplyKeyboardRemove_a0c79107df2198c526cb17577f5d97d64}} 
+\index{tgbot::ReplyKeyboardRemove@{tgbot::ReplyKeyboardRemove}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::ReplyKeyboardRemove@{tgbot::ReplyKeyboardRemove}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Reply\+Keyboard\+Remove\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{structtgbot_1_1Reply_a815e89bc1534242fdfacaf8ec62327f1}{tgbot\+::\+Reply}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structtgbot_1_1ReplyKeyboardRemove_abc7b64e6e6427cad3d633eba7ebe81a6}\label{structtgbot_1_1ReplyKeyboardRemove_abc7b64e6e6427cad3d633eba7ebe81a6}} 
+\index{tgbot::ReplyKeyboardRemove@{tgbot::ReplyKeyboardRemove}!selective@{selective}}
+\index{selective@{selective}!tgbot::ReplyKeyboardRemove@{tgbot::ReplyKeyboardRemove}}
+\doxysubsubsection{\texorpdfstring{selective}{selective}}
+{\footnotesize\ttfamily tgbot\+::\+Reply\+Keyboard\+Remove\+::selective}
+
+
+
+Optional. Use this parameter if you want to remove the keyboard for specific users only. 
+
+Targets\+: 1) users that are @mentioned in the text of the \mbox{\hyperlink{structtgbot_1_1Message}{Message}} object; 2) if the bot\textquotesingle{}s message is a reply (has reply\+\_\+to\+\_\+message\+\_\+id), sender of the original message.
+
+Example\+: A user votes in a poll, bot returns confirmation message in reply to the vote and removes the keyboard for that user, while still showing the keyboard with poll options to users who haven\textquotesingle{}t voted yet. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Reply\+Keyboard\+Remove.\+h\item 
+src/types/Reply\+Keyboard\+Remove.\+cpp\end{DoxyCompactItemize}

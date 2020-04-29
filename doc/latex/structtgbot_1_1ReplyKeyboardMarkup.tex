@@ -1,0 +1,149 @@
+\hypertarget{structtgbot_1_1ReplyKeyboardMarkup}{}\doxysection{tgbot\+::Reply\+Keyboard\+Markup Struct Reference}
+\label{structtgbot_1_1ReplyKeyboardMarkup}\index{tgbot::ReplyKeyboardMarkup@{tgbot::ReplyKeyboardMarkup}}
+
+
+This object represents a custom keyboard with reply options (see Introduction to bots for details and examples).  
+
+
+
+
+{\ttfamily \#include $<$Reply\+Keyboard\+Markup.\+h$>$}
+
+
+
+Inheritance diagram for tgbot\+::Reply\+Keyboard\+Markup\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{structtgbot_1_1ReplyKeyboardMarkup__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for tgbot\+::Reply\+Keyboard\+Markup\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{structtgbot_1_1ReplyKeyboardMarkup__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1ReplyKeyboardMarkup_a2279d740a1fcdc1b56c90d2d5c614efb}\label{structtgbot_1_1ReplyKeyboardMarkup_a2279d740a1fcdc1b56c90d2d5c614efb}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1ReplyKeyboardMarkup}{Reply\+Keyboard\+Markup}} $>$ \mbox{\hyperlink{structtgbot_1_1ReplyKeyboardMarkup_a2279d740a1fcdc1b56c90d2d5c614efb}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1ReplyKeyboardMarkup_a4adeb2307aba3e190f0fce75f48d753f}{Reply\+Keyboard\+Markup}} (const std\+::string \&json)
+\item 
+\mbox{\hyperlink{structtgbot_1_1ReplyKeyboardMarkup_a620325934aa37a89fadea338108c9156}{Reply\+Keyboard\+Markup}} (const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1KeyboardButton_a6ea244fa6fa2c4c2ccf84b4ece83b8bb}{Keyboard\+Button\+::ptr}} $>$$>$ \&\mbox{\hyperlink{structtgbot_1_1ReplyKeyboardMarkup_a89a52aacae00b63c0ca7dabbecb02830}{keyboard}})
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1ReplyKeyboardMarkup_abe979fb3a9d81b375d60685f12f6f7b0}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1ReplyKeyboardMarkup_a89a52aacae00b63c0ca7dabbecb02830}\label{structtgbot_1_1ReplyKeyboardMarkup_a89a52aacae00b63c0ca7dabbecb02830}} 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1KeyboardButton_a6ea244fa6fa2c4c2ccf84b4ece83b8bb}{Keyboard\+Button\+::ptr}} $>$ $>$ \mbox{\hyperlink{structtgbot_1_1ReplyKeyboardMarkup_a89a52aacae00b63c0ca7dabbecb02830}{keyboard}}
+\begin{DoxyCompactList}\small\item\em Array of button rows, each represented by an Array of \mbox{\hyperlink{structtgbot_1_1KeyboardButton}{Keyboard\+Button}} objects. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structtgbot_1_1ReplyKeyboardMarkup_a83c9c43b6562fa6396f27aece8d7348d}{resize\+\_\+keyboard}}
+\begin{DoxyCompactList}\small\item\em Optional. Requests clients to resize the keyboard vertically for optimal fit (e.\+g., make the keyboard smaller if there are just two rows of buttons). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structtgbot_1_1ReplyKeyboardMarkup_a388f28250731dd242a958c1d6e5e53ea}{one\+\_\+time\+\_\+keyboard}}
+\begin{DoxyCompactList}\small\item\em Optional. Requests clients to hide the keyboard as soon as it\textquotesingle{}s been used. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structtgbot_1_1ReplyKeyboardMarkup_a5ad5ebb340a8ffeaee545d153ec0ff2c}{selective}}
+\begin{DoxyCompactList}\small\item\em Optional. Use this parameter if you want to show the keyboard to specific users only. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object represents a custom keyboard with reply options (see Introduction to bots for details and examples). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1ReplyKeyboardMarkup_a4adeb2307aba3e190f0fce75f48d753f}\label{structtgbot_1_1ReplyKeyboardMarkup_a4adeb2307aba3e190f0fce75f48d753f}} 
+\index{tgbot::ReplyKeyboardMarkup@{tgbot::ReplyKeyboardMarkup}!ReplyKeyboardMarkup@{ReplyKeyboardMarkup}}
+\index{ReplyKeyboardMarkup@{ReplyKeyboardMarkup}!tgbot::ReplyKeyboardMarkup@{tgbot::ReplyKeyboardMarkup}}
+\doxysubsubsection{\texorpdfstring{ReplyKeyboardMarkup()}{ReplyKeyboardMarkup()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily tgbot\+::\+Reply\+Keyboard\+Markup\+::\+Reply\+Keyboard\+Markup (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structtgbot_1_1ReplyKeyboardMarkup_a620325934aa37a89fadea338108c9156}\label{structtgbot_1_1ReplyKeyboardMarkup_a620325934aa37a89fadea338108c9156}} 
+\index{tgbot::ReplyKeyboardMarkup@{tgbot::ReplyKeyboardMarkup}!ReplyKeyboardMarkup@{ReplyKeyboardMarkup}}
+\index{ReplyKeyboardMarkup@{ReplyKeyboardMarkup}!tgbot::ReplyKeyboardMarkup@{tgbot::ReplyKeyboardMarkup}}
+\doxysubsubsection{\texorpdfstring{ReplyKeyboardMarkup()}{ReplyKeyboardMarkup()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily tgbot\+::\+Reply\+Keyboard\+Markup\+::\+Reply\+Keyboard\+Markup (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1KeyboardButton_a6ea244fa6fa2c4c2ccf84b4ece83b8bb}{Keyboard\+Button\+::ptr}} $>$$>$ \&}]{keyboard }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em keyboard} & The vector of vectors of buttons represents a keyboard. One vector makes up a line. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1ReplyKeyboardMarkup_abe979fb3a9d81b375d60685f12f6f7b0}\label{structtgbot_1_1ReplyKeyboardMarkup_abe979fb3a9d81b375d60685f12f6f7b0}} 
+\index{tgbot::ReplyKeyboardMarkup@{tgbot::ReplyKeyboardMarkup}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::ReplyKeyboardMarkup@{tgbot::ReplyKeyboardMarkup}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Reply\+Keyboard\+Markup\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{structtgbot_1_1Reply_a815e89bc1534242fdfacaf8ec62327f1}{tgbot\+::\+Reply}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structtgbot_1_1ReplyKeyboardMarkup_a388f28250731dd242a958c1d6e5e53ea}\label{structtgbot_1_1ReplyKeyboardMarkup_a388f28250731dd242a958c1d6e5e53ea}} 
+\index{tgbot::ReplyKeyboardMarkup@{tgbot::ReplyKeyboardMarkup}!one\_time\_keyboard@{one\_time\_keyboard}}
+\index{one\_time\_keyboard@{one\_time\_keyboard}!tgbot::ReplyKeyboardMarkup@{tgbot::ReplyKeyboardMarkup}}
+\doxysubsubsection{\texorpdfstring{one\_time\_keyboard}{one\_time\_keyboard}}
+{\footnotesize\ttfamily tgbot\+::\+Reply\+Keyboard\+Markup\+::one\+\_\+time\+\_\+keyboard}
+
+
+
+Optional. Requests clients to hide the keyboard as soon as it\textquotesingle{}s been used. 
+
+The keyboard will still be available, but clients will automatically display the usual letter-\/keyboard in the chat – the user can press a special button in the input field to see the custom keyboard again.
+
+Defaults to false. \mbox{\Hypertarget{structtgbot_1_1ReplyKeyboardMarkup_a83c9c43b6562fa6396f27aece8d7348d}\label{structtgbot_1_1ReplyKeyboardMarkup_a83c9c43b6562fa6396f27aece8d7348d}} 
+\index{tgbot::ReplyKeyboardMarkup@{tgbot::ReplyKeyboardMarkup}!resize\_keyboard@{resize\_keyboard}}
+\index{resize\_keyboard@{resize\_keyboard}!tgbot::ReplyKeyboardMarkup@{tgbot::ReplyKeyboardMarkup}}
+\doxysubsubsection{\texorpdfstring{resize\_keyboard}{resize\_keyboard}}
+{\footnotesize\ttfamily tgbot\+::\+Reply\+Keyboard\+Markup\+::resize\+\_\+keyboard}
+
+
+
+Optional. Requests clients to resize the keyboard vertically for optimal fit (e.\+g., make the keyboard smaller if there are just two rows of buttons). 
+
+Defaults to false, in which case the custom keyboard is always of the same height as the app\textquotesingle{}s standard keyboard. \mbox{\Hypertarget{structtgbot_1_1ReplyKeyboardMarkup_a5ad5ebb340a8ffeaee545d153ec0ff2c}\label{structtgbot_1_1ReplyKeyboardMarkup_a5ad5ebb340a8ffeaee545d153ec0ff2c}} 
+\index{tgbot::ReplyKeyboardMarkup@{tgbot::ReplyKeyboardMarkup}!selective@{selective}}
+\index{selective@{selective}!tgbot::ReplyKeyboardMarkup@{tgbot::ReplyKeyboardMarkup}}
+\doxysubsubsection{\texorpdfstring{selective}{selective}}
+{\footnotesize\ttfamily tgbot\+::\+Reply\+Keyboard\+Markup\+::selective}
+
+
+
+Optional. Use this parameter if you want to show the keyboard to specific users only. 
+
+Targets\+: 1) users that are @mentioned in the text of the \mbox{\hyperlink{structtgbot_1_1Message}{Message}} object; 2) if the bot\textquotesingle{}s message is a reply (has reply\+\_\+to\+\_\+message\+\_\+id), sender of the original message.
+
+Example\+: A user requests to change the bot‘s language, bot replies to the request with a keyboard to select the new language. Other users in the group don’t see the keyboard. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Reply\+Keyboard\+Markup.\+h\item 
+src/types/Reply\+Keyboard\+Markup.\+cpp\end{DoxyCompactItemize}

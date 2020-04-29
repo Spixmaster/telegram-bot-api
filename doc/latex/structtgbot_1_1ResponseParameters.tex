@@ -1,0 +1,86 @@
+\hypertarget{structtgbot_1_1ResponseParameters}{}\doxysection{tgbot\+::Response\+Parameters Struct Reference}
+\label{structtgbot_1_1ResponseParameters}\index{tgbot::ResponseParameters@{tgbot::ResponseParameters}}
+
+
+Contains information about why a request was unsuccessful.  
+
+
+
+
+{\ttfamily \#include $<$Response\+Parameters.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1ResponseParameters_aa1f54a6732a6d2ede56257b5762a2b87}\label{structtgbot_1_1ResponseParameters_aa1f54a6732a6d2ede56257b5762a2b87}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1ResponseParameters}{Response\+Parameters}} $>$ \mbox{\hyperlink{structtgbot_1_1ResponseParameters_aa1f54a6732a6d2ede56257b5762a2b87}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1ResponseParameters_aebe69aea158a1a5831a0d2108e84aa99}{Response\+Parameters}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1ResponseParameters_afed60ca0bd100d7ea0453d6cb54b5574}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structtgbot_1_1ResponseParameters_a8c79c6d6c2f9ad9a70ea807a8affacce}{migrate\+\_\+to\+\_\+chat\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Optional. The group has been migrated to a supergroup with the specified identifier. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1ResponseParameters_a2945356a36f461151c7b2e163a8e73f2}\label{structtgbot_1_1ResponseParameters_a2945356a36f461151c7b2e163a8e73f2}} 
+int \mbox{\hyperlink{structtgbot_1_1ResponseParameters_a2945356a36f461151c7b2e163a8e73f2}{retry\+\_\+after}}
+\begin{DoxyCompactList}\small\item\em Optional. In case of exceeding flood control, the number of seconds left to wait before the request can be repeated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains information about why a request was unsuccessful. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1ResponseParameters_aebe69aea158a1a5831a0d2108e84aa99}\label{structtgbot_1_1ResponseParameters_aebe69aea158a1a5831a0d2108e84aa99}} 
+\index{tgbot::ResponseParameters@{tgbot::ResponseParameters}!ResponseParameters@{ResponseParameters}}
+\index{ResponseParameters@{ResponseParameters}!tgbot::ResponseParameters@{tgbot::ResponseParameters}}
+\doxysubsubsection{\texorpdfstring{ResponseParameters()}{ResponseParameters()}}
+{\footnotesize\ttfamily tgbot\+::\+Response\+Parameters\+::\+Response\+Parameters (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1ResponseParameters_afed60ca0bd100d7ea0453d6cb54b5574}\label{structtgbot_1_1ResponseParameters_afed60ca0bd100d7ea0453d6cb54b5574}} 
+\index{tgbot::ResponseParameters@{tgbot::ResponseParameters}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::ResponseParameters@{tgbot::ResponseParameters}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Response\+Parameters\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structtgbot_1_1ResponseParameters_a8c79c6d6c2f9ad9a70ea807a8affacce}\label{structtgbot_1_1ResponseParameters_a8c79c6d6c2f9ad9a70ea807a8affacce}} 
+\index{tgbot::ResponseParameters@{tgbot::ResponseParameters}!migrate\_to\_chat\_id@{migrate\_to\_chat\_id}}
+\index{migrate\_to\_chat\_id@{migrate\_to\_chat\_id}!tgbot::ResponseParameters@{tgbot::ResponseParameters}}
+\doxysubsubsection{\texorpdfstring{migrate\_to\_chat\_id}{migrate\_to\_chat\_id}}
+{\footnotesize\ttfamily tgbot\+::\+Response\+Parameters\+::migrate\+\_\+to\+\_\+chat\+\_\+id}
+
+
+
+Optional. The group has been migrated to a supergroup with the specified identifier. 
+
+This number may be greater than 32 bits and some programming languages may have difficulty/silent defects in interpreting it.
+
+But it is smaller than 52 bits, so a signed 64 bit integer or double-\/precision float type are safe for storing this identifier. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Response\+Parameters.\+h\item 
+src/types/Response\+Parameters.\+cpp\end{DoxyCompactItemize}

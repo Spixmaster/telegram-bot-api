@@ -1,0 +1,96 @@
+\hypertarget{structtgbot_1_1Sticker}{}\doxysection{tgbot\+::Sticker Struct Reference}
+\label{structtgbot_1_1Sticker}\index{tgbot::Sticker@{tgbot::Sticker}}
+
+
+This object represents a sticker.  
+
+
+
+
+{\ttfamily \#include $<$Sticker.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1Sticker_a2b4c0f94c6e5ffc1c010bde22ddbe007}\label{structtgbot_1_1Sticker_a2b4c0f94c6e5ffc1c010bde22ddbe007}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1Sticker}{Sticker}} $>$ \mbox{\hyperlink{structtgbot_1_1Sticker_a2b4c0f94c6e5ffc1c010bde22ddbe007}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1Sticker_ace3c779103fda2ed0fb0fb565e68ec9f}{Sticker}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Sticker_abe4969a1d0e10be0170e1e9fecd1ffe7}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1Sticker_a26ef9f8cbdc47336186d3f28c8288aa2}\label{structtgbot_1_1Sticker_a26ef9f8cbdc47336186d3f28c8288aa2}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Sticker_a26ef9f8cbdc47336186d3f28c8288aa2}{file\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Identifier for this file, which can be used to download or reuse the file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Sticker_a509d89d78d059e1e5fb9ef51042e2cb6}\label{structtgbot_1_1Sticker_a509d89d78d059e1e5fb9ef51042e2cb6}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Sticker_a509d89d78d059e1e5fb9ef51042e2cb6}{file\+\_\+unique\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Unique identifier for this file, which is supposed to be the same over time and for different bots. Can\textquotesingle{}t be used to download or reuse the file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Sticker_a0109cd125ca4f9294317bd54dbb707d3}\label{structtgbot_1_1Sticker_a0109cd125ca4f9294317bd54dbb707d3}} 
+int \mbox{\hyperlink{structtgbot_1_1Sticker_a0109cd125ca4f9294317bd54dbb707d3}{width}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structtgbot_1_1Sticker}{Sticker}} width. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Sticker_ac81bdaf45888dd5a90f809bbced0fec5}\label{structtgbot_1_1Sticker_ac81bdaf45888dd5a90f809bbced0fec5}} 
+int \mbox{\hyperlink{structtgbot_1_1Sticker_ac81bdaf45888dd5a90f809bbced0fec5}{height}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structtgbot_1_1Sticker}{Sticker}} height. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Sticker_abd0f0812352ac62b3823dc1c82867e4f}\label{structtgbot_1_1Sticker_abd0f0812352ac62b3823dc1c82867e4f}} 
+bool \mbox{\hyperlink{structtgbot_1_1Sticker_abd0f0812352ac62b3823dc1c82867e4f}{is\+\_\+animated}}
+\begin{DoxyCompactList}\small\item\em True, if the sticker is animated. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Sticker_afbca8ebfc8e1387350abf3e6ff689783}\label{structtgbot_1_1Sticker_afbca8ebfc8e1387350abf3e6ff689783}} 
+\mbox{\hyperlink{structtgbot_1_1PhotoSize_a5c9e46410c663fda470caa5f806781ad}{Photo\+Size\+::ptr}} \mbox{\hyperlink{structtgbot_1_1Sticker_afbca8ebfc8e1387350abf3e6ff689783}{thumb}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1Sticker}{Sticker}} thumbnail in the .W\+E\+BP or .J\+PG format. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Sticker_aff8392605c1f5504b145ae80a7b2ea20}\label{structtgbot_1_1Sticker_aff8392605c1f5504b145ae80a7b2ea20}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Sticker_aff8392605c1f5504b145ae80a7b2ea20}{emoji}}
+\begin{DoxyCompactList}\small\item\em Optional. Emoji associated with the sticker. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Sticker_a4dfabc023a69d36894204bd02678cb1d}\label{structtgbot_1_1Sticker_a4dfabc023a69d36894204bd02678cb1d}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Sticker_a4dfabc023a69d36894204bd02678cb1d}{set\+\_\+name}}
+\begin{DoxyCompactList}\small\item\em Optional. Name of the sticker set to which the sticker belongs. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Sticker_a1d3b6edcf88d9c83c929547cbad243c1}\label{structtgbot_1_1Sticker_a1d3b6edcf88d9c83c929547cbad243c1}} 
+\mbox{\hyperlink{structtgbot_1_1MaskPosition_af46ab6797acfdb98a83ca243d9d60087}{Mask\+Position\+::ptr}} \mbox{\hyperlink{structtgbot_1_1Sticker_a1d3b6edcf88d9c83c929547cbad243c1}{mask\+\_\+position}}
+\begin{DoxyCompactList}\small\item\em Optional. For mask stickers, the position where the mask should be placed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Sticker_a3833bcad9b1ee04d25f8c57881be55f6}\label{structtgbot_1_1Sticker_a3833bcad9b1ee04d25f8c57881be55f6}} 
+int \mbox{\hyperlink{structtgbot_1_1Sticker_a3833bcad9b1ee04d25f8c57881be55f6}{file\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1File}{File}} size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object represents a sticker. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1Sticker_ace3c779103fda2ed0fb0fb565e68ec9f}\label{structtgbot_1_1Sticker_ace3c779103fda2ed0fb0fb565e68ec9f}} 
+\index{tgbot::Sticker@{tgbot::Sticker}!Sticker@{Sticker}}
+\index{Sticker@{Sticker}!tgbot::Sticker@{tgbot::Sticker}}
+\doxysubsubsection{\texorpdfstring{Sticker()}{Sticker()}}
+{\footnotesize\ttfamily tgbot\+::\+Sticker\+::\+Sticker (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1Sticker_abe4969a1d0e10be0170e1e9fecd1ffe7}\label{structtgbot_1_1Sticker_abe4969a1d0e10be0170e1e9fecd1ffe7}} 
+\index{tgbot::Sticker@{tgbot::Sticker}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::Sticker@{tgbot::Sticker}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Sticker\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Sticker.\+h\item 
+src/types/Sticker.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,72 @@
+\hypertarget{structtgbot_1_1BotCommand}{}\doxysection{tgbot\+::Bot\+Command Struct Reference}
+\label{structtgbot_1_1BotCommand}\index{tgbot::BotCommand@{tgbot::BotCommand}}
+
+
+This object represents a bot command.  
+
+
+
+
+{\ttfamily \#include $<$Bot\+Command.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1BotCommand_aaaa346b7d4216ba576b1a213470bff22}\label{structtgbot_1_1BotCommand_aaaa346b7d4216ba576b1a213470bff22}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1BotCommand}{Bot\+Command}} $>$ \mbox{\hyperlink{structtgbot_1_1BotCommand_aaaa346b7d4216ba576b1a213470bff22}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1BotCommand_a1e58273805300ddb10c79200edd29057}{Bot\+Command}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1BotCommand_a0866b25d6e7f9b33afb888b04b9cc893}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1BotCommand_af9864eff9e2099807c44b1b52bc97232}\label{structtgbot_1_1BotCommand_af9864eff9e2099807c44b1b52bc97232}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1BotCommand_af9864eff9e2099807c44b1b52bc97232}{command}}
+\begin{DoxyCompactList}\small\item\em Text of the command, 1-\/32 characters. Can contain only lowercase English letters, digits and underscores. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1BotCommand_ae10259ab1417e907dca8c17c9473d80a}\label{structtgbot_1_1BotCommand_ae10259ab1417e907dca8c17c9473d80a}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1BotCommand_ae10259ab1417e907dca8c17c9473d80a}{description}}
+\begin{DoxyCompactList}\small\item\em Description of the command, 3-\/256 characters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object represents a bot command. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1BotCommand_a1e58273805300ddb10c79200edd29057}\label{structtgbot_1_1BotCommand_a1e58273805300ddb10c79200edd29057}} 
+\index{tgbot::BotCommand@{tgbot::BotCommand}!BotCommand@{BotCommand}}
+\index{BotCommand@{BotCommand}!tgbot::BotCommand@{tgbot::BotCommand}}
+\doxysubsubsection{\texorpdfstring{BotCommand()}{BotCommand()}}
+{\footnotesize\ttfamily tgbot\+::\+Bot\+Command\+::\+Bot\+Command (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1BotCommand_a0866b25d6e7f9b33afb888b04b9cc893}\label{structtgbot_1_1BotCommand_a0866b25d6e7f9b33afb888b04b9cc893}} 
+\index{tgbot::BotCommand@{tgbot::BotCommand}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::BotCommand@{tgbot::BotCommand}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Bot\+Command\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Bot\+Command.\+h\item 
+src/types/Bot\+Command.\+cpp\end{DoxyCompactItemize}

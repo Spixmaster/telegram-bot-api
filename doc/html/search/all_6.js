@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['game_143',['Game',['../structtgbot_1_1Game.html',1,'tgbot::Game'],['../structtgbot_1_1Game.html#ab78501159edb3d969302a4556ec605a4',1,'tgbot::Game::Game()'],['../structtgbot_1_1Message.html#a3459ff4c36cf9182e202dfe5159d9d01',1,'tgbot::Message::game()']]],
+  ['game_5fshort_5fname_144',['game_short_name',['../structtgbot_1_1CallbackQuery.html#a9a9f218c7afd1e487bb68a16b494b001',1,'tgbot::CallbackQuery::game_short_name()'],['../structtgbot_1_1InlineQueryResultGame.html#ad02683e3db86c3004a3e11856e5ed699',1,'tgbot::InlineQueryResultGame::game_short_name()']]],
+  ['gamehighscore_145',['GameHighScore',['../structtgbot_1_1GameHighScore.html',1,'tgbot::GameHighScore'],['../structtgbot_1_1GameHighScore.html#aa9ae9e318df234178c5bc7b0212cd9d3',1,'tgbot::GameHighScore::GameHighScore()']]],
+  ['get_5fendpnts_146',['get_endpnts',['../classtgbot_1_1Bot.html#a6af910ebf3c761cc82188939dc9cc90e',1,'tgbot::Bot']]],
+  ['get_5fevent_5fhandler_147',['get_event_handler',['../classtgbot_1_1Bot.html#aba64843836ec421a2ef79012344576bd',1,'tgbot::Bot']]],
+  ['get_5ftoken_148',['get_token',['../classtgbot_1_1Bot.html#ade6b5c5756581156c4ff8601f885edbc',1,'tgbot::Bot']]],
+  ['getchat_149',['getChat',['../classtgbot_1_1Endpoints.html#ae7057ddb7c815f797f3f0350ffecd174',1,'tgbot::Endpoints']]],
+  ['getchatadministrators_150',['getChatAdministrators',['../classtgbot_1_1Endpoints.html#a5076a80585aebd067432233e5d6df87c',1,'tgbot::Endpoints']]],
+  ['getchatmember_151',['getChatMember',['../classtgbot_1_1Endpoints.html#adf221bd1b7e2a23f270e56c4602d2423',1,'tgbot::Endpoints']]],
+  ['getchatmemberscount_152',['getChatMembersCount',['../classtgbot_1_1Endpoints.html#a9672476688e5a818821cac97bac8361f',1,'tgbot::Endpoints']]],
+  ['getfile_153',['getFile',['../classtgbot_1_1Endpoints.html#ab8a2cf6f4fd0a3c391fa52cc6b6bb8c2',1,'tgbot::Endpoints']]],
+  ['getgamehighscores_154',['getGameHighScores',['../classtgbot_1_1Endpoints.html#adaaba0fdef9e6bd89b9c9dc58e3d144d',1,'tgbot::Endpoints']]],
+  ['getme_155',['getMe',['../classtgbot_1_1Endpoints.html#a1ef940443b28731442da6586da74f6c8',1,'tgbot::Endpoints']]],
+  ['getmycommands_156',['getMyCommands',['../classtgbot_1_1Endpoints.html#acaef927075c7dd3c727aa7b4d74e5c4a',1,'tgbot::Endpoints']]],
+  ['getstickerset_157',['getStickerSet',['../classtgbot_1_1Endpoints.html#a87284fca9e392e71aeadcaf6436de107',1,'tgbot::Endpoints']]],
+  ['getupdates_158',['getUpdates',['../classtgbot_1_1Endpoints.html#aecbf0ab9aec71595f83b1fbe048c89e7',1,'tgbot::Endpoints']]],
+  ['getuserprofilephotos_159',['getUserProfilePhotos',['../classtgbot_1_1Endpoints.html#abefec1adccfc94bb5c1bf8ae9a5af315',1,'tgbot::Endpoints']]],
+  ['getwebhookinfo_160',['getWebhookInfo',['../classtgbot_1_1Endpoints.html#ae8cb9e52af8ccabeb090538d4246c85f',1,'tgbot::Endpoints']]],
+  ['gif_5fduration_161',['gif_duration',['../structtgbot_1_1InlineQueryResultGif.html#a5388f865f7413ee4e8ab10bb1d07070e',1,'tgbot::InlineQueryResultGif']]],
+  ['gif_5ffile_5fid_162',['gif_file_id',['../structtgbot_1_1InlineQueryResultCachedGif.html#a82dec3b0f7bfc0a0a83c795a54844cbd',1,'tgbot::InlineQueryResultCachedGif']]],
+  ['gif_5fheight_163',['gif_height',['../structtgbot_1_1InlineQueryResultGif.html#a9ae17e81aa90544798eb7e1ce4b5fc85',1,'tgbot::InlineQueryResultGif']]],
+  ['gif_5furl_164',['gif_url',['../structtgbot_1_1InlineQueryResultGif.html#a630093bd59218a946beb15c5c6278c1e',1,'tgbot::InlineQueryResultGif']]],
+  ['gif_5fwidth_165',['gif_width',['../structtgbot_1_1InlineQueryResultGif.html#a30e6a0d3dd0d0c257d23e48d955785b5',1,'tgbot::InlineQueryResultGif']]],
+  ['group_5fchat_5fcreated_166',['group_chat_created',['../structtgbot_1_1Message.html#a1bdb247a9e9119c7f2f07bffecbb9ef0',1,'tgbot::Message']]]
+];

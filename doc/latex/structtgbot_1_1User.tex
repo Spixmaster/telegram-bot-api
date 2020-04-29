@@ -1,0 +1,93 @@
+\hypertarget{structtgbot_1_1User}{}\doxysection{tgbot\+::User Struct Reference}
+\label{structtgbot_1_1User}\index{tgbot::User@{tgbot::User}}
+
+
+This object represents a Telegram user or bot.  
+
+
+
+
+{\ttfamily \#include $<$User.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1User_a9c48e6206c4f8f4ed3ae7ee2ce9ac395}\label{structtgbot_1_1User_a9c48e6206c4f8f4ed3ae7ee2ce9ac395}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1User}{User}} $>$ \mbox{\hyperlink{structtgbot_1_1User_a9c48e6206c4f8f4ed3ae7ee2ce9ac395}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1User_a19e817c1a46c071577862fe1ffffd0ba}{User}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1User_aec27bc50742d8d97926e5079642c3ea0}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1User_ab178ad2e225fee5b906e10236c4869cc}\label{structtgbot_1_1User_ab178ad2e225fee5b906e10236c4869cc}} 
+long long \mbox{\hyperlink{structtgbot_1_1User_ab178ad2e225fee5b906e10236c4869cc}{id}}
+\begin{DoxyCompactList}\small\item\em Unique identifier for this user or bot. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1User_a363a6325fd5c019590b8cab711f02638}\label{structtgbot_1_1User_a363a6325fd5c019590b8cab711f02638}} 
+bool \mbox{\hyperlink{structtgbot_1_1User_a363a6325fd5c019590b8cab711f02638}{is\+\_\+bot}}
+\begin{DoxyCompactList}\small\item\em True, if this user is a bot. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1User_a3ed41a5ef40f04308701e2548db262e5}\label{structtgbot_1_1User_a3ed41a5ef40f04308701e2548db262e5}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1User_a3ed41a5ef40f04308701e2548db262e5}{first\+\_\+name}}
+\begin{DoxyCompactList}\small\item\em User‘s or bot’s first name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1User_a6499a110c2a4fd601d0f51e24b929915}\label{structtgbot_1_1User_a6499a110c2a4fd601d0f51e24b929915}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1User_a6499a110c2a4fd601d0f51e24b929915}{last\+\_\+name}}
+\begin{DoxyCompactList}\small\item\em Optional. User‘s or bot’s last name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1User_a4812f47245d8872a2021c877ce1e2cfa}\label{structtgbot_1_1User_a4812f47245d8872a2021c877ce1e2cfa}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1User_a4812f47245d8872a2021c877ce1e2cfa}{username}}
+\begin{DoxyCompactList}\small\item\em Optional. User‘s or bot’s username. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1User_a687b7e937adb6154c6cd11456718e00c}\label{structtgbot_1_1User_a687b7e937adb6154c6cd11456718e00c}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1User_a687b7e937adb6154c6cd11456718e00c}{language\+\_\+code}}
+\begin{DoxyCompactList}\small\item\em Optional. I\+E\+TF language tag of the user\textquotesingle{}s language. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1User_ab7f0c2460c3328230e707dcb3519a361}\label{structtgbot_1_1User_ab7f0c2460c3328230e707dcb3519a361}} 
+bool \mbox{\hyperlink{structtgbot_1_1User_ab7f0c2460c3328230e707dcb3519a361}{can\+\_\+join\+\_\+groups}}
+\begin{DoxyCompactList}\small\item\em Optional. True, if the bot can be invited to groups. Returned only in get\+Me. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1User_a760f40bb7416e12a6e5dc8e3e7b92eee}\label{structtgbot_1_1User_a760f40bb7416e12a6e5dc8e3e7b92eee}} 
+bool \mbox{\hyperlink{structtgbot_1_1User_a760f40bb7416e12a6e5dc8e3e7b92eee}{can\+\_\+read\+\_\+all\+\_\+group\+\_\+messages}}
+\begin{DoxyCompactList}\small\item\em Optional. True, if privacy mode is disabled for the bot. Returned only in get\+Me. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1User_a19e00e1627050830427c7f6b83f6342f}\label{structtgbot_1_1User_a19e00e1627050830427c7f6b83f6342f}} 
+bool \mbox{\hyperlink{structtgbot_1_1User_a19e00e1627050830427c7f6b83f6342f}{supports\+\_\+inline\+\_\+queries}}
+\begin{DoxyCompactList}\small\item\em Optional. True, if the bot supports inline queries. Returned only in get\+Me. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object represents a Telegram user or bot. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1User_a19e817c1a46c071577862fe1ffffd0ba}\label{structtgbot_1_1User_a19e817c1a46c071577862fe1ffffd0ba}} 
+\index{tgbot::User@{tgbot::User}!User@{User}}
+\index{User@{User}!tgbot::User@{tgbot::User}}
+\doxysubsubsection{\texorpdfstring{User()}{User()}}
+{\footnotesize\ttfamily tgbot\+::\+User\+::\+User (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1User_aec27bc50742d8d97926e5079642c3ea0}\label{structtgbot_1_1User_aec27bc50742d8d97926e5079642c3ea0}} 
+\index{tgbot::User@{tgbot::User}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::User@{tgbot::User}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+User\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/User.\+h\item 
+src/types/User.\+cpp\end{DoxyCompactItemize}

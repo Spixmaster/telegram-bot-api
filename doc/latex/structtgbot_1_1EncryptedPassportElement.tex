@@ -1,0 +1,155 @@
+\hypertarget{structtgbot_1_1EncryptedPassportElement}{}\doxysection{tgbot\+::Encrypted\+Passport\+Element Struct Reference}
+\label{structtgbot_1_1EncryptedPassportElement}\index{tgbot::EncryptedPassportElement@{tgbot::EncryptedPassportElement}}
+
+
+Contains information about documents or other Telegram Passport elements shared with the bot by the user.  
+
+
+
+
+{\ttfamily \#include $<$Encrypted\+Passport\+Element.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1EncryptedPassportElement_ae12d9b13574094d17dc9134eb8ec159b}\label{structtgbot_1_1EncryptedPassportElement_ae12d9b13574094d17dc9134eb8ec159b}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1EncryptedPassportElement}{Encrypted\+Passport\+Element}} $>$ \mbox{\hyperlink{structtgbot_1_1EncryptedPassportElement_ae12d9b13574094d17dc9134eb8ec159b}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1EncryptedPassportElement_a06c5b5ed48796867f230b9fac2acad3a}{Encrypted\+Passport\+Element}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1EncryptedPassportElement_a7c634697a490c494ec39fa2f887aa382}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1EncryptedPassportElement_ac4d25e1e14f73ce7f46409775cfcbda5}\label{structtgbot_1_1EncryptedPassportElement_ac4d25e1e14f73ce7f46409775cfcbda5}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1EncryptedPassportElement_ac4d25e1e14f73ce7f46409775cfcbda5}{type}}
+\begin{DoxyCompactList}\small\item\em Element type. One of “personal\+\_\+details”, “passport”, “driver\+\_\+license”, “identity\+\_\+card”, “internal\+\_\+passport”, “address”, “utility\+\_\+bill”, “bank\+\_\+statement”, “rental\+\_\+agreement”, “passport\+\_\+registration”, “temporary\+\_\+registration”, “phone\+\_\+number”, “email”. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1EncryptedPassportElement_a8833cacef774619511be91640939d55a}{data}}
+\begin{DoxyCompactList}\small\item\em Optional. Base64-\/encoded encrypted Telegram Passport element data provided by the user, available for “personal\+\_\+details”, “passport”, “driver\+\_\+license”, “identity\+\_\+card”, “internal\+\_\+passport” and “address” types. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1EncryptedPassportElement_a08670d4648f159e4ba93448a9d8cfcd1}\label{structtgbot_1_1EncryptedPassportElement_a08670d4648f159e4ba93448a9d8cfcd1}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1EncryptedPassportElement_a08670d4648f159e4ba93448a9d8cfcd1}{phone\+\_\+number}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1User}{User}}\textquotesingle{}s verified phone number, available only for “phone\+\_\+number” type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1EncryptedPassportElement_a21bb195e6a5b9fe36ccbb10f2ddbf0f8}\label{structtgbot_1_1EncryptedPassportElement_a21bb195e6a5b9fe36ccbb10f2ddbf0f8}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1EncryptedPassportElement_a21bb195e6a5b9fe36ccbb10f2ddbf0f8}{email}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1User}{User}}\textquotesingle{}s verified email address, available only for “email” type. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1PassportFile_a7559ce874257a134841915da5564f047}{Passport\+File\+::ptr}} $>$ \mbox{\hyperlink{structtgbot_1_1EncryptedPassportElement_a7a898d88c48e32a810602cc8582a62cb}{files}}
+\begin{DoxyCompactList}\small\item\em Optional. Array of encrypted files with documents provided by the user, available for “utility\+\_\+bill”, “bank\+\_\+statement”, “rental\+\_\+agreement”, “passport\+\_\+registration” and “temporary\+\_\+registration” types. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1PassportFile_a7559ce874257a134841915da5564f047}{Passport\+File\+::ptr}} \mbox{\hyperlink{structtgbot_1_1EncryptedPassportElement_a52814440cb7ee33063cb5416c33d078c}{front\+\_\+side}}
+\begin{DoxyCompactList}\small\item\em Optional. Encrypted file with the front side of the document, provided by the user. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1PassportFile_a7559ce874257a134841915da5564f047}{Passport\+File\+::ptr}} \mbox{\hyperlink{structtgbot_1_1EncryptedPassportElement_a0a3fbe3987638edee8196bf964b6ffc0}{reverse\+\_\+side}}
+\begin{DoxyCompactList}\small\item\em Optional. Encrypted file with the reverse side of the document, provided by the user. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1PassportFile_a7559ce874257a134841915da5564f047}{Passport\+File\+::ptr}} \mbox{\hyperlink{structtgbot_1_1EncryptedPassportElement_a61893d268c6c3a2a04ca7bd704c5c9ae}{selfie}}
+\begin{DoxyCompactList}\small\item\em Optional. Encrypted file with the selfie of the user holding a document, provided by the user; available for “passport”, “driver\+\_\+license”, “identity\+\_\+card” and “internal\+\_\+passport”. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1PassportFile_a7559ce874257a134841915da5564f047}{Passport\+File\+::ptr}} $>$ \mbox{\hyperlink{structtgbot_1_1EncryptedPassportElement_ad1e75dd7803c3320f62d4c6edfcfcf8e}{translation}}
+\begin{DoxyCompactList}\small\item\em Optional. Array of encrypted files with translated versions of documents provided by the user. Available if requested for “passport”, “driver\+\_\+license”, “identity\+\_\+card”, “internal\+\_\+passport”, “utility\+\_\+bill”, “bank\+\_\+statement”, “rental\+\_\+agreement”, “passport\+\_\+registration” and “temporary\+\_\+registration” types. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1EncryptedPassportElement_a58d83c4b4d62482427c0717baf2b1586}\label{structtgbot_1_1EncryptedPassportElement_a58d83c4b4d62482427c0717baf2b1586}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1EncryptedPassportElement_a58d83c4b4d62482427c0717baf2b1586}{hash}}
+\begin{DoxyCompactList}\small\item\em Base64-\/encoded element hash for using in \mbox{\hyperlink{structtgbot_1_1PassportElementErrorUnspecified}{Passport\+Element\+Error\+Unspecified}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains information about documents or other Telegram Passport elements shared with the bot by the user. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1EncryptedPassportElement_a06c5b5ed48796867f230b9fac2acad3a}\label{structtgbot_1_1EncryptedPassportElement_a06c5b5ed48796867f230b9fac2acad3a}} 
+\index{tgbot::EncryptedPassportElement@{tgbot::EncryptedPassportElement}!EncryptedPassportElement@{EncryptedPassportElement}}
+\index{EncryptedPassportElement@{EncryptedPassportElement}!tgbot::EncryptedPassportElement@{tgbot::EncryptedPassportElement}}
+\doxysubsubsection{\texorpdfstring{EncryptedPassportElement()}{EncryptedPassportElement()}}
+{\footnotesize\ttfamily tgbot\+::\+Encrypted\+Passport\+Element\+::\+Encrypted\+Passport\+Element (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1EncryptedPassportElement_a7c634697a490c494ec39fa2f887aa382}\label{structtgbot_1_1EncryptedPassportElement_a7c634697a490c494ec39fa2f887aa382}} 
+\index{tgbot::EncryptedPassportElement@{tgbot::EncryptedPassportElement}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::EncryptedPassportElement@{tgbot::EncryptedPassportElement}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Encrypted\+Passport\+Element\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structtgbot_1_1EncryptedPassportElement_a8833cacef774619511be91640939d55a}\label{structtgbot_1_1EncryptedPassportElement_a8833cacef774619511be91640939d55a}} 
+\index{tgbot::EncryptedPassportElement@{tgbot::EncryptedPassportElement}!data@{data}}
+\index{data@{data}!tgbot::EncryptedPassportElement@{tgbot::EncryptedPassportElement}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily tgbot\+::\+Encrypted\+Passport\+Element\+::data}
+
+
+
+Optional. Base64-\/encoded encrypted Telegram Passport element data provided by the user, available for “personal\+\_\+details”, “passport”, “driver\+\_\+license”, “identity\+\_\+card”, “internal\+\_\+passport” and “address” types. 
+
+Can be decrypted and verified using the accompanying \mbox{\hyperlink{structtgbot_1_1EncryptedCredentials}{Encrypted\+Credentials}}. \mbox{\Hypertarget{structtgbot_1_1EncryptedPassportElement_a7a898d88c48e32a810602cc8582a62cb}\label{structtgbot_1_1EncryptedPassportElement_a7a898d88c48e32a810602cc8582a62cb}} 
+\index{tgbot::EncryptedPassportElement@{tgbot::EncryptedPassportElement}!files@{files}}
+\index{files@{files}!tgbot::EncryptedPassportElement@{tgbot::EncryptedPassportElement}}
+\doxysubsubsection{\texorpdfstring{files}{files}}
+{\footnotesize\ttfamily tgbot\+::\+Encrypted\+Passport\+Element\+::files}
+
+
+
+Optional. Array of encrypted files with documents provided by the user, available for “utility\+\_\+bill”, “bank\+\_\+statement”, “rental\+\_\+agreement”, “passport\+\_\+registration” and “temporary\+\_\+registration” types. 
+
+Files can be decrypted and verified using the accompanying \mbox{\hyperlink{structtgbot_1_1EncryptedCredentials}{Encrypted\+Credentials}}. \mbox{\Hypertarget{structtgbot_1_1EncryptedPassportElement_a52814440cb7ee33063cb5416c33d078c}\label{structtgbot_1_1EncryptedPassportElement_a52814440cb7ee33063cb5416c33d078c}} 
+\index{tgbot::EncryptedPassportElement@{tgbot::EncryptedPassportElement}!front\_side@{front\_side}}
+\index{front\_side@{front\_side}!tgbot::EncryptedPassportElement@{tgbot::EncryptedPassportElement}}
+\doxysubsubsection{\texorpdfstring{front\_side}{front\_side}}
+{\footnotesize\ttfamily tgbot\+::\+Encrypted\+Passport\+Element\+::front\+\_\+side}
+
+
+
+Optional. Encrypted file with the front side of the document, provided by the user. 
+
+Available for “passport”, “driver\+\_\+license”, “identity\+\_\+card” and “internal\+\_\+passport”.
+
+The file can be decrypted and verified using the accompanying \mbox{\hyperlink{structtgbot_1_1EncryptedCredentials}{Encrypted\+Credentials}}. \mbox{\Hypertarget{structtgbot_1_1EncryptedPassportElement_a0a3fbe3987638edee8196bf964b6ffc0}\label{structtgbot_1_1EncryptedPassportElement_a0a3fbe3987638edee8196bf964b6ffc0}} 
+\index{tgbot::EncryptedPassportElement@{tgbot::EncryptedPassportElement}!reverse\_side@{reverse\_side}}
+\index{reverse\_side@{reverse\_side}!tgbot::EncryptedPassportElement@{tgbot::EncryptedPassportElement}}
+\doxysubsubsection{\texorpdfstring{reverse\_side}{reverse\_side}}
+{\footnotesize\ttfamily tgbot\+::\+Encrypted\+Passport\+Element\+::reverse\+\_\+side}
+
+
+
+Optional. Encrypted file with the reverse side of the document, provided by the user. 
+
+Available for “driver\+\_\+license” and “identity\+\_\+card”. The file can be decrypted and verified using the accompanying \mbox{\hyperlink{structtgbot_1_1EncryptedCredentials}{Encrypted\+Credentials}}. \mbox{\Hypertarget{structtgbot_1_1EncryptedPassportElement_a61893d268c6c3a2a04ca7bd704c5c9ae}\label{structtgbot_1_1EncryptedPassportElement_a61893d268c6c3a2a04ca7bd704c5c9ae}} 
+\index{tgbot::EncryptedPassportElement@{tgbot::EncryptedPassportElement}!selfie@{selfie}}
+\index{selfie@{selfie}!tgbot::EncryptedPassportElement@{tgbot::EncryptedPassportElement}}
+\doxysubsubsection{\texorpdfstring{selfie}{selfie}}
+{\footnotesize\ttfamily tgbot\+::\+Encrypted\+Passport\+Element\+::selfie}
+
+
+
+Optional. Encrypted file with the selfie of the user holding a document, provided by the user; available for “passport”, “driver\+\_\+license”, “identity\+\_\+card” and “internal\+\_\+passport”. 
+
+The file can be decrypted and verified using the accompanying \mbox{\hyperlink{structtgbot_1_1EncryptedCredentials}{Encrypted\+Credentials}}. \mbox{\Hypertarget{structtgbot_1_1EncryptedPassportElement_ad1e75dd7803c3320f62d4c6edfcfcf8e}\label{structtgbot_1_1EncryptedPassportElement_ad1e75dd7803c3320f62d4c6edfcfcf8e}} 
+\index{tgbot::EncryptedPassportElement@{tgbot::EncryptedPassportElement}!translation@{translation}}
+\index{translation@{translation}!tgbot::EncryptedPassportElement@{tgbot::EncryptedPassportElement}}
+\doxysubsubsection{\texorpdfstring{translation}{translation}}
+{\footnotesize\ttfamily tgbot\+::\+Encrypted\+Passport\+Element\+::translation}
+
+
+
+Optional. Array of encrypted files with translated versions of documents provided by the user. Available if requested for “passport”, “driver\+\_\+license”, “identity\+\_\+card”, “internal\+\_\+passport”, “utility\+\_\+bill”, “bank\+\_\+statement”, “rental\+\_\+agreement”, “passport\+\_\+registration” and “temporary\+\_\+registration” types. 
+
+Files can be decrypted and verified using the accompanying \mbox{\hyperlink{structtgbot_1_1EncryptedCredentials}{Encrypted\+Credentials}}. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Encrypted\+Passport\+Element.\+h\item 
+src/types/Encrypted\+Passport\+Element.\+cpp\end{DoxyCompactItemize}

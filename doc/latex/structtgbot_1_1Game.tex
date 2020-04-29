@@ -1,0 +1,98 @@
+\hypertarget{structtgbot_1_1Game}{}\doxysection{tgbot\+::Game Struct Reference}
+\label{structtgbot_1_1Game}\index{tgbot::Game@{tgbot::Game}}
+
+
+This object represents a game. Use Bot\+Father to create and edit games, their short names will act as unique identifiers.  
+
+
+
+
+{\ttfamily \#include $<$Game.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1Game_a2ac15d02b3f03e2236b04992a568bed2}\label{structtgbot_1_1Game_a2ac15d02b3f03e2236b04992a568bed2}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1Game}{Game}} $>$ \mbox{\hyperlink{structtgbot_1_1Game_a2ac15d02b3f03e2236b04992a568bed2}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1Game_ab78501159edb3d969302a4556ec605a4}{Game}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Game_a87c3bf381544fd0e5c9e054e7075d694}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1Game_a34042b117f155475f4a7f6c823218d6b}\label{structtgbot_1_1Game_a34042b117f155475f4a7f6c823218d6b}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Game_a34042b117f155475f4a7f6c823218d6b}{title}}
+\begin{DoxyCompactList}\small\item\em Title of the game. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Game_a3d44adcb5d0766e0f93089af00cb3171}\label{structtgbot_1_1Game_a3d44adcb5d0766e0f93089af00cb3171}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Game_a3d44adcb5d0766e0f93089af00cb3171}{description}}
+\begin{DoxyCompactList}\small\item\em Description of the game. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Game_a60cd3ab0ac3ad194d90428997a392d89}\label{structtgbot_1_1Game_a60cd3ab0ac3ad194d90428997a392d89}} 
+std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1PhotoSize_a5c9e46410c663fda470caa5f806781ad}{Photo\+Size\+::ptr}} $>$ \mbox{\hyperlink{structtgbot_1_1Game_a60cd3ab0ac3ad194d90428997a392d89}{photo}}
+\begin{DoxyCompactList}\small\item\em Photo that will be displayed in the game message in chats. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Game_a5ab33f291c7dcaf462b1af611ecf52db}{text}}
+\begin{DoxyCompactList}\small\item\em Optional. Brief description of the game or high scores included in the game message. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Game_ab644ae1cddc5f7d35c2d871d6bf3c52a}\label{structtgbot_1_1Game_ab644ae1cddc5f7d35c2d871d6bf3c52a}} 
+std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1MessageEntity_adb3329790c86913dfc3ca0805ce548ca}{Message\+Entity\+::ptr}} $>$ \mbox{\hyperlink{structtgbot_1_1Game_ab644ae1cddc5f7d35c2d871d6bf3c52a}{text\+\_\+entities}}
+\begin{DoxyCompactList}\small\item\em Optional. Special entities that appear in text, such as usernames, U\+R\+Ls, bot commands, etc. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Game_aa6cc9368548abe90e609343f93aefd0b}\label{structtgbot_1_1Game_aa6cc9368548abe90e609343f93aefd0b}} 
+\mbox{\hyperlink{structtgbot_1_1Animation_af6a3da3a547cb4edf8bd2e2cf4d73998}{Animation\+::ptr}} \mbox{\hyperlink{structtgbot_1_1Game_aa6cc9368548abe90e609343f93aefd0b}{animation}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1Animation}{Animation}} that will be displayed in the game message in chats. Upload via Bot\+Father. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object represents a game. Use Bot\+Father to create and edit games, their short names will act as unique identifiers. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1Game_ab78501159edb3d969302a4556ec605a4}\label{structtgbot_1_1Game_ab78501159edb3d969302a4556ec605a4}} 
+\index{tgbot::Game@{tgbot::Game}!Game@{Game}}
+\index{Game@{Game}!tgbot::Game@{tgbot::Game}}
+\doxysubsubsection{\texorpdfstring{Game()}{Game()}}
+{\footnotesize\ttfamily tgbot\+::\+Game\+::\+Game (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1Game_a87c3bf381544fd0e5c9e054e7075d694}\label{structtgbot_1_1Game_a87c3bf381544fd0e5c9e054e7075d694}} 
+\index{tgbot::Game@{tgbot::Game}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::Game@{tgbot::Game}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Game\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structtgbot_1_1Game_a5ab33f291c7dcaf462b1af611ecf52db}\label{structtgbot_1_1Game_a5ab33f291c7dcaf462b1af611ecf52db}} 
+\index{tgbot::Game@{tgbot::Game}!text@{text}}
+\index{text@{text}!tgbot::Game@{tgbot::Game}}
+\doxysubsubsection{\texorpdfstring{text}{text}}
+{\footnotesize\ttfamily tgbot\+::\+Game\+::text}
+
+
+
+Optional. Brief description of the game or high scores included in the game message. 
+
+Can be automatically edited to include current high scores for the game when the bot calls set\+Game\+Score, or manually edited using edit\+Message\+Text.
+
+0-\/4096 characters. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Game.\+h\item 
+src/types/Game.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,131 @@
+\hypertarget{structtgbot_1_1InputMediaPhoto}{}\doxysection{tgbot\+::Input\+Media\+Photo Struct Reference}
+\label{structtgbot_1_1InputMediaPhoto}\index{tgbot::InputMediaPhoto@{tgbot::InputMediaPhoto}}
+
+
+Represents a photo to be sent.  
+
+
+
+
+{\ttfamily \#include $<$Input\+Media\+Photo.\+h$>$}
+
+
+
+Inheritance diagram for tgbot\+::Input\+Media\+Photo\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{structtgbot_1_1InputMediaPhoto__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for tgbot\+::Input\+Media\+Photo\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{structtgbot_1_1InputMediaPhoto__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InputMediaPhoto_a325ae4c1bd64b2b32c46e3fd06dec2a8}\label{structtgbot_1_1InputMediaPhoto_a325ae4c1bd64b2b32c46e3fd06dec2a8}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1InputMediaPhoto}{Input\+Media\+Photo}} $>$ \mbox{\hyperlink{structtgbot_1_1InputMediaPhoto_a325ae4c1bd64b2b32c46e3fd06dec2a8}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1InputMediaPhoto_a7a397e66460d7a0de4bf0db84c6d43cc}{Input\+Media\+Photo}} (const std\+::string \&json)
+\item 
+\mbox{\hyperlink{structtgbot_1_1InputMediaPhoto_a31ba3b8d4b7d352e1b06d4a51207ddde}{Input\+Media\+Photo}} (const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&\mbox{\hyperlink{structtgbot_1_1InputMediaPhoto_a94f80f543c9e4688c274a4dfc6258e46}{media}}, const std\+::string \&\mbox{\hyperlink{structtgbot_1_1InputMediaPhoto_a50e6293a1375653098d716260ce710b5}{caption}}=\char`\"{}\char`\"{}, const std\+::string \&\mbox{\hyperlink{structtgbot_1_1InputMediaPhoto_a2dc34b30f5de500eb00caf2bd296107c}{parse\+\_\+mode}}=\char`\"{}\char`\"{})
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InputMediaPhoto_aa01a378878b03bd340f7d043c08e0ff4}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InputMediaPhoto_ab2debad894fb3644331f145e4cad0aaa}\label{structtgbot_1_1InputMediaPhoto_ab2debad894fb3644331f145e4cad0aaa}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InputMediaPhoto_ab2debad894fb3644331f145e4cad0aaa}{type}}
+\begin{DoxyCompactList}\small\item\em Type of the result, must be photo. \end{DoxyCompactList}\item 
+std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \mbox{\hyperlink{structtgbot_1_1InputMediaPhoto_a94f80f543c9e4688c274a4dfc6258e46}{media}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structtgbot_1_1File}{File}} to send. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InputMediaPhoto_a50e6293a1375653098d716260ce710b5}\label{structtgbot_1_1InputMediaPhoto_a50e6293a1375653098d716260ce710b5}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InputMediaPhoto_a50e6293a1375653098d716260ce710b5}{caption}}
+\begin{DoxyCompactList}\small\item\em Optional. Caption of the photo to be sent, 0-\/1024 characters after entities parsing. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InputMediaPhoto_a2dc34b30f5de500eb00caf2bd296107c}\label{structtgbot_1_1InputMediaPhoto_a2dc34b30f5de500eb00caf2bd296107c}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InputMediaPhoto_a2dc34b30f5de500eb00caf2bd296107c}{parse\+\_\+mode}}
+\begin{DoxyCompactList}\small\item\em Optional. Mode for parsing entities in the photo caption. See formatting options for more details. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a photo to be sent. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InputMediaPhoto_a7a397e66460d7a0de4bf0db84c6d43cc}\label{structtgbot_1_1InputMediaPhoto_a7a397e66460d7a0de4bf0db84c6d43cc}} 
+\index{tgbot::InputMediaPhoto@{tgbot::InputMediaPhoto}!InputMediaPhoto@{InputMediaPhoto}}
+\index{InputMediaPhoto@{InputMediaPhoto}!tgbot::InputMediaPhoto@{tgbot::InputMediaPhoto}}
+\doxysubsubsection{\texorpdfstring{InputMediaPhoto()}{InputMediaPhoto()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily tgbot\+::\+Input\+Media\+Photo\+::\+Input\+Media\+Photo (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structtgbot_1_1InputMediaPhoto_a31ba3b8d4b7d352e1b06d4a51207ddde}\label{structtgbot_1_1InputMediaPhoto_a31ba3b8d4b7d352e1b06d4a51207ddde}} 
+\index{tgbot::InputMediaPhoto@{tgbot::InputMediaPhoto}!InputMediaPhoto@{InputMediaPhoto}}
+\index{InputMediaPhoto@{InputMediaPhoto}!tgbot::InputMediaPhoto@{tgbot::InputMediaPhoto}}
+\doxysubsubsection{\texorpdfstring{InputMediaPhoto()}{InputMediaPhoto()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily tgbot\+::\+Input\+Media\+Photo\+::\+Input\+Media\+Photo (\begin{DoxyParamCaption}\item[{const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&}]{media,  }\item[{const std\+::string \&}]{caption = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const std\+::string \&}]{parse\+\_\+mode = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em media} & Passed to the member variable. \\
+\hline
+\mbox{\texttt{ in}}  & {\em caption} & Passed to the member variable. \\
+\hline
+\mbox{\texttt{ in}}  & {\em parse\+\_\+mode} & Passed to the member variable. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InputMediaPhoto_aa01a378878b03bd340f7d043c08e0ff4}\label{structtgbot_1_1InputMediaPhoto_aa01a378878b03bd340f7d043c08e0ff4}} 
+\index{tgbot::InputMediaPhoto@{tgbot::InputMediaPhoto}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::InputMediaPhoto@{tgbot::InputMediaPhoto}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Input\+Media\+Photo\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{structtgbot_1_1InputMedia_ae42bebbfee905e8d217abdc1ddfe9b5e}{tgbot\+::\+Input\+Media}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InputMediaPhoto_a94f80f543c9e4688c274a4dfc6258e46}\label{structtgbot_1_1InputMediaPhoto_a94f80f543c9e4688c274a4dfc6258e46}} 
+\index{tgbot::InputMediaPhoto@{tgbot::InputMediaPhoto}!media@{media}}
+\index{media@{media}!tgbot::InputMediaPhoto@{tgbot::InputMediaPhoto}}
+\doxysubsubsection{\texorpdfstring{media}{media}}
+{\footnotesize\ttfamily tgbot\+::\+Input\+Media\+Photo\+::media}
+
+
+
+\mbox{\hyperlink{structtgbot_1_1File}{File}} to send. 
+
+Pass a file\+\_\+id to send a file that exists on the Telegram servers (recommended), pass an H\+T\+TP U\+RL for Telegram to get a file from the Internet, or pass “attach\+://$<$file\+\_\+attach\+\_\+name$>$” to upload a new one using multipart/form-\/data under $<$file\+\_\+attach\+\_\+name$>$ name. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Input\+Media\+Photo.\+h\item 
+src/types/Input\+Media\+Photo.\+cpp\end{DoxyCompactItemize}
