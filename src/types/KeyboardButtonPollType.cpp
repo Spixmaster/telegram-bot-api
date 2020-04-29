@@ -14,24 +14,24 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("type"))
 			{
 				if(doc["type"].IsString())
 					type = doc["type"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("type") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("type"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string KeyboardButtonPollType::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field file_id
+		//Field file_id
 		json.append("\"type\": \"" + type + "\"");
 
 		json.append("}");

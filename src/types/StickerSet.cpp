@@ -15,13 +15,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("name"))
 			{
 				if(doc["name"].IsString())
 					name = doc["name"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("name") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("name"));
 			}
 
 			if(doc.HasMember("title"))
@@ -29,7 +29,7 @@ namespace tgbot
 				if(doc["title"].IsString())
 					title = doc["title"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("title") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("title"));
 			}
 
 			if(doc.HasMember("is_animated"))
@@ -37,7 +37,7 @@ namespace tgbot
 				if(doc["is_animated"].IsBool())
 					is_animated = doc["is_animated"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("is_animated") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("is_animated"));
 			}
 
 			if(doc.HasMember("contains_masks"))
@@ -45,7 +45,7 @@ namespace tgbot
 				if(doc["contains_masks"].IsBool())
 					contains_masks = doc["contains_masks"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("contains_masks") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("contains_masks"));
 			}
 
 			if(doc.HasMember("sticker"))
@@ -59,11 +59,11 @@ namespace tgbot
 						if(doc["sticker"][j].IsObject())
 							sticker.at(j) = std::make_shared<Sticker>(tools::Tools::get_json_as_string(doc["sticker"][j]));
 						else
-							std::cerr << Messages::field_element_does_not_contain_json_obj("sticker") << std::endl;
+							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("sticker"));
 					}
 				}
 				else
-					std::cerr << Messages::field_does_not_contain_json_arr("sticker") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("sticker"));
 			}
 
 			if(doc.HasMember("thumb"))
@@ -71,36 +71,36 @@ namespace tgbot
 				if(doc["thumb"].IsObject())
 					thumb = std::make_shared<PhotoSize>(tools::Tools::get_json_as_string(doc["thumb"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("thumb") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("thumb"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string StickerSet::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field name
+		//Field name
 		json.append("\"name\": \"" + name + "\"");
 		json.append(", ");
 
-		//field title
+		//Field title
 		json.append("\"title\": \"" + title + "\"");
 		json.append(", ");
 
-		//field is_animated
+		//Field is_animated
 		std::string is_animated_bool = is_animated ? "true" : "false";
 		json.append("\"is_animated\": " + is_animated_bool);
 		json.append(", ");
 
-		//field contains_masks
+		//Field contains_masks
 		std::string contains_masks_bool = contains_masks ? "true" : "false";
 		json.append("\"contains_masks\": " + contains_masks_bool);
 		json.append(", ");
 
-		//field sticker
+		//Field sticker
 		std::string sticker_cont = "[";
 		for(std::size_t j = 0; j < sticker.size(); ++j)
 		{
@@ -123,7 +123,7 @@ namespace tgbot
 		json.append("\"sticker\": \"" + sticker_cont + "\"");
 		json.append(", ");
 
-		//field thumb
+		//Field thumb
 		json.append("\"thumb\": " + thumb->parse_to_json());
 
 		json.append("}");

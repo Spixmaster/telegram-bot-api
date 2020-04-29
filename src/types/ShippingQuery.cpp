@@ -15,13 +15,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("id"))
 			{
 				if(doc["id"].IsString())
 					id = doc["id"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("id") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("id"));
 			}
 
 			if(doc.HasMember("from"))
@@ -29,7 +29,7 @@ namespace tgbot
 				if(doc["from"].IsObject())
 					from = std::make_shared<User>(tools::Tools::get_json_as_string(doc["from"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("from") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("from"));
 			}
 
 			if(doc.HasMember("invoice_payload"))
@@ -37,7 +37,7 @@ namespace tgbot
 				if(doc["invoice_payload"].IsString())
 					invoice_payload = doc["invoice_payload"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("invoice_payload") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("invoice_payload"));
 			}
 
 			if(doc.HasMember("shipping_address"))
@@ -45,30 +45,30 @@ namespace tgbot
 				if(doc["shipping_address"].IsObject())
 					shipping_address = std::make_shared<ShippingAddress>(tools::Tools::get_json_as_string(doc["shipping_address"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("shipping_address") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("shipping_address"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string ShippingQuery::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field id
+		//Field id
 		json.append("\"id\": \"" + id + "\"");
 		json.append(", ");
 
-		//field from
+		//Field from
 		json.append("\"from\": " + from->parse_to_json());
 		json.append(", ");
 
-		//field invoice_payload
+		//Field invoice_payload
 		json.append("\"invoice_payload\": \"" + invoice_payload + "\"");
 		json.append(", ");
 
-		//field shipping_address
+		//Field shipping_address
 		json.append("\"shipping_address\": " + shipping_address->parse_to_json());
 
 		json.append("}");

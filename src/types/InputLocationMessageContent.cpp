@@ -16,13 +16,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("latitude"))
 			{
 				if(doc["latitude"].IsFloat())
 					latitude = doc["latitude"].GetFloat();
 				else
-					std::cerr << Messages::field_does_not_contain_float("latitude") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_float("latitude"));
 			}
 
 			if(doc.HasMember("longitude"))
@@ -30,7 +30,7 @@ namespace tgbot
 				if(doc["longitude"].IsFloat())
 					longitude = doc["longitude"].GetFloat();
 				else
-					std::cerr << Messages::field_does_not_contain_float("longitude") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_float("longitude"));
 			}
 
 			if(doc.HasMember("live_period"))
@@ -38,26 +38,26 @@ namespace tgbot
 				if(doc["live_period"].IsInt())
 					live_period = doc["live_period"].GetInt();
 				else
-					std::cerr << Messages::field_does_not_contain_int("live_period") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_int("live_period"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string InputLocationMessageContent::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field latitude
+		//Field latitude
 		json.append("\"latitude\": " + std::to_string(latitude));
 		json.append(", ");
 
-		//field longitude
+		//Field longitude
 		json.append("\"longitude\": " + std::to_string(longitude));
 		json.append(", ");
 
-		//field live_period
+		//Field live_period
 		json.append("\"live_period\": " + live_period);
 
 		json.append("}");

@@ -16,7 +16,7 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("keyboard"))
 			{
 				if(doc["keyboard"].IsArray())
@@ -38,15 +38,15 @@ namespace tgbot
 								if(keyboard_array[row][column].IsObject())
 									keyboard.at(row).at(column) = std::make_shared<KeyboardButton>(tools::Tools::get_json_as_string(keyboard_array[row][column]));
 								else
-									std::cerr << Messages::field_element_element_does_not_contain_json_obj("keyboard") << std::endl;
+									tools::Tools::write_err_log(Messages::field_element_element_does_not_contain_json_obj("keyboard"));
 							}
 						}
 						else
-							std::cerr << Messages::field_element_does_not_contain_json_arr("keyboard") << std::endl;
+							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_arr("keyboard"));
 					}
 				}
 				else
-					std::cerr << Messages::field_does_not_contain_json_arr("keyboard") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("keyboard"));
 			}
 
 			if(doc.HasMember("resize_keyboard"))
@@ -54,7 +54,7 @@ namespace tgbot
 				if(doc["resize_keyboard"].IsBool())
 					resize_keyboard = doc["resize_keyboard"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("resize_keyboard") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("resize_keyboard"));
 			}
 
 			if(doc.HasMember("one_time_keyboard"))
@@ -62,7 +62,7 @@ namespace tgbot
 				if(doc["one_time_keyboard"].IsBool())
 					one_time_keyboard = doc["one_time_keyboard"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("one_time_keyboard") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("one_time_keyboard"));
 			}
 
 			if(doc.HasMember("selective"))
@@ -70,11 +70,11 @@ namespace tgbot
 				if(doc["selective"].IsBool())
 					selective = doc["selective"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("selective") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("selective"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	ReplyKeyboardMarkup::ReplyKeyboardMarkup(const std::vector<std::vector<KeyboardButton::ptr>> &keyboard) : keyboard(keyboard), resize_keyboard(), one_time_keyboard(),
@@ -127,17 +127,17 @@ namespace tgbot
 
 		json.append("], ");
 
-		//field resize_keyboard
+		//Field resize_keyboard
 		std::string resize_keyboard_bool = resize_keyboard ? "true" : "false";
 		json.append("\"resize_keyboard\": " + resize_keyboard_bool);
 		json.append(", ");
 
-		//field one_time_keyboard
+		//Field one_time_keyboard
 		std::string one_time_keyboard_bool = one_time_keyboard ? "true" : "false";
 		json.append("\"one_time_keyboard\": " + one_time_keyboard_bool);
 		json.append(", ");
 
-		//field selective
+		//Field selective
 		std::string selective_bool = selective ? "true" : "false";
 		json.append("\"selective\": " + selective_bool);
 

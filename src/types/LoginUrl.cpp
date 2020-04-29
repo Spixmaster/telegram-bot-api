@@ -16,13 +16,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("url"))
 			{
 				if(doc["url"].IsString())
 					url = doc["url"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("url") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("url"));
 			}
 
 			if(doc.HasMember("forward_text"))
@@ -30,7 +30,7 @@ namespace tgbot
 				if(doc["forward_text"].IsString())
 					forward_text = doc["forward_text"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("forward_text") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("forward_text"));
 			}
 
 			if(doc.HasMember("bot_username"))
@@ -38,7 +38,7 @@ namespace tgbot
 				if(doc["bot_username"].IsString())
 					bot_username = doc["bot_username"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("bot_username") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("bot_username"));
 			}
 
 			if(doc.HasMember("request_write_access"))
@@ -46,30 +46,30 @@ namespace tgbot
 				if(doc["request_write_access"].IsBool())
 					request_write_access = doc["request_write_access"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("request_write_access") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("request_write_access"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string LoginUrl::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field url
+		//Field url
 		json.append("\"url\": \"" + url + "\"");
 		json.append(", ");
 
-		//field forward_text
+		//Field forward_text
 		json.append("\"forward_text\": \"" + forward_text + "\"");
 		json.append(", ");
 
-		//field bot_username
+		//Field bot_username
 		json.append("\"bot_username\": \"" + bot_username + "\"");
 		json.append(", ");
 
-		//field request_write_access
+		//Field request_write_access
 		std::string request_write_access_bool = request_write_access ? "true" : "false";
 		json.append("\"request_write_access\": " + request_write_access_bool);
 

@@ -15,13 +15,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("longitude"))
 			{
 				if(doc["longitude"].IsFloat())
 					longitude = doc["longitude"].GetFloat();
 				else
-					std::cerr << Messages::field_does_not_contain_float("longitude") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_float("longitude"));
 			}
 
 			if(doc.HasMember("latitude"))
@@ -29,22 +29,22 @@ namespace tgbot
 				if(doc["latitude"].IsFloat())
 					latitude = doc["latitude"].GetFloat();
 				else
-					std::cerr << Messages::field_does_not_contain_float("latitude") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_float("latitude"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string Location::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field longitude
+		//Field longitude
 		json.append("\"longitude\": " + std::to_string(longitude));
 		json.append(", ");
 
-		//field latitude
+		//Field latitude
 		json.append("\"latitude\": " + std::to_string(latitude));
 
 		json.append("}");

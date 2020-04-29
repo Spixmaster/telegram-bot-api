@@ -16,13 +16,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("point"))
 			{
 				if(doc["point"].IsString())
 					point = doc["point"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("point") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("point"));
 			}
 
 			if(doc.HasMember("x_shift"))
@@ -30,7 +30,7 @@ namespace tgbot
 				if(doc["x_shift"].IsFloat())
 					x_shift = doc["x_shift"].GetFloat();
 				else
-					std::cerr << Messages::field_does_not_contain_float("x_shift") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_float("x_shift"));
 			}
 
 			if(doc.HasMember("y_shift"))
@@ -38,7 +38,7 @@ namespace tgbot
 				if(doc["y_shift"].IsFloat())
 					y_shift = doc["y_shift"].GetFloat();
 				else
-					std::cerr << Messages::field_does_not_contain_float("y_shift") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_float("y_shift"));
 			}
 
 			if(doc.HasMember("scale"))
@@ -46,30 +46,30 @@ namespace tgbot
 				if(doc["scale"].IsFloat())
 					scale = doc["scale"].GetFloat();
 				else
-					std::cerr << Messages::field_does_not_contain_float("scale") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_float("scale"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string MaskPosition::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field point
+		//Field point
 		json.append("\"point\": \"" + point + "\"");
 		json.append(", ");
 
-		//field x_shift
+		//Field x_shift
 		json.append("\"x_shift\": " + std::to_string(x_shift));
 		json.append(", ");
 
-		//field y_shift
+		//Field y_shift
 		json.append("\"y_shift\": " + std::to_string(y_shift));
 		json.append(", ");
 
-		//field scale
+		//Field scale
 		json.append("\"scale\": " + std::to_string(scale));
 
 		json.append("}");

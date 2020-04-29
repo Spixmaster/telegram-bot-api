@@ -16,13 +16,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("phone_number"))
 			{
 				if(doc["phone_number"].IsString())
 					phone_number = doc["phone_number"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("phone_number") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("phone_number"));
 			}
 
 			if(doc.HasMember("first_name"))
@@ -30,7 +30,7 @@ namespace tgbot
 				if(doc["first_name"].IsString())
 					first_name = doc["first_name"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("first_name") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("first_name"));
 			}
 
 			if(doc.HasMember("last_name"))
@@ -38,7 +38,7 @@ namespace tgbot
 				if(doc["last_name"].IsString())
 					last_name = doc["last_name"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("last_name") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("last_name"));
 			}
 
 			if(doc.HasMember("vcard"))
@@ -46,30 +46,30 @@ namespace tgbot
 				if(doc["vcard"].IsString())
 					vcard = doc["vcard"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("vcard") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("vcard"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string InputContactMessageContent::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field phone_number
+		//Field phone_number
 		json.append("\"phone_number\": \"" + phone_number + "\"");
 		json.append(", ");
 
-		//field first_name
+		//Field first_name
 		json.append("\"first_name\": \"" + first_name + "\"");
 		json.append(", ");
 
-		//field last_name
+		//Field last_name
 		json.append("\"last_name\": \"" + last_name + "\"");
 		json.append(", ");
 
-		//field vcard
+		//Field vcard
 		json.append("\"vcard\": \"" + vcard + "\"");
 
 		json.append("}");

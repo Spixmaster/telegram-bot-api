@@ -16,13 +16,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("title"))
 			{
 				if(doc["title"].IsString())
 					title = doc["title"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("title") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("title"));
 			}
 
 			if(doc.HasMember("description"))
@@ -30,7 +30,7 @@ namespace tgbot
 				if(doc["description"].IsString())
 					description = doc["description"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("description") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("description"));
 			}
 
 			if(doc.HasMember("start_parameter"))
@@ -38,7 +38,7 @@ namespace tgbot
 				if(doc["start_parameter"].IsString())
 					start_parameter = doc["start_parameter"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("start_parameter") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("start_parameter"));
 			}
 
 			if(doc.HasMember("currency"))
@@ -46,7 +46,7 @@ namespace tgbot
 				if(doc["currency"].IsString())
 					currency = doc["currency"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("currency") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("currency"));
 			}
 
 			if(doc.HasMember("total_amount"))
@@ -54,34 +54,34 @@ namespace tgbot
 				if(doc["total_amount"].IsInt())
 					total_amount = doc["total_amount"].GetInt();
 				else
-					std::cerr << Messages::field_does_not_contain_int("total_amount") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_int("total_amount"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string Invoice::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field title
+		//Field title
 		json.append("\"title\": \"" + title + "\"");
 		json.append(", ");
 
-		//field description
+		//Field description
 		json.append("\"description\": \"" + description + "\"");
 		json.append(", ");
 
-		//field start_parameter
+		//Field start_parameter
 		json.append("\"start_parameter\": \"" + start_parameter + "\"");
 		json.append(", ");
 
-		//field currency
+		//Field currency
 		json.append("\"currency\": \"" + currency + "\"");
 		json.append(", ");
 
-		//field total_amount
+		//Field total_amount
 		json.append("\"total_amount\": " + total_amount);
 
 		json.append("}");

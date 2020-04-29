@@ -64,13 +64,13 @@ namespace tgbot
 						updates.push_back(std::make_shared<Update>(tools::Tools::get_json_as_string(array[j])));
 				}
 				else
-					std::cerr << Messages::field_does_not_contain_json_arr("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("result"));
 			}
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		}
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return updates;
 	}
@@ -119,11 +119,11 @@ namespace tgbot
 				if(doc["result"].IsBool())
 					return doc["result"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -141,11 +141,11 @@ namespace tgbot
 				if(doc["result"].IsBool())
 					return doc["result"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -165,11 +165,11 @@ namespace tgbot
 				if(doc["result"].IsObject())
 					webhook_info = std::make_shared<WebhookInfo>(tools::Tools::get_json_as_string(doc["result"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return webhook_info;
 	}
@@ -189,11 +189,11 @@ namespace tgbot
 				if(doc["result"].IsObject())
 					usr = std::make_shared<User>(tools::Tools::get_json_as_string(doc["result"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return usr;
 	}
@@ -224,11 +224,11 @@ namespace tgbot
 				if(doc["result"].IsObject())
 					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -255,11 +255,11 @@ namespace tgbot
 				if(doc["result"].IsObject())
 					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -292,11 +292,11 @@ namespace tgbot
 					if(doc["result"].IsObject())
 						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 					else
-						std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+						tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 				else
-					std::cerr << Messages::field_non_existent("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_non_existent("result"));
 			else
-				std::cerr << Messages::server_resp_not_json_object << std::endl;
+				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 			return msg;
 		}
@@ -325,11 +325,11 @@ namespace tgbot
 					if(doc["result"].IsObject())
 						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 					else
-						std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+						tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 				else
-					std::cerr << Messages::field_non_existent("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_non_existent("result"));
 			else
-				std::cerr << Messages::server_resp_not_json_object << std::endl;
+				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 			return msg;
 		}
@@ -372,11 +372,11 @@ namespace tgbot
 					if(doc["result"].IsObject())
 						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 					else
-						std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+						tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 				else
-					std::cerr << Messages::field_non_existent("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_non_existent("result"));
 			else
-				std::cerr << Messages::server_resp_not_json_object << std::endl;
+				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 			return msg;
 		}
@@ -409,11 +409,11 @@ namespace tgbot
 					if(doc["result"].IsObject())
 						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 					else
-						std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+						tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 				else
-					std::cerr << Messages::field_non_existent("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_non_existent("result"));
 			else
-				std::cerr << Messages::server_resp_not_json_object << std::endl;
+				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 			return msg;
 		}
@@ -446,11 +446,11 @@ namespace tgbot
 					if(doc["result"].IsObject())
 						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 					else
-						std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+						tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 				else
-					std::cerr << Messages::field_non_existent("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_non_existent("result"));
 			else
-				std::cerr << Messages::server_resp_not_json_object << std::endl;
+				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 			return msg;
 		}
@@ -483,11 +483,11 @@ namespace tgbot
 					if(doc["result"].IsObject())
 						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 					else
-						std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+						tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 				else
-					std::cerr << Messages::field_non_existent("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_non_existent("result"));
 			else
-				std::cerr << Messages::server_resp_not_json_object << std::endl;
+				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 			return msg;
 		}
@@ -526,11 +526,11 @@ namespace tgbot
 					if(doc["result"].IsObject())
 						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 					else
-						std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+						tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 				else
-					std::cerr << Messages::field_non_existent("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_non_existent("result"));
 			else
-				std::cerr << Messages::server_resp_not_json_object << std::endl;
+				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 			return msg;
 		}
@@ -560,11 +560,11 @@ namespace tgbot
 					if(doc["result"].IsObject())
 						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 					else
-						std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+						tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 				else
-					std::cerr << Messages::field_non_existent("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_non_existent("result"));
 			else
-				std::cerr << Messages::server_resp_not_json_object << std::endl;
+				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 			return msg;
 		}
@@ -594,11 +594,11 @@ namespace tgbot
 					if(doc["result"].IsObject())
 						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 					else
-						std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+						tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 				else
-					std::cerr << Messages::field_non_existent("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_non_existent("result"));
 			else
-				std::cerr << Messages::server_resp_not_json_object << std::endl;
+				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 			return msg;
 		}
@@ -628,11 +628,11 @@ namespace tgbot
 					if(doc["result"].IsObject())
 						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 					else
-						std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+						tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 				else
-					std::cerr << Messages::field_non_existent("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_non_existent("result"));
 			else
-				std::cerr << Messages::server_resp_not_json_object << std::endl;
+				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 			return msg;
 		}
@@ -676,11 +676,11 @@ namespace tgbot
 					if(doc["result"].IsObject())
 						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 					else
-						std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+						tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 				else
-					std::cerr << Messages::field_non_existent("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_non_existent("result"));
 			else
-				std::cerr << Messages::server_resp_not_json_object << std::endl;
+				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 			return msg;
 		}
@@ -714,11 +714,11 @@ namespace tgbot
 					if(doc["result"].IsObject())
 						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 					else
-						std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+						tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 				else
-					std::cerr << Messages::field_non_existent("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_non_existent("result"));
 			else
-				std::cerr << Messages::server_resp_not_json_object << std::endl;
+				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 			return msg;
 		}
@@ -752,11 +752,11 @@ namespace tgbot
 					if(doc["result"].IsObject())
 						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 					else
-						std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+						tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 				else
-					std::cerr << Messages::field_non_existent("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_non_existent("result"));
 			else
-				std::cerr << Messages::server_resp_not_json_object << std::endl;
+				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 			return msg;
 		}
@@ -790,11 +790,11 @@ namespace tgbot
 					if(doc["result"].IsObject())
 						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 					else
-						std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+						tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 				else
-					std::cerr << Messages::field_non_existent("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_non_existent("result"));
 			else
-				std::cerr << Messages::server_resp_not_json_object << std::endl;
+				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 			return msg;
 		}
@@ -837,11 +837,11 @@ namespace tgbot
 					if(doc["result"].IsObject())
 						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 					else
-						std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+						tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 				else
-					std::cerr << Messages::field_non_existent("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_non_existent("result"));
 			else
-				std::cerr << Messages::server_resp_not_json_object << std::endl;
+				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 			return msg;
 		}
@@ -874,11 +874,11 @@ namespace tgbot
 					if(doc["result"].IsObject())
 						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 					else
-						std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+						tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 				else
-					std::cerr << Messages::field_non_existent("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_non_existent("result"));
 			else
-				std::cerr << Messages::server_resp_not_json_object << std::endl;
+				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 			return msg;
 		}
@@ -911,11 +911,11 @@ namespace tgbot
 					if(doc["result"].IsObject())
 						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 					else
-						std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+						tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 				else
-					std::cerr << Messages::field_non_existent("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_non_existent("result"));
 			else
-				std::cerr << Messages::server_resp_not_json_object << std::endl;
+				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 			return msg;
 		}
@@ -948,11 +948,11 @@ namespace tgbot
 					if(doc["result"].IsObject())
 						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 					else
-						std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+						tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 				else
-					std::cerr << Messages::field_non_existent("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_non_existent("result"));
 			else
-				std::cerr << Messages::server_resp_not_json_object << std::endl;
+				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 			return msg;
 		}
@@ -991,11 +991,11 @@ namespace tgbot
 					if(doc["result"].IsObject())
 						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 					else
-						std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+						tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 				else
-					std::cerr << Messages::field_non_existent("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_non_existent("result"));
 			else
-				std::cerr << Messages::server_resp_not_json_object << std::endl;
+				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 			return msg;
 		}
@@ -1025,11 +1025,11 @@ namespace tgbot
 					if(doc["result"].IsObject())
 						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 					else
-						std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+						tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 				else
-					std::cerr << Messages::field_non_existent("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_non_existent("result"));
 			else
-				std::cerr << Messages::server_resp_not_json_object << std::endl;
+				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 			return msg;
 		}
@@ -1068,11 +1068,11 @@ namespace tgbot
 					if(doc["result"].IsObject())
 						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 					else
-						std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+						tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 				else
-					std::cerr << Messages::field_non_existent("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_non_existent("result"));
 			else
-				std::cerr << Messages::server_resp_not_json_object << std::endl;
+				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 			return msg;
 		}
@@ -1102,11 +1102,11 @@ namespace tgbot
 					if(doc["result"].IsObject())
 						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 					else
-						std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+						tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 				else
-					std::cerr << Messages::field_non_existent("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_non_existent("result"));
 			else
-				std::cerr << Messages::server_resp_not_json_object << std::endl;
+				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 			return msg;
 		}
@@ -1136,11 +1136,11 @@ namespace tgbot
 					if(doc["result"].IsObject())
 						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 					else
-						std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+						tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 				else
-					std::cerr << Messages::field_non_existent("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_non_existent("result"));
 			else
-				std::cerr << Messages::server_resp_not_json_object << std::endl;
+				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 			return msg;
 		}
@@ -1170,11 +1170,11 @@ namespace tgbot
 					if(doc["result"].IsObject())
 						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 					else
-						std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+						tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 				else
-					std::cerr << Messages::field_non_existent("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_non_existent("result"));
 			else
-				std::cerr << Messages::server_resp_not_json_object << std::endl;
+				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 			return msg;
 		}
@@ -1260,17 +1260,17 @@ namespace tgbot
 							msgs.push_back(std::make_shared<Message>(tools::Tools::get_json_as_string(array[j])));
 						else
 						{
-							std::cerr << "The element of the json array of field \"result\" is not a json object" << std::endl;
+							tools::Tools::write_err_log("The element of the json array of field \"result\" is not a json object");
 							continue;
 						}
 					}
 				}
 				else
-					std::cerr << Messages::field_does_not_contain_json_arr("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return msgs;
 	}
@@ -1301,11 +1301,11 @@ namespace tgbot
 				if(doc["result"].IsObject())
 					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -1335,11 +1335,11 @@ namespace tgbot
 				if(doc["result"].IsObject())
 					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -1367,11 +1367,11 @@ namespace tgbot
 				if(doc["result"].IsObject())
 					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -1406,11 +1406,11 @@ namespace tgbot
 				if(doc["result"].IsObject())
 					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -1442,11 +1442,11 @@ namespace tgbot
 				if(doc["result"].IsObject())
 					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -1505,11 +1505,11 @@ namespace tgbot
 				if(doc["result"].IsObject())
 					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -1538,11 +1538,11 @@ namespace tgbot
 				if(doc["result"].IsObject())
 					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -1565,11 +1565,11 @@ namespace tgbot
 				if(doc["result"].IsBool())
 					return doc["result"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1596,11 +1596,11 @@ namespace tgbot
 				if(doc["result"].IsObject())
 					usr_profile_photos = std::make_shared<UserProfilePhotos>(tools::Tools::get_json_as_string(doc["result"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return usr_profile_photos;
 	}
@@ -1624,11 +1624,11 @@ namespace tgbot
 				if(doc["result"].IsObject())
 					file = std::make_shared<File>(tools::Tools::get_json_as_string(doc["result"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return file;
 	}
@@ -1652,11 +1652,11 @@ namespace tgbot
 				if(doc["result"].IsBool())
 					return doc["result"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1679,11 +1679,11 @@ namespace tgbot
 				if(doc["result"].IsBool())
 					return doc["result"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1708,11 +1708,11 @@ namespace tgbot
 				if(doc["result"].IsBool())
 					return doc["result"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1745,11 +1745,11 @@ namespace tgbot
 				if(doc["result"].IsBool())
 					return doc["result"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1773,11 +1773,11 @@ namespace tgbot
 				if(doc["result"].IsBool())
 					return doc["result"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1800,11 +1800,11 @@ namespace tgbot
 				if(doc["result"].IsBool())
 					return doc["result"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1826,11 +1826,11 @@ namespace tgbot
 				if(doc["result"].IsBool())
 					return doc["result"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1853,11 +1853,11 @@ namespace tgbot
 				if(doc["result"].IsBool())
 					return doc["result"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1879,11 +1879,11 @@ namespace tgbot
 				if(doc["result"].IsBool())
 					return doc["result"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1906,11 +1906,11 @@ namespace tgbot
 				if(doc["result"].IsBool())
 					return doc["result"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1933,11 +1933,11 @@ namespace tgbot
 				if(doc["result"].IsBool())
 					return doc["result"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1961,11 +1961,11 @@ namespace tgbot
 				if(doc["result"].IsBool())
 					return doc["result"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1987,11 +1987,11 @@ namespace tgbot
 				if(doc["result"].IsBool())
 					return doc["result"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -2013,11 +2013,11 @@ namespace tgbot
 				if(doc["result"].IsBool())
 					return doc["result"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -2041,11 +2041,11 @@ namespace tgbot
 				if(doc["result"].IsObject())
 					chat = std::make_shared<Chat>(tools::Tools::get_json_as_string(doc["result"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return chat;
 	}
@@ -2076,17 +2076,17 @@ namespace tgbot
 							admins.push_back(std::make_shared<ChatMember>(tools::Tools::get_json_as_string(array[j])));
 						else
 						{
-							std::cerr << Messages::field_element_does_not_contain_json_obj("result") << std::endl;
+							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("result"));
 							continue;
 						}
 					}
 				}
 				else
-					std::cerr << Messages::field_does_not_contain_json_arr("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return admins;
 	}
@@ -2108,11 +2108,11 @@ namespace tgbot
 				if(doc["result"].IsInt())
 					return doc["result"].GetInt();
 				else
-					std::cerr << Messages::field_does_not_contain_int("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_int("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return 0;
 	}
@@ -2137,11 +2137,11 @@ namespace tgbot
 				if(doc["result"].IsObject())
 					chat_member = std::make_shared<ChatMember>(tools::Tools::get_json_as_string(doc["result"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return chat_member;
 	}
@@ -2164,11 +2164,11 @@ namespace tgbot
 				if(doc["result"].IsBool())
 					return doc["result"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -2190,11 +2190,11 @@ namespace tgbot
 				if(doc["result"].IsBool())
 					return doc["result"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -2221,11 +2221,11 @@ namespace tgbot
 				if(doc["result"].IsBool())
 					return doc["result"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -2261,11 +2261,11 @@ namespace tgbot
 				if(doc["result"].IsBool())
 					return doc["result"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -2292,17 +2292,17 @@ namespace tgbot
 							my_cmds.push_back(std::make_shared<BotCommand>(tools::Tools::get_json_as_string(array[j])));
 						else
 						{
-							std::cerr << Messages::field_element_does_not_contain_json_obj("result") << std::endl;
+							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("result"));
 							continue;
 						}
 					}
 				}
 				else
-					std::cerr << Messages::field_does_not_contain_json_arr("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return my_cmds;
 	}
@@ -2333,11 +2333,11 @@ namespace tgbot
 				if(doc["result"].IsObject())
 					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -2367,11 +2367,11 @@ namespace tgbot
 				if(doc["result"].IsObject())
 					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -2478,11 +2478,11 @@ namespace tgbot
 				if(doc["result"].IsObject())
 					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -2510,11 +2510,11 @@ namespace tgbot
 				if(doc["result"].IsObject())
 					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -2540,11 +2540,11 @@ namespace tgbot
 				if(doc["result"].IsObject())
 					poll = std::make_shared<Poll>(tools::Tools::get_json_as_string(doc["result"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return poll;
 	}
@@ -2567,11 +2567,11 @@ namespace tgbot
 				if(doc["result"].IsBool())
 					return doc["result"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -2602,11 +2602,11 @@ namespace tgbot
 					if(doc["result"].IsObject())
 						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 					else
-						std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+						tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 				else
-					std::cerr << Messages::field_non_existent("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_non_existent("result"));
 			else
-				std::cerr << Messages::server_resp_not_json_object << std::endl;
+				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 			return msg;
 		}
@@ -2633,11 +2633,11 @@ namespace tgbot
 					if(doc["result"].IsObject())
 						msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 					else
-						std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+						tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 				else
-					std::cerr << Messages::field_non_existent("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_non_existent("result"));
 			else
-				std::cerr << Messages::server_resp_not_json_object << std::endl;
+				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 			return msg;
 		}
@@ -2665,11 +2665,11 @@ namespace tgbot
 				if(doc["result"].IsObject())
 					sticker_set = std::make_shared<StickerSet>(tools::Tools::get_json_as_string(doc["result"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return sticker_set;
 	}
@@ -2694,11 +2694,11 @@ namespace tgbot
 				if(doc["result"].IsObject())
 					file = std::make_shared<File>(tools::Tools::get_json_as_string(doc["result"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return file;
 	}
@@ -2731,11 +2731,11 @@ namespace tgbot
 					if(doc["result"].IsBool())
 						return doc["result"].GetBool();
 					else
-						std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+						tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 				else
-					std::cerr << Messages::field_non_existent("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_non_existent("result"));
 			else
-				std::cerr << Messages::server_resp_not_json_object << std::endl;
+				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 			return false;
 		}
@@ -2763,11 +2763,11 @@ namespace tgbot
 					if(doc["result"].IsBool())
 						return doc["result"].GetBool();
 					else
-						std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+						tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 				else
-					std::cerr << Messages::field_non_existent("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_non_existent("result"));
 			else
-				std::cerr << Messages::server_resp_not_json_object << std::endl;
+				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 			return false;
 		}
@@ -2800,11 +2800,11 @@ namespace tgbot
 					if(doc["result"].IsBool())
 						return doc["result"].GetBool();
 					else
-						std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+						tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 				else
-					std::cerr << Messages::field_non_existent("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_non_existent("result"));
 			else
-				std::cerr << Messages::server_resp_not_json_object << std::endl;
+				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 			return false;
 		}
@@ -2829,11 +2829,11 @@ namespace tgbot
 					if(doc["result"].IsBool())
 						return doc["result"].GetBool();
 					else
-						std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+						tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 				else
-					std::cerr << Messages::field_non_existent("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_non_existent("result"));
 			else
-				std::cerr << Messages::server_resp_not_json_object << std::endl;
+				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 			return false;
 		}
@@ -2859,11 +2859,11 @@ namespace tgbot
 				if(doc["result"].IsBool())
 					return doc["result"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -2885,11 +2885,11 @@ namespace tgbot
 				if(doc["result"].IsBool())
 					return doc["result"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -2916,11 +2916,11 @@ namespace tgbot
 				if(doc["result"].IsBool())
 					return doc["result"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -2972,11 +2972,11 @@ namespace tgbot
 				if(doc["result"].IsBool())
 					return doc["result"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -3050,11 +3050,11 @@ namespace tgbot
 				if(doc["result"].IsObject())
 					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -3103,11 +3103,11 @@ namespace tgbot
 				if(doc["result"].IsBool())
 					return doc["result"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -3131,11 +3131,11 @@ namespace tgbot
 				if(doc["result"].IsBool())
 					return doc["result"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -3181,11 +3181,11 @@ namespace tgbot
 				if(doc["result"].IsBool())
 					return doc["result"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -3214,11 +3214,11 @@ namespace tgbot
 				if(doc["result"].IsObject())
 					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -3249,11 +3249,11 @@ namespace tgbot
 				if(doc["result"].IsObject())
 					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -3288,17 +3288,17 @@ namespace tgbot
 							game_high_score.push_back(std::make_shared<GameHighScore>(tools::Tools::get_json_as_string(array[j])));
 						else
 						{
-							std::cerr << Messages::field_element_does_not_contain_json_obj("result") << std::endl;
+							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("result"));
 							continue;
 						}
 					}
 				}
 				else
-					std::cerr << Messages::field_does_not_contain_json_arr("result") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("result"));
 			else
-				std::cerr << Messages::field_non_existent("result") << std::endl;
+				tools::Tools::write_err_log(Messages::field_non_existent("result"));
 		else
-			std::cerr << Messages::server_resp_not_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
 		return game_high_score;
 	}

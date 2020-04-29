@@ -15,13 +15,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("id"))
 			{
 				if(doc["id"].IsString())
 					id = doc["id"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("id") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("id"));
 			}
 
 			if(doc.HasMember("from"))
@@ -29,7 +29,7 @@ namespace tgbot
 				if(doc["from"].IsObject())
 					from = std::make_shared<User>(tools::Tools::get_json_as_string(doc["from"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("from") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("from"));
 			}
 
 			if(doc.HasMember("currency"))
@@ -37,7 +37,7 @@ namespace tgbot
 				if(doc["currency"].IsString())
 					currency = doc["currency"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("currency") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("currency"));
 			}
 
 			if(doc.HasMember("total_amount"))
@@ -45,7 +45,7 @@ namespace tgbot
 				if(doc["total_amount"].IsInt())
 					total_amount = doc["total_amount"].GetInt();
 				else
-					std::cerr << Messages::field_does_not_contain_int("total_amounttotal_amount") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_int("total_amounttotal_amount"));
 			}
 
 			if(doc.HasMember("invoice_payload"))
@@ -53,7 +53,7 @@ namespace tgbot
 				if(doc["invoice_payload"].IsString())
 					invoice_payload = doc["invoice_payload"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("invoice_payload") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("invoice_payload"));
 			}
 
 			if(doc.HasMember("shipping_option_id"))
@@ -61,7 +61,7 @@ namespace tgbot
 				if(doc["shipping_option_id"].IsString())
 					shipping_option_id = doc["shipping_option_id"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("shipping_option_id") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("shipping_option_id"));
 			}
 
 			if(doc.HasMember("order_info"))
@@ -69,42 +69,42 @@ namespace tgbot
 				if(doc["order_info"].IsObject())
 					order_info = std::make_shared<OrderInfo>(tools::Tools::get_json_as_string(doc["order_info"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("order_info") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("order_info"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string PreCheckoutQuery::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field id
+		//Field id
 		json.append("\"id\": \"" + id + "\"");
 		json.append(", ");
 
-		//field from
+		//Field from
 		json.append("\"from\": " + from->parse_to_json());
 		json.append(", ");
 
-		//field currency
+		//Field currency
 		json.append("\"currency\": \"" + currency + "\"");
 		json.append(", ");
 
-		//field total_amount
+		//Field total_amount
 		json.append("\"total_amount\": " + total_amount);
 		json.append(", ");
 
-		//field invoice_payload
+		//Field invoice_payload
 		json.append("\"invoice_payload\": \"" + invoice_payload + "\"");
 		json.append(", ");
 
-		//field shipping_option_id
+		//Field shipping_option_id
 		json.append("\"shipping_option_id\": \"" + shipping_option_id + "\"");
 		json.append(", ");
 
-		//field order_info
+		//Field order_info
 		json.append("\"order_info\": " + order_info->parse_to_json());
 
 		json.append("}");

@@ -15,13 +15,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("force_reply"))
 			{
 				if(doc["force_reply"].IsBool())
 					force_reply = doc["force_reply"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("force_reply") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("force_reply"));
 			}
 
 			if(doc.HasMember("selective"))
@@ -29,23 +29,23 @@ namespace tgbot
 				if(doc["selective"].IsBool())
 					selective = doc["selective"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("selective") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("selective"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string ForceReply::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field force_reply
+		//Field force_reply
 		std::string force_reply_bool = force_reply ? "true" : "false";
 		json.append("\"force_reply\": " + force_reply_bool);
 		json.append(", ");
 
-		//field selective
+		//Field selective
 		std::string selective_bool = selective ? "true" : "false";
 		json.append("\"selective\": " + selective_bool);
 

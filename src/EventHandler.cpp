@@ -10,7 +10,7 @@ namespace tgbot
 	{
 		std::vector<Update::ptr> updates = m_endpnts->getUpdates(m_offset);
 
-		//iterate through all the updates
+		//Iterate through all the updates.
 		for(std::size_t j = 0; j < updates.size(); ++j)
 		{
 			m_offset = updates.at(j)->update_id + 1;
@@ -20,178 +20,57 @@ namespace tgbot
 
 	void EventHandler::handle_update(const Update::ptr &update) const noexcept
 	{
-		if (update->message != nullptr || update->edited_message != nullptr || update->channel_post != nullptr || update->edited_channel_post != nullptr)
+		if(update->message != nullptr || update->edited_message != nullptr || update->channel_post != nullptr || update->edited_channel_post != nullptr)
 		{
+			//Get the proper message.
+			Message::ptr msg;
+
 			if(update->message != nullptr)
-			{
-				//any message
-				for(std::size_t j = 0; j < m_on_any_msg_listener_ls.size(); ++j)
-				{
-					m_message_listener_element element = m_on_any_msg_listener_ls.at(j);
-					element(update->message);
-				}
-
-				//see whether command
-				if(tools::Tools::starts_w(update->message->text, "/"))
-				{
-					//get argument 0
-					std::vector<std::string> args = tools::Tools::get_args(update->message->text);
-					//cut off first char
-					std::string cmd;
-					if(args.size() >= 1)
-						cmd = tools::Tools::cut_off_first_char(args.at(0));
-
-					//known command
-					if(!(m_on_cmd_listener_ls.find(cmd) == m_on_cmd_listener_ls.end()))
-						m_on_cmd_listener_ls.find(cmd)->second(update->message);
-					//unknown command
-					else
-					{
-						for(std::size_t j = 0; j < m_on_unknwn_cmd_listener_ls.size(); ++j)
-						{
-							m_message_listener_element element = m_on_unknwn_cmd_listener_ls.at(j);
-							element(update->message);
-						}
-					}
-				}
-				//non command message
-				else
-				{
-					for(std::size_t j = 0; j < m_on_non_cmd_msg_listener_ls.size(); ++j)
-					{
-						m_message_listener_element element = m_on_non_cmd_msg_listener_ls.at(j);
-						element(update->message);
-					}
-				}
-			}
+				msg = update->message;
 			else if(update->edited_message != nullptr)
-			{
-				//any message
-				for(std::size_t j = 0; j < m_on_any_msg_listener_ls.size(); ++j)
-				{
-					m_message_listener_element element = m_on_any_msg_listener_ls.at(j);
-					element(update->edited_message);
-				}
-
-				//see whether command
-				if(tools::Tools::starts_w(update->edited_message->text, "/"))
-				{
-					//get argument 0
-					std::vector<std::string> args = tools::Tools::get_args(update->edited_message->text);
-					//cut off first char
-					std::string cmd;
-					if(args.size() >= 1)
-						cmd = tools::Tools::cut_off_first_char(args.at(0));
-
-					//known command
-					if(!(m_on_cmd_listener_ls.find(cmd) == m_on_cmd_listener_ls.end()))
-						m_on_cmd_listener_ls.find(cmd)->second(update->edited_message);
-					//unknown command
-					else
-					{
-						for(std::size_t j = 0; j < m_on_unknwn_cmd_listener_ls.size(); ++j)
-						{
-							m_message_listener_element element = m_on_unknwn_cmd_listener_ls.at(j);
-							element(update->edited_message);
-						}
-					}
-				}
-				//non command message
-				else
-				{
-					for(std::size_t j = 0; j < m_on_non_cmd_msg_listener_ls.size(); ++j)
-					{
-						m_message_listener_element element = m_on_non_cmd_msg_listener_ls.at(j);
-						element(update->edited_message);
-					}
-				}
-			}
+				msg = update->edited_message;
 			else if(update->channel_post != nullptr)
+				msg = update->channel_post;
+			else if(update->edited_channel_post != nullptr)
+				msg = update->edited_channel_post;
+
+			//Any message
+			for(std::size_t j = 0; j < m_on_any_msg_listener_ls.size(); ++j)
 			{
-				//any message
-				for(std::size_t j = 0; j < m_on_any_msg_listener_ls.size(); ++j)
-				{
-					m_message_listener_element element = m_on_any_msg_listener_ls.at(j);
-					element(update->channel_post);
-				}
+				m_message_listener_element element = m_on_any_msg_listener_ls.at(j);
+				element(msg);
+			}
 
-				//see whether command
-				if(tools::Tools::starts_w(update->channel_post->text, "/"))
-				{
-					//get argument 0
-					std::vector<std::string> args = tools::Tools::get_args(update->channel_post->text);
-					//cut off first char
-					std::string cmd;
-					if(args.size() >= 1)
-						cmd = tools::Tools::cut_off_first_char(args.at(0));
+			//A command
+			if(tools::Tools::starts_w(msg->text, "/"))
+			{
+				//Get argument 0.
+				std::string cmd = tools::Tools::cut_off_first_char(tools::Tools::get_args(msg->text).at(0));
 
-					//known command
-					if(!(m_on_cmd_listener_ls.find(cmd) == m_on_cmd_listener_ls.end()))
-						m_on_cmd_listener_ls.find(cmd)->second(update->channel_post);
-					//unknown command
-					else
-					{
-						for(std::size_t j = 0; j < m_on_unknwn_cmd_listener_ls.size(); ++j)
-						{
-							m_message_listener_element element = m_on_unknwn_cmd_listener_ls.at(j);
-							element(update->channel_post);
-						}
-					}
-				}
-				//non command message
+				//A known command
+				if(!(m_on_cmd_listener_ls.find(cmd) == m_on_cmd_listener_ls.end()))
+					m_on_cmd_listener_ls.find(cmd)->second(msg);
+				//An unknown command
 				else
 				{
-					for(std::size_t j = 0; j < m_on_non_cmd_msg_listener_ls.size(); ++j)
+					for(std::size_t j = 0; j < m_on_unknwn_cmd_listener_ls.size(); ++j)
 					{
-						m_message_listener_element element = m_on_non_cmd_msg_listener_ls.at(j);
-						element(update->channel_post);
+						m_message_listener_element element = m_on_unknwn_cmd_listener_ls.at(j);
+						element(msg);
 					}
 				}
 			}
-			else if(update->edited_channel_post != nullptr)
+			//A non-command message
+			else
 			{
-				//any message
-				for(std::size_t j = 0; j < m_on_any_msg_listener_ls.size(); ++j)
+				for(std::size_t j = 0; j < m_on_non_cmd_msg_listener_ls.size(); ++j)
 				{
-					m_message_listener_element element = m_on_any_msg_listener_ls.at(j);
-					element(update->edited_channel_post);
-				}
-
-				//see whether command
-				if(tools::Tools::starts_w(update->edited_channel_post->text, "/"))
-				{
-					//get argument 0
-					std::vector<std::string> args = tools::Tools::get_args(update->edited_channel_post->text);
-					//cut off first char
-					std::string cmd;
-					if(args.size() >= 1)
-						cmd = tools::Tools::cut_off_first_char(args.at(0));
-
-					//known command
-					if(!(m_on_cmd_listener_ls.find(cmd) == m_on_cmd_listener_ls.end()))
-						m_on_cmd_listener_ls.find(cmd)->second(update->edited_channel_post);
-					//unknown command
-					else
-					{
-						for(std::size_t j = 0; j < m_on_unknwn_cmd_listener_ls.size(); ++j)
-						{
-							m_message_listener_element element = m_on_unknwn_cmd_listener_ls.at(j);
-							element(update->edited_channel_post);
-						}
-					}
-				}
-				//non command message
-				else
-				{
-					for(std::size_t j = 0; j < m_on_non_cmd_msg_listener_ls.size(); ++j)
-					{
-						m_message_listener_element element = m_on_non_cmd_msg_listener_ls.at(j);
-						element(update->edited_channel_post);
-					}
+					m_message_listener_element element = m_on_non_cmd_msg_listener_ls.at(j);
+					element(msg);
 				}
 			}
 		}
-		else if (update->inline_query != nullptr)
+		else if(update->inline_query != nullptr)
 		{
 			for(std::size_t j = 0; j < m_on_inline_query_listener_ls.size(); ++j)
 			{
@@ -199,7 +78,7 @@ namespace tgbot
 				element(update->inline_query);
 			}
 		}
-		else if (update->chosen_inline_result != nullptr)
+		else if(update->chosen_inline_result != nullptr)
 		{
 			for(std::size_t j = 0; j < m_on_chosen_inline_result_listener_ls.size(); ++j)
 			{
@@ -207,7 +86,7 @@ namespace tgbot
 				element(update->chosen_inline_result);
 			}
 		}
-		else if (update->callback_query != nullptr)
+		else if(update->callback_query != nullptr)
 		{
 			for(std::size_t j = 0; j < m_on_callback_query_listener_ls.size(); ++j)
 			{
@@ -215,7 +94,7 @@ namespace tgbot
 				element(update->callback_query);
 			}
 		}
-		else if (update->shipping_query != nullptr)
+		else if(update->shipping_query != nullptr)
 		{
 			for(std::size_t j = 0; j < m_on_shipping_query_listener_ls.size(); ++j)
 			{
@@ -223,7 +102,7 @@ namespace tgbot
 				element(update->shipping_query);
 			}
 		}
-		else if (update->pre_checkout_query != nullptr)
+		else if(update->pre_checkout_query != nullptr)
 		{
 			for(std::size_t j = 0; j < m_pre_checkout_query_listener_ls.size(); ++j)
 			{
@@ -231,7 +110,7 @@ namespace tgbot
 				element(update->pre_checkout_query);
 			}
 		}
-		else if (update->poll != nullptr)
+		else if(update->poll != nullptr)
 		{
 			for(std::size_t j = 0; j < m_poll_listener_ls.size(); ++j)
 			{
@@ -239,7 +118,7 @@ namespace tgbot
 				element(update->poll);
 			}
 		}
-		else if (update->poll_answer != nullptr)
+		else if(update->poll_answer != nullptr)
 		{
 			for(std::size_t j = 0; j < m_poll_answer_listener_ls.size(); ++j)
 			{

@@ -1,5 +1,6 @@
 #include "tgbot/constants/Messages.h"
 #include <iostream>
+#include <boost/format.hpp>
 
 namespace tgbot
 {
@@ -8,66 +9,66 @@ namespace tgbot
 
 	std::string Messages::field_does_not_contain_string(const std::string &field) noexcept
 	{
-		return "Error: Field \"" + field + "\" does not contain a string.";
+		return boost::str(boost::format("The field %1% does not contain a string.") % field);
 	}
 
 	std::string Messages::field_does_not_contain_int(const std::string &field) noexcept
 	{
-		return "Error: Field \"" + field + "\" does not contain an int.";
+		return boost::str(boost::format("The field %1% does not contain an integer.") % field);
 	}
 
 	std::string Messages::field_does_not_contain_int64(const std::string &field) noexcept
 	{
-		return "Error: Field \"" + field + "\" does not contain an int64.";
+		return boost::str(boost::format("The field %1% does not contain a 64 bits integer.") % field);
 	}
 
 	std::string Messages::field_does_not_contain_json_obj(const std::string &field) noexcept
 	{
-		return "Error: Field \"" + field + "\" does not contain a json object.";
+		return boost::str(boost::format("The field %1% does not contain a JSON object.") % field);
 	}
 
 	std::string Messages::field_does_not_contain_json_arr(const std::string &field) noexcept
 	{
-		return "Error: Field \"" + field + "\" does not contain a json array.";
+		return boost::str(boost::format("The field %1% does not contain a JSON array.") % field);
 	}
 
 	std::string Messages::field_element_does_not_contain_json_arr(const std::string &field) noexcept
 	{
-		return "Error: Field \"" + field + "\"'s element does not contain a json array.";
+		return boost::str(boost::format("The element of field %1% does not contain a JSON array.") % field);
 	}
 
 	std::string Messages::field_element_does_not_contain_json_obj(const std::string &field) noexcept
 	{
-		return "Error: Field \"" + field + "\"'s element does not contain a json object.";
+		return boost::str(boost::format("The element of field %1% does not contain a JSON object.") % field);
 	}
 
 	std::string Messages::field_non_existent(const std::string &field) noexcept
 	{
-		return "Error: There is no field \"" + field +  "\" in the json object.";
+		return boost::str(boost::format("There is not field %1% in the JSON object.") % field);
 	}
 
 	std::string Messages::field_does_not_contain_bool(const std::string &field) noexcept
 	{
-		return "Error: Field \"" + field + "\" does not contain a bool.";
+		return boost::str(boost::format("The field %1% does not contain a boolean.") % field);
 	}
 
 	std::string Messages::field_does_not_contain_float(const std::string &field) noexcept
 	{
-		return "Error: Field \"" + field + "\" does not contain a float.";
+		return boost::str(boost::format("The field %1% does not contain a float.") % field);
 	}
 
 	std::string Messages::field_element_element_does_not_contain_json_obj(const std::string &field) noexcept
 	{
-		return "Error: Field \"" + field + "\"'s element's element does not contain a json object.";
+		return boost::str(boost::format("The element's element of field %1% does not contain a JSON object.") % field);
 	}
 
 	std::string Messages::field_element_does_not_contain_string(const std::string &field) noexcept
 	{
-		return "Error: Field \"" + field + "\"'s element does not contain a string.";
+		return boost::str(boost::format("The element of field %1% does not contain a string.") % field);
 	}
 
 	std::string Messages::field_element_does_not_contain_int(const std::string &field) noexcept
 	{
-		return "Error: Field \"" + field + "\"'s element does not contain an int.";
+		return boost::str(boost::format("The element of field %1% does not contain an integer.") % field);
 	}
 }

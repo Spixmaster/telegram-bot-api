@@ -15,13 +15,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("id"))
 			{
 				if(doc["id"].IsString())
 					id = doc["id"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("id") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("id"));
 			}
 
 			if(doc.HasMember("title"))
@@ -29,7 +29,7 @@ namespace tgbot
 				if(doc["title"].IsString())
 					title = doc["title"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("title") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("title"));
 			}
 
 			if(doc.HasMember("prices"))
@@ -43,30 +43,30 @@ namespace tgbot
 						if(doc["prices"][j].IsObject())
 							prices.at(j) = std::make_shared<LabeledPrice>(tools::Tools::get_json_as_string(doc["prices"][j]));
 						else
-							std::cerr << Messages::field_element_does_not_contain_json_obj("prices") << std::endl;
+							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("prices"));
 					}
 				}
 				else
-					std::cerr << Messages::field_does_not_contain_json_arr("prices") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("prices"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string ShippingOption::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field id
+		//Field id
 		json.append("\"id\": \"" + id + "\"");
 		json.append(", ");
 
-		//field title
+		//Field title
 		json.append("\"title\": \"" + title + "\"");
 		json.append(", ");
 
-		//field prices
+		//Field prices
 		std::string prices_cont = "[";
 		for(std::size_t j = 0; j < prices.size(); ++j)
 		{

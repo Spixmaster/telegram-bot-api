@@ -16,13 +16,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("id"))
 			{
 				if(doc["id"].IsString())
 					id = doc["id"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("id") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("id"));
 			}
 
 			if(doc.HasMember("question"))
@@ -30,7 +30,7 @@ namespace tgbot
 				if(doc["question"].IsString())
 					question = doc["question"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("question") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("question"));
 			}
 
 			if(doc.HasMember("options"))
@@ -44,11 +44,11 @@ namespace tgbot
 						if(doc["options"][j].IsObject())
 							options.at(j) = std::make_shared<PollOption>(tools::Tools::get_json_as_string(doc["options"][j]));
 						else
-							std::cerr << Messages::field_element_does_not_contain_json_obj("options") << std::endl;
+							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("options"));
 					}
 				}
 				else
-					std::cerr << Messages::field_does_not_contain_json_arr("options") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("options"));
 			}
 
 			if(doc.HasMember("total_voter_count"))
@@ -56,7 +56,7 @@ namespace tgbot
 				if(doc["total_voter_count"].IsInt())
 					total_voter_count = doc["total_voter_count"].GetInt();
 				else
-					std::cerr << Messages::field_does_not_contain_int("total_voter_count") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_int("total_voter_count"));
 			}
 
 			if(doc.HasMember("is_closed"))
@@ -64,7 +64,7 @@ namespace tgbot
 				if(doc["is_closed"].IsBool())
 					is_closed = doc["is_closed"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("is_closed") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("is_closed"));
 			}
 
 			if(doc.HasMember("is_anonymous"))
@@ -72,7 +72,7 @@ namespace tgbot
 				if(doc["is_anonymous"].IsBool())
 					is_anonymous = doc["is_anonymous"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("is_anonymous") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("is_anonymous"));
 			}
 
 			if(doc.HasMember("type"))
@@ -80,7 +80,7 @@ namespace tgbot
 				if(doc["type"].IsString())
 					type = doc["type"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("type") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("type"));
 			}
 
 			if(doc.HasMember("allows_multiple_answers"))
@@ -88,7 +88,7 @@ namespace tgbot
 				if(doc["allows_multiple_answers"].IsBool())
 					allows_multiple_answers = doc["allows_multiple_answers"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("allows_multiple_answers") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("allows_multiple_answers"));
 			}
 
 			if(doc.HasMember("correct_option_id"))
@@ -96,7 +96,7 @@ namespace tgbot
 				if(doc["correct_option_id"].IsInt())
 					correct_option_id = doc["correct_option_id"].GetInt();
 				else
-					std::cerr << Messages::field_does_not_contain_int("correct_option_id") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_int("correct_option_id"));
 			}
 
 			if(doc.HasMember("explanation"))
@@ -104,7 +104,7 @@ namespace tgbot
 				if(doc["explanation"].IsString())
 					type = doc["explanation"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("explanation") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("explanation"));
 			}
 
 			if(doc.HasMember("explanation_entities"))
@@ -118,11 +118,11 @@ namespace tgbot
 						if(doc["explanation_entities"][j].IsObject())
 							explanation_entities.at(j) = std::make_shared<MessageEntity>(tools::Tools::get_json_as_string(doc["explanation_entities"][j]));
 						else
-							std::cerr << Messages::field_element_does_not_contain_json_obj("explanation_entities") << std::endl;
+							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("explanation_entities"));
 					}
 				}
 				else
-					std::cerr << Messages::field_does_not_contain_json_arr("explanation_entities") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("explanation_entities"));
 			}
 
 			if(doc.HasMember("open_period"))
@@ -130,7 +130,7 @@ namespace tgbot
 				if(doc["open_period"].IsInt())
 					open_period = doc["open_period"].GetInt();
 				else
-					std::cerr << Messages::field_does_not_contain_int("open_period") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_int("open_period"));
 			}
 
 			if(doc.HasMember("close_date"))
@@ -138,26 +138,26 @@ namespace tgbot
 				if(doc["close_date"].IsInt())
 					close_date = doc["close_date"].GetInt();
 				else
-					std::cerr << Messages::field_does_not_contain_int("close_date") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_int("close_date"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string Poll::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field id
+		//Field id
 		json.append("\"id\": \"" + id + "\"");
 		json.append(", ");
 
-		//field question
+		//Field question
 		json.append("\"question\": \"" + question + "\"");
 		json.append(", ");
 
-		//field options
+		//Field options
 		std::string options_cont = "[";
 		for(std::size_t j = 0; j < options.size(); ++j)
 		{
@@ -180,38 +180,38 @@ namespace tgbot
 		json.append("\"options\": " + options_cont);
 		json.append(", ");
 
-		//field total_voter_count
+		//Field total_voter_count
 		json.append("\"total_voter_count\": \"" + std::to_string(total_voter_count) + "\"");
 		json.append(", ");
 
-		//field is_closed
+		//Field is_closed
 		std::string is_closed_bool = is_closed ? "true" : "false";
 		json.append("\"is_closed\": " + is_closed_bool);
 		json.append(", ");
 
-		//field is_anonymous
+		//Field is_anonymous
 		std::string is_anonymous_bool = is_anonymous ? "true" : "false";
 		json.append("\"is_anonymous\": " + is_anonymous_bool);
 		json.append(", ");
 
-		//field type
+		//Field type
 		json.append("\"type\": \"" + type + "\"");
 		json.append(", ");
 
-		//field is_anonymous
+		//Field is_anonymous
 		std::string allows_multiple_answers_bool = allows_multiple_answers ? "true" : "false";
 		json.append("\"allows_multiple_answers\": " + allows_multiple_answers_bool);
 		json.append(", ");
 
-		//field correct_option_id
+		//Field correct_option_id
 		json.append("\"correct_option_id\": \"" + std::to_string(correct_option_id) + "\"");
 		json.append(", ");
 
-		//field explanation
+		//Field explanation
 		json.append("\"explanation\": \"" + explanation + "\"");
 		json.append(", ");
 
-		//field explanation_entities
+		//Field explanation_entities
 		std::string explanation_entities_cont = "[";
 		for(std::size_t j = 0; j < options.size(); ++j)
 		{
@@ -234,11 +234,11 @@ namespace tgbot
 		json.append("\"explanation_entities\": " + explanation_entities_cont);
 		json.append(", ");
 
-		//field open_period
+		//Field open_period
 		json.append("\"open_period\": \"" + std::to_string(open_period) + "\"");
 		json.append(", ");
 
-		//field close_date
+		//Field close_date
 		json.append("\"close_date\": \"" + std::to_string(close_date) + "\"");
 
 		json.append("}");

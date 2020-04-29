@@ -15,13 +15,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("position"))
 			{
 				if(doc["position"].IsInt())
 					position = doc["position"].GetInt();
 				else
-					std::cerr << Messages::field_does_not_contain_int("position") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_int("position"));
 			}
 
 			if(doc.HasMember("user"))
@@ -29,7 +29,7 @@ namespace tgbot
 				if(doc["user"].IsObject())
 					user = std::make_shared<User>(tools::Tools::get_json_as_string(doc["user"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("user") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("user"));
 			}
 
 			if(doc.HasMember("score"))
@@ -37,26 +37,26 @@ namespace tgbot
 				if(doc["score"].IsInt())
 					score = doc["score"].GetInt();
 				else
-					std::cerr << Messages::field_does_not_contain_int("score") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_int("score"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string GameHighScore::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field position
+		//Field position
 		json.append("\"position\": " + position);
 		json.append(", ");
 
-		//field user
+		//Field user
 		json.append("\"user\": " + user->parse_to_json());
 		json.append(", ");
 
-		//field score
+		//Field score
 		json.append("\"score\": " + score);
 		json.append(", ");
 

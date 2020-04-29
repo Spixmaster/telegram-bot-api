@@ -15,13 +15,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("country_code"))
 			{
 				if(doc["country_code"].IsString())
 					country_code = doc["country_code"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("country_code") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("country_code"));
 			}
 
 			if(doc.HasMember("state"))
@@ -29,7 +29,7 @@ namespace tgbot
 				if(doc["state"].IsString())
 					state = doc["state"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("state") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("state"));
 			}
 
 			if(doc.HasMember("city"))
@@ -37,7 +37,7 @@ namespace tgbot
 				if(doc["city"].IsString())
 					city = doc["city"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("city") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("city"));
 			}
 
 			if(doc.HasMember("street_line1"))
@@ -45,7 +45,7 @@ namespace tgbot
 				if(doc["street_line1"].IsString())
 					street_line1 = doc["street_line1"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("street_line1") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("street_line1"));
 			}
 
 			if(doc.HasMember("street_line2"))
@@ -53,7 +53,7 @@ namespace tgbot
 				if(doc["street_line2"].IsString())
 					street_line2 = doc["street_line2"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("street_line2") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("street_line2"));
 			}
 
 			if(doc.HasMember("post_code"))
@@ -61,38 +61,38 @@ namespace tgbot
 				if(doc["post_code"].IsString())
 					post_code = doc["post_code"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("post_code") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("post_code"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string ShippingAddress::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field country_code
+		//Field country_code
 		json.append("\"country_code\": \"" + country_code + "\"");
 		json.append(", ");
 
-		//field state
+		//Field state
 		json.append("\"state\": \"" + state + "\"");
 		json.append(", ");
 
-		//field city
+		//Field city
 		json.append("\"city\": \"" + city + "\"");
 		json.append(", ");
 
-		//field street_line1
+		//Field street_line1
 		json.append("\"street_line1\": \"" + street_line1 + "\"");
 		json.append(", ");
 
-		//field street_line2
+		//Field street_line2
 		json.append("\"street_line2\": \"" + street_line2 + "\"");
 		json.append(", ");
 
-		//field post_code
+		//Field post_code
 		json.append("\"post_code\": \"" + post_code + "\"");
 
 		json.append("}");

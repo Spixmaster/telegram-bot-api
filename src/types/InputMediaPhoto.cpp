@@ -16,13 +16,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("type"))
 			{
 				if(doc["type"].IsString())
 					type = doc["type"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("type") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("type"));
 			}
 
 			if(doc.HasMember("media"))
@@ -30,7 +30,7 @@ namespace tgbot
 				if(doc["media"].IsString())
 					media = doc["media"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("media") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("media"));
 			}
 
 			if(doc.HasMember("caption"))
@@ -38,7 +38,7 @@ namespace tgbot
 				if(doc["caption"].IsString())
 					caption = doc["caption"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("caption") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("caption"));
 			}
 
 			if(doc.HasMember("parse_mode"))
@@ -46,11 +46,11 @@ namespace tgbot
 				if(doc["parse_mode"].IsString())
 					parse_mode = doc["parse_mode"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("parse_mode") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("parse_mode"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	InputMediaPhoto::InputMediaPhoto(const std::variant<std::string, tools::InputFile::ptr> &media, const std::string &caption, const std::string &parse_mode) : media(media),
@@ -61,11 +61,11 @@ namespace tgbot
 	{
 		std::string json = "{";
 
-		//field type
+		//Field type
 		json.append("\"type\": \"" + type + "\"");
 		json.append(", ");
 
-		//field media
+		//Field media
 		if(std::holds_alternative<std::string>(media))
 		{
 			json.append("\"media\": \"" + std::get<std::string>(media) + "\"");
@@ -77,11 +77,11 @@ namespace tgbot
 			json.append(", ");
 		}
 
-		//field caption
+		//Field caption
 		json.append("\"caption\": \"" + caption + "\"");
 		json.append(", ");
 
-		//field parse_mode
+		//Field parse_mode
 		json.append("\"parse_mode\": \"" + parse_mode + "\"");
 
 		json.append("}");

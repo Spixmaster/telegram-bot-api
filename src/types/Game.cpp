@@ -20,7 +20,7 @@ namespace tgbot
 				if(doc["title"].IsString())
 					title = doc["title"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("title") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("title"));
 			}
 
 			if(doc.HasMember("description"))
@@ -28,7 +28,7 @@ namespace tgbot
 				if(doc["description"].IsString())
 					description = doc["description"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("description") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("description"));
 			}
 
 			if(doc.HasMember("photo"))
@@ -42,11 +42,11 @@ namespace tgbot
 						if(doc["photo"][j].IsObject())
 							photo.at(j) = std::make_shared<PhotoSize>(tools::Tools::get_json_as_string(doc["photo"][j]));
 						else
-							std::cerr << Messages::field_element_does_not_contain_json_obj("photo") << std::endl;
+							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("photo"));
 					}
 				}
 				else
-					std::cerr << Messages::field_does_not_contain_json_arr("photo") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("photo"));
 			}
 
 			if(doc.HasMember("text"))
@@ -54,7 +54,7 @@ namespace tgbot
 				if(doc["text"].IsString())
 					text = doc["text"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("text") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("text"));
 			}
 
 			if(doc.HasMember("text_entities"))
@@ -68,11 +68,11 @@ namespace tgbot
 						if(doc["text_entities"][j].IsObject())
 							text_entities.at(j) = std::make_shared<MessageEntity>(tools::Tools::get_json_as_string(doc["text_entities"][j]));
 						else
-							std::cerr << Messages::field_element_does_not_contain_json_obj("text_entities") << std::endl;
+							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("text_entities"));
 					}
 				}
 				else
-					std::cerr << Messages::field_does_not_contain_json_arr("text_entities") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("text_entities"));
 			}
 
 			if(doc.HasMember("animation"))
@@ -80,26 +80,26 @@ namespace tgbot
 				if(doc["animation"].IsObject())
 					animation = std::make_shared<Animation>(tools::Tools::get_json_as_string(doc["animation"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("animation") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("animation"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string Game::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field title
+		//Field title
 		json.append("\"title\": \"" + title + "\"");
 		json.append(", ");
 
-		//field description
+		//Field description
 		json.append("\"description\": \"" + description + "\"");
 		json.append(", ");
 
-		//field photo
+		//Field photo
 		std::string photo_cont = "[";
 		for(std::size_t j = 0; j < photo.size(); ++j)
 		{
@@ -122,11 +122,11 @@ namespace tgbot
 		json.append("\"photo\": " + photo_cont);
 		json.append(", ");
 
-		//field text
+		//Field text
 		json.append("\"text\": \"" + text + "\"");
 		json.append(", ");
 
-		//field text_entities
+		//Field text_entities
 		std::string text_entities_cont = "[";
 		for(std::size_t j = 0; j < text_entities.size(); ++j)
 		{
@@ -149,7 +149,7 @@ namespace tgbot
 		json.append("\"text_entities\": " + text_entities_cont);
 		json.append(", ");
 
-		//field animation
+		//Field animation
 		json.append("\"animation\": " + animation->parse_to_json());
 
 		json.append("}");

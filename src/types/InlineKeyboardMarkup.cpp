@@ -15,7 +15,7 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("inline_keyboard"))
 			{
 				if(doc["inline_keyboard"].IsArray())
@@ -37,19 +37,19 @@ namespace tgbot
 								if(keyboard_array[row][column].IsObject())
 									inline_keyboard.at(row).at(column) = std::make_shared<InlineKeyboardButton>(tools::Tools::get_json_as_string(keyboard_array[row][column]));
 								else
-									std::cerr << Messages::field_element_element_does_not_contain_json_obj("inline_keyboard") << std::endl;
+									tools::Tools::write_err_log(Messages::field_element_element_does_not_contain_json_obj("inline_keyboard"));
 							}
 						}
 						else
-							std::cerr << Messages::field_does_not_contain_json_arr("inline_keyboard") << std::endl;
+							tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("inline_keyboard"));
 					}
 				}
 				else
-					std::cerr << Messages::field_does_not_contain_json_arr("inline_keyboard") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("inline_keyboard"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	InlineKeyboardMarkup::InlineKeyboardMarkup(const std::vector<std::vector<InlineKeyboardButton::ptr>> &keyboard) : inline_keyboard(keyboard)

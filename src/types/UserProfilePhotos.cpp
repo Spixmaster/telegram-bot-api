@@ -15,13 +15,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("total_count"))
 			{
 				if(doc["total_count"].IsInt())
 					total_count = doc["total_count"].GetInt();
 				else
-					std::cerr << Messages::field_does_not_contain_int("total_count") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_int("total_count"));
 			}
 
 			if(doc.HasMember("photos"))
@@ -45,30 +45,30 @@ namespace tgbot
 								if(doc["photos"][j][k].IsObject())
 									photos.push_back(std::make_shared<PhotoSize>(tools::Tools::get_json_as_string(json_photo_array[j][k])));
 								else
-									std::cerr << Messages::field_element_element_does_not_contain_json_obj("photos") << std::endl;
+									tools::Tools::write_err_log(Messages::field_element_element_does_not_contain_json_obj("photos"));
 							}
 						}
 						else
-							std::cerr << Messages::Messages::field_element_does_not_contain_json_arr("photos") << std::endl;
+							tools::Tools::write_err_log(Messages::Messages::field_element_does_not_contain_json_arr("photos"));
 					}
 				}
 				else
-					std::cerr << Messages::field_does_not_contain_json_arr("photos") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("photos"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string UserProfilePhotos::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field total_count
+		//Field total_count
 		json.append("\"total_count\": " + total_count);
 		json.append(", ");
 
-		//field photos
+		//Field photos
 		std::string photos_cont = "[";
 		for(std::size_t j = 0; j < photos.size(); ++j)
 		{

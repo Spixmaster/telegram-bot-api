@@ -20,13 +20,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("message_id"))
 			{
 				if(doc["message_id"].IsInt())
 					message_id = doc["message_id"].GetInt();
 				else
-					std::cerr << Messages::field_does_not_contain_int("message_id") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_int("message_id"));
 			}
 
 			if(doc.HasMember("from"))
@@ -34,7 +34,7 @@ namespace tgbot
 				if(doc["from"].IsObject())
 					from = std::make_shared<User>(tools::Tools::get_json_as_string(doc["from"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("from") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("from"));
 			}
 
 			if(doc.HasMember("date"))
@@ -42,7 +42,7 @@ namespace tgbot
 				if(doc["date"].IsInt())
 					date = doc["date"].GetInt();
 				else
-					std::cerr << Messages::field_does_not_contain_int("date") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_int("date"));
 			}
 
 			if(doc.HasMember("chat"))
@@ -50,7 +50,7 @@ namespace tgbot
 				if(doc["chat"].IsObject())
 					chat = std::make_shared<Chat>(tools::Tools::get_json_as_string(doc["chat"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("chat") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("chat"));
 			}
 
 			if(doc.HasMember("forward_from"))
@@ -58,7 +58,7 @@ namespace tgbot
 				if(doc["forward_from"].IsObject())
 					forward_from = std::make_shared<User>(tools::Tools::get_json_as_string(doc["forward_from"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("forward_from") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("forward_from"));
 			}
 
 			if(doc.HasMember("forward_from_chat"))
@@ -66,7 +66,7 @@ namespace tgbot
 				if(doc["forward_from_chat"].IsObject())
 					forward_from_chat = std::make_shared<Chat>(tools::Tools::get_json_as_string(doc["forward_from_chat"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("forward_from_chat") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("forward_from_chat"));
 			}
 
 			if(doc.HasMember("forward_from_message_id"))
@@ -74,7 +74,7 @@ namespace tgbot
 				if(doc["forward_from_message_id"].IsInt())
 					forward_from_message_id = doc["forward_from_message_id"].GetInt();
 				else
-					std::cerr << Messages::field_does_not_contain_int("forward_from_message_id") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_int("forward_from_message_id"));
 			}
 
 			if(doc.HasMember("forward_signature"))
@@ -82,7 +82,7 @@ namespace tgbot
 				if(doc["forward_signature"].IsString())
 					forward_signature = doc["forward_signature"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("forward_signature") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("forward_signature"));
 			}
 
 			if(doc.HasMember("forward_sender_name"))
@@ -90,7 +90,7 @@ namespace tgbot
 				if(doc["forward_sender_name"].IsString())
 					forward_sender_name = doc["forward_sender_name"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("forward_sender_name") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("forward_sender_name"));
 			}
 
 			if(doc.HasMember("forward_date"))
@@ -98,7 +98,7 @@ namespace tgbot
 				if(doc["forward_date"].IsInt())
 					forward_date = doc["forward_date"].GetInt();
 				else
-					std::cerr << Messages::field_does_not_contain_int("forward_date") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_int("forward_date"));
 			}
 
 			if(doc.HasMember("reply_to_message"))
@@ -106,7 +106,7 @@ namespace tgbot
 				if(doc["reply_to_message"].IsObject())
 					reply_to_message = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["reply_to_message"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("reply_to_message") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("reply_to_message"));
 			}
 
 			if(doc.HasMember("edit_date"))
@@ -114,7 +114,7 @@ namespace tgbot
 				if(doc["edit_date"].IsInt())
 					edit_date = doc["edit_date"].GetInt();
 				else
-					std::cerr << Messages::field_does_not_contain_int("edit_date") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_int("edit_date"));
 			}
 
 			if(doc.HasMember("media_group_id"))
@@ -122,7 +122,7 @@ namespace tgbot
 				if(doc["media_group_id"].IsString())
 					media_group_id = doc["media_group_id"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("media_group_id") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("media_group_id"));
 			}
 
 			if(doc.HasMember("author_signature"))
@@ -130,7 +130,7 @@ namespace tgbot
 				if(doc["author_signature "].IsString())
 					author_signature = doc["author_signature"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("author_signature") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("author_signature"));
 			}
 
 			if(doc.HasMember("text"))
@@ -138,7 +138,7 @@ namespace tgbot
 				if(doc["text"].IsString())
 					text = doc["text"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("text") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("text"));
 			}
 
 			if(doc.HasMember("entities"))
@@ -152,11 +152,11 @@ namespace tgbot
 						if(doc["entities"][j].IsObject())
 							entities.at(j) = std::make_shared<MessageEntity>(tools::Tools::get_json_as_string(doc["entities"][j]));
 						else
-							std::cerr << Messages::field_element_does_not_contain_json_obj("entities")<< std::endl;
+							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("entities")<< std::endl;
 					}
 				}
 				else
-					std::cerr << Messages::field_does_not_contain_json_arr("entities") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("entities"));
 			}
 
 			if(doc.HasMember("caption_entities"))
@@ -170,11 +170,11 @@ namespace tgbot
 						if(doc["caption_entities"][j].IsObject())
 							caption_entities.at(j) = std::make_shared<MessageEntity>(tools::Tools::get_json_as_string(doc["caption_entities"][j]));
 						else
-							std::cerr << Messages::field_element_does_not_contain_json_obj("caption_entities") << std::endl;
+							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("caption_entities"));
 					}
 				}
 				else
-					std::cerr << Messages::field_does_not_contain_json_arr("caption_entities") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("caption_entities"));
 			}
 
 			if(doc.HasMember("audio"))
@@ -182,7 +182,7 @@ namespace tgbot
 				if(doc["audio"].IsObject())
 					audio = std::make_shared<Audio>(tools::Tools::get_json_as_string(doc["audio"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("audio") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("audio"));
 			}
 
 			if(doc.HasMember("document"))
@@ -190,7 +190,7 @@ namespace tgbot
 				if(doc["document"].IsObject())
 					document = std::make_shared<Document>(tools::Tools::get_json_as_string(doc["document"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("document") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("document"));
 			}
 
 			if(doc.HasMember("animation"))
@@ -198,7 +198,7 @@ namespace tgbot
 				if(doc["animation"].IsObject())
 					animation = std::make_shared<Animation>(tools::Tools::get_json_as_string(doc["animation"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("animation") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("animation"));
 			}
 
 			if(doc.HasMember("game"))
@@ -206,7 +206,7 @@ namespace tgbot
 				if(doc["game"].IsObject())
 					game = std::make_shared<Game>(tools::Tools::get_json_as_string(doc["game"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("game") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("game"));
 			}
 
 			if(doc.HasMember("photo"))
@@ -220,11 +220,11 @@ namespace tgbot
 						if(doc["photo"][j].IsObject())
 							photo.at(j) = std::make_shared<PhotoSize>(tools::Tools::get_json_as_string(doc["photo"][j]));
 						else
-							std::cerr << Messages::field_element_does_not_contain_json_obj("photo") << std::endl;
+							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("photo"));
 					}
 				}
 				else
-					std::cerr << Messages::field_does_not_contain_json_arr("photo") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("photo"));
 			}
 
 			if(doc.HasMember("sticker"))
@@ -232,7 +232,7 @@ namespace tgbot
 				if(doc["sticker"].IsObject())
 					sticker = std::make_shared<Sticker>(tools::Tools::get_json_as_string(doc["sticker"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("sticker") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("sticker"));
 			}
 
 			if(doc.HasMember("video"))
@@ -240,7 +240,7 @@ namespace tgbot
 				if(doc["video"].IsObject())
 					video = std::make_shared<Video>(tools::Tools::get_json_as_string(doc["video"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("video") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("video"));
 			}
 
 			if(doc.HasMember("voice"))
@@ -248,7 +248,7 @@ namespace tgbot
 				if(doc["voice"].IsObject())
 					voice = std::make_shared<Voice>(tools::Tools::get_json_as_string(doc["voice"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("voice") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("voice"));
 			}
 
 			if(doc.HasMember("video_note"))
@@ -256,7 +256,7 @@ namespace tgbot
 				if(doc["video_note"].IsObject())
 					video_note = std::make_shared<VideoNote>(tools::Tools::get_json_as_string(doc["video_note"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("video_note") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("video_note"));
 			}
 
 			if(doc.HasMember("caption"))
@@ -264,7 +264,7 @@ namespace tgbot
 				if(doc["caption"].IsString())
 					caption = doc["caption"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("caption") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("caption"));
 			}
 
 			if(doc.HasMember("contact"))
@@ -272,7 +272,7 @@ namespace tgbot
 				if(doc["contact"].IsObject())
 					contact = std::make_shared<Contact>(tools::Tools::get_json_as_string(doc["contact"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("contact") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("contact"));
 			}
 
 			if(doc.HasMember("location"))
@@ -280,7 +280,7 @@ namespace tgbot
 				if(doc["location"].IsObject())
 					location = std::make_shared<Location>(tools::Tools::get_json_as_string(doc["location"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("location") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("location"));
 			}
 
 			if(doc.HasMember("venue"))
@@ -288,7 +288,7 @@ namespace tgbot
 				if(doc["venue"].IsObject())
 					venue = std::make_shared<Venue>(tools::Tools::get_json_as_string(doc["venue"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("venue") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("venue"));
 			}
 
 			if(doc.HasMember("poll"))
@@ -296,7 +296,7 @@ namespace tgbot
 				if(doc["poll"].IsObject())
 					poll = std::make_shared<Poll>(tools::Tools::get_json_as_string(doc["poll"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("poll") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("poll"));
 			}
 
 			if(doc.HasMember("dice"))
@@ -304,7 +304,7 @@ namespace tgbot
 				if(doc["dice"].IsObject())
 					poll = std::make_shared<Poll>(tools::Tools::get_json_as_string(doc["dice"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("dice") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("dice"));
 			}
 
 			if(doc.HasMember("new_chat_members"))
@@ -318,7 +318,7 @@ namespace tgbot
 						if(doc["new_chat_members"][j].IsObject())
 							new_chat_members.at(j) = std::make_shared<User>(tools::Tools::get_json_as_string(doc["new_chat_members"][j]));
 						else
-							std::cerr << Messages::field_element_does_not_contain_json_obj("new_chat_members") << std::endl;
+							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("new_chat_members"));
 					}
 				}
 			}
@@ -328,7 +328,7 @@ namespace tgbot
 				if(doc["left_chat_member"].IsObject())
 					left_chat_member = std::make_shared<User>(tools::Tools::get_json_as_string(doc["left_chat_member"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("left_chat_member") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("left_chat_member"));
 			}
 
 			if(doc.HasMember("new_chat_title"))
@@ -336,7 +336,7 @@ namespace tgbot
 				if(doc["new_chat_title"].IsString())
 					new_chat_title = doc["new_chat_title"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("new_chat_title") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("new_chat_title"));
 			}
 
 			if(doc.HasMember("new_chat_photo"))
@@ -350,11 +350,11 @@ namespace tgbot
 						if(doc["new_chat_photo"][j].IsObject())
 							new_chat_photo.at(j) = std::make_shared<PhotoSize>(tools::Tools::get_json_as_string(doc["new_chat_photo"][j]));
 						else
-							std::cerr << Messages::field_element_does_not_contain_json_obj("new_chat_photo") << std::endl;
+							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("new_chat_photo"));
 					}
 				}
 				else
-					std::cerr << Messages::field_does_not_contain_json_arr("new_chat_photo") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("new_chat_photo"));
 			}
 
 			if(doc.HasMember("delete_chat_photo"))
@@ -362,7 +362,7 @@ namespace tgbot
 				if(doc["delete_chat_photo"].IsBool())
 					delete_chat_photo = doc["delete_chat_photo"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("delete_chat_photo") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("delete_chat_photo"));
 			}
 
 			if(doc.HasMember("group_chat_created"))
@@ -370,7 +370,7 @@ namespace tgbot
 				if(doc["group_chat_created"].IsBool())
 					group_chat_created = doc["group_chat_created"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("group_chat_created") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("group_chat_created"));
 			}
 
 			if(doc.HasMember("supergroup_chat_created"))
@@ -378,7 +378,7 @@ namespace tgbot
 				if(doc["supergroup_chat_created"].IsBool())
 					supergroup_chat_created = doc["supergroup_chat_created"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("supergroup_chat_created") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("supergroup_chat_created"));
 			}
 
 			if(doc.HasMember("channel_chat_created"))
@@ -386,7 +386,7 @@ namespace tgbot
 				if(doc["channel_chat_created"].IsBool())
 					channel_chat_created = doc["channel_chat_created"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("channel_chat_created") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("channel_chat_created"));
 			}
 
 			if(doc.HasMember("migrate_to_chat_id"))
@@ -394,7 +394,7 @@ namespace tgbot
 				if(doc["migrate_to_chat_id"].IsInt())
 					migrate_to_chat_id = doc["migrate_to_chat_id"].GetInt();
 				else
-					std::cerr << Messages::field_does_not_contain_int("migrate_to_chat_id") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_int("migrate_to_chat_id"));
 			}
 
 			if(doc.HasMember("migrate_from_chat_id"))
@@ -402,7 +402,7 @@ namespace tgbot
 				if(doc["migrate_from_chat_id"].IsInt())
 					migrate_from_chat_id = doc["migrate_from_chat_id"].GetInt();
 				else
-					std::cerr << Messages::field_does_not_contain_int("migrate_from_chat_id") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_int("migrate_from_chat_id"));
 			}
 
 			if(doc.HasMember("pinned_message"))
@@ -410,7 +410,7 @@ namespace tgbot
 				if(doc["pinned_message"].IsObject())
 					pinned_message = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["pinned_message"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("pinned_message") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("pinned_message"));
 			}
 
 			if(doc.HasMember("invoice"))
@@ -418,7 +418,7 @@ namespace tgbot
 				if(doc["invoice"].IsObject())
 					invoice = std::make_shared<Invoice>(tools::Tools::get_json_as_string(doc["invoice"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("invoice") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("invoice"));
 			}
 
 			if(doc.HasMember("successful_payment"))
@@ -426,7 +426,7 @@ namespace tgbot
 				if(doc["successful_payment"].IsObject())
 					successful_payment = std::make_shared<SuccessfulPayment>(tools::Tools::get_json_as_string(doc["successful_payment"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("successful_payment") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("successful_payment"));
 			}
 
 			if(doc.HasMember("connected_website"))
@@ -434,7 +434,7 @@ namespace tgbot
 				if(doc["connected_website"].IsString())
 					connected_website = doc["connected_website"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("connected_website") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("connected_website"));
 			}
 
 			if(doc.HasMember("passport_data"))
@@ -442,7 +442,7 @@ namespace tgbot
 				if(doc["passport_data"].IsObject())
 					passport_data = std::make_shared<PassportData>(tools::Tools::get_json_as_string(doc["passport_data"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("passport_data") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("passport_data"));
 			}
 
 			if(doc.HasMember("reply_markup"))
@@ -450,78 +450,78 @@ namespace tgbot
 				if(doc["reply_markup"].IsObject())
 					reply_markup = std::make_shared<InlineKeyboardMarkup>(tools::Tools::get_json_as_string(doc["reply_markup"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("reply_markup") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("reply_markup"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string Message::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field message_id
+		//Field message_id
 		json.append("\"message_id\": " + message_id);
 		json.append(", ");
 
-		//field from
+		//Field from
 		json.append("\"from\": " + from->parse_to_json());
 		json.append(", ");
 
-		//field date
+		//Field date
 		json.append("\"date\": " + date);
 		json.append(", ");
 
-		//field chat
+		//Field chat
 		json.append("\"chat\": " + chat->parse_to_json());
 		json.append(", ");
 
-		//field forward_from
+		//Field forward_from
 		json.append("\"forward_from\": " + forward_from->parse_to_json());
 		json.append(", ");
 
-		//field forward_from_chat
+		//Field forward_from_chat
 		json.append("\"forward_from_chat\": " + forward_from_chat->parse_to_json());
 		json.append(", ");
 
-		//field forward_from_message_id
+		//Field forward_from_message_id
 		json.append("\"forward_from_message_id\": " + forward_from_message_id);
 		json.append(", ");
 
-		//field forward_signature
+		//Field forward_signature
 		json.append("\"forward_signature\": \"" + forward_signature + "\"");
 		json.append(", ");
 
-		//field forward_sender_name
+		//Field forward_sender_name
 		json.append("\"forward_sender_name\": \"" + forward_sender_name + "\"");
 		json.append(", ");
 
-		//field forward_date
+		//Field forward_date
 		json.append("\"forward_date\": " + forward_date);
 		json.append(", ");
 
-		//field reply_to_message
+		//Field reply_to_message
 		json.append("\"reply_to_message\": " + reply_to_message->parse_to_json());
 		json.append(", ");
 
-		//field edit_date
+		//Field edit_date
 		json.append("\"edit_date\": " + edit_date);
 		json.append(", ");
 
-		//field media_group_id
+		//Field media_group_id
 		json.append("\"media_group_id\": \"" + media_group_id + "\"");
 		json.append(", ");
 
-		//field author_signature
+		//Field author_signature
 		json.append("\"author_signature\": \"" + author_signature + "\"");
 		json.append(", ");
 
-		//field text
+		//Field text
 		json.append("\"text\": \"" + text + "\"");
 		json.append(", ");
 
-		//field entities
+		//Field entities
 		std::string entities_cont = "[";
 		for(std::size_t j = 0; j < entities.size(); ++j)
 		{
@@ -544,7 +544,7 @@ namespace tgbot
 		json.append("\"entities\": " + entities_cont);
 		json.append(", ");
 
-		//field caption_entities
+		//Field caption_entities
 		std::string caption_entities_cont = "[";
 		for(std::size_t j = 0; j < caption_entities.size(); ++j)
 		{
@@ -567,23 +567,23 @@ namespace tgbot
 		json.append("\"caption_entities\": " + caption_entities_cont);
 		json.append(", ");
 
-		//field audio
+		//Field audio
 		json.append("\"audio\": " + audio->parse_to_json());
 		json.append(", ");
 
-		//field document
+		//Field document
 		json.append("\"document\": " + document->parse_to_json());
 		json.append(", ");
 
-		//field animation
+		//Field animation
 		json.append("\"animation\": " + animation->parse_to_json());
 		json.append(", ");
 
-		//field game
+		//Field game
 		json.append("\"game\": " + game->parse_to_json());
 		json.append(", ");
 
-		//field photo
+		//Field photo
 		std::string photo_cont = "[";
 		for(std::size_t j = 0; j < photo.size(); ++j)
 		{
@@ -606,47 +606,47 @@ namespace tgbot
 		json.append("\"photo\": " + photo_cont);
 		json.append(", ");
 
-		//field sticker
+		//Field sticker
 		json.append("\"sticker\": " + sticker->parse_to_json());
 		json.append(", ");
 
-		//field video
+		//Field video
 		json.append("\"video\": " + video->parse_to_json());
 		json.append(", ");
 
-		//field voice
+		//Field voice
 		json.append("\"voice\": " + voice->parse_to_json());
 		json.append(", ");
 
-		//field video_note
+		//Field video_note
 		json.append("\"video_note\": " + video_note->parse_to_json());
 		json.append(", ");
 
-		//field caption
+		//Field caption
 		json.append("\"caption\": \"" + caption + "\"");
 		json.append(", ");
 
-		//field contact
+		//Field contact
 		json.append("\"contact\": " + contact->parse_to_json());
 		json.append(", ");
 
-		//field location
+		//Field location
 		json.append("\"location\": " + location->parse_to_json());
 		json.append(", ");
 
-		//field venue
+		//Field venue
 		json.append("\"venue\": " + venue->parse_to_json());
 		json.append(", ");
 
-		//field poll
+		//Field poll
 		json.append("\"poll\": " + poll->parse_to_json());
 		json.append(", ");
 
-		//field dice
+		//Field dice
 		json.append("\"dice\": " + dice->parse_to_json());
 		json.append(", ");
 
-		//field new_chat_members
+		//Field new_chat_members
 		std::string new_chat_members_cont = "[";
 		for(std::size_t j = 0; j < new_chat_members.size(); ++j)
 		{
@@ -669,15 +669,15 @@ namespace tgbot
 		json.append("\"new_chat_members\": " + new_chat_members_cont);
 		json.append(", ");
 
-		//field left_chat_member
+		//Field left_chat_member
 		json.append("\"left_chat_member\": " + left_chat_member->parse_to_json());
 		json.append(", ");
 
-		//field new_chat_title
+		//Field new_chat_title
 		json.append("\"new_chat_title\": \"" + new_chat_title + "\"");
 		json.append(", ");
 
-		//field new_chat_photo
+		//Field new_chat_photo
 		std::string new_chat_photo_cont = "[";
 		for(std::size_t j = 0; j < new_chat_photo.size(); ++j)
 		{
@@ -700,55 +700,55 @@ namespace tgbot
 		json.append("\"new_chat_photo\": " + new_chat_photo_cont);
 		json.append(", ");
 
-		//field delete_chat_photo
+		//Field delete_chat_photo
 		std::string delete_chat_photo_bool = delete_chat_photo ? "true" : "false";
 		json.append("\"delete_chat_photo\": " + delete_chat_photo_bool);
 		json.append(", ");
 
-		//field group_chat_created
+		//Field group_chat_created
 		std::string group_chat_created_bool = group_chat_created ? "true" : "false";
 		json.append("\"group_chat_created\": " + group_chat_created_bool);
 		json.append(", ");
 
-		//field supergroup_chat_created
+		//Field supergroup_chat_created
 		std::string supergroup_chat_created_bool = supergroup_chat_created ? "true" : "false";
 		json.append("\"supergroup_chat_created\": " + supergroup_chat_created_bool);
 		json.append(", ");
 
-		//field channel_chat_created
+		//Field channel_chat_created
 		std::string channel_chat_created_bool = channel_chat_created ? "true" : "false";
 		json.append("\"channel_chat_created\": " + channel_chat_created_bool);
 		json.append(", ");
 
-		//field migrate_to_chat_id
+		//Field migrate_to_chat_id
 		json.append("\"migrate_to_chat_id\": " + migrate_to_chat_id);
 		json.append(", ");
 
-		//field migrate_from_chat_id
+		//Field migrate_from_chat_id
 		json.append("\"migrate_from_chat_id\": " + migrate_from_chat_id);
 		json.append(", ");
 
-		//field pinned_message
+		//Field pinned_message
 		json.append("\"pinned_message\": " + pinned_message->parse_to_json());
 		json.append(", ");
 
-		//field invoice
+		//Field invoice
 		json.append("\"invoice\": " + invoice->parse_to_json());
 		json.append(", ");
 
-		//field successful_payment
+		//Field successful_payment
 		json.append("\"successful_payment\": " + successful_payment->parse_to_json());
 		json.append(", ");
 
-		//field connected_website
+		//Field connected_website
 		json.append("\"connected_website\": \"" + connected_website + "\"");
 		json.append(", ");
 
-		//field passport_data
+		//Field passport_data
 		json.append("\"passport_data\": " + passport_data->parse_to_json());
 		json.append(", ");
 
-		//field reply_markup
+		//Field reply_markup
 		json.append("\"reply_markup\": " + reply_markup->parse_to_json());
 
 		json.append("}");
