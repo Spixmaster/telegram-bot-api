@@ -11,6 +11,10 @@ namespace tgbot
 {
 	/**
 	 * @struct InlineQueryResultVenue
+	 * @brief Represents a venue.
+	 * @details By default, the venue will be sent by the user.
+	 * @details Alternatively, you can use input_message_content to send a message with the specified content instead of the venue.
+	 * @note This will only work in Telegram versions released after 9 April, 2016. Older clients will ignore them.
 	 */
 	struct InlineQueryResultVenue : public InlineQueryResult
 	{
@@ -23,68 +27,83 @@ namespace tgbot
 
 		//Member variables
 		/**
-		 * @var
+		 * @var type
+		 * @brief Type of the result, must be venue
 		 */
-		std::string type;
+		const std::string type = "venue";
 		/**
-		 * @var
+		 * @var id
+		 * @brief Unique identifier for this result, 1-64 Bytes
 		 */
 		std::string id;
 		/**
-		 * @var
+		 * @var latitude
+		 * @brief Latitude of the venue location in degrees
 		 */
 		float latitude = -1;
 		/**
-		 * @var
+		 * @var longitude
+		 * @brief Longitude of the venue location in degrees
 		 */
 		float longitude = -1;
 		/**
-		 * @var
+		 * @var title
+		 * @brief Title of the venue
 		 */
 		std::string title;
 		/**
-		 * @var
+		 * @var address
+		 * @brief Address of the venue
 		 */
 		std::string address;
 		/**
-		 * @var
+		 * @var foursquare_id
+		 * @brief Optional. Foursquare identifier of the venue if known
 		 */
 		std::string foursquare_id;
 		/**
-		 * @var
+		 * @var foursquare_type
+		 * @brief Optional. Foursquare type of the venue, if known. (For example, “arts_entertainment/default”, “arts_entertainment/aquarium” or “food/icecream”.)
 		 */
 		std::string foursquare_type;
 		/**
-		 * @var
+		 * @var reply_markup
+		 * @brief Optional. Inline keyboard attached to the message
 		 */
 		InlineKeyboardMarkup::ptr reply_markup;
 		/**
-		 * @var
+		 * @var input_message_content
+		 * @brief Optional. Content of the message to be sent instead of the venue
 		 */
 		InputMessageContent::ptr input_message_content;
 		/**
-		 * @var
+		 * @var thumb_url
+		 * @brief Optional. Url of the thumbnail for the result
 		 */
 		std::string thumb_url;
 		/**
-		 * @var
+		 * @var thumb_width
+		 * @brief Optional. Thumbnail width
 		 */
 		int thumb_width = -1;
 		/**
-		 * @var
+		 * @var thumb_height
+		 * @brief Optional. Thumbnail height
 		 */
 		int thumb_height = -1;
 
 		//Constructors
 		InlineQueryResultVenue();
 
-		//@param json: json object of InlineQueryResultVenue
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		InlineQueryResultVenue(const std::string &json);
 
 		//Member functions
-		/*
-		 * @brief converts a itself into a json object
-		 * @return the json object as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};

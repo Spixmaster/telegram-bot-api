@@ -11,6 +11,7 @@ namespace tgbot
 {
 	/**
 	 * @struct InputMediaAudio
+	 * @brief Represents an audio file to be treated as music to be sent.
 	 */
 	struct InputMediaAudio : public InputMedia
 	{
@@ -23,60 +24,65 @@ namespace tgbot
 
 		//Member variables
 		/**
-		 * @var
+		 * @var type
+		 * @brief Type of the result, must be audio
 		 */
 		const std::string type = "audio";
 		/**
-		 * @var
+		 * @var media
+		 * @brief File to send.
+		 * @details Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file_attach_name>” to upload a new one using multipart/form-data under <file_attach_name> name.
 		 */
 		std::variant<std::string, tools::InputFile::ptr> media;
 		/**
-		 * @var
+		 * @var thumb
+		 * @brief Optional. Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side.
+		 * @details The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail‘s width and height should not exceed 320.
+		 * @details Ignored if the file is not uploaded using multipart/form-data.
+		 * @details Thumbnails can’t be reused and can be only uploaded as a new file, so you can pass “attach://<file_attach_name>” if the thumbnail was uploaded using multipart/form-data under <file_attach_name>.
 		 */
 		std::variant<std::string, tools::InputFile::ptr> thumb;
 		/**
-		 * @var
+		 * @var caption
+		 * @brief Optional. Caption of the audio to be sent, 0-1024 characters after entities parsing
 		 */
 		std::string caption;
 		/**
-		 * @var
+		 * @var parse_mode
+		 * @brief Optional. Mode for parsing entities in the audio caption. See formatting options for more details.
 		 */
 		std::string parse_mode;
 		/**
-		 * @var
+		 * @var duration
+		 * @brief Optional. Duration of the audio in seconds
 		 */
 		int duration = -1;
 		/**
-		 * @var
+		 * @var performer
+		 * @brief Optional. Performer of the audio
 		 */
 		std::string performer;
 		/**
-		 * @var
+		 * @var title
+		 * @brief Optional. Title of the audio
 		 */
 		std::string title;
 
 		//Constructors
 		InputMediaAudio();
 
-		//@param json: json object of InputMediaAudio
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		InputMediaAudio(const std::string &json);
 
-		/**
-		 * @param media: source of the audio
-		 * @param thumb: source of the thumb
-		 * @param caption: caption under audio
-		 * @param parse_mode: how caption is parsed
-		 * @param duration: audio's duration
-		 * @param performer: audio's performer
-		 * @param title: audio's title
-		 */
 		InputMediaAudio(const std::variant<std::string, tools::InputFile::ptr> &media, const std::variant<std::string, tools::InputFile::ptr> &thumb,
 				const std::string &caption = "", const std::string &parse_mode = "", const int &duration = -1, const std::string &performer = "", const std::string &title = "");
 
 		//Member functions
-		/*
-		 * @brief parses itself into json equivalent
-		 * @return json object of itself as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};

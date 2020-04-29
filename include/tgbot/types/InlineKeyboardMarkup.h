@@ -10,6 +10,8 @@ namespace tgbot
 {
 	/**
 	 * @struct InlineKeyboardMarkup
+	 * @brief This object represents an inline keyboard that appears right next to the message it belongs to.
+	 * @note This will only work in Telegram versions released after 9 April, 2016. Older clients will display unsupported message.
 	 */
 	struct InlineKeyboardMarkup : public Reply
 	{
@@ -22,23 +24,28 @@ namespace tgbot
 
 		//Member variables
 		/**
-		 * @var
+		 * @var inline_keyboard
+		 * @brief Array of button rows, each represented by an Array of InlineKeyboardButton objects
 		 */
 		std::vector<std::vector<InlineKeyboardButton::ptr>> inline_keyboard;
 
 		//Constructors
 		InlineKeyboardMarkup();
 
-		//@param json: json object of InlineKeyboardMarkup
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		InlineKeyboardMarkup(const std::string &json);
 
-		//@param vector of vector(s) which contains InlineKeyboardButton
+		/**
+		 * @param[in] keyboard The vector of vectors of buttons represents a keyboard. One vector makes up a line.
+		 */
 		InlineKeyboardMarkup(const std::vector<std::vector<InlineKeyboardButton::ptr>> &keyboard);
 
 		//Member functions
-		/*
-		 * @brief parses an itself to a json object
-		 * @return json object of itself as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};

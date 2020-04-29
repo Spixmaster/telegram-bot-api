@@ -11,6 +11,7 @@ namespace tgbot
 {
 	/**
 	 * @struct InputMediaDocument
+	 * @brief Represents a general file to be sent.
 	 */
 	struct InputMediaDocument : public InputMedia
 	{
@@ -23,45 +24,50 @@ namespace tgbot
 
 		//Member variables
 		/**
-		 * @var
+		 * @var type
+		 * @brief Type of the result, must be document
 		 */
 		const std::string type = "document";
 		/**
-		 * @var
+		 * @var media
+		 * @brief File to send.
+		 * @details Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file_attach_name>” to upload a new one using multipart/form-data under <file_attach_name> name.
 		 */
 		std::variant<std::string, tools::InputFile::ptr> media;
 		/**
-		 * @var
+		 * @var thumb
+		 * @brief Optional. Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side.
+		 * @details The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail‘s width and height should not exceed 320.
+		 * @details Ignored if the file is not uploaded using multipart/form-data.
+		 * @details Thumbnails can’t be reused and can be only uploaded as a new file, so you can pass “attach://<file_attach_name>” if the thumbnail was uploaded using multipart/form-data under <file_attach_name>.
 		 */
 		std::variant<std::string, tools::InputFile::ptr> thumb;
 		/**
-		 * @var
+		 * @var caption
+		 * @brief Optional. Caption of the document to be sent, 0-1024 characters after entities parsing
 		 */
 		std::string caption;
 		/**
-		 * @var
+		 * @var parse_mode
+		 * @brief Optional. Mode for parsing entities in the document caption. See formatting options for more details.
 		 */
 		std::string parse_mode;
 
 		//Constructors
 		InputMediaDocument();
 
-		//@param json: json object of InputMediaDocument
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		InputMediaDocument(const std::string &json);
 
-		/**
-		 * @param media: source of the document
-		 * @param thumb: source of the thumb
-		 * @param caption: caption under document
-		 * @param parse_mode: how caption is parsed
-		 */
 		InputMediaDocument(const std::variant<std::string, tools::InputFile::ptr> &media, const std::variant<std::string, tools::InputFile::ptr> &thumb,
 				const std::string &caption = "", const std::string &parse_mode = "");
 
 		//Member functions
-		/*
-		 * @brief parses itself into json equivalent
-		 * @return json object of itself as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};

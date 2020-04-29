@@ -8,6 +8,7 @@ namespace tgbot
 {
 	/**
 	 * @struct Location
+	 * @brief This object represents a point on the map.
 	 */
 	struct Location
 	{
@@ -20,24 +21,28 @@ namespace tgbot
 
 		//Member variables
 		/**
-		 * @var
+		 * @var longitude
+		 * @brief Longitude as defined by sender
 		 */
 		float longitude = -1;
 		/**
-		 * @var
+		 * @var latitude
+		 * @brief Latitude as defined by sender
 		 */
 		float latitude = -1;
 
 		//Constructors
 		Location();
 
-		//@param json: json object of Location
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		Location(const std::string &json);
 
 		//Member functions
-		/*
-		 * @brief converts a itself into a json object
-		 * @return the json object as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};

@@ -11,6 +11,8 @@ namespace tgbot
 {
 	/**
 	 * @struct InlineQuery
+	 * @brief This object represents an incoming inline query.
+	 * @details When the user sends an empty query, your bot could return some default or trending results.
 	 */
 	struct InlineQuery
 	{
@@ -23,36 +25,43 @@ namespace tgbot
 
 		//Member variables
 		/**
-		 * @var
+		 * @var id
+		 * @brief Unique identifier for this query
 		 */
 		std::string id;
 		/**
-		 * @var
+		 * @var from
+		 * @brief Sender
 		 */
 		User::ptr from;
 		/**
-		 * @var
+		 * @var location
+		 * @brief Optional. Sender location, only for bots that request user location
 		 */
 		Location::ptr location;
 		/**
-		 * @var
+		 * @var query
+		 * @brief Text of the query (up to 256 characters)
 		 */
 		std::string query;
 		/**
-		 * @var
+		 * @var offset
+		 * @brief Offset of the results to be returned, can be controlled by the bot
 		 */
 		std::string offset;
 
 		//Constructors
 		InlineQuery();
 
-		//@param json: json object of InlineQuery
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		InlineQuery(const std::string &json);
 
 		//Member functions
-		/*
-		 * @brief converts a itself into a json object
-		 * @return the json object as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};

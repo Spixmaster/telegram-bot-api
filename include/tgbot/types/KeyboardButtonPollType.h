@@ -9,6 +9,7 @@ namespace tgbot
 {
 	/**
 	 * @struct KeyboardButtonPollType
+	 * @brief This object represents type of a poll, which is allowed to be created and sent when the corresponding button is pressed.
 	 */
 	struct KeyboardButtonPollType
 	{
@@ -21,20 +22,23 @@ namespace tgbot
 
 		//Member variables
 		/**
-		 * @var
+		 * @var type
+		 * @brief Optional. If quiz is passed, the user will be allowed to create only polls in the quiz mode. If regular is passed, only regular polls will be allowed. Otherwise, the user will be allowed to create a poll of any type.
 		 */
 		std::string type;
 
 		//Constructors
 		KeyboardButtonPollType();
 
-		//@param json: json object of KeyboardButtonPollType
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		KeyboardButtonPollType(const std::string &json);
 
 		//Member functions
-		/*
-		 * @brief converts a itself into a json object
-		 * @return the json object as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};

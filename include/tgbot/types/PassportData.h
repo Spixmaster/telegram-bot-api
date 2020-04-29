@@ -10,6 +10,7 @@ namespace tgbot
 {
 	/**
 	 * @struct PassportData
+	 * @brief Contains information about Telegram Passport data shared with the bot by the user.
 	 */
 	struct PassportData
 	{
@@ -22,24 +23,28 @@ namespace tgbot
 
 		//Member variables
 		/**
-		 * @var
+		 * @var data
+		 * @brief Array with information about documents and other Telegram Passport elements that was shared with the bot
 		 */
 		std::vector<EncryptedPassportElement::ptr> data;
 		/**
-		 * @var
+		 * @var credentials
+		 * @brief Encrypted credentials required to decrypt the data
 		 */
 		EncryptedCredentials::ptr credentials;
 
 		//Constructors
 		PassportData();
 
-		//@param json: json object of PassportData
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		PassportData(const std::string &json);
 
 		//Member functions
-		/*
-		 * @brief converts a itself into a json object
-		 * @return the json object as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};

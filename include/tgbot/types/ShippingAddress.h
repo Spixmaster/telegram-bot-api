@@ -10,6 +10,7 @@ namespace tgbot
 {
 	/**
 	 * @struct ShippingAddress
+	 * @brief This object represents a shipping address.
 	 */
 	struct ShippingAddress
 	{
@@ -22,40 +23,48 @@ namespace tgbot
 
 		//Member variables
 		/**
-		 * @var
+		 * @var country_code
+		 * @brief ISO 3166-1 alpha-2 country code
 		 */
 		std::string country_code;
 		/**
-		 * @var
+		 * @var state
+		 * @brief State, if applicable
 		 */
 		std::string state;
 		/**
-		 * @var
+		 * @var city
+		 * @brief City
 		 */
 		std::string city;
 		/**
-		 * @var
+		 * @var street_line1
+		 * @brief First line for the address
 		 */
 		std::string street_line1;
 		/**
-		 * @var
+		 * @var street_line2
+		 * @brief Second line for the address
 		 */
 		std::string street_line2;
 		/**
-		 * @var
+		 * @var post_code
+		 * @brief Address post code
 		 */
 		std::string post_code;
 
 		//Constructors
 		ShippingAddress();
 
-		//@param json: json object of ShippingAddress
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		ShippingAddress(const std::string &json);
 
 		//Member functions
-		/*
-		 * @brief converts a itself into a json object
-		 * @return the json object as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};

@@ -7,6 +7,7 @@ namespace tgbot
 {
 	/**
 	 * @struct InlineQueryResult
+	 * @brief This object represents one result of an inline query. Telegram clients currently support results of the following 20 types: ...
 	 */
 	struct InlineQueryResult
 	{
@@ -21,9 +22,9 @@ namespace tgbot
 		virtual ~InlineQueryResult();
 
 		//Member functions
-		/*
-		 * @brief converts a itself into a json object
-		 * @return the json object as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		virtual std::string parse_to_json() const noexcept;
 	};

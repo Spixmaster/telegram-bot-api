@@ -9,6 +9,8 @@ namespace tgbot
 {
 	/**
 	 * @struct PassportFile
+	 * @brief  This object represents a file uploaded to Telegram Passport.
+	 * @details Currently all Telegram Passport files are in JPEG format when decrypted and don't exceed 10MB.
 	 */
 	struct PassportFile
 	{
@@ -21,32 +23,38 @@ namespace tgbot
 
 		//Member variables
 		/**
-		 * @var
+		 * @var file_id
+		 * @brief Identifier for this file, which can be used to download or reuse the file
 		 */
 		std::string file_id;
 		/**
-		 * @var
+		 * @var file_unique_id
+		 * @brief Unique identifier for this file, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file.
 		 */
 		std::string file_unique_id;
 		/**
-		 * @var
+		 * @var file_size
+		 * @brief File size
 		 */
 		int file_size = -1;
 		/**
-		 * @var
+		 * @var file_date
+		 * @brief Unix time when the file was uploaded
 		 */
 		int file_date = -1;
 
 		//Constructors
 		PassportFile();
 
-		//@param json: json object of PassportFile
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		PassportFile(const std::string &json);
 
 		//Member functions
-		/*
-		 * @brief converts a itself into a json object
-		 * @return the json object as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};

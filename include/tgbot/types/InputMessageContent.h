@@ -7,6 +7,7 @@ namespace tgbot
 {
 	/**
 	 * @struct InputMessageContent
+	 * @brief This object represents the content of a message to be sent as a result of an inline query. Telegram clients currently support the following 4 types: ...
 	 */
 	struct InputMessageContent
 	{
@@ -20,16 +21,18 @@ namespace tgbot
 		//Constructors
 		InputMessageContent();
 
-		//@param json: json object of InputMessageContent
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		InputMessageContent(const std::string &json);
 
 		//Destructors
 		virtual ~InputMessageContent();
 
 		//Member functions
-		/*
-		 * @brief converts a itself into a json object
-		 * @return the json object as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		virtual std::string parse_to_json() const noexcept;
 	};

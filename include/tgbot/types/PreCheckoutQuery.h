@@ -10,6 +10,7 @@ namespace tgbot
 {
 	/**
 	 * @struct PreCheckoutQuery
+	 * @brief This object contains information about an incoming pre-checkout query.
 	 */
 	struct PreCheckoutQuery
 	{
@@ -22,44 +23,55 @@ namespace tgbot
 
 		//Member variables
 		/**
-		 * @var
+		 * @var id
+		 * @brief Unique query identifier
 		 */
 		std::string id;
 		/**
-		 * @var
+		 * @var from
+		 * @brief  	User who sent the query
 		 */
 		User::ptr from;
 		/**
-		 * @var
+		 * @var currency
+		 * @brief  	Three-letter ISO 4217 currency code
 		 */
 		std::string currency;
 		/**
-		 * @var
+		 * @var total_amount
+		 * @brief Total price in the smallest units of the currency (integer, not float/double).
+		 * @details For example, for a price of US$ 1.45 pass amount = 145.
+		 * @details See the exp parameter in currencies.json, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies).
 		 */
 		int total_amount = -1;
 		/**
-		 * @var
+		 * @var invoice_payload
+		 * @brief Bot specified invoice payload
 		 */
 		std::string invoice_payload;
 		/**
-		 * @var
+		 * @var shipping_option_id
+		 * @brief Optional. Identifier of the shipping option chosen by the user
 		 */
 		std::string shipping_option_id;
 		/**
-		 * @var
+		 * @var order_info
+		 * @brief Optional. Order info provided by the user
 		 */
 		OrderInfo::ptr order_info;
 
 		//Constructors
 		PreCheckoutQuery();
 
-		//@param json: json object of PreCheckoutQuery
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		PreCheckoutQuery(const std::string &json);
 
 		//Member functions
-		/*
-		 * @brief converts a itself into a json object
-		 * @return the json object as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};

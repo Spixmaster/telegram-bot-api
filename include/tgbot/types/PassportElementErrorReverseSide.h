@@ -10,6 +10,7 @@ namespace tgbot
 {
 	/**
 	 * @struct PassportElementErrorReverseSide
+	 * @brief Represents an issue with the reverse side of a document. The error is considered resolved when the file with reverse side of the document changes.
 	 */
 	struct PassportElementErrorReverseSide : public PassportElementError
 	{
@@ -22,32 +23,38 @@ namespace tgbot
 
 		//Member variables
 		/**
-		 * @var
+		 * @var source
+		 * @brief Error source, must be reverse_side
 		 */
 		std::string source;
 		/**
-		 * @var
+		 * @var type
+		 * @brief The section of the user's Telegram Passport which has the issue, one of “driver_license”, “identity_card”
 		 */
 		std::string type;
 		/**
-		 * @var
+		 * @var file_hash
+		 * @brief Base64-encoded hash of the file with the reverse side of the document
 		 */
 		std::string file_hash;
 		/**
-		 * @var
+		 * @var message
+		 * @brief Error message
 		 */
 		std::string message;
 
 		//Constructors
 		PassportElementErrorReverseSide();
 
-		//@param json: json object of PassportElementErrorReverseSide
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		PassportElementErrorReverseSide(const std::string &json);
 
 		//Member functions
-		/*
-		 * @brief converts a itself into a json object
-		 * @return the json object as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};

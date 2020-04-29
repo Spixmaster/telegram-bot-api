@@ -10,6 +10,7 @@ namespace tgbot
 {
 	/**
 	 * @struct ShippingOption
+	 * @brief This object represents one shipping option.
 	 */
 	struct ShippingOption
 	{
@@ -22,28 +23,33 @@ namespace tgbot
 
 		//Member variables
 		/**
-		 * @var
+		 * @var id
+		 * @brief Shipping option identifier
 		 */
 		std::string id;
 		/**
-		 * @var
+		 * @var title
+		 * @brief Option title
 		 */
 		std::string title;
 		/**
-		 * @var
+		 * @var prices
+		 * @brief List of price portions
 		 */
 		std::vector<LabeledPrice::ptr> prices;
 
 		//Constructors
 		ShippingOption();
 
-		//@param json: json object of ShippingOption
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		ShippingOption(const std::string &json);
 
 		//Member functions
-		/*
-		 * @brief converts a itself into a json object
-		 * @return the json object as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};

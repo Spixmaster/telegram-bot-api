@@ -5,7 +5,8 @@
 
 namespace tgbot
 {
-	Poll::Poll() : id(), question(), options(), total_voter_count(), is_closed(), is_anonymous(), type(), allows_multiple_answers(), correct_option_id()
+	Poll::Poll() : id(), question(), options(), total_voter_count(), is_closed(), is_anonymous(), type(), allows_multiple_answers(), correct_option_id(), explanation(),
+			explanation_entities(), open_period(), close_date()
 	{}
 
 	Poll::Poll(const std::string &json)
@@ -97,6 +98,48 @@ namespace tgbot
 				else
 					std::cerr << Messages::field_does_not_contain_int("correct_option_id") << std::endl;
 			}
+
+			if(doc.HasMember("explanation"))
+			{
+				if(doc["explanation"].IsString())
+					type = doc["explanation"].GetString();
+				else
+					std::cerr << Messages::field_does_not_contain_string("explanation") << std::endl;
+			}
+
+			if(doc.HasMember("explanation_entities"))
+			{
+				if(doc["explanation_entities"].IsArray())
+				{
+					explanation_entities.resize(doc["explanation_entities"].GetArray().Size());
+
+					for(std::size_t j = 0; j < doc["explanation_entities"].GetArray().Size(); ++j)
+					{
+						if(doc["explanation_entities"][j].IsObject())
+							explanation_entities.at(j) = std::make_shared<MessageEntity>(tools::Tools::get_json_as_string(doc["explanation_entities"][j]));
+						else
+							std::cerr << Messages::field_element_does_not_contain_json_obj("options") << std::endl;
+					}
+				}
+				else
+					std::cerr << Messages::field_does_not_contain_json_arr("options") << std::endl;
+			}
+
+			if(doc.HasMember("open_period"))
+			{
+				if(doc["open_period"].IsInt())
+					open_period = doc["open_period"].GetInt();
+				else
+					std::cerr << Messages::field_does_not_contain_int("open_period") << std::endl;
+			}
+
+			if(doc.HasMember("close_date"))
+			{
+				if(doc["close_date"].IsInt())
+					close_date = doc["close_date"].GetInt();
+				else
+					std::cerr << Messages::field_does_not_contain_int("close_date") << std::endl;
+			}
 		}
 		else
 			std::cerr << Messages::constructor_not_get_json_object << std::endl;
@@ -162,6 +205,41 @@ namespace tgbot
 
 		//field correct_option_id
 		json.append("\"correct_option_id\": \"" + std::to_string(correct_option_id) + "\"");
+		json.append(", ");
+
+		//field explanation
+		json.append("\"explanation\": \"" + explanation + "\"");
+		json.append(", ");
+
+		//field explanation_entities
+		std::string explanation_entities_cont = "[";
+		for(std::size_t j = 0; j < options.size(); ++j)
+		{
+			explanation_entities_cont.append(explanation_entities.at(j)->parse_to_json());
+			explanation_entities_cont.append(", ");
+		}
+
+		/*
+		 * if size() == 0 pop_back() would crash the programme
+		 * explanation_entities and not explanation_entities_cont in condition as in that case we would destroy the json array
+		 */
+		if(explanation_entities.size() > 0)
+		{
+			//finish json array
+			explanation_entities_cont.pop_back();
+			explanation_entities_cont.pop_back();
+		}
+		explanation_entities_cont.append("]");
+
+		json.append("\"explanation_entities\": " + explanation_entities_cont);
+		json.append(", ");
+
+		//field open_period
+		json.append("\"open_period\": \"" + std::to_string(open_period) + "\"");
+		json.append(", ");
+
+		//field close_date
+		json.append("\"close_date\": \"" + std::to_string(close_date) + "\"");
 
 		json.append("}");
 

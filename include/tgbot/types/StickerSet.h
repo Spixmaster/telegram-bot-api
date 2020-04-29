@@ -10,6 +10,7 @@ namespace tgbot
 {
 	/**
 	 * @struct StickerSet
+	 * @brief This object represents a sticker set.
 	 */
 	struct StickerSet
 	{
@@ -22,36 +23,48 @@ namespace tgbot
 
 		//Member variables
 		/**
-		 * @var
+		 * @var name
+		 * @brief Sticker set name
 		 */
 		std::string name;
 		/**
-		 * @var
+		 * @var title
+		 * @brief Sticker set title
 		 */
 		std::string title;
 		/**
-		 * @var
+		 * @var is_animated
+		 * @brief True, if the sticker set contains animated stickers
 		 */
 		bool is_animated;
 		/**
-		 * @var
+		 * @var contains_masks
+		 * @brief True, if the sticker set contains masks
 		 */
 		bool contains_masks;
 		/**
-		 * @var
+		 * @var sticker
+		 * @brief List of all set stickers
 		 */
 		std::vector<Sticker::ptr> sticker;
+		/**
+		 * @var thumb
+		 * @brief Optional. Sticker set thumbnail in the .WEBP or .TGS format
+		 */
+		PhotoSize::ptr thumb;
 
 		//Constructors
 		StickerSet();
 
-		//@param json: json object of StickerSet
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		StickerSet(const std::string &json);
 
 		//Member functions
-		/*
-		 * @brief converts a itself into a json object
-		 * @return the json object as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};

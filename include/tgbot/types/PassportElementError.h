@@ -7,6 +7,7 @@ namespace tgbot
 {
 	/**
 	 * @struct PassportElementError
+	 * @brief The super class of all passport element errors.
 	 */
 	struct PassportElementError
 	{
@@ -21,9 +22,9 @@ namespace tgbot
 		virtual ~PassportElementError();
 
 		//Member functions
-		/*
-		 * @brief converts a itself into a json object
-		 * @return the json object as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		virtual std::string parse_to_json() const noexcept;
 	};

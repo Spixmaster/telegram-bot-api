@@ -5,7 +5,7 @@
 
 namespace tgbot
 {
-	InlineQueryResultMpeg4Gif::InlineQueryResultMpeg4Gif() : type(), id(), mpeg4_url(), mpeg4_width(), mpeg4_height(), mpeg4_duration(), thumb_url(), title(),
+	InlineQueryResultMpeg4Gif::InlineQueryResultMpeg4Gif() : id(), mpeg4_url(), mpeg4_width(), mpeg4_height(), mpeg4_duration(), thumb_url(), title(),
 	caption(), parse_mode(), reply_markup(), input_message_content()
 	{}
 
@@ -17,14 +17,6 @@ namespace tgbot
 		if(doc.IsObject())
 		{
 			//assignments
-			if(doc.HasMember("type"))
-			{
-				if(doc["type"].IsString())
-					type = doc["type"].GetString();
-				else
-					std::cerr << Messages::field_does_not_contain_string("type") << std::endl;
-			}
-
 			if(doc.HasMember("id"))
 			{
 				if(doc["id"].IsString())

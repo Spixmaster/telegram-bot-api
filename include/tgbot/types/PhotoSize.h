@@ -9,6 +9,7 @@ namespace tgbot
 {
 	/**
 	 * @struct PhotoSize
+	 * @brief This object represents one size of a photo or a file / sticker thumbnail.
 	 */
 	struct PhotoSize
 	{
@@ -21,36 +22,43 @@ namespace tgbot
 
 		//Member variables
 		/**
-		 * @var
+		 * @var file_id
+		 * @brief Identifier for this file, which can be used to download or reuse the file
 		 */
 		std::string file_id;
 		/**
-		 * @var
+		 * @var file_unique_id
+		 * @brief Unique identifier for this file, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file.
 		 */
 		std::string file_unique_id;
 		/**
-		 * @var
+		 * @var width
+		 * @brief Photo width
 		 */
 		int width = -1;
 		/**
-		 * @var
+		 * @var height
+		 * @brief Photo height
 		 */
 		int height = -1;
 		/**
-		 * @var
+		 * @var file_size
+		 * @brief Optional. File size
 		 */
 		int file_size = -1;
 
 		//Constructors
 		PhotoSize();
 
-		//@param json: json object of PhotoSize
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		PhotoSize(const std::string &json);
 
 		//Member functions
-		/*
-		 * @brief converts a itself into a json object
-		 * @return the json object as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};

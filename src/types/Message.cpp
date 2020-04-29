@@ -299,6 +299,14 @@ namespace tgbot
 					std::cerr << Messages::field_does_not_contain_json_obj("poll") << std::endl;
 			}
 
+			if(doc.HasMember("dice"))
+			{
+				if(doc["dice"].IsObject())
+					poll = std::make_shared<Poll>(tools::Tools::get_json_as_string(doc["dice"]));
+				else
+					std::cerr << Messages::field_does_not_contain_json_obj("dice") << std::endl;
+			}
+
 			if(doc.HasMember("new_chat_members"))
 			{
 				if(doc["new_chat_members"].IsArray())
@@ -632,6 +640,10 @@ namespace tgbot
 
 		//field poll
 		json.append("\"poll\": " + poll->parse_to_json());
+		json.append(", ");
+
+		//field dice
+		json.append("\"dice\": " + dice->parse_to_json());
 		json.append(", ");
 
 		//field new_chat_members

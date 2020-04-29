@@ -10,6 +10,7 @@ namespace tgbot
 {
 	/**
 	 * @struct PassportElementErrorTranslationFile
+	 * @brief Represents an issue with one of the files that constitute the translation of a document. The error is considered resolved when the file changes.
 	 */
 	struct PassportElementErrorTranslationFile : public PassportElementError
 	{
@@ -22,32 +23,38 @@ namespace tgbot
 
 		//Member variables
 		/**
-		 * @var
+		 * @var source
+		 * @brief Error source, must be translation_file
 		 */
 		std::string source;
 		/**
-		 * @var
+		 * @var type
+		 * @brief Type of element of the user's Telegram Passport which has the issue, one of “passport”, “driver_license”, “identity_card”, “internal_passport”, “utility_bill”, “bank_statement”, “rental_agreement”, “passport_registration”, “temporary_registration”
 		 */
 		std::string type;
 		/**
-		 * @var
+		 * @var file_hash
+		 * @brief Base64-encoded file hash
 		 */
 		std::string file_hash;
 		/**
-		 * @var
+		 * @var message
+		 * @brief Error message
 		 */
 		std::string message;
 
 		//Constructors
 		PassportElementErrorTranslationFile();
 
-		//@param json: json object of PassportElementErrorTranslationFile
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		PassportElementErrorTranslationFile(const std::string &json);
 
 		//Member functions
-		/*
-		 * @brief converts a itself into a json object
-		 * @return the json object as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};

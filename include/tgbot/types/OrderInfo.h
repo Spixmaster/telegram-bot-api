@@ -9,6 +9,7 @@ namespace tgbot
 {
 	/**
 	 * @struct OrderInfo
+	 * @brief This object represents information about an order.
 	 */
 	struct OrderInfo
 	{
@@ -21,32 +22,38 @@ namespace tgbot
 
 		//Member variables
 		/**
-		 * @var
+		 * @var name
+		 * @brief Optional. User name
 		 */
 		std::string name;
 		/**
-		 * @var
+		 * @var phone_number
+		 * @brief Optional. User's phone number
 		 */
 		std::string phone_number;
 		/**
-		 * @var
+		 * @var email
+		 * @brief Optional. User email
 		 */
 		std::string email;
 		/**
-		 * @var
+		 * @var shipping_address
+		 * @brief Optional. User shipping address
 		 */
 		ShippingAddress::ptr shipping_address;
 
 		//Constructors
 		OrderInfo();
 
-		//@param json: json object of OrderInfo
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		OrderInfo(const std::string &json);
 
 		//Member functions
-		/*
-		 * @brief converts a itself into a json object
-		 * @return the json object as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};
