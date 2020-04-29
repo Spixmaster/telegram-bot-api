@@ -159,22 +159,15 @@ namespace tgbot
 
 		//Field options
 		std::string options_cont = "[";
+
 		for(std::size_t j = 0; j < options.size(); ++j)
 		{
 			options_cont.append(options.at(j)->parse_to_json());
-			options_cont.append(", ");
+
+			if(j != options.size() - 1)
+				options_cont.append(", ");
 		}
 
-		/*
-		 * if size() == 0 pop_back() would crash the programme
-		 * options and not options_cont in condition as in that case we would destroy the json array
-		 */
-		if(options.size() > 0)
-		{
-			//finish json array
-			options_cont.pop_back();
-			options_cont.pop_back();
-		}
 		options_cont.append("]");
 
 		json.append("\"options\": " + options_cont);
@@ -213,22 +206,15 @@ namespace tgbot
 
 		//Field explanation_entities
 		std::string explanation_entities_cont = "[";
+
 		for(std::size_t j = 0; j < options.size(); ++j)
 		{
 			explanation_entities_cont.append(explanation_entities.at(j)->parse_to_json());
-			explanation_entities_cont.append(", ");
+
+			if(j != options.size() - 1)
+				explanation_entities_cont.append(", ");
 		}
 
-		/*
-		 * if size() == 0 pop_back() would crash the programme
-		 * explanation_entities and not explanation_entities_cont in condition as in that case we would destroy the json array
-		 */
-		if(explanation_entities.size() > 0)
-		{
-			//finish json array
-			explanation_entities_cont.pop_back();
-			explanation_entities_cont.pop_back();
-		}
 		explanation_entities_cont.append("]");
 
 		json.append("\"explanation_entities\": " + explanation_entities_cont);

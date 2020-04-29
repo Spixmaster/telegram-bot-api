@@ -102,22 +102,15 @@ namespace tgbot
 
 		//Field sticker
 		std::string sticker_cont = "[";
+
 		for(std::size_t j = 0; j < sticker.size(); ++j)
 		{
 			sticker_cont.append(sticker.at(j)->parse_to_json());
-			sticker_cont.append(", ");
+
+			if(j != sticker.size() - 1)
+				sticker_cont.append(", ");
 		}
 
-		/*
-		 * if size() == 0 pop_back() would crash the programme
-		 * sticker and not sticker_cont in condition as in that case we would destroy the json array
-		 */
-		if(sticker.size() > 0)
-		{
-			//finish json array
-			sticker_cont.pop_back();
-			sticker_cont.pop_back();
-		}
 		sticker_cont.append("]");
 
 		json.append("\"sticker\": \"" + sticker_cont + "\"");

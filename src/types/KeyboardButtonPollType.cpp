@@ -1,6 +1,7 @@
 #include "tgbot/types/KeyboardButtonPollType.h"
 #include <iostream>
 #include "tgbot/constants/Messages.h"
+#include "tools/Tools.h"
 
 namespace tgbot
 {

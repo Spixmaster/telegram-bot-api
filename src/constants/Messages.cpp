@@ -4,8 +4,8 @@
 
 namespace tgbot
 {
-	const std::string Messages::constructor_not_get_json_object = "Error: The to the constructor passed string is not a json object.";
-	const std::string Messages::server_resp_not_json_object = "Error: The server response is not a json object.";
+	const std::string Messages::constructor_not_get_json_object = "The to the constructor passed string is not a JSON object.";
+	const std::string Messages::server_resp_not_json_object = "The server response is not a JSON object.";
 
 	std::string Messages::field_does_not_contain_string(const std::string &field) noexcept
 	{

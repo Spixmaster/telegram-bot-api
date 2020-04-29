@@ -2,6 +2,7 @@
 #include <rapidjson/document.h>
 #include <iostream>
 #include "tgbot/constants/Messages.h"
+#include "tools/Tools.h"
 
 namespace tgbot
 {

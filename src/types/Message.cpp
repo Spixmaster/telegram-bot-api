@@ -523,22 +523,15 @@ namespace tgbot
 
 		//Field entities
 		std::string entities_cont = "[";
+
 		for(std::size_t j = 0; j < entities.size(); ++j)
 		{
 			entities_cont.append(entities.at(j)->parse_to_json());
-			entities_cont.append(", ");
+
+			if(j != entities.size() - 1)
+				entities_cont.append(", ");
 		}
 
-		/*
-		 * if size() == 0 pop_back() would crash the programme
-		 * entities and not entities_cont in condition as in that case we would destroy the json array
-		 */
-		if(entities.size() > 0)
-		{
-			//finish json array
-			entities_cont.pop_back();
-			entities_cont.pop_back();
-		}
 		entities_cont.append("]");
 
 		json.append("\"entities\": " + entities_cont);
@@ -546,22 +539,15 @@ namespace tgbot
 
 		//Field caption_entities
 		std::string caption_entities_cont = "[";
+
 		for(std::size_t j = 0; j < caption_entities.size(); ++j)
 		{
 			caption_entities_cont.append(caption_entities.at(j)->parse_to_json());
-			caption_entities_cont.append(", ");
+
+			if(j != caption_entities.size() - 1)
+				caption_entities_cont.append(", ");
 		}
 
-		/*
-		 * if size() == 0 pop_back() would crash the programme
-		 * caption_entities and not caption_entities_cont in condition as in that case we would destroy the json array
-		 */
-		if(caption_entities.size() > 0)
-		{
-			//finish json array
-			caption_entities_cont.pop_back();
-			caption_entities_cont.pop_back();
-		}
 		caption_entities_cont.append("]");
 
 		json.append("\"caption_entities\": " + caption_entities_cont);
@@ -585,22 +571,15 @@ namespace tgbot
 
 		//Field photo
 		std::string photo_cont = "[";
+
 		for(std::size_t j = 0; j < photo.size(); ++j)
 		{
 			photo_cont.append(photo.at(j)->parse_to_json());
-			photo_cont.append(", ");
+
+			if(j != photo.size() - 1)
+				photo_cont.append(", ");
 		}
 
-		/*
-		 * if size() == 0 pop_back() would crash the programme
-		 * photo and not photo_cont in condition as in that case we would destroy the json array
-		 */
-		if(photo.size() > 0)
-		{
-			//finish json array
-			photo_cont.pop_back();
-			photo_cont.pop_back();
-		}
 		photo_cont.append("]");
 
 		json.append("\"photo\": " + photo_cont);
@@ -648,22 +627,15 @@ namespace tgbot
 
 		//Field new_chat_members
 		std::string new_chat_members_cont = "[";
+
 		for(std::size_t j = 0; j < new_chat_members.size(); ++j)
 		{
 			new_chat_members_cont.append(new_chat_members.at(j)->parse_to_json());
-			new_chat_members_cont.append(", ");
+
+			if(j != new_chat_members.size() - 1)
+				new_chat_members_cont.append(", ");
 		}
 
-		/*
-		 * if size() == 0 pop_back() would crash the programme
-		 * new_chat_members and not new_chat_members_cont in condition as in that case we would destroy the json array
-		 */
-		if(new_chat_members.size() > 0)
-		{
-			//finish json array
-			new_chat_members_cont.pop_back();
-			new_chat_members_cont.pop_back();
-		}
 		new_chat_members_cont.append("]");
 
 		json.append("\"new_chat_members\": " + new_chat_members_cont);
@@ -679,22 +651,15 @@ namespace tgbot
 
 		//Field new_chat_photo
 		std::string new_chat_photo_cont = "[";
+
 		for(std::size_t j = 0; j < new_chat_photo.size(); ++j)
 		{
 			new_chat_photo_cont.append(new_chat_photo.at(j)->parse_to_json());
-			new_chat_photo_cont.append(", ");
+
+			if(j != new_chat_photo.size() - 1)
+				new_chat_photo_cont.append(", ");
 		}
 
-		/*
-		 * if size() == 0 pop_back() would crash the programme
-		 * new_chat_photo and not new_chat_photo_cont in condition as in that case we would destroy the json array
-		 */
-		if(new_chat_photo.size() > 0)
-		{
-			//finish json array
-			new_chat_photo_cont.pop_back();
-			new_chat_photo_cont.pop_back();
-		}
 		new_chat_photo_cont.append("]");
 
 		json.append("\"new_chat_photo\": " + new_chat_photo_cont);
