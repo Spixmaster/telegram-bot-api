@@ -145,7 +145,6 @@ namespace tgbot
 		json.append("\"file_size\": " + file_size);
 
 		json.append("}");
-
 		return json;
 	}
 }

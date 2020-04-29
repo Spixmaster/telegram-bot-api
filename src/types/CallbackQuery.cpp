@@ -108,7 +108,6 @@ namespace tgbot
 		json.append("\"game_short_name\": \"" + game_short_name + "\"");
 
 		json.append("}");
-
 		return json;
 	}
 }

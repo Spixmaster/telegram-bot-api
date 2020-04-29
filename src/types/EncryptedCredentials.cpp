@@ -61,7 +61,6 @@ namespace tgbot
 		json.append("\"secret\": \"" + secret + "\"");
 
 		json.append("}");
-
 		return json;
 	}
 }

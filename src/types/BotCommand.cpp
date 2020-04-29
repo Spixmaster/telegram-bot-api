@@ -49,7 +49,6 @@ namespace tgbot
 		json.append("\"description\": \"" + description + "\"");
 
 		json.append("}");
-
 		return json;
 	}
 }

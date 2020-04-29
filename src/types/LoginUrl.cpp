@@ -74,7 +74,6 @@ namespace tgbot
 		json.append("\"request_write_access\": " + request_write_access_bool);
 
 		json.append("}");
-
 		return json;
 	}
 }

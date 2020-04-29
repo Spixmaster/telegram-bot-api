@@ -127,7 +127,6 @@ namespace tgbot
 		json.append("\"thumb\": " + thumb->parse_to_json());
 
 		json.append("}");
-
 		return json;
 	}
 }

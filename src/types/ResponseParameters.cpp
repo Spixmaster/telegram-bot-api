@@ -48,7 +48,6 @@ namespace tgbot
 		json.append("\"retry_after\": " + retry_after);
 
 		json.append("}");
-
 		return json;
 	}
 }

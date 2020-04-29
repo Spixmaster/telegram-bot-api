@@ -101,22 +101,15 @@ namespace tgbot
 
 		//Field photo
 		std::string photo_cont = "[";
+
 		for(std::size_t j = 0; j < photo.size(); ++j)
 		{
 			photo_cont.append(photo.at(j)->parse_to_json());
-			photo_cont.append(", ");
+
+			if(j != photo.size() -1)
+				photo_cont.append(", ");
 		}
 
-		/*
-		 * if size() == 0 pop_back() would crash the programme
-		 * photo and not photo_cont in condition as in that case we would destroy the json array
-		 */
-		if(photo.size() > 0)
-		{
-			//finish json array
-			photo_cont.pop_back();
-			photo_cont.pop_back();
-		}
 		photo_cont.append("]");
 
 		json.append("\"photo\": " + photo_cont);
@@ -128,22 +121,15 @@ namespace tgbot
 
 		//Field text_entities
 		std::string text_entities_cont = "[";
+
 		for(std::size_t j = 0; j < text_entities.size(); ++j)
 		{
 			text_entities_cont.append(text_entities.at(j)->parse_to_json());
-			text_entities_cont.append(", ");
+
+			if(j != text_entities.size() - 1)
+				text_entities_cont.append(", ");
 		}
 
-		/*
-		 * if size() == 0 pop_back() would crash the programme
-		 * text_entities and not text_entities_cont in condition as in that case we would destroy the json array
-		 */
-		if(text_entities.size() > 0)
-		{
-			//finish json array
-			text_entities_cont.pop_back();
-			text_entities_cont.pop_back();
-		}
 		text_entities_cont.append("]");
 
 		json.append("\"text_entities\": " + text_entities_cont);
@@ -153,7 +139,6 @@ namespace tgbot
 		json.append("\"animation\": " + animation->parse_to_json());
 
 		json.append("}");
-
 		return json;
 	}
 }

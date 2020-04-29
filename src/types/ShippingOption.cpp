@@ -89,7 +89,6 @@ namespace tgbot
 		json.append("\"prices\": " + prices_cont);
 
 		json.append("}");
-
 		return json;
 	}
 }

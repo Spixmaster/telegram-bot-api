@@ -85,7 +85,6 @@ namespace tgbot
 		json.append("\"total_amount\": " + total_amount);
 
 		json.append("}");
-
 		return json;
 	}
 }

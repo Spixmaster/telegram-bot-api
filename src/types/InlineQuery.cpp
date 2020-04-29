@@ -84,7 +84,6 @@ namespace tgbot
 		json.append("\"offset\": \"" + offset + "\"");
 
 		json.append("}");
-
 		return json;
 	}
 }

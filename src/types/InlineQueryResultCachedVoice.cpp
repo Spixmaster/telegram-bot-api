@@ -122,7 +122,6 @@ namespace tgbot
 		json.append(", ");
 
 		json.append("}");
-
 		return json;
 	}
 }

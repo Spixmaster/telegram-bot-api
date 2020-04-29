@@ -108,7 +108,6 @@ namespace tgbot
 		json.append("\"order_info\": " + order_info->parse_to_json());
 
 		json.append("}");
-
 		return json;
 	}
 }

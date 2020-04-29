@@ -72,7 +72,6 @@ namespace tgbot
 		json.append("\"shipping_address\": " + shipping_address->parse_to_json());
 
 		json.append("}");
-
 		return json;
 	}
 }

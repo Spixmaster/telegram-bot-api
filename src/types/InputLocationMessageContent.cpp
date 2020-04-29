@@ -61,7 +61,6 @@ namespace tgbot
 		json.append("\"live_period\": " + live_period);
 
 		json.append("}");
-
 		return json;
 	}
 }

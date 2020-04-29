@@ -72,7 +72,6 @@ namespace tgbot
 		json.append("\"reply_markup\": " + reply_markup->parse_to_json());
 
 		json.append("}");
-
 		return json;
 	}
 }

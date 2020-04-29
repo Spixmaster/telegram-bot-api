@@ -197,7 +197,6 @@ namespace tgbot
 		json.append("\"can_set_sticker_set\": " + can_set_sticker_set_bool);
 
 		json.append("}");
-
 		return json;
 	}
 }

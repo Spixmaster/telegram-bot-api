@@ -29,7 +29,6 @@ namespace tgbot
 		std::string json = "{";
 
 		json.append("}");
-
 		return json;
 	}
 }

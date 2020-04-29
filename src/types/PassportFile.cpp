@@ -72,7 +72,6 @@ namespace tgbot
 		json.append("\"file_date\": " + file_date);
 
 		json.append("}");
-
 		return json;
 	}
 }

@@ -96,7 +96,6 @@ namespace tgbot
 		json.append("\"language\": \"" + language + "\"");
 
 		json.append("}");
-
 		return json;
 	}
 }

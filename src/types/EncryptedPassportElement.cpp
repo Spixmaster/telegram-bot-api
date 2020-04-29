@@ -142,22 +142,15 @@ namespace tgbot
 
 		//Field files
 		std::string files_cont = "[";
+
 		for(std::size_t j = 0; j < files.size(); ++j)
 		{
 			files_cont.append(files.at(j)->parse_to_json());
-			files_cont.append(", ");
+
+			if(j != files.size() - 1)
+				files_cont.append(", ");
 		}
 
-		/*
-		 * if size() == 0 pop_back() would crash the programme
-		 * files and not files_cont in condition as in that case we would destroy the json array
-		 */
-		if(files.size() > 0)
-		{
-			//finish json array
-			files_cont.pop_back();
-			files_cont.pop_back();
-		}
 		files_cont.append("]");
 
 		json.append("\"files\": " + files_cont);
@@ -177,22 +170,15 @@ namespace tgbot
 
 		//Field translation
 		std::string translation_cont = "[";
+
 		for(std::size_t j = 0; j < translation.size(); ++j)
 		{
 			translation_cont.append(translation.at(j)->parse_to_json());
-			translation_cont.append(", ");
+
+			if(j != translation.size() - 1)
+				translation_cont.append(", ");
 		}
 
-		/*
-		 * if size() == 0 pop_back() would crash the programme
-		 * translation and not translation_cont in condition as in that case we would destroy the json array
-		 */
-		if(translation.size() > 0)
-		{
-			//finish json array
-			translation_cont.pop_back();
-			translation_cont.pop_back();
-		}
 		translation_cont.append("]");
 
 		json.append("\"translation\": " + translation_cont);
@@ -202,7 +188,6 @@ namespace tgbot
 		json.append("\"hash\": \"" + hash + "\"");
 
 		json.append("}");
-
 		return json;
 	}
 }

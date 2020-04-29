@@ -139,7 +139,6 @@ namespace tgbot
 		json.append("\"allowed_updates\": " + allowed_updates_cont);
 
 		json.append("}");
-
 		return json;
 	}
 }

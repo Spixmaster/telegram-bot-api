@@ -122,7 +122,6 @@ namespace tgbot
 		json.append("\"pay\": " + pay_bool);
 
 		json.append("}");
-
 		return json;
 	}
 }

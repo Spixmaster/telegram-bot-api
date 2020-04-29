@@ -77,7 +77,6 @@ namespace tgbot
 		json.append("\"credentials\": " + credentials->parse_to_json());
 
 		json.append("}");
-
 		return json;
 	}
 }

@@ -73,7 +73,6 @@ namespace tgbot
 		json.append("\"vcard\": \"" + vcard + "\"");
 
 		json.append("}");
-
 		return json;
 	}
 }

@@ -91,7 +91,6 @@ namespace tgbot
 		json.append("\"photos\": \"" + photos_cont + "\"");
 
 		json.append("}");
-
 		return json;
 	}
 }

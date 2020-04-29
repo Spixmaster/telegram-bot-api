@@ -61,7 +61,6 @@ namespace tgbot
 		json.append("\"disable_web_page_preview\": \"" + disable_web_page_preview_bool + "\"");
 
 		json.append("}");
-
 		return json;
 	}
 }
