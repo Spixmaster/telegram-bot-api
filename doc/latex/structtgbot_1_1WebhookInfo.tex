@@ -1,0 +1,87 @@
+\hypertarget{structtgbot_1_1WebhookInfo}{}\doxysection{tgbot\+::Webhook\+Info Struct Reference}
+\label{structtgbot_1_1WebhookInfo}\index{tgbot::WebhookInfo@{tgbot::WebhookInfo}}
+
+
+Contains information about the current status of a webhook.  
+
+
+
+
+{\ttfamily \#include $<$Webhook\+Info.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1WebhookInfo_a5c082e97e0d51c1ee3298475a475b114}\label{structtgbot_1_1WebhookInfo_a5c082e97e0d51c1ee3298475a475b114}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1WebhookInfo}{Webhook\+Info}} $>$ \mbox{\hyperlink{structtgbot_1_1WebhookInfo_a5c082e97e0d51c1ee3298475a475b114}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1WebhookInfo_a6b82539908431bd74d6f4246c31c2669}{Webhook\+Info}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1WebhookInfo_acc4654b02cf28a374a25c9f36e2f1907}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1WebhookInfo_a6e33391033b44b09ba49782124701170}\label{structtgbot_1_1WebhookInfo_a6e33391033b44b09ba49782124701170}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1WebhookInfo_a6e33391033b44b09ba49782124701170}{url}}
+\begin{DoxyCompactList}\small\item\em Webhook U\+RL, may be empty if webhook is not set up. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1WebhookInfo_a2a889522e9be25c174e4ec554572a910}\label{structtgbot_1_1WebhookInfo_a2a889522e9be25c174e4ec554572a910}} 
+bool \mbox{\hyperlink{structtgbot_1_1WebhookInfo_a2a889522e9be25c174e4ec554572a910}{has\+\_\+custom\+\_\+certificate}}
+\begin{DoxyCompactList}\small\item\em True, if a custom certificate was provided for webhook certificate checks. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1WebhookInfo_aa5bb9d8ed236a0656f4c07b7d45c8789}\label{structtgbot_1_1WebhookInfo_aa5bb9d8ed236a0656f4c07b7d45c8789}} 
+int \mbox{\hyperlink{structtgbot_1_1WebhookInfo_aa5bb9d8ed236a0656f4c07b7d45c8789}{pending\+\_\+update\+\_\+count}} = -\/1
+\begin{DoxyCompactList}\small\item\em Number of updates awaiting delivery. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1WebhookInfo_acd475a40219562cacb3ba5037017b551}\label{structtgbot_1_1WebhookInfo_acd475a40219562cacb3ba5037017b551}} 
+int \mbox{\hyperlink{structtgbot_1_1WebhookInfo_acd475a40219562cacb3ba5037017b551}{last\+\_\+error\+\_\+date}} = -\/1
+\begin{DoxyCompactList}\small\item\em Optional. Unix time for the most recent error that happened when trying to deliver an update via webhook. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1WebhookInfo_a1f33aa06aae705b46448ff8d5ea1af00}\label{structtgbot_1_1WebhookInfo_a1f33aa06aae705b46448ff8d5ea1af00}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1WebhookInfo_a1f33aa06aae705b46448ff8d5ea1af00}{last\+\_\+error\+\_\+message}}
+\begin{DoxyCompactList}\small\item\em Optional. Error message in human-\/readable format for the most recent error that happened when trying to deliver an update via webhook. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1WebhookInfo_a65a2c0fe8fa8f54a2fa12f4b05c4bbde}\label{structtgbot_1_1WebhookInfo_a65a2c0fe8fa8f54a2fa12f4b05c4bbde}} 
+int \mbox{\hyperlink{structtgbot_1_1WebhookInfo_a65a2c0fe8fa8f54a2fa12f4b05c4bbde}{max\+\_\+connections}} = -\/1
+\begin{DoxyCompactList}\small\item\em Optional. Maximum allowed number of simultaneous H\+T\+T\+PS connections to the webhook for update delivery. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1WebhookInfo_ab3473e9aeef872aa21666826f9761e8b}\label{structtgbot_1_1WebhookInfo_ab3473e9aeef872aa21666826f9761e8b}} 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{structtgbot_1_1WebhookInfo_ab3473e9aeef872aa21666826f9761e8b}{allowed\+\_\+updates}}
+\begin{DoxyCompactList}\small\item\em Optional. A list of update types the bot is subscribed to. Defaults to all update types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains information about the current status of a webhook. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1WebhookInfo_a6b82539908431bd74d6f4246c31c2669}\label{structtgbot_1_1WebhookInfo_a6b82539908431bd74d6f4246c31c2669}} 
+\index{tgbot::WebhookInfo@{tgbot::WebhookInfo}!WebhookInfo@{WebhookInfo}}
+\index{WebhookInfo@{WebhookInfo}!tgbot::WebhookInfo@{tgbot::WebhookInfo}}
+\doxysubsubsection{\texorpdfstring{WebhookInfo()}{WebhookInfo()}}
+{\footnotesize\ttfamily tgbot\+::\+Webhook\+Info\+::\+Webhook\+Info (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1WebhookInfo_acc4654b02cf28a374a25c9f36e2f1907}\label{structtgbot_1_1WebhookInfo_acc4654b02cf28a374a25c9f36e2f1907}} 
+\index{tgbot::WebhookInfo@{tgbot::WebhookInfo}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::WebhookInfo@{tgbot::WebhookInfo}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Webhook\+Info\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Webhook\+Info.\+h\item 
+src/types/Webhook\+Info.\+cpp\end{DoxyCompactItemize}

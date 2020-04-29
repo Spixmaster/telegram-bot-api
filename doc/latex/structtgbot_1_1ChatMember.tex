@@ -1,0 +1,123 @@
+\hypertarget{structtgbot_1_1ChatMember}{}\doxysection{tgbot\+::Chat\+Member Struct Reference}
+\label{structtgbot_1_1ChatMember}\index{tgbot::ChatMember@{tgbot::ChatMember}}
+
+
+This object contains information about one member of a chat.  
+
+
+
+
+{\ttfamily \#include $<$Chat\+Member.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1ChatMember_aa5b117fad1c3f29d5b100488139544bb}\label{structtgbot_1_1ChatMember_aa5b117fad1c3f29d5b100488139544bb}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1ChatMember}{Chat\+Member}} $>$ \mbox{\hyperlink{structtgbot_1_1ChatMember_aa5b117fad1c3f29d5b100488139544bb}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1ChatMember_a8e4da172529a118b66ae39192e4da377}{Chat\+Member}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1ChatMember_aeb6e60599d1f5842fe922f386facc7f6}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1ChatMember_a043ef800641ef5fd7c517f830aa2542e}\label{structtgbot_1_1ChatMember_a043ef800641ef5fd7c517f830aa2542e}} 
+\mbox{\hyperlink{structtgbot_1_1User_a9c48e6206c4f8f4ed3ae7ee2ce9ac395}{User\+::ptr}} \mbox{\hyperlink{structtgbot_1_1ChatMember_a043ef800641ef5fd7c517f830aa2542e}{user}}
+\begin{DoxyCompactList}\small\item\em Information about the user. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1ChatMember_af9cce873ede47016f18c9fb62d96c1bd}\label{structtgbot_1_1ChatMember_af9cce873ede47016f18c9fb62d96c1bd}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1ChatMember_af9cce873ede47016f18c9fb62d96c1bd}{status}}
+\begin{DoxyCompactList}\small\item\em The member\textquotesingle{}s status in the chat. Can be “creator”, “administrator”, “member”, “restricted”, “left” or “kicked” \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1ChatMember_a6dd243b81a0501b9cf632663bee1ef99}\label{structtgbot_1_1ChatMember_a6dd243b81a0501b9cf632663bee1ef99}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1ChatMember_a6dd243b81a0501b9cf632663bee1ef99}{custom\+\_\+title}}
+\begin{DoxyCompactList}\small\item\em Optional. Owner and administrators only. Custom title for this user. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1ChatMember_a4becfa14c122c100e1c7c422415d58af}\label{structtgbot_1_1ChatMember_a4becfa14c122c100e1c7c422415d58af}} 
+int \mbox{\hyperlink{structtgbot_1_1ChatMember_a4becfa14c122c100e1c7c422415d58af}{until\+\_\+date}} = -\/1
+\begin{DoxyCompactList}\small\item\em Optional. Restricted and kicked only. Date when restrictions will be lifted for this user; unix time. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1ChatMember_aab5da736d7c810468035612132cc8c5b}\label{structtgbot_1_1ChatMember_aab5da736d7c810468035612132cc8c5b}} 
+bool \mbox{\hyperlink{structtgbot_1_1ChatMember_aab5da736d7c810468035612132cc8c5b}{can\+\_\+be\+\_\+edited}}
+\begin{DoxyCompactList}\small\item\em Optional. Administrators only. True, if the bot is allowed to edit administrator privileges of that user. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1ChatMember_aafdc3c12da5de16fffba161acd298733}\label{structtgbot_1_1ChatMember_aafdc3c12da5de16fffba161acd298733}} 
+bool \mbox{\hyperlink{structtgbot_1_1ChatMember_aafdc3c12da5de16fffba161acd298733}{can\+\_\+post\+\_\+messages}}
+\begin{DoxyCompactList}\small\item\em Optional. Administrators only. True, if the administrator can post in the channel; channels only. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1ChatMember_a7c7fc14c0e6b4ce1d08dcdac2fed9e64}\label{structtgbot_1_1ChatMember_a7c7fc14c0e6b4ce1d08dcdac2fed9e64}} 
+bool \mbox{\hyperlink{structtgbot_1_1ChatMember_a7c7fc14c0e6b4ce1d08dcdac2fed9e64}{can\+\_\+edit\+\_\+messages}}
+\begin{DoxyCompactList}\small\item\em Optional. Administrators only. True, if the administrator can edit messages of other users and can pin messages; channels only. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1ChatMember_a19f7e586b593fc62b0d5305d7cc157e3}\label{structtgbot_1_1ChatMember_a19f7e586b593fc62b0d5305d7cc157e3}} 
+bool \mbox{\hyperlink{structtgbot_1_1ChatMember_a19f7e586b593fc62b0d5305d7cc157e3}{can\+\_\+delete\+\_\+messages}}
+\begin{DoxyCompactList}\small\item\em Optional. Administrators only. True, if the administrator can delete messages of other users. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1ChatMember_ac6ef152f425652a41d5ec21ed70d5d2f}\label{structtgbot_1_1ChatMember_ac6ef152f425652a41d5ec21ed70d5d2f}} 
+bool \mbox{\hyperlink{structtgbot_1_1ChatMember_ac6ef152f425652a41d5ec21ed70d5d2f}{can\+\_\+restrict\+\_\+members}}
+\begin{DoxyCompactList}\small\item\em Optional. Administrators only. True, if the administrator can restrict, ban or unban chat members. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1ChatMember_ab032677f3be70dea2eff103fcd01540e}\label{structtgbot_1_1ChatMember_ab032677f3be70dea2eff103fcd01540e}} 
+bool \mbox{\hyperlink{structtgbot_1_1ChatMember_ab032677f3be70dea2eff103fcd01540e}{can\+\_\+promote\+\_\+members}}
+\begin{DoxyCompactList}\small\item\em Optional. Administrators only. True, if the administrator can add new administrators with a subset of their own privileges or demote administrators that he has promoted, directly or indirectly (promoted by administrators that were appointed by the user) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1ChatMember_a11351489f172aa80144b4743cf4d0680}\label{structtgbot_1_1ChatMember_a11351489f172aa80144b4743cf4d0680}} 
+bool \mbox{\hyperlink{structtgbot_1_1ChatMember_a11351489f172aa80144b4743cf4d0680}{can\+\_\+change\+\_\+info}}
+\begin{DoxyCompactList}\small\item\em Optional. Administrators and restricted only. True, if the user is allowed to change the chat title, photo and other settings. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1ChatMember_ad0991c1869ee53c47ec18a23557f1380}\label{structtgbot_1_1ChatMember_ad0991c1869ee53c47ec18a23557f1380}} 
+bool \mbox{\hyperlink{structtgbot_1_1ChatMember_ad0991c1869ee53c47ec18a23557f1380}{can\+\_\+invite\+\_\+users}}
+\begin{DoxyCompactList}\small\item\em Optional. Administrators and restricted only. True, if the user is allowed to invite new users to the chat. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1ChatMember_a1689b176632931c78c392550f7f071d5}\label{structtgbot_1_1ChatMember_a1689b176632931c78c392550f7f071d5}} 
+bool \mbox{\hyperlink{structtgbot_1_1ChatMember_a1689b176632931c78c392550f7f071d5}{can\+\_\+pin\+\_\+messages}}
+\begin{DoxyCompactList}\small\item\em Optional. Administrators and restricted only. True, if the user is allowed to pin messages; groups and supergroups only. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1ChatMember_a622c2b31fcb0e8b7a1b8c4f2c09c6347}\label{structtgbot_1_1ChatMember_a622c2b31fcb0e8b7a1b8c4f2c09c6347}} 
+bool \mbox{\hyperlink{structtgbot_1_1ChatMember_a622c2b31fcb0e8b7a1b8c4f2c09c6347}{is\+\_\+member}}
+\begin{DoxyCompactList}\small\item\em Optional. Restricted only. True, if the user is a member of the chat at the moment of the request. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1ChatMember_ab2b2660b5cde86ced6b21801419bd794}\label{structtgbot_1_1ChatMember_ab2b2660b5cde86ced6b21801419bd794}} 
+bool \mbox{\hyperlink{structtgbot_1_1ChatMember_ab2b2660b5cde86ced6b21801419bd794}{can\+\_\+send\+\_\+messages}}
+\begin{DoxyCompactList}\small\item\em Optional. Restricted only. True, if the user is allowed to send text messages, contacts, locations and venues. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1ChatMember_adc3b335f4edc4902527122ed37d33823}\label{structtgbot_1_1ChatMember_adc3b335f4edc4902527122ed37d33823}} 
+bool \mbox{\hyperlink{structtgbot_1_1ChatMember_adc3b335f4edc4902527122ed37d33823}{can\+\_\+send\+\_\+media\+\_\+messages}}
+\begin{DoxyCompactList}\small\item\em Optional. Restricted only. True, if the user is allowed to send audios, documents, photos, videos, video notes and voice notes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1ChatMember_aca55bdee6b76775d82530a5629212f1c}\label{structtgbot_1_1ChatMember_aca55bdee6b76775d82530a5629212f1c}} 
+bool \mbox{\hyperlink{structtgbot_1_1ChatMember_aca55bdee6b76775d82530a5629212f1c}{can\+\_\+send\+\_\+polls}}
+\begin{DoxyCompactList}\small\item\em Optional. Restricted only. True, if the user is allowed to send polls. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1ChatMember_a74cf69e8b9e6e3e77151bd6da9e24d9b}\label{structtgbot_1_1ChatMember_a74cf69e8b9e6e3e77151bd6da9e24d9b}} 
+bool \mbox{\hyperlink{structtgbot_1_1ChatMember_a74cf69e8b9e6e3e77151bd6da9e24d9b}{can\+\_\+send\+\_\+other\+\_\+messages}}
+\begin{DoxyCompactList}\small\item\em Optional. Restricted only. True, if the user is allowed to send animations, games, stickers and use inline bots. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1ChatMember_ae29fbb0a77897f08e75f08f26bf6e94f}\label{structtgbot_1_1ChatMember_ae29fbb0a77897f08e75f08f26bf6e94f}} 
+bool \mbox{\hyperlink{structtgbot_1_1ChatMember_ae29fbb0a77897f08e75f08f26bf6e94f}{can\+\_\+add\+\_\+web\+\_\+page\+\_\+previews}}
+\begin{DoxyCompactList}\small\item\em Optional. Restricted only. True, if the user is allowed to add web page previews to their messages. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object contains information about one member of a chat. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1ChatMember_a8e4da172529a118b66ae39192e4da377}\label{structtgbot_1_1ChatMember_a8e4da172529a118b66ae39192e4da377}} 
+\index{tgbot::ChatMember@{tgbot::ChatMember}!ChatMember@{ChatMember}}
+\index{ChatMember@{ChatMember}!tgbot::ChatMember@{tgbot::ChatMember}}
+\doxysubsubsection{\texorpdfstring{ChatMember()}{ChatMember()}}
+{\footnotesize\ttfamily tgbot\+::\+Chat\+Member\+::\+Chat\+Member (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1ChatMember_aeb6e60599d1f5842fe922f386facc7f6}\label{structtgbot_1_1ChatMember_aeb6e60599d1f5842fe922f386facc7f6}} 
+\index{tgbot::ChatMember@{tgbot::ChatMember}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::ChatMember@{tgbot::ChatMember}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Chat\+Member\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Chat\+Member.\+h\item 
+src/types/Chat\+Member.\+cpp\end{DoxyCompactItemize}

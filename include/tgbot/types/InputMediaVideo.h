@@ -81,6 +81,16 @@ namespace tgbot
 		 */
 		InputMediaVideo(const std::string &json);
 
+		/**
+		 * @param[in] media Passed to the member variable.
+		 * @param[in] thumb Passed to the member variable.
+		 * @param[in] caption Passed to the member variable.
+		 * @param[in] parse_mode Passed to the member variable.
+		 * @param[in] width Passed to the member variable.
+		 * @param[in] height Passed to the member variable.
+		 * @param[in] duration Passed to the member variable.
+		 * @param[in] supports_streaming Passed to the member variable.
+		 */
 		InputMediaVideo(const std::variant<std::string, tools::InputFile::ptr> &media, const std::variant<std::string, tools::InputFile::ptr> &thumb,
 				const std::string &caption = "", const std::string &parse_mode = "", const int &width = -1, const int &height = -1, const int &duration = -1,
 				const bool & supports_streaming = false);

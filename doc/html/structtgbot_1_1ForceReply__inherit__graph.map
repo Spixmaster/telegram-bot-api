@@ -1,0 +1,4 @@
+<map id="tgbot::ForceReply" name="tgbot::ForceReply">
+<area shape="rect" id="node1" title="Upon receiving a message with this object, Telegram clients will display a reply interface to the use..." alt="" coords="5,80,141,107"/>
+<area shape="rect" id="node2" href="$structtgbot_1_1Reply.html" title="The super class of all reply classes." alt="" coords="23,5,124,32"/>
+</map>

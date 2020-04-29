@@ -1,0 +1,98 @@
+\hypertarget{structtgbot_1_1ForceReply}{}\doxysection{tgbot\+::Force\+Reply Struct Reference}
+\label{structtgbot_1_1ForceReply}\index{tgbot::ForceReply@{tgbot::ForceReply}}
+
+
+Upon receiving a message with this object, Telegram clients will display a reply interface to the user (act as if the user has selected the bot‘s message and tapped ’\+Reply\textquotesingle{}).  
+
+
+
+
+{\ttfamily \#include $<$Force\+Reply.\+h$>$}
+
+
+
+Inheritance diagram for tgbot\+::Force\+Reply\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{structtgbot_1_1ForceReply__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for tgbot\+::Force\+Reply\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{structtgbot_1_1ForceReply__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1ForceReply_a58d85deec3170c0d2eb34c4c89413560}\label{structtgbot_1_1ForceReply_a58d85deec3170c0d2eb34c4c89413560}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1ForceReply}{Force\+Reply}} $>$ \mbox{\hyperlink{structtgbot_1_1ForceReply_a58d85deec3170c0d2eb34c4c89413560}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1ForceReply_a90cf116e564070cec6a385d125b7764f}{Force\+Reply}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1ForceReply_adf527945170bb6608efe04504f80e81f}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1ForceReply_a0fc409c04169a9a68afa721c7d99fe96}\label{structtgbot_1_1ForceReply_a0fc409c04169a9a68afa721c7d99fe96}} 
+bool \mbox{\hyperlink{structtgbot_1_1ForceReply_a0fc409c04169a9a68afa721c7d99fe96}{force\+\_\+reply}} = true
+\begin{DoxyCompactList}\small\item\em Shows reply interface to the user, as if they manually selected the bot‘s message and tapped ’\+Reply\textquotesingle{}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1ForceReply_a21fdda630afd67d5d7af329cc45cb9bd}\label{structtgbot_1_1ForceReply_a21fdda630afd67d5d7af329cc45cb9bd}} 
+bool \mbox{\hyperlink{structtgbot_1_1ForceReply_a21fdda630afd67d5d7af329cc45cb9bd}{selective}} = false
+\begin{DoxyCompactList}\small\item\em Optional. Use this parameter if you want to force reply from specific users only. Targets\+: 1) users that are @mentioned in the text of the \mbox{\hyperlink{structtgbot_1_1Message}{Message}} object; 2) if the bot\textquotesingle{}s message is a reply (has reply\+\_\+to\+\_\+message\+\_\+id), sender of the original message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Upon receiving a message with this object, Telegram clients will display a reply interface to the user (act as if the user has selected the bot‘s message and tapped ’\+Reply\textquotesingle{}). 
+
+This can be extremely useful if you want to create user-\/friendly step-\/by-\/step interfaces without having to sacrifice privacy mode. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1ForceReply_a90cf116e564070cec6a385d125b7764f}\label{structtgbot_1_1ForceReply_a90cf116e564070cec6a385d125b7764f}} 
+\index{tgbot::ForceReply@{tgbot::ForceReply}!ForceReply@{ForceReply}}
+\index{ForceReply@{ForceReply}!tgbot::ForceReply@{tgbot::ForceReply}}
+\doxysubsubsection{\texorpdfstring{ForceReply()}{ForceReply()}}
+{\footnotesize\ttfamily tgbot\+::\+Force\+Reply\+::\+Force\+Reply (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1ForceReply_adf527945170bb6608efe04504f80e81f}\label{structtgbot_1_1ForceReply_adf527945170bb6608efe04504f80e81f}} 
+\index{tgbot::ForceReply@{tgbot::ForceReply}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::ForceReply@{tgbot::ForceReply}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Force\+Reply\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{structtgbot_1_1Reply_a815e89bc1534242fdfacaf8ec62327f1}{tgbot\+::\+Reply}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Force\+Reply.\+h\item 
+src/types/Force\+Reply.\+cpp\end{DoxyCompactItemize}

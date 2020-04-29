@@ -1,0 +1,81 @@
+\hypertarget{structtgbot_1_1Contact}{}\doxysection{tgbot\+::Contact Struct Reference}
+\label{structtgbot_1_1Contact}\index{tgbot::Contact@{tgbot::Contact}}
+
+
+This object represents a phone contact.  
+
+
+
+
+{\ttfamily \#include $<$Contact.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1Contact_a09d57dc424ec5c9a1fd4f4f98e855aec}\label{structtgbot_1_1Contact_a09d57dc424ec5c9a1fd4f4f98e855aec}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1Contact}{Contact}} $>$ \mbox{\hyperlink{structtgbot_1_1Contact_a09d57dc424ec5c9a1fd4f4f98e855aec}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1Contact_a712e23fc105faa4fef45199ba9bdb14e}{Contact}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Contact_a50cbc5970f3c0eb64c0ae8ef3429d684}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1Contact_a3d1c4e252054921ebadaf20322a58aa8}\label{structtgbot_1_1Contact_a3d1c4e252054921ebadaf20322a58aa8}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Contact_a3d1c4e252054921ebadaf20322a58aa8}{phone\+\_\+number}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structtgbot_1_1Contact}{Contact}}\textquotesingle{}s phone number. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Contact_a194b4086a7d09af52d9918edb52240e5}\label{structtgbot_1_1Contact_a194b4086a7d09af52d9918edb52240e5}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Contact_a194b4086a7d09af52d9918edb52240e5}{first\+\_\+name}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structtgbot_1_1Contact}{Contact}}\textquotesingle{}s first name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Contact_a2dd8470c09285bbf250cfe72156d9544}\label{structtgbot_1_1Contact_a2dd8470c09285bbf250cfe72156d9544}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Contact_a2dd8470c09285bbf250cfe72156d9544}{last\+\_\+name}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1Contact}{Contact}}\textquotesingle{}s last name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Contact_a8ad17cb708c2305e60af9f5327eb34f5}\label{structtgbot_1_1Contact_a8ad17cb708c2305e60af9f5327eb34f5}} 
+int \mbox{\hyperlink{structtgbot_1_1Contact_a8ad17cb708c2305e60af9f5327eb34f5}{user\+\_\+id}} = -\/1
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1Contact}{Contact}}\textquotesingle{}s user identifier in Telegram. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Contact_a98d512f59af55f44988b98d92a04c2a8}\label{structtgbot_1_1Contact_a98d512f59af55f44988b98d92a04c2a8}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Contact_a98d512f59af55f44988b98d92a04c2a8}{vcard}}
+\begin{DoxyCompactList}\small\item\em Optional. Additional data about the contact in the form of a v\+Card. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object represents a phone contact. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1Contact_a712e23fc105faa4fef45199ba9bdb14e}\label{structtgbot_1_1Contact_a712e23fc105faa4fef45199ba9bdb14e}} 
+\index{tgbot::Contact@{tgbot::Contact}!Contact@{Contact}}
+\index{Contact@{Contact}!tgbot::Contact@{tgbot::Contact}}
+\doxysubsubsection{\texorpdfstring{Contact()}{Contact()}}
+{\footnotesize\ttfamily tgbot\+::\+Contact\+::\+Contact (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1Contact_a50cbc5970f3c0eb64c0ae8ef3429d684}\label{structtgbot_1_1Contact_a50cbc5970f3c0eb64c0ae8ef3429d684}} 
+\index{tgbot::Contact@{tgbot::Contact}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::Contact@{tgbot::Contact}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Contact\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Contact.\+h\item 
+src/types/Contact.\+cpp\end{DoxyCompactItemize}

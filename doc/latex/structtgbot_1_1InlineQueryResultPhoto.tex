@@ -1,0 +1,130 @@
+\hypertarget{structtgbot_1_1InlineQueryResultPhoto}{}\doxysection{tgbot\+::Inline\+Query\+Result\+Photo Struct Reference}
+\label{structtgbot_1_1InlineQueryResultPhoto}\index{tgbot::InlineQueryResultPhoto@{tgbot::InlineQueryResultPhoto}}
+
+
+Represents a link to a photo.  
+
+
+
+
+{\ttfamily \#include $<$Inline\+Query\+Result\+Photo.\+h$>$}
+
+
+
+Inheritance diagram for tgbot\+::Inline\+Query\+Result\+Photo\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{structtgbot_1_1InlineQueryResultPhoto__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for tgbot\+::Inline\+Query\+Result\+Photo\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{structtgbot_1_1InlineQueryResultPhoto__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultPhoto_ac04e429c94e0a1b637b1f0afce061e5e}\label{structtgbot_1_1InlineQueryResultPhoto_ac04e429c94e0a1b637b1f0afce061e5e}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1InlineQueryResultPhoto}{Inline\+Query\+Result\+Photo}} $>$ \mbox{\hyperlink{structtgbot_1_1InlineQueryResultPhoto_ac04e429c94e0a1b637b1f0afce061e5e}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1InlineQueryResultPhoto_a85b7b574cd972a8936e036e81137a881}{Inline\+Query\+Result\+Photo}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultPhoto_ad82613f99979363e0721de240b3da5de}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultPhoto_a8036d2d0fdd724a6643aaaed959f0539}\label{structtgbot_1_1InlineQueryResultPhoto_a8036d2d0fdd724a6643aaaed959f0539}} 
+const std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultPhoto_a8036d2d0fdd724a6643aaaed959f0539}{type}} = \char`\"{}photo\char`\"{}
+\begin{DoxyCompactList}\small\item\em Type of the result, must be photo. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultPhoto_af5256786d9d854846fcfb46e3b886ca5}\label{structtgbot_1_1InlineQueryResultPhoto_af5256786d9d854846fcfb46e3b886ca5}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultPhoto_af5256786d9d854846fcfb46e3b886ca5}{id}}
+\begin{DoxyCompactList}\small\item\em Unique identifier for this result, 1-\/64 bytes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultPhoto_aa2b892e50b6c5e660e5ae687d9bc2c15}\label{structtgbot_1_1InlineQueryResultPhoto_aa2b892e50b6c5e660e5ae687d9bc2c15}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultPhoto_aa2b892e50b6c5e660e5ae687d9bc2c15}{photo\+\_\+url}}
+\begin{DoxyCompactList}\small\item\em A valid U\+RL of the photo. Photo must be in jpeg format. Photo size must not exceed 5MB. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultPhoto_a4770e94d634a2a98dd9c2fe231acbc9e}\label{structtgbot_1_1InlineQueryResultPhoto_a4770e94d634a2a98dd9c2fe231acbc9e}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultPhoto_a4770e94d634a2a98dd9c2fe231acbc9e}{thumb\+\_\+url}}
+\begin{DoxyCompactList}\small\item\em U\+RL of the thumbnail for the photo. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultPhoto_ac696131adfcbd7f5e2f66bbbdefaf849}\label{structtgbot_1_1InlineQueryResultPhoto_ac696131adfcbd7f5e2f66bbbdefaf849}} 
+int \mbox{\hyperlink{structtgbot_1_1InlineQueryResultPhoto_ac696131adfcbd7f5e2f66bbbdefaf849}{photo\+\_\+width}} = -\/1
+\begin{DoxyCompactList}\small\item\em Optional. Width of the photo. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultPhoto_aa75c2ff7794d627846492bad3565fec2}\label{structtgbot_1_1InlineQueryResultPhoto_aa75c2ff7794d627846492bad3565fec2}} 
+int \mbox{\hyperlink{structtgbot_1_1InlineQueryResultPhoto_aa75c2ff7794d627846492bad3565fec2}{photo\+\_\+height}} = -\/1
+\begin{DoxyCompactList}\small\item\em Optional. Height of the photo. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultPhoto_a6d109cc201c52ca31127e805d41a6d94}\label{structtgbot_1_1InlineQueryResultPhoto_a6d109cc201c52ca31127e805d41a6d94}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultPhoto_a6d109cc201c52ca31127e805d41a6d94}{title}}
+\begin{DoxyCompactList}\small\item\em Optional. Title for the result. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultPhoto_a96d8a00fea719d24ec4bd01fb7cd182a}\label{structtgbot_1_1InlineQueryResultPhoto_a96d8a00fea719d24ec4bd01fb7cd182a}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultPhoto_a96d8a00fea719d24ec4bd01fb7cd182a}{description}}
+\begin{DoxyCompactList}\small\item\em Optional. Short description of the result. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultPhoto_a6a4628af942c39089ca533a8a2c4db95}\label{structtgbot_1_1InlineQueryResultPhoto_a6a4628af942c39089ca533a8a2c4db95}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultPhoto_a6a4628af942c39089ca533a8a2c4db95}{caption}}
+\begin{DoxyCompactList}\small\item\em Optional. Caption of the photo to be sent, 0-\/1024 characters after entities parsing. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultPhoto_a28b5564410b7f8c50a46f57331e92e8b}\label{structtgbot_1_1InlineQueryResultPhoto_a28b5564410b7f8c50a46f57331e92e8b}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultPhoto_a28b5564410b7f8c50a46f57331e92e8b}{parse\+\_\+mode}}
+\begin{DoxyCompactList}\small\item\em Optional. Mode for parsing entities in the photo caption. See formatting options for more details. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultPhoto_ad72e6d709c4f8adfbcb8533fde034db2}\label{structtgbot_1_1InlineQueryResultPhoto_ad72e6d709c4f8adfbcb8533fde034db2}} 
+\mbox{\hyperlink{structtgbot_1_1InlineKeyboardMarkup_a6973beabdcfa398f58a1ad9bb74e6014}{Inline\+Keyboard\+Markup\+::ptr}} \mbox{\hyperlink{structtgbot_1_1InlineQueryResultPhoto_ad72e6d709c4f8adfbcb8533fde034db2}{reply\+\_\+markup}}
+\begin{DoxyCompactList}\small\item\em Optional. Inline keyboard attached to the message. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultPhoto_ae40bcdb44e5fb1aeb16fef7ba7c2b535}\label{structtgbot_1_1InlineQueryResultPhoto_ae40bcdb44e5fb1aeb16fef7ba7c2b535}} 
+\mbox{\hyperlink{structtgbot_1_1InputMessageContent_a734b8fff62c96003068a9bc6ddb0d271}{Input\+Message\+Content\+::ptr}} \mbox{\hyperlink{structtgbot_1_1InlineQueryResultPhoto_ae40bcdb44e5fb1aeb16fef7ba7c2b535}{input\+\_\+message\+\_\+content}}
+\begin{DoxyCompactList}\small\item\em Optional. Content of the message to be sent instead of the photo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a link to a photo. 
+
+By default, this photo will be sent by the user with optional caption.
+
+Alternatively, you can use input\+\_\+message\+\_\+content to send a message with the specified content instead of the photo. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultPhoto_a85b7b574cd972a8936e036e81137a881}\label{structtgbot_1_1InlineQueryResultPhoto_a85b7b574cd972a8936e036e81137a881}} 
+\index{tgbot::InlineQueryResultPhoto@{tgbot::InlineQueryResultPhoto}!InlineQueryResultPhoto@{InlineQueryResultPhoto}}
+\index{InlineQueryResultPhoto@{InlineQueryResultPhoto}!tgbot::InlineQueryResultPhoto@{tgbot::InlineQueryResultPhoto}}
+\doxysubsubsection{\texorpdfstring{InlineQueryResultPhoto()}{InlineQueryResultPhoto()}}
+{\footnotesize\ttfamily tgbot\+::\+Inline\+Query\+Result\+Photo\+::\+Inline\+Query\+Result\+Photo (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultPhoto_ad82613f99979363e0721de240b3da5de}\label{structtgbot_1_1InlineQueryResultPhoto_ad82613f99979363e0721de240b3da5de}} 
+\index{tgbot::InlineQueryResultPhoto@{tgbot::InlineQueryResultPhoto}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::InlineQueryResultPhoto@{tgbot::InlineQueryResultPhoto}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Inline\+Query\+Result\+Photo\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{structtgbot_1_1InlineQueryResult_a7aa714c457e54ab6e51b1b0abc8c784c}{tgbot\+::\+Inline\+Query\+Result}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Inline\+Query\+Result\+Photo.\+h\item 
+src/types/Inline\+Query\+Result\+Photo.\+cpp\end{DoxyCompactItemize}

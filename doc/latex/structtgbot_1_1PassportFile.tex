@@ -1,0 +1,80 @@
+\hypertarget{structtgbot_1_1PassportFile}{}\doxysection{tgbot\+::Passport\+File Struct Reference}
+\label{structtgbot_1_1PassportFile}\index{tgbot::PassportFile@{tgbot::PassportFile}}
+
+
+This object represents a file uploaded to Telegram Passport.  
+
+
+
+
+{\ttfamily \#include $<$Passport\+File.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1PassportFile_a7559ce874257a134841915da5564f047}\label{structtgbot_1_1PassportFile_a7559ce874257a134841915da5564f047}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1PassportFile}{Passport\+File}} $>$ \mbox{\hyperlink{structtgbot_1_1PassportFile_a7559ce874257a134841915da5564f047}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1PassportFile_ac83b45acb3e22158292ce205e60d57f9}{Passport\+File}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1PassportFile_a2f81c4e544f31fb5a54958c1c4a1a214}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1PassportFile_a3cc8557b6b9476f7bff0e0b7fb3e0406}\label{structtgbot_1_1PassportFile_a3cc8557b6b9476f7bff0e0b7fb3e0406}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1PassportFile_a3cc8557b6b9476f7bff0e0b7fb3e0406}{file\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Identifier for this file, which can be used to download or reuse the file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1PassportFile_a51acaae01d47e6636daddfc9149a412a}\label{structtgbot_1_1PassportFile_a51acaae01d47e6636daddfc9149a412a}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1PassportFile_a51acaae01d47e6636daddfc9149a412a}{file\+\_\+unique\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Unique identifier for this file, which is supposed to be the same over time and for different bots. Can\textquotesingle{}t be used to download or reuse the file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1PassportFile_acf93f00f1bc378695e0296b4a8367ec3}\label{structtgbot_1_1PassportFile_acf93f00f1bc378695e0296b4a8367ec3}} 
+int \mbox{\hyperlink{structtgbot_1_1PassportFile_acf93f00f1bc378695e0296b4a8367ec3}{file\+\_\+size}} = -\/1
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structtgbot_1_1File}{File}} size. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1PassportFile_a1a2e1970ddbcd5625a472de460e1e9f7}\label{structtgbot_1_1PassportFile_a1a2e1970ddbcd5625a472de460e1e9f7}} 
+int \mbox{\hyperlink{structtgbot_1_1PassportFile_a1a2e1970ddbcd5625a472de460e1e9f7}{file\+\_\+date}} = -\/1
+\begin{DoxyCompactList}\small\item\em Unix time when the file was uploaded. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object represents a file uploaded to Telegram Passport. 
+
+Currently all Telegram Passport files are in J\+P\+EG format when decrypted and don\textquotesingle{}t exceed 10MB. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1PassportFile_ac83b45acb3e22158292ce205e60d57f9}\label{structtgbot_1_1PassportFile_ac83b45acb3e22158292ce205e60d57f9}} 
+\index{tgbot::PassportFile@{tgbot::PassportFile}!PassportFile@{PassportFile}}
+\index{PassportFile@{PassportFile}!tgbot::PassportFile@{tgbot::PassportFile}}
+\doxysubsubsection{\texorpdfstring{PassportFile()}{PassportFile()}}
+{\footnotesize\ttfamily tgbot\+::\+Passport\+File\+::\+Passport\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1PassportFile_a2f81c4e544f31fb5a54958c1c4a1a214}\label{structtgbot_1_1PassportFile_a2f81c4e544f31fb5a54958c1c4a1a214}} 
+\index{tgbot::PassportFile@{tgbot::PassportFile}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::PassportFile@{tgbot::PassportFile}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Passport\+File\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Passport\+File.\+h\item 
+src/types/Passport\+File.\+cpp\end{DoxyCompactItemize}

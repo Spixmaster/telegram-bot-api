@@ -1,0 +1,102 @@
+\hypertarget{structtgbot_1_1PassportElementErrorTranslationFiles}{}\doxysection{tgbot\+::Passport\+Element\+Error\+Translation\+Files Struct Reference}
+\label{structtgbot_1_1PassportElementErrorTranslationFiles}\index{tgbot::PassportElementErrorTranslationFiles@{tgbot::PassportElementErrorTranslationFiles}}
+
+
+Represents an issue with the translated version of a document. The error is considered resolved when a file with the document translation change.  
+
+
+
+
+{\ttfamily \#include $<$Passport\+Element\+Error\+Translation\+Files.\+h$>$}
+
+
+
+Inheritance diagram for tgbot\+::Passport\+Element\+Error\+Translation\+Files\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{structtgbot_1_1PassportElementErrorTranslationFiles__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for tgbot\+::Passport\+Element\+Error\+Translation\+Files\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{structtgbot_1_1PassportElementErrorTranslationFiles__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1PassportElementErrorTranslationFiles_a85c5f694659f1214829ab1579b4c3699}\label{structtgbot_1_1PassportElementErrorTranslationFiles_a85c5f694659f1214829ab1579b4c3699}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1PassportElementErrorTranslationFiles}{Passport\+Element\+Error\+Translation\+Files}} $>$ \mbox{\hyperlink{structtgbot_1_1PassportElementErrorTranslationFiles_a85c5f694659f1214829ab1579b4c3699}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1PassportElementErrorTranslationFiles_ac9ef180c6fd50103a92350c4712d6fea}{Passport\+Element\+Error\+Translation\+Files}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1PassportElementErrorTranslationFiles_a888c64eb8338728209c8a8637964ee35}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1PassportElementErrorTranslationFiles_af730001bce0ba4cb73f0ac2e5c6edaca}\label{structtgbot_1_1PassportElementErrorTranslationFiles_af730001bce0ba4cb73f0ac2e5c6edaca}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1PassportElementErrorTranslationFiles_af730001bce0ba4cb73f0ac2e5c6edaca}{source}}
+\begin{DoxyCompactList}\small\item\em Error source, must be translation\+\_\+files. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1PassportElementErrorTranslationFiles_aff7bfc5796b0bf6d83e43d207eb0c4cd}\label{structtgbot_1_1PassportElementErrorTranslationFiles_aff7bfc5796b0bf6d83e43d207eb0c4cd}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1PassportElementErrorTranslationFiles_aff7bfc5796b0bf6d83e43d207eb0c4cd}{type}}
+\begin{DoxyCompactList}\small\item\em Type of element of the user\textquotesingle{}s Telegram Passport which has the issue, one of “passport”, “driver\+\_\+license”, “identity\+\_\+card”, “internal\+\_\+passport”, “utility\+\_\+bill”, “bank\+\_\+statement”, “rental\+\_\+agreement”, “passport\+\_\+registration”, “temporary\+\_\+registration” \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1PassportElementErrorTranslationFiles_a12a830de2d55f23a9cf5c74554fd47d5}\label{structtgbot_1_1PassportElementErrorTranslationFiles_a12a830de2d55f23a9cf5c74554fd47d5}} 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{structtgbot_1_1PassportElementErrorTranslationFiles_a12a830de2d55f23a9cf5c74554fd47d5}{file\+\_\+hashes}}
+\begin{DoxyCompactList}\small\item\em List of base64-\/encoded file hashes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1PassportElementErrorTranslationFiles_abb0f339baac7480691b3bde26304c7e4}\label{structtgbot_1_1PassportElementErrorTranslationFiles_abb0f339baac7480691b3bde26304c7e4}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1PassportElementErrorTranslationFiles_abb0f339baac7480691b3bde26304c7e4}{message}}
+\begin{DoxyCompactList}\small\item\em Error message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents an issue with the translated version of a document. The error is considered resolved when a file with the document translation change. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1PassportElementErrorTranslationFiles_ac9ef180c6fd50103a92350c4712d6fea}\label{structtgbot_1_1PassportElementErrorTranslationFiles_ac9ef180c6fd50103a92350c4712d6fea}} 
+\index{tgbot::PassportElementErrorTranslationFiles@{tgbot::PassportElementErrorTranslationFiles}!PassportElementErrorTranslationFiles@{PassportElementErrorTranslationFiles}}
+\index{PassportElementErrorTranslationFiles@{PassportElementErrorTranslationFiles}!tgbot::PassportElementErrorTranslationFiles@{tgbot::PassportElementErrorTranslationFiles}}
+\doxysubsubsection{\texorpdfstring{PassportElementErrorTranslationFiles()}{PassportElementErrorTranslationFiles()}}
+{\footnotesize\ttfamily tgbot\+::\+Passport\+Element\+Error\+Translation\+Files\+::\+Passport\+Element\+Error\+Translation\+Files (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1PassportElementErrorTranslationFiles_a888c64eb8338728209c8a8637964ee35}\label{structtgbot_1_1PassportElementErrorTranslationFiles_a888c64eb8338728209c8a8637964ee35}} 
+\index{tgbot::PassportElementErrorTranslationFiles@{tgbot::PassportElementErrorTranslationFiles}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::PassportElementErrorTranslationFiles@{tgbot::PassportElementErrorTranslationFiles}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Passport\+Element\+Error\+Translation\+Files\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{structtgbot_1_1PassportElementError_aa5b0e3529e2667ce9888da7bb45aa4d8}{tgbot\+::\+Passport\+Element\+Error}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Passport\+Element\+Error\+Translation\+Files.\+h\item 
+src/types/Passport\+Element\+Error\+Translation\+Files.\+cpp\end{DoxyCompactItemize}

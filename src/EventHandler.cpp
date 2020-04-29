@@ -243,7 +243,7 @@ namespace tgbot
 		{
 			for(std::size_t j = 0; j < m_poll_answer_listener_ls.size(); ++j)
 			{
-				m_poll_listener_element element = m_poll_answer_listener_ls.at(j);
+				m_poll_answer_listener_element element = m_poll_answer_listener_ls.at(j);
 				element(update->poll_answer);
 			}
 		}
@@ -294,8 +294,13 @@ namespace tgbot
 		m_pre_checkout_query_listener_ls.push_back(listener_element);
 	}
 
-	void EventHandler::on_poll_query(const m_poll_listener_element &listener_element) noexcept
+	void EventHandler::on_poll(const m_poll_listener_element &listener_element) noexcept
 	{
 		m_poll_listener_ls.push_back(listener_element);
+	}
+
+	void EventHandler::on_poll_answer(const m_poll_answer_listener_element &listener_element) noexcept
+	{
+		m_poll_answer_listener_ls.push_back(listener_element);
 	}
 }

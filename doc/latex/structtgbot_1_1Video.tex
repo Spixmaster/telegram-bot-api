@@ -1,0 +1,90 @@
+\hypertarget{structtgbot_1_1Video}{}\doxysection{tgbot\+::Video Struct Reference}
+\label{structtgbot_1_1Video}\index{tgbot::Video@{tgbot::Video}}
+
+
+This object represents a video file.  
+
+
+
+
+{\ttfamily \#include $<$Video.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1Video_ad5142f45b83d5771f70096d6b462b3ad}\label{structtgbot_1_1Video_ad5142f45b83d5771f70096d6b462b3ad}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1Video}{Video}} $>$ \mbox{\hyperlink{structtgbot_1_1Video_ad5142f45b83d5771f70096d6b462b3ad}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1Video_aab01cf20b5fb6ed615440b3174355b00}{Video}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Video_a627e879b03c3d9d340dd6dd6213a1871}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1Video_ab4367225382d46d3ccd8b161c62b4c86}\label{structtgbot_1_1Video_ab4367225382d46d3ccd8b161c62b4c86}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Video_ab4367225382d46d3ccd8b161c62b4c86}{file\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Identifier for this file, which can be used to download or reuse the file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Video_a91b3a24c460216094fc28c5018166f16}\label{structtgbot_1_1Video_a91b3a24c460216094fc28c5018166f16}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Video_a91b3a24c460216094fc28c5018166f16}{file\+\_\+unique\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Unique identifier for this file, which is supposed to be the same over time and for different bots. Can\textquotesingle{}t be used to download or reuse the file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Video_a7e480489f69936fcddd2e07a1aad187f}\label{structtgbot_1_1Video_a7e480489f69936fcddd2e07a1aad187f}} 
+int \mbox{\hyperlink{structtgbot_1_1Video_a7e480489f69936fcddd2e07a1aad187f}{width}} = -\/1
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structtgbot_1_1Video}{Video}} width as defined by sender. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Video_aa80b5a8f48d39fc3218ad200c28763b8}\label{structtgbot_1_1Video_aa80b5a8f48d39fc3218ad200c28763b8}} 
+int \mbox{\hyperlink{structtgbot_1_1Video_aa80b5a8f48d39fc3218ad200c28763b8}{height}} = -\/1
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structtgbot_1_1Video}{Video}} height as defined by sender. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Video_a5b183315ac7bb3db0183f1c525bfa212}\label{structtgbot_1_1Video_a5b183315ac7bb3db0183f1c525bfa212}} 
+int \mbox{\hyperlink{structtgbot_1_1Video_a5b183315ac7bb3db0183f1c525bfa212}{duration}} = -\/1
+\begin{DoxyCompactList}\small\item\em Duration of the video in seconds as defined by sender. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Video_a352cbbfe87271d61179903acffa5a146}\label{structtgbot_1_1Video_a352cbbfe87271d61179903acffa5a146}} 
+\mbox{\hyperlink{structtgbot_1_1PhotoSize_a5c9e46410c663fda470caa5f806781ad}{Photo\+Size\+::ptr}} \mbox{\hyperlink{structtgbot_1_1Video_a352cbbfe87271d61179903acffa5a146}{thumb}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1Video}{Video}} thumbnail. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Video_abdf96bb8acb9ba41db50433cad9aaa34}\label{structtgbot_1_1Video_abdf96bb8acb9ba41db50433cad9aaa34}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Video_abdf96bb8acb9ba41db50433cad9aaa34}{mime\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em Optional. Mime type of a file as defined by sender. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Video_a7a913d85f09e2218dc8a72464bf4c001}\label{structtgbot_1_1Video_a7a913d85f09e2218dc8a72464bf4c001}} 
+int \mbox{\hyperlink{structtgbot_1_1Video_a7a913d85f09e2218dc8a72464bf4c001}{file\+\_\+size}} = -\/1
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1File}{File}} size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object represents a video file. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1Video_aab01cf20b5fb6ed615440b3174355b00}\label{structtgbot_1_1Video_aab01cf20b5fb6ed615440b3174355b00}} 
+\index{tgbot::Video@{tgbot::Video}!Video@{Video}}
+\index{Video@{Video}!tgbot::Video@{tgbot::Video}}
+\doxysubsubsection{\texorpdfstring{Video()}{Video()}}
+{\footnotesize\ttfamily tgbot\+::\+Video\+::\+Video (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1Video_a627e879b03c3d9d340dd6dd6213a1871}\label{structtgbot_1_1Video_a627e879b03c3d9d340dd6dd6213a1871}} 
+\index{tgbot::Video@{tgbot::Video}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::Video@{tgbot::Video}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Video\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Video.\+h\item 
+src/types/Video.\+cpp\end{DoxyCompactItemize}

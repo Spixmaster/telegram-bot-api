@@ -1,0 +1,101 @@
+\hypertarget{structtgbot_1_1PreCheckoutQuery}{}\doxysection{tgbot\+::Pre\+Checkout\+Query Struct Reference}
+\label{structtgbot_1_1PreCheckoutQuery}\index{tgbot::PreCheckoutQuery@{tgbot::PreCheckoutQuery}}
+
+
+This object contains information about an incoming pre-\/checkout query.  
+
+
+
+
+{\ttfamily \#include $<$Pre\+Checkout\+Query.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1PreCheckoutQuery_a397a8cbfc7911a754ca755c78897ae1d}\label{structtgbot_1_1PreCheckoutQuery_a397a8cbfc7911a754ca755c78897ae1d}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1PreCheckoutQuery}{Pre\+Checkout\+Query}} $>$ \mbox{\hyperlink{structtgbot_1_1PreCheckoutQuery_a397a8cbfc7911a754ca755c78897ae1d}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1PreCheckoutQuery_a11ba1acbfec1f11679a7e47f4b01a8e2}{Pre\+Checkout\+Query}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1PreCheckoutQuery_aa760e9e9ea13d176f30d259f9fa1f79c}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1PreCheckoutQuery_acd32bfaa75b4e41568d08ed8e99188b8}\label{structtgbot_1_1PreCheckoutQuery_acd32bfaa75b4e41568d08ed8e99188b8}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1PreCheckoutQuery_acd32bfaa75b4e41568d08ed8e99188b8}{id}}
+\begin{DoxyCompactList}\small\item\em Unique query identifier. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1PreCheckoutQuery_a29842122f006730edb57d3c9494365e2}\label{structtgbot_1_1PreCheckoutQuery_a29842122f006730edb57d3c9494365e2}} 
+\mbox{\hyperlink{structtgbot_1_1User_a9c48e6206c4f8f4ed3ae7ee2ce9ac395}{User\+::ptr}} \mbox{\hyperlink{structtgbot_1_1PreCheckoutQuery_a29842122f006730edb57d3c9494365e2}{from}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structtgbot_1_1User}{User}} who sent the query. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1PreCheckoutQuery_a30a2d8fae3cd8f22f965194c5f051af3}\label{structtgbot_1_1PreCheckoutQuery_a30a2d8fae3cd8f22f965194c5f051af3}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1PreCheckoutQuery_a30a2d8fae3cd8f22f965194c5f051af3}{currency}}
+\begin{DoxyCompactList}\small\item\em Three-\/letter I\+SO 4217 currency code. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structtgbot_1_1PreCheckoutQuery_af67161260d759befb31f37465ee114e7}{total\+\_\+amount}} = -\/1
+\begin{DoxyCompactList}\small\item\em Total price in the smallest units of the currency (integer, not float/double). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1PreCheckoutQuery_a4c253d73b012faf210d18c8986c60997}\label{structtgbot_1_1PreCheckoutQuery_a4c253d73b012faf210d18c8986c60997}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1PreCheckoutQuery_a4c253d73b012faf210d18c8986c60997}{invoice\+\_\+payload}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classtgbot_1_1Bot}{Bot}} specified invoice payload. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1PreCheckoutQuery_a155b3bbb608b641f334f389003dd136f}\label{structtgbot_1_1PreCheckoutQuery_a155b3bbb608b641f334f389003dd136f}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1PreCheckoutQuery_a155b3bbb608b641f334f389003dd136f}{shipping\+\_\+option\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Optional. Identifier of the shipping option chosen by the user. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1PreCheckoutQuery_a58750a958d3918c4d3265074e6223531}\label{structtgbot_1_1PreCheckoutQuery_a58750a958d3918c4d3265074e6223531}} 
+\mbox{\hyperlink{structtgbot_1_1OrderInfo_a8cdc9ad8685897b6a28c8a3b724c4260}{Order\+Info\+::ptr}} \mbox{\hyperlink{structtgbot_1_1PreCheckoutQuery_a58750a958d3918c4d3265074e6223531}{order\+\_\+info}}
+\begin{DoxyCompactList}\small\item\em Optional. Order info provided by the user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object contains information about an incoming pre-\/checkout query. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1PreCheckoutQuery_a11ba1acbfec1f11679a7e47f4b01a8e2}\label{structtgbot_1_1PreCheckoutQuery_a11ba1acbfec1f11679a7e47f4b01a8e2}} 
+\index{tgbot::PreCheckoutQuery@{tgbot::PreCheckoutQuery}!PreCheckoutQuery@{PreCheckoutQuery}}
+\index{PreCheckoutQuery@{PreCheckoutQuery}!tgbot::PreCheckoutQuery@{tgbot::PreCheckoutQuery}}
+\doxysubsubsection{\texorpdfstring{PreCheckoutQuery()}{PreCheckoutQuery()}}
+{\footnotesize\ttfamily tgbot\+::\+Pre\+Checkout\+Query\+::\+Pre\+Checkout\+Query (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1PreCheckoutQuery_aa760e9e9ea13d176f30d259f9fa1f79c}\label{structtgbot_1_1PreCheckoutQuery_aa760e9e9ea13d176f30d259f9fa1f79c}} 
+\index{tgbot::PreCheckoutQuery@{tgbot::PreCheckoutQuery}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::PreCheckoutQuery@{tgbot::PreCheckoutQuery}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Pre\+Checkout\+Query\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structtgbot_1_1PreCheckoutQuery_af67161260d759befb31f37465ee114e7}\label{structtgbot_1_1PreCheckoutQuery_af67161260d759befb31f37465ee114e7}} 
+\index{tgbot::PreCheckoutQuery@{tgbot::PreCheckoutQuery}!total\_amount@{total\_amount}}
+\index{total\_amount@{total\_amount}!tgbot::PreCheckoutQuery@{tgbot::PreCheckoutQuery}}
+\doxysubsubsection{\texorpdfstring{total\_amount}{total\_amount}}
+{\footnotesize\ttfamily tgbot\+::\+Pre\+Checkout\+Query\+::total\+\_\+amount = -\/1}
+
+
+
+Total price in the smallest units of the currency (integer, not float/double). 
+
+For example, for a price of US\$ 1.\+45 pass amount = 145.
+
+See the exp parameter in currencies.\+json, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Pre\+Checkout\+Query.\+h\item 
+src/types/Pre\+Checkout\+Query.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,131 @@
+\hypertarget{structtgbot_1_1Chat}{}\doxysection{tgbot\+::Chat Struct Reference}
+\label{structtgbot_1_1Chat}\index{tgbot::Chat@{tgbot::Chat}}
+
+
+This object represents a chat.  
+
+
+
+
+{\ttfamily \#include $<$Chat.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1Chat_a96eb00f4faf12b035e393798a0503e26}\label{structtgbot_1_1Chat_a96eb00f4faf12b035e393798a0503e26}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1Chat}{Chat}} $>$ \mbox{\hyperlink{structtgbot_1_1Chat_a96eb00f4faf12b035e393798a0503e26}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1Chat_a00fd6f6c4c1aa23b96b731a522d28686}{Chat}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Chat_aee17a807aebba975bffa054dbbb0a605}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+long long \mbox{\hyperlink{structtgbot_1_1Chat_ab7bf6c0ab0e3d447a743eb111de8ee9d}{id}} = -\/1
+\begin{DoxyCompactList}\small\item\em Unique identifier for this chat. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Chat_a4b04a2da1508fe2856980d8695ff193d}\label{structtgbot_1_1Chat_a4b04a2da1508fe2856980d8695ff193d}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Chat_a4b04a2da1508fe2856980d8695ff193d}{type}}
+\begin{DoxyCompactList}\small\item\em Type of chat, can be either “private”, “group”, “supergroup” or “channel” \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Chat_a7d37891bffd0c1f1584ad292b4a0b0d5}\label{structtgbot_1_1Chat_a7d37891bffd0c1f1584ad292b4a0b0d5}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Chat_a7d37891bffd0c1f1584ad292b4a0b0d5}{title}}
+\begin{DoxyCompactList}\small\item\em Optional. Title, for supergroups, channels and group chats. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Chat_aa60b1b96ff328162f2e740e973363653}\label{structtgbot_1_1Chat_aa60b1b96ff328162f2e740e973363653}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Chat_aa60b1b96ff328162f2e740e973363653}{username}}
+\begin{DoxyCompactList}\small\item\em Optional. Username, for private chats, supergroups and channels if available. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Chat_a521c1ae2e542835a62e6b716d84dd861}\label{structtgbot_1_1Chat_a521c1ae2e542835a62e6b716d84dd861}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Chat_a521c1ae2e542835a62e6b716d84dd861}{first\+\_\+name}}
+\begin{DoxyCompactList}\small\item\em Optional. First name of the other party in a private chat. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Chat_a035c6ef1b17eb7b1df07ff8a0e9dab3a}\label{structtgbot_1_1Chat_a035c6ef1b17eb7b1df07ff8a0e9dab3a}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Chat_a035c6ef1b17eb7b1df07ff8a0e9dab3a}{last\+\_\+name}}
+\begin{DoxyCompactList}\small\item\em Optional. Last name of the other party in a private chat. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Chat_a6d4be72ae7be8e54034334321813bab7}\label{structtgbot_1_1Chat_a6d4be72ae7be8e54034334321813bab7}} 
+\mbox{\hyperlink{structtgbot_1_1ChatPhoto_adac62eb5831826afa34fa7fa2ed062c1}{Chat\+Photo\+::ptr}} \mbox{\hyperlink{structtgbot_1_1Chat_a6d4be72ae7be8e54034334321813bab7}{photo}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1Chat}{Chat}} photo. Returned only in get\+Chat. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Chat_ab56249b42b0d15013df730a2ee9f93ce}\label{structtgbot_1_1Chat_ab56249b42b0d15013df730a2ee9f93ce}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Chat_ab56249b42b0d15013df730a2ee9f93ce}{description}}
+\begin{DoxyCompactList}\small\item\em Optional. Description, for groups, supergroups and channel chats. Returned only in get\+Chat. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Chat_ac34e33230ad4c0ac98e732909e10a4ac}{invite\+\_\+link}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1Chat}{Chat}} invite link, for groups, supergroups and channel chats. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Chat_a06961b36ef1186e79d23937db2cb4b54}\label{structtgbot_1_1Chat_a06961b36ef1186e79d23937db2cb4b54}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1Message}{Message}} $>$ \mbox{\hyperlink{structtgbot_1_1Chat_a06961b36ef1186e79d23937db2cb4b54}{pinned\+\_\+message}}
+\begin{DoxyCompactList}\small\item\em Optional. Pinned message, for groups, supergroups and channels. Returned only in get\+Chat. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Chat_a5dd549008c761e445f3ee28ca144f63d}\label{structtgbot_1_1Chat_a5dd549008c761e445f3ee28ca144f63d}} 
+\mbox{\hyperlink{structtgbot_1_1ChatPermissions_a8f5fa042fc3b71bc3679fe874d33de78}{Chat\+Permissions\+::ptr}} \mbox{\hyperlink{structtgbot_1_1Chat_a5dd549008c761e445f3ee28ca144f63d}{permissions}}
+\begin{DoxyCompactList}\small\item\em Optional. Default chat member permissions, for groups and supergroups. Returned only in get\+Chat. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Chat_a9bee593ca485107d0a32ad0597a0d868}\label{structtgbot_1_1Chat_a9bee593ca485107d0a32ad0597a0d868}} 
+int \mbox{\hyperlink{structtgbot_1_1Chat_a9bee593ca485107d0a32ad0597a0d868}{slow\+\_\+mode\+\_\+delay}} = -\/1
+\begin{DoxyCompactList}\small\item\em Optional. For supergroups, the minimum allowed delay between consecutive messages sent by each unpriviledged user. Returned only in get\+Chat. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Chat_a5a7954425262884482eb957f83843904}\label{structtgbot_1_1Chat_a5a7954425262884482eb957f83843904}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Chat_a5a7954425262884482eb957f83843904}{sticker\+\_\+set\+\_\+name}}
+\begin{DoxyCompactList}\small\item\em Optional. For supergroups, name of group sticker set. Returned only in get\+Chat. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Chat_a077932149acd20c4dfe0561616bfe6a3}\label{structtgbot_1_1Chat_a077932149acd20c4dfe0561616bfe6a3}} 
+bool \mbox{\hyperlink{structtgbot_1_1Chat_a077932149acd20c4dfe0561616bfe6a3}{can\+\_\+set\+\_\+sticker\+\_\+set}}
+\begin{DoxyCompactList}\small\item\em Optional. True, if the bot can change the group sticker set. Returned only in get\+Chat. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object represents a chat. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1Chat_a00fd6f6c4c1aa23b96b731a522d28686}\label{structtgbot_1_1Chat_a00fd6f6c4c1aa23b96b731a522d28686}} 
+\index{tgbot::Chat@{tgbot::Chat}!Chat@{Chat}}
+\index{Chat@{Chat}!tgbot::Chat@{tgbot::Chat}}
+\doxysubsubsection{\texorpdfstring{Chat()}{Chat()}}
+{\footnotesize\ttfamily tgbot\+::\+Chat\+::\+Chat (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1Chat_aee17a807aebba975bffa054dbbb0a605}\label{structtgbot_1_1Chat_aee17a807aebba975bffa054dbbb0a605}} 
+\index{tgbot::Chat@{tgbot::Chat}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::Chat@{tgbot::Chat}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Chat\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structtgbot_1_1Chat_ab7bf6c0ab0e3d447a743eb111de8ee9d}\label{structtgbot_1_1Chat_ab7bf6c0ab0e3d447a743eb111de8ee9d}} 
+\index{tgbot::Chat@{tgbot::Chat}!id@{id}}
+\index{id@{id}!tgbot::Chat@{tgbot::Chat}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily tgbot\+::\+Chat\+::id = -\/1}
+
+
+
+Unique identifier for this chat. 
+
+This number may be greater than 32 bits and some programming languages may have difficulty/silent defects in interpreting it.
+
+But it is smaller than 52 bits, so a signed 64 bit integer or double-\/precision float type are safe for storing this identifier. \mbox{\Hypertarget{structtgbot_1_1Chat_ac34e33230ad4c0ac98e732909e10a4ac}\label{structtgbot_1_1Chat_ac34e33230ad4c0ac98e732909e10a4ac}} 
+\index{tgbot::Chat@{tgbot::Chat}!invite\_link@{invite\_link}}
+\index{invite\_link@{invite\_link}!tgbot::Chat@{tgbot::Chat}}
+\doxysubsubsection{\texorpdfstring{invite\_link}{invite\_link}}
+{\footnotesize\ttfamily tgbot\+::\+Chat\+::invite\+\_\+link}
+
+
+
+Optional. \mbox{\hyperlink{structtgbot_1_1Chat}{Chat}} invite link, for groups, supergroups and channel chats. 
+
+Each administrator in a chat generates their own invite links, so the bot must first generate the link using export\+Chat\+Invite\+Link. Returned only in get\+Chat. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Chat.\+h\item 
+src/types/Chat.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,72 @@
+\hypertarget{structtgbot_1_1Location}{}\doxysection{tgbot\+::Location Struct Reference}
+\label{structtgbot_1_1Location}\index{tgbot::Location@{tgbot::Location}}
+
+
+This object represents a point on the map.  
+
+
+
+
+{\ttfamily \#include $<$Location.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1Location_a62b2027b3ff8381f85c7e408e2fa307e}\label{structtgbot_1_1Location_a62b2027b3ff8381f85c7e408e2fa307e}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1Location}{Location}} $>$ \mbox{\hyperlink{structtgbot_1_1Location_a62b2027b3ff8381f85c7e408e2fa307e}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1Location_a654d8ef8820e34f29c488418ad8fab63}{Location}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Location_a45d9dd1a28d72be977fbaab4ab83ce94}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1Location_a33029257fdc43f8483b3aa2c8978216b}\label{structtgbot_1_1Location_a33029257fdc43f8483b3aa2c8978216b}} 
+float \mbox{\hyperlink{structtgbot_1_1Location_a33029257fdc43f8483b3aa2c8978216b}{longitude}} = -\/1
+\begin{DoxyCompactList}\small\item\em Longitude as defined by sender. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Location_af97987b938032a9e7ea69e0a8ca2e1b3}\label{structtgbot_1_1Location_af97987b938032a9e7ea69e0a8ca2e1b3}} 
+float \mbox{\hyperlink{structtgbot_1_1Location_af97987b938032a9e7ea69e0a8ca2e1b3}{latitude}} = -\/1
+\begin{DoxyCompactList}\small\item\em Latitude as defined by sender. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object represents a point on the map. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1Location_a654d8ef8820e34f29c488418ad8fab63}\label{structtgbot_1_1Location_a654d8ef8820e34f29c488418ad8fab63}} 
+\index{tgbot::Location@{tgbot::Location}!Location@{Location}}
+\index{Location@{Location}!tgbot::Location@{tgbot::Location}}
+\doxysubsubsection{\texorpdfstring{Location()}{Location()}}
+{\footnotesize\ttfamily tgbot\+::\+Location\+::\+Location (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1Location_a45d9dd1a28d72be977fbaab4ab83ce94}\label{structtgbot_1_1Location_a45d9dd1a28d72be977fbaab4ab83ce94}} 
+\index{tgbot::Location@{tgbot::Location}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::Location@{tgbot::Location}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Location\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Location.\+h\item 
+src/types/Location.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,86 @@
+\hypertarget{structtgbot_1_1ChosenInlineResult}{}\doxysection{tgbot\+::Chosen\+Inline\+Result Struct Reference}
+\label{structtgbot_1_1ChosenInlineResult}\index{tgbot::ChosenInlineResult@{tgbot::ChosenInlineResult}}
+
+
+Represents a result of an inline query that was chosen by the user and sent to their chat partner.  
+
+
+
+
+{\ttfamily \#include $<$Chosen\+Inline\+Result.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1ChosenInlineResult_a89344d3d51134eef52396a5e40eed28f}\label{structtgbot_1_1ChosenInlineResult_a89344d3d51134eef52396a5e40eed28f}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1ChosenInlineResult}{Chosen\+Inline\+Result}} $>$ \mbox{\hyperlink{structtgbot_1_1ChosenInlineResult_a89344d3d51134eef52396a5e40eed28f}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1ChosenInlineResult_a72a1a80f5847bad69700348282786205}{Chosen\+Inline\+Result}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1ChosenInlineResult_abc64b9234041c8be91e7a8cd4d4db6b0}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1ChosenInlineResult_a3baf3cebf0c874d1aa1ab60c8ef20faf}\label{structtgbot_1_1ChosenInlineResult_a3baf3cebf0c874d1aa1ab60c8ef20faf}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1ChosenInlineResult_a3baf3cebf0c874d1aa1ab60c8ef20faf}{result\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em The unique identifier for the result that was chosen. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1ChosenInlineResult_a9095be4ab7ed45540906cf30c63251d0}\label{structtgbot_1_1ChosenInlineResult_a9095be4ab7ed45540906cf30c63251d0}} 
+\mbox{\hyperlink{structtgbot_1_1User_a9c48e6206c4f8f4ed3ae7ee2ce9ac395}{User\+::ptr}} \mbox{\hyperlink{structtgbot_1_1ChosenInlineResult_a9095be4ab7ed45540906cf30c63251d0}{from}}
+\begin{DoxyCompactList}\small\item\em The user that chose the result. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1ChosenInlineResult_a4ac0b3c5826f8cc576ef761320557503}\label{structtgbot_1_1ChosenInlineResult_a4ac0b3c5826f8cc576ef761320557503}} 
+\mbox{\hyperlink{structtgbot_1_1Location_a62b2027b3ff8381f85c7e408e2fa307e}{Location\+::ptr}} \mbox{\hyperlink{structtgbot_1_1ChosenInlineResult_a4ac0b3c5826f8cc576ef761320557503}{location}}
+\begin{DoxyCompactList}\small\item\em Optional. Sender location, only for bots that require user location. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1ChosenInlineResult_ab84ea56ceda7c9f5f2d2db423c5f1f2e}\label{structtgbot_1_1ChosenInlineResult_ab84ea56ceda7c9f5f2d2db423c5f1f2e}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1ChosenInlineResult_ab84ea56ceda7c9f5f2d2db423c5f1f2e}{inline\+\_\+message\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Optional. Identifier of the sent inline message. Available only if there is an inline keyboard attached to the message. Will be also received in callback queries and can be used to edit the message. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1ChosenInlineResult_ad3ea2e0169bc8649eefcd25ab8144e32}\label{structtgbot_1_1ChosenInlineResult_ad3ea2e0169bc8649eefcd25ab8144e32}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1ChosenInlineResult_ad3ea2e0169bc8649eefcd25ab8144e32}{query}}
+\begin{DoxyCompactList}\small\item\em The query that was used to obtain the result. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a result of an inline query that was chosen by the user and sent to their chat partner. 
+
+\begin{DoxyNote}{Note}
+It is necessary to enable inline feedback via @\+Botfather in order to receive these objects in updates. 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1ChosenInlineResult_a72a1a80f5847bad69700348282786205}\label{structtgbot_1_1ChosenInlineResult_a72a1a80f5847bad69700348282786205}} 
+\index{tgbot::ChosenInlineResult@{tgbot::ChosenInlineResult}!ChosenInlineResult@{ChosenInlineResult}}
+\index{ChosenInlineResult@{ChosenInlineResult}!tgbot::ChosenInlineResult@{tgbot::ChosenInlineResult}}
+\doxysubsubsection{\texorpdfstring{ChosenInlineResult()}{ChosenInlineResult()}}
+{\footnotesize\ttfamily tgbot\+::\+Chosen\+Inline\+Result\+::\+Chosen\+Inline\+Result (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1ChosenInlineResult_abc64b9234041c8be91e7a8cd4d4db6b0}\label{structtgbot_1_1ChosenInlineResult_abc64b9234041c8be91e7a8cd4d4db6b0}} 
+\index{tgbot::ChosenInlineResult@{tgbot::ChosenInlineResult}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::ChosenInlineResult@{tgbot::ChosenInlineResult}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Chosen\+Inline\+Result\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Chosen\+Inline\+Result.\+h\item 
+src/types/Chosen\+Inline\+Result.\+cpp\end{DoxyCompactItemize}

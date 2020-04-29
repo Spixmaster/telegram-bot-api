@@ -1,0 +1,142 @@
+\hypertarget{structtgbot_1_1InputMediaAudio}{}\doxysection{tgbot\+::Input\+Media\+Audio Struct Reference}
+\label{structtgbot_1_1InputMediaAudio}\index{tgbot::InputMediaAudio@{tgbot::InputMediaAudio}}
+
+
+Represents an audio file to be treated as music to be sent.  
+
+
+
+
+{\ttfamily \#include $<$Input\+Media\+Audio.\+h$>$}
+
+
+
+Inheritance diagram for tgbot\+::Input\+Media\+Audio\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{structtgbot_1_1InputMediaAudio__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for tgbot\+::Input\+Media\+Audio\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{structtgbot_1_1InputMediaAudio__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InputMediaAudio_aeac5a6914fdee96f653d7be72f2fac4c}\label{structtgbot_1_1InputMediaAudio_aeac5a6914fdee96f653d7be72f2fac4c}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1InputMediaAudio}{Input\+Media\+Audio}} $>$ \mbox{\hyperlink{structtgbot_1_1InputMediaAudio_aeac5a6914fdee96f653d7be72f2fac4c}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1InputMediaAudio_ac260dbd7864d9f3a9d74f46c3bd0000d}{Input\+Media\+Audio}} (const std\+::string \&json)
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InputMediaAudio_aa252e6c1840a0593dd74a8b93dfc0585}\label{structtgbot_1_1InputMediaAudio_aa252e6c1840a0593dd74a8b93dfc0585}} 
+{\bfseries Input\+Media\+Audio} (const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&\mbox{\hyperlink{structtgbot_1_1InputMediaAudio_add700d321a44053c0d77eebacc51693e}{media}}, const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&\mbox{\hyperlink{structtgbot_1_1InputMediaAudio_aeb90b11293ee8c72ff803823d6ccbe0a}{thumb}}, const std\+::string \&\mbox{\hyperlink{structtgbot_1_1InputMediaAudio_a8e12d643ad50c9260ec0edd3e566e12d}{caption}}=\char`\"{}\char`\"{}, const std\+::string \&\mbox{\hyperlink{structtgbot_1_1InputMediaAudio_aea401db5c4607a9deb62bb28ccd4cee7}{parse\+\_\+mode}}=\char`\"{}\char`\"{}, const int \&\mbox{\hyperlink{structtgbot_1_1InputMediaAudio_a06b3240d549173a43bcfb65c7700f8c1}{duration}}=-\/1, const std\+::string \&\mbox{\hyperlink{structtgbot_1_1InputMediaAudio_ae92b446e67b0521f954e91863cdf9747}{performer}}=\char`\"{}\char`\"{}, const std\+::string \&\mbox{\hyperlink{structtgbot_1_1InputMediaAudio_ac4843a55eef12c6fab59f564e383a01f}{title}}=\char`\"{}\char`\"{})
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InputMediaAudio_a77544f4df460ba8a96650a01eab822df}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InputMediaAudio_a31ce162108c6cd406a990a862d4ccb70}\label{structtgbot_1_1InputMediaAudio_a31ce162108c6cd406a990a862d4ccb70}} 
+const std\+::string \mbox{\hyperlink{structtgbot_1_1InputMediaAudio_a31ce162108c6cd406a990a862d4ccb70}{type}} = \char`\"{}audio\char`\"{}
+\begin{DoxyCompactList}\small\item\em Type of the result, must be audio. \end{DoxyCompactList}\item 
+std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \mbox{\hyperlink{structtgbot_1_1InputMediaAudio_add700d321a44053c0d77eebacc51693e}{media}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structtgbot_1_1File}{File}} to send. \end{DoxyCompactList}\item 
+std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \mbox{\hyperlink{structtgbot_1_1InputMediaAudio_aeb90b11293ee8c72ff803823d6ccbe0a}{thumb}}
+\begin{DoxyCompactList}\small\item\em Optional. Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-\/side. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InputMediaAudio_a8e12d643ad50c9260ec0edd3e566e12d}\label{structtgbot_1_1InputMediaAudio_a8e12d643ad50c9260ec0edd3e566e12d}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InputMediaAudio_a8e12d643ad50c9260ec0edd3e566e12d}{caption}}
+\begin{DoxyCompactList}\small\item\em Optional. Caption of the audio to be sent, 0-\/1024 characters after entities parsing. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InputMediaAudio_aea401db5c4607a9deb62bb28ccd4cee7}\label{structtgbot_1_1InputMediaAudio_aea401db5c4607a9deb62bb28ccd4cee7}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InputMediaAudio_aea401db5c4607a9deb62bb28ccd4cee7}{parse\+\_\+mode}}
+\begin{DoxyCompactList}\small\item\em Optional. Mode for parsing entities in the audio caption. See formatting options for more details. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InputMediaAudio_a06b3240d549173a43bcfb65c7700f8c1}\label{structtgbot_1_1InputMediaAudio_a06b3240d549173a43bcfb65c7700f8c1}} 
+int \mbox{\hyperlink{structtgbot_1_1InputMediaAudio_a06b3240d549173a43bcfb65c7700f8c1}{duration}} = -\/1
+\begin{DoxyCompactList}\small\item\em Optional. Duration of the audio in seconds. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InputMediaAudio_ae92b446e67b0521f954e91863cdf9747}\label{structtgbot_1_1InputMediaAudio_ae92b446e67b0521f954e91863cdf9747}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InputMediaAudio_ae92b446e67b0521f954e91863cdf9747}{performer}}
+\begin{DoxyCompactList}\small\item\em Optional. Performer of the audio. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InputMediaAudio_ac4843a55eef12c6fab59f564e383a01f}\label{structtgbot_1_1InputMediaAudio_ac4843a55eef12c6fab59f564e383a01f}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InputMediaAudio_ac4843a55eef12c6fab59f564e383a01f}{title}}
+\begin{DoxyCompactList}\small\item\em Optional. Title of the audio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents an audio file to be treated as music to be sent. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InputMediaAudio_ac260dbd7864d9f3a9d74f46c3bd0000d}\label{structtgbot_1_1InputMediaAudio_ac260dbd7864d9f3a9d74f46c3bd0000d}} 
+\index{tgbot::InputMediaAudio@{tgbot::InputMediaAudio}!InputMediaAudio@{InputMediaAudio}}
+\index{InputMediaAudio@{InputMediaAudio}!tgbot::InputMediaAudio@{tgbot::InputMediaAudio}}
+\doxysubsubsection{\texorpdfstring{InputMediaAudio()}{InputMediaAudio()}}
+{\footnotesize\ttfamily tgbot\+::\+Input\+Media\+Audio\+::\+Input\+Media\+Audio (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InputMediaAudio_a77544f4df460ba8a96650a01eab822df}\label{structtgbot_1_1InputMediaAudio_a77544f4df460ba8a96650a01eab822df}} 
+\index{tgbot::InputMediaAudio@{tgbot::InputMediaAudio}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::InputMediaAudio@{tgbot::InputMediaAudio}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Input\+Media\+Audio\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{structtgbot_1_1InputMedia_ae42bebbfee905e8d217abdc1ddfe9b5e}{tgbot\+::\+Input\+Media}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InputMediaAudio_add700d321a44053c0d77eebacc51693e}\label{structtgbot_1_1InputMediaAudio_add700d321a44053c0d77eebacc51693e}} 
+\index{tgbot::InputMediaAudio@{tgbot::InputMediaAudio}!media@{media}}
+\index{media@{media}!tgbot::InputMediaAudio@{tgbot::InputMediaAudio}}
+\doxysubsubsection{\texorpdfstring{media}{media}}
+{\footnotesize\ttfamily tgbot\+::\+Input\+Media\+Audio\+::media}
+
+
+
+\mbox{\hyperlink{structtgbot_1_1File}{File}} to send. 
+
+Pass a file\+\_\+id to send a file that exists on the Telegram servers (recommended), pass an H\+T\+TP U\+RL for Telegram to get a file from the Internet, or pass “attach\+://$<$file\+\_\+attach\+\_\+name$>$” to upload a new one using multipart/form-\/data under $<$file\+\_\+attach\+\_\+name$>$ name. \mbox{\Hypertarget{structtgbot_1_1InputMediaAudio_aeb90b11293ee8c72ff803823d6ccbe0a}\label{structtgbot_1_1InputMediaAudio_aeb90b11293ee8c72ff803823d6ccbe0a}} 
+\index{tgbot::InputMediaAudio@{tgbot::InputMediaAudio}!thumb@{thumb}}
+\index{thumb@{thumb}!tgbot::InputMediaAudio@{tgbot::InputMediaAudio}}
+\doxysubsubsection{\texorpdfstring{thumb}{thumb}}
+{\footnotesize\ttfamily tgbot\+::\+Input\+Media\+Audio\+::thumb}
+
+
+
+Optional. Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-\/side. 
+
+The thumbnail should be in J\+P\+EG format and less than 200 kB in size. A thumbnail‘s width and height should not exceed 320.
+
+Ignored if the file is not uploaded using multipart/form-\/data.
+
+Thumbnails can’t be reused and can be only uploaded as a new file, so you can pass “attach\+://$<$file\+\_\+attach\+\_\+name$>$” if the thumbnail was uploaded using multipart/form-\/data under $<$file\+\_\+attach\+\_\+name$>$. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Input\+Media\+Audio.\+h\item 
+src/types/Input\+Media\+Audio.\+cpp\end{DoxyCompactItemize}

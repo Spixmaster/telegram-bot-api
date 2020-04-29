@@ -1,0 +1,102 @@
+\hypertarget{structtgbot_1_1InputContactMessageContent}{}\doxysection{tgbot\+::Input\+Contact\+Message\+Content Struct Reference}
+\label{structtgbot_1_1InputContactMessageContent}\index{tgbot::InputContactMessageContent@{tgbot::InputContactMessageContent}}
+
+
+Represents the content of a contact message to be sent as the result of an inline query.  
+
+
+
+
+{\ttfamily \#include $<$Input\+Contact\+Message\+Content.\+h$>$}
+
+
+
+Inheritance diagram for tgbot\+::Input\+Contact\+Message\+Content\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{structtgbot_1_1InputContactMessageContent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for tgbot\+::Input\+Contact\+Message\+Content\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{structtgbot_1_1InputContactMessageContent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InputContactMessageContent_a05357620d5adeef41c936dc9d89f745a}\label{structtgbot_1_1InputContactMessageContent_a05357620d5adeef41c936dc9d89f745a}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1InputContactMessageContent}{Input\+Contact\+Message\+Content}} $>$ \mbox{\hyperlink{structtgbot_1_1InputContactMessageContent_a05357620d5adeef41c936dc9d89f745a}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1InputContactMessageContent_a61b78f71179971c4ab366b3bae2f483e}{Input\+Contact\+Message\+Content}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InputContactMessageContent_a5f144c321e5e7f8eaad5eeff47402a6f}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InputContactMessageContent_a1caf3feb4ad63e9c8388c42f58b18d58}\label{structtgbot_1_1InputContactMessageContent_a1caf3feb4ad63e9c8388c42f58b18d58}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InputContactMessageContent_a1caf3feb4ad63e9c8388c42f58b18d58}{phone\+\_\+number}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structtgbot_1_1Contact}{Contact}}\textquotesingle{}s phone number. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InputContactMessageContent_a8719000a759d9e5cf30d1c7c8c89ffc8}\label{structtgbot_1_1InputContactMessageContent_a8719000a759d9e5cf30d1c7c8c89ffc8}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InputContactMessageContent_a8719000a759d9e5cf30d1c7c8c89ffc8}{first\+\_\+name}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structtgbot_1_1Contact}{Contact}}\textquotesingle{}s first name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InputContactMessageContent_a1e73f902ffbd3be307aff9a270bf6a56}\label{structtgbot_1_1InputContactMessageContent_a1e73f902ffbd3be307aff9a270bf6a56}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InputContactMessageContent_a1e73f902ffbd3be307aff9a270bf6a56}{last\+\_\+name}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1Contact}{Contact}}\textquotesingle{}s last name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InputContactMessageContent_a90b969a7c4549e02d3f5c9f3dc8d94e4}\label{structtgbot_1_1InputContactMessageContent_a90b969a7c4549e02d3f5c9f3dc8d94e4}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InputContactMessageContent_a90b969a7c4549e02d3f5c9f3dc8d94e4}{vcard}}
+\begin{DoxyCompactList}\small\item\em Optional. Additional data about the contact in the form of a v\+Card, 0-\/2048 bytes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the content of a contact message to be sent as the result of an inline query. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InputContactMessageContent_a61b78f71179971c4ab366b3bae2f483e}\label{structtgbot_1_1InputContactMessageContent_a61b78f71179971c4ab366b3bae2f483e}} 
+\index{tgbot::InputContactMessageContent@{tgbot::InputContactMessageContent}!InputContactMessageContent@{InputContactMessageContent}}
+\index{InputContactMessageContent@{InputContactMessageContent}!tgbot::InputContactMessageContent@{tgbot::InputContactMessageContent}}
+\doxysubsubsection{\texorpdfstring{InputContactMessageContent()}{InputContactMessageContent()}}
+{\footnotesize\ttfamily tgbot\+::\+Input\+Contact\+Message\+Content\+::\+Input\+Contact\+Message\+Content (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InputContactMessageContent_a5f144c321e5e7f8eaad5eeff47402a6f}\label{structtgbot_1_1InputContactMessageContent_a5f144c321e5e7f8eaad5eeff47402a6f}} 
+\index{tgbot::InputContactMessageContent@{tgbot::InputContactMessageContent}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::InputContactMessageContent@{tgbot::InputContactMessageContent}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Input\+Contact\+Message\+Content\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{structtgbot_1_1InputMessageContent_ac9997fd542b5c79c4c57a1036e73f277}{tgbot\+::\+Input\+Message\+Content}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Input\+Contact\+Message\+Content.\+h\item 
+src/types/Input\+Contact\+Message\+Contact.\+cpp\end{DoxyCompactItemize}
