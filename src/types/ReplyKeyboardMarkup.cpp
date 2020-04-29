@@ -23,14 +23,14 @@ namespace tgbot
 				{
 					const rapidjson::Value &keyboard_array = doc["keyboard"].GetArray();
 
-					//reserve enough rows
+					//Reserve enough rows.
 					keyboard.resize(keyboard_array.Size());
 
 					for(std::size_t row = 0; row < doc["keyboard"].GetArray().Size(); ++row)
 					{
 						if(keyboard_array[row].IsArray())
 						{
-							//reserve enough columns for each row
+							//Reserve enough columns for each row.
 							keyboard.at(row).resize(keyboard_array[row].GetArray().Size());
 
 							for(std::size_t column = 0; column < keyboard_array[row].GetArray().Size(); ++column)
@@ -85,44 +85,39 @@ namespace tgbot
 	{
 		std::string json = "{\"keyboard\": [";
 
-		//rows
+		//Rows
 		for(std::size_t j = 0; j < keyboard.size(); ++j)
 		{
 			json.append("[");
 
-			//columns in row
+			//Columns in row
 			for(std::size_t k = 0; k < keyboard.at(j).size(); ++k)
 			{
-				//button text is stated
+				//Button text
 				json.append("{");
 				json.append("\"text\": \"" + keyboard.at(j).at(k)->text + "\"");
 				json.append(", ");
 
-				//options are stated
-					//request_contact
+				//Options
+				//request_contact
 				std::string request_contact_bool = keyboard.at(j).at(k)->request_contact ? "true" : "false";
 				json.append("\"request_contact\": " + request_contact_bool);
 				json.append(", ");
 
-					//request_location
+				//request_location
 				std::string request_location_bool = keyboard.at(j).at(k)->request_location ? "true" : "false";
 				json.append("\"request_location\": " + request_location_bool);
 
 				json.append("}");
 
-				//add comma between several json objects in a single row
-				//the condition equals last iteration
 				if(k != (keyboard.at(j).size() - 1))
 					json.append(", ");
 			}
-			json.append("], ");
-		}
 
-		//remove ", "
-		if(json.size() > 0)
-		{
-			json.pop_back();
-			json.pop_back();
+			json.append("]");
+
+			if(j != keyboard.size() - 1)
+				json.append(", ");
 		}
 
 		json.append("], ");

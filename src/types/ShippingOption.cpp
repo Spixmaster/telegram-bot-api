@@ -68,22 +68,15 @@ namespace tgbot
 
 		//Field prices
 		std::string prices_cont = "[";
+
 		for(std::size_t j = 0; j < prices.size(); ++j)
 		{
 			prices_cont.append(prices.at(j)->parse_to_json());
-			prices_cont.append(", ");
+
+			if(j != prices.size() - 1)
+				prices_cont.append(", ");
 		}
 
-		/*
-		 * if size() == 0 pop_back() would crash the programme
-		 * prices and not prices_cont in condition as in that case we would destroy the json array
-		 */
-		if(prices.size() > 0)
-		{
-			//finish json array
-			prices_cont.pop_back();
-			prices_cont.pop_back();
-		}
 		prices_cont.append("]");
 
 		json.append("\"prices\": " + prices_cont);

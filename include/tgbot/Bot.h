@@ -6,6 +6,22 @@
 #include <memory>
 #include "tgbot/EventHandler.h"
 
+/**
+ * @mainpage telegram-bot-api
+ * @author Matheus Gabriel Werny de Lima
+ * @copyright GNU General Public License v2.0
+ * @page main Developer log
+ * @section main-notes Notes
+ * In some constructors (mainly for field "thumb"), I only look for a string value although InputFile would also be possible but I do not know how they would send me that.
+ * This is nothing to worry about at it is not even intended that Telegram sends all objects to us. Some are just sent by us.
+ * @version
+ * 1.2.0 (29.04.2020)
+ * - Used formatting strings in the messages file to ease translations.
+ * - Applied an error log instead of output to stderr.
+ * - Modified all comments to fit the Doxygen syntax.
+ * - Revision of the whole code.
+ */
+
 namespace tgbot
 {
 	/**
@@ -44,7 +60,7 @@ namespace tgbot
 	public:
 		//Constructors
 		/**
-		 * @param token The Telegram bot token which is needed for the endpoints.
+		 * @param[in] token The Telegram bot token which is needed for the endpoints.
 		 */
 		Bot(const std::string &token);
 

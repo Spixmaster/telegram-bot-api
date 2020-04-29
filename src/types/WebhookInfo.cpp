@@ -118,22 +118,15 @@ namespace tgbot
 
 		//Field allowed_updates
 		std::string allowed_updates_cont = "[";
+
 		for(std::size_t j = 0; j < allowed_updates.size(); ++j)
 		{
 			allowed_updates_cont.append(allowed_updates.at(j));
-			allowed_updates_cont.append(", ");
+
+			if(j != allowed_updates.size() - 1)
+				allowed_updates_cont.append(", ");
 		}
 
-		/*
-		 * if size() == 0 pop_back() would crash the programme
-		 * allowed_updates and not allowed_updates_cont in condition as in that case we would destroy the json array
-		 */
-		if(allowed_updates.size() > 0)
-		{
-			//finish json array
-			allowed_updates_cont.pop_back();
-			allowed_updates_cont.pop_back();
-		}
 		allowed_updates_cont.append("]");
 
 		json.append("\"allowed_updates\": " + allowed_updates_cont);

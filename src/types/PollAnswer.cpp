@@ -68,22 +68,15 @@ namespace tgbot
 
 		//Field option_ids
 		std::string option_ids_cont = "[";
+
 		for(std::size_t j = 0; j < option_ids.size(); ++j)
 		{
 			option_ids_cont.append(std::to_string(option_ids.at(j)));
-			option_ids_cont.append(", ");
+
+			if(j != option_ids.size() - 1)
+				option_ids_cont.append(", ");
 		}
 
-		/*
-		 * if size() == 0 pop_back() would crash the programme
-		 * option_ids and not option_ids_cont in condition as in that case we would destroy the json array
-		 */
-		if(option_ids.size() > 0)
-		{
-			//finish json array
-			option_ids_cont.pop_back();
-			option_ids_cont.pop_back();
-		}
 		option_ids_cont.append("]");
 
 		json.append("\"option_ids\": " + option_ids_cont);

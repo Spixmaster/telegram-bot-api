@@ -22,14 +22,14 @@ namespace tgbot
 				{
 					const rapidjson::Value &keyboard_array = doc["inline_keyboard"].GetArray();
 
-					//reserve enough rows
+					//Reserve enough rows.
 					inline_keyboard.resize(keyboard_array.Size());
 
 					for(std::size_t row = 0; row < doc["inline_keyboard"].GetArray().Size(); ++row)
 					{
 						if(keyboard_array[row].IsArray())
 						{
-							//reserve enough columns for each row
+							//Reserve enough columns for each row.
 							inline_keyboard.at(row).resize(keyboard_array[row].GetArray().Size());
 
 							for(std::size_t column = 0; column < keyboard_array[row].GetArray().Size(); ++column)

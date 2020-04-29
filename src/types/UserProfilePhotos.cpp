@@ -27,19 +27,19 @@ namespace tgbot
 			if(doc.HasMember("photos"))
 			{
 				/*
-				 * photos are stored in an array a with multiple arrays b
-				 * each array b represent one photo json object as the photo exists in several sizes
+				 * Photos are stored in an array a with multiple arrays b.
+				 * Each array b represents one photo JSON object as the photo exists in several sizes. Each element is on size.
 				 */
 				if(doc["photos"].IsArray())
 				{
 					const rapidjson::Value &json_photo_array = doc["photos"].GetArray();
 
-					//iterate through all photos
+					//Iterate through all photos.
 					for(std::size_t j = 0; j < json_photo_array.Size(); ++j)
 					{
 						if(json_photo_array[j].IsArray())
 						{
-							//iterate through all PhotoSizes of one photo
+							//Iterate through all PhotoSizes of one photo.
 							for(std::size_t k = 0; k < json_photo_array[j].GetArray().Size(); ++k)
 							{
 								if(doc["photos"][j][k].IsObject())
@@ -70,22 +70,15 @@ namespace tgbot
 
 		//Field photos
 		std::string photos_cont = "[";
+
 		for(std::size_t j = 0; j < photos.size(); ++j)
 		{
 			photos_cont.append(photos.at(j)->parse_to_json());
-			photos_cont.append(", ");
+
+			if(j != photos.size() - 1)
+				photos_cont.append(", ");
 		}
 
-		/*
-		 * if size() == 0 pop_back() would crash the programme
-		 * photos and not photos_cont in condition as in that case we would destroy the json array
-		 */
-		if(photos.size() > 0)
-		{
-			//finish json array
-			photos_cont.pop_back();
-			photos_cont.pop_back();
-		}
 		photos_cont.append("]");
 
 		json.append("\"photos\": \"" + photos_cont + "\"");

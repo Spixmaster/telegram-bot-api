@@ -52,22 +52,15 @@ namespace tgbot
 
 		//Field data
 		std::string data_cont = "[";
+
 		for(std::size_t j = 0; j < data.size(); ++j)
 		{
 			data_cont.append(data.at(j)->parse_to_json());
-			data_cont.append(", ");
+
+			if(j != data.size() -1)
+				data_cont.append(", ");
 		}
 
-		/*
-		 * if size() == 0 pop_back() would crash the programme
-		 * data and not data_cont in condition as in that case we would destroy the json array
-		 */
-		if(data.size() > 0)
-		{
-			//finish json array
-			data_cont.pop_back();
-			data_cont.pop_back();
-		}
 		data_cont.append("]");
 
 		json.append("\"data\": \"" + data_cont + "\"");
