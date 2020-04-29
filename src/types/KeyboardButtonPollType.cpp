@@ -35,7 +35,6 @@ namespace tgbot
 		json.append("\"type\": \"" + type + "\"");
 
 		json.append("}");
-
 		return json;
 	}
 }

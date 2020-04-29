@@ -132,7 +132,6 @@ namespace tgbot
 		json.append("\"file_size\": \"" + std::to_string(file_size) + "\"");
 
 		json.append("}");
-
 		return json;
 	}
 }

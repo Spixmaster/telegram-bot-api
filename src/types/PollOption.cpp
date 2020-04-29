@@ -49,7 +49,6 @@ namespace tgbot
 		json.append("\"voter_count\": " + voter_count);
 
 		json.append("}");
-
 		return json;
 	}
 }

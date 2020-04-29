@@ -96,7 +96,6 @@ namespace tgbot
 		json.append("\"post_code\": \"" + post_code + "\"");
 
 		json.append("}");
-
 		return json;
 	}
 }

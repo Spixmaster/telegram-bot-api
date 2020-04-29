@@ -142,7 +142,6 @@ namespace tgbot
 		json.append("\"duration\": " + std::to_string(duration));
 
 		json.append("}");
-
 		return json;
 	}
 }

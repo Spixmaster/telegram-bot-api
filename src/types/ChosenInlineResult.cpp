@@ -84,7 +84,6 @@ namespace tgbot
 		json.append("\"query\": \"" + query + "\"");
 
 		json.append("}");
-
 		return json;
 	}
 }

@@ -73,7 +73,6 @@ namespace tgbot
 		json.append("\"scale\": " + std::to_string(scale));
 
 		json.append("}");
-
 		return json;
 	}
 }

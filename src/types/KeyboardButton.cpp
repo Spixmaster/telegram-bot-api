@@ -74,7 +74,6 @@ namespace tgbot
 		json.append("\"request_poll\": " + request_poll->parse_to_json());
 
 		json.append("}");
-
 		return json;
 	}
 }

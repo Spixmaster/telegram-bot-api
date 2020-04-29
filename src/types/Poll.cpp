@@ -242,7 +242,6 @@ namespace tgbot
 		json.append("\"close_date\": \"" + std::to_string(close_date) + "\"");
 
 		json.append("}");
-
 		return json;
 	}
 }

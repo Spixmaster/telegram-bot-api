@@ -72,7 +72,6 @@ namespace tgbot
 		json.append("\"big_file_unique_id\": \"" + big_file_unique_id + "\"");
 
 		json.append("}");
-
 		return json;
 	}
 }

@@ -142,7 +142,6 @@ namespace tgbot
 		json.append("\"title\":  \"" + title + "\"");
 
 		json.append("}");
-
 		return json;
 	}
 }

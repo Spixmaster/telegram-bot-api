@@ -121,7 +121,6 @@ namespace tgbot
 		json.append("\"input_message_content\": " + input_message_content->parse_to_json());
 
 		json.append("}");
-
 		return json;
 	}
 }

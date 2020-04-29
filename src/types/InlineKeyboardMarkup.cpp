@@ -59,20 +59,18 @@ namespace tgbot
 	{
 		std::string json = "{\"inline_keyboard\": [";
 
-		//rows
+		//Rows
 		for(std::size_t j = 0; j < inline_keyboard.size(); ++j)
 		{
 			json.append("[");
 
-			//columns in row
+			//Columns in row
 			for(std::size_t k = 0; k < inline_keyboard.at(j).size(); ++k)
 			{
-				//button text is stated
 				json.append("{");
 				json.append("\"text\": \"" + inline_keyboard.at(j).at(k)->text + "\"");
 				json.append(", ");
 
-				//option is stated
 				if(!inline_keyboard.at(j).at(k)->url.empty())
 				{
 					json.append("\"url\": \"" + inline_keyboard.at(j).at(k)->url + "\"");
@@ -80,7 +78,7 @@ namespace tgbot
 				}
 				else if(inline_keyboard.at(j).at(k)->login_url != nullptr)
 				{
-					//login_url json object
+					//login_url
 					json.append("{");
 					json.append("\"url\": \"" + inline_keyboard.at(j).at(k)->login_url->url + "\", ");
 					json.append("\"forward_text\": \"" + inline_keyboard.at(j).at(k)->login_url->forward_text + "\", ");
@@ -88,7 +86,6 @@ namespace tgbot
 					std::string request_write_access_bool = inline_keyboard.at(j).at(k)->login_url->request_write_access ? "true" : "false";
 					json.append("\"request_write_access\": \"" + request_write_access_bool + "\"");
 					json.append("}");
-
 
 					json.append("}");
 				}
@@ -109,10 +106,8 @@ namespace tgbot
 				}
 				else if(inline_keyboard.at(j).at(k)->callback_game != nullptr)
 				{
-					//callback_game json object
 					json.append("{");
 					json.append("}");
-
 
 					json.append("}");
 				}
@@ -123,23 +118,17 @@ namespace tgbot
 					json.append("}");
 				}
 
-				//add comma between several json objects in a single row
-				//the condition equals last iteration
-				if(k != (inline_keyboard.at(j).size() - 1))
+				if(k != inline_keyboard.at(j).size() - 1)
 					json.append(", ");
 			}
-			json.append("], ");
-		}
 
-		//if size() == 0 pop_back() would crash the programme
-		if(json.size() > 0)
-		{
-			json.pop_back();
-			json.pop_back();
+			json.append("]");
+
+			if(j != inline_keyboard.size() - 1)
+				json.append(", ");
 		}
 
 		json.append("]}");
-
 		return json;
 	}
 }

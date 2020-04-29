@@ -105,7 +105,6 @@ namespace tgbot
 		json.append("\"parse_mode\": \"" + parse_mode + "\"");
 
 		json.append("}");
-
 		return json;
 	}
 }

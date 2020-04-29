@@ -72,7 +72,6 @@ namespace tgbot
 		json.append("\"file_path\": \"" + file_path + "\"");
 
 		json.append("}");
-
 		return json;
 	}
 }

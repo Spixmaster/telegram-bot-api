@@ -129,7 +129,6 @@ namespace tgbot
 		json.append("\"can_pin_messages\": " + can_pin_messages_bool);
 
 		json.append("}");
-
 		return json;
 	}
 }

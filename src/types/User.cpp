@@ -137,7 +137,6 @@ namespace tgbot
 		json.append("\"supports_inline_queries\": \"" + supports_inline_queries_bool + "\"");
 
 		json.append("}");
-
 		return json;
 	}
 }

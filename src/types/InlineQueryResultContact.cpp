@@ -157,7 +157,6 @@ namespace tgbot
 		json.append("\"thumb_height\": " + thumb_height);
 
 		json.append("}");
-
 		return json;
 	}
 }

@@ -155,7 +155,6 @@ namespace tgbot
 		json.append("\"bool_supports_streaming\": " + bool_supports_streaming);
 
 		json.append("}");
-
 		return json;
 	}
 }

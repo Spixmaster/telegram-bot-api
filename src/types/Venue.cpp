@@ -84,7 +84,6 @@ namespace tgbot
 		json.append("\"foursquare_type\": \"" + foursquare_type + "\"");
 
 		json.append("}");
-
 		return json;
 	}
 }

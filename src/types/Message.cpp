@@ -152,7 +152,7 @@ namespace tgbot
 						if(doc["entities"][j].IsObject())
 							entities.at(j) = std::make_shared<MessageEntity>(tools::Tools::get_json_as_string(doc["entities"][j]));
 						else
-							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("entities")<< std::endl;
+							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("entities"));
 					}
 				}
 				else
@@ -752,7 +752,6 @@ namespace tgbot
 		json.append("\"reply_markup\": " + reply_markup->parse_to_json());
 
 		json.append("}");
-
 		return json;
 	}
 }

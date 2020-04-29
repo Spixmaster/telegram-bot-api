@@ -109,7 +109,6 @@ namespace tgbot
 		json.append("\"provider_payment_charge_id\": \"" + provider_payment_charge_id + "\"");
 
 		json.append("}");
-
 		return json;
 	}
 }

@@ -269,7 +269,6 @@ namespace tgbot
 		json.append("\"can_add_web_page_previews\": " + can_add_web_page_previews_bool);
 
 		json.append("}");
-
 		return json;
 	}
 }

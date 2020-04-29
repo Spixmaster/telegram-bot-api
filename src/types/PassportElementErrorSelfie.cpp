@@ -73,7 +73,6 @@ namespace tgbot
 		json.append("\"message\": \"" + message + "\"");
 
 		json.append("}");
-
 		return json;
 	}
 }

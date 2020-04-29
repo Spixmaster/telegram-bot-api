@@ -58,10 +58,8 @@ namespace tgbot
 
 		//Field score
 		json.append("\"score\": " + score);
-		json.append(", ");
 
 		json.append("}");
-
 		return json;
 	}
 }

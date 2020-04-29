@@ -50,7 +50,6 @@ namespace tgbot
 		json.append("\"selective\": " + selective_bool);
 
 		json.append("}");
-
 		return json;
 	}
 }

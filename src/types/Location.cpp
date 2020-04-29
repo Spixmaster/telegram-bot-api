@@ -48,7 +48,6 @@ namespace tgbot
 		json.append("\"latitude\": " + std::to_string(latitude));
 
 		json.append("}");
-
 		return json;
 	}
 }

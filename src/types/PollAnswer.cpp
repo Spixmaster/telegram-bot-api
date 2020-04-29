@@ -89,7 +89,6 @@ namespace tgbot
 		json.append("\"option_ids\": " + option_ids_cont);
 
 		json.append("}");
-
 		return json;
 	}
 }
