@@ -10,6 +10,7 @@ namespace tgbot
 {
 	/**
 	 * @struct ShippingQuery
+	 * @brief This object contains information about an incoming shipping query.
 	 */
 	struct ShippingQuery
 	{
@@ -22,32 +23,38 @@ namespace tgbot
 
 		//Member variables
 		/**
-		 * @var
+		 * @var id
+		 * @brief Unique query identifier
 		 */
 		std::string id;
 		/**
-		 * @var
+		 * @var from
+		 * @brief User who sent the query
 		 */
 		User::ptr from;
 		/**
-		 * @var
+		 * @var invoice_payload
+		 * @brief Bot specified invoice payload
 		 */
 		std::string invoice_payload;
 		/**
-		 * @var
+		 * @var shipping_address
+		 * @brief User specified shipping address
 		 */
 		ShippingAddress::ptr shipping_address;
 
 		//Constructors
 		ShippingQuery();
 
-		//@param json: json object of ShippingQuery
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		ShippingQuery(const std::string &json);
 
 		//Member functions
-		/*
-		 * @brief converts a itself into a json object
-		 * @return the json object as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};

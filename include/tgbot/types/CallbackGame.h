@@ -7,6 +7,7 @@ namespace tgbot
 {
 	/**
 	 * @struct CallbackGame
+	 * @brief A placeholder, currently holds no information. Use BotFather to set up your game.
 	 */
 	struct CallbackGame
 	{
@@ -20,13 +21,15 @@ namespace tgbot
 		//Constructors
 		CallbackGame();
 
-		//@param json: json object of CallbackGame
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		CallbackGame(const std::string &json);
 
 		//Member functions
-		/*
-		 * @brief converts a itself into a json object
-		 * @return the json object as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};

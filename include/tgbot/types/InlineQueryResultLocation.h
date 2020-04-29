@@ -11,6 +11,10 @@ namespace tgbot
 {
 	/**
 	 * @struct InlineQueryResultLocation
+	 * @brief Represents a location on a map.
+	 * @details By default, the location will be sent by the user.
+	 * @details Alternatively, you can use input_message_content to send a message with the specified content instead of the location.
+	 * @note This will only work in Telegram versions released after 9 April, 2016. Older clients will ignore them.
 	 */
 	struct InlineQueryResultLocation : public InlineQueryResult
 	{
@@ -23,60 +27,73 @@ namespace tgbot
 
 		//Member variables
 		/**
-		 * @var
+		 * @var type
+		 * @brief Type of the result, must be location
 		 */
-		std::string type;
+		const std::string type = "location";
 		/**
-		 * @var
+		 * @var id
+		 * @brief Unique identifier for this result, 1-64 Bytes
 		 */
 		std::string id;
 		/**
-		 * @var
+		 * @var latitude
+		 * @brief Location latitude in degrees
 		 */
 		float latitude = -1;
 		/**
-		 * @var
+		 * @var longitude
+		 * @brief Location longitude in degrees
 		 */
 		float longitude = -1;
 		/**
-		 * @var
+		 * @var title
+		 * @brief Location title
 		 */
 		std::string title;
 		/**
-		 * @var
+		 * @var live_period
+		 * @brief Optional. Period in seconds for which the location can be updated, should be between 60 and 86400.
 		 */
 		int live_period = -1;
 		/**
-		 * @var
+		 * @var reply_markup
+		 * @brief Optional. Inline keyboard attached to the message
 		 */
 		InlineKeyboardMarkup::ptr reply_markup;
 		/**
-		 * @var
+		 * @var input_message_content
+		 * @brief Optional. Content of the message to be sent instead of the location
 		 */
 		InputMessageContent::ptr input_message_content;
 		/**
-		 * @var
+		 * @var thumb_url
+		 * @brief Optional. Url of the thumbnail for the result
 		 */
 		std::string thumb_url;
 		/**
-		 * @var
+		 * @var thumb_width
+		 * @brief Optional. Thumbnail width
 		 */
 		int thumb_width = -1;
 		/**
-		 * @var
+		 * @var thumb_height
+		 * @brief Optional. Thumbnail height
 		 */
 		int thumb_height = -1;
 
 		//Constructors
 		InlineQueryResultLocation();
 
-		//@param json: json object of InlineQueryResultLocation
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		InlineQueryResultLocation(const std::string &json);
 
 		//Member functions
-		/*
-		 * @brief converts a itself into a json object
-		 * @return the json object as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};

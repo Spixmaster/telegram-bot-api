@@ -10,6 +10,7 @@ namespace tgbot
 {
 	/**
 	 * @struct InputTextMessageContent
+	 * @brief Represents the content of a text message to be sent as the result of an inline query.
 	 */
 	struct InputTextMessageContent : public InputMessageContent
 	{
@@ -22,28 +23,33 @@ namespace tgbot
 
 		//Member variables
 		/**
-		 * @var
+		 * @var message_text
+		 * @brief Text of the message to be sent, 1-4096 characters
 		 */
 		std::string message_text;
 		/**
-		 * @var
+		 * @var parse_mode
+		 * @brief Optional. Mode for parsing entities in the message text. See formatting options for more details.
 		 */
 		std::string parse_mode;
 		/**
-		 * @var
+		 * @var disable_web_page_preview
+		 * @brief Optional. Disables link previews for links in the sent message
 		 */
 		bool disable_web_page_preview;
 
 		//Constructors
 		InputTextMessageContent();
 
-		//@param json: json object of InputTextMessageContent
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		InputTextMessageContent(const std::string &json);
 
 		//Member functions
-		/*
-		 * @brief converts a itself into a json object
-		 * @return the json object as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};

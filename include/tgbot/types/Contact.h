@@ -8,6 +8,7 @@ namespace tgbot
 {
 	/**
 	 * @struct Contact
+	 * @brief This object represents a phone contact.
 	 */
 	struct Contact
 	{
@@ -20,36 +21,43 @@ namespace tgbot
 
 		//Member variables
 		/**
-		 * @var
+		 * @var phone_number
+		 * @brief Contact's phone number
 		 */
 		std::string phone_number;
 		/**
-		 * @var
+		 * @var first_name
+		 * @brief Contact's first name
 		 */
 		std::string first_name;
 		/**
-		 * @var
+		 * @var last_name
+		 * @brief Optional. Contact's last name
 		 */
 		std::string last_name;
 		/**
-		 * @var
+		 * @var user_id
+		 * @brief Optional. Contact's user identifier in Telegram
 		 */
 		int user_id = -1;
 		/**
-		 * @var
+		 * @var vcard
+		 * @brief Optional. Additional data about the contact in the form of a vCard
 		 */
 		std::string vcard;
 
 		//Constructors
 		Contact();
 
-		//@param json: json object of Contact
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		Contact(const std::string &json);
 
 		//Member functions
-		/*
-		 * @brief converts a itself into a json object
-		 * @return the json object as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};

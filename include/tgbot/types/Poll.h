@@ -11,6 +11,7 @@ namespace tgbot
 {
 	/**
 	 * @struct Poll
+	 * @brief This object contains information about a poll.
 	 */
 	struct Poll
 	{
@@ -23,52 +24,84 @@ namespace tgbot
 
 		//Member variables
 		/**
-		 * @var
+		 * @var id
+		 * @brief Unique poll identifier
 		 */
 		std::string id;
 		/**
-		 * @var
+		 * @var question
+		 * @brief Poll question, 1-255 characters
 		 */
 		std::string question;
 		/**
-		 * @var
+		 * @var options
+		 * @brief List of poll options
 		 */
 		std::vector<PollOption::ptr> options;
 		/**
-		 * @var
+		 * @var total_voter_count
+		 * @brief Total number of users that voted in the poll
 		 */
 		int total_voter_count = -1;
 		/**
-		 * @var
+		 * @var is_closed
+		 * @brief True, if the poll is closed
 		 */
 		bool is_closed;
 		/**
-		 * @var
+		 * @var is_anonymous
+		 * @brief True, if the poll is anonymous
 		 */
 		bool is_anonymous;
 		/**
-		 * @var
+		 * @var type
+		 * @brief Poll type, currently can be “regular” or “quiz”
 		 */
 		std::string type;
 		/**
-		 * @var
+		 * @var allows_multiple_answers
+		 * @brief True, if the poll allows multiple answers
 		 */
 		bool allows_multiple_answers;
 		/**
-		 * @var
+		 * @var correct_option_id
+		 * @brief Optional. 0-based identifier of the correct answer option.
+		 * @details Available only for polls in the quiz mode, which are closed, or was sent (not forwarded) by the bot or to the private chat with the bot.
 		 */
 		int correct_option_id = -1;
+		/**
+		 * @var explanation
+		 * @brief Optional. Text that is shown when a user chooses an incorrect answer or taps on the lamp icon in a quiz-style poll, 0-200 characters
+		 */
+		std::string explanation;
+		/**
+		 * @var explanation_entities
+		 * @brief Optional. Special entities like usernames, URLs, bot commands, etc. that appear in the explanation
+		 */
+		std::vector<MessageEntity> explanation_entities;
+		/**
+		 * @var open_period
+		 * @brief Optional. Amount of time in seconds the poll will be active after creation
+		 */
+		int open_period;
+		/**
+		 * @var close_date
+		 * @brief Optional. Point in time (Unix timestamp) when the poll will be automatically closed
+		 */
+		int close_date;
 
 		//Constructors
 		Poll();
 
-		//@param json: json object of Poll
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		Poll(const std::string &json);
 
 		//Member functions
-		/*
-		 * @brief converts a itself into a json object
-		 * @return the json object as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};

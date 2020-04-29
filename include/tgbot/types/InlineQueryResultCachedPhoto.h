@@ -11,6 +11,9 @@ namespace tgbot
 {
 	/**
 	 * @struct InlineQueryResultCachedPhoto
+	 * @brief Represents a link to a photo stored on the Telegram servers.
+	 * @details By default, this photo will be sent by the user with an optional caption.
+	 * @details Alternatively, you can use input_message_content to send a message with the specified content instead of the photo.
 	 */
 	struct InlineQueryResultCachedPhoto : public InlineQueryResult
 	{
@@ -23,52 +26,63 @@ namespace tgbot
 
 		//Member variables
 		/**
-		 * @var
+		 * @var type
+		 * @brief Type of the result, must be photo
 		 */
-		std::string type;
+		const std::string type = "photo";
 		/**
-		 * @var
+		 * @var id
+		 * @brief Unique identifier for this result, 1-64 bytes
 		 */
 		std::string id;
 		/**
-		 * @var
+		 * @var photo_file_id
+		 * @brief A valid file identifier of the photo
 		 */
 		std::string photo_file_id;
 		/**
-		 * @var
+		 * @var title
+		 * @brief Optional. Title for the result
 		 */
 		std::string title;
 		/**
-		 * @var
+		 * @var description
+		 * @brief Optional. Short description of the result
 		 */
 		std::string description;
 		/**
-		 * @var
+		 * @var caption
+		 * @brief Optional. Caption of the photo to be sent, 0-1024 characters after entities parsing
 		 */
 		std::string caption;
 		/**
-		 * @var
+		 * @var parse_mode
+		 * @brief Optional. Mode for parsing entities in the photo caption. See formatting options for more details.
 		 */
 		std::string parse_mode;
 		/**
-		 * @var
+		 * @var reply_markup
+		 * @brief Optional. Inline keyboard attached to the message
 		 */
 		InlineKeyboardMarkup::ptr reply_markup;
 		/**
-		 * @var
+		 * @var input_message_content
+		 * @brief Optional. Content of the message to be sent instead of the photo
 		 */
 		InputMessageContent::ptr input_message_content;
 
 		//Constructors
 		InlineQueryResultCachedPhoto();
 
-		//@param json: json object of InlineQueryResultCachedPhoto
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		InlineQueryResultCachedPhoto(const std::string &json);
 
 		//Member functions
-		/*
-		 * @brief converts a itself into a json object
-		 * @return the json object as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};

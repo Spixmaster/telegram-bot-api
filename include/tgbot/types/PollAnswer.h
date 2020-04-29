@@ -10,6 +10,7 @@ namespace tgbot
 {
 	/**
 	 * @struct PollAnswer
+	 * @brief This object represents an answer of a user in a non-anonymous poll.
 	 */
 	struct PollAnswer
 	{
@@ -22,28 +23,33 @@ namespace tgbot
 
 		//Member variables
 		/**
-		 * @var
+		 * @var poll_id
+		 * @brief Unique poll identifier
 		 */
 		std::string poll_id;
 		/**
-		 * @var
+		 * @var user
+		 * @brief The user, who changed the answer to the poll
 		 */
 		User::ptr user;
 		/**
-		 * @var
+		 * @var option_ids
+		 * @brief 0-based identifiers of answer options, chosen by the user. May be empty if the user retracted their vote.
 		 */
 		std::vector<int> option_ids;
 
 		//Constructors
 		PollAnswer();
 
-		//@param json: json object of PollAnswer
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		PollAnswer(const std::string &json);
 
 		//Member functions
-		/*
-		 * @brief converts a itself into a json object
-		 * @return the json object as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};

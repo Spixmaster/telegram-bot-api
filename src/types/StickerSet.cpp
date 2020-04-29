@@ -5,7 +5,7 @@
 
 namespace tgbot
 {
-	StickerSet::StickerSet() : name(), title(), is_animated(), contains_masks(), sticker()
+	StickerSet::StickerSet() : name(), title(), is_animated(), contains_masks(), sticker(), thumb()
 	{}
 
 	StickerSet::StickerSet(const std::string &json)
@@ -65,6 +65,14 @@ namespace tgbot
 				else
 					std::cerr << Messages::field_does_not_contain_json_arr("sticker") << std::endl;
 			}
+
+			if(doc.HasMember("thumb"))
+			{
+				if(doc["thumb"].IsObject())
+					thumb = std::make_shared<PhotoSize>(tools::Tools::get_json_as_string(doc["thumb"]));
+				else
+					std::cerr << Messages::field_does_not_contain_json_obj("thumb") << std::endl;
+			}
 		}
 		else
 			std::cerr << Messages::constructor_not_get_json_object << std::endl;
@@ -113,6 +121,10 @@ namespace tgbot
 		sticker_cont.append("]");
 
 		json.append("\"sticker\": \"" + sticker_cont + "\"");
+		json.append(", ");
+
+		//field thumb
+		json.append("\"thumb\": " + thumb->parse_to_json());
 
 		json.append("}");
 

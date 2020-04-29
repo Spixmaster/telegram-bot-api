@@ -7,6 +7,7 @@ namespace tgbot
 {
 	/**
 	 * @struct InputMedia
+	 * @brief This object represents the content of a media message to be sent. It should be one of
 	 */
 	struct InputMedia
 	{
@@ -21,9 +22,9 @@ namespace tgbot
 		virtual ~InputMedia();
 
 		//Member functions
-		/*
-		 * @brief parses itself into json equivalent
-		 * @return json object of the itself as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		virtual std::string parse_to_json() const noexcept;
 	};

@@ -10,6 +10,8 @@ namespace tgbot
 {
 	/**
 	 * @struct InlineQueryResultGame
+	 * @brief Represents a Game.
+	 * @note This will only work in Telegram versions released after October 1, 2016. Older clients will not display any inline results if a game result is among them.
 	 */
 	struct InlineQueryResultGame : public InlineQueryResult
 	{
@@ -22,32 +24,38 @@ namespace tgbot
 
 		//Member variables
 		/**
-		 * @var
+		 * @var type
+		 * @brief Type of the result, must be game
 		 */
-		std::string type;
+		const std::string type = "game";
 		/**
-		 * @var
+		 * @var id
+		 * @brief Unique identifier for this result, 1-64 bytes
 		 */
 		std::string id;
 		/**
-		 * @var
+		 * @var game_short_name
+		 * @brief Short name of the game
 		 */
 		std::string game_short_name;
 		/**
-		 * @var
+		 * @var reply_markup
+		 * @brief Optional. Inline keyboard attached to the message
 		 */
 		InlineKeyboardMarkup::ptr reply_markup;
 
 		//Constructors
 		InlineQueryResultGame();
 
-		//@param json: json object of InlineQueryResultGame
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		InlineQueryResultGame(const std::string &json);
 
 		//Member functions
-		/*
-		 * @brief converts a itself into a json object
-		 * @return the json object as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};

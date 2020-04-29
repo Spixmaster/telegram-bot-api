@@ -9,6 +9,7 @@ namespace tgbot
 {
 	/**
 	 * @struct Sticker
+	 * @brief This object represents a sticker.
 	 */
 	struct Sticker
 	{
@@ -21,56 +22,68 @@ namespace tgbot
 
 		//Member variables
 		/**
-		 * @var
+		 * @var file_id
+		 * @brief Identifier for this file, which can be used to download or reuse the file
 		 */
 		std::string file_id;
 		/**
-		 * @var
+		 * @var file_unique_id
+		 * @brief Unique identifier for this file, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file.
 		 */
 		std::string file_unique_id;
 		/**
-		 * @var
+		 * @var width
+		 * @brief Sticker width
 		 */
 		int width = -1;
 		/**
-		 * @var
+		 * @var height
+		 * @brief Sticker height
 		 */
 		int height = -1;
 		/**
-		 * @var
+		 * @var is_animated
+		 * @brief True, if the sticker is animated
 		 */
 		bool is_animated;
 		/**
-		 * @var
+		 * @var thumb
+		 * @brief Optional. Sticker thumbnail in the .WEBP or .JPG format
 		 */
 		PhotoSize::ptr thumb;
 		/**
-		 * @var
+		 * @var emoji
+		 * @brief Optional. Emoji associated with the sticker
 		 */
 		std::string emoji;
 		/**
-		 * @var
+		 * @var set_name
+		 * @brief Optional. Name of the sticker set to which the sticker belongs
 		 */
 		std::string set_name;
 		/**
-		 * @var
+		 * @var mask_position
+		 * @brief Optional. For mask stickers, the position where the mask should be placed
 		 */
 		MaskPosition::ptr mask_position;
 		/**
-		 * @var
+		 * @var file_size
+		 * @brief Optional. File size
 		 */
 		int file_size = -1;
 
 		//Constructors
 		Sticker();
 
-		//@param json: json object of Sticker
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		Sticker(const std::string &json);
 
 		//Member functions
-		/*
-		 * @brief converts a itself into a json object
-		 * @return the json object as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};

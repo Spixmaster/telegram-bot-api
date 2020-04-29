@@ -5,7 +5,7 @@
 
 namespace tgbot
 {
-	InlineQueryResultCachedSticker::InlineQueryResultCachedSticker() : type(), id(), sticker_file_id(), reply_markup(), input_message_content()
+	InlineQueryResultCachedSticker::InlineQueryResultCachedSticker() : id(), sticker_file_id(), reply_markup(), input_message_content()
 	{}
 
 	InlineQueryResultCachedSticker::InlineQueryResultCachedSticker(const std::string &json)
@@ -16,14 +16,6 @@ namespace tgbot
 		if(doc.IsObject())
 		{
 			//assignments
-			if(doc.HasMember("type"))
-			{
-				if(doc["type"].IsString())
-					type = doc["type"].GetString();
-				else
-					std::cerr << Messages::field_does_not_contain_string("type") << std::endl;
-			}
-
 			if(doc.HasMember("id"))
 			{
 				if(doc["id"].IsString())

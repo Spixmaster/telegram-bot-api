@@ -9,6 +9,7 @@ namespace tgbot
 {
 	/**
 	 * @struct GameHighScore
+	 * @brief This object represents one row of the high scores table for a game.
 	 */
 	struct GameHighScore
 	{
@@ -21,28 +22,33 @@ namespace tgbot
 
 		//Member variables
 		/**
-		 * @var
+		 * @var position
+		 * @brief Position in high score table for the game
 		 */
 		int position = -1;
 		/**
-		 * @var
+		 * @var user
+		 * @brief User
 		 */
 		User::ptr user;
 		/**
-		 * @var
+		 * @var score
+		 * @brief Score
 		 */
 		int score = -1;
 
 		//Constructors
 		GameHighScore();
 
-		//@param json: json object of GameHighScore
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		GameHighScore(const std::string &json);
 
 		//Member functions
-		/*
-		 * @brief converts a itself into a json object
-		 * @return the json object as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};

@@ -11,6 +11,7 @@ namespace tgbot
 {
 	/**
 	 * @struct InputMediaPhoto
+	 * @brief Represents a photo to be sent.
 	 */
 	struct InputMediaPhoto : public InputMedia
 	{
@@ -23,37 +24,41 @@ namespace tgbot
 
 		//Member variables
 		/**
-		 * @var
+		 * @var type
+		 * @brief Type of the result, must be photo
 		 */
 		const std::string type = "photo";
 		/**
-		 * @var
+		 * @var media
+		 * @brief File to send.
+		 * @details Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file_attach_name>” to upload a new one using multipart/form-data under <file_attach_name> name.
 		 */
 		std::variant<std::string, tools::InputFile::ptr> media;
 		/**
-		 * @var
+		 * @var caption
+		 * @brief Optional. Caption of the photo to be sent, 0-1024 characters after entities parsing
 		 */
 		std::string caption;
 		/**
-		 * @var
+		 * @var parse_mode
+		 * @brief Optional. Mode for parsing entities in the photo caption. See formatting options for more details.
 		 */
 		std::string parse_mode;
 
 		//Constructors
 		InputMediaPhoto();
 
-		//@param json: json object of InputMediaPhoto
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		InputMediaPhoto(const std::string &json);
 
-		//@param media: source of the photo
-		//@param caption: caption under photo
-		//@param parse_mode: how caption is parsed
 		InputMediaPhoto(const std::variant<std::string, tools::InputFile::ptr> &media, const std::string &caption = "", const std::string &parse_mode = "");
 
 		//Member functions
-		/*
-		 * @brief parses itself into json equivalent
-		 * @return json object of the itself as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};

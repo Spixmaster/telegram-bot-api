@@ -8,6 +8,8 @@ namespace tgbot
 {
 	/**
 	 * @struct EncryptedCredentials
+	 * @brief Contains data required for decrypting and authenticating EncryptedPassportElement.
+	 * @details See the Telegram Passport Documentation for a complete description of the data decryption and authentication processes.
 	 */
 	struct EncryptedCredentials
 	{
@@ -20,28 +22,33 @@ namespace tgbot
 
 		//Member variables
 		/**
-		 * @var
+		 * @var data
+		 * @brief Base64-encoded encrypted JSON-serialized data with unique user's payload, data hashes and secrets required for EncryptedPassportElement decryption and authentication
 		 */
 		std::string data;
 		/**
-		 * @var
+		 * @var hash
+		 * @brief Base64-encoded data hash for data authentication
 		 */
 		std::string hash;
 		/**
-		 * @var
+		 * @var secret
+		 * @brief Base64-encoded secret, encrypted with the bot's public RSA key, required for data decryption
 		 */
 		std::string secret;
 
 		//Constructors
 		EncryptedCredentials();
 
-		//@param json: json object of EncryptedCredentials
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		EncryptedCredentials(const std::string &json);
 
 		//Member functions
-		/*
-		 * @brief converts a itself into a json object
-		 * @return the json object as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};

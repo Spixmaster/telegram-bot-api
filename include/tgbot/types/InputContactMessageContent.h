@@ -9,6 +9,7 @@ namespace tgbot
 {
 	/**
 	 * @struct InputContactMessageContent
+	 * @brief Represents the content of a contact message to be sent as the result of an inline query.
 	 */
 	struct InputContactMessageContent : public InputMessageContent
 	{
@@ -21,32 +22,38 @@ namespace tgbot
 
 		//Member variables
 		/**
-		 * @var
+		 * @var phone_number
+		 * @brief Contact's phone number
 		 */
 		std::string phone_number;
 		/**
-		 * @var
+		 * @var first_name
+		 * @brief Contact's first name
 		 */
 		std::string first_name;
 		/**
-		 * @var
+		 * @var last_name
+		 * @brief Optional. Contact's last name
 		 */
 		std::string last_name;
 		/**
-		 * @var
+		 * @var vcard
+		 * @brief Optional. Additional data about the contact in the form of a vCard, 0-2048 bytes
 		 */
 		std::string vcard;
 
 		//Constructors
 		InputContactMessageContent();
 
-		//@param json: json object of InputContactMessageContent
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		InputContactMessageContent(const std::string &json);
 
 		//Member functions
-		/*
-		 * @brief converts a itself into a json object
-		 * @return the json object as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};

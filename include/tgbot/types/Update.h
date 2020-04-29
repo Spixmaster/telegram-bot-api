@@ -31,64 +31,82 @@ namespace tgbot
 
 		//Member variables
 		/**
-		 * @var
+		 * @var update_id
+		 * @brief The update‘s unique identifier.
+		 * @details Update identifiers start from a certain positive number and increase sequentially.
+		 * @details This ID becomes especially handy if you’re using Webhooks, since it allows you to ignore repeated updates or to restore the correct update sequence, should they get out of order.
+		 * @detils If there are no new updates for at least a week, then identifier of the next update will be chosen randomly instead of sequentially.
 		 */
 		int update_id = -1;
 		/**
-		 * @var
+		 * @var message
+		 * @brief Optional. New incoming message of any kind — text, photo, sticker, etc.
 		 */
 		Message::ptr message;
 		/**
-		 * @var
+		 * @var edited_message
+		 * @brief Optional. New version of a message that is known to the bot and was edited
 		 */
 		Message::ptr edited_message;
 		/**
-		 * @var
+		 * @var channel_post
+		 * @brief Optional. New incoming channel post of any kind — text, photo, sticker, etc.
 		 */
 		Message::ptr channel_post;
 		/**
-		 * @var
+		 * @var edited_channel_post
+		 * @brief Optional. New version of a channel post that is known to the bot and was edited
 		 */
 		Message::ptr edited_channel_post;
 		/**
-		 * @var
+		 * @var inline_query
+		 * @brief Optional. New incoming inline query
 		 */
 		InlineQuery::ptr inline_query;
 		/**
-		 * @var
+		 * @var chosen_inline_result
+		 * @brief Optional. The result of an inline query that was chosen by a user and sent to their chat partner.
+		 * @details Please see our documentation on the feedback collecting for details on how to enable these updates for your bot.
 		 */
 		ChosenInlineResult::ptr chosen_inline_result;
 		/**
-		 * @var
+		 * @var callback_query
+		 * @brief Optional. New incoming callback query
 		 */
 		CallbackQuery::ptr callback_query;
 		/**
-		 * @var
+		 * @var shipping_query
+		 * @brief Optional. New incoming shipping query. Only for invoices with flexible price
 		 */
 		ShippingQuery::ptr shipping_query;
 		/**
-		 * @var
+		 * @var pre_checkout_query
+		 * @brief Optional. New incoming pre-checkout query. Contains full information about checkout
 		 */
 		PreCheckoutQuery::ptr pre_checkout_query;
 		/**
-		 * @var
+		 * @var poll
+		 * @brief Optional. New poll state. Bots receive only updates about stopped polls and polls, which are sent by the bot
 		 */
 		Poll::ptr poll;
 		/**
-		 * @var
+		 * @var poll_answer
+		 * @brief Optional. A user changed their answer in a non-anonymous poll. Bots receive new votes only in polls that were sent by the bot itself.
 		 */
 		PollAnswer::ptr poll_answer;
 
 		//Constructors
 		Update();
 
-		//@param json: json object of Update
+		/**
+		 * @param[in] json The proper JSON object from which this struct is constructed.
+		 */
 		Update(std::string json);
 
 		//Member functions
-		/*
-		 * @brief converts a itself into a json object
-		 * @return the json object as a string
+		/**
+		 * @brief Converts itself into a JSON object.
+		 * @return The JSON object.
 		 */
 		std::string parse_to_json() const noexcept;
 	};
