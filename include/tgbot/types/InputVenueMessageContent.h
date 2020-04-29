@@ -26,12 +26,12 @@ namespace tgbot
 		 * @var latitude
 		 * @brief Latitude of the venue in degrees
 		 */
-		float latitude = -1f;
+		float latitude;
 		/**
 		 * @var longitude
 		 * @brief Longitude of the venue in degrees
 		 */
-		float longitude = -1f;
+		float longitude;
 		/**
 		 * @var title
 		 * @brief Name of the venue

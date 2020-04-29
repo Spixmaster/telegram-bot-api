@@ -35,12 +35,12 @@ namespace tgbot
 		 * @var request_contact
 		 * @brief Optional. If True, the user's phone number will be sent as a contact when the button is pressed. Available in private chats only
 		 */
-		bool request_contact = false;
+		bool request_contact;
 		/**
 		 * @var request_location
 		 * @brief Optional. If True, the user's current location will be sent when the button is pressed. Available in private chats only
 		 */
-		bool request_location = false;
+		bool request_location;
 		/**
 		 * @var request_poll
 		 * @brief Optional. If specified, the user will be asked to create a poll and send it to the bot when the button is pressed. Available in private chats only

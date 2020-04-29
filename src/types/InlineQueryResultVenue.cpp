@@ -5,7 +5,7 @@
 
 namespace tgbot
 {
-	InlineQueryResultVenue::InlineQueryResultVenue() : id(), latitude(), longitude(), title(), address(), foursquare_id(), foursquare_type(),
+	InlineQueryResultVenue::InlineQueryResultVenue() : type(), id(), latitude(), longitude(), title(), address(), foursquare_id(), foursquare_type(),
 	reply_markup(), input_message_content(), thumb_url(), thumb_width(), thumb_height()
 	{}
 
@@ -17,6 +17,14 @@ namespace tgbot
 		if(doc.IsObject())
 		{
 			//assignments
+			if(doc.HasMember("type"))
+			{
+				if(doc["type"].IsString())
+					type = doc["type"].GetString();
+				else
+					std::cerr << Messages::field_does_not_contain_string("type") << std::endl;
+			}
+
 			if(doc.HasMember("id"))
 			{
 				if(doc["id"].IsString())

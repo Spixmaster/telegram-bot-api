@@ -30,7 +30,7 @@ namespace tgbot
 		 * @var type
 		 * @brief Type of the result, must be venue
 		 */
-		const std::string type = "venue";
+		std::string type;
 		/**
 		 * @var id
 		 * @brief Unique identifier for this result, 1-64 Bytes
@@ -40,12 +40,12 @@ namespace tgbot
 		 * @var latitude
 		 * @brief Latitude of the venue location in degrees
 		 */
-		float latitude = -1;
+		float latitude;
 		/**
 		 * @var longitude
 		 * @brief Longitude of the venue location in degrees
 		 */
-		float longitude = -1;
+		float longitude;
 		/**
 		 * @var title
 		 * @brief Title of the venue
@@ -85,12 +85,12 @@ namespace tgbot
 		 * @var thumb_width
 		 * @brief Optional. Thumbnail width
 		 */
-		int thumb_width = -1;
+		int thumb_width;
 		/**
 		 * @var thumb_height
 		 * @brief Optional. Thumbnail height
 		 */
-		int thumb_height = -1;
+		int thumb_height;
 
 		//Constructors
 		InlineQueryResultVenue();

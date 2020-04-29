@@ -40,7 +40,7 @@ namespace tgbot
 		 * @var until_date
 		 * @brief Optional. Restricted and kicked only. Date when restrictions will be lifted for this user; unix time
 		 */
-		int until_date = -1;
+		int until_date;
 		/**
 		 * @var can_be_edited
 		 * @brief Optional. Administrators only. True, if the bot is allowed to edit administrator privileges of that user

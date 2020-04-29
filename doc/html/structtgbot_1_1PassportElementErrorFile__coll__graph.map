@@ -1,4 +1,0 @@
-<map id="tgbot::PassportElementErrorFile" name="tgbot::PassportElementErrorFile">
-<area shape="rect" id="node1" title="Represents an issue with a document scan. The error is considered resolved when the file with the doc..." alt="" coords="5,80,232,107"/>
-<area shape="rect" id="node2" href="$structtgbot_1_1PassportElementError.html" title="The super class of all passport element errors." alt="" coords="17,5,221,32"/>
-</map>

@@ -29,7 +29,7 @@ namespace tgbot
 		 * @var type
 		 * @brief Type of the result, must be photo
 		 */
-		const std::string type = "photo";
+		std::string type;
 		/**
 		 * @var id
 		 * @brief Unique identifier for this result, 1-64 bytes
@@ -49,12 +49,12 @@ namespace tgbot
 		 * @var photo_width
 		 * @brief Optional. Width of the photo
 		 */
-		int photo_width = -1;
+		int photo_width;
 		/**
 		 * @var photo_height
 		 * @brief Optional. Height of the photo
 		 */
-		int photo_height = -1;
+		int photo_height;
 		/**
 		 * @var title
 		 * @brief Optional. Title for the result

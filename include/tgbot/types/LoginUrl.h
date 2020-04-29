@@ -12,7 +12,7 @@ namespace tgbot
 	 * @details Serves as a great replacement for the Telegram Login Widget when the user is coming from Telegram.
 	 * @details All the user needs to do is tap/click a button and confirm that they want to log in:
 	 * @details Telegram apps support these buttons as of version 5.7.
-	 * @details Sample bot: @discussbot
+	 * @details Sample bot: \@discussbot
 	 */
 	struct LoginUrl
 	{

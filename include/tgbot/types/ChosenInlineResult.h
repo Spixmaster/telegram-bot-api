@@ -12,7 +12,7 @@ namespace tgbot
 	/**
 	 * @struct ChosenInlineResult
 	 * @brief Represents a result of an inline query that was chosen by the user and sent to their chat partner.
-	 * @note It is necessary to enable inline feedback via @Botfather in order to receive these objects in updates.
+	 * @note It is necessary to enable inline feedback via \@Botfather in order to receive these objects in updates.
 	 */
 	struct ChosenInlineResult
 	{

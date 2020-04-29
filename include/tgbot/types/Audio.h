@@ -36,7 +36,7 @@ namespace tgbot
 		 * @var duration
 		 * @brief Duration of the audio in seconds as defined by sender
 		 */
-		int duration = -1;
+		int duration;
 		/**
 		 * @var performer
 		 * @brief Optional. Performer of the audio as defined by sender or by audio tags
@@ -56,7 +56,7 @@ namespace tgbot
 		 * @var file_size
 		 * @brief Optional. File size
 		 */
-		int file_size = -1;
+		int file_size;
 		/**
 		 * @var thumb
 		 * @brief Optional. Thumbnail of the album cover to which the music file belongs

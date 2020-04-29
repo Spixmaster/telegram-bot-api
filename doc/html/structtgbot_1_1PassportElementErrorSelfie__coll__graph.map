@@ -1,4 +1,0 @@
-<map id="tgbot::PassportElementErrorSelfie" name="tgbot::PassportElementErrorSelfie">
-<area shape="rect" id="node1" title="Represents an issue with the selfie with a document. The error is considered resolved when the file w..." alt="" coords="5,80,209,121"/>
-<area shape="rect" id="node2" href="$structtgbot_1_1PassportElementError.html" title="The super class of all passport element errors." alt="" coords="5,5,209,32"/>
-</map>

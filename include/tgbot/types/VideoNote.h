@@ -35,12 +35,12 @@ namespace tgbot
 		 * @var length
 		 * @brief Video width and height (diameter of the video message) as defined by sender
 		 */
-		int length = -1;
+		int length;
 		/**
 		 * @var duration
 		 * @brief Duration of the video in seconds as defined by sender
 		 */
-		int duration = -1;
+		int duration;
 		/**
 		 * @var thumb
 		 * @brief Optional. Video thumbnail
@@ -50,7 +50,7 @@ namespace tgbot
 		 * @var file_size
 		 * @brief Optional. File size
 		 */
-		int file_size = -1;
+		int file_size;
 
 		//Constructors
 		VideoNote();

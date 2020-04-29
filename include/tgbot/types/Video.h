@@ -35,17 +35,17 @@ namespace tgbot
 		 * @var width
 		 * @brief Video width as defined by sender
 		 */
-		int width = -1;
+		int width;
 		/**
 		 * @var height
 		 * @brief Video height as defined by sender
 		 */
-		int height = -1;
+		int height;
 		/**
 		 * @var duration
 		 * @brief Duration of the video in seconds as defined by sender
 		 */
-		int duration = -1;
+		int duration;
 		/**
 		 * @var thumb
 		 * @brief Optional. Video thumbnail
@@ -60,7 +60,7 @@ namespace tgbot
 		 * @var file_size
 		 * @brief Optional. File size
 		 */
-		int file_size = -1;
+		int file_size;
 
 		//Constructors
 		Video();

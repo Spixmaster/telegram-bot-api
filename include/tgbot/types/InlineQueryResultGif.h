@@ -29,7 +29,7 @@ namespace tgbot
 		 * @var type
 		 * @brief Type of the result, must be gif
 		 */
-		const std::string type = "gif";
+		std::string type;
 		/**
 		 * @var id
 		 * @brief Unique identifier for this result, 1-64 bytes
@@ -44,17 +44,17 @@ namespace tgbot
 		 * @var gif_width
 		 * @brief Optional. Width of the GIF
 		 */
-		int gif_width = -1;
+		int gif_width;
 		/**
 		 * @var gif_height
 		 * @brief Optional. Height of the GIF
 		 */
-		int gif_height = -1;
+		int gif_height;
 		/**
 		 * @var gif_duration
 		 * @brief Optional. Duration of the GIF
 		 */
-		int gif_duration = -1;
+		int gif_duration;
 		/**
 		 * @var thumb_url
 		 * @brief URL of the static thumbnail for the result (jpeg or gif)

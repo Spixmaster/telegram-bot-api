@@ -106,11 +106,11 @@ namespace tgbot
 		json.append(", ");
 
 		//field switch_inline_query
-		json.append("\"thumb\": \"" + switch_inline_query + "\"");
+		json.append("\"switch_inline_query\": " + switch_inline_query);
 		json.append(", ");
 
 		//field switch_inline_query_current_chat
-		json.append("\"switch_inline_query_current_chat\": \"" + switch_inline_query_current_chat + "\"");
+		json.append("\"switch_inline_query_current_chat\": " + switch_inline_query_current_chat);
 		json.append(", ");
 
 		//field callback_game

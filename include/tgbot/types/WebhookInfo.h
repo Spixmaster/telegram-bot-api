@@ -36,12 +36,12 @@ namespace tgbot
 		 * @var pending_update_count
 		 * @brief Number of updates awaiting delivery
 		 */
-		int pending_update_count = -1;
+		int pending_update_count;
 		/**
 		 * @var last_error_date
 		 * @brief Optional. Unix time for the most recent error that happened when trying to deliver an update via webhook
 		 */
-		int last_error_date = -1;
+		int last_error_date;
 		/**
 		 * @var last_error_message
 		 * @brief Optional. Error message in human-readable format for the most recent error that happened when trying to deliver an update via webhook
@@ -51,7 +51,7 @@ namespace tgbot
 		 * @var max_connections
 		 * @brief Optional. Maximum allowed number of simultaneous HTTPS connections to the webhook for update delivery
 		 */
-		int max_connections = -1;
+		int max_connections;
 		/**
 		 * @var allowed_updates
 		 * @brief Optional. A list of update types the bot is subscribed to. Defaults to all update types

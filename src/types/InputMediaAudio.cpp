@@ -6,7 +6,7 @@
 
 namespace tgbot
 {
-	InputMediaAudio::InputMediaAudio() : media(), thumb(), caption(), parse_mode(), duration(), performer(), title()
+	InputMediaAudio::InputMediaAudio() : type(), media(), thumb(), caption(), parse_mode(), duration(), performer(), title()
 	{}
 
 	InputMediaAudio::InputMediaAudio(const std::string &json)
@@ -17,6 +17,14 @@ namespace tgbot
 		if(doc.IsObject())
 		{
 			//assignments
+			if(doc.HasMember("type"))
+			{
+				if(doc["type"].IsString())
+					type = doc["type"].GetString();
+				else
+					std::cerr << Messages::field_does_not_contain_string("type") << std::endl;
+			}
+
 			if(doc.HasMember("media"))
 			{
 				if(doc["media"].IsString())

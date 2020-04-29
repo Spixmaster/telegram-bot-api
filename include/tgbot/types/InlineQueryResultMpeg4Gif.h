@@ -29,7 +29,7 @@ namespace tgbot
 		 * @var type
 		 * @brief Type of the result, must be mpeg4_gif
 		 */
-		const std::string type = "mpeg4_gif";
+		std::string type;
 		/**
 		 * @var id
 		 * @brief Unique identifier for this result, 1-64 bytes
@@ -44,17 +44,17 @@ namespace tgbot
 		 * @var mpeg4_width
 		 * @brief Optional. Video width
 		 */
-		int mpeg4_width = -1;
+		int mpeg4_width;
 		/**
 		 * @var mpeg4_height
 		 * @brief Optional. Video height
 		 */
-		int mpeg4_height = -1;
+		int mpeg4_height;
 		/**
 		 * @var mpeg4_duration
 		 * @brief Optional. Video duration
 		 */
-		int mpeg4_duration = -1;
+		int mpeg4_duration;
 		/**
 		 * @var thumb_url
 		 * @brief URL of the static thumbnail (jpeg or gif) for the result

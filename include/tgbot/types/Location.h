@@ -24,12 +24,12 @@ namespace tgbot
 		 * @var longitude
 		 * @brief Longitude as defined by sender
 		 */
-		float longitude = -1;
+		float longitude;
 		/**
 		 * @var latitude
 		 * @brief Latitude as defined by sender
 		 */
-		float latitude = -1;
+		float latitude;
 
 		//Constructors
 		Location();

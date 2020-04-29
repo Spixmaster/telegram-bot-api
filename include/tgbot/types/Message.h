@@ -26,6 +26,7 @@
 #include <rapidjson/document.h>
 #include "tgbot/types/Chat.h"
 #include <memory>
+#include "tgbot/types/Dice.h"
 
 namespace tgbot
 {
@@ -47,7 +48,7 @@ namespace tgbot
 		 * @var message_id
 		 * @brief Unique message identifier inside this chat
 		 */
-		int message_id = -1;
+		int message_id;
 		/**
 		 * @var from
 		 * @brief Optional. Sender, empty for messages sent to channels
@@ -57,7 +58,7 @@ namespace tgbot
 		 * @var date
 		 * @brief Date the message was sent in Unix time
 		 */
-		int date = -1;
+		int date;
 		/**
 		 * @var chat
 		 * @brief Conversation the message belongs to
@@ -77,10 +78,10 @@ namespace tgbot
 		 * @var forward_from_message_id
 		 * @brief Optional. For messages forwarded from channels, identifier of the original message in the channel
 		 */
-		int forward_from_message_id = -1;
+		int forward_from_message_id;
 		/**
 		 * @var forward_signature
-		 * @briefString Optional. For messages forwarded from channels, signature of the post author if present
+		 * @brief String Optional. For messages forwarded from channels, signature of the post author if present
 		 */
 		std::string forward_signature;
 		/**
@@ -102,7 +103,7 @@ namespace tgbot
 		 * @var edit_date
 		 * @brief Optional. Date the message was last edited in Unix time
 		 */
-		int edit_date = -1;
+		int edit_date;
 		/**
 		 * @var media_group_id
 		 * @brief Optional. The unique identifier of a media message group this message belongs to
@@ -253,14 +254,14 @@ namespace tgbot
 		 * @details This number may be greater than 32 bits and some programming languages may have difficulty/silent defects in interpreting it.
 		 * @details But it is smaller than 52 bits, so a signed 64 bit integer or double-precision float type are safe for storing this identifier.
 		 */
-		int migrate_to_chat_id = -1;
+		int migrate_to_chat_id;
 		/**
 		 * @var migrate_from_chat_id
 		 * @brief Optional. The supergroup has been migrated from a group with the specified identifier.
 		 * @details This number may be greater than 32 bits and some programming languages may have difficulty/silent defects in interpreting it.
 		 * @details But it is smaller than 52 bits, so a signed 64 bit integer or double-precision float type are safe for storing this identifier.
 		 */
-		int migrate_from_chat_id = -1;
+		int migrate_from_chat_id;
 		/**
 		 * @var pinned_message
 		 * @brief Optional. Specified message was pinned. Note that the Message object in this field will not contain further reply_to_message fields even if it is itself a reply.

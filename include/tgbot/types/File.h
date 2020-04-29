@@ -9,7 +9,7 @@ namespace tgbot
 {
 	/**
 	 * @struct File
-	 * @brief This object represents a file ready to be downloaded. The file can be downloaded via the link https://api.telegram.org/file/bot<token>/<file_path>.
+	 * @brief This object represents a file ready to be downloaded. The file can be downloaded via the link https://api.telegram.org/file/bot\<token\>/\<file_path\>.
 	 * @details It is guaranteed that the link will be valid for at least 1 hour. When the link expires, a new one can be requested by calling getFile.
 	 * @note Maximum file size to download is 20 MB
 	 */
@@ -37,10 +37,10 @@ namespace tgbot
 		 * @var file_size
 		 * @brief Optional. File size, if known
 		 */
-		int file_size = -1;
+		int file_size;
 		/**
 		 * @var file_path
-		 * @brief Optional. File path. Use https://api.telegram.org/file/bot<token>/<file_path> to get the file.
+		 * @brief Optional. File path. Use https://api.telegram.org/file/bot\<token\>/\<file_path\> to get the file.
 		 */
 		std::string file_path;
 

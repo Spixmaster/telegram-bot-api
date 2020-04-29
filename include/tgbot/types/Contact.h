@@ -39,7 +39,7 @@ namespace tgbot
 		 * @var user_id
 		 * @brief Optional. Contact's user identifier in Telegram
 		 */
-		int user_id = -1;
+		int user_id;
 		/**
 		 * @var vcard
 		 * @brief Optional. Additional data about the contact in the form of a vCard

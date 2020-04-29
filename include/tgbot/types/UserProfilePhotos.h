@@ -25,7 +25,7 @@ namespace tgbot
 		 * @var total_count
 		 * @brief Total number of profile pictures the target user has
 		 */
-		int total_count = -1;
+		int total_count;
 		/**
 		 * @var photos
 		 * @brief Requested profile pictures (in up to 4 sizes each)

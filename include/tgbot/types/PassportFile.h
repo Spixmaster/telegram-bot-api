@@ -36,12 +36,12 @@ namespace tgbot
 		 * @var file_size
 		 * @brief File size
 		 */
-		int file_size = -1;
+		int file_size;
 		/**
 		 * @var file_date
 		 * @brief Unix time when the file was uploaded
 		 */
-		int file_date = -1;
+		int file_date;
 
 		//Constructors
 		PassportFile();

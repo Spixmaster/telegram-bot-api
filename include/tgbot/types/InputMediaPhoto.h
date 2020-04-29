@@ -27,11 +27,11 @@ namespace tgbot
 		 * @var type
 		 * @brief Type of the result, must be photo
 		 */
-		const std::string type = "photo";
+		std::string type;
 		/**
 		 * @var media
 		 * @brief File to send.
-		 * @details Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file_attach_name>” to upload a new one using multipart/form-data under <file_attach_name> name.
+		 * @details Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://\<file_attach_name\>” to upload a new one using multipart/form-data under \<file_attach_name\> name.
 		 */
 		std::variant<std::string, tools::InputFile::ptr> media;
 		/**

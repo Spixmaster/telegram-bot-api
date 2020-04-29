@@ -5,7 +5,7 @@
 
 namespace tgbot
 {
-	InlineQueryResultDocument::InlineQueryResultDocument() : id(), title(), caption(), parse_mode(), document_url(), mime_type(), description(),
+	InlineQueryResultDocument::InlineQueryResultDocument() : type(), id(), title(), caption(), parse_mode(), document_url(), mime_type(), description(),
 	reply_markup(), input_message_content(), thumb_url(), thumb_width(), thumb_height()
 	{}
 
@@ -17,6 +17,14 @@ namespace tgbot
 		if(doc.IsObject())
 		{
 			//assignments
+			if(doc.HasMember("type"))
+			{
+				if(doc["type"].IsString())
+					type = doc["type"].GetString();
+				else
+					std::cerr << Messages::field_does_not_contain_string("type") << std::endl;
+			}
+
 			if(doc.HasMember("id"))
 			{
 				if(doc["id"].IsString())
@@ -65,12 +73,12 @@ namespace tgbot
 					std::cerr << Messages::field_does_not_contain_string("mime_type") << std::endl;
 			}
 
-			if(doc.HasMember("mime_type"))
+			if(doc.HasMember("description"))
 			{
-				if(doc["mime_type"].IsString())
-					mime_type = doc["mime_type"].GetString();
+				if(doc["description"].IsString())
+					mime_type = doc["description"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("mime_type") << std::endl;
+					std::cerr << Messages::field_does_not_contain_string("description") << std::endl;
 			}
 
 			if(doc.HasMember("reply_markup"))
@@ -149,6 +157,10 @@ namespace tgbot
 		json.append("\"mime_type\": \"" + mime_type + "\"");
 		json.append(", ");
 
+		//field description
+		json.append("\"description\": \"" + description + "\"");
+		json.append(", ");
+
 		//field reply_markup
 		json.append("\"reply_markup\": " + reply_markup->parse_to_json());
 		json.append(", ");
@@ -162,7 +174,7 @@ namespace tgbot
 		json.append(", ");
 
 		//field thumb_width
-		json.append("\"thumb_url\": " + thumb_width);
+		json.append("\"thumb_width\": " + thumb_width);
 		json.append(", ");
 
 		//field thumb_height

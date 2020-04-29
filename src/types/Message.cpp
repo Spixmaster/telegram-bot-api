@@ -8,8 +8,8 @@ namespace tgbot
 {
 	Message::Message() : message_id(), from(), date() , chat(), forward_from(), forward_from_chat(), forward_from_message_id(), forward_signature(), forward_sender_name(),
 			forward_date(), reply_to_message(), edit_date(), media_group_id(), author_signature(), text(), entities(), caption_entities(), audio(), document(),
-			animation(), game(), photo(), sticker(), video(), voice(), video_note(), caption(), contact(), location(), venue(), poll(), new_chat_members(),
-			left_chat_member(), new_chat_title(), delete_chat_photo(), group_chat_created(), supergroup_chat_created(),channel_chat_created(), migrate_to_chat_id(),
+			animation(), game(), photo(), sticker(), video(), voice(), video_note(), caption(), contact(), location(), venue(), poll(), dice(), new_chat_members(),
+			left_chat_member(), new_chat_title(), delete_chat_photo(), group_chat_created(), supergroup_chat_created(), channel_chat_created(), migrate_to_chat_id(),
 			migrate_from_chat_id(), pinned_message(), invoice(), successful_payment(), connected_website(), passport_data(), reply_markup()
 	{}
 

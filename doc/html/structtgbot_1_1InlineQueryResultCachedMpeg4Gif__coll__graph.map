@@ -1,4 +1,0 @@
-<map id="tgbot::InlineQueryResultCachedMpeg4Gif" name="tgbot::InlineQueryResultCachedMpeg4Gif">
-<area shape="rect" id="node1" title="Represents a link to a video animation (H.264/MPEG&#45;4 AVC video without sound) stored on the Telegram ..." alt="" coords="5,80,185,121"/>
-<area shape="rect" id="node2" href="$structtgbot_1_1InlineQueryResult.html" title="This object represents one result of an inline query. Telegram clients currently support results of t..." alt="" coords="5,5,185,32"/>
-</map>

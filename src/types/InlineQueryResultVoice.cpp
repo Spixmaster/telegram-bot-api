@@ -5,7 +5,7 @@
 
 namespace tgbot
 {
-	InlineQueryResultVoice::InlineQueryResultVoice() : id(), voice_url(), title(), caption(), parse_mode(), voice_duration(), reply_markup(), input_message_content()
+	InlineQueryResultVoice::InlineQueryResultVoice() : type(), id(), voice_url(), title(), caption(), parse_mode(), voice_duration(), reply_markup(), input_message_content()
 	{}
 
 	InlineQueryResultVoice::InlineQueryResultVoice(const std::string &json)
@@ -16,6 +16,14 @@ namespace tgbot
 		if(doc.IsObject())
 		{
 			//assignments
+			if(doc.HasMember("type"))
+			{
+				if(doc["type"].IsString())
+					type = doc["type"].GetString();
+				else
+					std::cerr << Messages::field_does_not_contain_string("type") << std::endl;
+			}
+
 			if(doc.HasMember("id"))
 			{
 				if(doc["id"].IsString())

@@ -1,4 +1,0 @@
-<map id="tgbot::InputMediaAudio" name="tgbot::InputMediaAudio">
-<area shape="rect" id="node1" title="Represents an audio file to be treated as music to be sent." alt="" coords="5,80,180,107"/>
-<area shape="rect" id="node2" href="$structtgbot_1_1InputMedia.html" title="This object represents the content of a media message to be sent. It should be one of." alt="" coords="24,5,161,32"/>
-</map>

@@ -27,11 +27,11 @@ namespace tgbot
 		 * @var type
 		 * @brief Type of the result, must be audio
 		 */
-		const std::string type = "audio";
+		std::string type;
 		/**
 		 * @var media
 		 * @brief File to send.
-		 * @details Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file_attach_name>” to upload a new one using multipart/form-data under <file_attach_name> name.
+		 * @details Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://\<file_attach_name\>” to upload a new one using multipart/form-data under \<file_attach_name\> name.
 		 */
 		std::variant<std::string, tools::InputFile::ptr> media;
 		/**
@@ -39,7 +39,7 @@ namespace tgbot
 		 * @brief Optional. Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side.
 		 * @details The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail‘s width and height should not exceed 320.
 		 * @details Ignored if the file is not uploaded using multipart/form-data.
-		 * @details Thumbnails can’t be reused and can be only uploaded as a new file, so you can pass “attach://<file_attach_name>” if the thumbnail was uploaded using multipart/form-data under <file_attach_name>.
+		 * @details Thumbnails can’t be reused and can be only uploaded as a new file, so you can pass “attach://\<file_attach_name\>” if the thumbnail was uploaded using multipart/form-data under \<file_attach_name\>.
 		 */
 		std::variant<std::string, tools::InputFile::ptr> thumb;
 		/**
@@ -56,7 +56,7 @@ namespace tgbot
 		 * @var duration
 		 * @brief Optional. Duration of the audio in seconds
 		 */
-		int duration = -1;
+		int duration;
 		/**
 		 * @var performer
 		 * @brief Optional. Performer of the audio
@@ -86,7 +86,8 @@ namespace tgbot
 		 * @param[in] title Passed to the member variable.
 		 */
 		InputMediaAudio(const std::variant<std::string, tools::InputFile::ptr> &media, const std::variant<std::string, tools::InputFile::ptr> &thumb,
-				const std::string &caption = "", const std::string &parse_mode = "", const int &duration = -1, const std::string &performer = "", const std::string &title = "");
+				const std::string &caption = "", const std::string &parse_mode = "", const int &duration = -1, const std::string &performer = "",
+				const std::string &title = "");
 
 		//Member functions
 		/**

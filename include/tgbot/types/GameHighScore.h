@@ -25,7 +25,7 @@ namespace tgbot
 		 * @var position
 		 * @brief Position in high score table for the game
 		 */
-		int position = -1;
+		int position;
 		/**
 		 * @var user
 		 * @brief User
@@ -35,7 +35,7 @@ namespace tgbot
 		 * @var score
 		 * @brief Score
 		 */
-		int score = -1;
+		int score;
 
 		//Constructors
 		GameHighScore();

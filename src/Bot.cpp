@@ -1,6 +1,7 @@
 #include "tgbot/Bot.h"
 
 /*
+ * todo
  * ###this project###
  * in some constructors (mainly for field "thumb"), I only look for a string value although InputFile would also be possible but I do not know how they would arrange that
  */

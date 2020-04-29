@@ -1,8 +1,0 @@
-<map id="tgbot::InputMedia" name="tgbot::InputMedia">
-<area shape="rect" id="node1" title="This object represents the content of a media message to be sent. It should be one of." alt="" coords="5,107,143,133"/>
-<area shape="rect" id="node2" href="$structtgbot_1_1InputMediaAnimation.html" title="Represents an animation file (GIF or H.264/MPEG&#45;4 AVC video without sound) to be sent." alt="" coords="191,5,395,32"/>
-<area shape="rect" id="node3" href="$structtgbot_1_1InputMediaAudio.html" title="Represents an audio file to be treated as music to be sent." alt="" coords="205,56,380,83"/>
-<area shape="rect" id="node4" href="$structtgbot_1_1InputMediaDocument.html" title="Represents a general file to be sent." alt="" coords="191,107,395,133"/>
-<area shape="rect" id="node5" href="$structtgbot_1_1InputMediaPhoto.html" title="Represents a photo to be sent." alt="" coords="205,157,380,184"/>
-<area shape="rect" id="node6" href="$structtgbot_1_1InputMediaVideo.html" title="Represents a video to be sent." alt="" coords="205,208,380,235"/>
-</map>

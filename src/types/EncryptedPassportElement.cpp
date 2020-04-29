@@ -40,6 +40,14 @@ namespace tgbot
 					std::cerr << Messages::field_does_not_contain_string("phone_number") << std::endl;
 			}
 
+			if(doc.HasMember("email"))
+			{
+				if(doc["email"].IsString())
+					phone_number = doc["email"].GetString();
+				else
+					std::cerr << Messages::field_does_not_contain_string("email") << std::endl;
+			}
+
 			if(doc.HasMember("files"))
 			{
 				if(doc["files"].IsArray())
