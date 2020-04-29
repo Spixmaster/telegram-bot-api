@@ -11,6 +11,9 @@
  * @author Matheus Gabriel Werny de Lima
  * @copyright GNU General Public License v2.0
  * @version
+ * 1.2.1 (29.04.2020)
+ * - Updated a Doxygen page.
+ * @version
  * 1.2.0 (29.04.2020)
  * - Used formatting strings in the messages file to ease translations.
  * - Applied an error log instead of output to stderr.
@@ -19,8 +22,8 @@
  */
 
 /**
- * @page main Developer log
- * @section main-notes Notes
+ * @page dev-log Developer log
+ * @section dev-log-notes Notes
  * In some constructors (mainly for field "thumb"), I only look for a string value although InputFile would also be possible but I do not know how they would send me that.
  * This is nothing to worry about at it is not even intended that Telegram sends all objects to us. Some are just sent by us.
  */
