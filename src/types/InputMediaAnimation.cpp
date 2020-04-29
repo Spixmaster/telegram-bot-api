@@ -6,7 +6,7 @@
 
 namespace tgbot
 {
-	InputMediaAnimation::InputMediaAnimation() : media(), thumb(), caption(), parse_mode(), width(), height(), duration()
+	InputMediaAnimation::InputMediaAnimation() : type(), media(), thumb(), caption(), parse_mode(), width(), height(), duration()
 	{}
 
 	InputMediaAnimation::InputMediaAnimation(const std::string &json)
@@ -17,6 +17,14 @@ namespace tgbot
 		if(doc.IsObject())
 		{
 			//assignments
+			if(doc.HasMember("type"))
+			{
+				if(doc["type"].IsString())
+					type = doc["type"].GetString();
+				else
+					std::cerr << Messages::field_does_not_contain_string("type") << std::endl;
+			}
+
 			if(doc.HasMember("media"))
 			{
 				if(doc["media"].IsString())
@@ -60,7 +68,7 @@ namespace tgbot
 			if(doc.HasMember("height"))
 			{
 				if(doc["height"].IsInt())
-					width = doc["height"].GetInt();
+					height = doc["height"].GetInt();
 				else
 					std::cerr << Messages::field_does_not_contain_int("height") << std::endl;
 			}
@@ -77,9 +85,9 @@ namespace tgbot
 			std::cerr << Messages::constructor_not_get_json_object << std::endl;
 	}
 
-	InputMediaAnimation::InputMediaAnimation(const std::variant<std::string, tools::InputFile::ptr> &media, const std::variant<std::string, tools::InputFile::ptr> &thumb, const std::string &caption,
-			const std::string &parse_mode, const int &width, const int &height, const int &duration) : media(media), thumb(thumb), caption(caption),
-					parse_mode(parse_mode), width(width), height(height), duration(duration)
+	InputMediaAnimation::InputMediaAnimation(const std::variant<std::string, tools::InputFile::ptr> &media, const std::variant<std::string, tools::InputFile::ptr> &thumb,
+			const std::string &caption, const std::string &parse_mode, const int &width, const int &height, const int &duration) : media(media), thumb(thumb),
+					caption(caption), parse_mode(parse_mode), width(width), height(height), duration(duration)
 	{}
 
 	std::string InputMediaAnimation::parse_to_json() const noexcept

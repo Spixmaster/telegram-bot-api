@@ -50,7 +50,7 @@ namespace tgbot
 		 * @var file_size
 		 * @brief Optional. File size
 		 */
-		int file_size = -1;
+		int file_size;
 
 		//Constructors
 		Document();

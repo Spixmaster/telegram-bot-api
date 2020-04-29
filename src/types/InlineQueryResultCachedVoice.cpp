@@ -5,7 +5,7 @@
 
 namespace tgbot
 {
-	InlineQueryResultCachedVoice::InlineQueryResultCachedVoice() : id(), voice_file_id(), title(), caption(), parse_mode(), reply_markup(),
+	InlineQueryResultCachedVoice::InlineQueryResultCachedVoice() : type(), id(), voice_file_id(), title(), caption(), parse_mode(), reply_markup(),
 	input_message_content()
 	{}
 
@@ -17,6 +17,14 @@ namespace tgbot
 		if(doc.IsObject())
 		{
 			//assignments
+			if(doc.HasMember("type"))
+			{
+				if(doc["type"].IsString())
+					type = doc["type"].GetString();
+				else
+					std::cerr << Messages::field_does_not_contain_string("type") << std::endl;
+			}
+
 			if(doc.HasMember("id"))
 			{
 				if(doc["id"].IsString())

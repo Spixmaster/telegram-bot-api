@@ -25,17 +25,17 @@ namespace tgbot
 		 * @var latitude
 		 * @brief Latitude of the location in degrees
 		 */
-		float latitude = -1;
+		float latitude;
 		/**
 		 * @var longitude
 		 * @brief Longitude of the location in degrees
 		 */
-		float longitude = -1;
+		float longitude;
 		/**
 		 * @var live_period
 		 * @brief Optional. Period in seconds for which the location can be updated, should be between 60 and 86400.
 		 */
-		int live_period = -1;
+		int live_period;
 
 		//Constructors
 		InputLocationMessageContent();

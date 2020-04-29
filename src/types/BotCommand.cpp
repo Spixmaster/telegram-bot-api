@@ -1,6 +1,6 @@
 #include "tgbot/types/BotCommand.h"
 #include <rapidjson/document.h>
-#include "constants/Messages.h"
+#include "tgbot/constants/Messages.h"
 #include <iostream>
 
 namespace tgbot

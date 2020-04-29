@@ -32,7 +32,7 @@ namespace tgbot
 		 * @details For example, for a price of US$ 1.45 pass amount = 145.
 		 * @details See the exp parameter in currencies.json, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies).
 		 */
-		int total_amount = -1;
+		int total_amount;
 		/**
 		 * @var invoice_payload
 		 * @brief Bot specified invoice payload

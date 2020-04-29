@@ -35,17 +35,17 @@ namespace tgbot
 		 * @var width
 		 * @brief Photo width
 		 */
-		int width = -1;
+		int width;
 		/**
 		 * @var height
 		 * @brief Photo height
 		 */
-		int height = -1;
+		int height;
 		/**
 		 * @var file_size
 		 * @brief Optional. File size
 		 */
-		int file_size = -1;
+		int file_size;
 
 		//Constructors
 		PhotoSize();

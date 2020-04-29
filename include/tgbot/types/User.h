@@ -24,7 +24,7 @@ namespace tgbot
 		 * @var id
 		 * @brief Unique identifier for this user or bot
 		 */
-		long long id = -1;
+		long long id;
 		/**
 		 * @var is_bot
 		 * @brief True, if this user is a bot

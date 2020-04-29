@@ -29,7 +29,7 @@ namespace tgbot
 		 * @var type
 		 * @brief Type of the result, must be mpeg4_gif
 		 */
-		const std::string type = "mpeg4_gif";
+		std::string type;
 		/**
 		 * @var id
 		 * @brief Unique identifier for this result, 1-64 bytes

@@ -30,7 +30,7 @@ namespace tgbot
 		 * @var type
 		 * @brief Type of the result, must be location
 		 */
-		const std::string type = "location";
+		std::string type;
 		/**
 		 * @var id
 		 * @brief Unique identifier for this result, 1-64 Bytes
@@ -40,12 +40,12 @@ namespace tgbot
 		 * @var latitude
 		 * @brief Location latitude in degrees
 		 */
-		float latitude = -1;
+		float latitude;
 		/**
 		 * @var longitude
 		 * @brief Location longitude in degrees
 		 */
-		float longitude = -1;
+		float longitude;
 		/**
 		 * @var title
 		 * @brief Location title
@@ -55,7 +55,7 @@ namespace tgbot
 		 * @var live_period
 		 * @brief Optional. Period in seconds for which the location can be updated, should be between 60 and 86400.
 		 */
-		int live_period = -1;
+		int live_period;
 		/**
 		 * @var reply_markup
 		 * @brief Optional. Inline keyboard attached to the message
@@ -75,12 +75,12 @@ namespace tgbot
 		 * @var thumb_width
 		 * @brief Optional. Thumbnail width
 		 */
-		int thumb_width = -1;
+		int thumb_width;
 		/**
 		 * @var thumb_height
 		 * @brief Optional. Thumbnail height
 		 */
-		int thumb_height = -1;
+		int thumb_height;
 
 		//Constructors
 		InlineQueryResultLocation();

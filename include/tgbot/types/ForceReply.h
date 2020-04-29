@@ -26,12 +26,12 @@ namespace tgbot
 		 * @var force_reply
 		 * @brief Shows reply interface to the user, as if they manually selected the bot‘s message and tapped ’Reply'
 		 */
-		bool force_reply = true;
+		bool force_reply;
 		/**
 		 * @var selective
-		 * @brief Optional. Use this parameter if you want to force reply from specific users only. Targets: 1) users that are @mentioned in the text of the Message object; 2) if the bot's message is a reply (has reply_to_message_id), sender of the original message.
+		 * @brief Optional. Use this parameter if you want to force reply from specific users only. Targets: 1) users that are \@mentioned in the text of the Message object; 2) if the bot's message is a reply (has reply_to_message_id), sender of the original message.
 		 */
-		bool selective = false;
+		bool selective;
 
 		//Constructors
 		ForceReply();

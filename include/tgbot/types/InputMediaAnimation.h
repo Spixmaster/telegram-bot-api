@@ -27,17 +27,17 @@ namespace tgbot
 		 * @var type
 		 * @brief Type of the result, must be animation
 		 */
-		const std::string type = "animation";
+		std::string type;
 		/**
 		 * @var media
 		 * @brief File to send.
-		 * @details Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file_attach_name>” to upload a new one using multipart/form-data under <file_attach_name> name.
+		 * @details Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://\<file_attach_name\>” to upload a new one using multipart/form-data under \<file_attach_name\> name.
 		 */
 		std::variant<std::string, tools::InputFile::ptr> media;
 		/**
 		 * @var thumb
 		 * @brief Optional. Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side.
-		 * @details The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail‘s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can’t be reused and can be only uploaded as a new file, so you can pass “attach://<file_attach_name>” if the thumbnail was uploaded using multipart/form-data under <file_attach_name>.
+		 * @details The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail‘s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can’t be reused and can be only uploaded as a new file, so you can pass “attach://\<file_attach_name\>” if the thumbnail was uploaded using multipart/form-data under \<file_attach_name\>.
 		 */
 		std::variant<std::string, tools::InputFile::ptr> thumb;
 		/**
@@ -54,17 +54,17 @@ namespace tgbot
 		 * @var width
 		 * @brief Optional. Animation width
 		 */
-		int width = -1;
+		int width;
 		/**
 		 * @var height
 		 * @brief Optional. Animation height
 		 */
-		int height = -1;
+		int height;
 		/**
 		 * @var duration
 		 * @brief Optional. Animation duration
 		 */
-		int duration = -1;
+		int duration;
 
 		//Constructors
 		InputMediaAnimation();

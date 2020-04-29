@@ -29,7 +29,7 @@ namespace tgbot
 		 * @var voter_count
 		 * @brief Number of users that voted for this option
 		 */
-		int voter_count = -1;
+		int voter_count;
 
 		//Constructors
 		PollOption();

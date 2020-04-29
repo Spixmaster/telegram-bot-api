@@ -35,9 +35,9 @@ namespace tgbot
 		 * @brief The update‘s unique identifier.
 		 * @details Update identifiers start from a certain positive number and increase sequentially.
 		 * @details This ID becomes especially handy if you’re using Webhooks, since it allows you to ignore repeated updates or to restore the correct update sequence, should they get out of order.
-		 * @detils If there are no new updates for at least a week, then identifier of the next update will be chosen randomly instead of sequentially.
+		 * @details If there are no new updates for at least a week, then identifier of the next update will be chosen randomly instead of sequentially.
 		 */
-		int update_id = -1;
+		int update_id;
 		/**
 		 * @var message
 		 * @brief Optional. New incoming message of any kind — text, photo, sticker, etc.

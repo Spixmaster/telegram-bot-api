@@ -1,7 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structtgbot_1_1Reply.html" title="The super class of all reply classes." alt="" coords="5,81,107,108"/>
-<area shape="rect" id="node2" href="$structtgbot_1_1ForceReply.html" title="Upon receiving a message with this object, Telegram clients will display a reply interface to the use..." alt="" coords="195,5,331,32"/>
-<area shape="rect" id="node3" href="$structtgbot_1_1InlineKeyboardMarkup.html" title="This object represents an inline keyboard that appears right next to the message it belongs to." alt="" coords="158,56,367,83"/>
-<area shape="rect" id="node4" href="$structtgbot_1_1ReplyKeyboardMarkup.html" title="This object represents a custom keyboard with reply options (see Introduction to bots for details and..." alt="" coords="157,107,368,133"/>
-<area shape="rect" id="node5" href="$structtgbot_1_1ReplyKeyboardRemove.html" title="Upon receiving a message with this object, Telegram clients will remove the current custom keyboard a..." alt="" coords="155,157,371,184"/>
-</map>

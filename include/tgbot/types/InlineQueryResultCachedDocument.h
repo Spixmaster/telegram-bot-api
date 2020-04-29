@@ -30,7 +30,7 @@ namespace tgbot
 		 * @var type
 		 * @brief Type of the result, must be document
 		 */
-		const std::string type = "document";
+		std::string type;
 		/**
 		 * @var id
 		 * @brief Unique identifier for this result, 1-64 bytes

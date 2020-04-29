@@ -30,7 +30,7 @@ namespace tgbot
 		 * @details This number may be greater than 32 bits and some programming languages may have difficulty/silent defects in interpreting it.
 		 * @details But it is smaller than 52 bits, so a signed 64 bit integer or double-precision float type are safe for storing this identifier.
 		 */
-		long long id = -1;
+		long long id;
 		/**
 		 * @var type
 		 * @brief Type of chat, can be either “private”, “group”, “supergroup” or “channel”
@@ -86,7 +86,7 @@ namespace tgbot
 		 * @var slow_mode_delay
 		 * @brief Optional. For supergroups, the minimum allowed delay between consecutive messages sent by each unpriviledged user. Returned only in getChat.
 		 */
-		int slow_mode_delay = -1;
+		int slow_mode_delay;
 		/**
 		 * @var sticker_set_name
 		 * @brief Optional. For supergroups, name of group sticker set. Returned only in getChat.

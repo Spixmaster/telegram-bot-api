@@ -118,11 +118,11 @@ namespace tgbot
 						if(doc["explanation_entities"][j].IsObject())
 							explanation_entities.at(j) = std::make_shared<MessageEntity>(tools::Tools::get_json_as_string(doc["explanation_entities"][j]));
 						else
-							std::cerr << Messages::field_element_does_not_contain_json_obj("options") << std::endl;
+							std::cerr << Messages::field_element_does_not_contain_json_obj("explanation_entities") << std::endl;
 					}
 				}
 				else
-					std::cerr << Messages::field_does_not_contain_json_arr("options") << std::endl;
+					std::cerr << Messages::field_does_not_contain_json_arr("explanation_entities") << std::endl;
 			}
 
 			if(doc.HasMember("open_period"))

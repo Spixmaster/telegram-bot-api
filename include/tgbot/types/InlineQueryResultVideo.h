@@ -30,7 +30,7 @@ namespace tgbot
 		 * @var type
 		 * @brief Type of the result, must be video
 		 */
-		const std::string type = "video";
+		std::string type;
 		/**
 		 * @var id
 		 * @brief Unique identifier for this result, 1-64 bytes
@@ -70,17 +70,17 @@ namespace tgbot
 		 * @var video_width
 		 * @brief Optional. Video width
 		 */
-		int video_width = -1;
+		int video_width;
 		/**
 		 * @var video_height
 		 * @brief Optional. Video height
 		 */
-		int video_height = -1;
+		int video_height;
 		/**
 		 * @var video_duration
 		 * @brief Optional. Video duration in seconds
 		 */
-		int video_duration = -1;
+		int video_duration;
 		/**
 		 * @var description
 		 * @brief Optional. Short description of the result

@@ -29,7 +29,7 @@ namespace tgbot
 		 * @var type
 		 * @brief Type of the result, must be video
 		 */
-		const std::string type = "video";
+		std::string type;
 		/**
 		 * @var id
 		 * @brief Unique identifier for this result, 1-64 bytes

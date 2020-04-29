@@ -6,6 +6,7 @@
 #include <vector>
 #include <rapidjson/document.h>
 #include <memory>
+#include "tgbot/types/MessageEntity.h"
 
 namespace tgbot
 {
@@ -42,7 +43,7 @@ namespace tgbot
 		 * @var total_voter_count
 		 * @brief Total number of users that voted in the poll
 		 */
-		int total_voter_count = -1;
+		int total_voter_count;
 		/**
 		 * @var is_closed
 		 * @brief True, if the poll is closed
@@ -68,7 +69,7 @@ namespace tgbot
 		 * @brief Optional. 0-based identifier of the correct answer option.
 		 * @details Available only for polls in the quiz mode, which are closed, or was sent (not forwarded) by the bot or to the private chat with the bot.
 		 */
-		int correct_option_id = -1;
+		int correct_option_id;
 		/**
 		 * @var explanation
 		 * @brief Optional. Text that is shown when a user chooses an incorrect answer or taps on the lamp icon in a quiz-style poll, 0-200 characters
@@ -78,7 +79,7 @@ namespace tgbot
 		 * @var explanation_entities
 		 * @brief Optional. Special entities like usernames, URLs, bot commands, etc. that appear in the explanation
 		 */
-		std::vector<MessageEntity> explanation_entities;
+		std::vector<MessageEntity::ptr> explanation_entities;
 		/**
 		 * @var open_period
 		 * @brief Optional. Amount of time in seconds the poll will be active after creation

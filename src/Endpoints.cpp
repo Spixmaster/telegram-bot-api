@@ -60,7 +60,7 @@ namespace tgbot
 				{
 					const rapidjson::Value &array = doc["result"].GetArray();
 
-					for(std::size_t j = 0; j< array.Size(); ++j)
+					for(std::size_t j = 0; j < array.Size(); ++j)
 						updates.push_back(std::make_shared<Update>(tools::Tools::get_json_as_string(array[j])));
 				}
 				else
@@ -1452,7 +1452,8 @@ namespace tgbot
 	}
 
 	Message::ptr Endpoints::sendPoll(const long long &chat_id, const std::string &question, const std::vector<std::string> &options, const bool &is_anonymous,
-			const std::string &type, const bool &allows_multiple_answers, const int correct_option_id, const bool &is_closed,
+			const std::string &type, const bool &allows_multiple_answers, const int &correct_option_id, const std::string &explanation,
+			const std::string &explanation_parse_mode, const int &open_period, const int &close_date, const bool &is_closed,
 			const bool &disable_notification, const int &reply_to_message_id, const Reply::ptr &reply_markup) const noexcept
 	{
 		//create json array of options
@@ -1482,12 +1483,49 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("allows_multiple_answers", allows_multiple_answers));
 		if(correct_option_id != -1)
 			http_args.push_back(tools::HttpArg("correct_option_id", correct_option_id));
+		http_args.push_back(tools::HttpArg("explanation", explanation));
+		http_args.push_back(tools::HttpArg("explanation_parse_mode", explanation_parse_mode));
+		http_args.push_back(tools::HttpArg("open_period", open_period));
+		http_args.push_back(tools::HttpArg("close_date", close_date));
 		http_args.push_back(tools::HttpArg("is_closed", is_closed));
 		http_args.push_back(tools::HttpArg("disable_notification", disable_notification));
 		http_args.push_back(tools::HttpArg("reply_to_message_id", reply_to_message_id));
 		http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendPoll", http_args);
+		std::string json = http_client.send_post_req_multipart().m_body;
+
+		rapidjson::Document doc;
+		doc.Parse(json.c_str());
+
+		Message::ptr msg = std::make_shared<Message>();
+
+		if(doc.IsObject())
+			if(doc.HasMember("result"))
+				if(doc["result"].IsObject())
+					msg = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["result"]));
+				else
+					std::cerr << Messages::field_does_not_contain_json_obj("result") << std::endl;
+			else
+				std::cerr << Messages::field_non_existent("result") << std::endl;
+		else
+			std::cerr << Messages::server_resp_not_json_object << std::endl;
+
+		return msg;
+	}
+
+	Message::ptr Endpoints::sendDice(const long long &chat_id, const std::string &emoji, const bool &disable_notification, const int &reply_to_message_id,
+			const Reply::ptr &reply_markup) const noexcept
+	{
+		//http args
+		std::vector<tools::HttpArg> http_args;
+		http_args.push_back(tools::HttpArg("chat_id", chat_id));
+		http_args.push_back(tools::HttpArg("emoji", emoji));
+		http_args.push_back(tools::HttpArg("disable_notification", disable_notification));
+		http_args.push_back(tools::HttpArg("reply_to_message_id", reply_to_message_id));
+		http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
+
+		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendDice", http_args);
 		std::string json = http_client.send_post_req_multipart().m_body;
 
 		rapidjson::Document doc;
@@ -2032,7 +2070,7 @@ namespace tgbot
 				{
 					const rapidjson::Value &array = doc["result"].GetArray();
 
-					for(std::size_t j = 0; j< array.Size(); ++j)
+					for(std::size_t j = 0; j < array.Size(); ++j)
 					{
 						if(array[j].IsObject())
 							admins.push_back(std::make_shared<ChatMember>(tools::Tools::get_json_as_string(array[j])));
@@ -2192,6 +2230,83 @@ namespace tgbot
 		return false;
 	}
 
+	bool Endpoints::setMyCommands(const std::vector<BotCommand::ptr> commands) const noexcept
+	{
+		//todo hier schon gut
+		//Create the value for commands.
+		std::string commands_json = "[";
+
+		for(std::size_t j = 0; j < commands.size(); ++j)
+		{
+			commands_json.append(commands.at(j)->parse_to_json());
+
+			if(j != commands.size() - 1)
+				commands_json.append(", ");
+		}
+
+		commands_json.append("]");
+
+		//HTTP arguments
+		std::vector<tools::HttpArg> http_args;
+		http_args.push_back(tools::HttpArg("commands", commands_json));
+
+		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/setMyCommands", http_args);
+		std::string json = http_client.send_post_req_multipart().m_body;
+
+		rapidjson::Document doc;
+		doc.Parse(json.c_str());
+
+		if(doc.IsObject())
+			if(doc.HasMember("result"))
+				if(doc["result"].IsBool())
+					return doc["result"].GetBool();
+				else
+					std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+			else
+				std::cerr << Messages::field_non_existent("result") << std::endl;
+		else
+			std::cerr << Messages::server_resp_not_json_object << std::endl;
+
+		return false;
+	}
+
+	std::vector<BotCommand::ptr> Endpoints::getMyCommands(const std::vector<BotCommand::ptr> commands) const noexcept
+	{
+		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/getMyCommands");
+		std::string json = http_client.send_get_req().m_body;
+
+		rapidjson::Document doc;
+		doc.Parse(json.c_str());
+
+		std::vector<BotCommand::ptr> my_cmds;
+
+		if(doc.IsObject())
+			if(doc.HasMember("result"))
+				if(doc["result"].IsArray())
+				{
+					const rapidjson::Value &array = doc["result"].GetArray();
+
+					for(std::size_t j = 0; j < array.Size(); ++j)
+					{
+						if(array[j].IsObject())
+							my_cmds.push_back(std::make_shared<BotCommand>(tools::Tools::get_json_as_string(array[j])));
+						else
+						{
+							std::cerr << Messages::field_element_does_not_contain_json_obj("result") << std::endl;
+							continue;
+						}
+					}
+				}
+				else
+					std::cerr << Messages::field_does_not_contain_json_arr("result") << std::endl;
+			else
+				std::cerr << Messages::field_non_existent("result") << std::endl;
+		else
+			std::cerr << Messages::server_resp_not_json_object << std::endl;
+
+		return my_cmds;
+	}
+
 	Message::ptr Endpoints::editMessageText(const std::string &text, const long long &chat_id, const int &message_id, const std::string &inline_message_id,
 			const std::string &parse_mode, const bool &disable_web_page_preview, const Reply::ptr reply_markup) const noexcept
 	{
@@ -2261,7 +2376,6 @@ namespace tgbot
 		return msg;
 	}
 
-	//todo editing a media by uploading a new image does not work although the principle is the same as with sendMediaGroup
 	Message::ptr Endpoints::editMessageMedia(
 			const std::variant<InputMediaAnimation::ptr, InputMediaAudio::ptr, InputMediaDocument::ptr, InputMediaPhoto::ptr, InputMediaVideo::ptr> &media,
 			const long long &chat_id, const int &message_id, const std::string &inline_message_id, const Reply::ptr reply_markup) const noexcept
@@ -2589,9 +2703,9 @@ namespace tgbot
 		return file;
 	}
 
-	bool Endpoints::createNewStickerSet(const int &user_id, const std::string &name, const std::string &title,
-			const std::variant<std::string, tools::InputFile::ptr> &png_sticker, const std::string &emojis, const bool &contains_mask,
-			const MaskPosition::ptr &mask_position) const noexcept
+	bool Endpoints::createNewStickerSet(const int &user_id, const std::string &name, const std::string &title, const std::string &emojis,
+			const std::variant<std::string, tools::InputFile::ptr> &png_sticker, const tools::InputFile::ptr tgs_sticker,
+			const bool &contains_mask, const MaskPosition::ptr &mask_position) const noexcept
 	{
 		if(std::holds_alternative<std::string>(png_sticker))
 		{
@@ -2601,6 +2715,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("name", name));
 			http_args.push_back(tools::HttpArg("title", title));
 			http_args.push_back(tools::HttpArg("png_sticker", std::get<std::string>(png_sticker)));
+			http_args.push_back(tools::HttpArg("tgs_sticker", tgs_sticker));
 			http_args.push_back(tools::HttpArg("emojis", emojis));
 			http_args.push_back(tools::HttpArg("contains_mask", contains_mask));
 			http_args.push_back(tools::HttpArg("mask_position", mask_position->parse_to_json()));
@@ -2632,6 +2747,7 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("name", name));
 			http_args.push_back(tools::HttpArg("title", title));
 			http_args.push_back(tools::HttpArg("png_sticker", std::get<tools::InputFile::ptr>(png_sticker)));
+			http_args.push_back(tools::HttpArg("tgs_sticker", tgs_sticker));
 			http_args.push_back(tools::HttpArg("emojis", emojis));
 			http_args.push_back(tools::HttpArg("contains_mask", contains_mask));
 			http_args.push_back(tools::HttpArg("mask_position", mask_position->parse_to_json()));
@@ -2660,7 +2776,7 @@ namespace tgbot
 	}
 
 	bool Endpoints::addStickerToSet(const int &user_id, const std::string &name, const std::variant<std::string, tools::InputFile::ptr> &png_sticker,
-			const std::string &emojis, const MaskPosition::ptr &mask_position) const noexcept
+			const std::string &emojis, const tools::InputFile::ptr tgs_sticker, const MaskPosition::ptr &mask_position) const noexcept
 	{
 		if(std::holds_alternative<std::string>(png_sticker))
 		{
@@ -2669,7 +2785,8 @@ namespace tgbot
 			http_args.push_back(tools::HttpArg("user_id", user_id));
 			http_args.push_back(tools::HttpArg("name", name));
 			http_args.push_back(tools::HttpArg("png_sticker", std::get<std::string>(png_sticker)));
-			http_args.push_back(tools::HttpArg("emojis", emojis));
+			http_args.push_back(tools::HttpArg(emojis, emojis));
+			http_args.push_back(tools::HttpArg("tgs_sticker", tgs_sticker));
 			http_args.push_back(tools::HttpArg("mask_position", mask_position->parse_to_json()));
 
 			tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/addStickerToSet", http_args);
@@ -2758,6 +2875,37 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("sticker", sticker));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/deleteStickerFromSet", http_args);
+		std::string json = http_client.send_post_req_multipart().m_body;
+
+		rapidjson::Document doc;
+		doc.Parse(json.c_str());
+
+		if(doc.IsObject())
+			if(doc.HasMember("result"))
+				if(doc["result"].IsBool())
+					return doc["result"].GetBool();
+				else
+					std::cerr << Messages::field_does_not_contain_bool("result") << std::endl;
+			else
+				std::cerr << Messages::field_non_existent("result") << std::endl;
+		else
+			std::cerr << Messages::server_resp_not_json_object << std::endl;
+
+		return false;
+	}
+
+	bool Endpoints::setStickerSetThumb(const std::string &name, const int &user_id, const std::variant<std::string, tools::InputFile::ptr> &thumb) const noexcept
+	{
+		//todo hier schon gut
+		//HTTP arguments
+		std::vector<tools::HttpArg> http_args;
+
+		if(std::holds_alternative<std::string>(thumb))
+			http_args.push_back(tools::HttpArg("sticker", std::get<std::string>(thumb)));
+		else if(std::holds_alternative<tools::InputFile::ptr>(thumb))
+			http_args.push_back(tools::HttpArg("sticker", std::get<tools::InputFile::ptr>(thumb)));
+
+		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/setStickerSetThumb", http_args);
 		std::string json = http_client.send_post_req_multipart().m_body;
 
 		rapidjson::Document doc;
@@ -2992,7 +3140,7 @@ namespace tgbot
 		return false;
 	}
 
-	bool Endpoints::setPassportDataErrors(const int &user_id, const bool &ok, const std::vector<PassportElementError::ptr> &errors) const noexcept
+	bool Endpoints::setPassportDataErrors(const int &user_id, const std::vector<PassportElementError::ptr> &errors) const noexcept
 	{
 		//go through vector to build up the json array
 		std::string errors_json = "[";
@@ -3134,7 +3282,7 @@ namespace tgbot
 				{
 					const rapidjson::Value &array = doc["result"].GetArray();
 
-					for(std::size_t j = 0; j< array.Size(); ++j)
+					for(std::size_t j = 0; j < array.Size(); ++j)
 					{
 						if(array[j].IsObject())
 							game_high_score.push_back(std::make_shared<GameHighScore>(tools::Tools::get_json_as_string(array[j])));

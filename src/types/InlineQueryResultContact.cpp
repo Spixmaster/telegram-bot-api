@@ -5,7 +5,7 @@
 
 namespace tgbot
 {
-	InlineQueryResultContact::InlineQueryResultContact() : id(), phone_number(), first_name(), last_name(), vcard(), reply_markup(), input_message_content(),
+	InlineQueryResultContact::InlineQueryResultContact() : type(), id(), phone_number(), first_name(), last_name(), vcard(), reply_markup(), input_message_content(),
 	thumb_url(), thumb_width(), thumb_height()
 	{}
 
@@ -17,6 +17,14 @@ namespace tgbot
 		if(doc.IsObject())
 		{
 			//assignments
+			if(doc.HasMember("type"))
+			{
+				if(doc["type"].IsString())
+					type = doc["type"].GetString();
+				else
+					std::cerr << Messages::field_does_not_contain_string("type") << std::endl;
+			}
+
 			if(doc.HasMember("id"))
 			{
 				if(doc["id"].IsString())

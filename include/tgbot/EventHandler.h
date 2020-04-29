@@ -15,7 +15,7 @@
 namespace tgbot
 {
 	/**
-	 * @EventHandler
+	 * @class EventHandler
 	 * @brief The event handler which handles incoming data.
 	 */
 	class EventHandler
@@ -155,6 +155,9 @@ namespace tgbot
 
 	public:
 		//Constructors
+		/**
+		 * @param[in] token The token is needed to identify the bot.
+		 */
 		EventHandler(const std::string &token);
 
 		//Member functions
@@ -180,6 +183,7 @@ namespace tgbot
 
 		/**
 		 * @brief Adds the listener to proper lister list.
+		 * @param[in] cmd The command with which the passed function is called.
 		 * @param[in] listener_element Listener to add.
 		 */
 		void on_cmd(const std::string &cmd, const m_message_listener_element &listener_element) noexcept;

@@ -1,4 +1,0 @@
-<map id="tgbot::InlineQueryResultGame" name="tgbot::InlineQueryResultGame">
-<area shape="rect" id="node1" title="Represents a Game." alt="" coords="5,80,224,107"/>
-<area shape="rect" id="node2" href="$structtgbot_1_1InlineQueryResult.html" title="This object represents one result of an inline query. Telegram clients currently support results of t..." alt="" coords="25,5,205,32"/>
-</map>

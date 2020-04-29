@@ -71,7 +71,6 @@ namespace tgbot
 
 		//field vcard
 		json.append("\"vcard\": \"" + vcard + "\"");
-		json.append(", ");
 
 		json.append("}");
 

@@ -30,7 +30,7 @@ namespace tgbot
 		 * @var type
 		 * @brief Type of the result, must be audio
 		 */
-		const std::string type = "audio";
+		std::string type;
 		/**
 		 * @var id
 		 * @brief Unique identifier for this result, 1-64 bytes
@@ -65,7 +65,7 @@ namespace tgbot
 		 * @var audio_duration
 		 * @brief Optional. Audio duration in seconds
 		 */
-		int audio_duration = -1;
+		int audio_duration;
 		/**
 		 * @var reply_markup
 		 * @brief Optional. Inline keyboard attached to the message

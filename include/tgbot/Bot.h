@@ -49,19 +49,19 @@ namespace tgbot
 		Bot(const std::string &token);
 
 		//Member functions
-		/*
+		/**
 		 * @brief Getter.
 		 * @return The Telegram bot token used by this bot.
 		 */
 		std::string get_token() const noexcept;
 
-		/*
+		/**
 		 * @brief Getter.
 		 * @return Endpoints
 		 */
 		Endpoints::ptr get_endpnts() const noexcept;
 
-		/*
+		/**
 		 * @brief Getter.
 		 * @return EventHandler
 		 */

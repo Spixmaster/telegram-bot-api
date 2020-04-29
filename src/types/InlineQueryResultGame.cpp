@@ -5,7 +5,7 @@
 
 namespace tgbot
 {
-	InlineQueryResultGame::InlineQueryResultGame() : id(), game_short_name(), reply_markup()
+	InlineQueryResultGame::InlineQueryResultGame() : type(), id(), game_short_name(), reply_markup()
 	{}
 
 	InlineQueryResultGame::InlineQueryResultGame(const std::string &json)
@@ -16,6 +16,14 @@ namespace tgbot
 		if(doc.IsObject())
 		{
 			//assignments
+			if(doc.HasMember("type"))
+			{
+				if(doc["type"].IsString())
+					type = doc["type"].GetString();
+				else
+					std::cerr << Messages::field_does_not_contain_string("type") << std::endl;
+			}
+
 			if(doc.HasMember("id"))
 			{
 				if(doc["id"].IsString())

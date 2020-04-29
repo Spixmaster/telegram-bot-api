@@ -43,7 +43,7 @@ namespace tgbot
 			if(doc.HasMember("height"))
 			{
 				if(doc["height"].IsInt())
-					width = doc["height"].GetInt();
+					height = doc["height"].GetInt();
 				else
 					std::cerr << Messages::field_does_not_contain_int("height") << std::endl;
 			}
@@ -51,7 +51,7 @@ namespace tgbot
 			if(doc.HasMember("file_size"))
 			{
 				if(doc["file_size"].IsInt())
-					width = doc["file_size"].GetInt();
+					file_size = doc["file_size"].GetInt();
 				else
 					std::cerr << Messages::field_does_not_contain_int("file_size") << std::endl;
 			}

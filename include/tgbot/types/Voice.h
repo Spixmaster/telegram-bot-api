@@ -34,7 +34,7 @@ namespace tgbot
 		 * @var duration
 		 * @brief Duration of the audio in seconds as defined by sender
 		 */
-		int duration = -1;
+		int duration;
 		/**
 		 * @var mime_type
 		 * @brief Optional. MIME type of the file as defined by sender
@@ -44,7 +44,7 @@ namespace tgbot
 		 * @var file_size
 		 * @brief Optional. File size
 		 */
-		int file_size = -1;
+		int file_size;
 
 		//Constructors
 		Voice();

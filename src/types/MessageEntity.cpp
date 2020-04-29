@@ -5,7 +5,7 @@
 
 namespace tgbot
 {
-	MessageEntity::MessageEntity() : type(), offset(), length(), url(), user()
+	MessageEntity::MessageEntity() : type(), offset(), length(), url(), user(), language()
 	{}
 
 	MessageEntity::MessageEntity(const std::string &json)
