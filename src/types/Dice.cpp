@@ -2,6 +2,7 @@
 #include <rapidjson/document.h>
 #include "tgbot/constants/Messages.h"
 #include <iostream>
+#include "tools/Tools.h"
 
 namespace tgbot
 {
@@ -15,13 +16,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("emoji"))
 			{
 				if(doc["emoji"].IsString())
 					emoji = doc["emoji"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("emoji") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("emoji"));
 			}
 
 			if(doc.HasMember("value"))
@@ -29,22 +30,22 @@ namespace tgbot
 				if(doc["value"].IsInt())
 					value = doc["value"].GetInt();
 				else
-					std::cerr << Messages::field_does_not_contain_int("value") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_int("value"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string Dice::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field emoji
+		//Field emoji
 		json.append("\"emoji\": \"" + emoji + "\"");
 		json.append(", ");
 
-		//field value
+		//Field value
 		json.append("\"value\": \"" + std::to_string(value) + "\"");
 
 		json.append("}");

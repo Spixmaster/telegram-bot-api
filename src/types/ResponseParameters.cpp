@@ -15,13 +15,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("migrate_to_chat_id"))
 			{
 				if(doc["migrate_to_chat_id"].IsInt())
 					migrate_to_chat_id = doc["migrate_to_chat_id"].GetInt();
 				else
-					std::cerr << Messages::field_does_not_contain_int("migrate_to_chat_id") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_int("migrate_to_chat_id"));
 			}
 
 			if(doc.HasMember("retry_after"))
@@ -29,22 +29,22 @@ namespace tgbot
 				if(doc["retry_after"].IsInt())
 					retry_after = doc["retry_after"].GetInt();
 				else
-					std::cerr << Messages::field_does_not_contain_int("retry_after") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_int("retry_after"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string ResponseParameters::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field migrate_to_chat_id
+		//Field migrate_to_chat_id
 		json.append("\"migrate_to_chat_id\": " + migrate_to_chat_id);
 		json.append(", ");
 
-		//field retry_after
+		//Field retry_after
 		json.append("\"retry_after\": " + retry_after);
 
 		json.append("}");

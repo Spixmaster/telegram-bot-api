@@ -15,13 +15,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("source"))
 			{
 				if(doc["source"].IsString())
 					source = doc["source"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("source") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("source"));
 			}
 
 			if(doc.HasMember("type"))
@@ -29,7 +29,7 @@ namespace tgbot
 				if(doc["type"].IsString())
 					type = doc["type"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("type") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("type"));
 			}
 
 			if(doc.HasMember("file_hashes"))
@@ -43,11 +43,11 @@ namespace tgbot
 						if(doc["file_hashes"][j].IsString())
 							file_hashes.at(j) = doc["file_hashes"][j].GetString();
 						else
-							std::cerr << Messages::field_element_does_not_contain_string("file_hashes") << std::endl;
+							tools::Tools::write_err_log(Messages::field_element_does_not_contain_string("file_hashes"));
 					}
 				}
 				else
-					std::cerr << Messages::field_does_not_contain_json_arr("file_hashes") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("file_hashes"));
 			}
 
 			if(doc.HasMember("message"))
@@ -55,26 +55,26 @@ namespace tgbot
 				if(doc["message"].IsString())
 					message = doc["message"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("message") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("message"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string PassportElementErrorFiles::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field source
+		//Field source
 		json.append("\"source\": \"" + source + "\"");
 		json.append(", ");
 
-		//field type
+		//Field type
 		json.append("\"type\": \"" + type + "\"");
 		json.append(", ");
 
-		//field file_hashes
+		//Field file_hashes
 		std::string file_hashes_cont = "[";
 		for(std::size_t j = 0; j < file_hashes.size(); ++j)
 		{
@@ -97,7 +97,7 @@ namespace tgbot
 		json.append("\"file_hashes\": " + file_hashes_cont);
 		json.append(", ");
 
-		//field message
+		//Field message
 		json.append("\"message\": \"" + message + "\"");
 
 		json.append("}");

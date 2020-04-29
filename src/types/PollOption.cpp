@@ -16,13 +16,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("text"))
 			{
 				if(doc["text"].IsString())
 					text = doc["text"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("text") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("text"));
 			}
 
 			if(doc.HasMember("voter_count"))
@@ -30,22 +30,22 @@ namespace tgbot
 				if(doc["voter_count"].IsInt())
 					voter_count = doc["voter_count"].GetInt();
 				else
-					std::cerr << Messages::field_does_not_contain_int("voter_count") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_int("voter_count"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string PollOption::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field text
+		//Field text
 		json.append("\"text\": \"" + text + "\"");
 		json.append(", ");
 
-		//field voter_count
+		//Field voter_count
 		json.append("\"voter_count\": " + voter_count);
 
 		json.append("}");

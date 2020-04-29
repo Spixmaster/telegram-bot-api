@@ -15,13 +15,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("label"))
 			{
 				if(doc["label"].IsString())
 					label = doc["label"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("label") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("label"));
 			}
 
 			if(doc.HasMember("amount"))
@@ -29,22 +29,22 @@ namespace tgbot
 				if(doc["amount"].IsInt())
 					amount = doc["amount"].GetInt();
 				else
-					std::cerr << Messages::field_does_not_contain_int("amount") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_int("amount"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string LabeledPrice::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field label
+		//Field label
 		json.append("\"label\": \"" + label + "\"");
 		json.append(", ");
 
-		//field amount
+		//Field amount
 		json.append("\"amount\": " + amount);
 
 		json.append("}");

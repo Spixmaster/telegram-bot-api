@@ -15,13 +15,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("small_file_id"))
 			{
 				if(doc["small_file_id"].IsString())
 					small_file_id = doc["small_file_id"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("small_file_id") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("small_file_id"));
 			}
 
 			if(doc.HasMember("small_file_unique_id"))
@@ -29,7 +29,7 @@ namespace tgbot
 				if(doc["small_file_unique_id"].IsString())
 					small_file_unique_id = doc["small_file_unique_id"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("small_file_unique_id") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("small_file_unique_id"));
 			}
 
 			if(doc.HasMember("big_file_id"))
@@ -37,7 +37,7 @@ namespace tgbot
 				if(doc["big_file_id"].IsString())
 					big_file_id = doc["big_file_id"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("big_file_id") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("big_file_id"));
 			}
 
 			if(doc.HasMember("big_file_unique_id"))
@@ -45,30 +45,30 @@ namespace tgbot
 				if(doc["big_file_unique_id"].IsString())
 					big_file_id = doc["big_file_unique_id"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("big_file_unique_id") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("big_file_unique_id"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string ChatPhoto::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field small_file_id
+		//Field small_file_id
 		json.append("\"small_file_id\": \"" + small_file_id + "\"");
 		json.append(", ");
 
-		//field small_file_unique_id
+		//Field small_file_unique_id
 		json.append("\"small_file_unique_id\": \"" + small_file_unique_id + "\"");
 		json.append(", ");
 
-		//field big_file_id
+		//Field big_file_id
 		json.append("\"big_file_id\": \"" + big_file_id + "\"");
 		json.append(", ");
 
-		//field big_file_unique_id
+		//Field big_file_unique_id
 		json.append("\"big_file_unique_id\": \"" + big_file_unique_id + "\"");
 
 		json.append("}");

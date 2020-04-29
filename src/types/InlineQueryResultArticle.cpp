@@ -16,13 +16,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("type"))
 			{
 				if(doc["type"].IsString())
 					type = doc["type"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("type") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("type"));
 			}
 
 			if(doc.HasMember("id"))
@@ -30,7 +30,7 @@ namespace tgbot
 				if(doc["id"].IsString())
 					id = doc["id"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("id") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("id"));
 			}
 
 			if(doc.HasMember("title"))
@@ -38,7 +38,7 @@ namespace tgbot
 				if(doc["title"].IsString())
 					title = doc["title"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("title") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("title"));
 			}
 
 			if(doc.HasMember("input_message_content"))
@@ -46,7 +46,7 @@ namespace tgbot
 				if(doc["input_message_content"].IsObject())
 					input_message_content = std::make_shared<InputMessageContent>(tools::Tools::get_json_as_string(doc["input_message_content"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("input_message_content") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("input_message_content"));
 			}
 
 			if(doc.HasMember("reply_markup"))
@@ -54,7 +54,7 @@ namespace tgbot
 				if(doc["reply_markup"].IsObject())
 					reply_markup = std::make_shared<InlineKeyboardMarkup>(tools::Tools::get_json_as_string(doc["reply_markup"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("reply_markup") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("reply_markup"));
 			}
 
 			if(doc.HasMember("url"))
@@ -62,7 +62,7 @@ namespace tgbot
 				if(doc["url"].IsString())
 					url = doc["url"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("url") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("url"));
 			}
 
 			if(doc.HasMember("hide_url"))
@@ -70,7 +70,7 @@ namespace tgbot
 				if(doc["hide_url"].IsBool())
 					hide_url = doc["hide_url"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("hide_url") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("hide_url"));
 			}
 
 			if(doc.HasMember("description"))
@@ -78,7 +78,7 @@ namespace tgbot
 				if(doc["description"].IsString())
 					description = doc["description"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("description") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("description"));
 			}
 
 			if(doc.HasMember("thumb_url"))
@@ -86,7 +86,7 @@ namespace tgbot
 				if(doc["thumb_url"].IsString())
 					thumb_url = doc["thumb_url"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("thumb_url") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("thumb_url"));
 			}
 
 			if(doc.HasMember("thumb_width"))
@@ -94,7 +94,7 @@ namespace tgbot
 				if(doc["thumb_width"].IsInt())
 					thumb_width = doc["thumb_width"].GetInt();
 				else
-					std::cerr << Messages::field_does_not_contain_int("thumb_width") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_int("thumb_width"));
 			}
 
 			if(doc.HasMember("thumb_height"))
@@ -102,38 +102,38 @@ namespace tgbot
 				if(doc["thumb_height"].IsInt())
 					thumb_height = doc["thumb_height"].GetInt();
 				else
-					std::cerr << Messages::field_does_not_contain_int("thumb_height") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_int("thumb_height"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string InlineQueryResultArticle::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field type
+		//Field type
 		json.append("\"type\": \"" + type + "\"");
 		json.append(", ");
 
-		//field id
+		//Field id
 		json.append("\"id\": \"" + id + "\"");
 		json.append(", ");
 
-		//field title
+		//Field title
 		json.append("\"title\": \"" + title + "\"");
 		json.append(", ");
 
-		//field input_message_content
+		//Field input_message_content
 		json.append("\"input_message_content\": " + input_message_content->parse_to_json());
 		json.append(", ");
 
-		//field reply_markup
+		//Field reply_markup
 		json.append("\"reply_markup\": " + reply_markup->parse_to_json());
 		json.append(", ");
 
-		//field url
+		//Field url
 		json.append("\"url\": \"" + url + "\"");
 		json.append(", ");
 
@@ -142,19 +142,19 @@ namespace tgbot
 		json.append("\"hide_url\": " + hide_url_bool);
 		json.append(", ");
 
-		//field description
+		//Field description
 		json.append("\"description\": \"" + description + "\"");
 		json.append(", ");
 
-		//field thumb_url
+		//Field thumb_url
 		json.append("\"thumb_url\": \"" + thumb_url + "\"");
 		json.append(", ");
 
-		//field thumb_width
+		//Field thumb_width
 		json.append("\"thumb_width\": " + thumb_width);
 		json.append(", ");
 
-		//field thumb_height
+		//Field thumb_height
 		json.append("\"thumb_height\": " + thumb_height);
 
 		json.append("}");

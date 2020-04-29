@@ -16,13 +16,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("data"))
 			{
 				if(doc["data"].IsString())
 					data = doc["data"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("data") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("data"));
 			}
 
 			if(doc.HasMember("hash"))
@@ -30,7 +30,7 @@ namespace tgbot
 				if(doc["hash"].IsString())
 					hash = doc["hash"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("hash") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("hash"));
 			}
 
 			if(doc.HasMember("secret"))
@@ -38,26 +38,26 @@ namespace tgbot
 				if(doc["secret"].IsString())
 					secret = doc["secret"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("secret") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("secret"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string EncryptedCredentials::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field data
+		//Field data
 		json.append("\"data\": \"" + data + "\"");
 		json.append(", ");
 
-		//field hash
+		//Field hash
 		json.append("\"hash\": \"" + hash + "\"");
 		json.append(", ");
 
-		//field secret
+		//Field secret
 		json.append("\"secret\": \"" + secret + "\"");
 
 		json.append("}");

@@ -15,7 +15,7 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("data"))
 			{
 				if(doc["data"].IsArray())
@@ -27,11 +27,11 @@ namespace tgbot
 						if(doc["data"][j].IsObject())
 							data.at(j) = std::make_shared<EncryptedPassportElement>(tools::Tools::get_json_as_string(doc["data"][j]));
 						else
-							std::cerr << Messages::field_element_does_not_contain_json_obj("data") << std::endl;
+							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("data"));
 					}
 				}
 				else
-					std::cerr << Messages::field_does_not_contain_json_arr("data") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("data"));
 			}
 
 			if(doc.HasMember("credentials"))
@@ -39,18 +39,18 @@ namespace tgbot
 				if(doc["credentials"].IsObject())
 					credentials = std::make_shared<EncryptedCredentials>(tools::Tools::get_json_as_string(doc["credentials"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("credentials") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("credentials"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string PassportData::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field data
+		//Field data
 		std::string data_cont = "[";
 		for(std::size_t j = 0; j < data.size(); ++j)
 		{
@@ -73,7 +73,7 @@ namespace tgbot
 		json.append("\"data\": \"" + data_cont + "\"");
 		json.append(", ");
 
-		//field credentials
+		//Field credentials
 		json.append("\"credentials\": " + credentials->parse_to_json());
 
 		json.append("}");

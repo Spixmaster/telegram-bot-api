@@ -15,13 +15,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("message_text"))
 			{
 				if(doc["message_text"].IsString())
 					message_text = doc["message_text"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("message_text") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("message_text"));
 			}
 
 			if(doc.HasMember("parse_mode"))
@@ -29,7 +29,7 @@ namespace tgbot
 				if(doc["parse_mode"].IsString())
 					parse_mode = doc["parse_mode"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("parse_mode") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("parse_mode"));
 			}
 
 			if(doc.HasMember("disable_web_page_preview"))
@@ -37,26 +37,26 @@ namespace tgbot
 				if(doc["disable_web_page_preview"].IsBool())
 					disable_web_page_preview = doc["disable_web_page_preview"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("disable_web_page_preview") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("disable_web_page_preview"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string InputTextMessageContent::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field message_text
+		//Field message_text
 		json.append("\"message_text\": \"" + message_text + "\"");
 		json.append(", ");
 
-		//field parse_mode
+		//Field parse_mode
 		json.append("\"parse_mode\": \"" + parse_mode + "\"");
 		json.append(", ");
 
-		//field parse_mode
+		//Field parse_mode
 		std::string disable_web_page_preview_bool = disable_web_page_preview ? "true" : "false";
 		json.append("\"disable_web_page_preview\": \"" + disable_web_page_preview_bool + "\"");
 

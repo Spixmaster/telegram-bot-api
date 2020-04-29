@@ -15,13 +15,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("type"))
 			{
 				if(doc["type"].IsString())
 					type = doc["type"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("type") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("type"));
 			}
 
 			if(doc.HasMember("data"))
@@ -29,7 +29,7 @@ namespace tgbot
 				if(doc["data"].IsString())
 					data = doc["data"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("data") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("data"));
 			}
 
 			if(doc.HasMember("phone_number"))
@@ -37,7 +37,7 @@ namespace tgbot
 				if(doc["phone_number"].IsString())
 					phone_number = doc["phone_number"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("phone_number") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("phone_number"));
 			}
 
 			if(doc.HasMember("email"))
@@ -45,7 +45,7 @@ namespace tgbot
 				if(doc["email"].IsString())
 					phone_number = doc["email"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("email") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("email"));
 			}
 
 			if(doc.HasMember("files"))
@@ -59,11 +59,11 @@ namespace tgbot
 						if(doc["files"][j].IsObject())
 							files.at(j) = std::make_shared<PassportFile>(tools::Tools::get_json_as_string(doc["files"][j]));
 						else
-							std::cerr << Messages::field_element_does_not_contain_json_obj("files") << std::endl;
+							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("files"));
 					}
 				}
 				else
-					std::cerr << Messages::field_does_not_contain_json_arr("files") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("files"));
 			}
 
 			if(doc.HasMember("front_side"))
@@ -71,7 +71,7 @@ namespace tgbot
 				if(doc["front_side"].IsObject())
 					front_side = std::make_shared<PassportFile>(tools::Tools::get_json_as_string(doc["front_side"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("front_side") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("front_side"));
 			}
 
 			if(doc.HasMember("reverse_side"))
@@ -79,7 +79,7 @@ namespace tgbot
 				if(doc["reverse_side"].IsObject())
 					reverse_side = std::make_shared<PassportFile>(tools::Tools::get_json_as_string(doc["reverse_side"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("reverse_side") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("reverse_side"));
 			}
 
 			if(doc.HasMember("selfie"))
@@ -87,7 +87,7 @@ namespace tgbot
 				if(doc["selfie"].IsObject())
 					selfie = std::make_shared<PassportFile>(tools::Tools::get_json_as_string(doc["selfie"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("selfie") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("selfie"));
 			}
 
 			if(doc.HasMember("translation"))
@@ -101,11 +101,11 @@ namespace tgbot
 						if(doc["translation"][j].IsObject())
 							translation.at(j) = std::make_shared<PassportFile>(tools::Tools::get_json_as_string(doc["translation"][j]));
 						else
-							std::cerr << Messages::field_element_does_not_contain_json_obj("translation") << std::endl;
+							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("translation"));
 					}
 				}
 				else
-					std::cerr << Messages::field_does_not_contain_json_arr("translation") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("translation"));
 			}
 
 			if(doc.HasMember("hash"))
@@ -113,34 +113,34 @@ namespace tgbot
 				if(doc["hash"].IsString())
 					hash = doc["hash"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("hash") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("hash"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string EncryptedPassportElement::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field type
+		//Field type
 		json.append("\"type\": \"" + type + "\"");
 		json.append(", ");
 
-		//field data
+		//Field data
 		json.append("\"data\": \"" + data + "\"");
 		json.append(", ");
 
-		//field phone_number
+		//Field phone_number
 		json.append("\"phone_number\": \"" + phone_number + "\"");
 		json.append(", ");
 
-		//field email
+		//Field email
 		json.append("\"email\": \"" + email + "\"");
 		json.append(", ");
 
-		//field files
+		//Field files
 		std::string files_cont = "[";
 		for(std::size_t j = 0; j < files.size(); ++j)
 		{
@@ -163,19 +163,19 @@ namespace tgbot
 		json.append("\"files\": " + files_cont);
 		json.append(", ");
 
-		//field front_side
+		//Field front_side
 		json.append("\"front_side\": " + front_side->parse_to_json());
 		json.append(", ");
 
-		//field reverse_side
+		//Field reverse_side
 		json.append("\"reverse_side\": " + reverse_side->parse_to_json());
 		json.append(", ");
 
-		//field selfie
+		//Field selfie
 		json.append("\"selfie\": \"" + selfie->parse_to_json() + "\"");
 		json.append(", ");
 
-		//field translation
+		//Field translation
 		std::string translation_cont = "[";
 		for(std::size_t j = 0; j < translation.size(); ++j)
 		{
@@ -198,7 +198,7 @@ namespace tgbot
 		json.append("\"translation\": " + translation_cont);
 		json.append(", ");
 
-		//field hash
+		//Field hash
 		json.append("\"hash\": \"" + hash + "\"");
 
 		json.append("}");

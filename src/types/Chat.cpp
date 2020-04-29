@@ -19,13 +19,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("id"))
 			{
 				if(doc["id"].IsInt64())
 					id = doc["id"].GetInt64();
 				else
-					std::cerr << Messages::field_does_not_contain_int64("id") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_int64("id"));
 			}
 
 			if(doc.HasMember("type"))
@@ -33,7 +33,7 @@ namespace tgbot
 				if(doc["type"].IsString())
 					type = doc["type"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("type") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("type"));
 			}
 
 			if(doc.HasMember("title"))
@@ -41,7 +41,7 @@ namespace tgbot
 				if(doc["title"].IsString())
 					title = doc["title"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("title") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("title"));
 			}
 
 			if(doc.HasMember("username"))
@@ -49,7 +49,7 @@ namespace tgbot
 				if(doc["username"].IsString())
 					username = doc["username"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("username") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("username"));
 			}
 
 			if(doc.HasMember("first_name"))
@@ -57,7 +57,7 @@ namespace tgbot
 				if(doc["first_name"].IsString())
 					first_name = doc["first_name"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("first_name") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("first_name"));
 			}
 
 			if(doc.HasMember("last_name"))
@@ -65,7 +65,7 @@ namespace tgbot
 				if(doc["last_name"].IsString())
 					last_name = doc["last_name"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("last_name") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("last_name"));
 			}
 
 			if(doc.HasMember("photo"))
@@ -73,7 +73,7 @@ namespace tgbot
 				if(doc["photo"].IsObject())
 					photo = std::make_shared<ChatPhoto>(tools::Tools::get_json_as_string(doc["photo"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("photo") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("photo"));
 			}
 
 			if(doc.HasMember("description"))
@@ -81,7 +81,7 @@ namespace tgbot
 				if(doc["description"].IsString())
 					description = doc["description"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("description") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("description"));
 			}
 
 			if(doc.HasMember("invite_link"))
@@ -89,7 +89,7 @@ namespace tgbot
 				if(doc["invite_link"].IsString())
 					invite_link = doc["invite_link"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("invite_link") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("invite_link"));
 			}
 
 			if(doc.HasMember("pinned_message"))
@@ -97,7 +97,7 @@ namespace tgbot
 				if(doc["pinned_message"].IsObject())
 					pinned_message = std::make_shared<Message>(tools::Tools::get_json_as_string(doc["pinned_message"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("pinned_message") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("pinned_message"));
 			}
 
 			if(doc.HasMember("permissions"))
@@ -105,7 +105,7 @@ namespace tgbot
 				if(doc["permissions"].IsObject())
 					permissions = std::make_shared<ChatPermissions>(tools::Tools::get_json_as_string(doc["permissions"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("permissions") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("permissions"));
 			}
 
 			if(doc.HasMember("slow_mode_delay"))
@@ -113,7 +113,7 @@ namespace tgbot
 				if(doc["slow_mode_delay"].IsInt())
 					slow_mode_delay = doc["slow_mode_delay"].GetInt();
 				else
-					std::cerr << Messages::field_does_not_contain_int("slow_mode_delay") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_int("slow_mode_delay"));
 			}
 
 			if(doc.HasMember("sticker_set_name"))
@@ -121,7 +121,7 @@ namespace tgbot
 				if(doc["sticker_set_name"].IsString())
 					sticker_set_name = doc["sticker_set_name"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("sticker_set_name") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("sticker_set_name"));
 			}
 
 			if(doc.HasMember("can_set_sticker_set"))
@@ -129,70 +129,70 @@ namespace tgbot
 				if(doc["can_set_sticker_set"].IsBool())
 					can_set_sticker_set = doc["can_set_sticker_set"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("can_set_sticker_set") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("can_set_sticker_set"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string Chat::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field id
+		//Field id
 		json.append("\"id\": " + id);
 		json.append(", ");
 
-		//field type
+		//Field type
 		json.append("\"type\": \"" + type + "\"");
 		json.append(", ");
 
-		//field title
+		//Field title
 		json.append("\"title\": \"" + title + "\"");
 		json.append(", ");
 
-		//field username
+		//Field username
 		json.append("\"username\": \"" + username + "\"");
 		json.append(", ");
 
-		//field first_name
+		//Field first_name
 		json.append("\"first_name\": \"" + first_name + "\"");
 		json.append(", ");
 
-		//field last_name
+		//Field last_name
 		json.append("\"last_name\": \"" + last_name + "\"");
 		json.append(", ");
 
-		//field photo
+		//Field photo
 		json.append("\"photo\": " + photo->parse_to_json());
 		json.append(", ");
 
-		//field description
+		//Field description
 		json.append("\"description\": \"" + description + "\"");
 		json.append(", ");
 
-		//field invite_link
+		//Field invite_link
 		json.append("\"invite_link\": \"" + invite_link + "\"");
 		json.append(", ");
 
-		//field pinned_message
+		//Field pinned_message
 		json.append("\"pinned_message\": " + pinned_message->parse_to_json());
 		json.append(", ");
 
-		//field permissions
+		//Field permissions
 		json.append("\"permissions\": " + permissions->parse_to_json());
 		json.append(", ");
 
-		//field slow_mode_delay
+		//Field slow_mode_delay
 		json.append("\"slow_mode_delay\": \"" + std::to_string(slow_mode_delay) + "\"");
 		json.append(", ");
 
-		//field sticker_set_name
+		//Field sticker_set_name
 		json.append("\"sticker_set_name\": \"" + sticker_set_name + "\"");
 		json.append(", ");
 
-		//field can_set_sticker_set
+		//Field can_set_sticker_set
 		std::string can_set_sticker_set_bool = can_set_sticker_set ? "true" : "false";
 		json.append("\"can_set_sticker_set\": " + can_set_sticker_set_bool);
 

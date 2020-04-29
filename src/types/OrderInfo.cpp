@@ -15,13 +15,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("name"))
 			{
 				if(doc["name"].IsString())
 					name = doc["name"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("name") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("name"));
 			}
 
 			if(doc.HasMember("phone_number"))
@@ -29,7 +29,7 @@ namespace tgbot
 				if(doc["phone_number"].IsString())
 					phone_number = doc["phone_number"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("phone_number") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("phone_number"));
 			}
 
 			if(doc.HasMember("email"))
@@ -37,7 +37,7 @@ namespace tgbot
 				if(doc["email"].IsString())
 					email = doc["email"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("email") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("email"));
 			}
 
 			if(doc.HasMember("shipping_address"))
@@ -45,30 +45,30 @@ namespace tgbot
 				if(doc["shipping_address"].IsObject())
 					shipping_address = std::make_shared<ShippingAddress>(tools::Tools::get_json_as_string(doc["shipping_address"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("shipping_address") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("shipping_address"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string OrderInfo::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field name
+		//Field name
 		json.append("\"name\": \"" + name + "\"");
 		json.append(", ");
 
-		//field phone_number
+		//Field phone_number
 		json.append("\"phone_number\": \"" + phone_number + "\"");
 		json.append(", ");
 
-		//field email
+		//Field email
 		json.append("\"email\": \"" + email + "\"");
 		json.append(", ");
 
-		//field shipping_address
+		//Field shipping_address
 		json.append("\"shipping_address\": " + shipping_address->parse_to_json());
 
 

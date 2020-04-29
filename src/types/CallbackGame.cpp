@@ -2,6 +2,7 @@
 #include <rapidjson/document.h>
 #include <iostream>
 #include "tgbot/constants/Messages.h"
+#include "tools/Tools.h"
 
 namespace tgbot
 {
@@ -15,10 +16,10 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string CallbackGame::parse_to_json() const noexcept

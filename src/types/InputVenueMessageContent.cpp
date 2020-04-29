@@ -15,13 +15,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("latitude"))
 			{
 				if(doc["latitude"].IsFloat())
 					latitude = doc["latitude"].GetFloat();
 				else
-					std::cerr << Messages::field_does_not_contain_float("latitude") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_float("latitude"));
 			}
 
 			if(doc.HasMember("longitude"))
@@ -29,7 +29,7 @@ namespace tgbot
 				if(doc["longitude"].IsFloat())
 					longitude = doc["longitude"].GetFloat();
 				else
-					std::cerr << Messages::field_does_not_contain_float("longitude") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_float("longitude"));
 			}
 
 			if(doc.HasMember("title"))
@@ -37,7 +37,7 @@ namespace tgbot
 				if(doc["title"].IsString())
 					title = doc["title"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("title") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("title"));
 			}
 
 			if(doc.HasMember("address"))
@@ -45,7 +45,7 @@ namespace tgbot
 				if(doc["address"].IsString())
 					address = doc["address"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("address") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("address"));
 			}
 
 			if(doc.HasMember("foursquare_id"))
@@ -53,7 +53,7 @@ namespace tgbot
 				if(doc["foursquare_id"].IsString())
 					foursquare_id = doc["foursquare_id"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("foursquare_id") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("foursquare_id"));
 			}
 
 			if(doc.HasMember("foursquare_type"))
@@ -61,38 +61,38 @@ namespace tgbot
 				if(doc["foursquare_type"].IsString())
 					foursquare_type = doc["foursquare_type"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("foursquare_type") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("foursquare_type"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string InputVenueMessageContent::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field latitude
+		//Field latitude
 		json.append("\"latitude\": " + std::to_string(latitude));
 		json.append(", ");
 
-		//field longitude
+		//Field longitude
 		json.append("\"longitude\": " + std::to_string(longitude));
 		json.append(", ");
 
-		//field title
+		//Field title
 		json.append("\"title\": \"" + title + "\"");
 		json.append(", ");
 
-		//field address
+		//Field address
 		json.append("\"address\": \"" + address + "\"");
 		json.append(", ");
 
-		//field foursquare_id
+		//Field foursquare_id
 		json.append("\"foursquare_id\": \"" + foursquare_id + "\"");
 		json.append(", ");
 
-		//field foursquare_type
+		//Field foursquare_type
 		json.append("\"foursquare_type\": \"" + foursquare_type + "\"");
 
 		json.append("}");

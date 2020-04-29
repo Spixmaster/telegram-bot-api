@@ -15,13 +15,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("remove_keyboard"))
 			{
 				if(doc["remove_keyboard"].IsBool())
 					remove_keyboard = doc["remove_keyboard"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("remove_keyboard") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("remove_keyboard"));
 			}
 
 			if(doc.HasMember("selective"))
@@ -29,23 +29,23 @@ namespace tgbot
 				if(doc["selective"].IsBool())
 					selective = doc["selective"].GetBool();
 				else
-					std::cerr << Messages::field_does_not_contain_bool("selective") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("selective"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string ReplyKeyboardRemove::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field remove_keyboard
+		//Field remove_keyboard
 		std::string remove_keyboard_bool = remove_keyboard ? "true" : "false";
 		json.append("\"remove_keyboard\": " + remove_keyboard_bool);
 		json.append(", ");
 
-		//field selective
+		//Field selective
 		std::string selective_bool = selective ? "true" : "false";
 		json.append("\"selective\": " + selective_bool);
 

@@ -15,13 +15,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("source"))
 			{
 				if(doc["source"].IsString())
 					source = doc["source"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("source") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("source"));
 			}
 
 			if(doc.HasMember("type"))
@@ -29,7 +29,7 @@ namespace tgbot
 				if(doc["type"].IsString())
 					type = doc["type"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("type") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("type"));
 			}
 
 			if(doc.HasMember("field_name"))
@@ -37,7 +37,7 @@ namespace tgbot
 				if(doc["field_name"].IsString())
 					field_name = doc["field_name"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("field_name") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("field_name"));
 			}
 
 			if(doc.HasMember("data_hash"))
@@ -45,7 +45,7 @@ namespace tgbot
 				if(doc["data_hash"].IsString())
 					data_hash = doc["data_hash"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("data_hash") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("data_hash"));
 			}
 
 			if(doc.HasMember("message"))
@@ -53,34 +53,34 @@ namespace tgbot
 				if(doc["message"].IsString())
 					message = doc["message"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("message") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("message"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string PassportElementErrorDataField::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field source
+		//Field source
 		json.append("\"source\": \"" + source + "\"");
 		json.append(", ");
 
-		//field type
+		//Field type
 		json.append("\"type\": \"" + type + "\"");
 		json.append(", ");
 
-		//field field_name
+		//Field field_name
 		json.append("\"field_name\": \"" + field_name + "\"");
 		json.append(", ");
 
-		//field data_hash
+		//Field data_hash
 		json.append("\"data_hash\": \"" + data_hash + "\"");
 		json.append(", ");
 
-		//field message
+		//Field message
 		json.append("\"message\": \"" + message + "\"");
 
 		json.append("}");

@@ -15,13 +15,13 @@ namespace tgbot
 
 		if(doc.IsObject())
 		{
-			//assignments
+			//Assignments
 			if(doc.HasMember("poll_id"))
 			{
 				if(doc["poll_id"].IsString())
 					poll_id = doc["poll_id"].GetString();
 				else
-					std::cerr << Messages::field_does_not_contain_string("poll_id") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("poll_id"));
 			}
 
 			if(doc.HasMember("user"))
@@ -29,7 +29,7 @@ namespace tgbot
 				if(doc["user"].IsObject())
 					user = std::make_shared<User>(tools::Tools::get_json_as_string(doc["user"]));
 				else
-					std::cerr << Messages::field_does_not_contain_json_obj("user") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("user"));
 			}
 
 			if(doc.HasMember("option_ids"))
@@ -43,30 +43,30 @@ namespace tgbot
 						if(doc["option_ids"][j].IsInt())
 							option_ids.at(j) = doc["option_ids"][j].GetInt();
 						else
-							std::cerr << Messages::field_element_does_not_contain_int("option_ids") << std::endl;
+							tools::Tools::write_err_log(Messages::field_element_does_not_contain_int("option_ids"));
 					}
 				}
 				else
-					std::cerr << Messages::field_does_not_contain_json_arr("option_ids") << std::endl;
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("option_ids"));
 			}
 		}
 		else
-			std::cerr << Messages::constructor_not_get_json_object << std::endl;
+			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
 	std::string PollAnswer::parse_to_json() const noexcept
 	{
 		std::string json = "{";
 
-		//field poll_id
+		//Field poll_id
 		json.append("\"poll_id\": \"" + poll_id + "\"");
 		json.append(", ");
 
-		//field user
+		//Field user
 		json.append("\"user\": " + user->parse_to_json());
 		json.append(", ");
 
-		//field option_ids
+		//Field option_ids
 		std::string option_ids_cont = "[";
 		for(std::size_t j = 0; j < option_ids.size(); ++j)
 		{
