@@ -30,10 +30,12 @@
 #include "tgbot/types/Update.h"
 #include "tgbot/types/WebhookInfo.h"
 
-//@brief contains all endpoints for the Telegram Bot Api
-
 namespace tgbot
 {
+	/**
+	 * @class Endpoints
+	 * @brief Contains all endpoints for the Telegram Bot API.
+	 */
 	class Endpoints
 	{
 	public:
@@ -45,12 +47,15 @@ namespace tgbot
 		typedef std::shared_ptr<Endpoints> ptr;
 
 	private:
-		//member variables
-		std::string m_token; //needed for the endpoints
+		//Member variables
+		/**
+		 * @var m_token
+		 * @brief The token from the bot which is used for identification.
+		 */
+		std::string m_token;
 
 	public:
-		//constructors
-		//@param token: token which the member functions need for the requests they make
+		//Constructors
 		Endpoints(const std::string &token);
 
 		//member functions

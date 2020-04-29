@@ -1,0 +1,72 @@
+\hypertarget{structtgbot_1_1UserProfilePhotos}{}\doxysection{tgbot\+::User\+Profile\+Photos Struct Reference}
+\label{structtgbot_1_1UserProfilePhotos}\index{tgbot::UserProfilePhotos@{tgbot::UserProfilePhotos}}
+
+
+This object represent a user\textquotesingle{}s profile pictures.  
+
+
+
+
+{\ttfamily \#include $<$User\+Profile\+Photos.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1UserProfilePhotos_ac2ea099e28236cea3da134bed495e3e0}\label{structtgbot_1_1UserProfilePhotos_ac2ea099e28236cea3da134bed495e3e0}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1UserProfilePhotos}{User\+Profile\+Photos}} $>$ \mbox{\hyperlink{structtgbot_1_1UserProfilePhotos_ac2ea099e28236cea3da134bed495e3e0}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1UserProfilePhotos_a9003d43903a644d5456c6235af5e7cef}{User\+Profile\+Photos}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1UserProfilePhotos_a71685f019ac704d21bdf8805bb06ef38}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1UserProfilePhotos_a7889729d8caa0f405afd7f5ebfd4cd45}\label{structtgbot_1_1UserProfilePhotos_a7889729d8caa0f405afd7f5ebfd4cd45}} 
+int \mbox{\hyperlink{structtgbot_1_1UserProfilePhotos_a7889729d8caa0f405afd7f5ebfd4cd45}{total\+\_\+count}} = -\/1
+\begin{DoxyCompactList}\small\item\em Total number of profile pictures the target user has. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1UserProfilePhotos_abcee68b25aaf9ccf7b9ad90d07bc6ddb}\label{structtgbot_1_1UserProfilePhotos_abcee68b25aaf9ccf7b9ad90d07bc6ddb}} 
+std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1PhotoSize_a5c9e46410c663fda470caa5f806781ad}{Photo\+Size\+::ptr}} $>$ \mbox{\hyperlink{structtgbot_1_1UserProfilePhotos_abcee68b25aaf9ccf7b9ad90d07bc6ddb}{photos}}
+\begin{DoxyCompactList}\small\item\em Requested profile pictures (in up to 4 sizes each) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object represent a user\textquotesingle{}s profile pictures. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1UserProfilePhotos_a9003d43903a644d5456c6235af5e7cef}\label{structtgbot_1_1UserProfilePhotos_a9003d43903a644d5456c6235af5e7cef}} 
+\index{tgbot::UserProfilePhotos@{tgbot::UserProfilePhotos}!UserProfilePhotos@{UserProfilePhotos}}
+\index{UserProfilePhotos@{UserProfilePhotos}!tgbot::UserProfilePhotos@{tgbot::UserProfilePhotos}}
+\doxysubsubsection{\texorpdfstring{UserProfilePhotos()}{UserProfilePhotos()}}
+{\footnotesize\ttfamily tgbot\+::\+User\+Profile\+Photos\+::\+User\+Profile\+Photos (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1UserProfilePhotos_a71685f019ac704d21bdf8805bb06ef38}\label{structtgbot_1_1UserProfilePhotos_a71685f019ac704d21bdf8805bb06ef38}} 
+\index{tgbot::UserProfilePhotos@{tgbot::UserProfilePhotos}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::UserProfilePhotos@{tgbot::UserProfilePhotos}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+User\+Profile\+Photos\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/User\+Profile\+Photos.\+h\item 
+src/types/User\+Profile\+Photos.\+cpp\end{DoxyCompactItemize}

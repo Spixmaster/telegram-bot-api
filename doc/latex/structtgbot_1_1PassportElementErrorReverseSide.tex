@@ -1,0 +1,102 @@
+\hypertarget{structtgbot_1_1PassportElementErrorReverseSide}{}\doxysection{tgbot\+::Passport\+Element\+Error\+Reverse\+Side Struct Reference}
+\label{structtgbot_1_1PassportElementErrorReverseSide}\index{tgbot::PassportElementErrorReverseSide@{tgbot::PassportElementErrorReverseSide}}
+
+
+Represents an issue with the reverse side of a document. The error is considered resolved when the file with reverse side of the document changes.  
+
+
+
+
+{\ttfamily \#include $<$Passport\+Element\+Error\+Reverse\+Side.\+h$>$}
+
+
+
+Inheritance diagram for tgbot\+::Passport\+Element\+Error\+Reverse\+Side\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{structtgbot_1_1PassportElementErrorReverseSide__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for tgbot\+::Passport\+Element\+Error\+Reverse\+Side\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{structtgbot_1_1PassportElementErrorReverseSide__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1PassportElementErrorReverseSide_a0ec64f4d2b2b541ff2778845bf24fdeb}\label{structtgbot_1_1PassportElementErrorReverseSide_a0ec64f4d2b2b541ff2778845bf24fdeb}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1PassportElementErrorReverseSide}{Passport\+Element\+Error\+Reverse\+Side}} $>$ \mbox{\hyperlink{structtgbot_1_1PassportElementErrorReverseSide_a0ec64f4d2b2b541ff2778845bf24fdeb}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1PassportElementErrorReverseSide_ad0cfa53da5b02fe679bfc368ba597059}{Passport\+Element\+Error\+Reverse\+Side}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1PassportElementErrorReverseSide_a0bd547a362b1efea8b4cc753c6a4792f}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1PassportElementErrorReverseSide_ab8e67741db25edb26323f7f8d648e8d8}\label{structtgbot_1_1PassportElementErrorReverseSide_ab8e67741db25edb26323f7f8d648e8d8}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1PassportElementErrorReverseSide_ab8e67741db25edb26323f7f8d648e8d8}{source}}
+\begin{DoxyCompactList}\small\item\em Error source, must be reverse\+\_\+side. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1PassportElementErrorReverseSide_a837a5286e65efb4074f3c2bf058ce958}\label{structtgbot_1_1PassportElementErrorReverseSide_a837a5286e65efb4074f3c2bf058ce958}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1PassportElementErrorReverseSide_a837a5286e65efb4074f3c2bf058ce958}{type}}
+\begin{DoxyCompactList}\small\item\em The section of the user\textquotesingle{}s Telegram Passport which has the issue, one of “driver\+\_\+license”, “identity\+\_\+card” \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1PassportElementErrorReverseSide_a98b2058d2724000ab85fcfe2bbc0d1f1}\label{structtgbot_1_1PassportElementErrorReverseSide_a98b2058d2724000ab85fcfe2bbc0d1f1}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1PassportElementErrorReverseSide_a98b2058d2724000ab85fcfe2bbc0d1f1}{file\+\_\+hash}}
+\begin{DoxyCompactList}\small\item\em Base64-\/encoded hash of the file with the reverse side of the document. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1PassportElementErrorReverseSide_a5c9b17cd793e789f5021bc2fdae6eb8c}\label{structtgbot_1_1PassportElementErrorReverseSide_a5c9b17cd793e789f5021bc2fdae6eb8c}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1PassportElementErrorReverseSide_a5c9b17cd793e789f5021bc2fdae6eb8c}{message}}
+\begin{DoxyCompactList}\small\item\em Error message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents an issue with the reverse side of a document. The error is considered resolved when the file with reverse side of the document changes. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1PassportElementErrorReverseSide_ad0cfa53da5b02fe679bfc368ba597059}\label{structtgbot_1_1PassportElementErrorReverseSide_ad0cfa53da5b02fe679bfc368ba597059}} 
+\index{tgbot::PassportElementErrorReverseSide@{tgbot::PassportElementErrorReverseSide}!PassportElementErrorReverseSide@{PassportElementErrorReverseSide}}
+\index{PassportElementErrorReverseSide@{PassportElementErrorReverseSide}!tgbot::PassportElementErrorReverseSide@{tgbot::PassportElementErrorReverseSide}}
+\doxysubsubsection{\texorpdfstring{PassportElementErrorReverseSide()}{PassportElementErrorReverseSide()}}
+{\footnotesize\ttfamily tgbot\+::\+Passport\+Element\+Error\+Reverse\+Side\+::\+Passport\+Element\+Error\+Reverse\+Side (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1PassportElementErrorReverseSide_a0bd547a362b1efea8b4cc753c6a4792f}\label{structtgbot_1_1PassportElementErrorReverseSide_a0bd547a362b1efea8b4cc753c6a4792f}} 
+\index{tgbot::PassportElementErrorReverseSide@{tgbot::PassportElementErrorReverseSide}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::PassportElementErrorReverseSide@{tgbot::PassportElementErrorReverseSide}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Passport\+Element\+Error\+Reverse\+Side\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{structtgbot_1_1PassportElementError_aa5b0e3529e2667ce9888da7bb45aa4d8}{tgbot\+::\+Passport\+Element\+Error}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Passport\+Element\+Error\+Reverse\+Side.\+h\item 
+src/types/Passport\+Element\+Error\+Reverse\+Side.\+cpp\end{DoxyCompactItemize}

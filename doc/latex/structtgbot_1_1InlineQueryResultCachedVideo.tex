@@ -1,0 +1,121 @@
+\hypertarget{structtgbot_1_1InlineQueryResultCachedVideo}{}\doxysection{tgbot\+::Inline\+Query\+Result\+Cached\+Video Struct Reference}
+\label{structtgbot_1_1InlineQueryResultCachedVideo}\index{tgbot::InlineQueryResultCachedVideo@{tgbot::InlineQueryResultCachedVideo}}
+
+
+Represents a link to a video file stored on the Telegram servers.  
+
+
+
+
+{\ttfamily \#include $<$Inline\+Query\+Result\+Cached\+Video.\+h$>$}
+
+
+
+Inheritance diagram for tgbot\+::Inline\+Query\+Result\+Cached\+Video\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{structtgbot_1_1InlineQueryResultCachedVideo__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for tgbot\+::Inline\+Query\+Result\+Cached\+Video\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{structtgbot_1_1InlineQueryResultCachedVideo__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultCachedVideo_a5c50bc90d9ffd1c2de09af11bfc9f032}\label{structtgbot_1_1InlineQueryResultCachedVideo_a5c50bc90d9ffd1c2de09af11bfc9f032}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1InlineQueryResultCachedVideo}{Inline\+Query\+Result\+Cached\+Video}} $>$ \mbox{\hyperlink{structtgbot_1_1InlineQueryResultCachedVideo_a5c50bc90d9ffd1c2de09af11bfc9f032}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1InlineQueryResultCachedVideo_a08cb0f0fe35537794427a27a7c8e41a5}{Inline\+Query\+Result\+Cached\+Video}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultCachedVideo_a32bac5eedfd9f9abc5e2bc06feb38705}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultCachedVideo_a151d3b2c0a061ce5589d9fe3280aa001}\label{structtgbot_1_1InlineQueryResultCachedVideo_a151d3b2c0a061ce5589d9fe3280aa001}} 
+const std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultCachedVideo_a151d3b2c0a061ce5589d9fe3280aa001}{type}} = \char`\"{}video\char`\"{}
+\begin{DoxyCompactList}\small\item\em Type of the result, must be video. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultCachedVideo_a34048db08c4187b3924a372d98583299}\label{structtgbot_1_1InlineQueryResultCachedVideo_a34048db08c4187b3924a372d98583299}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultCachedVideo_a34048db08c4187b3924a372d98583299}{id}}
+\begin{DoxyCompactList}\small\item\em Unique identifier for this result, 1-\/64 bytes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultCachedVideo_a8ded7765056e7e343a56e5e6dfc6ccbc}\label{structtgbot_1_1InlineQueryResultCachedVideo_a8ded7765056e7e343a56e5e6dfc6ccbc}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultCachedVideo_a8ded7765056e7e343a56e5e6dfc6ccbc}{video\+\_\+file\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em A valid file identifier for the video file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultCachedVideo_aa3c1af5dd05073011100fc4c84eedbca}\label{structtgbot_1_1InlineQueryResultCachedVideo_aa3c1af5dd05073011100fc4c84eedbca}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultCachedVideo_aa3c1af5dd05073011100fc4c84eedbca}{title}}
+\begin{DoxyCompactList}\small\item\em Title for the result. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultCachedVideo_aa649dd8ad19b221dadbfebedd830e014}\label{structtgbot_1_1InlineQueryResultCachedVideo_aa649dd8ad19b221dadbfebedd830e014}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultCachedVideo_aa649dd8ad19b221dadbfebedd830e014}{description}}
+\begin{DoxyCompactList}\small\item\em Optional. Short description of the result. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultCachedVideo_ad6c12b32be600ae4e021335552f3e26f}\label{structtgbot_1_1InlineQueryResultCachedVideo_ad6c12b32be600ae4e021335552f3e26f}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultCachedVideo_ad6c12b32be600ae4e021335552f3e26f}{caption}}
+\begin{DoxyCompactList}\small\item\em Optional. Caption of the video to be sent, 0-\/1024 characters after entities parsing. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultCachedVideo_a56516c4fba52d1f2a1f4ac460a0fc224}\label{structtgbot_1_1InlineQueryResultCachedVideo_a56516c4fba52d1f2a1f4ac460a0fc224}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultCachedVideo_a56516c4fba52d1f2a1f4ac460a0fc224}{parse\+\_\+mode}}
+\begin{DoxyCompactList}\small\item\em Optional. Mode for parsing entities in the video caption. See formatting options for more details. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultCachedVideo_ad44967c66357f28967178170f6af5c6a}\label{structtgbot_1_1InlineQueryResultCachedVideo_ad44967c66357f28967178170f6af5c6a}} 
+\mbox{\hyperlink{structtgbot_1_1InlineKeyboardMarkup_a6973beabdcfa398f58a1ad9bb74e6014}{Inline\+Keyboard\+Markup\+::ptr}} \mbox{\hyperlink{structtgbot_1_1InlineQueryResultCachedVideo_ad44967c66357f28967178170f6af5c6a}{reply\+\_\+markup}}
+\begin{DoxyCompactList}\small\item\em Optional. Inline keyboard attached to the message. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultCachedVideo_a272b65646ea0797b2097b5efd3485cef}\label{structtgbot_1_1InlineQueryResultCachedVideo_a272b65646ea0797b2097b5efd3485cef}} 
+\mbox{\hyperlink{structtgbot_1_1InputMessageContent_a734b8fff62c96003068a9bc6ddb0d271}{Input\+Message\+Content\+::ptr}} \mbox{\hyperlink{structtgbot_1_1InlineQueryResultCachedVideo_a272b65646ea0797b2097b5efd3485cef}{input\+\_\+message\+\_\+content}}
+\begin{DoxyCompactList}\small\item\em Optional. Content of the message to be sent instead of the video. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a link to a video file stored on the Telegram servers. 
+
+By default, this video file will be sent by the user with an optional caption.
+
+Alternatively, you can use input\+\_\+message\+\_\+content to send a message with the specified content instead of the video. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultCachedVideo_a08cb0f0fe35537794427a27a7c8e41a5}\label{structtgbot_1_1InlineQueryResultCachedVideo_a08cb0f0fe35537794427a27a7c8e41a5}} 
+\index{tgbot::InlineQueryResultCachedVideo@{tgbot::InlineQueryResultCachedVideo}!InlineQueryResultCachedVideo@{InlineQueryResultCachedVideo}}
+\index{InlineQueryResultCachedVideo@{InlineQueryResultCachedVideo}!tgbot::InlineQueryResultCachedVideo@{tgbot::InlineQueryResultCachedVideo}}
+\doxysubsubsection{\texorpdfstring{InlineQueryResultCachedVideo()}{InlineQueryResultCachedVideo()}}
+{\footnotesize\ttfamily tgbot\+::\+Inline\+Query\+Result\+Cached\+Video\+::\+Inline\+Query\+Result\+Cached\+Video (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultCachedVideo_a32bac5eedfd9f9abc5e2bc06feb38705}\label{structtgbot_1_1InlineQueryResultCachedVideo_a32bac5eedfd9f9abc5e2bc06feb38705}} 
+\index{tgbot::InlineQueryResultCachedVideo@{tgbot::InlineQueryResultCachedVideo}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::InlineQueryResultCachedVideo@{tgbot::InlineQueryResultCachedVideo}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Inline\+Query\+Result\+Cached\+Video\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{structtgbot_1_1InlineQueryResult_a7aa714c457e54ab6e51b1b0abc8c784c}{tgbot\+::\+Inline\+Query\+Result}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Inline\+Query\+Result\+Cached\+Video.\+h\item 
+src/types/Inline\+Query\+Result\+Cached\+Video.\+cpp\end{DoxyCompactItemize}

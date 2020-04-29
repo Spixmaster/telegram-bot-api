@@ -28,7 +28,7 @@ namespace tgbot
 		static const std::string version;
 		/**
 		 * @var release
-		 * @breif The release date of the current version.
+		 * @brief The release date of the current version.
 		 */
 		static const std::string release;
 	};

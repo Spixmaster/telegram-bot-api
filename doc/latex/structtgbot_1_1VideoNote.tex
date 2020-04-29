@@ -1,0 +1,84 @@
+\hypertarget{structtgbot_1_1VideoNote}{}\doxysection{tgbot\+::Video\+Note Struct Reference}
+\label{structtgbot_1_1VideoNote}\index{tgbot::VideoNote@{tgbot::VideoNote}}
+
+
+This object represents a video message (available in Telegram apps as of v.\+4.\+0).  
+
+
+
+
+{\ttfamily \#include $<$Video\+Note.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1VideoNote_ae70a28735d359dd73fdb9ff01355c35f}\label{structtgbot_1_1VideoNote_ae70a28735d359dd73fdb9ff01355c35f}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1VideoNote}{Video\+Note}} $>$ \mbox{\hyperlink{structtgbot_1_1VideoNote_ae70a28735d359dd73fdb9ff01355c35f}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1VideoNote_a64215a7e361eb104df31c96133245863}{Video\+Note}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1VideoNote_ac779b134b32fbfa0113746c734322ee5}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1VideoNote_aa08f3163732eb2cc1879adea7d064b8b}\label{structtgbot_1_1VideoNote_aa08f3163732eb2cc1879adea7d064b8b}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1VideoNote_aa08f3163732eb2cc1879adea7d064b8b}{file\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Identifier for this file, which can be used to download or reuse the file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1VideoNote_ae8014d95846d51ed5b94a7544b5c1887}\label{structtgbot_1_1VideoNote_ae8014d95846d51ed5b94a7544b5c1887}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1VideoNote_ae8014d95846d51ed5b94a7544b5c1887}{file\+\_\+unique\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Unique identifier for this file, which is supposed to be the same over time and for different bots. Can\textquotesingle{}t be used to download or reuse the file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1VideoNote_abe0a45948c98460c197f23288ba332f0}\label{structtgbot_1_1VideoNote_abe0a45948c98460c197f23288ba332f0}} 
+int \mbox{\hyperlink{structtgbot_1_1VideoNote_abe0a45948c98460c197f23288ba332f0}{length}} = -\/1
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structtgbot_1_1Video}{Video}} width and height (diameter of the video message) as defined by sender. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1VideoNote_a79a74f3aa57851c3632cffd18d650bc3}\label{structtgbot_1_1VideoNote_a79a74f3aa57851c3632cffd18d650bc3}} 
+int \mbox{\hyperlink{structtgbot_1_1VideoNote_a79a74f3aa57851c3632cffd18d650bc3}{duration}} = -\/1
+\begin{DoxyCompactList}\small\item\em Duration of the video in seconds as defined by sender. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1VideoNote_acad8252d547edb8f40027368dcc95a54}\label{structtgbot_1_1VideoNote_acad8252d547edb8f40027368dcc95a54}} 
+\mbox{\hyperlink{structtgbot_1_1PhotoSize_a5c9e46410c663fda470caa5f806781ad}{Photo\+Size\+::ptr}} \mbox{\hyperlink{structtgbot_1_1VideoNote_acad8252d547edb8f40027368dcc95a54}{thumb}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1Video}{Video}} thumbnail. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1VideoNote_a19aad389d1f7859be8858c13128cb64e}\label{structtgbot_1_1VideoNote_a19aad389d1f7859be8858c13128cb64e}} 
+int \mbox{\hyperlink{structtgbot_1_1VideoNote_a19aad389d1f7859be8858c13128cb64e}{file\+\_\+size}} = -\/1
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1File}{File}} size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object represents a video message (available in Telegram apps as of v.\+4.\+0). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1VideoNote_a64215a7e361eb104df31c96133245863}\label{structtgbot_1_1VideoNote_a64215a7e361eb104df31c96133245863}} 
+\index{tgbot::VideoNote@{tgbot::VideoNote}!VideoNote@{VideoNote}}
+\index{VideoNote@{VideoNote}!tgbot::VideoNote@{tgbot::VideoNote}}
+\doxysubsubsection{\texorpdfstring{VideoNote()}{VideoNote()}}
+{\footnotesize\ttfamily tgbot\+::\+Video\+Note\+::\+Video\+Note (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1VideoNote_ac779b134b32fbfa0113746c734322ee5}\label{structtgbot_1_1VideoNote_ac779b134b32fbfa0113746c734322ee5}} 
+\index{tgbot::VideoNote@{tgbot::VideoNote}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::VideoNote@{tgbot::VideoNote}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Video\+Note\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Video\+Note.\+h\item 
+src/types/Video\+Note.\+cpp\end{DoxyCompactItemize}

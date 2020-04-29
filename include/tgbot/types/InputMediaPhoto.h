@@ -53,6 +53,11 @@ namespace tgbot
 		 */
 		InputMediaPhoto(const std::string &json);
 
+		/**
+		 * @param[in] media Passed to the member variable.
+		 * @param[in] caption Passed to the member variable.
+		 * @param[in] parse_mode Passed to the member variable.
+		 */
 		InputMediaPhoto(const std::variant<std::string, tools::InputFile::ptr> &media, const std::string &caption = "", const std::string &parse_mode = "");
 
 		//Member functions

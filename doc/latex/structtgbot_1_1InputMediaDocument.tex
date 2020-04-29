@@ -1,0 +1,133 @@
+\hypertarget{structtgbot_1_1InputMediaDocument}{}\doxysection{tgbot\+::Input\+Media\+Document Struct Reference}
+\label{structtgbot_1_1InputMediaDocument}\index{tgbot::InputMediaDocument@{tgbot::InputMediaDocument}}
+
+
+Represents a general file to be sent.  
+
+
+
+
+{\ttfamily \#include $<$Input\+Media\+Document.\+h$>$}
+
+
+
+Inheritance diagram for tgbot\+::Input\+Media\+Document\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{structtgbot_1_1InputMediaDocument__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for tgbot\+::Input\+Media\+Document\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{structtgbot_1_1InputMediaDocument__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InputMediaDocument_ab6f2d0acb8955973ce394197e8e064ba}\label{structtgbot_1_1InputMediaDocument_ab6f2d0acb8955973ce394197e8e064ba}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1InputMediaDocument}{Input\+Media\+Document}} $>$ \mbox{\hyperlink{structtgbot_1_1InputMediaDocument_ab6f2d0acb8955973ce394197e8e064ba}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1InputMediaDocument_a487505b42fb2805734aac5d33b419d59}{Input\+Media\+Document}} (const std\+::string \&json)
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InputMediaDocument_a9186010727b3ff78d6f7e50d6f2c5e39}\label{structtgbot_1_1InputMediaDocument_a9186010727b3ff78d6f7e50d6f2c5e39}} 
+{\bfseries Input\+Media\+Document} (const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&\mbox{\hyperlink{structtgbot_1_1InputMediaDocument_a6c795384be2c0689e07582ef93383325}{media}}, const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&\mbox{\hyperlink{structtgbot_1_1InputMediaDocument_adcfaf79d25c3b19df7a2c8496747d819}{thumb}}, const std\+::string \&\mbox{\hyperlink{structtgbot_1_1InputMediaDocument_a9e24e215a8415b0a5464fbe6aaa76cc7}{caption}}=\char`\"{}\char`\"{}, const std\+::string \&\mbox{\hyperlink{structtgbot_1_1InputMediaDocument_a2d0a474f2ab26c4ab00699919bf5e747}{parse\+\_\+mode}}=\char`\"{}\char`\"{})
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InputMediaDocument_aa51934cc772a1d9d66f3f22953098eff}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InputMediaDocument_a2e7e2ad79bc9d282d44b741dd442168e}\label{structtgbot_1_1InputMediaDocument_a2e7e2ad79bc9d282d44b741dd442168e}} 
+const std\+::string \mbox{\hyperlink{structtgbot_1_1InputMediaDocument_a2e7e2ad79bc9d282d44b741dd442168e}{type}} = \char`\"{}document\char`\"{}
+\begin{DoxyCompactList}\small\item\em Type of the result, must be document. \end{DoxyCompactList}\item 
+std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \mbox{\hyperlink{structtgbot_1_1InputMediaDocument_a6c795384be2c0689e07582ef93383325}{media}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structtgbot_1_1File}{File}} to send. \end{DoxyCompactList}\item 
+std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \mbox{\hyperlink{structtgbot_1_1InputMediaDocument_adcfaf79d25c3b19df7a2c8496747d819}{thumb}}
+\begin{DoxyCompactList}\small\item\em Optional. Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-\/side. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InputMediaDocument_a9e24e215a8415b0a5464fbe6aaa76cc7}\label{structtgbot_1_1InputMediaDocument_a9e24e215a8415b0a5464fbe6aaa76cc7}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InputMediaDocument_a9e24e215a8415b0a5464fbe6aaa76cc7}{caption}}
+\begin{DoxyCompactList}\small\item\em Optional. Caption of the document to be sent, 0-\/1024 characters after entities parsing. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InputMediaDocument_a2d0a474f2ab26c4ab00699919bf5e747}\label{structtgbot_1_1InputMediaDocument_a2d0a474f2ab26c4ab00699919bf5e747}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InputMediaDocument_a2d0a474f2ab26c4ab00699919bf5e747}{parse\+\_\+mode}}
+\begin{DoxyCompactList}\small\item\em Optional. Mode for parsing entities in the document caption. See formatting options for more details. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a general file to be sent. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InputMediaDocument_a487505b42fb2805734aac5d33b419d59}\label{structtgbot_1_1InputMediaDocument_a487505b42fb2805734aac5d33b419d59}} 
+\index{tgbot::InputMediaDocument@{tgbot::InputMediaDocument}!InputMediaDocument@{InputMediaDocument}}
+\index{InputMediaDocument@{InputMediaDocument}!tgbot::InputMediaDocument@{tgbot::InputMediaDocument}}
+\doxysubsubsection{\texorpdfstring{InputMediaDocument()}{InputMediaDocument()}}
+{\footnotesize\ttfamily tgbot\+::\+Input\+Media\+Document\+::\+Input\+Media\+Document (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InputMediaDocument_aa51934cc772a1d9d66f3f22953098eff}\label{structtgbot_1_1InputMediaDocument_aa51934cc772a1d9d66f3f22953098eff}} 
+\index{tgbot::InputMediaDocument@{tgbot::InputMediaDocument}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::InputMediaDocument@{tgbot::InputMediaDocument}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Input\+Media\+Document\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{structtgbot_1_1InputMedia_ae42bebbfee905e8d217abdc1ddfe9b5e}{tgbot\+::\+Input\+Media}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InputMediaDocument_a6c795384be2c0689e07582ef93383325}\label{structtgbot_1_1InputMediaDocument_a6c795384be2c0689e07582ef93383325}} 
+\index{tgbot::InputMediaDocument@{tgbot::InputMediaDocument}!media@{media}}
+\index{media@{media}!tgbot::InputMediaDocument@{tgbot::InputMediaDocument}}
+\doxysubsubsection{\texorpdfstring{media}{media}}
+{\footnotesize\ttfamily tgbot\+::\+Input\+Media\+Document\+::media}
+
+
+
+\mbox{\hyperlink{structtgbot_1_1File}{File}} to send. 
+
+Pass a file\+\_\+id to send a file that exists on the Telegram servers (recommended), pass an H\+T\+TP U\+RL for Telegram to get a file from the Internet, or pass “attach\+://$<$file\+\_\+attach\+\_\+name$>$” to upload a new one using multipart/form-\/data under $<$file\+\_\+attach\+\_\+name$>$ name. \mbox{\Hypertarget{structtgbot_1_1InputMediaDocument_adcfaf79d25c3b19df7a2c8496747d819}\label{structtgbot_1_1InputMediaDocument_adcfaf79d25c3b19df7a2c8496747d819}} 
+\index{tgbot::InputMediaDocument@{tgbot::InputMediaDocument}!thumb@{thumb}}
+\index{thumb@{thumb}!tgbot::InputMediaDocument@{tgbot::InputMediaDocument}}
+\doxysubsubsection{\texorpdfstring{thumb}{thumb}}
+{\footnotesize\ttfamily tgbot\+::\+Input\+Media\+Document\+::thumb}
+
+
+
+Optional. Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-\/side. 
+
+The thumbnail should be in J\+P\+EG format and less than 200 kB in size. A thumbnail‘s width and height should not exceed 320.
+
+Ignored if the file is not uploaded using multipart/form-\/data.
+
+Thumbnails can’t be reused and can be only uploaded as a new file, so you can pass “attach\+://$<$file\+\_\+attach\+\_\+name$>$” if the thumbnail was uploaded using multipart/form-\/data under $<$file\+\_\+attach\+\_\+name$>$. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Input\+Media\+Document.\+h\item 
+src/types/Input\+Media\+Document.\+cpp\end{DoxyCompactItemize}

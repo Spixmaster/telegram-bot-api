@@ -1,0 +1,69 @@
+\hypertarget{structtgbot_1_1KeyboardButtonPollType}{}\doxysection{tgbot\+::Keyboard\+Button\+Poll\+Type Struct Reference}
+\label{structtgbot_1_1KeyboardButtonPollType}\index{tgbot::KeyboardButtonPollType@{tgbot::KeyboardButtonPollType}}
+
+
+This object represents type of a poll, which is allowed to be created and sent when the corresponding button is pressed.  
+
+
+
+
+{\ttfamily \#include $<$Keyboard\+Button\+Poll\+Type.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1KeyboardButtonPollType_a402883e7ed45f68595cad44f72581e9d}\label{structtgbot_1_1KeyboardButtonPollType_a402883e7ed45f68595cad44f72581e9d}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1KeyboardButtonPollType}{Keyboard\+Button\+Poll\+Type}} $>$ \mbox{\hyperlink{structtgbot_1_1KeyboardButtonPollType_a402883e7ed45f68595cad44f72581e9d}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1KeyboardButtonPollType_a5fca28bc926846100a4520abf65c6787}{Keyboard\+Button\+Poll\+Type}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1KeyboardButtonPollType_acb0a9b7953b1068e5fe1e2c75eccfdcf}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1KeyboardButtonPollType_a3db32a9cd48a533d340699180780909f}\label{structtgbot_1_1KeyboardButtonPollType_a3db32a9cd48a533d340699180780909f}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1KeyboardButtonPollType_a3db32a9cd48a533d340699180780909f}{type}}
+\begin{DoxyCompactList}\small\item\em Optional. If quiz is passed, the user will be allowed to create only polls in the quiz mode. If regular is passed, only regular polls will be allowed. Otherwise, the user will be allowed to create a poll of any type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object represents type of a poll, which is allowed to be created and sent when the corresponding button is pressed. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1KeyboardButtonPollType_a5fca28bc926846100a4520abf65c6787}\label{structtgbot_1_1KeyboardButtonPollType_a5fca28bc926846100a4520abf65c6787}} 
+\index{tgbot::KeyboardButtonPollType@{tgbot::KeyboardButtonPollType}!KeyboardButtonPollType@{KeyboardButtonPollType}}
+\index{KeyboardButtonPollType@{KeyboardButtonPollType}!tgbot::KeyboardButtonPollType@{tgbot::KeyboardButtonPollType}}
+\doxysubsubsection{\texorpdfstring{KeyboardButtonPollType()}{KeyboardButtonPollType()}}
+{\footnotesize\ttfamily tgbot\+::\+Keyboard\+Button\+Poll\+Type\+::\+Keyboard\+Button\+Poll\+Type (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1KeyboardButtonPollType_acb0a9b7953b1068e5fe1e2c75eccfdcf}\label{structtgbot_1_1KeyboardButtonPollType_acb0a9b7953b1068e5fe1e2c75eccfdcf}} 
+\index{tgbot::KeyboardButtonPollType@{tgbot::KeyboardButtonPollType}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::KeyboardButtonPollType@{tgbot::KeyboardButtonPollType}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Keyboard\+Button\+Poll\+Type\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Keyboard\+Button\+Poll\+Type.\+h\item 
+src/types/Keyboard\+Button\+Poll\+Type.\+cpp\end{DoxyCompactItemize}

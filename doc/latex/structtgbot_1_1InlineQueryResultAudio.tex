@@ -1,0 +1,127 @@
+\hypertarget{structtgbot_1_1InlineQueryResultAudio}{}\doxysection{tgbot\+::Inline\+Query\+Result\+Audio Struct Reference}
+\label{structtgbot_1_1InlineQueryResultAudio}\index{tgbot::InlineQueryResultAudio@{tgbot::InlineQueryResultAudio}}
+
+
+Represents a link to an M\+P3 audio file.  
+
+
+
+
+{\ttfamily \#include $<$Inline\+Query\+Result\+Audio.\+h$>$}
+
+
+
+Inheritance diagram for tgbot\+::Inline\+Query\+Result\+Audio\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{structtgbot_1_1InlineQueryResultAudio__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for tgbot\+::Inline\+Query\+Result\+Audio\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{structtgbot_1_1InlineQueryResultAudio__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultAudio_aefbcbfbefa41147d4c05115cf29ae8b5}\label{structtgbot_1_1InlineQueryResultAudio_aefbcbfbefa41147d4c05115cf29ae8b5}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1InlineQueryResultAudio}{Inline\+Query\+Result\+Audio}} $>$ \mbox{\hyperlink{structtgbot_1_1InlineQueryResultAudio_aefbcbfbefa41147d4c05115cf29ae8b5}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1InlineQueryResultAudio_a545d901f220414533e47892c3f5ed1b6}{Inline\+Query\+Result\+Audio}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultAudio_a03e1c93f7db2b77791169e79c28f3e94}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultAudio_aed97fb449cfac3ed0ab251ae208be12f}\label{structtgbot_1_1InlineQueryResultAudio_aed97fb449cfac3ed0ab251ae208be12f}} 
+const std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultAudio_aed97fb449cfac3ed0ab251ae208be12f}{type}} = \char`\"{}audio\char`\"{}
+\begin{DoxyCompactList}\small\item\em Type of the result, must be audio. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultAudio_a0ca3703558f049cce3a023aa99731b05}\label{structtgbot_1_1InlineQueryResultAudio_a0ca3703558f049cce3a023aa99731b05}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultAudio_a0ca3703558f049cce3a023aa99731b05}{id}}
+\begin{DoxyCompactList}\small\item\em Unique identifier for this result, 1-\/64 bytes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultAudio_ae8cad088ca1639a585cde23a6569e043}\label{structtgbot_1_1InlineQueryResultAudio_ae8cad088ca1639a585cde23a6569e043}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultAudio_ae8cad088ca1639a585cde23a6569e043}{audio\+\_\+url}}
+\begin{DoxyCompactList}\small\item\em A valid U\+RL for the audio file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultAudio_a7c3e5f92e3585b2b93b7a31cc7a47b00}\label{structtgbot_1_1InlineQueryResultAudio_a7c3e5f92e3585b2b93b7a31cc7a47b00}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultAudio_a7c3e5f92e3585b2b93b7a31cc7a47b00}{title}}
+\begin{DoxyCompactList}\small\item\em Title. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultAudio_aa16bc44291c0ed37a108b54b0dc4611c}\label{structtgbot_1_1InlineQueryResultAudio_aa16bc44291c0ed37a108b54b0dc4611c}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultAudio_aa16bc44291c0ed37a108b54b0dc4611c}{caption}}
+\begin{DoxyCompactList}\small\item\em Optional. Caption, 0-\/1024 characters after entities parsing. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultAudio_a72c63c948ea81ff42a670bf62a26013c}\label{structtgbot_1_1InlineQueryResultAudio_a72c63c948ea81ff42a670bf62a26013c}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultAudio_a72c63c948ea81ff42a670bf62a26013c}{parse\+\_\+mode}}
+\begin{DoxyCompactList}\small\item\em Optional. Mode for parsing entities in the audio caption. See formatting options for more details. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultAudio_a492c47d684f56548a7c4ea5a07c9461b}\label{structtgbot_1_1InlineQueryResultAudio_a492c47d684f56548a7c4ea5a07c9461b}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultAudio_a492c47d684f56548a7c4ea5a07c9461b}{performer}}
+\begin{DoxyCompactList}\small\item\em Optional. Performer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultAudio_a0106a082c0fda1e25d2607b83e1a4afa}\label{structtgbot_1_1InlineQueryResultAudio_a0106a082c0fda1e25d2607b83e1a4afa}} 
+int \mbox{\hyperlink{structtgbot_1_1InlineQueryResultAudio_a0106a082c0fda1e25d2607b83e1a4afa}{audio\+\_\+duration}} = -\/1
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1Audio}{Audio}} duration in seconds. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultAudio_a82de54fd86c393c260a6c3b9bdbb1543}\label{structtgbot_1_1InlineQueryResultAudio_a82de54fd86c393c260a6c3b9bdbb1543}} 
+\mbox{\hyperlink{structtgbot_1_1InlineKeyboardMarkup_a6973beabdcfa398f58a1ad9bb74e6014}{Inline\+Keyboard\+Markup\+::ptr}} \mbox{\hyperlink{structtgbot_1_1InlineQueryResultAudio_a82de54fd86c393c260a6c3b9bdbb1543}{reply\+\_\+markup}}
+\begin{DoxyCompactList}\small\item\em Optional. Inline keyboard attached to the message. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultAudio_a87846dbd79d59fdceade227202ba906e}\label{structtgbot_1_1InlineQueryResultAudio_a87846dbd79d59fdceade227202ba906e}} 
+\mbox{\hyperlink{structtgbot_1_1InputMessageContent_a734b8fff62c96003068a9bc6ddb0d271}{Input\+Message\+Content\+::ptr}} \mbox{\hyperlink{structtgbot_1_1InlineQueryResultAudio_a87846dbd79d59fdceade227202ba906e}{input\+\_\+message\+\_\+content}}
+\begin{DoxyCompactList}\small\item\em Optional. Content of the message to be sent instead of the audio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a link to an M\+P3 audio file. 
+
+By default, this audio file will be sent by the user.
+
+Alternatively, you can use input\+\_\+message\+\_\+content to send a message with the specified content instead of the audio. \begin{DoxyNote}{Note}
+This will only work in Telegram versions released after 9 April, 2016. Older clients will ignore them. 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultAudio_a545d901f220414533e47892c3f5ed1b6}\label{structtgbot_1_1InlineQueryResultAudio_a545d901f220414533e47892c3f5ed1b6}} 
+\index{tgbot::InlineQueryResultAudio@{tgbot::InlineQueryResultAudio}!InlineQueryResultAudio@{InlineQueryResultAudio}}
+\index{InlineQueryResultAudio@{InlineQueryResultAudio}!tgbot::InlineQueryResultAudio@{tgbot::InlineQueryResultAudio}}
+\doxysubsubsection{\texorpdfstring{InlineQueryResultAudio()}{InlineQueryResultAudio()}}
+{\footnotesize\ttfamily tgbot\+::\+Inline\+Query\+Result\+Audio\+::\+Inline\+Query\+Result\+Audio (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultAudio_a03e1c93f7db2b77791169e79c28f3e94}\label{structtgbot_1_1InlineQueryResultAudio_a03e1c93f7db2b77791169e79c28f3e94}} 
+\index{tgbot::InlineQueryResultAudio@{tgbot::InlineQueryResultAudio}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::InlineQueryResultAudio@{tgbot::InlineQueryResultAudio}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Inline\+Query\+Result\+Audio\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{structtgbot_1_1InlineQueryResult_a7aa714c457e54ab6e51b1b0abc8c784c}{tgbot\+::\+Inline\+Query\+Result}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Inline\+Query\+Result\+Audio.\+h\item 
+src/types/Inline\+Query\+Result\+Audio.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,4 @@
+<map id="tgbot::ReplyKeyboardRemove" name="tgbot::ReplyKeyboardRemove">
+<area shape="rect" id="node1" title="Upon receiving a message with this object, Telegram clients will remove the current custom keyboard a..." alt="" coords="5,80,221,107"/>
+<area shape="rect" id="node2" href="$structtgbot_1_1Reply.html" title="The super class of all reply classes." alt="" coords="63,5,164,32"/>
+</map>

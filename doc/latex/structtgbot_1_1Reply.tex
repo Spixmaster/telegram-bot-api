@@ -1,0 +1,61 @@
+\hypertarget{structtgbot_1_1Reply}{}\doxysection{tgbot\+::Reply Struct Reference}
+\label{structtgbot_1_1Reply}\index{tgbot::Reply@{tgbot::Reply}}
+
+
+The super class of all reply classes.  
+
+
+
+
+{\ttfamily \#include $<$Reply.\+h$>$}
+
+
+
+Inheritance diagram for tgbot\+::Reply\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structtgbot_1_1Reply__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}\label{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1Reply}{Reply}} $>$ \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::string \mbox{\hyperlink{structtgbot_1_1Reply_a815e89bc1534242fdfacaf8ec62327f1}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The super class of all reply classes. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1Reply_a815e89bc1534242fdfacaf8ec62327f1}\label{structtgbot_1_1Reply_a815e89bc1534242fdfacaf8ec62327f1}} 
+\index{tgbot::Reply@{tgbot::Reply}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::Reply@{tgbot::Reply}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Reply\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{structtgbot_1_1ReplyKeyboardMarkup_abe979fb3a9d81b375d60685f12f6f7b0}{tgbot\+::\+Reply\+Keyboard\+Markup}}, \mbox{\hyperlink{structtgbot_1_1ReplyKeyboardRemove_a0c79107df2198c526cb17577f5d97d64}{tgbot\+::\+Reply\+Keyboard\+Remove}}, \mbox{\hyperlink{structtgbot_1_1InlineKeyboardMarkup_aadf663ab621d0792b0c75cdb774d1153}{tgbot\+::\+Inline\+Keyboard\+Markup}}, and \mbox{\hyperlink{structtgbot_1_1ForceReply_adf527945170bb6608efe04504f80e81f}{tgbot\+::\+Force\+Reply}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Reply.\+h\item 
+src/types/Reply.\+cpp\end{DoxyCompactItemize}

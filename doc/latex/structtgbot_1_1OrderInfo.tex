@@ -1,0 +1,78 @@
+\hypertarget{structtgbot_1_1OrderInfo}{}\doxysection{tgbot\+::Order\+Info Struct Reference}
+\label{structtgbot_1_1OrderInfo}\index{tgbot::OrderInfo@{tgbot::OrderInfo}}
+
+
+This object represents information about an order.  
+
+
+
+
+{\ttfamily \#include $<$Order\+Info.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1OrderInfo_a8cdc9ad8685897b6a28c8a3b724c4260}\label{structtgbot_1_1OrderInfo_a8cdc9ad8685897b6a28c8a3b724c4260}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1OrderInfo}{Order\+Info}} $>$ \mbox{\hyperlink{structtgbot_1_1OrderInfo_a8cdc9ad8685897b6a28c8a3b724c4260}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1OrderInfo_ab5e9a94c843dd19337c39541201ca92e}{Order\+Info}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1OrderInfo_af9df2fad626708e5d6f70f10d0d385ea}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1OrderInfo_a1cdbad204900e581c01f0141340fc851}\label{structtgbot_1_1OrderInfo_a1cdbad204900e581c01f0141340fc851}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1OrderInfo_a1cdbad204900e581c01f0141340fc851}{name}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1User}{User}} name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1OrderInfo_a09912fd56dee72ca916aa1a3a0ccf0f7}\label{structtgbot_1_1OrderInfo_a09912fd56dee72ca916aa1a3a0ccf0f7}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1OrderInfo_a09912fd56dee72ca916aa1a3a0ccf0f7}{phone\+\_\+number}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1User}{User}}\textquotesingle{}s phone number. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1OrderInfo_ac4c6957081148d9b556ca4dc00706054}\label{structtgbot_1_1OrderInfo_ac4c6957081148d9b556ca4dc00706054}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1OrderInfo_ac4c6957081148d9b556ca4dc00706054}{email}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1User}{User}} email. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1OrderInfo_af1b3e009ec4a7642e151faec3a572097}\label{structtgbot_1_1OrderInfo_af1b3e009ec4a7642e151faec3a572097}} 
+\mbox{\hyperlink{structtgbot_1_1ShippingAddress_a84a27f6fe44aac455fbdd041be2fa06b}{Shipping\+Address\+::ptr}} \mbox{\hyperlink{structtgbot_1_1OrderInfo_af1b3e009ec4a7642e151faec3a572097}{shipping\+\_\+address}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1User}{User}} shipping address. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object represents information about an order. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1OrderInfo_ab5e9a94c843dd19337c39541201ca92e}\label{structtgbot_1_1OrderInfo_ab5e9a94c843dd19337c39541201ca92e}} 
+\index{tgbot::OrderInfo@{tgbot::OrderInfo}!OrderInfo@{OrderInfo}}
+\index{OrderInfo@{OrderInfo}!tgbot::OrderInfo@{tgbot::OrderInfo}}
+\doxysubsubsection{\texorpdfstring{OrderInfo()}{OrderInfo()}}
+{\footnotesize\ttfamily tgbot\+::\+Order\+Info\+::\+Order\+Info (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1OrderInfo_af9df2fad626708e5d6f70f10d0d385ea}\label{structtgbot_1_1OrderInfo_af9df2fad626708e5d6f70f10d0d385ea}} 
+\index{tgbot::OrderInfo@{tgbot::OrderInfo}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::OrderInfo@{tgbot::OrderInfo}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Order\+Info\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Order\+Info.\+h\item 
+src/types/Order\+Info.\+cpp\end{DoxyCompactItemize}

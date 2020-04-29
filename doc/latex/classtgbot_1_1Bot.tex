@@ -1,0 +1,56 @@
+\hypertarget{classtgbot_1_1Bot}{}\doxysection{tgbot\+::Bot Class Reference}
+\label{classtgbot_1_1Bot}\index{tgbot::Bot@{tgbot::Bot}}
+
+
+This class represents the Telegram bot.  
+
+
+
+
+{\ttfamily \#include $<$Bot.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtgbot_1_1Bot_ae960431ade9ddd7bf7c37cb3fa9eacdd}\label{classtgbot_1_1Bot_ae960431ade9ddd7bf7c37cb3fa9eacdd}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classtgbot_1_1Bot}{Bot}} $>$ \mbox{\hyperlink{classtgbot_1_1Bot_ae960431ade9ddd7bf7c37cb3fa9eacdd}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtgbot_1_1Bot_a4b2b97e2193a0572017e6fb8b3d9ed5f}{Bot}} (const std\+::string \&token)
+\item 
+\mbox{\Hypertarget{classtgbot_1_1Bot_ade6b5c5756581156c4ff8601f885edbc}\label{classtgbot_1_1Bot_ade6b5c5756581156c4ff8601f885edbc}} 
+std\+::string {\bfseries get\+\_\+token} () const noexcept
+\item 
+\mbox{\Hypertarget{classtgbot_1_1Bot_a6af910ebf3c761cc82188939dc9cc90e}\label{classtgbot_1_1Bot_a6af910ebf3c761cc82188939dc9cc90e}} 
+\mbox{\hyperlink{classtgbot_1_1Endpoints_a55d868d023b0c505a0710679e3aa32af}{Endpoints\+::ptr}} {\bfseries get\+\_\+endpnts} () const noexcept
+\item 
+\mbox{\Hypertarget{classtgbot_1_1Bot_aba64843836ec421a2ef79012344576bd}\label{classtgbot_1_1Bot_aba64843836ec421a2ef79012344576bd}} 
+\mbox{\hyperlink{classtgbot_1_1EventHandler_aa9af880b22402e9d9d03e6aca7d8552e}{Event\+Handler\+::ptr}} {\bfseries get\+\_\+event\+\_\+handler} () const noexcept
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class represents the Telegram bot. 
+
+It contains all endpoints and knows how to process incoming information. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtgbot_1_1Bot_a4b2b97e2193a0572017e6fb8b3d9ed5f}\label{classtgbot_1_1Bot_a4b2b97e2193a0572017e6fb8b3d9ed5f}} 
+\index{tgbot::Bot@{tgbot::Bot}!Bot@{Bot}}
+\index{Bot@{Bot}!tgbot::Bot@{tgbot::Bot}}
+\doxysubsubsection{\texorpdfstring{Bot()}{Bot()}}
+{\footnotesize\ttfamily tgbot\+::\+Bot\+::\+Bot (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{token }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em token} & The Telegram bot token which is needed for the endpoints. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/Bot.\+h\item 
+src/Bot.\+cpp\end{DoxyCompactItemize}

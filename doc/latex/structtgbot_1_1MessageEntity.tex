@@ -1,0 +1,96 @@
+\hypertarget{structtgbot_1_1MessageEntity}{}\doxysection{tgbot\+::Message\+Entity Struct Reference}
+\label{structtgbot_1_1MessageEntity}\index{tgbot::MessageEntity@{tgbot::MessageEntity}}
+
+
+This object represents one special entity in a text message. For example, hashtags, usernames, U\+R\+Ls, etc.  
+
+
+
+
+{\ttfamily \#include $<$Message\+Entity.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1MessageEntity_adb3329790c86913dfc3ca0805ce548ca}\label{structtgbot_1_1MessageEntity_adb3329790c86913dfc3ca0805ce548ca}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1MessageEntity}{Message\+Entity}} $>$ \mbox{\hyperlink{structtgbot_1_1MessageEntity_adb3329790c86913dfc3ca0805ce548ca}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1MessageEntity_a037181bd7339242e8049ef2e1c80dbaa}{Message\+Entity}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1MessageEntity_a6e3d37d2a45fe9fb194f939d9b86ceb2}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1MessageEntity_adc18fe54bdecdf70dd0b1b63a327d59c}{type}}
+\begin{DoxyCompactList}\small\item\em Type of the entity. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1MessageEntity_afe40a14f1bd106208f0759287f115929}\label{structtgbot_1_1MessageEntity_afe40a14f1bd106208f0759287f115929}} 
+int \mbox{\hyperlink{structtgbot_1_1MessageEntity_afe40a14f1bd106208f0759287f115929}{offset}} = -\/1
+\begin{DoxyCompactList}\small\item\em Offset in U\+T\+F-\/16 code units to the start of the entity. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1MessageEntity_a29bc74759dd1417645d9a3bd4ade1c65}\label{structtgbot_1_1MessageEntity_a29bc74759dd1417645d9a3bd4ade1c65}} 
+int \mbox{\hyperlink{structtgbot_1_1MessageEntity_a29bc74759dd1417645d9a3bd4ade1c65}{length}} = -\/1
+\begin{DoxyCompactList}\small\item\em Length of the entity in U\+T\+F-\/16 code units. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1MessageEntity_ae80bb7dbae9afba60fa61b4f7acbdb0a}\label{structtgbot_1_1MessageEntity_ae80bb7dbae9afba60fa61b4f7acbdb0a}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1MessageEntity_ae80bb7dbae9afba60fa61b4f7acbdb0a}{url}}
+\begin{DoxyCompactList}\small\item\em Optional. For “text\+\_\+link” only, url that will be opened after user taps on the text. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1MessageEntity_a11fa83c318d799e4c6930773eab6fe1a}\label{structtgbot_1_1MessageEntity_a11fa83c318d799e4c6930773eab6fe1a}} 
+\mbox{\hyperlink{structtgbot_1_1User_a9c48e6206c4f8f4ed3ae7ee2ce9ac395}{User\+::ptr}} \mbox{\hyperlink{structtgbot_1_1MessageEntity_a11fa83c318d799e4c6930773eab6fe1a}{user}}
+\begin{DoxyCompactList}\small\item\em Optional. For “text\+\_\+mention” only, the mentioned user. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1MessageEntity_a84e332f6c214aea4df6aaf220cd1fb48}\label{structtgbot_1_1MessageEntity_a84e332f6c214aea4df6aaf220cd1fb48}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1MessageEntity_a84e332f6c214aea4df6aaf220cd1fb48}{language}}
+\begin{DoxyCompactList}\small\item\em Optional. For “pre” only, the programming language of the entity text. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object represents one special entity in a text message. For example, hashtags, usernames, U\+R\+Ls, etc. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1MessageEntity_a037181bd7339242e8049ef2e1c80dbaa}\label{structtgbot_1_1MessageEntity_a037181bd7339242e8049ef2e1c80dbaa}} 
+\index{tgbot::MessageEntity@{tgbot::MessageEntity}!MessageEntity@{MessageEntity}}
+\index{MessageEntity@{MessageEntity}!tgbot::MessageEntity@{tgbot::MessageEntity}}
+\doxysubsubsection{\texorpdfstring{MessageEntity()}{MessageEntity()}}
+{\footnotesize\ttfamily tgbot\+::\+Message\+Entity\+::\+Message\+Entity (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1MessageEntity_a6e3d37d2a45fe9fb194f939d9b86ceb2}\label{structtgbot_1_1MessageEntity_a6e3d37d2a45fe9fb194f939d9b86ceb2}} 
+\index{tgbot::MessageEntity@{tgbot::MessageEntity}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::MessageEntity@{tgbot::MessageEntity}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Message\+Entity\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structtgbot_1_1MessageEntity_adc18fe54bdecdf70dd0b1b63a327d59c}\label{structtgbot_1_1MessageEntity_adc18fe54bdecdf70dd0b1b63a327d59c}} 
+\index{tgbot::MessageEntity@{tgbot::MessageEntity}!type@{type}}
+\index{type@{type}!tgbot::MessageEntity@{tgbot::MessageEntity}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily tgbot\+::\+Message\+Entity\+::type}
+
+
+
+Type of the entity. 
+
+Can be “mention” (@username), “hashtag” (\#hashtag), “cashtag” (\$\+U\+SD), “bot\+\_\+command” (/start@jobs\+\_\+bot), “url” (\href{https://telegram.org}{\texttt{ https\+://telegram.\+org}}), “email” (\href{mailto:do-not-reply@telegram.org}{\texttt{ do-\/not-\/reply@telegram.\+org}}), “phone\+\_\+number” (+1-\/212-\/555-\/0123), “bold” (bold text), “italic” (italic text), “underline” (underlined text), “strikethrough” (strikethrough text), “code” (monowidth string), “pre” (monowidth block), “text\+\_\+link” (for clickable text U\+R\+Ls), “text\+\_\+mention” (for users without usernames) 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Message\+Entity.\+h\item 
+src/types/Message\+Entity.\+cpp\end{DoxyCompactItemize}

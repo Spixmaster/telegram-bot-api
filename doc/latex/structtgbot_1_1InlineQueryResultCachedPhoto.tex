@@ -1,0 +1,121 @@
+\hypertarget{structtgbot_1_1InlineQueryResultCachedPhoto}{}\doxysection{tgbot\+::Inline\+Query\+Result\+Cached\+Photo Struct Reference}
+\label{structtgbot_1_1InlineQueryResultCachedPhoto}\index{tgbot::InlineQueryResultCachedPhoto@{tgbot::InlineQueryResultCachedPhoto}}
+
+
+Represents a link to a photo stored on the Telegram servers.  
+
+
+
+
+{\ttfamily \#include $<$Inline\+Query\+Result\+Cached\+Photo.\+h$>$}
+
+
+
+Inheritance diagram for tgbot\+::Inline\+Query\+Result\+Cached\+Photo\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{structtgbot_1_1InlineQueryResultCachedPhoto__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for tgbot\+::Inline\+Query\+Result\+Cached\+Photo\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{structtgbot_1_1InlineQueryResultCachedPhoto__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultCachedPhoto_a728a53d37556057e0b638d4f7e3d50c5}\label{structtgbot_1_1InlineQueryResultCachedPhoto_a728a53d37556057e0b638d4f7e3d50c5}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1InlineQueryResultCachedPhoto}{Inline\+Query\+Result\+Cached\+Photo}} $>$ \mbox{\hyperlink{structtgbot_1_1InlineQueryResultCachedPhoto_a728a53d37556057e0b638d4f7e3d50c5}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1InlineQueryResultCachedPhoto_a6c43085b8589c3f1a289934575baee92}{Inline\+Query\+Result\+Cached\+Photo}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultCachedPhoto_a95dcc22277335bd2a4a64bc680f9bcd6}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultCachedPhoto_acce52c5889fcc3e3e89acddf1863e278}\label{structtgbot_1_1InlineQueryResultCachedPhoto_acce52c5889fcc3e3e89acddf1863e278}} 
+const std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultCachedPhoto_acce52c5889fcc3e3e89acddf1863e278}{type}} = \char`\"{}photo\char`\"{}
+\begin{DoxyCompactList}\small\item\em Type of the result, must be photo. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultCachedPhoto_a21f796defb116f636f35f7b97155a345}\label{structtgbot_1_1InlineQueryResultCachedPhoto_a21f796defb116f636f35f7b97155a345}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultCachedPhoto_a21f796defb116f636f35f7b97155a345}{id}}
+\begin{DoxyCompactList}\small\item\em Unique identifier for this result, 1-\/64 bytes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultCachedPhoto_a9205f139f39ffd0b82275b93183b154d}\label{structtgbot_1_1InlineQueryResultCachedPhoto_a9205f139f39ffd0b82275b93183b154d}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultCachedPhoto_a9205f139f39ffd0b82275b93183b154d}{photo\+\_\+file\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em A valid file identifier of the photo. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultCachedPhoto_a90cbc82c68d4419fffce4a6db83c494a}\label{structtgbot_1_1InlineQueryResultCachedPhoto_a90cbc82c68d4419fffce4a6db83c494a}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultCachedPhoto_a90cbc82c68d4419fffce4a6db83c494a}{title}}
+\begin{DoxyCompactList}\small\item\em Optional. Title for the result. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultCachedPhoto_ae6b47f085316b043cbda09fcd8c7387b}\label{structtgbot_1_1InlineQueryResultCachedPhoto_ae6b47f085316b043cbda09fcd8c7387b}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultCachedPhoto_ae6b47f085316b043cbda09fcd8c7387b}{description}}
+\begin{DoxyCompactList}\small\item\em Optional. Short description of the result. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultCachedPhoto_ac9da40d62e1cceb4b6206eb88e4ed66c}\label{structtgbot_1_1InlineQueryResultCachedPhoto_ac9da40d62e1cceb4b6206eb88e4ed66c}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultCachedPhoto_ac9da40d62e1cceb4b6206eb88e4ed66c}{caption}}
+\begin{DoxyCompactList}\small\item\em Optional. Caption of the photo to be sent, 0-\/1024 characters after entities parsing. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultCachedPhoto_ac360899a1160b7f3d073b89fd429aced}\label{structtgbot_1_1InlineQueryResultCachedPhoto_ac360899a1160b7f3d073b89fd429aced}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultCachedPhoto_ac360899a1160b7f3d073b89fd429aced}{parse\+\_\+mode}}
+\begin{DoxyCompactList}\small\item\em Optional. Mode for parsing entities in the photo caption. See formatting options for more details. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultCachedPhoto_a5c06f3d5f723d6ae99cd357c4967cf15}\label{structtgbot_1_1InlineQueryResultCachedPhoto_a5c06f3d5f723d6ae99cd357c4967cf15}} 
+\mbox{\hyperlink{structtgbot_1_1InlineKeyboardMarkup_a6973beabdcfa398f58a1ad9bb74e6014}{Inline\+Keyboard\+Markup\+::ptr}} \mbox{\hyperlink{structtgbot_1_1InlineQueryResultCachedPhoto_a5c06f3d5f723d6ae99cd357c4967cf15}{reply\+\_\+markup}}
+\begin{DoxyCompactList}\small\item\em Optional. Inline keyboard attached to the message. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultCachedPhoto_ae267f79b6a29507c868298da9a176a43}\label{structtgbot_1_1InlineQueryResultCachedPhoto_ae267f79b6a29507c868298da9a176a43}} 
+\mbox{\hyperlink{structtgbot_1_1InputMessageContent_a734b8fff62c96003068a9bc6ddb0d271}{Input\+Message\+Content\+::ptr}} \mbox{\hyperlink{structtgbot_1_1InlineQueryResultCachedPhoto_ae267f79b6a29507c868298da9a176a43}{input\+\_\+message\+\_\+content}}
+\begin{DoxyCompactList}\small\item\em Optional. Content of the message to be sent instead of the photo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a link to a photo stored on the Telegram servers. 
+
+By default, this photo will be sent by the user with an optional caption.
+
+Alternatively, you can use input\+\_\+message\+\_\+content to send a message with the specified content instead of the photo. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultCachedPhoto_a6c43085b8589c3f1a289934575baee92}\label{structtgbot_1_1InlineQueryResultCachedPhoto_a6c43085b8589c3f1a289934575baee92}} 
+\index{tgbot::InlineQueryResultCachedPhoto@{tgbot::InlineQueryResultCachedPhoto}!InlineQueryResultCachedPhoto@{InlineQueryResultCachedPhoto}}
+\index{InlineQueryResultCachedPhoto@{InlineQueryResultCachedPhoto}!tgbot::InlineQueryResultCachedPhoto@{tgbot::InlineQueryResultCachedPhoto}}
+\doxysubsubsection{\texorpdfstring{InlineQueryResultCachedPhoto()}{InlineQueryResultCachedPhoto()}}
+{\footnotesize\ttfamily tgbot\+::\+Inline\+Query\+Result\+Cached\+Photo\+::\+Inline\+Query\+Result\+Cached\+Photo (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultCachedPhoto_a95dcc22277335bd2a4a64bc680f9bcd6}\label{structtgbot_1_1InlineQueryResultCachedPhoto_a95dcc22277335bd2a4a64bc680f9bcd6}} 
+\index{tgbot::InlineQueryResultCachedPhoto@{tgbot::InlineQueryResultCachedPhoto}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::InlineQueryResultCachedPhoto@{tgbot::InlineQueryResultCachedPhoto}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Inline\+Query\+Result\+Cached\+Photo\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{structtgbot_1_1InlineQueryResult_a7aa714c457e54ab6e51b1b0abc8c784c}{tgbot\+::\+Inline\+Query\+Result}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Inline\+Query\+Result\+Cached\+Photo.\+h\item 
+src/types/Inline\+Query\+Result\+Cached\+Photo.\+cpp\end{DoxyCompactItemize}

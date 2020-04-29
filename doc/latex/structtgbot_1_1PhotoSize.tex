@@ -1,0 +1,81 @@
+\hypertarget{structtgbot_1_1PhotoSize}{}\doxysection{tgbot\+::Photo\+Size Struct Reference}
+\label{structtgbot_1_1PhotoSize}\index{tgbot::PhotoSize@{tgbot::PhotoSize}}
+
+
+This object represents one size of a photo or a file / sticker thumbnail.  
+
+
+
+
+{\ttfamily \#include $<$Photo\+Size.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1PhotoSize_a5c9e46410c663fda470caa5f806781ad}\label{structtgbot_1_1PhotoSize_a5c9e46410c663fda470caa5f806781ad}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1PhotoSize}{Photo\+Size}} $>$ \mbox{\hyperlink{structtgbot_1_1PhotoSize_a5c9e46410c663fda470caa5f806781ad}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1PhotoSize_a250f1ca3ae36ed72550bf3f248fe5cf7}{Photo\+Size}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1PhotoSize_ad56b1f96d6084776af8dea430e8e566f}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1PhotoSize_ada69be22dd3ce419a485053a94c18260}\label{structtgbot_1_1PhotoSize_ada69be22dd3ce419a485053a94c18260}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1PhotoSize_ada69be22dd3ce419a485053a94c18260}{file\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Identifier for this file, which can be used to download or reuse the file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1PhotoSize_a3555687adb3b5580c872a20c54f376ba}\label{structtgbot_1_1PhotoSize_a3555687adb3b5580c872a20c54f376ba}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1PhotoSize_a3555687adb3b5580c872a20c54f376ba}{file\+\_\+unique\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Unique identifier for this file, which is supposed to be the same over time and for different bots. Can\textquotesingle{}t be used to download or reuse the file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1PhotoSize_acb4f1b07e190108cd958afec2178a07e}\label{structtgbot_1_1PhotoSize_acb4f1b07e190108cd958afec2178a07e}} 
+int \mbox{\hyperlink{structtgbot_1_1PhotoSize_acb4f1b07e190108cd958afec2178a07e}{width}} = -\/1
+\begin{DoxyCompactList}\small\item\em Photo width. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1PhotoSize_ac030c449e89fb868b2766c35c3f0922a}\label{structtgbot_1_1PhotoSize_ac030c449e89fb868b2766c35c3f0922a}} 
+int \mbox{\hyperlink{structtgbot_1_1PhotoSize_ac030c449e89fb868b2766c35c3f0922a}{height}} = -\/1
+\begin{DoxyCompactList}\small\item\em Photo height. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1PhotoSize_a8160d092749784581fe1df5a82cc72bc}\label{structtgbot_1_1PhotoSize_a8160d092749784581fe1df5a82cc72bc}} 
+int \mbox{\hyperlink{structtgbot_1_1PhotoSize_a8160d092749784581fe1df5a82cc72bc}{file\+\_\+size}} = -\/1
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1File}{File}} size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object represents one size of a photo or a file / sticker thumbnail. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1PhotoSize_a250f1ca3ae36ed72550bf3f248fe5cf7}\label{structtgbot_1_1PhotoSize_a250f1ca3ae36ed72550bf3f248fe5cf7}} 
+\index{tgbot::PhotoSize@{tgbot::PhotoSize}!PhotoSize@{PhotoSize}}
+\index{PhotoSize@{PhotoSize}!tgbot::PhotoSize@{tgbot::PhotoSize}}
+\doxysubsubsection{\texorpdfstring{PhotoSize()}{PhotoSize()}}
+{\footnotesize\ttfamily tgbot\+::\+Photo\+Size\+::\+Photo\+Size (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1PhotoSize_ad56b1f96d6084776af8dea430e8e566f}\label{structtgbot_1_1PhotoSize_ad56b1f96d6084776af8dea430e8e566f}} 
+\index{tgbot::PhotoSize@{tgbot::PhotoSize}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::PhotoSize@{tgbot::PhotoSize}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Photo\+Size\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Photo\+Size.\+h\item 
+src/types/Photo\+Size.\+cpp\end{DoxyCompactItemize}

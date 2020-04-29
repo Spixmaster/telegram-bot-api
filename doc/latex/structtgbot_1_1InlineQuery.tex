@@ -1,0 +1,83 @@
+\hypertarget{structtgbot_1_1InlineQuery}{}\doxysection{tgbot\+::Inline\+Query Struct Reference}
+\label{structtgbot_1_1InlineQuery}\index{tgbot::InlineQuery@{tgbot::InlineQuery}}
+
+
+This object represents an incoming inline query.  
+
+
+
+
+{\ttfamily \#include $<$Inline\+Query.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQuery_a96dd9cf8865925dfae1ab1755026716e}\label{structtgbot_1_1InlineQuery_a96dd9cf8865925dfae1ab1755026716e}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1InlineQuery}{Inline\+Query}} $>$ \mbox{\hyperlink{structtgbot_1_1InlineQuery_a96dd9cf8865925dfae1ab1755026716e}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1InlineQuery_a4a98678baacbe61ec6bebf2b8eedb2a0}{Inline\+Query}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQuery_aa6550d610f3729bb824cb2be1d58e1ee}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQuery_af214a465599a0c2e60d89f4536db8f65}\label{structtgbot_1_1InlineQuery_af214a465599a0c2e60d89f4536db8f65}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQuery_af214a465599a0c2e60d89f4536db8f65}{id}}
+\begin{DoxyCompactList}\small\item\em Unique identifier for this query. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQuery_a90ae9c9879d48b2c937ecf0f7d029e75}\label{structtgbot_1_1InlineQuery_a90ae9c9879d48b2c937ecf0f7d029e75}} 
+\mbox{\hyperlink{structtgbot_1_1User_a9c48e6206c4f8f4ed3ae7ee2ce9ac395}{User\+::ptr}} \mbox{\hyperlink{structtgbot_1_1InlineQuery_a90ae9c9879d48b2c937ecf0f7d029e75}{from}}
+\begin{DoxyCompactList}\small\item\em Sender. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQuery_a8f0f4da45f2c818a8cc95182c8c0b3b5}\label{structtgbot_1_1InlineQuery_a8f0f4da45f2c818a8cc95182c8c0b3b5}} 
+\mbox{\hyperlink{structtgbot_1_1Location_a62b2027b3ff8381f85c7e408e2fa307e}{Location\+::ptr}} \mbox{\hyperlink{structtgbot_1_1InlineQuery_a8f0f4da45f2c818a8cc95182c8c0b3b5}{location}}
+\begin{DoxyCompactList}\small\item\em Optional. Sender location, only for bots that request user location. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQuery_ab786ee8bd68caffae1cd64f7d62923e3}\label{structtgbot_1_1InlineQuery_ab786ee8bd68caffae1cd64f7d62923e3}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQuery_ab786ee8bd68caffae1cd64f7d62923e3}{query}}
+\begin{DoxyCompactList}\small\item\em Text of the query (up to 256 characters) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQuery_a5ab3b6ab98720f284a71b6154cff2e57}\label{structtgbot_1_1InlineQuery_a5ab3b6ab98720f284a71b6154cff2e57}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQuery_a5ab3b6ab98720f284a71b6154cff2e57}{offset}}
+\begin{DoxyCompactList}\small\item\em Offset of the results to be returned, can be controlled by the bot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object represents an incoming inline query. 
+
+When the user sends an empty query, your bot could return some default or trending results. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InlineQuery_a4a98678baacbe61ec6bebf2b8eedb2a0}\label{structtgbot_1_1InlineQuery_a4a98678baacbe61ec6bebf2b8eedb2a0}} 
+\index{tgbot::InlineQuery@{tgbot::InlineQuery}!InlineQuery@{InlineQuery}}
+\index{InlineQuery@{InlineQuery}!tgbot::InlineQuery@{tgbot::InlineQuery}}
+\doxysubsubsection{\texorpdfstring{InlineQuery()}{InlineQuery()}}
+{\footnotesize\ttfamily tgbot\+::\+Inline\+Query\+::\+Inline\+Query (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InlineQuery_aa6550d610f3729bb824cb2be1d58e1ee}\label{structtgbot_1_1InlineQuery_aa6550d610f3729bb824cb2be1d58e1ee}} 
+\index{tgbot::InlineQuery@{tgbot::InlineQuery}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::InlineQuery@{tgbot::InlineQuery}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Inline\+Query\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Inline\+Query.\+h\item 
+src/types/Inline\+Query.\+cpp\end{DoxyCompactItemize}

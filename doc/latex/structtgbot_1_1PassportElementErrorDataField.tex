@@ -1,0 +1,105 @@
+\hypertarget{structtgbot_1_1PassportElementErrorDataField}{}\doxysection{tgbot\+::Passport\+Element\+Error\+Data\+Field Struct Reference}
+\label{structtgbot_1_1PassportElementErrorDataField}\index{tgbot::PassportElementErrorDataField@{tgbot::PassportElementErrorDataField}}
+
+
+Represents an issue in one of the data fields that was provided by the user. The error is considered resolved when the field\textquotesingle{}s value changes.  
+
+
+
+
+{\ttfamily \#include $<$Passport\+Element\+Error\+Data\+Field.\+h$>$}
+
+
+
+Inheritance diagram for tgbot\+::Passport\+Element\+Error\+Data\+Field\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{structtgbot_1_1PassportElementErrorDataField__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for tgbot\+::Passport\+Element\+Error\+Data\+Field\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{structtgbot_1_1PassportElementErrorDataField__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1PassportElementErrorDataField_a02def3e35fbc1109bb307d5a9ba87e83}\label{structtgbot_1_1PassportElementErrorDataField_a02def3e35fbc1109bb307d5a9ba87e83}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1PassportElementErrorDataField}{Passport\+Element\+Error\+Data\+Field}} $>$ \mbox{\hyperlink{structtgbot_1_1PassportElementErrorDataField_a02def3e35fbc1109bb307d5a9ba87e83}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1PassportElementErrorDataField_a7fe83ef474604c7361462ffd88a854b8}{Passport\+Element\+Error\+Data\+Field}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1PassportElementErrorDataField_ae93722a31fa079e615e7fe8671426fc4}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1PassportElementErrorDataField_a96cd5f902df5d3d2c8d0657874f99b61}\label{structtgbot_1_1PassportElementErrorDataField_a96cd5f902df5d3d2c8d0657874f99b61}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1PassportElementErrorDataField_a96cd5f902df5d3d2c8d0657874f99b61}{source}}
+\begin{DoxyCompactList}\small\item\em Error source, must be data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1PassportElementErrorDataField_a33f59494e2490041b27b17e682939a33}\label{structtgbot_1_1PassportElementErrorDataField_a33f59494e2490041b27b17e682939a33}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1PassportElementErrorDataField_a33f59494e2490041b27b17e682939a33}{type}}
+\begin{DoxyCompactList}\small\item\em The section of the user\textquotesingle{}s Telegram Passport which has the error, one of “personal\+\_\+details”, “passport”, “driver\+\_\+license”, “identity\+\_\+card”, “internal\+\_\+passport”, “address” \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1PassportElementErrorDataField_abd54615dc86a540750c937f3cb9c3c07}\label{structtgbot_1_1PassportElementErrorDataField_abd54615dc86a540750c937f3cb9c3c07}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1PassportElementErrorDataField_abd54615dc86a540750c937f3cb9c3c07}{field\+\_\+name}}
+\begin{DoxyCompactList}\small\item\em Name of the data field which has the error. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1PassportElementErrorDataField_ad9aba6a9cd9ca23c48721aa5131190d6}\label{structtgbot_1_1PassportElementErrorDataField_ad9aba6a9cd9ca23c48721aa5131190d6}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1PassportElementErrorDataField_ad9aba6a9cd9ca23c48721aa5131190d6}{data\+\_\+hash}}
+\begin{DoxyCompactList}\small\item\em Base64-\/encoded data hash. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1PassportElementErrorDataField_a502c35406f0cd9066b0f4eef26f7ae91}\label{structtgbot_1_1PassportElementErrorDataField_a502c35406f0cd9066b0f4eef26f7ae91}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1PassportElementErrorDataField_a502c35406f0cd9066b0f4eef26f7ae91}{message}}
+\begin{DoxyCompactList}\small\item\em Error message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents an issue in one of the data fields that was provided by the user. The error is considered resolved when the field\textquotesingle{}s value changes. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1PassportElementErrorDataField_a7fe83ef474604c7361462ffd88a854b8}\label{structtgbot_1_1PassportElementErrorDataField_a7fe83ef474604c7361462ffd88a854b8}} 
+\index{tgbot::PassportElementErrorDataField@{tgbot::PassportElementErrorDataField}!PassportElementErrorDataField@{PassportElementErrorDataField}}
+\index{PassportElementErrorDataField@{PassportElementErrorDataField}!tgbot::PassportElementErrorDataField@{tgbot::PassportElementErrorDataField}}
+\doxysubsubsection{\texorpdfstring{PassportElementErrorDataField()}{PassportElementErrorDataField()}}
+{\footnotesize\ttfamily tgbot\+::\+Passport\+Element\+Error\+Data\+Field\+::\+Passport\+Element\+Error\+Data\+Field (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1PassportElementErrorDataField_ae93722a31fa079e615e7fe8671426fc4}\label{structtgbot_1_1PassportElementErrorDataField_ae93722a31fa079e615e7fe8671426fc4}} 
+\index{tgbot::PassportElementErrorDataField@{tgbot::PassportElementErrorDataField}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::PassportElementErrorDataField@{tgbot::PassportElementErrorDataField}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Passport\+Element\+Error\+Data\+Field\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{structtgbot_1_1PassportElementError_aa5b0e3529e2667ce9888da7bb45aa4d8}{tgbot\+::\+Passport\+Element\+Error}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Passport\+Element\+Error\+Data\+Field.\+h\item 
+src/types/Passport\+Element\+Error\+Data\+Field.\+cpp\end{DoxyCompactItemize}
