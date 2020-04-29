@@ -1,0 +1,111 @@
+\hypertarget{structtgbot_1_1InlineKeyboardMarkup}{}\doxysection{tgbot\+::Inline\+Keyboard\+Markup Struct Reference}
+\label{structtgbot_1_1InlineKeyboardMarkup}\index{tgbot::InlineKeyboardMarkup@{tgbot::InlineKeyboardMarkup}}
+
+
+This object represents an inline keyboard that appears right next to the message it belongs to.  
+
+
+
+
+{\ttfamily \#include $<$Inline\+Keyboard\+Markup.\+h$>$}
+
+
+
+Inheritance diagram for tgbot\+::Inline\+Keyboard\+Markup\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{structtgbot_1_1InlineKeyboardMarkup__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for tgbot\+::Inline\+Keyboard\+Markup\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{structtgbot_1_1InlineKeyboardMarkup__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineKeyboardMarkup_a6973beabdcfa398f58a1ad9bb74e6014}\label{structtgbot_1_1InlineKeyboardMarkup_a6973beabdcfa398f58a1ad9bb74e6014}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1InlineKeyboardMarkup}{Inline\+Keyboard\+Markup}} $>$ \mbox{\hyperlink{structtgbot_1_1InlineKeyboardMarkup_a6973beabdcfa398f58a1ad9bb74e6014}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1InlineKeyboardMarkup_ae207997ca4fd819d042210ddd1dbfbbe}{Inline\+Keyboard\+Markup}} (const std\+::string \&json)
+\item 
+\mbox{\hyperlink{structtgbot_1_1InlineKeyboardMarkup_a9568f650a0174945a19f9af8fb63eb89}{Inline\+Keyboard\+Markup}} (const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1InlineKeyboardButton_af3ab45ceecee1df6c1d488809f16127d}{Inline\+Keyboard\+Button\+::ptr}} $>$$>$ \&keyboard)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineKeyboardMarkup_aadf663ab621d0792b0c75cdb774d1153}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineKeyboardMarkup_a2397a51b44992bc044a62c4f4f94947b}\label{structtgbot_1_1InlineKeyboardMarkup_a2397a51b44992bc044a62c4f4f94947b}} 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1InlineKeyboardButton_af3ab45ceecee1df6c1d488809f16127d}{Inline\+Keyboard\+Button\+::ptr}} $>$ $>$ \mbox{\hyperlink{structtgbot_1_1InlineKeyboardMarkup_a2397a51b44992bc044a62c4f4f94947b}{inline\+\_\+keyboard}}
+\begin{DoxyCompactList}\small\item\em Array of button rows, each represented by an Array of \mbox{\hyperlink{structtgbot_1_1InlineKeyboardButton}{Inline\+Keyboard\+Button}} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object represents an inline keyboard that appears right next to the message it belongs to. 
+
+\begin{DoxyNote}{Note}
+This will only work in Telegram versions released after 9 April, 2016. Older clients will display unsupported message. 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InlineKeyboardMarkup_ae207997ca4fd819d042210ddd1dbfbbe}\label{structtgbot_1_1InlineKeyboardMarkup_ae207997ca4fd819d042210ddd1dbfbbe}} 
+\index{tgbot::InlineKeyboardMarkup@{tgbot::InlineKeyboardMarkup}!InlineKeyboardMarkup@{InlineKeyboardMarkup}}
+\index{InlineKeyboardMarkup@{InlineKeyboardMarkup}!tgbot::InlineKeyboardMarkup@{tgbot::InlineKeyboardMarkup}}
+\doxysubsubsection{\texorpdfstring{InlineKeyboardMarkup()}{InlineKeyboardMarkup()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily tgbot\+::\+Inline\+Keyboard\+Markup\+::\+Inline\+Keyboard\+Markup (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structtgbot_1_1InlineKeyboardMarkup_a9568f650a0174945a19f9af8fb63eb89}\label{structtgbot_1_1InlineKeyboardMarkup_a9568f650a0174945a19f9af8fb63eb89}} 
+\index{tgbot::InlineKeyboardMarkup@{tgbot::InlineKeyboardMarkup}!InlineKeyboardMarkup@{InlineKeyboardMarkup}}
+\index{InlineKeyboardMarkup@{InlineKeyboardMarkup}!tgbot::InlineKeyboardMarkup@{tgbot::InlineKeyboardMarkup}}
+\doxysubsubsection{\texorpdfstring{InlineKeyboardMarkup()}{InlineKeyboardMarkup()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily tgbot\+::\+Inline\+Keyboard\+Markup\+::\+Inline\+Keyboard\+Markup (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1InlineKeyboardButton_af3ab45ceecee1df6c1d488809f16127d}{Inline\+Keyboard\+Button\+::ptr}} $>$$>$ \&}]{keyboard }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em keyboard} & The vector of vectors of buttons represents a keyboard. One vector makes up a line. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InlineKeyboardMarkup_aadf663ab621d0792b0c75cdb774d1153}\label{structtgbot_1_1InlineKeyboardMarkup_aadf663ab621d0792b0c75cdb774d1153}} 
+\index{tgbot::InlineKeyboardMarkup@{tgbot::InlineKeyboardMarkup}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::InlineKeyboardMarkup@{tgbot::InlineKeyboardMarkup}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Inline\+Keyboard\+Markup\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{structtgbot_1_1Reply_a815e89bc1534242fdfacaf8ec62327f1}{tgbot\+::\+Reply}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Inline\+Keyboard\+Markup.\+h\item 
+src/types/Inline\+Keyboard\+Markup.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,138 @@
+\hypertarget{structtgbot_1_1InlineQueryResultDocument}{}\doxysection{tgbot\+::Inline\+Query\+Result\+Document Struct Reference}
+\label{structtgbot_1_1InlineQueryResultDocument}\index{tgbot::InlineQueryResultDocument@{tgbot::InlineQueryResultDocument}}
+
+
+Represents a link to a file.  
+
+
+
+
+{\ttfamily \#include $<$Inline\+Query\+Result\+Document.\+h$>$}
+
+
+
+Inheritance diagram for tgbot\+::Inline\+Query\+Result\+Document\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{structtgbot_1_1InlineQueryResultDocument__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for tgbot\+::Inline\+Query\+Result\+Document\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{structtgbot_1_1InlineQueryResultDocument__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultDocument_a80fde96ec95546613f3994d93fce82aa}\label{structtgbot_1_1InlineQueryResultDocument_a80fde96ec95546613f3994d93fce82aa}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1InlineQueryResultDocument}{Inline\+Query\+Result\+Document}} $>$ \mbox{\hyperlink{structtgbot_1_1InlineQueryResultDocument_a80fde96ec95546613f3994d93fce82aa}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1InlineQueryResultDocument_a741bfe8ab55271d9047e5e0a2229d3b7}{Inline\+Query\+Result\+Document}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultDocument_a94ab5c76c9266fe7c69a3ea3211470ef}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultDocument_a7010014599684ce41966552cb653e698}\label{structtgbot_1_1InlineQueryResultDocument_a7010014599684ce41966552cb653e698}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultDocument_a7010014599684ce41966552cb653e698}{type}}
+\begin{DoxyCompactList}\small\item\em Type of the result, must be document. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultDocument_ae90a41a6a61254b794b4336547cd8d64}\label{structtgbot_1_1InlineQueryResultDocument_ae90a41a6a61254b794b4336547cd8d64}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultDocument_ae90a41a6a61254b794b4336547cd8d64}{id}}
+\begin{DoxyCompactList}\small\item\em Unique identifier for this result, 1-\/64 bytes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultDocument_af95efae99ce9c4f51488cce0d55fd0bd}\label{structtgbot_1_1InlineQueryResultDocument_af95efae99ce9c4f51488cce0d55fd0bd}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultDocument_af95efae99ce9c4f51488cce0d55fd0bd}{title}}
+\begin{DoxyCompactList}\small\item\em Title for the result. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultDocument_a09214412299065acb94835a7bc1a0e7c}\label{structtgbot_1_1InlineQueryResultDocument_a09214412299065acb94835a7bc1a0e7c}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultDocument_a09214412299065acb94835a7bc1a0e7c}{caption}}
+\begin{DoxyCompactList}\small\item\em Optional. Caption of the document to be sent, 0-\/1024 characters after entities parsing. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultDocument_aabd8f462c1e5b67db94742d92e596414}\label{structtgbot_1_1InlineQueryResultDocument_aabd8f462c1e5b67db94742d92e596414}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultDocument_aabd8f462c1e5b67db94742d92e596414}{parse\+\_\+mode}}
+\begin{DoxyCompactList}\small\item\em Optional. Mode for parsing entities in the document caption. See formatting options for more details. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultDocument_ab37414a2d6c5384c27c117984689d4bf}\label{structtgbot_1_1InlineQueryResultDocument_ab37414a2d6c5384c27c117984689d4bf}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultDocument_ab37414a2d6c5384c27c117984689d4bf}{document\+\_\+url}}
+\begin{DoxyCompactList}\small\item\em A valid U\+RL for the file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultDocument_a22dc86a4fd42914a2a88166ac2dba29a}\label{structtgbot_1_1InlineQueryResultDocument_a22dc86a4fd42914a2a88166ac2dba29a}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultDocument_a22dc86a4fd42914a2a88166ac2dba29a}{mime\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em Mime type of the content of the file, either “application/pdf” or “application/zip” \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultDocument_a1f9d04f3d6c0939c244c59e1113e728f}\label{structtgbot_1_1InlineQueryResultDocument_a1f9d04f3d6c0939c244c59e1113e728f}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultDocument_a1f9d04f3d6c0939c244c59e1113e728f}{description}}
+\begin{DoxyCompactList}\small\item\em Optional. Short description of the result. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultDocument_accb34fc2e034c8f67cfb827e6cc0de1a}\label{structtgbot_1_1InlineQueryResultDocument_accb34fc2e034c8f67cfb827e6cc0de1a}} 
+\mbox{\hyperlink{structtgbot_1_1InlineKeyboardMarkup_a6973beabdcfa398f58a1ad9bb74e6014}{Inline\+Keyboard\+Markup\+::ptr}} \mbox{\hyperlink{structtgbot_1_1InlineQueryResultDocument_accb34fc2e034c8f67cfb827e6cc0de1a}{reply\+\_\+markup}}
+\begin{DoxyCompactList}\small\item\em Optional. Inline keyboard attached to the message. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultDocument_afe88827d09c65a11eef1545e794ba065}\label{structtgbot_1_1InlineQueryResultDocument_afe88827d09c65a11eef1545e794ba065}} 
+\mbox{\hyperlink{structtgbot_1_1InputMessageContent_a734b8fff62c96003068a9bc6ddb0d271}{Input\+Message\+Content\+::ptr}} \mbox{\hyperlink{structtgbot_1_1InlineQueryResultDocument_afe88827d09c65a11eef1545e794ba065}{input\+\_\+message\+\_\+content}}
+\begin{DoxyCompactList}\small\item\em Optional. Content of the message to be sent instead of the file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultDocument_ac394914f6ca218c34ef6511c15510f96}\label{structtgbot_1_1InlineQueryResultDocument_ac394914f6ca218c34ef6511c15510f96}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultDocument_ac394914f6ca218c34ef6511c15510f96}{thumb\+\_\+url}}
+\begin{DoxyCompactList}\small\item\em Optional. U\+RL of the thumbnail (jpeg only) for the file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultDocument_a4f9a9a1a1566670a62012779098cfaa0}\label{structtgbot_1_1InlineQueryResultDocument_a4f9a9a1a1566670a62012779098cfaa0}} 
+int \mbox{\hyperlink{structtgbot_1_1InlineQueryResultDocument_a4f9a9a1a1566670a62012779098cfaa0}{thumb\+\_\+width}}
+\begin{DoxyCompactList}\small\item\em Optional. Thumbnail width. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultDocument_ac28ac4fad17e065823d3a50af3346a03}\label{structtgbot_1_1InlineQueryResultDocument_ac28ac4fad17e065823d3a50af3346a03}} 
+int \mbox{\hyperlink{structtgbot_1_1InlineQueryResultDocument_ac28ac4fad17e065823d3a50af3346a03}{thumb\+\_\+height}}
+\begin{DoxyCompactList}\small\item\em Optional. Thumbnail height. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a link to a file. 
+
+By default, this file will be sent by the user with an optional caption.
+
+Alternatively, you can use input\+\_\+message\+\_\+content to send a message with the specified content instead of the file.
+
+Currently, only .P\+DF and .Z\+IP files can be sent using this method. \begin{DoxyNote}{Note}
+This will only work in Telegram versions released after 9 April, 2016. Older clients will ignore them. 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultDocument_a741bfe8ab55271d9047e5e0a2229d3b7}\label{structtgbot_1_1InlineQueryResultDocument_a741bfe8ab55271d9047e5e0a2229d3b7}} 
+\index{tgbot::InlineQueryResultDocument@{tgbot::InlineQueryResultDocument}!InlineQueryResultDocument@{InlineQueryResultDocument}}
+\index{InlineQueryResultDocument@{InlineQueryResultDocument}!tgbot::InlineQueryResultDocument@{tgbot::InlineQueryResultDocument}}
+\doxysubsubsection{\texorpdfstring{InlineQueryResultDocument()}{InlineQueryResultDocument()}}
+{\footnotesize\ttfamily tgbot\+::\+Inline\+Query\+Result\+Document\+::\+Inline\+Query\+Result\+Document (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultDocument_a94ab5c76c9266fe7c69a3ea3211470ef}\label{structtgbot_1_1InlineQueryResultDocument_a94ab5c76c9266fe7c69a3ea3211470ef}} 
+\index{tgbot::InlineQueryResultDocument@{tgbot::InlineQueryResultDocument}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::InlineQueryResultDocument@{tgbot::InlineQueryResultDocument}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Inline\+Query\+Result\+Document\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{structtgbot_1_1InlineQueryResult_a7aa714c457e54ab6e51b1b0abc8c784c}{tgbot\+::\+Inline\+Query\+Result}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Inline\+Query\+Result\+Document.\+h\item 
+src/types/Inline\+Query\+Result\+Document.\+cpp\end{DoxyCompactItemize}

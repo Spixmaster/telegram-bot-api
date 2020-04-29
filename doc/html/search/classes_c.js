@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['passportdata_522',['PassportData',['../structtgbot_1_1PassportData.html',1,'tgbot']]],
+  ['passportelementerror_523',['PassportElementError',['../structtgbot_1_1PassportElementError.html',1,'tgbot']]],
+  ['passportelementerrordatafield_524',['PassportElementErrorDataField',['../structtgbot_1_1PassportElementErrorDataField.html',1,'tgbot']]],
+  ['passportelementerrorfile_525',['PassportElementErrorFile',['../structtgbot_1_1PassportElementErrorFile.html',1,'tgbot']]],
+  ['passportelementerrorfiles_526',['PassportElementErrorFiles',['../structtgbot_1_1PassportElementErrorFiles.html',1,'tgbot']]],
+  ['passportelementerrorfrontside_527',['PassportElementErrorFrontSide',['../structtgbot_1_1PassportElementErrorFrontSide.html',1,'tgbot']]],
+  ['passportelementerrorreverseside_528',['PassportElementErrorReverseSide',['../structtgbot_1_1PassportElementErrorReverseSide.html',1,'tgbot']]],
+  ['passportelementerrorselfie_529',['PassportElementErrorSelfie',['../structtgbot_1_1PassportElementErrorSelfie.html',1,'tgbot']]],
+  ['passportelementerrortranslationfile_530',['PassportElementErrorTranslationFile',['../structtgbot_1_1PassportElementErrorTranslationFile.html',1,'tgbot']]],
+  ['passportelementerrortranslationfiles_531',['PassportElementErrorTranslationFiles',['../structtgbot_1_1PassportElementErrorTranslationFiles.html',1,'tgbot']]],
+  ['passportelementerrorunspecified_532',['PassportElementErrorUnspecified',['../structtgbot_1_1PassportElementErrorUnspecified.html',1,'tgbot']]],
+  ['passportfile_533',['PassportFile',['../structtgbot_1_1PassportFile.html',1,'tgbot']]],
+  ['photosize_534',['PhotoSize',['../structtgbot_1_1PhotoSize.html',1,'tgbot']]],
+  ['poll_535',['Poll',['../structtgbot_1_1Poll.html',1,'tgbot']]],
+  ['pollanswer_536',['PollAnswer',['../structtgbot_1_1PollAnswer.html',1,'tgbot']]],
+  ['polloption_537',['PollOption',['../structtgbot_1_1PollOption.html',1,'tgbot']]],
+  ['precheckoutquery_538',['PreCheckoutQuery',['../structtgbot_1_1PreCheckoutQuery.html',1,'tgbot']]]
+];

@@ -1,0 +1,257 @@
+\hypertarget{structtgbot_1_1Message}{}\doxysection{tgbot\+::Message Struct Reference}
+\label{structtgbot_1_1Message}\index{tgbot::Message@{tgbot::Message}}
+
+
+This object represents a message.  
+
+
+
+
+{\ttfamily \#include $<$Message.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}\label{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1Message}{Message}} $>$ \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1Message_a1ea38dbae63e170f0b54059ef650c11c}{Message}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Message_a44dc0d516fe6b6f44c2ba8c1ab538ea3}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_a544769df367c2a72de628ac267cc530b}\label{structtgbot_1_1Message_a544769df367c2a72de628ac267cc530b}} 
+int \mbox{\hyperlink{structtgbot_1_1Message_a544769df367c2a72de628ac267cc530b}{message\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Unique message identifier inside this chat. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_ac59c13a63dec6006c4cee4ddab88bdd8}\label{structtgbot_1_1Message_ac59c13a63dec6006c4cee4ddab88bdd8}} 
+\mbox{\hyperlink{structtgbot_1_1User_a9c48e6206c4f8f4ed3ae7ee2ce9ac395}{User\+::ptr}} \mbox{\hyperlink{structtgbot_1_1Message_ac59c13a63dec6006c4cee4ddab88bdd8}{from}}
+\begin{DoxyCompactList}\small\item\em Optional. Sender, empty for messages sent to channels. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_adcf519bbe467448ccd1f2088b16f5936}\label{structtgbot_1_1Message_adcf519bbe467448ccd1f2088b16f5936}} 
+int \mbox{\hyperlink{structtgbot_1_1Message_adcf519bbe467448ccd1f2088b16f5936}{date}}
+\begin{DoxyCompactList}\small\item\em Date the message was sent in Unix time. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_ab0492ad7265f31ce6299dbd82f9aca59}\label{structtgbot_1_1Message_ab0492ad7265f31ce6299dbd82f9aca59}} 
+\mbox{\hyperlink{structtgbot_1_1Chat_a96eb00f4faf12b035e393798a0503e26}{Chat\+::ptr}} \mbox{\hyperlink{structtgbot_1_1Message_ab0492ad7265f31ce6299dbd82f9aca59}{chat}}
+\begin{DoxyCompactList}\small\item\em Conversation the message belongs to. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_ace7d92989510c468707683ee05f141a5}\label{structtgbot_1_1Message_ace7d92989510c468707683ee05f141a5}} 
+\mbox{\hyperlink{structtgbot_1_1User_a9c48e6206c4f8f4ed3ae7ee2ce9ac395}{User\+::ptr}} \mbox{\hyperlink{structtgbot_1_1Message_ace7d92989510c468707683ee05f141a5}{forward\+\_\+from}}
+\begin{DoxyCompactList}\small\item\em Optional. For forwarded messages, sender of the original message. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_a12877e0b6b89d5b1eb98a91166f7de27}\label{structtgbot_1_1Message_a12877e0b6b89d5b1eb98a91166f7de27}} 
+\mbox{\hyperlink{structtgbot_1_1Chat_a96eb00f4faf12b035e393798a0503e26}{Chat\+::ptr}} \mbox{\hyperlink{structtgbot_1_1Message_a12877e0b6b89d5b1eb98a91166f7de27}{forward\+\_\+from\+\_\+chat}}
+\begin{DoxyCompactList}\small\item\em Optional. For messages forwarded from channels, information about the original channel. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_af8215636f05eb2ff8040be866f070090}\label{structtgbot_1_1Message_af8215636f05eb2ff8040be866f070090}} 
+int \mbox{\hyperlink{structtgbot_1_1Message_af8215636f05eb2ff8040be866f070090}{forward\+\_\+from\+\_\+message\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Optional. For messages forwarded from channels, identifier of the original message in the channel. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_ac3df01a1b3be1bbea26960607e80a759}\label{structtgbot_1_1Message_ac3df01a1b3be1bbea26960607e80a759}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Message_ac3df01a1b3be1bbea26960607e80a759}{forward\+\_\+signature}}
+\begin{DoxyCompactList}\small\item\em String Optional. For messages forwarded from channels, signature of the post author if present. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_a746f833bf79abeca77210078f20ae198}\label{structtgbot_1_1Message_a746f833bf79abeca77210078f20ae198}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Message_a746f833bf79abeca77210078f20ae198}{forward\+\_\+sender\+\_\+name}}
+\begin{DoxyCompactList}\small\item\em Optional. Sender\textquotesingle{}s name for messages forwarded from users who disallow adding a link to their account in forwarded messages. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_a727b5d2846366b16cc8614431e22cca3}\label{structtgbot_1_1Message_a727b5d2846366b16cc8614431e22cca3}} 
+int \mbox{\hyperlink{structtgbot_1_1Message_a727b5d2846366b16cc8614431e22cca3}{forward\+\_\+date}}
+\begin{DoxyCompactList}\small\item\em Optional. For forwarded messages, date the original message was sent in Unix time. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_a261568206e223e1cf98f10d4713031a1}\label{structtgbot_1_1Message_a261568206e223e1cf98f10d4713031a1}} 
+\mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} \mbox{\hyperlink{structtgbot_1_1Message_a261568206e223e1cf98f10d4713031a1}{reply\+\_\+to\+\_\+message}}
+\begin{DoxyCompactList}\small\item\em Optional. For replies, the original message. Note that the \mbox{\hyperlink{structtgbot_1_1Message}{Message}} object in this field will not contain further reply\+\_\+to\+\_\+message fields even if it itself is a reply. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_ac0b4f5ec7ff9b2e4d1defe3c71037954}\label{structtgbot_1_1Message_ac0b4f5ec7ff9b2e4d1defe3c71037954}} 
+int \mbox{\hyperlink{structtgbot_1_1Message_ac0b4f5ec7ff9b2e4d1defe3c71037954}{edit\+\_\+date}}
+\begin{DoxyCompactList}\small\item\em Optional. Date the message was last edited in Unix time. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_a39f6dff574b73f4acef9efd4e143fbbc}\label{structtgbot_1_1Message_a39f6dff574b73f4acef9efd4e143fbbc}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Message_a39f6dff574b73f4acef9efd4e143fbbc}{media\+\_\+group\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Optional. The unique identifier of a media message group this message belongs to. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_a4deeeb3525a4b50fef2318c87c2d7e65}\label{structtgbot_1_1Message_a4deeeb3525a4b50fef2318c87c2d7e65}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Message_a4deeeb3525a4b50fef2318c87c2d7e65}{author\+\_\+signature}}
+\begin{DoxyCompactList}\small\item\em Optional. Signature of the post author for messages in channels. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_a26afc993f9ceb9df000d6b25b07d0e92}\label{structtgbot_1_1Message_a26afc993f9ceb9df000d6b25b07d0e92}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Message_a26afc993f9ceb9df000d6b25b07d0e92}{text}}
+\begin{DoxyCompactList}\small\item\em Optional. For text messages, the actual U\+T\+F-\/8 text of the message, 0-\/4096 characters. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_a61275084aae636bb9df78c22ad2a9b7a}\label{structtgbot_1_1Message_a61275084aae636bb9df78c22ad2a9b7a}} 
+std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1MessageEntity_adb3329790c86913dfc3ca0805ce548ca}{Message\+Entity\+::ptr}} $>$ \mbox{\hyperlink{structtgbot_1_1Message_a61275084aae636bb9df78c22ad2a9b7a}{entities}}
+\begin{DoxyCompactList}\small\item\em Optional. For text messages, special entities like usernames, U\+R\+Ls, bot commands, etc. that appear in the text. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_a25ce8608569c7e60362a763a0cc1a173}\label{structtgbot_1_1Message_a25ce8608569c7e60362a763a0cc1a173}} 
+std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1MessageEntity_adb3329790c86913dfc3ca0805ce548ca}{Message\+Entity\+::ptr}} $>$ \mbox{\hyperlink{structtgbot_1_1Message_a25ce8608569c7e60362a763a0cc1a173}{caption\+\_\+entities}}
+\begin{DoxyCompactList}\small\item\em Optional. For messages with a caption, special entities like usernames, U\+R\+Ls, bot commands, etc. that appear in the caption. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_aa2427fdb5eb215d0f876b80c680f6bdb}\label{structtgbot_1_1Message_aa2427fdb5eb215d0f876b80c680f6bdb}} 
+\mbox{\hyperlink{structtgbot_1_1Audio_a463d9babef70db4dae694216f29389a4}{Audio\+::ptr}} \mbox{\hyperlink{structtgbot_1_1Message_aa2427fdb5eb215d0f876b80c680f6bdb}{audio}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is an audio file, information about the file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_a84feaf871e059660e8176133284b76dc}\label{structtgbot_1_1Message_a84feaf871e059660e8176133284b76dc}} 
+\mbox{\hyperlink{structtgbot_1_1Document_ac28d1ce02d5eaf3c2f3bb04175c888e1}{Document\+::ptr}} \mbox{\hyperlink{structtgbot_1_1Message_a84feaf871e059660e8176133284b76dc}{document}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is a general file, information about the file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_ab70a842cad751c60b322b90ca5ac7213}\label{structtgbot_1_1Message_ab70a842cad751c60b322b90ca5ac7213}} 
+\mbox{\hyperlink{structtgbot_1_1Animation_af6a3da3a547cb4edf8bd2e2cf4d73998}{Animation\+::ptr}} \mbox{\hyperlink{structtgbot_1_1Message_ab70a842cad751c60b322b90ca5ac7213}{animation}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is an animation, information about the animation. For backward compatibility, when this field is set, the document field will also be set. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_a3459ff4c36cf9182e202dfe5159d9d01}\label{structtgbot_1_1Message_a3459ff4c36cf9182e202dfe5159d9d01}} 
+\mbox{\hyperlink{structtgbot_1_1Game_a2ac15d02b3f03e2236b04992a568bed2}{Game\+::ptr}} \mbox{\hyperlink{structtgbot_1_1Message_a3459ff4c36cf9182e202dfe5159d9d01}{game}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is a game, information about the game. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_ab2316f5c421384f045b06c4ae1d39285}\label{structtgbot_1_1Message_ab2316f5c421384f045b06c4ae1d39285}} 
+std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1PhotoSize_a5c9e46410c663fda470caa5f806781ad}{Photo\+Size\+::ptr}} $>$ \mbox{\hyperlink{structtgbot_1_1Message_ab2316f5c421384f045b06c4ae1d39285}{photo}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is a photo, available sizes of the photo. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_a1a89aa24cf0b2d011246e8b14c6f8365}\label{structtgbot_1_1Message_a1a89aa24cf0b2d011246e8b14c6f8365}} 
+\mbox{\hyperlink{structtgbot_1_1Sticker_a2b4c0f94c6e5ffc1c010bde22ddbe007}{Sticker\+::ptr}} \mbox{\hyperlink{structtgbot_1_1Message_a1a89aa24cf0b2d011246e8b14c6f8365}{sticker}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is a sticker, information about the sticker. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_a345c1935836e3680479287c2d1a09d43}\label{structtgbot_1_1Message_a345c1935836e3680479287c2d1a09d43}} 
+\mbox{\hyperlink{structtgbot_1_1Video_ad5142f45b83d5771f70096d6b462b3ad}{Video\+::ptr}} \mbox{\hyperlink{structtgbot_1_1Message_a345c1935836e3680479287c2d1a09d43}{video}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is a video, information about the video. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_ae06f5816d45077db99ed6d2322271b07}\label{structtgbot_1_1Message_ae06f5816d45077db99ed6d2322271b07}} 
+\mbox{\hyperlink{structtgbot_1_1Voice_a2c975882f26308d0aa03ab6947a11e6d}{Voice\+::ptr}} \mbox{\hyperlink{structtgbot_1_1Message_ae06f5816d45077db99ed6d2322271b07}{voice}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is a voice message, information about the file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_a92a40c86c3ac0e763dabf4fe2ec22045}\label{structtgbot_1_1Message_a92a40c86c3ac0e763dabf4fe2ec22045}} 
+\mbox{\hyperlink{structtgbot_1_1VideoNote_ae70a28735d359dd73fdb9ff01355c35f}{Video\+Note\+::ptr}} \mbox{\hyperlink{structtgbot_1_1Message_a92a40c86c3ac0e763dabf4fe2ec22045}{video\+\_\+note}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is a video note, information about the video message. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_a656ff7788582a5c3452dc5981f038ed2}\label{structtgbot_1_1Message_a656ff7788582a5c3452dc5981f038ed2}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Message_a656ff7788582a5c3452dc5981f038ed2}{caption}}
+\begin{DoxyCompactList}\small\item\em Optional. Caption for the animation, audio, document, photo, video or voice, 0-\/1024 characters. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_afdc927f90ecec19b1bcb4f1974199a48}\label{structtgbot_1_1Message_afdc927f90ecec19b1bcb4f1974199a48}} 
+\mbox{\hyperlink{structtgbot_1_1Contact_a09d57dc424ec5c9a1fd4f4f98e855aec}{Contact\+::ptr}} \mbox{\hyperlink{structtgbot_1_1Message_afdc927f90ecec19b1bcb4f1974199a48}{contact}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is a shared contact, information about the contact. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_a83d93d46fce18ac0c6d71e74d0d082b7}\label{structtgbot_1_1Message_a83d93d46fce18ac0c6d71e74d0d082b7}} 
+\mbox{\hyperlink{structtgbot_1_1Location_a62b2027b3ff8381f85c7e408e2fa307e}{Location\+::ptr}} \mbox{\hyperlink{structtgbot_1_1Message_a83d93d46fce18ac0c6d71e74d0d082b7}{location}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is a shared location, information about the location. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_a5f055503e977cd37cf0d056c7bd370f4}\label{structtgbot_1_1Message_a5f055503e977cd37cf0d056c7bd370f4}} 
+\mbox{\hyperlink{structtgbot_1_1Venue_ad4a8b6e11d441b94ecdcfee6582477bf}{Venue\+::ptr}} \mbox{\hyperlink{structtgbot_1_1Message_a5f055503e977cd37cf0d056c7bd370f4}{venue}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is a venue, information about the venue. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_a4456a09ea931b03075e6d8d5a78d1429}\label{structtgbot_1_1Message_a4456a09ea931b03075e6d8d5a78d1429}} 
+\mbox{\hyperlink{structtgbot_1_1Poll_ae965b6a7bf1b4d98765c38a5255eb51c}{Poll\+::ptr}} \mbox{\hyperlink{structtgbot_1_1Message_a4456a09ea931b03075e6d8d5a78d1429}{poll}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is a native poll, information about the poll. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_a3ba8f8cba9fdb319357d6dae0e547a96}\label{structtgbot_1_1Message_a3ba8f8cba9fdb319357d6dae0e547a96}} 
+\mbox{\hyperlink{structtgbot_1_1Dice_a8ad0b85c35bb3a2506ac0f5e88eee145}{Dice\+::ptr}} \mbox{\hyperlink{structtgbot_1_1Message_a3ba8f8cba9fdb319357d6dae0e547a96}{dice}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is a dice with random value from 1 to 6. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_a7c7692b00d1bcdd7bcb120ae88b3aa89}\label{structtgbot_1_1Message_a7c7692b00d1bcdd7bcb120ae88b3aa89}} 
+std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1User_a9c48e6206c4f8f4ed3ae7ee2ce9ac395}{User\+::ptr}} $>$ \mbox{\hyperlink{structtgbot_1_1Message_a7c7692b00d1bcdd7bcb120ae88b3aa89}{new\+\_\+chat\+\_\+members}}
+\begin{DoxyCompactList}\small\item\em Optional. New members that were added to the group or supergroup and information about them (the bot itself may be one of these members) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_aafcc797cb36237f437f1007d08b395a1}\label{structtgbot_1_1Message_aafcc797cb36237f437f1007d08b395a1}} 
+\mbox{\hyperlink{structtgbot_1_1User_a9c48e6206c4f8f4ed3ae7ee2ce9ac395}{User\+::ptr}} \mbox{\hyperlink{structtgbot_1_1Message_aafcc797cb36237f437f1007d08b395a1}{left\+\_\+chat\+\_\+member}}
+\begin{DoxyCompactList}\small\item\em Optional. A member was removed from the group, information about them (this member may be the bot itself) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_af11fab628834fd0c0e79a4520b9222c5}\label{structtgbot_1_1Message_af11fab628834fd0c0e79a4520b9222c5}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Message_af11fab628834fd0c0e79a4520b9222c5}{new\+\_\+chat\+\_\+title}}
+\begin{DoxyCompactList}\small\item\em Optional. A chat title was changed to this value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_aba358f957c62763184a5b55fe01f3bfc}\label{structtgbot_1_1Message_aba358f957c62763184a5b55fe01f3bfc}} 
+std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1PhotoSize_a5c9e46410c663fda470caa5f806781ad}{Photo\+Size\+::ptr}} $>$ \mbox{\hyperlink{structtgbot_1_1Message_aba358f957c62763184a5b55fe01f3bfc}{new\+\_\+chat\+\_\+photo}}
+\begin{DoxyCompactList}\small\item\em Optional. A chat photo was change to this value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_a8b06b95f0cf92e56c53f280599fe7cc0}\label{structtgbot_1_1Message_a8b06b95f0cf92e56c53f280599fe7cc0}} 
+bool \mbox{\hyperlink{structtgbot_1_1Message_a8b06b95f0cf92e56c53f280599fe7cc0}{delete\+\_\+chat\+\_\+photo}}
+\begin{DoxyCompactList}\small\item\em Optional. Service message\+: the chat photo was deleted. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_a1bdb247a9e9119c7f2f07bffecbb9ef0}\label{structtgbot_1_1Message_a1bdb247a9e9119c7f2f07bffecbb9ef0}} 
+bool \mbox{\hyperlink{structtgbot_1_1Message_a1bdb247a9e9119c7f2f07bffecbb9ef0}{group\+\_\+chat\+\_\+created}}
+\begin{DoxyCompactList}\small\item\em Optional. Service message\+: the group has been created. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structtgbot_1_1Message_ac979999d0bb6cf5b82352a76e2bafc10}{supergroup\+\_\+chat\+\_\+created}}
+\begin{DoxyCompactList}\small\item\em Optional. Service message\+: the supergroup has been created. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structtgbot_1_1Message_a7e8f34568d1269487cd0e4668c5fa928}{channel\+\_\+chat\+\_\+created}}
+\begin{DoxyCompactList}\small\item\em Optional. Service message\+: the channel has been created. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structtgbot_1_1Message_a2ef14b2839385a901bb11da01c4071c3}{migrate\+\_\+to\+\_\+chat\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Optional. The group has been migrated to a supergroup with the specified identifier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structtgbot_1_1Message_adce26822fb5e348697d0e30166e4653b}{migrate\+\_\+from\+\_\+chat\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Optional. The supergroup has been migrated from a group with the specified identifier. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_a9e13e8f7548a9209d70f7b609828cde9}\label{structtgbot_1_1Message_a9e13e8f7548a9209d70f7b609828cde9}} 
+\mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} \mbox{\hyperlink{structtgbot_1_1Message_a9e13e8f7548a9209d70f7b609828cde9}{pinned\+\_\+message}}
+\begin{DoxyCompactList}\small\item\em Optional. Specified message was pinned. Note that the \mbox{\hyperlink{structtgbot_1_1Message}{Message}} object in this field will not contain further reply\+\_\+to\+\_\+message fields even if it is itself a reply. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_aa78a5803841283cc8fd722a227ee2bab}\label{structtgbot_1_1Message_aa78a5803841283cc8fd722a227ee2bab}} 
+\mbox{\hyperlink{structtgbot_1_1Invoice_a91cd84541d180d366316684726523b5d}{Invoice\+::ptr}} \mbox{\hyperlink{structtgbot_1_1Message_aa78a5803841283cc8fd722a227ee2bab}{invoice}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is an invoice for a payment, information about the invoice. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_a5a84398d63835eb82d9479fcd8fd2d29}\label{structtgbot_1_1Message_a5a84398d63835eb82d9479fcd8fd2d29}} 
+\mbox{\hyperlink{structtgbot_1_1SuccessfulPayment_ae8140470fcade1190d86ea0ccb1143fc}{Successful\+Payment\+::ptr}} \mbox{\hyperlink{structtgbot_1_1Message_a5a84398d63835eb82d9479fcd8fd2d29}{successful\+\_\+payment}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is a service message about a successful payment, information about the payment. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_ab59a147f572f7810f89443cad4bb6f4f}\label{structtgbot_1_1Message_ab59a147f572f7810f89443cad4bb6f4f}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Message_ab59a147f572f7810f89443cad4bb6f4f}{connected\+\_\+website}}
+\begin{DoxyCompactList}\small\item\em Optional. The domain name of the website on which the user has logged in. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_a081f0c0ce2dd2abc20ca5710afc7955b}\label{structtgbot_1_1Message_a081f0c0ce2dd2abc20ca5710afc7955b}} 
+\mbox{\hyperlink{structtgbot_1_1PassportData_a0f566b479d77a541078953aaf7c97a9c}{Passport\+Data\+::ptr}} \mbox{\hyperlink{structtgbot_1_1Message_a081f0c0ce2dd2abc20ca5710afc7955b}{passport\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em Optional. Telegram Passport data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Message_a7bf9ea29df66fef4046a8653402b7afd}\label{structtgbot_1_1Message_a7bf9ea29df66fef4046a8653402b7afd}} 
+\mbox{\hyperlink{structtgbot_1_1InlineKeyboardMarkup_a6973beabdcfa398f58a1ad9bb74e6014}{Inline\+Keyboard\+Markup\+::ptr}} \mbox{\hyperlink{structtgbot_1_1Message_a7bf9ea29df66fef4046a8653402b7afd}{reply\+\_\+markup}}
+\begin{DoxyCompactList}\small\item\em Optional. Inline keyboard attached to the message. login\+\_\+url buttons are represented as ordinary url buttons. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object represents a message. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1Message_a1ea38dbae63e170f0b54059ef650c11c}\label{structtgbot_1_1Message_a1ea38dbae63e170f0b54059ef650c11c}} 
+\index{tgbot::Message@{tgbot::Message}!Message@{Message}}
+\index{Message@{Message}!tgbot::Message@{tgbot::Message}}
+\doxysubsubsection{\texorpdfstring{Message()}{Message()}}
+{\footnotesize\ttfamily tgbot\+::\+Message\+::\+Message (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1Message_a44dc0d516fe6b6f44c2ba8c1ab538ea3}\label{structtgbot_1_1Message_a44dc0d516fe6b6f44c2ba8c1ab538ea3}} 
+\index{tgbot::Message@{tgbot::Message}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::Message@{tgbot::Message}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Message\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structtgbot_1_1Message_a7e8f34568d1269487cd0e4668c5fa928}\label{structtgbot_1_1Message_a7e8f34568d1269487cd0e4668c5fa928}} 
+\index{tgbot::Message@{tgbot::Message}!channel\_chat\_created@{channel\_chat\_created}}
+\index{channel\_chat\_created@{channel\_chat\_created}!tgbot::Message@{tgbot::Message}}
+\doxysubsubsection{\texorpdfstring{channel\_chat\_created}{channel\_chat\_created}}
+{\footnotesize\ttfamily tgbot\+::\+Message\+::channel\+\_\+chat\+\_\+created}
+
+
+
+Optional. Service message\+: the channel has been created. 
+
+This field can‘t be received in a message coming through updates, because bot can’t be a member of a channel when it is created.
+
+It can only be found in reply\+\_\+to\+\_\+message if someone replies to a very first message in a channel. \mbox{\Hypertarget{structtgbot_1_1Message_adce26822fb5e348697d0e30166e4653b}\label{structtgbot_1_1Message_adce26822fb5e348697d0e30166e4653b}} 
+\index{tgbot::Message@{tgbot::Message}!migrate\_from\_chat\_id@{migrate\_from\_chat\_id}}
+\index{migrate\_from\_chat\_id@{migrate\_from\_chat\_id}!tgbot::Message@{tgbot::Message}}
+\doxysubsubsection{\texorpdfstring{migrate\_from\_chat\_id}{migrate\_from\_chat\_id}}
+{\footnotesize\ttfamily tgbot\+::\+Message\+::migrate\+\_\+from\+\_\+chat\+\_\+id}
+
+
+
+Optional. The supergroup has been migrated from a group with the specified identifier. 
+
+This number may be greater than 32 bits and some programming languages may have difficulty/silent defects in interpreting it.
+
+But it is smaller than 52 bits, so a signed 64 bit integer or double-\/precision float type are safe for storing this identifier. \mbox{\Hypertarget{structtgbot_1_1Message_a2ef14b2839385a901bb11da01c4071c3}\label{structtgbot_1_1Message_a2ef14b2839385a901bb11da01c4071c3}} 
+\index{tgbot::Message@{tgbot::Message}!migrate\_to\_chat\_id@{migrate\_to\_chat\_id}}
+\index{migrate\_to\_chat\_id@{migrate\_to\_chat\_id}!tgbot::Message@{tgbot::Message}}
+\doxysubsubsection{\texorpdfstring{migrate\_to\_chat\_id}{migrate\_to\_chat\_id}}
+{\footnotesize\ttfamily tgbot\+::\+Message\+::migrate\+\_\+to\+\_\+chat\+\_\+id}
+
+
+
+Optional. The group has been migrated to a supergroup with the specified identifier. 
+
+This number may be greater than 32 bits and some programming languages may have difficulty/silent defects in interpreting it.
+
+But it is smaller than 52 bits, so a signed 64 bit integer or double-\/precision float type are safe for storing this identifier. \mbox{\Hypertarget{structtgbot_1_1Message_ac979999d0bb6cf5b82352a76e2bafc10}\label{structtgbot_1_1Message_ac979999d0bb6cf5b82352a76e2bafc10}} 
+\index{tgbot::Message@{tgbot::Message}!supergroup\_chat\_created@{supergroup\_chat\_created}}
+\index{supergroup\_chat\_created@{supergroup\_chat\_created}!tgbot::Message@{tgbot::Message}}
+\doxysubsubsection{\texorpdfstring{supergroup\_chat\_created}{supergroup\_chat\_created}}
+{\footnotesize\ttfamily tgbot\+::\+Message\+::supergroup\+\_\+chat\+\_\+created}
+
+
+
+Optional. Service message\+: the supergroup has been created. 
+
+This field can‘t be received in a message coming through updates, because bot can’t be a member of a supergroup when it is created.
+
+It can only be found in reply\+\_\+to\+\_\+message if someone replies to a very first message in a directly created supergroup. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Message.\+h\item 
+src/types/Message.\+cpp\end{DoxyCompactItemize}

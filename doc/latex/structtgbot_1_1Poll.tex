@@ -1,0 +1,117 @@
+\hypertarget{structtgbot_1_1Poll}{}\doxysection{tgbot\+::Poll Struct Reference}
+\label{structtgbot_1_1Poll}\index{tgbot::Poll@{tgbot::Poll}}
+
+
+This object contains information about a poll.  
+
+
+
+
+{\ttfamily \#include $<$Poll.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1Poll_ae965b6a7bf1b4d98765c38a5255eb51c}\label{structtgbot_1_1Poll_ae965b6a7bf1b4d98765c38a5255eb51c}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1Poll}{Poll}} $>$ \mbox{\hyperlink{structtgbot_1_1Poll_ae965b6a7bf1b4d98765c38a5255eb51c}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1Poll_a80a519300c53cc0ab1d9b9b4a35b41fb}{Poll}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Poll_a41b0af9b27b4431c42c1e705f3bf8aa3}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1Poll_a1bdf1a019dac9187f3cd01cfaf0f95bf}\label{structtgbot_1_1Poll_a1bdf1a019dac9187f3cd01cfaf0f95bf}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Poll_a1bdf1a019dac9187f3cd01cfaf0f95bf}{id}}
+\begin{DoxyCompactList}\small\item\em Unique poll identifier. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Poll_ab05e32959b000195b3bce64f4ec753a4}\label{structtgbot_1_1Poll_ab05e32959b000195b3bce64f4ec753a4}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Poll_ab05e32959b000195b3bce64f4ec753a4}{question}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structtgbot_1_1Poll}{Poll}} question, 1-\/255 characters. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Poll_a358e3aa40173af817db0d5a450dca709}\label{structtgbot_1_1Poll_a358e3aa40173af817db0d5a450dca709}} 
+std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1PollOption_adc0ff8ff15708b451a62227de084a373}{Poll\+Option\+::ptr}} $>$ \mbox{\hyperlink{structtgbot_1_1Poll_a358e3aa40173af817db0d5a450dca709}{options}}
+\begin{DoxyCompactList}\small\item\em List of poll options. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Poll_a5cb879e9bb7099372acbedbd4a640685}\label{structtgbot_1_1Poll_a5cb879e9bb7099372acbedbd4a640685}} 
+int \mbox{\hyperlink{structtgbot_1_1Poll_a5cb879e9bb7099372acbedbd4a640685}{total\+\_\+voter\+\_\+count}}
+\begin{DoxyCompactList}\small\item\em Total number of users that voted in the poll. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Poll_a8043efc0e0f418aef3f446fd8e374926}\label{structtgbot_1_1Poll_a8043efc0e0f418aef3f446fd8e374926}} 
+bool \mbox{\hyperlink{structtgbot_1_1Poll_a8043efc0e0f418aef3f446fd8e374926}{is\+\_\+closed}}
+\begin{DoxyCompactList}\small\item\em True, if the poll is closed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Poll_a6794e7ffbd06c598ccb620a8541fa8f8}\label{structtgbot_1_1Poll_a6794e7ffbd06c598ccb620a8541fa8f8}} 
+bool \mbox{\hyperlink{structtgbot_1_1Poll_a6794e7ffbd06c598ccb620a8541fa8f8}{is\+\_\+anonymous}}
+\begin{DoxyCompactList}\small\item\em True, if the poll is anonymous. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Poll_abc7451f9e28c8350804762b6328f1505}\label{structtgbot_1_1Poll_abc7451f9e28c8350804762b6328f1505}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Poll_abc7451f9e28c8350804762b6328f1505}{type}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structtgbot_1_1Poll}{Poll}} type, currently can be “regular” or “quiz” \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Poll_a605101aefa871ab1dfd18c9b6222e864}\label{structtgbot_1_1Poll_a605101aefa871ab1dfd18c9b6222e864}} 
+bool \mbox{\hyperlink{structtgbot_1_1Poll_a605101aefa871ab1dfd18c9b6222e864}{allows\+\_\+multiple\+\_\+answers}}
+\begin{DoxyCompactList}\small\item\em True, if the poll allows multiple answers. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structtgbot_1_1Poll_a7e00ac2021c7418d07fe37efe3b9f919}{correct\+\_\+option\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Optional. 0-\/based identifier of the correct answer option. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Poll_ac9379a366559bd90050b8621fd882065}\label{structtgbot_1_1Poll_ac9379a366559bd90050b8621fd882065}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Poll_ac9379a366559bd90050b8621fd882065}{explanation}}
+\begin{DoxyCompactList}\small\item\em Optional. Text that is shown when a user chooses an incorrect answer or taps on the lamp icon in a quiz-\/style poll, 0-\/200 characters. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Poll_ad694122c6f48565b28f84775e3f2b0eb}\label{structtgbot_1_1Poll_ad694122c6f48565b28f84775e3f2b0eb}} 
+std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1MessageEntity_adb3329790c86913dfc3ca0805ce548ca}{Message\+Entity\+::ptr}} $>$ \mbox{\hyperlink{structtgbot_1_1Poll_ad694122c6f48565b28f84775e3f2b0eb}{explanation\+\_\+entities}}
+\begin{DoxyCompactList}\small\item\em Optional. Special entities like usernames, U\+R\+Ls, bot commands, etc. that appear in the explanation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Poll_a6cdfc0c8b516b16561575228695cc71e}\label{structtgbot_1_1Poll_a6cdfc0c8b516b16561575228695cc71e}} 
+int \mbox{\hyperlink{structtgbot_1_1Poll_a6cdfc0c8b516b16561575228695cc71e}{open\+\_\+period}}
+\begin{DoxyCompactList}\small\item\em Optional. Amount of time in seconds the poll will be active after creation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Poll_aec7da006d1638da45b248cedfe238a4b}\label{structtgbot_1_1Poll_aec7da006d1638da45b248cedfe238a4b}} 
+int \mbox{\hyperlink{structtgbot_1_1Poll_aec7da006d1638da45b248cedfe238a4b}{close\+\_\+date}}
+\begin{DoxyCompactList}\small\item\em Optional. Point in time (Unix timestamp) when the poll will be automatically closed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object contains information about a poll. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1Poll_a80a519300c53cc0ab1d9b9b4a35b41fb}\label{structtgbot_1_1Poll_a80a519300c53cc0ab1d9b9b4a35b41fb}} 
+\index{tgbot::Poll@{tgbot::Poll}!Poll@{Poll}}
+\index{Poll@{Poll}!tgbot::Poll@{tgbot::Poll}}
+\doxysubsubsection{\texorpdfstring{Poll()}{Poll()}}
+{\footnotesize\ttfamily tgbot\+::\+Poll\+::\+Poll (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1Poll_a41b0af9b27b4431c42c1e705f3bf8aa3}\label{structtgbot_1_1Poll_a41b0af9b27b4431c42c1e705f3bf8aa3}} 
+\index{tgbot::Poll@{tgbot::Poll}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::Poll@{tgbot::Poll}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Poll\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structtgbot_1_1Poll_a7e00ac2021c7418d07fe37efe3b9f919}\label{structtgbot_1_1Poll_a7e00ac2021c7418d07fe37efe3b9f919}} 
+\index{tgbot::Poll@{tgbot::Poll}!correct\_option\_id@{correct\_option\_id}}
+\index{correct\_option\_id@{correct\_option\_id}!tgbot::Poll@{tgbot::Poll}}
+\doxysubsubsection{\texorpdfstring{correct\_option\_id}{correct\_option\_id}}
+{\footnotesize\ttfamily tgbot\+::\+Poll\+::correct\+\_\+option\+\_\+id}
+
+
+
+Optional. 0-\/based identifier of the correct answer option. 
+
+Available only for polls in the quiz mode, which are closed, or was sent (not forwarded) by the bot or to the private chat with the bot. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Poll.\+h\item 
+src/types/Poll.\+cpp\end{DoxyCompactItemize}

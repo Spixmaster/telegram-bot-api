@@ -1,0 +1,303 @@
+\hypertarget{classtgbot_1_1Messages}{}\doxysection{tgbot\+::Messages Class Reference}
+\label{classtgbot_1_1Messages}\index{tgbot::Messages@{tgbot::Messages}}
+
+
+The class contains messages which are used throughout the programme.  
+
+
+
+
+{\ttfamily \#include $<$Messages.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtgbot_1_1Messages_a6b804124ebb4cd345fb046f02a792b4f}\label{classtgbot_1_1Messages_a6b804124ebb4cd345fb046f02a792b4f}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classtgbot_1_1Messages}{Messages}} $>$ \mbox{\hyperlink{classtgbot_1_1Messages_a6b804124ebb4cd345fb046f02a792b4f}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classtgbot_1_1Messages_a12c4cd8db07c5f125f36daa4ee9aabeb}{field\+\_\+does\+\_\+not\+\_\+contain\+\_\+string}} (const std\+::string \&field) noexcept
+\begin{DoxyCompactList}\small\item\em Creates a message that the field does not contain a string. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtgbot_1_1Messages_a5a8370758296b3689f9d9fcf1ee2cc3a}{field\+\_\+does\+\_\+not\+\_\+contain\+\_\+int}} (const std\+::string \&field) noexcept
+\begin{DoxyCompactList}\small\item\em Creates a message that the field does not contain an integer. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtgbot_1_1Messages_ae6ce53f38bcf88df928bb46a89bfc03e}{field\+\_\+does\+\_\+not\+\_\+contain\+\_\+int64}} (const std\+::string \&field) noexcept
+\begin{DoxyCompactList}\small\item\em Creates a message that the field does not contain a 64 bits integer. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtgbot_1_1Messages_a0c87495b1d15bf2910ba1f637c499a30}{field\+\_\+does\+\_\+not\+\_\+contain\+\_\+json\+\_\+obj}} (const std\+::string \&field) noexcept
+\begin{DoxyCompactList}\small\item\em Creates a message that the field does not contain a J\+S\+ON object. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtgbot_1_1Messages_a227e0e31971e04295ddf65fa81de2770}{field\+\_\+does\+\_\+not\+\_\+contain\+\_\+json\+\_\+arr}} (const std\+::string \&field) noexcept
+\begin{DoxyCompactList}\small\item\em Creates a message that the field does not contain a J\+S\+ON array. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtgbot_1_1Messages_a2531d28ae211cbd9adb25958e786836e}{field\+\_\+element\+\_\+does\+\_\+not\+\_\+contain\+\_\+json\+\_\+arr}} (const std\+::string \&field) noexcept
+\begin{DoxyCompactList}\small\item\em Creates a message that the field\textquotesingle{}s elements does not contain a J\+S\+ON array. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtgbot_1_1Messages_a4705403573fc8f0f8b86aa71b396f910}{field\+\_\+element\+\_\+does\+\_\+not\+\_\+contain\+\_\+json\+\_\+obj}} (const std\+::string \&field) noexcept
+\begin{DoxyCompactList}\small\item\em Creates a message that the field\textquotesingle{}s elements does not contain a J\+S\+ON object. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtgbot_1_1Messages_a8ad87595bf87ee1b0863043f54787627}{field\+\_\+non\+\_\+existent}} (const std\+::string \&field) noexcept
+\begin{DoxyCompactList}\small\item\em Creates a message that the field does not exist. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtgbot_1_1Messages_a137748d4658a921bba56e28a92444001}{field\+\_\+does\+\_\+not\+\_\+contain\+\_\+bool}} (const std\+::string \&field) noexcept
+\begin{DoxyCompactList}\small\item\em Creates a message that the field does not contain a boolean. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtgbot_1_1Messages_a790b3f4ec9267357fe4b444358e62a63}{field\+\_\+does\+\_\+not\+\_\+contain\+\_\+float}} (const std\+::string \&field) noexcept
+\begin{DoxyCompactList}\small\item\em Creates a message that the field does not contain a float-\/. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtgbot_1_1Messages_a85d1af3e8b58a2ed9a1e4ec892f9a292}{field\+\_\+element\+\_\+element\+\_\+does\+\_\+not\+\_\+contain\+\_\+json\+\_\+obj}} (const std\+::string \&field) noexcept
+\begin{DoxyCompactList}\small\item\em Creates a message that the field\textquotesingle{}s element\textquotesingle{}s element does not contain a J\+S\+ON object. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtgbot_1_1Messages_a9d13d56800e6924204e29990a316fe2a}{field\+\_\+element\+\_\+does\+\_\+not\+\_\+contain\+\_\+string}} (const std\+::string \&field) noexcept
+\begin{DoxyCompactList}\small\item\em Creates a message that the field\textquotesingle{}s elements does not contain a string. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtgbot_1_1Messages_a13a70e6bb6a10b25dc8a085d4e158e37}{field\+\_\+element\+\_\+does\+\_\+not\+\_\+contain\+\_\+int}} (const std\+::string \&field) noexcept
+\begin{DoxyCompactList}\small\item\em Creates a message that the field\textquotesingle{}s elements does not contain an integer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtgbot_1_1Messages_a1d8180aa07029dcc0ccea3e4bfdb36ea}\label{classtgbot_1_1Messages_a1d8180aa07029dcc0ccea3e4bfdb36ea}} 
+static const std\+::string \mbox{\hyperlink{classtgbot_1_1Messages_a1d8180aa07029dcc0ccea3e4bfdb36ea}{constructor\+\_\+not\+\_\+get\+\_\+json\+\_\+object}} = \char`\"{}The to the constructor passed string is not a J\+S\+ON object.\char`\"{}
+\begin{DoxyCompactList}\small\item\em A message that states that the constructor did not get a J\+S\+ON object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtgbot_1_1Messages_a412d42d3c8786d26c64434c26697f71d}\label{classtgbot_1_1Messages_a412d42d3c8786d26c64434c26697f71d}} 
+static const std\+::string \mbox{\hyperlink{classtgbot_1_1Messages_a412d42d3c8786d26c64434c26697f71d}{server\+\_\+resp\+\_\+not\+\_\+json\+\_\+object}} = \char`\"{}The server response is not a J\+S\+ON object.\char`\"{}
+\begin{DoxyCompactList}\small\item\em A message that states that the server response is not a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The class contains messages which are used throughout the programme. 
+
+It is a monostate. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtgbot_1_1Messages_a137748d4658a921bba56e28a92444001}\label{classtgbot_1_1Messages_a137748d4658a921bba56e28a92444001}} 
+\index{tgbot::Messages@{tgbot::Messages}!field\_does\_not\_contain\_bool@{field\_does\_not\_contain\_bool}}
+\index{field\_does\_not\_contain\_bool@{field\_does\_not\_contain\_bool}!tgbot::Messages@{tgbot::Messages}}
+\doxysubsubsection{\texorpdfstring{field\_does\_not\_contain\_bool()}{field\_does\_not\_contain\_bool()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Messages\+::field\+\_\+does\+\_\+not\+\_\+contain\+\_\+bool (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Creates a message that the field does not contain a boolean. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The field which does not contain a boolean-\/ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The message. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Messages_a790b3f4ec9267357fe4b444358e62a63}\label{classtgbot_1_1Messages_a790b3f4ec9267357fe4b444358e62a63}} 
+\index{tgbot::Messages@{tgbot::Messages}!field\_does\_not\_contain\_float@{field\_does\_not\_contain\_float}}
+\index{field\_does\_not\_contain\_float@{field\_does\_not\_contain\_float}!tgbot::Messages@{tgbot::Messages}}
+\doxysubsubsection{\texorpdfstring{field\_does\_not\_contain\_float()}{field\_does\_not\_contain\_float()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Messages\+::field\+\_\+does\+\_\+not\+\_\+contain\+\_\+float (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Creates a message that the field does not contain a float-\/. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The field which does not contain a float. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The message. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Messages_a5a8370758296b3689f9d9fcf1ee2cc3a}\label{classtgbot_1_1Messages_a5a8370758296b3689f9d9fcf1ee2cc3a}} 
+\index{tgbot::Messages@{tgbot::Messages}!field\_does\_not\_contain\_int@{field\_does\_not\_contain\_int}}
+\index{field\_does\_not\_contain\_int@{field\_does\_not\_contain\_int}!tgbot::Messages@{tgbot::Messages}}
+\doxysubsubsection{\texorpdfstring{field\_does\_not\_contain\_int()}{field\_does\_not\_contain\_int()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Messages\+::field\+\_\+does\+\_\+not\+\_\+contain\+\_\+int (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Creates a message that the field does not contain an integer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The field which does not contain an integer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The message. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Messages_ae6ce53f38bcf88df928bb46a89bfc03e}\label{classtgbot_1_1Messages_ae6ce53f38bcf88df928bb46a89bfc03e}} 
+\index{tgbot::Messages@{tgbot::Messages}!field\_does\_not\_contain\_int64@{field\_does\_not\_contain\_int64}}
+\index{field\_does\_not\_contain\_int64@{field\_does\_not\_contain\_int64}!tgbot::Messages@{tgbot::Messages}}
+\doxysubsubsection{\texorpdfstring{field\_does\_not\_contain\_int64()}{field\_does\_not\_contain\_int64()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Messages\+::field\+\_\+does\+\_\+not\+\_\+contain\+\_\+int64 (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Creates a message that the field does not contain a 64 bits integer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The field which does not contain a 64 bits integer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The message. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Messages_a227e0e31971e04295ddf65fa81de2770}\label{classtgbot_1_1Messages_a227e0e31971e04295ddf65fa81de2770}} 
+\index{tgbot::Messages@{tgbot::Messages}!field\_does\_not\_contain\_json\_arr@{field\_does\_not\_contain\_json\_arr}}
+\index{field\_does\_not\_contain\_json\_arr@{field\_does\_not\_contain\_json\_arr}!tgbot::Messages@{tgbot::Messages}}
+\doxysubsubsection{\texorpdfstring{field\_does\_not\_contain\_json\_arr()}{field\_does\_not\_contain\_json\_arr()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Messages\+::field\+\_\+does\+\_\+not\+\_\+contain\+\_\+json\+\_\+arr (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Creates a message that the field does not contain a J\+S\+ON array. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The field which does not contain a J\+S\+ON array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The message. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Messages_a0c87495b1d15bf2910ba1f637c499a30}\label{classtgbot_1_1Messages_a0c87495b1d15bf2910ba1f637c499a30}} 
+\index{tgbot::Messages@{tgbot::Messages}!field\_does\_not\_contain\_json\_obj@{field\_does\_not\_contain\_json\_obj}}
+\index{field\_does\_not\_contain\_json\_obj@{field\_does\_not\_contain\_json\_obj}!tgbot::Messages@{tgbot::Messages}}
+\doxysubsubsection{\texorpdfstring{field\_does\_not\_contain\_json\_obj()}{field\_does\_not\_contain\_json\_obj()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Messages\+::field\+\_\+does\+\_\+not\+\_\+contain\+\_\+json\+\_\+obj (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Creates a message that the field does not contain a J\+S\+ON object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The field which does not contain a J\+S\+ON object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The message. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Messages_a12c4cd8db07c5f125f36daa4ee9aabeb}\label{classtgbot_1_1Messages_a12c4cd8db07c5f125f36daa4ee9aabeb}} 
+\index{tgbot::Messages@{tgbot::Messages}!field\_does\_not\_contain\_string@{field\_does\_not\_contain\_string}}
+\index{field\_does\_not\_contain\_string@{field\_does\_not\_contain\_string}!tgbot::Messages@{tgbot::Messages}}
+\doxysubsubsection{\texorpdfstring{field\_does\_not\_contain\_string()}{field\_does\_not\_contain\_string()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Messages\+::field\+\_\+does\+\_\+not\+\_\+contain\+\_\+string (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Creates a message that the field does not contain a string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The field which does not contain a string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The message. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Messages_a13a70e6bb6a10b25dc8a085d4e158e37}\label{classtgbot_1_1Messages_a13a70e6bb6a10b25dc8a085d4e158e37}} 
+\index{tgbot::Messages@{tgbot::Messages}!field\_element\_does\_not\_contain\_int@{field\_element\_does\_not\_contain\_int}}
+\index{field\_element\_does\_not\_contain\_int@{field\_element\_does\_not\_contain\_int}!tgbot::Messages@{tgbot::Messages}}
+\doxysubsubsection{\texorpdfstring{field\_element\_does\_not\_contain\_int()}{field\_element\_does\_not\_contain\_int()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Messages\+::field\+\_\+element\+\_\+does\+\_\+not\+\_\+contain\+\_\+int (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Creates a message that the field\textquotesingle{}s elements does not contain an integer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The field whose element does not contain an integer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The message. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Messages_a2531d28ae211cbd9adb25958e786836e}\label{classtgbot_1_1Messages_a2531d28ae211cbd9adb25958e786836e}} 
+\index{tgbot::Messages@{tgbot::Messages}!field\_element\_does\_not\_contain\_json\_arr@{field\_element\_does\_not\_contain\_json\_arr}}
+\index{field\_element\_does\_not\_contain\_json\_arr@{field\_element\_does\_not\_contain\_json\_arr}!tgbot::Messages@{tgbot::Messages}}
+\doxysubsubsection{\texorpdfstring{field\_element\_does\_not\_contain\_json\_arr()}{field\_element\_does\_not\_contain\_json\_arr()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Messages\+::field\+\_\+element\+\_\+does\+\_\+not\+\_\+contain\+\_\+json\+\_\+arr (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Creates a message that the field\textquotesingle{}s elements does not contain a J\+S\+ON array. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The field whose element does not contain a J\+S\+ON array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The message. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Messages_a4705403573fc8f0f8b86aa71b396f910}\label{classtgbot_1_1Messages_a4705403573fc8f0f8b86aa71b396f910}} 
+\index{tgbot::Messages@{tgbot::Messages}!field\_element\_does\_not\_contain\_json\_obj@{field\_element\_does\_not\_contain\_json\_obj}}
+\index{field\_element\_does\_not\_contain\_json\_obj@{field\_element\_does\_not\_contain\_json\_obj}!tgbot::Messages@{tgbot::Messages}}
+\doxysubsubsection{\texorpdfstring{field\_element\_does\_not\_contain\_json\_obj()}{field\_element\_does\_not\_contain\_json\_obj()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Messages\+::field\+\_\+element\+\_\+does\+\_\+not\+\_\+contain\+\_\+json\+\_\+obj (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Creates a message that the field\textquotesingle{}s elements does not contain a J\+S\+ON object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The field whose element does not contain a J\+S\+ON object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The message. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Messages_a9d13d56800e6924204e29990a316fe2a}\label{classtgbot_1_1Messages_a9d13d56800e6924204e29990a316fe2a}} 
+\index{tgbot::Messages@{tgbot::Messages}!field\_element\_does\_not\_contain\_string@{field\_element\_does\_not\_contain\_string}}
+\index{field\_element\_does\_not\_contain\_string@{field\_element\_does\_not\_contain\_string}!tgbot::Messages@{tgbot::Messages}}
+\doxysubsubsection{\texorpdfstring{field\_element\_does\_not\_contain\_string()}{field\_element\_does\_not\_contain\_string()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Messages\+::field\+\_\+element\+\_\+does\+\_\+not\+\_\+contain\+\_\+string (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Creates a message that the field\textquotesingle{}s elements does not contain a string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The field whose element does not contain a string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The message. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Messages_a85d1af3e8b58a2ed9a1e4ec892f9a292}\label{classtgbot_1_1Messages_a85d1af3e8b58a2ed9a1e4ec892f9a292}} 
+\index{tgbot::Messages@{tgbot::Messages}!field\_element\_element\_does\_not\_contain\_json\_obj@{field\_element\_element\_does\_not\_contain\_json\_obj}}
+\index{field\_element\_element\_does\_not\_contain\_json\_obj@{field\_element\_element\_does\_not\_contain\_json\_obj}!tgbot::Messages@{tgbot::Messages}}
+\doxysubsubsection{\texorpdfstring{field\_element\_element\_does\_not\_contain\_json\_obj()}{field\_element\_element\_does\_not\_contain\_json\_obj()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Messages\+::field\+\_\+element\+\_\+element\+\_\+does\+\_\+not\+\_\+contain\+\_\+json\+\_\+obj (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Creates a message that the field\textquotesingle{}s element\textquotesingle{}s element does not contain a J\+S\+ON object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The field whose element\textquotesingle{}s element does not contain a J\+S\+ON object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The message. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Messages_a8ad87595bf87ee1b0863043f54787627}\label{classtgbot_1_1Messages_a8ad87595bf87ee1b0863043f54787627}} 
+\index{tgbot::Messages@{tgbot::Messages}!field\_non\_existent@{field\_non\_existent}}
+\index{field\_non\_existent@{field\_non\_existent}!tgbot::Messages@{tgbot::Messages}}
+\doxysubsubsection{\texorpdfstring{field\_non\_existent()}{field\_non\_existent()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Messages\+::field\+\_\+non\+\_\+existent (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Creates a message that the field does not exist. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The field that does not exist. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The message. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/constants/Messages.\+h\item 
+src/constants/Messages.\+cpp\end{DoxyCompactItemize}

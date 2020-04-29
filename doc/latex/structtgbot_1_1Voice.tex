@@ -1,0 +1,81 @@
+\hypertarget{structtgbot_1_1Voice}{}\doxysection{tgbot\+::Voice Struct Reference}
+\label{structtgbot_1_1Voice}\index{tgbot::Voice@{tgbot::Voice}}
+
+
+This object represents a voice note.  
+
+
+
+
+{\ttfamily \#include $<$Voice.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1Voice_a2c975882f26308d0aa03ab6947a11e6d}\label{structtgbot_1_1Voice_a2c975882f26308d0aa03ab6947a11e6d}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1Voice}{Voice}} $>$ \mbox{\hyperlink{structtgbot_1_1Voice_a2c975882f26308d0aa03ab6947a11e6d}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1Voice_ab11e20d8de8529e4fd127785a2af1aae}{Voice}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Voice_a525a09dbed51edbcfdd848159382f25d}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1Voice_a7f3fac53df0e35e85cbc23ebfaf239b6}\label{structtgbot_1_1Voice_a7f3fac53df0e35e85cbc23ebfaf239b6}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Voice_a7f3fac53df0e35e85cbc23ebfaf239b6}{file\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Identifier for this file, which can be used to download or reuse the file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Voice_aea9f5a1e6edda76c568f79f72ddc945a}\label{structtgbot_1_1Voice_aea9f5a1e6edda76c568f79f72ddc945a}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Voice_aea9f5a1e6edda76c568f79f72ddc945a}{file\+\_\+unique\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Unique identifier for this file, which is supposed to be the same over time and for different bots. Can\textquotesingle{}t be used to download or reuse the file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Voice_abc22506e6147583628ae6cadc4103c44}\label{structtgbot_1_1Voice_abc22506e6147583628ae6cadc4103c44}} 
+int \mbox{\hyperlink{structtgbot_1_1Voice_abc22506e6147583628ae6cadc4103c44}{duration}}
+\begin{DoxyCompactList}\small\item\em Duration of the audio in seconds as defined by sender. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Voice_a52bb75119a79c0f553eff33af76c61ed}\label{structtgbot_1_1Voice_a52bb75119a79c0f553eff33af76c61ed}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1Voice_a52bb75119a79c0f553eff33af76c61ed}{mime\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em Optional. M\+I\+ME type of the file as defined by sender. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1Voice_a03b7b25a334df699727576a72d89c655}\label{structtgbot_1_1Voice_a03b7b25a334df699727576a72d89c655}} 
+int \mbox{\hyperlink{structtgbot_1_1Voice_a03b7b25a334df699727576a72d89c655}{file\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em Optional. \mbox{\hyperlink{structtgbot_1_1File}{File}} size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object represents a voice note. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1Voice_ab11e20d8de8529e4fd127785a2af1aae}\label{structtgbot_1_1Voice_ab11e20d8de8529e4fd127785a2af1aae}} 
+\index{tgbot::Voice@{tgbot::Voice}!Voice@{Voice}}
+\index{Voice@{Voice}!tgbot::Voice@{tgbot::Voice}}
+\doxysubsubsection{\texorpdfstring{Voice()}{Voice()}}
+{\footnotesize\ttfamily tgbot\+::\+Voice\+::\+Voice (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1Voice_a525a09dbed51edbcfdd848159382f25d}\label{structtgbot_1_1Voice_a525a09dbed51edbcfdd848159382f25d}} 
+\index{tgbot::Voice@{tgbot::Voice}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::Voice@{tgbot::Voice}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Voice\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Voice.\+h\item 
+src/types/Voice.\+cpp\end{DoxyCompactItemize}

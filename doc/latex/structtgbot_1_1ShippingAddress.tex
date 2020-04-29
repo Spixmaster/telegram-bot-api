@@ -1,0 +1,84 @@
+\hypertarget{structtgbot_1_1ShippingAddress}{}\doxysection{tgbot\+::Shipping\+Address Struct Reference}
+\label{structtgbot_1_1ShippingAddress}\index{tgbot::ShippingAddress@{tgbot::ShippingAddress}}
+
+
+This object represents a shipping address.  
+
+
+
+
+{\ttfamily \#include $<$Shipping\+Address.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1ShippingAddress_a84a27f6fe44aac455fbdd041be2fa06b}\label{structtgbot_1_1ShippingAddress_a84a27f6fe44aac455fbdd041be2fa06b}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1ShippingAddress}{Shipping\+Address}} $>$ \mbox{\hyperlink{structtgbot_1_1ShippingAddress_a84a27f6fe44aac455fbdd041be2fa06b}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1ShippingAddress_a8ea6e33c7631a3f0b3e8f209614f7b6a}{Shipping\+Address}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1ShippingAddress_a7edcf6752f8628d1c67f9cf2ad58d6bf}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1ShippingAddress_a23f5764ceb217ec46c8443047f571a04}\label{structtgbot_1_1ShippingAddress_a23f5764ceb217ec46c8443047f571a04}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1ShippingAddress_a23f5764ceb217ec46c8443047f571a04}{country\+\_\+code}}
+\begin{DoxyCompactList}\small\item\em I\+SO 3166-\/1 alpha-\/2 country code. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1ShippingAddress_a99cf36fdd114b6d8ef329e20cbe933fe}\label{structtgbot_1_1ShippingAddress_a99cf36fdd114b6d8ef329e20cbe933fe}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1ShippingAddress_a99cf36fdd114b6d8ef329e20cbe933fe}{state}}
+\begin{DoxyCompactList}\small\item\em State, if applicable. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1ShippingAddress_ad38757a5f18b2bd45479c75f519b1983}\label{structtgbot_1_1ShippingAddress_ad38757a5f18b2bd45479c75f519b1983}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1ShippingAddress_ad38757a5f18b2bd45479c75f519b1983}{city}}
+\begin{DoxyCompactList}\small\item\em City. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1ShippingAddress_a2f2ad47913e30ea89d678ac24ea95dcd}\label{structtgbot_1_1ShippingAddress_a2f2ad47913e30ea89d678ac24ea95dcd}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1ShippingAddress_a2f2ad47913e30ea89d678ac24ea95dcd}{street\+\_\+line1}}
+\begin{DoxyCompactList}\small\item\em First line for the address. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1ShippingAddress_a9c7468f182282d07c1b28e2356bea02f}\label{structtgbot_1_1ShippingAddress_a9c7468f182282d07c1b28e2356bea02f}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1ShippingAddress_a9c7468f182282d07c1b28e2356bea02f}{street\+\_\+line2}}
+\begin{DoxyCompactList}\small\item\em Second line for the address. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1ShippingAddress_a882fa27619c22457ffa2f8e038eb6ba0}\label{structtgbot_1_1ShippingAddress_a882fa27619c22457ffa2f8e038eb6ba0}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1ShippingAddress_a882fa27619c22457ffa2f8e038eb6ba0}{post\+\_\+code}}
+\begin{DoxyCompactList}\small\item\em Address post code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object represents a shipping address. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1ShippingAddress_a8ea6e33c7631a3f0b3e8f209614f7b6a}\label{structtgbot_1_1ShippingAddress_a8ea6e33c7631a3f0b3e8f209614f7b6a}} 
+\index{tgbot::ShippingAddress@{tgbot::ShippingAddress}!ShippingAddress@{ShippingAddress}}
+\index{ShippingAddress@{ShippingAddress}!tgbot::ShippingAddress@{tgbot::ShippingAddress}}
+\doxysubsubsection{\texorpdfstring{ShippingAddress()}{ShippingAddress()}}
+{\footnotesize\ttfamily tgbot\+::\+Shipping\+Address\+::\+Shipping\+Address (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1ShippingAddress_a7edcf6752f8628d1c67f9cf2ad58d6bf}\label{structtgbot_1_1ShippingAddress_a7edcf6752f8628d1c67f9cf2ad58d6bf}} 
+\index{tgbot::ShippingAddress@{tgbot::ShippingAddress}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::ShippingAddress@{tgbot::ShippingAddress}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Shipping\+Address\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Shipping\+Address.\+h\item 
+src/types/Shipping\+Address.\+cpp\end{DoxyCompactItemize}

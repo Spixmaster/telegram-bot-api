@@ -1,0 +1,130 @@
+\hypertarget{structtgbot_1_1InlineQueryResultLocation}{}\doxysection{tgbot\+::Inline\+Query\+Result\+Location Struct Reference}
+\label{structtgbot_1_1InlineQueryResultLocation}\index{tgbot::InlineQueryResultLocation@{tgbot::InlineQueryResultLocation}}
+
+
+Represents a location on a map.  
+
+
+
+
+{\ttfamily \#include $<$Inline\+Query\+Result\+Location.\+h$>$}
+
+
+
+Inheritance diagram for tgbot\+::Inline\+Query\+Result\+Location\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{structtgbot_1_1InlineQueryResultLocation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for tgbot\+::Inline\+Query\+Result\+Location\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{structtgbot_1_1InlineQueryResultLocation__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultLocation_aa55f7f69019de776cc3ace72198e69af}\label{structtgbot_1_1InlineQueryResultLocation_aa55f7f69019de776cc3ace72198e69af}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1InlineQueryResultLocation}{Inline\+Query\+Result\+Location}} $>$ \mbox{\hyperlink{structtgbot_1_1InlineQueryResultLocation_aa55f7f69019de776cc3ace72198e69af}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1InlineQueryResultLocation_a9c11d055a14385d75e91cf69604484f3}{Inline\+Query\+Result\+Location}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultLocation_a79147b0baabee231a1ab09d351711531}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultLocation_a1d0157035f54094977eb11430b9672b2}\label{structtgbot_1_1InlineQueryResultLocation_a1d0157035f54094977eb11430b9672b2}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultLocation_a1d0157035f54094977eb11430b9672b2}{type}}
+\begin{DoxyCompactList}\small\item\em Type of the result, must be location. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultLocation_a74a449f2f1f10f55ae871199731c29ce}\label{structtgbot_1_1InlineQueryResultLocation_a74a449f2f1f10f55ae871199731c29ce}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultLocation_a74a449f2f1f10f55ae871199731c29ce}{id}}
+\begin{DoxyCompactList}\small\item\em Unique identifier for this result, 1-\/64 Bytes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultLocation_a6e4ed6ba85fea72a3b8d9e77b4daa7e4}\label{structtgbot_1_1InlineQueryResultLocation_a6e4ed6ba85fea72a3b8d9e77b4daa7e4}} 
+float \mbox{\hyperlink{structtgbot_1_1InlineQueryResultLocation_a6e4ed6ba85fea72a3b8d9e77b4daa7e4}{latitude}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structtgbot_1_1Location}{Location}} latitude in degrees. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultLocation_ad65d564396f7f92bb319013674edc775}\label{structtgbot_1_1InlineQueryResultLocation_ad65d564396f7f92bb319013674edc775}} 
+float \mbox{\hyperlink{structtgbot_1_1InlineQueryResultLocation_ad65d564396f7f92bb319013674edc775}{longitude}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structtgbot_1_1Location}{Location}} longitude in degrees. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultLocation_aab912f033f222abf41c3c6185b672aa3}\label{structtgbot_1_1InlineQueryResultLocation_aab912f033f222abf41c3c6185b672aa3}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultLocation_aab912f033f222abf41c3c6185b672aa3}{title}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structtgbot_1_1Location}{Location}} title. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultLocation_a923f2cac8947932bfe740a5fb0229239}\label{structtgbot_1_1InlineQueryResultLocation_a923f2cac8947932bfe740a5fb0229239}} 
+int \mbox{\hyperlink{structtgbot_1_1InlineQueryResultLocation_a923f2cac8947932bfe740a5fb0229239}{live\+\_\+period}}
+\begin{DoxyCompactList}\small\item\em Optional. Period in seconds for which the location can be updated, should be between 60 and 86400. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultLocation_a1b4fe8810ce8a4773d1332f19451b438}\label{structtgbot_1_1InlineQueryResultLocation_a1b4fe8810ce8a4773d1332f19451b438}} 
+\mbox{\hyperlink{structtgbot_1_1InlineKeyboardMarkup_a6973beabdcfa398f58a1ad9bb74e6014}{Inline\+Keyboard\+Markup\+::ptr}} \mbox{\hyperlink{structtgbot_1_1InlineQueryResultLocation_a1b4fe8810ce8a4773d1332f19451b438}{reply\+\_\+markup}}
+\begin{DoxyCompactList}\small\item\em Optional. Inline keyboard attached to the message. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultLocation_a2d8483682d881ae74d5d12fa578fcf41}\label{structtgbot_1_1InlineQueryResultLocation_a2d8483682d881ae74d5d12fa578fcf41}} 
+\mbox{\hyperlink{structtgbot_1_1InputMessageContent_a734b8fff62c96003068a9bc6ddb0d271}{Input\+Message\+Content\+::ptr}} \mbox{\hyperlink{structtgbot_1_1InlineQueryResultLocation_a2d8483682d881ae74d5d12fa578fcf41}{input\+\_\+message\+\_\+content}}
+\begin{DoxyCompactList}\small\item\em Optional. Content of the message to be sent instead of the location. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultLocation_ab9ac26fedb9005413100e911cc2bdb68}\label{structtgbot_1_1InlineQueryResultLocation_ab9ac26fedb9005413100e911cc2bdb68}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InlineQueryResultLocation_ab9ac26fedb9005413100e911cc2bdb68}{thumb\+\_\+url}}
+\begin{DoxyCompactList}\small\item\em Optional. Url of the thumbnail for the result. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultLocation_a50fd3932581ff33b6f382cc1503c7839}\label{structtgbot_1_1InlineQueryResultLocation_a50fd3932581ff33b6f382cc1503c7839}} 
+int \mbox{\hyperlink{structtgbot_1_1InlineQueryResultLocation_a50fd3932581ff33b6f382cc1503c7839}{thumb\+\_\+width}}
+\begin{DoxyCompactList}\small\item\em Optional. Thumbnail width. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultLocation_a22fae8023641b15d239e8d667f38e391}\label{structtgbot_1_1InlineQueryResultLocation_a22fae8023641b15d239e8d667f38e391}} 
+int \mbox{\hyperlink{structtgbot_1_1InlineQueryResultLocation_a22fae8023641b15d239e8d667f38e391}{thumb\+\_\+height}}
+\begin{DoxyCompactList}\small\item\em Optional. Thumbnail height. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a location on a map. 
+
+By default, the location will be sent by the user.
+
+Alternatively, you can use input\+\_\+message\+\_\+content to send a message with the specified content instead of the location. \begin{DoxyNote}{Note}
+This will only work in Telegram versions released after 9 April, 2016. Older clients will ignore them. 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultLocation_a9c11d055a14385d75e91cf69604484f3}\label{structtgbot_1_1InlineQueryResultLocation_a9c11d055a14385d75e91cf69604484f3}} 
+\index{tgbot::InlineQueryResultLocation@{tgbot::InlineQueryResultLocation}!InlineQueryResultLocation@{InlineQueryResultLocation}}
+\index{InlineQueryResultLocation@{InlineQueryResultLocation}!tgbot::InlineQueryResultLocation@{tgbot::InlineQueryResultLocation}}
+\doxysubsubsection{\texorpdfstring{InlineQueryResultLocation()}{InlineQueryResultLocation()}}
+{\footnotesize\ttfamily tgbot\+::\+Inline\+Query\+Result\+Location\+::\+Inline\+Query\+Result\+Location (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InlineQueryResultLocation_a79147b0baabee231a1ab09d351711531}\label{structtgbot_1_1InlineQueryResultLocation_a79147b0baabee231a1ab09d351711531}} 
+\index{tgbot::InlineQueryResultLocation@{tgbot::InlineQueryResultLocation}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::InlineQueryResultLocation@{tgbot::InlineQueryResultLocation}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Inline\+Query\+Result\+Location\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{structtgbot_1_1InlineQueryResult_a7aa714c457e54ab6e51b1b0abc8c784c}{tgbot\+::\+Inline\+Query\+Result}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Inline\+Query\+Result\+Location.\+h\item 
+src/types/Inline\+Query\+Result\+Location.\+cpp\end{DoxyCompactItemize}

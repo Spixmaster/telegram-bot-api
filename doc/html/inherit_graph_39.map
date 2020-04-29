@@ -1,0 +1,12 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$structtgbot_1_1PassportElementError.html" title="The super class of all passport element errors." alt="" coords="5,261,209,287"/>
+<area shape="rect" id="node2" href="$structtgbot_1_1PassportElementErrorDataField.html" title="Represents an issue in one of the data fields that was provided by the user. The error is considered ..." alt="" coords="269,5,473,47"/>
+<area shape="rect" id="node3" href="$structtgbot_1_1PassportElementErrorFile.html" title="Represents an issue with a document scan. The error is considered resolved when the file with the doc..." alt="" coords="257,71,484,98"/>
+<area shape="rect" id="node4" href="$structtgbot_1_1PassportElementErrorFiles.html" title="Represents an issue with a list of scans. The error is considered resolved when the list of files con..." alt="" coords="269,123,473,164"/>
+<area shape="rect" id="node5" href="$structtgbot_1_1PassportElementErrorFrontSide.html" title="Represents an issue with the front side of a document. The error is considered resolved when the file..." alt="" coords="269,188,473,229"/>
+<area shape="rect" id="node6" href="$structtgbot_1_1PassportElementErrorReverseSide.html" title="Represents an issue with the reverse side of a document. The error is considered resolved when the fi..." alt="" coords="269,253,473,295"/>
+<area shape="rect" id="node7" href="$structtgbot_1_1PassportElementErrorSelfie.html" title="Represents an issue with the selfie with a document. The error is considered resolved when the file w..." alt="" coords="269,319,473,360"/>
+<area shape="rect" id="node8" href="$structtgbot_1_1PassportElementErrorTranslationFile.html" title="Represents an issue with one of the files that constitute the translation of a document...." alt="" coords="269,384,473,425"/>
+<area shape="rect" id="node9" href="$structtgbot_1_1PassportElementErrorTranslationFiles.html" title="Represents an issue with the translated version of a document. The error is considered resolved when ..." alt="" coords="269,449,473,491"/>
+<area shape="rect" id="node10" href="$structtgbot_1_1PassportElementErrorUnspecified.html" title="Represents an issue in an unspecified place. The error is considered resolved when new data is added." alt="" coords="269,515,473,556"/>
+</map>

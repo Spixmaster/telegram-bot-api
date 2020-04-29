@@ -1,0 +1,108 @@
+\hypertarget{structtgbot_1_1InputVenueMessageContent}{}\doxysection{tgbot\+::Input\+Venue\+Message\+Content Struct Reference}
+\label{structtgbot_1_1InputVenueMessageContent}\index{tgbot::InputVenueMessageContent@{tgbot::InputVenueMessageContent}}
+
+
+Represents the content of a venue message to be sent as the result of an inline query.  
+
+
+
+
+{\ttfamily \#include $<$Input\+Venue\+Message\+Content.\+h$>$}
+
+
+
+Inheritance diagram for tgbot\+::Input\+Venue\+Message\+Content\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{structtgbot_1_1InputVenueMessageContent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for tgbot\+::Input\+Venue\+Message\+Content\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{structtgbot_1_1InputVenueMessageContent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InputVenueMessageContent_a661ab7f33472e4cfed76becc5c34e57e}\label{structtgbot_1_1InputVenueMessageContent_a661ab7f33472e4cfed76becc5c34e57e}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1InputVenueMessageContent}{Input\+Venue\+Message\+Content}} $>$ \mbox{\hyperlink{structtgbot_1_1InputVenueMessageContent_a661ab7f33472e4cfed76becc5c34e57e}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1InputVenueMessageContent_a4db2c70dc839ff9316f8aca9bfa4d21d}{Input\+Venue\+Message\+Content}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InputVenueMessageContent_aca75a373f477c5cb32a1f980b8e2cf9c}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1InputVenueMessageContent_ad904e78e46526a7fcbf1905bece62e1a}\label{structtgbot_1_1InputVenueMessageContent_ad904e78e46526a7fcbf1905bece62e1a}} 
+float \mbox{\hyperlink{structtgbot_1_1InputVenueMessageContent_ad904e78e46526a7fcbf1905bece62e1a}{latitude}}
+\begin{DoxyCompactList}\small\item\em Latitude of the venue in degrees. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InputVenueMessageContent_adf61dc396537ae5a9d4adc99d96b6f71}\label{structtgbot_1_1InputVenueMessageContent_adf61dc396537ae5a9d4adc99d96b6f71}} 
+float \mbox{\hyperlink{structtgbot_1_1InputVenueMessageContent_adf61dc396537ae5a9d4adc99d96b6f71}{longitude}}
+\begin{DoxyCompactList}\small\item\em Longitude of the venue in degrees. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InputVenueMessageContent_a8ace7ddcae41d1dff535c818afebde8f}\label{structtgbot_1_1InputVenueMessageContent_a8ace7ddcae41d1dff535c818afebde8f}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InputVenueMessageContent_a8ace7ddcae41d1dff535c818afebde8f}{title}}
+\begin{DoxyCompactList}\small\item\em Name of the venue. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InputVenueMessageContent_a5aed92d890143f415b63eee6af554e2e}\label{structtgbot_1_1InputVenueMessageContent_a5aed92d890143f415b63eee6af554e2e}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InputVenueMessageContent_a5aed92d890143f415b63eee6af554e2e}{address}}
+\begin{DoxyCompactList}\small\item\em Address of the venue. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InputVenueMessageContent_a285f1d90a2abaf11391b0b445f4724e3}\label{structtgbot_1_1InputVenueMessageContent_a285f1d90a2abaf11391b0b445f4724e3}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InputVenueMessageContent_a285f1d90a2abaf11391b0b445f4724e3}{foursquare\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Optional. Foursquare identifier of the venue, if known. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtgbot_1_1InputVenueMessageContent_a39ffbcf3a393f4d190698f480f5cf344}\label{structtgbot_1_1InputVenueMessageContent_a39ffbcf3a393f4d190698f480f5cf344}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1InputVenueMessageContent_a39ffbcf3a393f4d190698f480f5cf344}{foursquare\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em Optional. Foursquare type of the venue, if known. (For example, “arts\+\_\+entertainment/default”, “arts\+\_\+entertainment/aquarium” or “food/icecream”.) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the content of a venue message to be sent as the result of an inline query. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InputVenueMessageContent_a4db2c70dc839ff9316f8aca9bfa4d21d}\label{structtgbot_1_1InputVenueMessageContent_a4db2c70dc839ff9316f8aca9bfa4d21d}} 
+\index{tgbot::InputVenueMessageContent@{tgbot::InputVenueMessageContent}!InputVenueMessageContent@{InputVenueMessageContent}}
+\index{InputVenueMessageContent@{InputVenueMessageContent}!tgbot::InputVenueMessageContent@{tgbot::InputVenueMessageContent}}
+\doxysubsubsection{\texorpdfstring{InputVenueMessageContent()}{InputVenueMessageContent()}}
+{\footnotesize\ttfamily tgbot\+::\+Input\+Venue\+Message\+Content\+::\+Input\+Venue\+Message\+Content (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1InputVenueMessageContent_aca75a373f477c5cb32a1f980b8e2cf9c}\label{structtgbot_1_1InputVenueMessageContent_aca75a373f477c5cb32a1f980b8e2cf9c}} 
+\index{tgbot::InputVenueMessageContent@{tgbot::InputVenueMessageContent}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::InputVenueMessageContent@{tgbot::InputVenueMessageContent}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Input\+Venue\+Message\+Content\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{structtgbot_1_1InputMessageContent_ac9997fd542b5c79c4c57a1036e73f277}{tgbot\+::\+Input\+Message\+Content}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Input\+Venue\+Message\+Content.\+h\item 
+src/types/Input\+Venue\+Message\+Content.\+cpp\end{DoxyCompactItemize}

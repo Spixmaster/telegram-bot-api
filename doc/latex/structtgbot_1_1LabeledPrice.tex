@@ -1,0 +1,86 @@
+\hypertarget{structtgbot_1_1LabeledPrice}{}\doxysection{tgbot\+::Labeled\+Price Struct Reference}
+\label{structtgbot_1_1LabeledPrice}\index{tgbot::LabeledPrice@{tgbot::LabeledPrice}}
+
+
+This object represents a portion of the price for goods or services.  
+
+
+
+
+{\ttfamily \#include $<$Labeled\+Price.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1LabeledPrice_a99037ce7b76ba129896f3e69de04c0dc}\label{structtgbot_1_1LabeledPrice_a99037ce7b76ba129896f3e69de04c0dc}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1LabeledPrice}{Labeled\+Price}} $>$ \mbox{\hyperlink{structtgbot_1_1LabeledPrice_a99037ce7b76ba129896f3e69de04c0dc}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1LabeledPrice_a74b5f4a9318055a17a857ee0b4dcc149}{Labeled\+Price}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1LabeledPrice_a86d4be95b7e2ca3e985ed9034f867482}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1LabeledPrice_ad2a6d14d9c3e1cfee1304e431ef5f3cb}\label{structtgbot_1_1LabeledPrice_ad2a6d14d9c3e1cfee1304e431ef5f3cb}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1LabeledPrice_ad2a6d14d9c3e1cfee1304e431ef5f3cb}{label}}
+\begin{DoxyCompactList}\small\item\em Portion label. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structtgbot_1_1LabeledPrice_a24eb48cc7d7818bb41bb78a80a6c11bb}{amount}}
+\begin{DoxyCompactList}\small\item\em Price of the product in the smallest units of the currency (integer, not float/double). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object represents a portion of the price for goods or services. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1LabeledPrice_a74b5f4a9318055a17a857ee0b4dcc149}\label{structtgbot_1_1LabeledPrice_a74b5f4a9318055a17a857ee0b4dcc149}} 
+\index{tgbot::LabeledPrice@{tgbot::LabeledPrice}!LabeledPrice@{LabeledPrice}}
+\index{LabeledPrice@{LabeledPrice}!tgbot::LabeledPrice@{tgbot::LabeledPrice}}
+\doxysubsubsection{\texorpdfstring{LabeledPrice()}{LabeledPrice()}}
+{\footnotesize\ttfamily tgbot\+::\+Labeled\+Price\+::\+Labeled\+Price (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1LabeledPrice_a86d4be95b7e2ca3e985ed9034f867482}\label{structtgbot_1_1LabeledPrice_a86d4be95b7e2ca3e985ed9034f867482}} 
+\index{tgbot::LabeledPrice@{tgbot::LabeledPrice}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::LabeledPrice@{tgbot::LabeledPrice}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Labeled\+Price\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structtgbot_1_1LabeledPrice_a24eb48cc7d7818bb41bb78a80a6c11bb}\label{structtgbot_1_1LabeledPrice_a24eb48cc7d7818bb41bb78a80a6c11bb}} 
+\index{tgbot::LabeledPrice@{tgbot::LabeledPrice}!amount@{amount}}
+\index{amount@{amount}!tgbot::LabeledPrice@{tgbot::LabeledPrice}}
+\doxysubsubsection{\texorpdfstring{amount}{amount}}
+{\footnotesize\ttfamily tgbot\+::\+Labeled\+Price\+::amount}
+
+
+
+Price of the product in the smallest units of the currency (integer, not float/double). 
+
+For example, for a price of US\$ 1.\+45 pass amount = 145.
+
+See the exp parameter in currencies.\+json, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Labeled\+Price.\+h\item 
+src/types/Labeled\+Price.\+cpp\end{DoxyCompactItemize}

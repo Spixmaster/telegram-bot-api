@@ -1,0 +1,108 @@
+\hypertarget{structtgbot_1_1MaskPosition}{}\doxysection{tgbot\+::Mask\+Position Struct Reference}
+\label{structtgbot_1_1MaskPosition}\index{tgbot::MaskPosition@{tgbot::MaskPosition}}
+
+
+This object describes the position on faces where a mask should be placed by default.  
+
+
+
+
+{\ttfamily \#include $<$Mask\+Position.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1MaskPosition_af46ab6797acfdb98a83ca243d9d60087}\label{structtgbot_1_1MaskPosition_af46ab6797acfdb98a83ca243d9d60087}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtgbot_1_1MaskPosition}{Mask\+Position}} $>$ \mbox{\hyperlink{structtgbot_1_1MaskPosition_af46ab6797acfdb98a83ca243d9d60087}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtgbot_1_1MaskPosition_a2858a0f45b10e4eeb27c609f30740d71}{Mask\+Position}} (const std\+::string \&json)
+\item 
+std\+::string \mbox{\hyperlink{structtgbot_1_1MaskPosition_a69bad052bd3b7fb6010b963fb5e49550}{parse\+\_\+to\+\_\+json}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Converts itself into a J\+S\+ON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtgbot_1_1MaskPosition_a826380dd0be6d235b972dbb2426e6c3c}\label{structtgbot_1_1MaskPosition_a826380dd0be6d235b972dbb2426e6c3c}} 
+std\+::string \mbox{\hyperlink{structtgbot_1_1MaskPosition_a826380dd0be6d235b972dbb2426e6c3c}{point}}
+\begin{DoxyCompactList}\small\item\em The part of the face relative to which the mask should be placed. One of “forehead”, “eyes”, “mouth”, or “chin”. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structtgbot_1_1MaskPosition_a868b83831fbfe28c555d5e3be1b1b8ac}{x\+\_\+shift}}
+\begin{DoxyCompactList}\small\item\em Shift by X-\/axis measured in widths of the mask scaled to the face size, from left to right. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structtgbot_1_1MaskPosition_a5c951604153fc2157e97404d29b15b48}{y\+\_\+shift}}
+\begin{DoxyCompactList}\small\item\em Shift by Y-\/axis measured in heights of the mask scaled to the face size, from top to bottom. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structtgbot_1_1MaskPosition_a30b37d42084fdd048370651ac460218e}{scale}}
+\begin{DoxyCompactList}\small\item\em Mask scaling coefficient. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object describes the position on faces where a mask should be placed by default. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtgbot_1_1MaskPosition_a2858a0f45b10e4eeb27c609f30740d71}\label{structtgbot_1_1MaskPosition_a2858a0f45b10e4eeb27c609f30740d71}} 
+\index{tgbot::MaskPosition@{tgbot::MaskPosition}!MaskPosition@{MaskPosition}}
+\index{MaskPosition@{MaskPosition}!tgbot::MaskPosition@{tgbot::MaskPosition}}
+\doxysubsubsection{\texorpdfstring{MaskPosition()}{MaskPosition()}}
+{\footnotesize\ttfamily tgbot\+::\+Mask\+Position\+::\+Mask\+Position (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em json} & The proper J\+S\+ON object from which this struct is constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtgbot_1_1MaskPosition_a69bad052bd3b7fb6010b963fb5e49550}\label{structtgbot_1_1MaskPosition_a69bad052bd3b7fb6010b963fb5e49550}} 
+\index{tgbot::MaskPosition@{tgbot::MaskPosition}!parse\_to\_json@{parse\_to\_json}}
+\index{parse\_to\_json@{parse\_to\_json}!tgbot::MaskPosition@{tgbot::MaskPosition}}
+\doxysubsubsection{\texorpdfstring{parse\_to\_json()}{parse\_to\_json()}}
+{\footnotesize\ttfamily std\+::string tgbot\+::\+Mask\+Position\+::parse\+\_\+to\+\_\+json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Converts itself into a J\+S\+ON object. 
+
+\begin{DoxyReturn}{Returns}
+The J\+S\+ON object. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structtgbot_1_1MaskPosition_a30b37d42084fdd048370651ac460218e}\label{structtgbot_1_1MaskPosition_a30b37d42084fdd048370651ac460218e}} 
+\index{tgbot::MaskPosition@{tgbot::MaskPosition}!scale@{scale}}
+\index{scale@{scale}!tgbot::MaskPosition@{tgbot::MaskPosition}}
+\doxysubsubsection{\texorpdfstring{scale}{scale}}
+{\footnotesize\ttfamily tgbot\+::\+Mask\+Position\+::scale}
+
+
+
+Mask scaling coefficient. 
+
+For example, 2.\+0 means double size. \mbox{\Hypertarget{structtgbot_1_1MaskPosition_a868b83831fbfe28c555d5e3be1b1b8ac}\label{structtgbot_1_1MaskPosition_a868b83831fbfe28c555d5e3be1b1b8ac}} 
+\index{tgbot::MaskPosition@{tgbot::MaskPosition}!x\_shift@{x\_shift}}
+\index{x\_shift@{x\_shift}!tgbot::MaskPosition@{tgbot::MaskPosition}}
+\doxysubsubsection{\texorpdfstring{x\_shift}{x\_shift}}
+{\footnotesize\ttfamily tgbot\+::\+Mask\+Position\+::x\+\_\+shift}
+
+
+
+Shift by X-\/axis measured in widths of the mask scaled to the face size, from left to right. 
+
+For example, choosing -\/1.\+0 will place mask just to the left of the default mask position. \mbox{\Hypertarget{structtgbot_1_1MaskPosition_a5c951604153fc2157e97404d29b15b48}\label{structtgbot_1_1MaskPosition_a5c951604153fc2157e97404d29b15b48}} 
+\index{tgbot::MaskPosition@{tgbot::MaskPosition}!y\_shift@{y\_shift}}
+\index{y\_shift@{y\_shift}!tgbot::MaskPosition@{tgbot::MaskPosition}}
+\doxysubsubsection{\texorpdfstring{y\_shift}{y\_shift}}
+{\footnotesize\ttfamily tgbot\+::\+Mask\+Position\+::y\+\_\+shift}
+
+
+
+Shift by Y-\/axis measured in heights of the mask scaled to the face size, from top to bottom. 
+
+For example, 1.\+0 will place the mask just below the default mask position. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/types/Mask\+Position.\+h\item 
+src/types/Mask\+Position.\+cpp\end{DoxyCompactItemize}

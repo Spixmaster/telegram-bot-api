@@ -1,0 +1,1956 @@
+\hypertarget{classtgbot_1_1Endpoints}{}\doxysection{tgbot\+::Endpoints Class Reference}
+\label{classtgbot_1_1Endpoints}\index{tgbot::Endpoints@{tgbot::Endpoints}}
+
+
+Contains all endpoints for the Telegram \mbox{\hyperlink{classtgbot_1_1Bot}{Bot}} A\+PI.  
+
+
+
+
+{\ttfamily \#include $<$Endpoints.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a55d868d023b0c505a0710679e3aa32af}\label{classtgbot_1_1Endpoints_a55d868d023b0c505a0710679e3aa32af}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classtgbot_1_1Endpoints}{Endpoints}} $>$ \mbox{\hyperlink{classtgbot_1_1Endpoints_a55d868d023b0c505a0710679e3aa32af}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtgbot_1_1Endpoints_ac6bc2ff85243f972f2a7a0ca89968347}{Endpoints}} (const std\+::string \&token)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1Update_a06a3ed3b3a20201c5a3dc2b9325eb524}{Update\+::ptr}} $>$ \mbox{\hyperlink{classtgbot_1_1Endpoints_aecbf0ab9aec71595f83b1fbe048c89e7}{get\+Updates}} (const int \&offset, const int \&limit=100, const int \&timeout=0, const std\+::vector$<$ std\+::string $>$ \&allowed\+\_\+updates=std\+::vector$<$ std\+::string $>$()) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to receive incoming updates using long polling (wiki). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_a3c42feb6c4641125b419d8d7c82b9b42}{set\+Webhook}} (const std\+::string \&url, const tools\+::\+Input\+File\+::ptr \&certificate=std\+::make\+\_\+shared$<$ tools\+::\+Input\+File $>$(\char`\"{}\char`\"{}), const int \&max\+\_\+connections=40, const std\+::vector$<$ std\+::string $>$ \&allowed\+\_\+updates=std\+::vector$<$ std\+::string $>$()) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to specify a url and receive incoming updates via an outgoing webhook. Whenever there is an update for the bot, we will send an H\+T\+T\+PS P\+O\+ST request to the specified url, containing a J\+S\+O\+N-\/serialized \mbox{\hyperlink{structtgbot_1_1Update}{Update}}. In case of an unsuccessful request, we will give up after a reasonable amount of attempts. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_a8e299960176241eda6b883ba04e36cdc}{delete\+Webhook}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to remove webhook integration if you decide to switch back to get\+Updates. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1WebhookInfo_a5c082e97e0d51c1ee3298475a475b114}{Webhook\+Info\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_ae8cb9e52af8ccabeb090538d4246c85f}{get\+Webhook\+Info}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to get current webhook status. Requires no parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1User_a9c48e6206c4f8f4ed3ae7ee2ce9ac395}{User\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_a1ef940443b28731442da6586da74f6c8}{get\+Me}} () const noexcept
+\begin{DoxyCompactList}\small\item\em A simple method for testing your bot\textquotesingle{}s auth token. Requires no parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_a8536eaffc3f82776f3d5c7c2c83941bd}{send\+Message}} (const long long \&chat\+\_\+id, const std\+::string \&text, const std\+::string \&parse\+\_\+mode=\char`\"{}\char`\"{}, const bool \&disable\+\_\+web\+\_\+page\+\_\+preview=true, const bool \&disable\+\_\+notification=false, const int \&reply\+\_\+to\+\_\+message\+\_\+id=0, const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&reply\+\_\+markup=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{structtgbot_1_1Reply}{Reply}} $>$()) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to send text messages. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_afa7a4a1374fa5772f0ac582690df50ba}{forward\+Message}} (const long long \&chat\+\_\+id, const long long \&from\+\_\+chat\+\_\+id, const int \&message\+\_\+id, const bool \&disable\+\_\+notification=false) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to forward messages of any kind. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_a7afe27f348cefe989f94cdf1a2ad797f}{send\+Photo}} (const long long \&chat\+\_\+id, const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&photo, const std\+::string \&caption=\char`\"{}\char`\"{}, const std\+::string \&parse\+\_\+mode=\char`\"{}\char`\"{}, const bool \&disable\+\_\+notification=false, const int \&reply\+\_\+to\+\_\+message\+\_\+id=0, const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&reply\+\_\+markup=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{structtgbot_1_1Reply}{Reply}} $>$()) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to send photos. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_abb5c6e65150ab97d045531b7b3208c49}{send\+Audio}} (const long long \&chat\+\_\+id, const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&audio, const std\+::string \&caption=\char`\"{}\char`\"{}, const std\+::string \&parse\+\_\+mode=\char`\"{}\char`\"{}, const int \&duration=0, const std\+::string \&performer=\char`\"{}\char`\"{}, const std\+::string \&title=\char`\"{}\char`\"{}, const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&thumb=\char`\"{}\char`\"{}, const bool \&disable\+\_\+notification=false, const int \&reply\+\_\+to\+\_\+message\+\_\+id=0, const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&reply\+\_\+markup=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{structtgbot_1_1Reply}{Reply}} $>$()) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to send audio files, if you want Telegram clients to display them in the music player. Your audio must be in the .M\+P3 or .M4A format. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_a9cd21f224bedc322e19c0ae2cb17322c}{send\+Document}} (const long long \&chat\+\_\+id, const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&document, const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&thumb=\char`\"{}\char`\"{}, const std\+::string \&caption=\char`\"{}\char`\"{}, const std\+::string \&parse\+\_\+mode=\char`\"{}\char`\"{}, const bool \&disable\+\_\+notification=false, const int \&reply\+\_\+to\+\_\+message\+\_\+id=0, const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&reply\+\_\+markup=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{structtgbot_1_1Reply}{Reply}} $>$()) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to send general files. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_af4320a41f2036df0fe972040e7a224fa}{send\+Video}} (const long long \&chat\+\_\+id, const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&video, const int \&duration=0, const int \&width=0, const int \&height=0, const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&thumb=\char`\"{}\char`\"{}, const std\+::string \&caption=\char`\"{}\char`\"{}, const std\+::string \&parse\+\_\+mode=\char`\"{}\char`\"{}, const bool \&supports\+\_\+streaming=false, const bool \&disable\+\_\+notification=false, const int \&reply\+\_\+to\+\_\+message\+\_\+id=0, const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&reply\+\_\+markup=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{structtgbot_1_1Reply}{Reply}} $>$()) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to send video files, Telegram clients support mp4 videos (other formats may be sent as \mbox{\hyperlink{structtgbot_1_1Document}{Document}}). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_af29050bc7048f43d42ccab437680f595}{send\+Animation}} (const long long \&chat\+\_\+id, const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&animation, const int \&duration=0, const int \&width=0, const int \&height=0, const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&thumb=\char`\"{}\char`\"{}, const std\+::string \&caption=\char`\"{}\char`\"{}, const std\+::string \&parse\+\_\+mode=\char`\"{}\char`\"{}, const bool \&disable\+\_\+notification=false, const int \&reply\+\_\+to\+\_\+message\+\_\+id=0, const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&reply\+\_\+markup=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{structtgbot_1_1Reply}{Reply}} $>$()) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to send animation files (G\+IF or H.\+264/\+M\+P\+E\+G-\/4 A\+VC video without sound). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_af17dfcd48321b2df670d4ae76af8a352}{send\+Voice}} (const long long \&chat\+\_\+id, const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&voice, const std\+::string \&caption=\char`\"{}\char`\"{}, const std\+::string \&parse\+\_\+mode=\char`\"{}\char`\"{}, const int \&duration=0, const bool \&disable\+\_\+notification=false, const int \&reply\+\_\+to\+\_\+message\+\_\+id=0, const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&reply\+\_\+markup=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{structtgbot_1_1Reply}{Reply}} $>$()) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to send audio files, if you want Telegram clients to display the file as a playable voice message. For this to work, your audio must be in an .O\+GG file encoded with O\+P\+US (other formats may be sent as \mbox{\hyperlink{structtgbot_1_1Audio}{Audio}} or \mbox{\hyperlink{structtgbot_1_1Document}{Document}}). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_ae0321078f696a54f43d94023d9fa0b49}{send\+Video\+Note}} (const long long \&chat\+\_\+id, const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&video\+\_\+note, const int \&duration=0, const int \&length=0, const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&thumb=\char`\"{}\char`\"{}, const bool \&disable\+\_\+notification=false, const int \&reply\+\_\+to\+\_\+message\+\_\+id=0, const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&reply\+\_\+markup=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{structtgbot_1_1Reply}{Reply}} $>$()) const noexcept
+\begin{DoxyCompactList}\small\item\em As of v.\+4.\+0, Telegram clients support rounded square mp4 videos of up to 1 minute long. Use this method to send video messages. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} $>$ \mbox{\hyperlink{classtgbot_1_1Endpoints_a4d21c9850027faade5e767c0052b6b79}{send\+Media\+Group}} (const long long \&chat\+\_\+id, const std\+::vector$<$ std\+::variant$<$ \mbox{\hyperlink{structtgbot_1_1InputMediaPhoto_a325ae4c1bd64b2b32c46e3fd06dec2a8}{Input\+Media\+Photo\+::ptr}}, \mbox{\hyperlink{structtgbot_1_1InputMediaVideo_a01c5aa02baa136d4b4e41716890cfac2}{Input\+Media\+Video\+::ptr}} $>$$>$ \&media, const bool \&disable\+\_\+notification=false, const int \&reply\+\_\+to\+\_\+message\+\_\+id=0) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to send a group of photos or videos as an album. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_ae999d6274b8e34abd4d121a7837b222d}{send\+Location}} (const long long \&chat\+\_\+id, const float \&latitude, const float \&longitude, const int \&live\+\_\+period=0, const bool \&disable\+\_\+notification=false, const int \&reply\+\_\+to\+\_\+message\+\_\+id=0, const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&reply\+\_\+markup=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{structtgbot_1_1Reply}{Reply}} $>$()) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to send point on the map. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_a2f51006468f29aca80e6853fce15e7cc}{edit\+Message\+Live\+Location}} (const float \&latitude, const float \&longitude, const long long \&chat\+\_\+id=0, const int \&message\+\_\+id=0, const std\+::string \&inline\+\_\+message\+\_\+id=\char`\"{}\char`\"{}, const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&reply\+\_\+markup=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{structtgbot_1_1Reply}{Reply}} $>$()) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to edit live location messages. A location can be edited until its live\+\_\+period expires or editing is explicitly disabled by a call to stop\+Message\+Live\+Location. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_a2191556f478a3e2d0d51416f05c03851}{stop\+Message\+Live\+Location}} (const long long \&chat\+\_\+id=0, const int \&message\+\_\+id=0, const std\+::string \&inline\+\_\+message\+\_\+id=\char`\"{}\char`\"{}, const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&reply\+\_\+markup=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{structtgbot_1_1Reply}{Reply}} $>$()) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to stop updating a live location message before live\+\_\+period expires. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_ac51a01a4d65a949ae69427c746d648f6}{send\+Venue}} (const long long \&chat\+\_\+id, const float \&latitude, const float \&longitude, const std\+::string \&title, const std\+::string \&address, const std\+::string \&foursquare\+\_\+id=\char`\"{}\char`\"{}, const std\+::string \&foursquare\+\_\+type=\char`\"{}\char`\"{}, const bool \&disable\+\_\+notification=false, const int \&reply\+\_\+to\+\_\+message\+\_\+id=0, const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&reply\+\_\+markup=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{structtgbot_1_1Reply}{Reply}} $>$()) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to send information about a venue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_a5e390a1a0c68b390db1ab152ca1bb66a}{send\+Contact}} (const long long \&chat\+\_\+id, const std\+::string \&phone\+\_\+number, const std\+::string \&first\+\_\+name, const std\+::string \&last\+\_\+name=\char`\"{}\char`\"{}, const std\+::string \&vcard=\char`\"{}\char`\"{}, const bool \&disable\+\_\+notification=false, const int \&reply\+\_\+to\+\_\+message\+\_\+id=0, const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&reply\+\_\+markup=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{structtgbot_1_1Reply}{Reply}} $>$()) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to send phone contacts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_a1fdb993098d0a32753cb53ebafcfbd04}{send\+Poll}} (const long long \&chat\+\_\+id, const std\+::string \&question, const std\+::vector$<$ std\+::string $>$ \&options, const bool \&is\+\_\+anonymous=true, const std\+::string \&type=\char`\"{}regular\char`\"{}, const bool \&allows\+\_\+multiple\+\_\+answers=false, const int \&correct\+\_\+option\+\_\+id=-\/1, const std\+::string \&explanation=\char`\"{}\char`\"{}, const std\+::string \&explanation\+\_\+parse\+\_\+mode=\char`\"{}\char`\"{}, const int \&open\+\_\+period=-\/1, const int \&close\+\_\+date=-\/1, const bool \&is\+\_\+closed=false, const bool \&disable\+\_\+notification=false, const int \&reply\+\_\+to\+\_\+message\+\_\+id=0, const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&reply\+\_\+markup=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{structtgbot_1_1Reply}{Reply}} $>$()) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to send a native poll. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_ad1ef212c9cc509f1ca049d982d28745e}{send\+Dice}} (const long long \&chat\+\_\+id, const std\+::string \&emoji=\char`\"{}\char`\"{}, const bool \&disable\+\_\+notification=false, const int \&reply\+\_\+to\+\_\+message\+\_\+id=-\/1, const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&reply\+\_\+markup=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{structtgbot_1_1Reply}{Reply}} $>$()) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to send a dice, which will have a random value from 1 to 6. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_ac89a1e2064d2fd990b1f4e3cfa3673ea}{send\+Chat\+Action}} (const long long \&chat\+\_\+id, const std\+::string \&action) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method when you need to tell the user that something is happening on the bot\textquotesingle{}s side. The status is set for 5 seconds or less (when a message arrives from your bot, Telegram clients clear its typing status). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1UserProfilePhotos_ac2ea099e28236cea3da134bed495e3e0}{User\+Profile\+Photos\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_abefec1adccfc94bb5c1bf8ae9a5af315}{get\+User\+Profile\+Photos}} (const int \&user\+\_\+id, const int \&offset=0, const int \&limit=100) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to get a list of profile pictures for a user. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1File_a35d5b6b40400f685260e6bf076a07a83}{File\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_ab8a2cf6f4fd0a3c391fa52cc6b6bb8c2}{get\+File}} (const std\+::string \&file\+\_\+id) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to get basic info about a file and prepare it for downloading. For the moment, bots can download files of up to 20MB in size. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_afd701b46b9bc4f577346caac7125ccc0}{kick\+Chat\+Member}} (const long long \&chat\+\_\+id, const int \&user\+\_\+id, const int \&until\+\_\+date=0) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to kick a user from a group, a supergroup or a channel. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_a96634a7225c87c2112a9bc8d89603ea3}{unban\+Chat\+Member}} (const long long \&chat\+\_\+id, const int \&user\+\_\+id) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to unban a previously kicked user in a supergroup or channel. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_a85746894ef28b78360b26b3d41ae2dbb}{restrict\+Chat\+Member}} (const long long \&chat\+\_\+id, const int \&user\+\_\+id, const \mbox{\hyperlink{structtgbot_1_1ChatPermissions_a8f5fa042fc3b71bc3679fe874d33de78}{Chat\+Permissions\+::ptr}} \&permissions, const int \&until\+\_\+date=0) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to restrict a user in a supergroup. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_ae7c71e1cda9bf688fdfd9a6391bb2c28}{promote\+Chat\+Member}} (const long long \&chat\+\_\+id, const int \&user\+\_\+id, const bool \&can\+\_\+change\+\_\+info, const bool \&can\+\_\+post\+\_\+messages, const bool \&can\+\_\+edit\+\_\+messages, const bool \&can\+\_\+delete\+\_\+messages, const bool \&can\+\_\+invite\+\_\+users, const bool \&can\+\_\+restrict\+\_\+members, const bool \&can\+\_\+pin\+\_\+messages, const bool \&can\+\_\+promote\+\_\+members) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to promote or demote a user in a supergroup or a channel. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_aff07c8b09f6727f8883d4845b83d682d}{set\+Chat\+Administrator\+Custom\+Title}} (const long long \&chat\+\_\+id, const int \&user\+\_\+id, const std\+::string \&custom\+\_\+title) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to set a custom title for an administrator in a supergroup promoted by the bot. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_a4537d40a3e3e801f5a1b132c15ddc12b}{set\+Chat\+Permissions}} (const long long \&chat\+\_\+id, const \mbox{\hyperlink{structtgbot_1_1ChatPermissions_a8f5fa042fc3b71bc3679fe874d33de78}{Chat\+Permissions\+::ptr}} \&permissions) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to set default chat permissions for all members. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_aaec2b913abe914590b6c6c72e851199a}{export\+Chat\+Invite\+Link}} (const long long \&chat\+\_\+id) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to generate a new invite link for a chat; any previously generated link is revoked. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_a471936bd42bb0ed18d9dc2dbdd2b7633}{set\+Chat\+Photo}} (const long long \&chat\+\_\+id, const tools\+::\+Input\+File\+::ptr \&photo) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to set a new profile photo for the chat. Photos can\textquotesingle{}t be changed for private chats. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_a2812241e039d2449e82c1833e6fb0102}{delete\+Chat\+Photo}} (const long long \&chat\+\_\+id) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to delete a chat photo. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_af67a940bf2dd69d93f93fc1733b0fce3}{set\+Chat\+Title}} (const long long \&chat\+\_\+id, const std\+::string \&title) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to change the title of a chat. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_a9a6c25e624afd67b9419ba3eff660cbb}{set\+Chat\+Description}} (const long long \&chat\+\_\+id, const std\+::string \&description=\char`\"{}\char`\"{}) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to change the description of a group, a supergroup or a channel. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_ac339ea9dacf571ad715c667390b3cba0}{pin\+Chat\+Message}} (const long long \&chat\+\_\+id, const int \&message\+\_\+id, const bool \&disable\+\_\+notification=false) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to pin a message in a group, a supergroup, or a channel. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_a07f0d99d66087cf744bf8b90b16892ef}{unpin\+Chat\+Message}} (const long long \&chat\+\_\+id) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to unpin a message in a group, a supergroup, or a channel. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_a4b6f684894510b81b6b64265f7fbbb5e}{leave\+Chat}} (const long long \&chat\+\_\+id) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method for your bot to leave a group, supergroup or channel. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1Chat_a96eb00f4faf12b035e393798a0503e26}{Chat\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_ae7057ddb7c815f797f3f0350ffecd174}{get\+Chat}} (const long long \&chat\+\_\+id) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to get up to date information about the chat (current name of the user for one-\/on-\/one conversations, current username of a user, group or channel, etc.). \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1ChatMember_aa5b117fad1c3f29d5b100488139544bb}{Chat\+Member\+::ptr}} $>$ \mbox{\hyperlink{classtgbot_1_1Endpoints_a5076a80585aebd067432233e5d6df87c}{get\+Chat\+Administrators}} (const long long \&chat\+\_\+id) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to get a list of administrators in a chat. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classtgbot_1_1Endpoints_a9672476688e5a818821cac97bac8361f}{get\+Chat\+Members\+Count}} (const long long \&chat\+\_\+id) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to get the number of members in a chat. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1ChatMember_aa5b117fad1c3f29d5b100488139544bb}{Chat\+Member\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_adf221bd1b7e2a23f270e56c4602d2423}{get\+Chat\+Member}} (const long long \&chat\+\_\+id, const int \&user\+\_\+id) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to get information about a member of a chat. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_a17cd42c0a049b40ba782c55c6ef543f2}{set\+Chat\+Sticker\+Set}} (const long long \&chat\+\_\+id, const std\+::string \&sticker\+\_\+set\+\_\+name) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to set a new group sticker set for a supergroup. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_a4fc1c6fd9cef023abbdb93549a70c90e}{delete\+Chat\+Sticker\+Set}} (const long long \&chat\+\_\+id) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to delete a group sticker set from a supergroup. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_a25abb982e69ddb6f00db687d133d3742}{answer\+Callback\+Query}} (const std\+::string \&callback\+\_\+query\+\_\+id, const std\+::string \&text=\char`\"{}\char`\"{}, const bool \&show\+\_\+alert=false, const std\+::string \&url=\char`\"{}\char`\"{}, const int \&cache\+\_\+time=0) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to send answers to callback queries sent from inline keyboards. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_a182a7b565a87580958905b7d176e1d4f}{set\+My\+Commands}} (const std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1BotCommand_aaaa346b7d4216ba576b1a213470bff22}{Bot\+Command\+::ptr}} $>$ commands) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to change the list of the bot\textquotesingle{}s commands. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1BotCommand_aaaa346b7d4216ba576b1a213470bff22}{Bot\+Command\+::ptr}} $>$ \mbox{\hyperlink{classtgbot_1_1Endpoints_acaef927075c7dd3c727aa7b4d74e5c4a}{get\+My\+Commands}} (const std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1BotCommand_aaaa346b7d4216ba576b1a213470bff22}{Bot\+Command\+::ptr}} $>$ commands) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to get the current list of the bot\textquotesingle{}s commands. Requires no parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_a609582469028cfa4c992d89fc64f5bd7}{edit\+Message\+Text}} (const std\+::string \&text, const long long \&chat\+\_\+id=0, const int \&message\+\_\+id=0, const std\+::string \&inline\+\_\+message\+\_\+id=\char`\"{}\char`\"{}, const std\+::string \&parse\+\_\+mode=\char`\"{}\char`\"{}, const bool \&disable\+\_\+web\+\_\+page\+\_\+preview=false, const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} reply\+\_\+markup=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{structtgbot_1_1Reply}{Reply}} $>$()) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to edit text and game messages. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_a00d6f3816558b36760cd427a01845414}{edit\+Message\+Caption}} (const long long \&chat\+\_\+id=0, const int \&message\+\_\+id=0, const std\+::string \&inline\+\_\+message\+\_\+id=\char`\"{}\char`\"{}, const std\+::string \&caption=0, const std\+::string \&parse\+\_\+mode=\char`\"{}\char`\"{}, const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} reply\+\_\+markup=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{structtgbot_1_1Reply}{Reply}} $>$()) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to edit captions of messages. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_a1903c7e00bd2f3cb42b0536d1e09cfe2}{edit\+Message\+Media}} (const std\+::variant$<$ \mbox{\hyperlink{structtgbot_1_1InputMediaAnimation_ac7d9921499b6a0fa259dcb4e03b88fae}{Input\+Media\+Animation\+::ptr}}, \mbox{\hyperlink{structtgbot_1_1InputMediaAudio_aeac5a6914fdee96f653d7be72f2fac4c}{Input\+Media\+Audio\+::ptr}}, \mbox{\hyperlink{structtgbot_1_1InputMediaDocument_ab6f2d0acb8955973ce394197e8e064ba}{Input\+Media\+Document\+::ptr}}, \mbox{\hyperlink{structtgbot_1_1InputMediaPhoto_a325ae4c1bd64b2b32c46e3fd06dec2a8}{Input\+Media\+Photo\+::ptr}}, \mbox{\hyperlink{structtgbot_1_1InputMediaVideo_a01c5aa02baa136d4b4e41716890cfac2}{Input\+Media\+Video\+::ptr}} $>$ \&media, const long long \&chat\+\_\+id=0, const int \&message\+\_\+id=0, const std\+::string \&inline\+\_\+message\+\_\+id=\char`\"{}\char`\"{}, const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} reply\+\_\+markup=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{structtgbot_1_1Reply}{Reply}} $>$()) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to edit animation, audio, document, photo, or video messages. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_ab271250358b632c3cde391870ef35574}{edit\+Message\+Reply\+Markup}} (const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&reply\+\_\+markup, const long long \&chat\+\_\+id=0, const int \&message\+\_\+id=0, const std\+::string \&inline\+\_\+message\+\_\+id=\char`\"{}\char`\"{}) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to edit only the reply markup of messages. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1Poll_ae965b6a7bf1b4d98765c38a5255eb51c}{Poll\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_aec31c86958a5b8a1fbdab9c270638ae1}{stop\+Poll}} (const long long \&chat\+\_\+id, const int \&message\+\_\+id, const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} reply\+\_\+markup=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{structtgbot_1_1Reply}{Reply}} $>$()) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to stop a poll which was sent by the bot. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_a706e09389e44c7877515eaed9f71298a}{delete\+Message}} (const long long \&chat\+\_\+id, const int \&message\+\_\+id) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to delete a message, including service messages, with the following limitations\+: \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_a94a886aaeb5eabbf67ba66407925ca1a}{send\+Sticker}} (const long long \&chat\+\_\+id, const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&sticker, const bool \&disable\+\_\+notification=false, const int \&reply\+\_\+to\+\_\+message\+\_\+id=0, const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&reply\+\_\+markup=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{structtgbot_1_1Reply}{Reply}} $>$()) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to send static .W\+E\+BP or animated .T\+GS stickers. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1StickerSet_a538e65813bf8a63c9958484a7098db1b}{Sticker\+Set\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_a87284fca9e392e71aeadcaf6436de107}{get\+Sticker\+Set}} (const std\+::string \&name) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to get a sticker set. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1File_a35d5b6b40400f685260e6bf076a07a83}{File\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_a964caa9fb19bb5f0b7da43be38584f06}{upload\+Sticker\+File}} (const int \&user\+\_\+id, const tools\+::\+Input\+File\+::ptr \&png\+\_\+sticker) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to upload a .P\+NG file with a sticker for later use in create\+New\+Sticker\+Set and add\+Sticker\+To\+Set methods (can be used multiple times). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_ae228397ee24ab1398cd1c45cb7dafa42}{create\+New\+Sticker\+Set}} (const int \&user\+\_\+id, const std\+::string \&name, const std\+::string \&title, const std\+::string \&emojis, const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&png\+\_\+sticker=\char`\"{}\char`\"{}, const tools\+::\+Input\+File\+::ptr tgs\+\_\+sticker=std\+::make\+\_\+shared$<$ tools\+::\+Input\+File $>$(\char`\"{}\char`\"{}), const bool \&contains\+\_\+mask=false, const \mbox{\hyperlink{structtgbot_1_1MaskPosition_af46ab6797acfdb98a83ca243d9d60087}{Mask\+Position\+::ptr}} \&mask\+\_\+position=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{structtgbot_1_1MaskPosition}{Mask\+Position}} $>$()) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to create a new sticker set owned by a user. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_a1911e98107eba08e1cd990567da6c5c0}{add\+Sticker\+To\+Set}} (const int \&user\+\_\+id, const std\+::string \&name, const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&png\+\_\+sticker, const std\+::string \&emojis, const tools\+::\+Input\+File\+::ptr tgs\+\_\+sticker=std\+::make\+\_\+shared$<$ tools\+::\+Input\+File $>$(\char`\"{}\char`\"{}), const \mbox{\hyperlink{structtgbot_1_1MaskPosition_af46ab6797acfdb98a83ca243d9d60087}{Mask\+Position\+::ptr}} \&mask\+\_\+position=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{structtgbot_1_1MaskPosition}{Mask\+Position}} $>$()) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to add a new sticker to a set created by the bot. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_a9e5ee256129f83c9cce9da53084583f6}{set\+Sticker\+Position\+In\+Set}} (const std\+::string \&sticker, const int \&position) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to move a sticker in a set created by the bot to a specific position. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_a6820e33f472218ebd3d217db5065c826}{delete\+Sticker\+From\+Set}} (const std\+::string \&sticker) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to delete a sticker from a set created by the bot. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_a63b317292fe2e063238f1cfe83ad91fb}{set\+Sticker\+Set\+Thumb}} (const std\+::string \&name, const int \&user\+\_\+id, const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&thumb=\char`\"{}\char`\"{}) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to set the thumbnail of a sticker set. Animated thumbnails can be set for animated sticker sets only. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_ae05408d45290ba793c3c84722aaadfb1}{answer\+Inline\+Query}} (const std\+::string \&inline\+\_\+query\+\_\+id, const std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1InlineQueryResult_ab272cc95a340002e1a126d05d23338b2}{Inline\+Query\+Result\+::ptr}} $>$ \&results, const int \&cache\+\_\+time=300, const bool \&is\+\_\+personal=false, const std\+::string \&next\+\_\+offset=\char`\"{}\char`\"{}, const std\+::string \&switch\+\_\+pm\+\_\+text=\char`\"{}\char`\"{}, const std\+::string \&switch\+\_\+pm\+\_\+parameter=\char`\"{}\char`\"{}) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to send answers to an inline query. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_a01cf8140359344ac9639ea848f188648}{send\+Invoice}} (const long long \&chat\+\_\+id, const std\+::string \&title, const std\+::string \&description, const std\+::string \&payload, const std\+::string \&provider\+\_\+token, const std\+::string \&start\+\_\+parameter, const std\+::string \&currency, const std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1LabeledPrice_a99037ce7b76ba129896f3e69de04c0dc}{Labeled\+Price\+::ptr}} $>$ \&prices, const std\+::string \&provider\+\_\+data=\char`\"{}\char`\"{}, const std\+::string \&photo\+\_\+url=\char`\"{}\char`\"{}, const int \&photo\+\_\+size=0, const int \&photo\+\_\+width=0, const int \&photo\+\_\+height=0, const bool \&need\+\_\+name=false, const bool \&need\+\_\+phone\+\_\+number=false, const bool \&need\+\_\+email=false, const bool \&need\+\_\+shipping\+\_\+address=false, const bool \&send\+\_\+phone\+\_\+number\+\_\+to\+\_\+provider=false, const bool \&send\+\_\+email\+\_\+to\+\_\+provider=false, const bool \&is\+\_\+flexible=false, const bool \&disable\+\_\+notification=false, const int \&reply\+\_\+to\+\_\+message\+\_\+id=0, const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&reply\+\_\+markup=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{structtgbot_1_1Reply}{Reply}} $>$()) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to send invoices. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_a17c89285c87da30a5a83ef6bae91ef5c}{answer\+Shipping\+Query}} (const std\+::string \&shipping\+\_\+query\+\_\+id, const bool \&ok, const std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1ShippingOption_a1255ba7224a750f9a9655c42317554d1}{Shipping\+Option\+::ptr}} $>$ \&shipping\+\_\+options=std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1ShippingOption_a1255ba7224a750f9a9655c42317554d1}{Shipping\+Option\+::ptr}} $>$(), const std\+::string \&error\+\_\+message=\char`\"{}\char`\"{}) const noexcept
+\begin{DoxyCompactList}\small\item\em If you sent an invoice requesting a shipping address and the parameter is\+\_\+flexible was specified, the \mbox{\hyperlink{classtgbot_1_1Bot}{Bot}} A\+PI will send an \mbox{\hyperlink{structtgbot_1_1Update}{Update}} with a shipping\+\_\+query field to the bot. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_a201aac099a72621e97df7aba3acfb3a8}{answer\+Pre\+Checkout\+Query}} (const std\+::string \&pre\+\_\+checkout\+\_\+query\+\_\+id, const bool \&ok, const std\+::string \&error\+\_\+message=\char`\"{}\char`\"{}) const noexcept
+\begin{DoxyCompactList}\small\item\em Once the user has confirmed their payment and shipping details, the \mbox{\hyperlink{classtgbot_1_1Bot}{Bot}} A\+PI sends the final confirmation in the form of an \mbox{\hyperlink{structtgbot_1_1Update}{Update}} with the field pre\+\_\+checkout\+\_\+query. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_aaa354af3b05670c61db4bb42a0738518}{set\+Passport\+Data\+Errors}} (const int \&user\+\_\+id, const std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1PassportElementError_a2756b3339610b891e35da66ca45cc9dd}{Passport\+Element\+Error\+::ptr}} $>$ \&errors) const noexcept
+\begin{DoxyCompactList}\small\item\em Informs a user that some of the Telegram Passport elements they provided contains errors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_ad210af458d6c1a7633007fcfdfe780b8}{send\+Game}} (const long long \&chat\+\_\+id, const std\+::string \&game\+\_\+short\+\_\+name, const bool \&disable\+\_\+notification=false, const int \&reply\+\_\+to\+\_\+message\+\_\+id=0, const \mbox{\hyperlink{structtgbot_1_1InlineKeyboardMarkup_a6973beabdcfa398f58a1ad9bb74e6014}{Inline\+Keyboard\+Markup\+::ptr}} \&reply\+\_\+markup=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{structtgbot_1_1InlineKeyboardMarkup}{Inline\+Keyboard\+Markup}} $>$()) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to send a game. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_ae315895d5f19c4231ba8d8df1cd7aef4}{set\+Game\+Score}} (const int \&user\+\_\+id, const int \&score, const bool \&force=false, const bool \&disable\+\_\+edit\+\_\+message=false, const long long \&chat\+\_\+id=0, const int \&message\+\_\+id=0, const std\+::string \&inline\+\_\+message\+\_\+id=\char`\"{}\char`\"{}) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to set the score of the specified user in a game. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1GameHighScore_a239e8a6301f1c0b63bf321de84cb137b}{Game\+High\+Score\+::ptr}} $>$ \mbox{\hyperlink{classtgbot_1_1Endpoints_adaaba0fdef9e6bd89b9c9dc58e3d144d}{get\+Game\+High\+Scores}} (const int \&user\+\_\+id, const long long \&chat\+\_\+id=0, const int \&message\+\_\+id=0, const std\+::string \&inline\+\_\+message\+\_\+id=\char`\"{}\char`\"{}) const noexcept
+\begin{DoxyCompactList}\small\item\em Use this method to get data for high score tables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains all endpoints for the Telegram \mbox{\hyperlink{classtgbot_1_1Bot}{Bot}} A\+PI. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_ac6bc2ff85243f972f2a7a0ca89968347}\label{classtgbot_1_1Endpoints_ac6bc2ff85243f972f2a7a0ca89968347}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!Endpoints@{Endpoints}}
+\index{Endpoints@{Endpoints}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{Endpoints()}{Endpoints()}}
+{\footnotesize\ttfamily tgbot\+::\+Endpoints\+::\+Endpoints (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{token }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em token} & The token from the bot which is used for identification. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a1911e98107eba08e1cd990567da6c5c0}\label{classtgbot_1_1Endpoints_a1911e98107eba08e1cd990567da6c5c0}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!addStickerToSet@{addStickerToSet}}
+\index{addStickerToSet@{addStickerToSet}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{addStickerToSet()}{addStickerToSet()}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::add\+Sticker\+To\+Set (\begin{DoxyParamCaption}\item[{const int \&}]{user\+\_\+id,  }\item[{const std\+::string \&}]{name,  }\item[{const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&}]{png\+\_\+sticker,  }\item[{const std\+::string \&}]{emojis,  }\item[{const tools\+::\+Input\+File\+::ptr}]{tgs\+\_\+sticker = {\ttfamily std\+:\+:make\+\_\+shared$<$tools\+:\+:InputFile$>$(\char`\"{}\char`\"{})},  }\item[{const \mbox{\hyperlink{structtgbot_1_1MaskPosition_af46ab6797acfdb98a83ca243d9d60087}{Mask\+Position\+::ptr}} \&}]{mask\+\_\+position = {\ttfamily std\+:\+:make\+\_\+shared$<$\mbox{\hyperlink{structtgbot_1_1MaskPosition}{Mask\+Position}}$>$()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to add a new sticker to a set created by the bot. 
+
+You must use exactly one of the fields png\+\_\+sticker or tgs\+\_\+sticker. Animated stickers can be added to animated sticker sets and only to them.
+
+Animated sticker sets can have up to 50 stickers. Static sticker sets can have up to 120 stickers. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em user\+\_\+id} & \mbox{\hyperlink{structtgbot_1_1User}{User}} identifier of sticker set owner \\
+\hline
+\mbox{\texttt{ in}}  & {\em name} & \mbox{\hyperlink{structtgbot_1_1Sticker}{Sticker}} set name \\
+\hline
+\mbox{\texttt{ in}}  & {\em png\+\_\+sticker} & P\+NG image with the sticker, must be up to 512 kilobytes in size, dimensions must not exceed 512px, and either width or height must be exactly 512px. Pass a file\+\_\+id as a String to send a file that already exists on the Telegram servers, pass an H\+T\+TP U\+RL as a String for Telegram to get a file from the Internet, or upload a new one using multipart/form-\/data. \\
+\hline
+\mbox{\texttt{ in}}  & {\em emojis} & One or more emoji corresponding to the sticker \\
+\hline
+\mbox{\texttt{ in}}  & {\em tgs\+\_\+sticker} & T\+GS animation with the sticker, uploaded using multipart/form-\/data. See \href{https://core.telegram.org/animated_stickers\#technical-requirements}{\texttt{ https\+://core.\+telegram.\+org/animated\+\_\+stickers\#technical-\/requirements}} for technical requirements \\
+\hline
+\mbox{\texttt{ in}}  & {\em mask\+\_\+position} & A J\+S\+O\+N-\/serialized object for position where the mask should be placed on faces \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns True on success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a25abb982e69ddb6f00db687d133d3742}\label{classtgbot_1_1Endpoints_a25abb982e69ddb6f00db687d133d3742}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!answerCallbackQuery@{answerCallbackQuery}}
+\index{answerCallbackQuery@{answerCallbackQuery}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{answerCallbackQuery()}{answerCallbackQuery()}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::answer\+Callback\+Query (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{callback\+\_\+query\+\_\+id,  }\item[{const std\+::string \&}]{text = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const bool \&}]{show\+\_\+alert = {\ttfamily false},  }\item[{const std\+::string \&}]{url = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const int \&}]{cache\+\_\+time = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to send answers to callback queries sent from inline keyboards. 
+
+The answer will be displayed to the user as a notification at the top of the chat screen or as an alert.
+
+Alternatively, the user can be redirected to the specified \mbox{\hyperlink{structtgbot_1_1Game}{Game}} U\+RL. For this option to work, you must first create a game for your bot via @Botfather and accept the terms. Otherwise, you may use links like t.\+me/your\+\_\+bot?start=X\+X\+XX that open your bot with a parameter. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em callback\+\_\+query\+\_\+id} & Unique identifier for the query to be answered \\
+\hline
+\mbox{\texttt{ in}}  & {\em text} & Text of the notification. If not specified, nothing will be shown to the user, 0-\/200 characters \\
+\hline
+\mbox{\texttt{ in}}  & {\em show\+\_\+alert} & If true, an alert will be shown by the client instead of a notification at the top of the chat screen. Defaults to false. \\
+\hline
+\mbox{\texttt{ in}}  & {\em url} & U\+RL that will be opened by the user\textquotesingle{}s client. If you have created a \mbox{\hyperlink{structtgbot_1_1Game}{Game}} and accepted the conditions via @Botfather, specify the U\+RL that opens your game — note that this will only work if the query comes from a callback\+\_\+game button. Otherwise, you may use links like t.\+me/your\+\_\+bot?start=X\+X\+XX that open your bot with a parameter. \\
+\hline
+\mbox{\texttt{ in}}  & {\em cache\+\_\+time} & The maximum amount of time in seconds that the result of the callback query may be cached client-\/side. Telegram apps will support caching starting in version 3.\+14. Defaults to 0. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, True is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_ae05408d45290ba793c3c84722aaadfb1}\label{classtgbot_1_1Endpoints_ae05408d45290ba793c3c84722aaadfb1}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!answerInlineQuery@{answerInlineQuery}}
+\index{answerInlineQuery@{answerInlineQuery}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{answerInlineQuery()}{answerInlineQuery()}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::answer\+Inline\+Query (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{inline\+\_\+query\+\_\+id,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1InlineQueryResult_ab272cc95a340002e1a126d05d23338b2}{Inline\+Query\+Result\+::ptr}} $>$ \&}]{results,  }\item[{const int \&}]{cache\+\_\+time = {\ttfamily 300},  }\item[{const bool \&}]{is\+\_\+personal = {\ttfamily false},  }\item[{const std\+::string \&}]{next\+\_\+offset = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const std\+::string \&}]{switch\+\_\+pm\+\_\+text = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const std\+::string \&}]{switch\+\_\+pm\+\_\+parameter = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to send answers to an inline query. 
+
+No more than 50 results per query are allowed. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em inline\+\_\+query\+\_\+id} & Unique identifier for the answered query \\
+\hline
+\mbox{\texttt{ in}}  & {\em results} & A J\+S\+O\+N-\/serialized array of results for the inline query \\
+\hline
+\mbox{\texttt{ in}}  & {\em cache\+\_\+time} & The maximum amount of time in seconds that the result of the inline query may be cached on the server. Defaults to 300. \\
+\hline
+\mbox{\texttt{ in}}  & {\em is\+\_\+personal} & Pass True, if results may be cached on the server side only for the user that sent the query. By default, results may be returned to any user who sends the same query \\
+\hline
+\mbox{\texttt{ in}}  & {\em next\+\_\+offset} & Pass the offset that a client should send in the next query with the same text to receive more results. Pass an empty string if there are no more results or if you don‘t support pagination. Offset length can’t exceed 64 bytes. \\
+\hline
+\mbox{\texttt{ in}}  & {\em switch\+\_\+pm\+\_\+text} & If passed, clients will display a button with specified text that switches the user to a private chat with the bot and sends the bot a start message with the parameter switch\+\_\+pm\+\_\+parameter \\
+\hline
+\mbox{\texttt{ in}}  & {\em switch\+\_\+pm\+\_\+parameter} & Deep-\/linking parameter for the /start message sent to the bot when user presses the switch button. 1-\/64 characters, only A-\/Z, a-\/z, 0-\/9, \+\_\+ and -\/ are allowed. Example\+: An inline bot that sends You\+Tube videos can ask the user to connect the bot to their You\+Tube account to adapt search results accordingly. To do this, it displays a ‘\+Connect your You\+Tube account’ button above the results, or even before showing any. The user presses the button, switches to a private chat with the bot and, in doing so, passes a start parameter that instructs the bot to return an oauth link. Once done, the bot can offer a switch\+\_\+inline button so that the user can easily return to the chat where they wanted to use the bot\textquotesingle{}s inline capabilities. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, True is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a201aac099a72621e97df7aba3acfb3a8}\label{classtgbot_1_1Endpoints_a201aac099a72621e97df7aba3acfb3a8}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!answerPreCheckoutQuery@{answerPreCheckoutQuery}}
+\index{answerPreCheckoutQuery@{answerPreCheckoutQuery}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{answerPreCheckoutQuery()}{answerPreCheckoutQuery()}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::answer\+Pre\+Checkout\+Query (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{pre\+\_\+checkout\+\_\+query\+\_\+id,  }\item[{const bool \&}]{ok,  }\item[{const std\+::string \&}]{error\+\_\+message = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Once the user has confirmed their payment and shipping details, the \mbox{\hyperlink{classtgbot_1_1Bot}{Bot}} A\+PI sends the final confirmation in the form of an \mbox{\hyperlink{structtgbot_1_1Update}{Update}} with the field pre\+\_\+checkout\+\_\+query. 
+
+Use this method to respond to such pre-\/checkout queries. \begin{DoxyNote}{Note}
+The \mbox{\hyperlink{classtgbot_1_1Bot}{Bot}} A\+PI must receive an answer within 10 seconds after the pre-\/checkout query was sent. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pre\+\_\+checkout\+\_\+query\+\_\+id} & Unique identifier for the query to be answered \\
+\hline
+\mbox{\texttt{ in}}  & {\em ok} & Specify True if everything is alright (goods are available, etc.) and the bot is ready to proceed with the order. Use False if there are any problems. \\
+\hline
+\mbox{\texttt{ in}}  & {\em error\+\_\+message} & Required if ok is False. Error message in human readable form that explains the reason for failure to proceed with the checkout (e.\+g. \char`\"{}\+Sorry, somebody just bought the last of our amazing black T-\/shirts while you were busy filling out your payment details. Please choose a different color or garment!\char`\"{}). Telegram will display this message to the user. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, True is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a17c89285c87da30a5a83ef6bae91ef5c}\label{classtgbot_1_1Endpoints_a17c89285c87da30a5a83ef6bae91ef5c}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!answerShippingQuery@{answerShippingQuery}}
+\index{answerShippingQuery@{answerShippingQuery}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{answerShippingQuery()}{answerShippingQuery()}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::answer\+Shipping\+Query (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{shipping\+\_\+query\+\_\+id,  }\item[{const bool \&}]{ok,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1ShippingOption_a1255ba7224a750f9a9655c42317554d1}{Shipping\+Option\+::ptr}} $>$ \&}]{shipping\+\_\+options = {\ttfamily std\+:\+:vector$<$\mbox{\hyperlink{structtgbot_1_1ShippingOption_a1255ba7224a750f9a9655c42317554d1}{Shipping\+Option\+::ptr}}$>$()},  }\item[{const std\+::string \&}]{error\+\_\+message = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+If you sent an invoice requesting a shipping address and the parameter is\+\_\+flexible was specified, the \mbox{\hyperlink{classtgbot_1_1Bot}{Bot}} A\+PI will send an \mbox{\hyperlink{structtgbot_1_1Update}{Update}} with a shipping\+\_\+query field to the bot. 
+
+Use this method to reply to shipping queries. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em shipping\+\_\+query\+\_\+id} & Unique identifier for the query to be answered \\
+\hline
+\mbox{\texttt{ in}}  & {\em ok} & Specify True if delivery to the specified address is possible and False if there are any problems (for example, if delivery to the specified address is not possible) \\
+\hline
+\mbox{\texttt{ in}}  & {\em shipping\+\_\+options} & Required if ok is True. A J\+S\+O\+N-\/serialized array of available shipping options. \\
+\hline
+\mbox{\texttt{ in}}  & {\em error\+\_\+message} & Required if ok is False. Error message in human readable form that explains why it is impossible to complete the order (e.\+g. "Sorry, delivery to your desired address is unavailable\textquotesingle{}). Telegram will display this message to the user. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, True is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_ae228397ee24ab1398cd1c45cb7dafa42}\label{classtgbot_1_1Endpoints_ae228397ee24ab1398cd1c45cb7dafa42}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!createNewStickerSet@{createNewStickerSet}}
+\index{createNewStickerSet@{createNewStickerSet}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{createNewStickerSet()}{createNewStickerSet()}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::create\+New\+Sticker\+Set (\begin{DoxyParamCaption}\item[{const int \&}]{user\+\_\+id,  }\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{title,  }\item[{const std\+::string \&}]{emojis,  }\item[{const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&}]{png\+\_\+sticker = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const tools\+::\+Input\+File\+::ptr}]{tgs\+\_\+sticker = {\ttfamily std\+:\+:make\+\_\+shared$<$tools\+:\+:InputFile$>$(\char`\"{}\char`\"{})},  }\item[{const bool \&}]{contains\+\_\+mask = {\ttfamily false},  }\item[{const \mbox{\hyperlink{structtgbot_1_1MaskPosition_af46ab6797acfdb98a83ca243d9d60087}{Mask\+Position\+::ptr}} \&}]{mask\+\_\+position = {\ttfamily std\+:\+:make\+\_\+shared$<$\mbox{\hyperlink{structtgbot_1_1MaskPosition}{Mask\+Position}}$>$()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to create a new sticker set owned by a user. 
+
+The bot will be able to edit the sticker set thus created. You must use exactly one of the fields png\+\_\+sticker or tgs\+\_\+sticker. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em user\+\_\+id} & \mbox{\hyperlink{structtgbot_1_1User}{User}} identifier of created sticker set owner \\
+\hline
+\mbox{\texttt{ in}}  & {\em name} & Short name of sticker set, to be used in t.\+me/addstickers/ U\+R\+Ls (e.\+g., animals). Can contain only english letters, digits and underscores. Must begin with a letter, can\textquotesingle{}t contain consecutive underscores and must end in “\+\_\+by\+\_\+$<$bot username$>$”. $<$bot\+\_\+username$>$ is case insensitive. 1-\/64 characters. \\
+\hline
+\mbox{\texttt{ in}}  & {\em title} & \mbox{\hyperlink{structtgbot_1_1Sticker}{Sticker}} set title, 1-\/64 characters \\
+\hline
+\mbox{\texttt{ in}}  & {\em png\+\_\+sticker} & P\+NG image with the sticker, must be up to 512 kilobytes in size, dimensions must not exceed 512px, and either width or height must be exactly 512px. Pass a file\+\_\+id as a String to send a file that already exists on the Telegram servers, pass an H\+T\+TP U\+RL as a String for Telegram to get a file from the Internet, or upload a new one using multipart/form-\/data. \\
+\hline
+\mbox{\texttt{ in}}  & {\em tgs\+\_\+sticker} & T\+GS animation with the sticker, uploaded using multipart/form-\/data. See \href{https://core.telegram.org/animated_stickers\#technical-requirements}{\texttt{ https\+://core.\+telegram.\+org/animated\+\_\+stickers\#technical-\/requirements}} for technical requirements \\
+\hline
+\mbox{\texttt{ in}}  & {\em emojis} & One or more emoji corresponding to the sticker \\
+\hline
+\mbox{\texttt{ in}}  & {\em contains\+\_\+mask} & Pass True, if a set of mask stickers should be created \\
+\hline
+\mbox{\texttt{ in}}  & {\em mask\+\_\+position} & A J\+S\+O\+N-\/serialized object for position where the mask should be placed on faces \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns True on success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a2812241e039d2449e82c1833e6fb0102}\label{classtgbot_1_1Endpoints_a2812241e039d2449e82c1833e6fb0102}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!deleteChatPhoto@{deleteChatPhoto}}
+\index{deleteChatPhoto@{deleteChatPhoto}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{deleteChatPhoto()}{deleteChatPhoto()}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::delete\+Chat\+Photo (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to delete a chat photo. 
+
+Photos can\textquotesingle{}t be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns True on success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a4fc1c6fd9cef023abbdb93549a70c90e}\label{classtgbot_1_1Endpoints_a4fc1c6fd9cef023abbdb93549a70c90e}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!deleteChatStickerSet@{deleteChatStickerSet}}
+\index{deleteChatStickerSet@{deleteChatStickerSet}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{deleteChatStickerSet()}{deleteChatStickerSet()}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::delete\+Chat\+Sticker\+Set (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to delete a group sticker set from a supergroup. 
+
+The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Use the field can\+\_\+set\+\_\+sticker\+\_\+set optionally returned in get\+Chat requests to check if the bot can use this method. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns True on success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a706e09389e44c7877515eaed9f71298a}\label{classtgbot_1_1Endpoints_a706e09389e44c7877515eaed9f71298a}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!deleteMessage@{deleteMessage}}
+\index{deleteMessage@{deleteMessage}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{deleteMessage()}{deleteMessage()}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::delete\+Message (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const int \&}]{message\+\_\+id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to delete a message, including service messages, with the following limitations\+: 
+
+A message can only be deleted if it was sent less than 48 hours ago.
+
+A dice message in a private chat can only be deleted if it was sent more than 24 hours ago.
+
+Bots can delete outgoing messages in private chats, groups, and supergroups.
+
+Bots can delete incoming messages in private chats.
+
+Bots granted can\+\_\+post\+\_\+messages permissions can delete outgoing messages in channels.
+
+If the bot is an administrator of a group, it can delete any message there.
+
+If the bot has can\+\_\+delete\+\_\+messages permission in a supergroup or a channel, it can delete any message there. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em message\+\_\+id} & Identifier of the message to delete \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns True on success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a6820e33f472218ebd3d217db5065c826}\label{classtgbot_1_1Endpoints_a6820e33f472218ebd3d217db5065c826}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!deleteStickerFromSet@{deleteStickerFromSet}}
+\index{deleteStickerFromSet@{deleteStickerFromSet}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{deleteStickerFromSet()}{deleteStickerFromSet()}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::delete\+Sticker\+From\+Set (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{sticker }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to delete a sticker from a set created by the bot. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sticker} & \mbox{\hyperlink{structtgbot_1_1File}{File}} identifier of the sticker \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns True on success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a8e299960176241eda6b883ba04e36cdc}\label{classtgbot_1_1Endpoints_a8e299960176241eda6b883ba04e36cdc}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!deleteWebhook@{deleteWebhook}}
+\index{deleteWebhook@{deleteWebhook}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{deleteWebhook()}{deleteWebhook()}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::delete\+Webhook (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to remove webhook integration if you decide to switch back to get\+Updates. 
+
+\begin{DoxyReturn}{Returns}
+Returns True on success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a00d6f3816558b36760cd427a01845414}\label{classtgbot_1_1Endpoints_a00d6f3816558b36760cd427a01845414}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!editMessageCaption@{editMessageCaption}}
+\index{editMessageCaption@{editMessageCaption}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{editMessageCaption()}{editMessageCaption()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} tgbot\+::\+Endpoints\+::edit\+Message\+Caption (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id = {\ttfamily 0},  }\item[{const int \&}]{message\+\_\+id = {\ttfamily 0},  }\item[{const std\+::string \&}]{inline\+\_\+message\+\_\+id = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const std\+::string \&}]{caption = {\ttfamily 0},  }\item[{const std\+::string \&}]{parse\+\_\+mode = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}}}]{reply\+\_\+markup = {\ttfamily std\+:\+:make\+\_\+shared$<$\mbox{\hyperlink{structtgbot_1_1Reply}{Reply}}$>$()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to edit captions of messages. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Required if inline\+\_\+message\+\_\+id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em message\+\_\+id} & Required if inline\+\_\+message\+\_\+id is not specified. Identifier of the message to edit \\
+\hline
+\mbox{\texttt{ in}}  & {\em inline\+\_\+message\+\_\+id} & Required if chat\+\_\+id and message\+\_\+id are not specified. Identifier of the inline message \\
+\hline
+\mbox{\texttt{ in}}  & {\em caption} & New caption of the message, 0-\/1024 characters after entities parsing \\
+\hline
+\mbox{\texttt{ in}}  & {\em parse\+\_\+mode} & Mode for parsing entities in the message caption. See formatting options for more details. \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+markup} & A J\+S\+O\+N-\/serialized object for an inline keyboard. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, if edited message is sent by the bot, the edited \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is returned, otherwise True is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a2f51006468f29aca80e6853fce15e7cc}\label{classtgbot_1_1Endpoints_a2f51006468f29aca80e6853fce15e7cc}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!editMessageLiveLocation@{editMessageLiveLocation}}
+\index{editMessageLiveLocation@{editMessageLiveLocation}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{editMessageLiveLocation()}{editMessageLiveLocation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} tgbot\+::\+Endpoints\+::edit\+Message\+Live\+Location (\begin{DoxyParamCaption}\item[{const float \&}]{latitude,  }\item[{const float \&}]{longitude,  }\item[{const long long \&}]{chat\+\_\+id = {\ttfamily 0},  }\item[{const int \&}]{message\+\_\+id = {\ttfamily 0},  }\item[{const std\+::string \&}]{inline\+\_\+message\+\_\+id = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&}]{reply\+\_\+markup = {\ttfamily std\+:\+:make\+\_\+shared$<$\mbox{\hyperlink{structtgbot_1_1Reply}{Reply}}$>$()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to edit live location messages. A location can be edited until its live\+\_\+period expires or editing is explicitly disabled by a call to stop\+Message\+Live\+Location. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em latitude} & Latitude of new location \\
+\hline
+\mbox{\texttt{ in}}  & {\em longitude} & Longitude of new location \\
+\hline
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Required if inline\+\_\+message\+\_\+id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em message\+\_\+id} & Required if inline\+\_\+message\+\_\+id is not specified. Identifier of the message to edit \\
+\hline
+\mbox{\texttt{ in}}  & {\em inline\+\_\+message\+\_\+id} & Required if chat\+\_\+id and message\+\_\+id are not specified. Identifier of the inline message \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+markup} & A J\+S\+O\+N-\/serialized object for a new inline keyboard. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, if the edited message was sent by the bot, the edited \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is returned, otherwise True is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a1903c7e00bd2f3cb42b0536d1e09cfe2}\label{classtgbot_1_1Endpoints_a1903c7e00bd2f3cb42b0536d1e09cfe2}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!editMessageMedia@{editMessageMedia}}
+\index{editMessageMedia@{editMessageMedia}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{editMessageMedia()}{editMessageMedia()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} tgbot\+::\+Endpoints\+::edit\+Message\+Media (\begin{DoxyParamCaption}\item[{const std\+::variant$<$ \mbox{\hyperlink{structtgbot_1_1InputMediaAnimation_ac7d9921499b6a0fa259dcb4e03b88fae}{Input\+Media\+Animation\+::ptr}}, \mbox{\hyperlink{structtgbot_1_1InputMediaAudio_aeac5a6914fdee96f653d7be72f2fac4c}{Input\+Media\+Audio\+::ptr}}, \mbox{\hyperlink{structtgbot_1_1InputMediaDocument_ab6f2d0acb8955973ce394197e8e064ba}{Input\+Media\+Document\+::ptr}}, \mbox{\hyperlink{structtgbot_1_1InputMediaPhoto_a325ae4c1bd64b2b32c46e3fd06dec2a8}{Input\+Media\+Photo\+::ptr}}, \mbox{\hyperlink{structtgbot_1_1InputMediaVideo_a01c5aa02baa136d4b4e41716890cfac2}{Input\+Media\+Video\+::ptr}} $>$ \&}]{media,  }\item[{const long long \&}]{chat\+\_\+id = {\ttfamily 0},  }\item[{const int \&}]{message\+\_\+id = {\ttfamily 0},  }\item[{const std\+::string \&}]{inline\+\_\+message\+\_\+id = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}}}]{reply\+\_\+markup = {\ttfamily std\+:\+:make\+\_\+shared$<$\mbox{\hyperlink{structtgbot_1_1Reply}{Reply}}$>$()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to edit animation, audio, document, photo, or video messages. 
+
+f a message is a part of a message album, then it can be edited only to a photo or a video. Otherwise, message type can be changed arbitrarily.
+
+When inline message is edited, new file can\textquotesingle{}t be uploaded. Use previously uploaded file via its file\+\_\+id or specify a U\+RL. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Required if inline\+\_\+message\+\_\+id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em message\+\_\+id} & Required if inline\+\_\+message\+\_\+id is not specified. Identifier of the message to edit \\
+\hline
+\mbox{\texttt{ in}}  & {\em inline\+\_\+message\+\_\+id} & Required if chat\+\_\+id and message\+\_\+id are not specified. Identifier of the inline message \\
+\hline
+\mbox{\texttt{ in}}  & {\em media} & A J\+S\+O\+N-\/serialized object for a new media content of the message \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+markup} & A J\+S\+O\+N-\/serialized object for a new inline keyboard. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, if the edited message was sent by the bot, the edited \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is returned, otherwise True is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_ab271250358b632c3cde391870ef35574}\label{classtgbot_1_1Endpoints_ab271250358b632c3cde391870ef35574}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!editMessageReplyMarkup@{editMessageReplyMarkup}}
+\index{editMessageReplyMarkup@{editMessageReplyMarkup}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{editMessageReplyMarkup()}{editMessageReplyMarkup()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} tgbot\+::\+Endpoints\+::edit\+Message\+Reply\+Markup (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&}]{reply\+\_\+markup,  }\item[{const long long \&}]{chat\+\_\+id = {\ttfamily 0},  }\item[{const int \&}]{message\+\_\+id = {\ttfamily 0},  }\item[{const std\+::string \&}]{inline\+\_\+message\+\_\+id = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to edit only the reply markup of messages. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em reply\+\_\+markup} & Required if inline\+\_\+message\+\_\+id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Required if inline\+\_\+message\+\_\+id is not specified. Identifier of the message to edit \\
+\hline
+\mbox{\texttt{ in}}  & {\em message\+\_\+id} & Required if chat\+\_\+id and message\+\_\+id are not specified. Identifier of the inline message \\
+\hline
+\mbox{\texttt{ in}}  & {\em inline\+\_\+message\+\_\+id} & A J\+S\+O\+N-\/serialized object for an inline keyboard. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, if edited message is sent by the bot, the edited \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is returned, otherwise True is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a609582469028cfa4c992d89fc64f5bd7}\label{classtgbot_1_1Endpoints_a609582469028cfa4c992d89fc64f5bd7}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!editMessageText@{editMessageText}}
+\index{editMessageText@{editMessageText}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{editMessageText()}{editMessageText()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} tgbot\+::\+Endpoints\+::edit\+Message\+Text (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text,  }\item[{const long long \&}]{chat\+\_\+id = {\ttfamily 0},  }\item[{const int \&}]{message\+\_\+id = {\ttfamily 0},  }\item[{const std\+::string \&}]{inline\+\_\+message\+\_\+id = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const std\+::string \&}]{parse\+\_\+mode = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const bool \&}]{disable\+\_\+web\+\_\+page\+\_\+preview = {\ttfamily false},  }\item[{const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}}}]{reply\+\_\+markup = {\ttfamily std\+:\+:make\+\_\+shared$<$\mbox{\hyperlink{structtgbot_1_1Reply}{Reply}}$>$()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to edit text and game messages. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em text} & New text of the message, 1-\/4096 characters after entities parsing \\
+\hline
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Required if inline\+\_\+message\+\_\+id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em message\+\_\+id} & Required if inline\+\_\+message\+\_\+id is not specified. Identifier of the message to edit \\
+\hline
+\mbox{\texttt{ in}}  & {\em inline\+\_\+message\+\_\+id} & Required if chat\+\_\+id and message\+\_\+id are not specified. Identifier of the inline message \\
+\hline
+\mbox{\texttt{ in}}  & {\em parse\+\_\+mode} & Mode for parsing entities in the message text. See formatting options for more details. \\
+\hline
+\mbox{\texttt{ in}}  & {\em disable\+\_\+web\+\_\+page\+\_\+preview} & Disables link previews for links in this message \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+markup} & A J\+S\+O\+N-\/serialized object for an inline keyboard. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, if edited message is sent by the bot, the edited \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is returned, otherwise True is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_aaec2b913abe914590b6c6c72e851199a}\label{classtgbot_1_1Endpoints_aaec2b913abe914590b6c6c72e851199a}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!exportChatInviteLink@{exportChatInviteLink}}
+\index{exportChatInviteLink@{exportChatInviteLink}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{exportChatInviteLink()}{exportChatInviteLink()}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::export\+Chat\+Invite\+Link (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to generate a new invite link for a chat; any previously generated link is revoked. 
+
+The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the new invite link as String on success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_afa7a4a1374fa5772f0ac582690df50ba}\label{classtgbot_1_1Endpoints_afa7a4a1374fa5772f0ac582690df50ba}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!forwardMessage@{forwardMessage}}
+\index{forwardMessage@{forwardMessage}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{forwardMessage()}{forwardMessage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} tgbot\+::\+Endpoints\+::forward\+Message (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const long long \&}]{from\+\_\+chat\+\_\+id,  }\item[{const int \&}]{message\+\_\+id,  }\item[{const bool \&}]{disable\+\_\+notification = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to forward messages of any kind. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em from\+\_\+chat\+\_\+id} & Unique identifier for the chat where the original message was sent (or channel username in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em message\+\_\+id} & \mbox{\hyperlink{structtgbot_1_1Message}{Message}} identifier in the chat specified in from\+\_\+chat\+\_\+id \\
+\hline
+\mbox{\texttt{ in}}  & {\em disable\+\_\+notification} & Sends the message silently. Users will receive a notification with no sound. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, the sent \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_ae7057ddb7c815f797f3f0350ffecd174}\label{classtgbot_1_1Endpoints_ae7057ddb7c815f797f3f0350ffecd174}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!getChat@{getChat}}
+\index{getChat@{getChat}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{getChat()}{getChat()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1Chat_a96eb00f4faf12b035e393798a0503e26}{Chat\+::ptr}} tgbot\+::\+Endpoints\+::get\+Chat (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to get up to date information about the chat (current name of the user for one-\/on-\/one conversations, current username of a user, group or channel, etc.). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target supergroup or channel (in the format @channelusername) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a \mbox{\hyperlink{structtgbot_1_1Chat}{Chat}} object on success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a5076a80585aebd067432233e5d6df87c}\label{classtgbot_1_1Endpoints_a5076a80585aebd067432233e5d6df87c}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!getChatAdministrators@{getChatAdministrators}}
+\index{getChatAdministrators@{getChatAdministrators}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{getChatAdministrators()}{getChatAdministrators()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1ChatMember_aa5b117fad1c3f29d5b100488139544bb}{Chat\+Member\+::ptr}} $>$ tgbot\+::\+Endpoints\+::get\+Chat\+Administrators (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to get a list of administrators in a chat. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target supergroup or channel (in the format @channelusername) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, returns an Array of \mbox{\hyperlink{structtgbot_1_1ChatMember}{Chat\+Member}} objects that contains information about all chat administrators except other bots. If the chat is a group or a supergroup and no administrators were appointed, only the creator will be returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_adf221bd1b7e2a23f270e56c4602d2423}\label{classtgbot_1_1Endpoints_adf221bd1b7e2a23f270e56c4602d2423}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!getChatMember@{getChatMember}}
+\index{getChatMember@{getChatMember}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{getChatMember()}{getChatMember()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1ChatMember_aa5b117fad1c3f29d5b100488139544bb}{Chat\+Member\+::ptr}} tgbot\+::\+Endpoints\+::get\+Chat\+Member (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const int \&}]{user\+\_\+id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to get information about a member of a chat. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target supergroup or channel (in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em user\+\_\+id} & Unique identifier of the target user \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a \mbox{\hyperlink{structtgbot_1_1ChatMember}{Chat\+Member}} object on success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a9672476688e5a818821cac97bac8361f}\label{classtgbot_1_1Endpoints_a9672476688e5a818821cac97bac8361f}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!getChatMembersCount@{getChatMembersCount}}
+\index{getChatMembersCount@{getChatMembersCount}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{getChatMembersCount()}{getChatMembersCount()}}
+{\footnotesize\ttfamily int tgbot\+::\+Endpoints\+::get\+Chat\+Members\+Count (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to get the number of members in a chat. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target supergroup or channel (in the format @channelusername) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns Int on success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_ab8a2cf6f4fd0a3c391fa52cc6b6bb8c2}\label{classtgbot_1_1Endpoints_ab8a2cf6f4fd0a3c391fa52cc6b6bb8c2}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!getFile@{getFile}}
+\index{getFile@{getFile}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{getFile()}{getFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1File_a35d5b6b40400f685260e6bf076a07a83}{File\+::ptr}} tgbot\+::\+Endpoints\+::get\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to get basic info about a file and prepare it for downloading. For the moment, bots can download files of up to 20MB in size. 
+
+The file can then be downloaded via the link \href{https://api.telegram.org/file/bot}{\texttt{ https\+://api.\+telegram.\+org/file/bot}}$<$token$>$/$<$file\+\_\+path$>$, where $<$file\+\_\+path$>$ is taken from the response. It is guaranteed that the link will be valid for at least 1 hour. When the link expires, a new one can be requested by 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em file\+\_\+id} & \mbox{\hyperlink{structtgbot_1_1File}{File}} identifier to get info about \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, a \mbox{\hyperlink{structtgbot_1_1File}{File}} object is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_adaaba0fdef9e6bd89b9c9dc58e3d144d}\label{classtgbot_1_1Endpoints_adaaba0fdef9e6bd89b9c9dc58e3d144d}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!getGameHighScores@{getGameHighScores}}
+\index{getGameHighScores@{getGameHighScores}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{getGameHighScores()}{getGameHighScores()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1GameHighScore_a239e8a6301f1c0b63bf321de84cb137b}{Game\+High\+Score\+::ptr}} $>$ tgbot\+::\+Endpoints\+::get\+Game\+High\+Scores (\begin{DoxyParamCaption}\item[{const int \&}]{user\+\_\+id,  }\item[{const long long \&}]{chat\+\_\+id = {\ttfamily 0},  }\item[{const int \&}]{message\+\_\+id = {\ttfamily 0},  }\item[{const std\+::string \&}]{inline\+\_\+message\+\_\+id = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to get data for high score tables. 
+
+\begin{DoxyNote}{Note}
+This method will currently return scores for the target user, plus two of their closest neighbors on each side. Will also return the top three users if the user and his neighbors are not among them. Please note that this behavior is subject to change. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em user\+\_\+id} & Target user id \\
+\hline
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Required if inline\+\_\+message\+\_\+id is not specified. Unique identifier for the target chat \\
+\hline
+\mbox{\texttt{ in}}  & {\em message\+\_\+id} & Required if inline\+\_\+message\+\_\+id is not specified. Identifier of the sent message \\
+\hline
+\mbox{\texttt{ in}}  & {\em inline\+\_\+message\+\_\+id} & Required if chat\+\_\+id and message\+\_\+id are not specified. Identifier of the inline message \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Will return the score of the specified user and several of their neighbors in a game. On success, returns an Array of \mbox{\hyperlink{structtgbot_1_1GameHighScore}{Game\+High\+Score}} objects. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a1ef940443b28731442da6586da74f6c8}\label{classtgbot_1_1Endpoints_a1ef940443b28731442da6586da74f6c8}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!getMe@{getMe}}
+\index{getMe@{getMe}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{getMe()}{getMe()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1User_a9c48e6206c4f8f4ed3ae7ee2ce9ac395}{User\+::ptr}} tgbot\+::\+Endpoints\+::get\+Me (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+A simple method for testing your bot\textquotesingle{}s auth token. Requires no parameters. 
+
+\begin{DoxyReturn}{Returns}
+Returns basic information about the bot in form of a \mbox{\hyperlink{structtgbot_1_1User}{User}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_acaef927075c7dd3c727aa7b4d74e5c4a}\label{classtgbot_1_1Endpoints_acaef927075c7dd3c727aa7b4d74e5c4a}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!getMyCommands@{getMyCommands}}
+\index{getMyCommands@{getMyCommands}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{getMyCommands()}{getMyCommands()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1BotCommand_aaaa346b7d4216ba576b1a213470bff22}{Bot\+Command\+::ptr}} $>$ tgbot\+::\+Endpoints\+::get\+My\+Commands (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1BotCommand_aaaa346b7d4216ba576b1a213470bff22}{Bot\+Command\+::ptr}} $>$}]{commands }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to get the current list of the bot\textquotesingle{}s commands. Requires no parameters. 
+
+\begin{DoxyReturn}{Returns}
+Returns Array of \mbox{\hyperlink{structtgbot_1_1BotCommand}{Bot\+Command}} on success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a87284fca9e392e71aeadcaf6436de107}\label{classtgbot_1_1Endpoints_a87284fca9e392e71aeadcaf6436de107}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!getStickerSet@{getStickerSet}}
+\index{getStickerSet@{getStickerSet}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{getStickerSet()}{getStickerSet()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1StickerSet_a538e65813bf8a63c9958484a7098db1b}{Sticker\+Set\+::ptr}} tgbot\+::\+Endpoints\+::get\+Sticker\+Set (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to get a sticker set. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & Name of the sticker set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, a \mbox{\hyperlink{structtgbot_1_1StickerSet}{Sticker\+Set}} object is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_aecbf0ab9aec71595f83b1fbe048c89e7}\label{classtgbot_1_1Endpoints_aecbf0ab9aec71595f83b1fbe048c89e7}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!getUpdates@{getUpdates}}
+\index{getUpdates@{getUpdates}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{getUpdates()}{getUpdates()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1Update_a06a3ed3b3a20201c5a3dc2b9325eb524}{Update\+::ptr}} $>$ tgbot\+::\+Endpoints\+::get\+Updates (\begin{DoxyParamCaption}\item[{const int \&}]{offset,  }\item[{const int \&}]{limit = {\ttfamily 100},  }\item[{const int \&}]{timeout = {\ttfamily 0},  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{allowed\+\_\+updates = {\ttfamily std\+:\+:vector$<$std\+:\+:string$>$()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to receive incoming updates using long polling (wiki). 
+
+\begin{DoxyNote}{Note}
+1. This method will not work if an outgoing webhook is set up. 
+
+2. In order to avoid getting duplicate updates, recalculate offset after each server response. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em offset} & Identifier of the first update to be returned. Must be greater by one than the highest among the identifiers of previously received updates. By default, updates starting with the earliest unconfirmed update are returned. An update is considered confirmed as soon as get\+Updates is called with an offset higher than its update\+\_\+id. The negative offset can be specified to retrieve updates starting from -\/offset update from the end of the updates queue. All previous updates will forgotten. \\
+\hline
+\mbox{\texttt{ in}}  & {\em limit} & Limits the number of updates to be retrieved. Values between 1-\/100 are accepted. Defaults to 100. \\
+\hline
+\mbox{\texttt{ in}}  & {\em timeout} & Timeout in seconds for long polling. Defaults to 0, i.\+e. usual short polling. Should be positive, short polling should be used for testing purposes only. \\
+\hline
+\mbox{\texttt{ in}}  & {\em allowed\+\_\+updates} & A J\+S\+O\+N-\/serialized list of the update types you want your bot to receive. For example, specify \mbox{[}“message”, “edited\+\_\+channel\+\_\+post”, “callback\+\_\+query”\mbox{]} to only receive updates of these types. See \mbox{\hyperlink{structtgbot_1_1Update}{Update}} for a complete list of available update types. Specify an empty list to receive all updates regardless of type (default). If not specified, the previous setting will be used. Please note that this parameter doesn\textquotesingle{}t affect updates created before the call to the get\+Updates, so unwanted updates may be received for a short period of time. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An Array of \mbox{\hyperlink{structtgbot_1_1Update}{Update}} objects is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_abefec1adccfc94bb5c1bf8ae9a5af315}\label{classtgbot_1_1Endpoints_abefec1adccfc94bb5c1bf8ae9a5af315}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!getUserProfilePhotos@{getUserProfilePhotos}}
+\index{getUserProfilePhotos@{getUserProfilePhotos}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{getUserProfilePhotos()}{getUserProfilePhotos()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1UserProfilePhotos_ac2ea099e28236cea3da134bed495e3e0}{User\+Profile\+Photos\+::ptr}} tgbot\+::\+Endpoints\+::get\+User\+Profile\+Photos (\begin{DoxyParamCaption}\item[{const int \&}]{user\+\_\+id,  }\item[{const int \&}]{offset = {\ttfamily 0},  }\item[{const int \&}]{limit = {\ttfamily 100} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to get a list of profile pictures for a user. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em user\+\_\+id} & Unique identifier of the target user \\
+\hline
+\mbox{\texttt{ in}}  & {\em offset} & Sequential number of the first photo to be returned. By default, all photos are returned. \\
+\hline
+\mbox{\texttt{ in}}  & {\em limit} & Limits the number of photos to be retrieved. Values between 1-\/100 are accepted. Defaults to 100. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a \mbox{\hyperlink{structtgbot_1_1UserProfilePhotos}{User\+Profile\+Photos}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_ae8cb9e52af8ccabeb090538d4246c85f}\label{classtgbot_1_1Endpoints_ae8cb9e52af8ccabeb090538d4246c85f}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!getWebhookInfo@{getWebhookInfo}}
+\index{getWebhookInfo@{getWebhookInfo}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{getWebhookInfo()}{getWebhookInfo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1WebhookInfo_a5c082e97e0d51c1ee3298475a475b114}{Webhook\+Info\+::ptr}} tgbot\+::\+Endpoints\+::get\+Webhook\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to get current webhook status. Requires no parameters. 
+
+\begin{DoxyReturn}{Returns}
+On success, returns a \mbox{\hyperlink{structtgbot_1_1WebhookInfo}{Webhook\+Info}} object. If the bot is using get\+Updates, will return an object with the url field empty. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_afd701b46b9bc4f577346caac7125ccc0}\label{classtgbot_1_1Endpoints_afd701b46b9bc4f577346caac7125ccc0}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!kickChatMember@{kickChatMember}}
+\index{kickChatMember@{kickChatMember}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{kickChatMember()}{kickChatMember()}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::kick\+Chat\+Member (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const int \&}]{user\+\_\+id,  }\item[{const int \&}]{until\+\_\+date = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to kick a user from a group, a supergroup or a channel. 
+
+In the case of supergroups and channels, the user will not be able to return to the group on their own using invite links, etc., unless unbanned first. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target group or username of the target supergroup or channel (in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em user\+\_\+id} & Unique identifier of the target user \\
+\hline
+\mbox{\texttt{ in}}  & {\em until\+\_\+date} & Date when the user will be unbanned, unix time. If user is banned for more than 366 days or less than 30 seconds from the current time they are considered to be banned forever \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns True on success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a4b6f684894510b81b6b64265f7fbbb5e}\label{classtgbot_1_1Endpoints_a4b6f684894510b81b6b64265f7fbbb5e}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!leaveChat@{leaveChat}}
+\index{leaveChat@{leaveChat}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{leaveChat()}{leaveChat()}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::leave\+Chat (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method for your bot to leave a group, supergroup or channel. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target supergroup or channel (in the format @channelusername) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns True on success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_ac339ea9dacf571ad715c667390b3cba0}\label{classtgbot_1_1Endpoints_ac339ea9dacf571ad715c667390b3cba0}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!pinChatMessage@{pinChatMessage}}
+\index{pinChatMessage@{pinChatMessage}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{pinChatMessage()}{pinChatMessage()}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::pin\+Chat\+Message (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const int \&}]{message\+\_\+id,  }\item[{const bool \&}]{disable\+\_\+notification = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to pin a message in a group, a supergroup, or a channel. 
+
+The bot must be an administrator in the chat for this to work and must have the ‘can\+\_\+pin\+\_\+messages’ admin right in the supergroup or ‘can\+\_\+edit\+\_\+messages’ admin right in the channel. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em message\+\_\+id} & Identifier of a message to pin \\
+\hline
+\mbox{\texttt{ in}}  & {\em disable\+\_\+notification} & Pass True, if it is not necessary to send a notification to all chat members about the new pinned message. Notifications are always disabled in channels. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns True on success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_ae7c71e1cda9bf688fdfd9a6391bb2c28}\label{classtgbot_1_1Endpoints_ae7c71e1cda9bf688fdfd9a6391bb2c28}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!promoteChatMember@{promoteChatMember}}
+\index{promoteChatMember@{promoteChatMember}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{promoteChatMember()}{promoteChatMember()}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::promote\+Chat\+Member (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const int \&}]{user\+\_\+id,  }\item[{const bool \&}]{can\+\_\+change\+\_\+info,  }\item[{const bool \&}]{can\+\_\+post\+\_\+messages,  }\item[{const bool \&}]{can\+\_\+edit\+\_\+messages,  }\item[{const bool \&}]{can\+\_\+delete\+\_\+messages,  }\item[{const bool \&}]{can\+\_\+invite\+\_\+users,  }\item[{const bool \&}]{can\+\_\+restrict\+\_\+members,  }\item[{const bool \&}]{can\+\_\+pin\+\_\+messages,  }\item[{const bool \&}]{can\+\_\+promote\+\_\+members }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to promote or demote a user in a supergroup or a channel. 
+
+The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Pass False for all boolean parameters to demote a user. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em user\+\_\+id} & Unique identifier of the target user \\
+\hline
+\mbox{\texttt{ in}}  & {\em can\+\_\+change\+\_\+info} & Pass True, if the administrator can change chat title, photo and other settings \\
+\hline
+\mbox{\texttt{ in}}  & {\em can\+\_\+post\+\_\+messages} & Pass True, if the administrator can create channel posts, channels only \\
+\hline
+\mbox{\texttt{ in}}  & {\em can\+\_\+edit\+\_\+messages} & Pass True, if the administrator can edit messages of other users and can pin messages, channels only \\
+\hline
+\mbox{\texttt{ in}}  & {\em can\+\_\+delete\+\_\+messages} & Pass True, if the administrator can delete messages of other users \\
+\hline
+\mbox{\texttt{ in}}  & {\em can\+\_\+invite\+\_\+users} & Pass True, if the administrator can invite new users to the chat \\
+\hline
+\mbox{\texttt{ in}}  & {\em can\+\_\+restrict\+\_\+members} & Pass True, if the administrator can restrict, ban or unban chat members \\
+\hline
+\mbox{\texttt{ in}}  & {\em can\+\_\+pin\+\_\+messages} & Pass True, if the administrator can pin messages, supergroups only \\
+\hline
+\mbox{\texttt{ in}}  & {\em can\+\_\+promote\+\_\+members} & Pass True, if the administrator can add new administrators with a subset of their own privileges or demote administrators that he has promoted, directly or indirectly (promoted by administrators that were appointed by him) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns True on success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a85746894ef28b78360b26b3d41ae2dbb}\label{classtgbot_1_1Endpoints_a85746894ef28b78360b26b3d41ae2dbb}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!restrictChatMember@{restrictChatMember}}
+\index{restrictChatMember@{restrictChatMember}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{restrictChatMember()}{restrictChatMember()}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::restrict\+Chat\+Member (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const int \&}]{user\+\_\+id,  }\item[{const \mbox{\hyperlink{structtgbot_1_1ChatPermissions_a8f5fa042fc3b71bc3679fe874d33de78}{Chat\+Permissions\+::ptr}} \&}]{permissions,  }\item[{const int \&}]{until\+\_\+date = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to restrict a user in a supergroup. 
+
+The bot must be an administrator in the supergroup for this to work and must have the appropriate admin rights. Pass True for all permissions to lift restrictions from a user. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em user\+\_\+id} & Unique identifier of the target user \\
+\hline
+\mbox{\texttt{ in}}  & {\em permissions} & New user permissions \\
+\hline
+\mbox{\texttt{ in}}  & {\em until\+\_\+date} & Date when restrictions will be lifted for the user, unix time. If user is restricted for more than 366 days or less than 30 seconds from the current time, they are considered to be restricted forever \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns True on success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_af29050bc7048f43d42ccab437680f595}\label{classtgbot_1_1Endpoints_af29050bc7048f43d42ccab437680f595}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!sendAnimation@{sendAnimation}}
+\index{sendAnimation@{sendAnimation}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{sendAnimation()}{sendAnimation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} tgbot\+::\+Endpoints\+::send\+Animation (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&}]{animation,  }\item[{const int \&}]{duration = {\ttfamily 0},  }\item[{const int \&}]{width = {\ttfamily 0},  }\item[{const int \&}]{height = {\ttfamily 0},  }\item[{const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&}]{thumb = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const std\+::string \&}]{caption = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const std\+::string \&}]{parse\+\_\+mode = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const bool \&}]{disable\+\_\+notification = {\ttfamily false},  }\item[{const int \&}]{reply\+\_\+to\+\_\+message\+\_\+id = {\ttfamily 0},  }\item[{const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&}]{reply\+\_\+markup = {\ttfamily std\+:\+:make\+\_\+shared$<$\mbox{\hyperlink{structtgbot_1_1Reply}{Reply}}$>$()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to send animation files (G\+IF or H.\+264/\+M\+P\+E\+G-\/4 A\+VC video without sound). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em animation} & \mbox{\hyperlink{structtgbot_1_1Animation}{Animation}} to send. Pass a file\+\_\+id as String to send an animation that exists on the Telegram servers (recommended), pass an H\+T\+TP U\+RL as a String for Telegram to get an animation from the Internet, or upload a new animation using multipart/form-\/data. \\
+\hline
+\mbox{\texttt{ in}}  & {\em duration} & Duration of sent animation in seconds \\
+\hline
+\mbox{\texttt{ in}}  & {\em width} & \mbox{\hyperlink{structtgbot_1_1Animation}{Animation}} width \\
+\hline
+\mbox{\texttt{ in}}  & {\em height} & \mbox{\hyperlink{structtgbot_1_1Animation}{Animation}} height \\
+\hline
+\mbox{\texttt{ in}}  & {\em thumb} & Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-\/side. The thumbnail should be in J\+P\+EG format and less than 200 kB in size. A thumbnail‘s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-\/data. Thumbnails can’t be reused and can be only uploaded as a new file, so you can pass “attach\+://$<$file\+\_\+attach\+\_\+name$>$” if the thumbnail was uploaded using multipart/form-\/data under $<$file\+\_\+attach\+\_\+name$>$. \\
+\hline
+\mbox{\texttt{ in}}  & {\em caption} & \mbox{\hyperlink{structtgbot_1_1Animation}{Animation}} caption (may also be used when resending animation by file\+\_\+id), 0-\/1024 characters after entities parsing \\
+\hline
+\mbox{\texttt{ in}}  & {\em parse\+\_\+mode} & Mode for parsing entities in the animation caption. See formatting options for more details. \\
+\hline
+\mbox{\texttt{ in}}  & {\em disable\+\_\+notification} & Sends the message silently. Users will receive a notification with no sound. \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+to\+\_\+message\+\_\+id} & If the message is a reply, ID of the original message \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+markup} & Additional interface options. A J\+S\+O\+N-\/serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, the sent \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is returned. Bots can currently send animation files of up to 50 MB in size, this limit may be changed in the future. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_abb5c6e65150ab97d045531b7b3208c49}\label{classtgbot_1_1Endpoints_abb5c6e65150ab97d045531b7b3208c49}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!sendAudio@{sendAudio}}
+\index{sendAudio@{sendAudio}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{sendAudio()}{sendAudio()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} tgbot\+::\+Endpoints\+::send\+Audio (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&}]{audio,  }\item[{const std\+::string \&}]{caption = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const std\+::string \&}]{parse\+\_\+mode = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const int \&}]{duration = {\ttfamily 0},  }\item[{const std\+::string \&}]{performer = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const std\+::string \&}]{title = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&}]{thumb = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const bool \&}]{disable\+\_\+notification = {\ttfamily false},  }\item[{const int \&}]{reply\+\_\+to\+\_\+message\+\_\+id = {\ttfamily 0},  }\item[{const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&}]{reply\+\_\+markup = {\ttfamily std\+:\+:make\+\_\+shared$<$\mbox{\hyperlink{structtgbot_1_1Reply}{Reply}}$>$()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to send audio files, if you want Telegram clients to display them in the music player. Your audio must be in the .M\+P3 or .M4A format. 
+
+For sending voice messages, use the send\+Voice method instead. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em audio} & \mbox{\hyperlink{structtgbot_1_1Audio}{Audio}} file to send. Pass a file\+\_\+id as String to send an audio file that exists on the Telegram servers (recommended), pass an H\+T\+TP U\+RL as a String for Telegram to get an audio file from the Internet, or upload a new one using multipart/form-\/data. \\
+\hline
+\mbox{\texttt{ in}}  & {\em caption} & \mbox{\hyperlink{structtgbot_1_1Audio}{Audio}} caption, 0-\/1024 characters after entities parsing \\
+\hline
+\mbox{\texttt{ in}}  & {\em parse\+\_\+mode} & Mode for parsing entities in the audio caption. See formatting options for more details. \\
+\hline
+\mbox{\texttt{ in}}  & {\em duration} & Duration of the audio in seconds \\
+\hline
+\mbox{\texttt{ in}}  & {\em performer} & Performer \\
+\hline
+\mbox{\texttt{ in}}  & {\em title} & Track name \\
+\hline
+\mbox{\texttt{ in}}  & {\em thumb} & Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-\/side. The thumbnail should be in J\+P\+EG format and less than 200 kB in size. A thumbnail‘s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-\/data. Thumbnails can’t be reused and can be only uploaded as a new file, so you can pass “attach\+://$<$file\+\_\+attach\+\_\+name$>$” if the thumbnail was uploaded using multipart/form-\/data under $<$file\+\_\+attach\+\_\+name$>$. \\
+\hline
+\mbox{\texttt{ in}}  & {\em disable\+\_\+notification} & Sends the message silently. Users will receive a notification with no sound. \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+to\+\_\+message\+\_\+id} & If the message is a reply, ID of the original message \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+markup} & Additional interface options. A J\+S\+O\+N-\/serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, the sent \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is returned. Bots can currently send audio files of up to 50 MB in size, this limit may be changed in the future. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_ac89a1e2064d2fd990b1f4e3cfa3673ea}\label{classtgbot_1_1Endpoints_ac89a1e2064d2fd990b1f4e3cfa3673ea}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!sendChatAction@{sendChatAction}}
+\index{sendChatAction@{sendChatAction}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{sendChatAction()}{sendChatAction()}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::send\+Chat\+Action (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const std\+::string \&}]{action }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method when you need to tell the user that something is happening on the bot\textquotesingle{}s side. The status is set for 5 seconds or less (when a message arrives from your bot, Telegram clients clear its typing status). 
+
+Example\+: The Image\+Bot needs some time to process a request and upload the image. Instead of sending a text message along the lines of “\+Retrieving image, please wait…”, the bot may use send\+Chat\+Action with action = upload\+\_\+photo. The user will see a “sending photo” status for the bot.
+
+We only recommend using this method when a response from the bot will take a noticeable amount of time to arrive. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em action} & Type of action to broadcast. Choose one, depending on what the user is about to receive\+: typing for text messages, upload\+\_\+photo for photos, record\+\_\+video or upload\+\_\+video for videos, record\+\_\+audio or upload\+\_\+audio for audio files, upload\+\_\+document for general files, find\+\_\+location for location data, record\+\_\+video\+\_\+note or upload\+\_\+video\+\_\+note for video notes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns True on success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a5e390a1a0c68b390db1ab152ca1bb66a}\label{classtgbot_1_1Endpoints_a5e390a1a0c68b390db1ab152ca1bb66a}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!sendContact@{sendContact}}
+\index{sendContact@{sendContact}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{sendContact()}{sendContact()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} tgbot\+::\+Endpoints\+::send\+Contact (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const std\+::string \&}]{phone\+\_\+number,  }\item[{const std\+::string \&}]{first\+\_\+name,  }\item[{const std\+::string \&}]{last\+\_\+name = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const std\+::string \&}]{vcard = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const bool \&}]{disable\+\_\+notification = {\ttfamily false},  }\item[{const int \&}]{reply\+\_\+to\+\_\+message\+\_\+id = {\ttfamily 0},  }\item[{const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&}]{reply\+\_\+markup = {\ttfamily std\+:\+:make\+\_\+shared$<$\mbox{\hyperlink{structtgbot_1_1Reply}{Reply}}$>$()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to send phone contacts. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em phone\+\_\+number} & \mbox{\hyperlink{structtgbot_1_1Contact}{Contact}}\textquotesingle{}s phone number \\
+\hline
+\mbox{\texttt{ in}}  & {\em first\+\_\+name} & \mbox{\hyperlink{structtgbot_1_1Contact}{Contact}}\textquotesingle{}s first name \\
+\hline
+\mbox{\texttt{ in}}  & {\em last\+\_\+name} & \mbox{\hyperlink{structtgbot_1_1Contact}{Contact}}\textquotesingle{}s last name \\
+\hline
+\mbox{\texttt{ in}}  & {\em vcard} & Additional data about the contact in the form of a v\+Card, 0-\/2048 bytes \\
+\hline
+\mbox{\texttt{ in}}  & {\em disable\+\_\+notification} & Sends the message silently. Users will receive a notification with no sound. \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+to\+\_\+message\+\_\+id} & If the message is a reply, ID of the original message \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+markup} & Additional interface options. A J\+S\+O\+N-\/serialized object for an inline keyboard, custom reply keyboard, instructions to remove keyboard or to force a reply from the user. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, the sent \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_ad1ef212c9cc509f1ca049d982d28745e}\label{classtgbot_1_1Endpoints_ad1ef212c9cc509f1ca049d982d28745e}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!sendDice@{sendDice}}
+\index{sendDice@{sendDice}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{sendDice()}{sendDice()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} tgbot\+::\+Endpoints\+::send\+Dice (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const std\+::string \&}]{emoji = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const bool \&}]{disable\+\_\+notification = {\ttfamily false},  }\item[{const int \&}]{reply\+\_\+to\+\_\+message\+\_\+id = {\ttfamily -\/1},  }\item[{const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&}]{reply\+\_\+markup = {\ttfamily std\+:\+:make\+\_\+shared$<$\mbox{\hyperlink{structtgbot_1_1Reply}{Reply}}$>$()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to send a dice, which will have a random value from 1 to 6. 
+
+(Yes, we\textquotesingle{}re aware of the “proper” singular of die. But it\textquotesingle{}s awkward, and we decided to help it change. One dice at a time!) 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em emoji} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em disable\+\_\+notification} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+to\+\_\+message\+\_\+id} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+markup} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, the sent \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a9cd21f224bedc322e19c0ae2cb17322c}\label{classtgbot_1_1Endpoints_a9cd21f224bedc322e19c0ae2cb17322c}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!sendDocument@{sendDocument}}
+\index{sendDocument@{sendDocument}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{sendDocument()}{sendDocument()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} tgbot\+::\+Endpoints\+::send\+Document (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&}]{document,  }\item[{const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&}]{thumb = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const std\+::string \&}]{caption = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const std\+::string \&}]{parse\+\_\+mode = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const bool \&}]{disable\+\_\+notification = {\ttfamily false},  }\item[{const int \&}]{reply\+\_\+to\+\_\+message\+\_\+id = {\ttfamily 0},  }\item[{const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&}]{reply\+\_\+markup = {\ttfamily std\+:\+:make\+\_\+shared$<$\mbox{\hyperlink{structtgbot_1_1Reply}{Reply}}$>$()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to send general files. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em document} & \mbox{\hyperlink{structtgbot_1_1File}{File}} to send. Pass a file\+\_\+id as String to send a file that exists on the Telegram servers (recommended), pass an H\+T\+TP U\+RL as a String for Telegram to get a file from the Internet, or upload a new one using multipart/form-\/data. \\
+\hline
+\mbox{\texttt{ in}}  & {\em thumb} & Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-\/side. The thumbnail should be in J\+P\+EG format and less than 200 kB in size. A thumbnail‘s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-\/data. Thumbnails can’t be reused and can be only uploaded as a new file, so you can pass “attach\+://$<$file\+\_\+attach\+\_\+name$>$” if the thumbnail was uploaded using multipart/form-\/data under $<$file\+\_\+attach\+\_\+name$>$. \\
+\hline
+\mbox{\texttt{ in}}  & {\em caption} & \mbox{\hyperlink{structtgbot_1_1Document}{Document}} caption (may also be used when resending documents by file\+\_\+id), 0-\/1024 characters after entities parsing \\
+\hline
+\mbox{\texttt{ in}}  & {\em parse\+\_\+mode} & Mode for parsing entities in the document caption. See formatting options for more details. \\
+\hline
+\mbox{\texttt{ in}}  & {\em disable\+\_\+notification} & Sends the message silently. Users will receive a notification with no sound. \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+to\+\_\+message\+\_\+id} & If the message is a reply, ID of the original message \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+markup} & Additional interface options. A J\+S\+O\+N-\/serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, the sent \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is returned. Bots can currently send files of any type of up to 50 MB in size, this limit may be changed in the future. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_ad210af458d6c1a7633007fcfdfe780b8}\label{classtgbot_1_1Endpoints_ad210af458d6c1a7633007fcfdfe780b8}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!sendGame@{sendGame}}
+\index{sendGame@{sendGame}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{sendGame()}{sendGame()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} tgbot\+::\+Endpoints\+::send\+Game (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const std\+::string \&}]{game\+\_\+short\+\_\+name,  }\item[{const bool \&}]{disable\+\_\+notification = {\ttfamily false},  }\item[{const int \&}]{reply\+\_\+to\+\_\+message\+\_\+id = {\ttfamily 0},  }\item[{const \mbox{\hyperlink{structtgbot_1_1InlineKeyboardMarkup_a6973beabdcfa398f58a1ad9bb74e6014}{Inline\+Keyboard\+Markup\+::ptr}} \&}]{reply\+\_\+markup = {\ttfamily std\+:\+:make\+\_\+shared$<$\mbox{\hyperlink{structtgbot_1_1InlineKeyboardMarkup}{Inline\+Keyboard\+Markup}}$>$()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to send a game. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat \\
+\hline
+\mbox{\texttt{ in}}  & {\em game\+\_\+short\+\_\+name} & Short name of the game, serves as the unique identifier for the game. Set up your games via Botfather. \\
+\hline
+\mbox{\texttt{ in}}  & {\em disable\+\_\+notification} & Sends the message silently. Users will receive a notification with no sound. \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+to\+\_\+message\+\_\+id} & If the message is a reply, ID of the original message \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+markup} & A J\+S\+O\+N-\/serialized object for an inline keyboard. If empty, one ‘\+Play game\+\_\+title’ button will be shown. If not empty, the first button must launch the game. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, the sent \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a01cf8140359344ac9639ea848f188648}\label{classtgbot_1_1Endpoints_a01cf8140359344ac9639ea848f188648}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!sendInvoice@{sendInvoice}}
+\index{sendInvoice@{sendInvoice}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{sendInvoice()}{sendInvoice()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} tgbot\+::\+Endpoints\+::send\+Invoice (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const std\+::string \&}]{title,  }\item[{const std\+::string \&}]{description,  }\item[{const std\+::string \&}]{payload,  }\item[{const std\+::string \&}]{provider\+\_\+token,  }\item[{const std\+::string \&}]{start\+\_\+parameter,  }\item[{const std\+::string \&}]{currency,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1LabeledPrice_a99037ce7b76ba129896f3e69de04c0dc}{Labeled\+Price\+::ptr}} $>$ \&}]{prices,  }\item[{const std\+::string \&}]{provider\+\_\+data = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const std\+::string \&}]{photo\+\_\+url = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const int \&}]{photo\+\_\+size = {\ttfamily 0},  }\item[{const int \&}]{photo\+\_\+width = {\ttfamily 0},  }\item[{const int \&}]{photo\+\_\+height = {\ttfamily 0},  }\item[{const bool \&}]{need\+\_\+name = {\ttfamily false},  }\item[{const bool \&}]{need\+\_\+phone\+\_\+number = {\ttfamily false},  }\item[{const bool \&}]{need\+\_\+email = {\ttfamily false},  }\item[{const bool \&}]{need\+\_\+shipping\+\_\+address = {\ttfamily false},  }\item[{const bool \&}]{send\+\_\+phone\+\_\+number\+\_\+to\+\_\+provider = {\ttfamily false},  }\item[{const bool \&}]{send\+\_\+email\+\_\+to\+\_\+provider = {\ttfamily false},  }\item[{const bool \&}]{is\+\_\+flexible = {\ttfamily false},  }\item[{const bool \&}]{disable\+\_\+notification = {\ttfamily false},  }\item[{const int \&}]{reply\+\_\+to\+\_\+message\+\_\+id = {\ttfamily 0},  }\item[{const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&}]{reply\+\_\+markup = {\ttfamily std\+:\+:make\+\_\+shared$<$\mbox{\hyperlink{structtgbot_1_1Reply}{Reply}}$>$()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to send invoices. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target private chat \\
+\hline
+\mbox{\texttt{ in}}  & {\em title} & Product name, 1-\/32 characters \\
+\hline
+\mbox{\texttt{ in}}  & {\em description} & Product description, 1-\/255 characters \\
+\hline
+\mbox{\texttt{ in}}  & {\em payload} & Bot-\/defined invoice payload, 1-\/128 bytes. This will not be displayed to the user, use for your internal processes. \\
+\hline
+\mbox{\texttt{ in}}  & {\em provider\+\_\+token} & Payments provider token, obtained via Botfather \\
+\hline
+\mbox{\texttt{ in}}  & {\em start\+\_\+parameter} & Unique deep-\/linking parameter that can be used to generate this invoice when used as a start parameter \\
+\hline
+\mbox{\texttt{ in}}  & {\em currency} & Three-\/letter I\+SO 4217 currency code, see more on currencies \\
+\hline
+\mbox{\texttt{ in}}  & {\em prices} & Price breakdown, a J\+S\+O\+N-\/serialized list of components (e.\+g. product price, tax, discount, delivery cost, delivery tax, bonus, etc.) \\
+\hline
+\mbox{\texttt{ in}}  & {\em provider\+\_\+data} & J\+S\+O\+N-\/encoded data about the invoice, which will be shared with the payment provider. A detailed description of required fields should be provided by the payment provider. \\
+\hline
+\mbox{\texttt{ in}}  & {\em photo\+\_\+url} & U\+RL of the product photo for the invoice. Can be a photo of the goods or a marketing image for a service. People like it better when they see what they are paying for. \\
+\hline
+\mbox{\texttt{ in}}  & {\em photo\+\_\+size} & Photo size \\
+\hline
+\mbox{\texttt{ in}}  & {\em photo\+\_\+width} & Photo width \\
+\hline
+\mbox{\texttt{ in}}  & {\em photo\+\_\+height} & Photo height \\
+\hline
+\mbox{\texttt{ in}}  & {\em need\+\_\+name} & Pass True, if you require the user\textquotesingle{}s full name to complete the order \\
+\hline
+\mbox{\texttt{ in}}  & {\em need\+\_\+phone\+\_\+number} & Pass True, if you require the user\textquotesingle{}s phone number to complete the order \\
+\hline
+\mbox{\texttt{ in}}  & {\em need\+\_\+email} & Pass True, if you require the user\textquotesingle{}s email address to complete the order \\
+\hline
+\mbox{\texttt{ in}}  & {\em need\+\_\+shipping\+\_\+address} & Pass True, if you require the user\textquotesingle{}s shipping address to complete the order \\
+\hline
+\mbox{\texttt{ in}}  & {\em send\+\_\+phone\+\_\+number\+\_\+to\+\_\+provider} & Pass True, if user\textquotesingle{}s phone number should be sent to provider \\
+\hline
+\mbox{\texttt{ in}}  & {\em send\+\_\+email\+\_\+to\+\_\+provider} & Pass True, if user\textquotesingle{}s email address should be sent to provider \\
+\hline
+\mbox{\texttt{ in}}  & {\em is\+\_\+flexible} & Pass True, if the final price depends on the shipping method \\
+\hline
+\mbox{\texttt{ in}}  & {\em disable\+\_\+notification} & Sends the message silently. Users will receive a notification with no sound. \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+to\+\_\+message\+\_\+id} & If the message is a reply, ID of the original message \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+markup} & A J\+S\+O\+N-\/serialized object for an inline keyboard. If empty, one \textquotesingle{}Pay total price\textquotesingle{} button will be shown. If not empty, the first button must be a Pay button. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, the sent \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_ae999d6274b8e34abd4d121a7837b222d}\label{classtgbot_1_1Endpoints_ae999d6274b8e34abd4d121a7837b222d}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!sendLocation@{sendLocation}}
+\index{sendLocation@{sendLocation}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{sendLocation()}{sendLocation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} tgbot\+::\+Endpoints\+::send\+Location (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const float \&}]{latitude,  }\item[{const float \&}]{longitude,  }\item[{const int \&}]{live\+\_\+period = {\ttfamily 0},  }\item[{const bool \&}]{disable\+\_\+notification = {\ttfamily false},  }\item[{const int \&}]{reply\+\_\+to\+\_\+message\+\_\+id = {\ttfamily 0},  }\item[{const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&}]{reply\+\_\+markup = {\ttfamily std\+:\+:make\+\_\+shared$<$\mbox{\hyperlink{structtgbot_1_1Reply}{Reply}}$>$()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to send point on the map. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em latitude} & Latitude of the location \\
+\hline
+\mbox{\texttt{ in}}  & {\em longitude} & Longitude of the location \\
+\hline
+\mbox{\texttt{ in}}  & {\em live\+\_\+period} & Period in seconds for which the location will be updated (see Live Locations, should be between 60 and 86400. \\
+\hline
+\mbox{\texttt{ in}}  & {\em disable\+\_\+notification} & Sends the message silently. Users will receive a notification with no sound. \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+to\+\_\+message\+\_\+id} & If the message is a reply, ID of the original message \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+markup} & Additional interface options. A J\+S\+O\+N-\/serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, the sent \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a4d21c9850027faade5e767c0052b6b79}\label{classtgbot_1_1Endpoints_a4d21c9850027faade5e767c0052b6b79}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!sendMediaGroup@{sendMediaGroup}}
+\index{sendMediaGroup@{sendMediaGroup}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{sendMediaGroup()}{sendMediaGroup()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} $>$ tgbot\+::\+Endpoints\+::send\+Media\+Group (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const std\+::vector$<$ std\+::variant$<$ \mbox{\hyperlink{structtgbot_1_1InputMediaPhoto_a325ae4c1bd64b2b32c46e3fd06dec2a8}{Input\+Media\+Photo\+::ptr}}, \mbox{\hyperlink{structtgbot_1_1InputMediaVideo_a01c5aa02baa136d4b4e41716890cfac2}{Input\+Media\+Video\+::ptr}} $>$$>$ \&}]{media,  }\item[{const bool \&}]{disable\+\_\+notification = {\ttfamily false},  }\item[{const int \&}]{reply\+\_\+to\+\_\+message\+\_\+id = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to send a group of photos or videos as an album. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em media} & A J\+S\+O\+N-\/serialized array describing photos and videos to be sent, must include 2-\/10 items \\
+\hline
+\mbox{\texttt{ in}}  & {\em disable\+\_\+notification} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+to\+\_\+message\+\_\+id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, an array of the sent \mbox{\hyperlink{classtgbot_1_1Messages}{Messages}} is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a8536eaffc3f82776f3d5c7c2c83941bd}\label{classtgbot_1_1Endpoints_a8536eaffc3f82776f3d5c7c2c83941bd}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!sendMessage@{sendMessage}}
+\index{sendMessage@{sendMessage}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{sendMessage()}{sendMessage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} tgbot\+::\+Endpoints\+::send\+Message (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const std\+::string \&}]{text,  }\item[{const std\+::string \&}]{parse\+\_\+mode = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const bool \&}]{disable\+\_\+web\+\_\+page\+\_\+preview = {\ttfamily true},  }\item[{const bool \&}]{disable\+\_\+notification = {\ttfamily false},  }\item[{const int \&}]{reply\+\_\+to\+\_\+message\+\_\+id = {\ttfamily 0},  }\item[{const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&}]{reply\+\_\+markup = {\ttfamily std\+:\+:make\+\_\+shared$<$\mbox{\hyperlink{structtgbot_1_1Reply}{Reply}}$>$()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to send text messages. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em text} & Text of the message to be sent, 1-\/4096 characters after entities parsing \\
+\hline
+\mbox{\texttt{ in}}  & {\em parse\+\_\+mode} & Mode for parsing entities in the message text. See formatting options for more details. \\
+\hline
+\mbox{\texttt{ in}}  & {\em disable\+\_\+web\+\_\+page\+\_\+preview} & Disables link previews for links in this message \\
+\hline
+\mbox{\texttt{ in}}  & {\em disable\+\_\+notification} & Sends the message silently. Users will receive a notification with no sound. \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+to\+\_\+message\+\_\+id} & If the message is a reply, ID of the original message \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+markup} & Additional interface options. A J\+S\+O\+N-\/serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, the sent \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a7afe27f348cefe989f94cdf1a2ad797f}\label{classtgbot_1_1Endpoints_a7afe27f348cefe989f94cdf1a2ad797f}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!sendPhoto@{sendPhoto}}
+\index{sendPhoto@{sendPhoto}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{sendPhoto()}{sendPhoto()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} tgbot\+::\+Endpoints\+::send\+Photo (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&}]{photo,  }\item[{const std\+::string \&}]{caption = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const std\+::string \&}]{parse\+\_\+mode = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const bool \&}]{disable\+\_\+notification = {\ttfamily false},  }\item[{const int \&}]{reply\+\_\+to\+\_\+message\+\_\+id = {\ttfamily 0},  }\item[{const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&}]{reply\+\_\+markup = {\ttfamily std\+:\+:make\+\_\+shared$<$\mbox{\hyperlink{structtgbot_1_1Reply}{Reply}}$>$()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to send photos. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em photo} & Photo to send. Pass a file\+\_\+id as String to send a photo that exists on the Telegram servers (recommended), pass an H\+T\+TP U\+RL as a String for Telegram to get a photo from the Internet, or upload a new photo using multipart/form-\/data. More info on Sending Files » \\
+\hline
+\mbox{\texttt{ in}}  & {\em caption} & Photo caption (may also be used when resending photos by file\+\_\+id), 0-\/1024 characters after entities parsing \\
+\hline
+\mbox{\texttt{ in}}  & {\em parse\+\_\+mode} & Mode for parsing entities in the photo caption. See formatting options for more details. \\
+\hline
+\mbox{\texttt{ in}}  & {\em disable\+\_\+notification} & Sends the message silently. Users will receive a notification with no sound. \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+to\+\_\+message\+\_\+id} & If the message is a reply, ID of the original message \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+markup} & Additional interface options. A J\+S\+O\+N-\/serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a1fdb993098d0a32753cb53ebafcfbd04}\label{classtgbot_1_1Endpoints_a1fdb993098d0a32753cb53ebafcfbd04}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!sendPoll@{sendPoll}}
+\index{sendPoll@{sendPoll}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{sendPoll()}{sendPoll()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} tgbot\+::\+Endpoints\+::send\+Poll (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const std\+::string \&}]{question,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{options,  }\item[{const bool \&}]{is\+\_\+anonymous = {\ttfamily true},  }\item[{const std\+::string \&}]{type = {\ttfamily \char`\"{}regular\char`\"{}},  }\item[{const bool \&}]{allows\+\_\+multiple\+\_\+answers = {\ttfamily false},  }\item[{const int \&}]{correct\+\_\+option\+\_\+id = {\ttfamily -\/1},  }\item[{const std\+::string \&}]{explanation = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const std\+::string \&}]{explanation\+\_\+parse\+\_\+mode = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const int \&}]{open\+\_\+period = {\ttfamily -\/1},  }\item[{const int \&}]{close\+\_\+date = {\ttfamily -\/1},  }\item[{const bool \&}]{is\+\_\+closed = {\ttfamily false},  }\item[{const bool \&}]{disable\+\_\+notification = {\ttfamily false},  }\item[{const int \&}]{reply\+\_\+to\+\_\+message\+\_\+id = {\ttfamily 0},  }\item[{const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&}]{reply\+\_\+markup = {\ttfamily std\+:\+:make\+\_\+shared$<$\mbox{\hyperlink{structtgbot_1_1Reply}{Reply}}$>$()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to send a native poll. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em question} & \mbox{\hyperlink{structtgbot_1_1Poll}{Poll}} question, 1-\/255 characters \\
+\hline
+\mbox{\texttt{ in}}  & {\em options} & A J\+S\+O\+N-\/serialized list of answer options, 2-\/10 strings 1-\/100 characters each \\
+\hline
+\mbox{\texttt{ in}}  & {\em is\+\_\+anonymous} & True, if the poll needs to be anonymous, defaults to True \\
+\hline
+\mbox{\texttt{ in}}  & {\em type} & \mbox{\hyperlink{structtgbot_1_1Poll}{Poll}} type, “quiz” or “regular”, defaults to “regular” \\
+\hline
+\mbox{\texttt{ in}}  & {\em allows\+\_\+multiple\+\_\+answers} & True, if the poll allows multiple answers, ignored for polls in quiz mode, defaults to False \\
+\hline
+\mbox{\texttt{ in}}  & {\em correct\+\_\+option\+\_\+id} & 0-\/based identifier of the correct answer option, required for polls in quiz mode \\
+\hline
+\mbox{\texttt{ in}}  & {\em explanation} & Text that is shown when a user chooses an incorrect answer or taps on the lamp icon in a quiz-\/style poll, 0-\/200 characters with at most 2 line feeds after entities parsing \\
+\hline
+\mbox{\texttt{ in}}  & {\em explanation\+\_\+parse\+\_\+mode} & Mode for parsing entities in the explanation. See formatting options for more details. \\
+\hline
+\mbox{\texttt{ in}}  & {\em open\+\_\+period} & Amount of time in seconds the poll will be active after creation, 5-\/600. Can\textquotesingle{}t be used together with close\+\_\+date. \\
+\hline
+\mbox{\texttt{ in}}  & {\em close\+\_\+date} & Point in time (Unix timestamp) when the poll will be automatically closed. Must be at least 5 and no more than 600 seconds in the future. Can\textquotesingle{}t be used together with open\+\_\+period. \\
+\hline
+\mbox{\texttt{ in}}  & {\em is\+\_\+closed} & Pass True, if the poll needs to be immediately closed. This can be useful for poll preview. \\
+\hline
+\mbox{\texttt{ in}}  & {\em disable\+\_\+notification} & Sends the message silently. Users will receive a notification with no sound. \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+to\+\_\+message\+\_\+id} & If the message is a reply, ID of the original message \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+markup} & Additional interface options. A J\+S\+O\+N-\/serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, the sent \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a94a886aaeb5eabbf67ba66407925ca1a}\label{classtgbot_1_1Endpoints_a94a886aaeb5eabbf67ba66407925ca1a}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!sendSticker@{sendSticker}}
+\index{sendSticker@{sendSticker}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{sendSticker()}{sendSticker()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} tgbot\+::\+Endpoints\+::send\+Sticker (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&}]{sticker,  }\item[{const bool \&}]{disable\+\_\+notification = {\ttfamily false},  }\item[{const int \&}]{reply\+\_\+to\+\_\+message\+\_\+id = {\ttfamily 0},  }\item[{const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&}]{reply\+\_\+markup = {\ttfamily std\+:\+:make\+\_\+shared$<$\mbox{\hyperlink{structtgbot_1_1Reply}{Reply}}$>$()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to send static .W\+E\+BP or animated .T\+GS stickers. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em sticker} & \mbox{\hyperlink{structtgbot_1_1Sticker}{Sticker}} to send. Pass a file\+\_\+id as String to send a file that exists on the Telegram servers (recommended), pass an H\+T\+TP U\+RL as a String for Telegram to get a .W\+E\+BP file from the Internet, or upload a new one using multipart/form-\/data. \\
+\hline
+\mbox{\texttt{ in}}  & {\em disable\+\_\+notification} & Sends the message silently. Users will receive a notification with no sound. \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+to\+\_\+message\+\_\+id} & If the message is a reply, ID of the original message \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+markup} & Additional interface options. A J\+S\+O\+N-\/serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, the sent \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_ac51a01a4d65a949ae69427c746d648f6}\label{classtgbot_1_1Endpoints_ac51a01a4d65a949ae69427c746d648f6}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!sendVenue@{sendVenue}}
+\index{sendVenue@{sendVenue}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{sendVenue()}{sendVenue()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} tgbot\+::\+Endpoints\+::send\+Venue (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const float \&}]{latitude,  }\item[{const float \&}]{longitude,  }\item[{const std\+::string \&}]{title,  }\item[{const std\+::string \&}]{address,  }\item[{const std\+::string \&}]{foursquare\+\_\+id = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const std\+::string \&}]{foursquare\+\_\+type = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const bool \&}]{disable\+\_\+notification = {\ttfamily false},  }\item[{const int \&}]{reply\+\_\+to\+\_\+message\+\_\+id = {\ttfamily 0},  }\item[{const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&}]{reply\+\_\+markup = {\ttfamily std\+:\+:make\+\_\+shared$<$\mbox{\hyperlink{structtgbot_1_1Reply}{Reply}}$>$()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to send information about a venue. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em latitude} & Latitude of the venue \\
+\hline
+\mbox{\texttt{ in}}  & {\em longitude} & Longitude of the venue \\
+\hline
+\mbox{\texttt{ in}}  & {\em title} & Name of the venue \\
+\hline
+\mbox{\texttt{ in}}  & {\em address} & Address of the venue \\
+\hline
+\mbox{\texttt{ in}}  & {\em foursquare\+\_\+id} & Foursquare identifier of the venue \\
+\hline
+\mbox{\texttt{ in}}  & {\em foursquare\+\_\+type} & Foursquare type of the venue, if known. (For example, “arts\+\_\+entertainment/default”, “arts\+\_\+entertainment/aquarium” or “food/icecream”.) \\
+\hline
+\mbox{\texttt{ in}}  & {\em disable\+\_\+notification} & Sends the message silently. Users will receive a notification with no sound. \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+to\+\_\+message\+\_\+id} & If the message is a reply, ID of the original message \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+markup} & Additional interface options. A J\+S\+O\+N-\/serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, the sent \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_af4320a41f2036df0fe972040e7a224fa}\label{classtgbot_1_1Endpoints_af4320a41f2036df0fe972040e7a224fa}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!sendVideo@{sendVideo}}
+\index{sendVideo@{sendVideo}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{sendVideo()}{sendVideo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} tgbot\+::\+Endpoints\+::send\+Video (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&}]{video,  }\item[{const int \&}]{duration = {\ttfamily 0},  }\item[{const int \&}]{width = {\ttfamily 0},  }\item[{const int \&}]{height = {\ttfamily 0},  }\item[{const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&}]{thumb = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const std\+::string \&}]{caption = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const std\+::string \&}]{parse\+\_\+mode = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const bool \&}]{supports\+\_\+streaming = {\ttfamily false},  }\item[{const bool \&}]{disable\+\_\+notification = {\ttfamily false},  }\item[{const int \&}]{reply\+\_\+to\+\_\+message\+\_\+id = {\ttfamily 0},  }\item[{const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&}]{reply\+\_\+markup = {\ttfamily std\+:\+:make\+\_\+shared$<$\mbox{\hyperlink{structtgbot_1_1Reply}{Reply}}$>$()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to send video files, Telegram clients support mp4 videos (other formats may be sent as \mbox{\hyperlink{structtgbot_1_1Document}{Document}}). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em video} & \mbox{\hyperlink{structtgbot_1_1Video}{Video}} to send. Pass a file\+\_\+id as String to send a video that exists on the Telegram servers (recommended), pass an H\+T\+TP U\+RL as a String for Telegram to get a video from the Internet, or upload a new video using multipart/form-\/data. \\
+\hline
+\mbox{\texttt{ in}}  & {\em duration} & Duration of sent video in seconds \\
+\hline
+\mbox{\texttt{ in}}  & {\em width} & \mbox{\hyperlink{structtgbot_1_1Video}{Video}} width \\
+\hline
+\mbox{\texttt{ in}}  & {\em height} & \mbox{\hyperlink{structtgbot_1_1Video}{Video}} height \\
+\hline
+\mbox{\texttt{ in}}  & {\em thumb} & Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-\/side. The thumbnail should be in J\+P\+EG format and less than 200 kB in size. A thumbnail‘s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-\/data. Thumbnails can’t be reused and can be only uploaded as a new file, so you can pass “attach\+://$<$file\+\_\+attach\+\_\+name$>$” if the thumbnail was uploaded using multipart/form-\/data under $<$file\+\_\+attach\+\_\+name$>$. \\
+\hline
+\mbox{\texttt{ in}}  & {\em caption} & \mbox{\hyperlink{structtgbot_1_1Video}{Video}} caption (may also be used when resending videos by file\+\_\+id), 0-\/1024 characters after entities parsing \\
+\hline
+\mbox{\texttt{ in}}  & {\em parse\+\_\+mode} & Mode for parsing entities in the video caption. See formatting options for more details. \\
+\hline
+\mbox{\texttt{ in}}  & {\em supports\+\_\+streaming} & Pass True, if the uploaded video is suitable for streaming \\
+\hline
+\mbox{\texttt{ in}}  & {\em disable\+\_\+notification} & Sends the message silently. Users will receive a notification with no sound. \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+to\+\_\+message\+\_\+id} & If the message is a reply, ID of the original message \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+markup} & Additional interface options. A J\+S\+O\+N-\/serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, the sent \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is returned. Bots can currently send video files of up to 50 MB in size, this limit may be changed in the future. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_ae0321078f696a54f43d94023d9fa0b49}\label{classtgbot_1_1Endpoints_ae0321078f696a54f43d94023d9fa0b49}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!sendVideoNote@{sendVideoNote}}
+\index{sendVideoNote@{sendVideoNote}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{sendVideoNote()}{sendVideoNote()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} tgbot\+::\+Endpoints\+::send\+Video\+Note (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&}]{video\+\_\+note,  }\item[{const int \&}]{duration = {\ttfamily 0},  }\item[{const int \&}]{length = {\ttfamily 0},  }\item[{const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&}]{thumb = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const bool \&}]{disable\+\_\+notification = {\ttfamily false},  }\item[{const int \&}]{reply\+\_\+to\+\_\+message\+\_\+id = {\ttfamily 0},  }\item[{const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&}]{reply\+\_\+markup = {\ttfamily std\+:\+:make\+\_\+shared$<$\mbox{\hyperlink{structtgbot_1_1Reply}{Reply}}$>$()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+As of v.\+4.\+0, Telegram clients support rounded square mp4 videos of up to 1 minute long. Use this method to send video messages. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em video\+\_\+note} & \mbox{\hyperlink{structtgbot_1_1Video}{Video}} note to send. Pass a file\+\_\+id as String to send a video note that exists on the Telegram servers (recommended) or upload a new video using multipart/form-\/data. More info on Sending Files ». Sending video notes by a U\+RL is currently unsupported \\
+\hline
+\mbox{\texttt{ in}}  & {\em duration} & Duration of sent video in seconds \\
+\hline
+\mbox{\texttt{ in}}  & {\em length} & \mbox{\hyperlink{structtgbot_1_1Video}{Video}} width and height, i.\+e. diameter of the video message \\
+\hline
+\mbox{\texttt{ in}}  & {\em thumb} & Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-\/side. The thumbnail should be in J\+P\+EG format and less than 200 kB in size. A thumbnail‘s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-\/data. Thumbnails can’t be reused and can be only uploaded as a new file, so you can pass “attach\+://$<$file\+\_\+attach\+\_\+name$>$” if the thumbnail was uploaded using multipart/form-\/data under $<$file\+\_\+attach\+\_\+name$>$. \\
+\hline
+\mbox{\texttt{ in}}  & {\em disable\+\_\+notification} & Sends the message silently. Users will receive a notification with no sound. \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+to\+\_\+message\+\_\+id} & If the message is a reply, ID of the original message \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+markup} & Additional interface options. A J\+S\+O\+N-\/serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, the sent \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_af17dfcd48321b2df670d4ae76af8a352}\label{classtgbot_1_1Endpoints_af17dfcd48321b2df670d4ae76af8a352}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!sendVoice@{sendVoice}}
+\index{sendVoice@{sendVoice}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{sendVoice()}{sendVoice()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} tgbot\+::\+Endpoints\+::send\+Voice (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&}]{voice,  }\item[{const std\+::string \&}]{caption = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const std\+::string \&}]{parse\+\_\+mode = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const int \&}]{duration = {\ttfamily 0},  }\item[{const bool \&}]{disable\+\_\+notification = {\ttfamily false},  }\item[{const int \&}]{reply\+\_\+to\+\_\+message\+\_\+id = {\ttfamily 0},  }\item[{const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&}]{reply\+\_\+markup = {\ttfamily std\+:\+:make\+\_\+shared$<$\mbox{\hyperlink{structtgbot_1_1Reply}{Reply}}$>$()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to send audio files, if you want Telegram clients to display the file as a playable voice message. For this to work, your audio must be in an .O\+GG file encoded with O\+P\+US (other formats may be sent as \mbox{\hyperlink{structtgbot_1_1Audio}{Audio}} or \mbox{\hyperlink{structtgbot_1_1Document}{Document}}). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em voice} & \mbox{\hyperlink{structtgbot_1_1Audio}{Audio}} file to send. Pass a file\+\_\+id as String to send a file that exists on the Telegram servers (recommended), pass an H\+T\+TP U\+RL as a String for Telegram to get a file from the Internet, or upload a new one using multipart/form-\/data. \\
+\hline
+\mbox{\texttt{ in}}  & {\em caption} & \mbox{\hyperlink{structtgbot_1_1Voice}{Voice}} message caption, 0-\/1024 characters after entities parsing \\
+\hline
+\mbox{\texttt{ in}}  & {\em parse\+\_\+mode} & Mode for parsing entities in the voice message caption. See formatting options for more details. \\
+\hline
+\mbox{\texttt{ in}}  & {\em duration} & Duration of the voice message in seconds \\
+\hline
+\mbox{\texttt{ in}}  & {\em disable\+\_\+notification} & Sends the message silently. Users will receive a notification with no sound. \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+to\+\_\+message\+\_\+id} & If the message is a reply, ID of the original message \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+markup} & Additional interface options. A J\+S\+O\+N-\/serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, the sent \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is returned. Bots can currently send voice messages of up to 50 MB in size, this limit may be changed in the future. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_aff07c8b09f6727f8883d4845b83d682d}\label{classtgbot_1_1Endpoints_aff07c8b09f6727f8883d4845b83d682d}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!setChatAdministratorCustomTitle@{setChatAdministratorCustomTitle}}
+\index{setChatAdministratorCustomTitle@{setChatAdministratorCustomTitle}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{setChatAdministratorCustomTitle()}{setChatAdministratorCustomTitle()}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::set\+Chat\+Administrator\+Custom\+Title (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const int \&}]{user\+\_\+id,  }\item[{const std\+::string \&}]{custom\+\_\+title }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to set a custom title for an administrator in a supergroup promoted by the bot. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em user\+\_\+id} & Unique identifier of the target user \\
+\hline
+\mbox{\texttt{ in}}  & {\em custom\+\_\+title} & New custom title for the administrator; 0-\/16 characters, emoji are not allowed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns True on success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a9a6c25e624afd67b9419ba3eff660cbb}\label{classtgbot_1_1Endpoints_a9a6c25e624afd67b9419ba3eff660cbb}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!setChatDescription@{setChatDescription}}
+\index{setChatDescription@{setChatDescription}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{setChatDescription()}{setChatDescription()}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::set\+Chat\+Description (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const std\+::string \&}]{description = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to change the description of a group, a supergroup or a channel. 
+
+The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em description} & New chat description, 0-\/255 characters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns True on success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a4537d40a3e3e801f5a1b132c15ddc12b}\label{classtgbot_1_1Endpoints_a4537d40a3e3e801f5a1b132c15ddc12b}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!setChatPermissions@{setChatPermissions}}
+\index{setChatPermissions@{setChatPermissions}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{setChatPermissions()}{setChatPermissions()}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::set\+Chat\+Permissions (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const \mbox{\hyperlink{structtgbot_1_1ChatPermissions_a8f5fa042fc3b71bc3679fe874d33de78}{Chat\+Permissions\+::ptr}} \&}]{permissions }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to set default chat permissions for all members. 
+
+The bot must be an administrator in the group or a supergroup for this to work and must have the can\+\_\+restrict\+\_\+members admin rights. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em permissions} & New default chat permissions \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns True on success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a471936bd42bb0ed18d9dc2dbdd2b7633}\label{classtgbot_1_1Endpoints_a471936bd42bb0ed18d9dc2dbdd2b7633}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!setChatPhoto@{setChatPhoto}}
+\index{setChatPhoto@{setChatPhoto}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{setChatPhoto()}{setChatPhoto()}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::set\+Chat\+Photo (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const tools\+::\+Input\+File\+::ptr \&}]{photo }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to set a new profile photo for the chat. Photos can\textquotesingle{}t be changed for private chats. 
+
+The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em photo} & New chat photo, uploaded using multipart/form-\/data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns True on success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a17cd42c0a049b40ba782c55c6ef543f2}\label{classtgbot_1_1Endpoints_a17cd42c0a049b40ba782c55c6ef543f2}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!setChatStickerSet@{setChatStickerSet}}
+\index{setChatStickerSet@{setChatStickerSet}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{setChatStickerSet()}{setChatStickerSet()}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::set\+Chat\+Sticker\+Set (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const std\+::string \&}]{sticker\+\_\+set\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to set a new group sticker set for a supergroup. 
+
+The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Use the field can\+\_\+set\+\_\+sticker\+\_\+set optionally returned in get\+Chat requests to check if the bot can use this method. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em sticker\+\_\+set\+\_\+name} & Name of the sticker set to be set as the group sticker set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns True on success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_af67a940bf2dd69d93f93fc1733b0fce3}\label{classtgbot_1_1Endpoints_af67a940bf2dd69d93f93fc1733b0fce3}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!setChatTitle@{setChatTitle}}
+\index{setChatTitle@{setChatTitle}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{setChatTitle()}{setChatTitle()}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::set\+Chat\+Title (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const std\+::string \&}]{title }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to change the title of a chat. 
+
+itles can\textquotesingle{}t be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em title} & New chat title, 1-\/255 characters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns True on success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_ae315895d5f19c4231ba8d8df1cd7aef4}\label{classtgbot_1_1Endpoints_ae315895d5f19c4231ba8d8df1cd7aef4}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!setGameScore@{setGameScore}}
+\index{setGameScore@{setGameScore}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{setGameScore()}{setGameScore()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} tgbot\+::\+Endpoints\+::set\+Game\+Score (\begin{DoxyParamCaption}\item[{const int \&}]{user\+\_\+id,  }\item[{const int \&}]{score,  }\item[{const bool \&}]{force = {\ttfamily false},  }\item[{const bool \&}]{disable\+\_\+edit\+\_\+message = {\ttfamily false},  }\item[{const long long \&}]{chat\+\_\+id = {\ttfamily 0},  }\item[{const int \&}]{message\+\_\+id = {\ttfamily 0},  }\item[{const std\+::string \&}]{inline\+\_\+message\+\_\+id = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to set the score of the specified user in a game. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em user\+\_\+id} & \mbox{\hyperlink{structtgbot_1_1User}{User}} identifier \\
+\hline
+\mbox{\texttt{ in}}  & {\em score} & New score, must be non-\/negative \\
+\hline
+\mbox{\texttt{ in}}  & {\em force} & Pass True, if the high score is allowed to decrease. This can be useful when fixing mistakes or banning cheaters \\
+\hline
+\mbox{\texttt{ in}}  & {\em disable\+\_\+edit\+\_\+message} & Pass True, if the game message should not be automatically edited to include the current scoreboard \\
+\hline
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Required if inline\+\_\+message\+\_\+id is not specified. Unique identifier for the target chat \\
+\hline
+\mbox{\texttt{ in}}  & {\em message\+\_\+id} & Required if inline\+\_\+message\+\_\+id is not specified. Identifier of the sent message \\
+\hline
+\mbox{\texttt{ in}}  & {\em inline\+\_\+message\+\_\+id} & Required if chat\+\_\+id and message\+\_\+id are not specified. Identifier of the inline message \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, if the message was sent by the bot, returns the edited \mbox{\hyperlink{structtgbot_1_1Message}{Message}}, otherwise returns True. Returns an error, if the new score is not greater than the user\textquotesingle{}s current score in the chat and force is False. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a182a7b565a87580958905b7d176e1d4f}\label{classtgbot_1_1Endpoints_a182a7b565a87580958905b7d176e1d4f}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!setMyCommands@{setMyCommands}}
+\index{setMyCommands@{setMyCommands}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{setMyCommands()}{setMyCommands()}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::set\+My\+Commands (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1BotCommand_aaaa346b7d4216ba576b1a213470bff22}{Bot\+Command\+::ptr}} $>$}]{commands }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to change the list of the bot\textquotesingle{}s commands. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em commands} & A J\+S\+O\+N-\/serialized list of bot commands to be set as the list of the bot\textquotesingle{}s commands. At most 100 commands can be specified. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns True on success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_aaa354af3b05670c61db4bb42a0738518}\label{classtgbot_1_1Endpoints_aaa354af3b05670c61db4bb42a0738518}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!setPassportDataErrors@{setPassportDataErrors}}
+\index{setPassportDataErrors@{setPassportDataErrors}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{setPassportDataErrors()}{setPassportDataErrors()}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::set\+Passport\+Data\+Errors (\begin{DoxyParamCaption}\item[{const int \&}]{user\+\_\+id,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1PassportElementError_a2756b3339610b891e35da66ca45cc9dd}{Passport\+Element\+Error\+::ptr}} $>$ \&}]{errors }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Informs a user that some of the Telegram Passport elements they provided contains errors. 
+
+The user will not be able to re-\/submit their Passport to you until the errors are fixed (the contents of the field for which you returned the error must change).
+
+Use this if the data submitted by the user doesn\textquotesingle{}t satisfy the standards your service requires for any reason. For example, if a birthday date seems invalid, a submitted document is blurry, a scan shows evidence of tampering, etc. Supply some details in the error message to make sure the user knows how to correct the issues. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em user\+\_\+id} & \mbox{\hyperlink{structtgbot_1_1User}{User}} identifier \\
+\hline
+\mbox{\texttt{ in}}  & {\em errors} & A J\+S\+O\+N-\/serialized array describing the errors \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns True on success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a9e5ee256129f83c9cce9da53084583f6}\label{classtgbot_1_1Endpoints_a9e5ee256129f83c9cce9da53084583f6}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!setStickerPositionInSet@{setStickerPositionInSet}}
+\index{setStickerPositionInSet@{setStickerPositionInSet}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{setStickerPositionInSet()}{setStickerPositionInSet()}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::set\+Sticker\+Position\+In\+Set (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{sticker,  }\item[{const int \&}]{position }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to move a sticker in a set created by the bot to a specific position. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sticker} & \mbox{\hyperlink{structtgbot_1_1File}{File}} identifier of the sticker \\
+\hline
+\mbox{\texttt{ in}}  & {\em position} & New sticker position in the set, zero-\/based \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns True on success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a63b317292fe2e063238f1cfe83ad91fb}\label{classtgbot_1_1Endpoints_a63b317292fe2e063238f1cfe83ad91fb}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!setStickerSetThumb@{setStickerSetThumb}}
+\index{setStickerSetThumb@{setStickerSetThumb}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{setStickerSetThumb()}{setStickerSetThumb()}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::set\+Sticker\+Set\+Thumb (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const int \&}]{user\+\_\+id,  }\item[{const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&}]{thumb = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to set the thumbnail of a sticker set. Animated thumbnails can be set for animated sticker sets only. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & \mbox{\hyperlink{structtgbot_1_1Sticker}{Sticker}} set name \\
+\hline
+\mbox{\texttt{ in}}  & {\em user\+\_\+id} & \mbox{\hyperlink{structtgbot_1_1User}{User}} identifier of the sticker set owner \\
+\hline
+\mbox{\texttt{ in}}  & {\em thumb} & A P\+NG image with the thumbnail, must be up to 128 kilobytes in size and have width and height exactly 100px, or a T\+GS animation with the thumbnail up to 32 kilobytes in size; see \href{https://core.telegram.org/animated_stickers\#technical-requirements}{\texttt{ https\+://core.\+telegram.\+org/animated\+\_\+stickers\#technical-\/requirements}} for animated sticker technical requirements. Pass a file\+\_\+id as a String to send a file that already exists on the Telegram servers, pass an H\+T\+TP U\+RL as a String for Telegram to get a file from the Internet, or upload a new one using multipart/form-\/data. More info on Sending Files ». Animated sticker set thumbnail can\textquotesingle{}t be uploaded via H\+T\+TP U\+RL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns True on success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a3c42feb6c4641125b419d8d7c82b9b42}\label{classtgbot_1_1Endpoints_a3c42feb6c4641125b419d8d7c82b9b42}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!setWebhook@{setWebhook}}
+\index{setWebhook@{setWebhook}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{setWebhook()}{setWebhook()}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::set\+Webhook (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{url,  }\item[{const tools\+::\+Input\+File\+::ptr \&}]{certificate = {\ttfamily std\+:\+:make\+\_\+shared$<$tools\+:\+:InputFile$>$(\char`\"{}\char`\"{})},  }\item[{const int \&}]{max\+\_\+connections = {\ttfamily 40},  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{allowed\+\_\+updates = {\ttfamily std\+:\+:vector$<$std\+:\+:string$>$()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to specify a url and receive incoming updates via an outgoing webhook. Whenever there is an update for the bot, we will send an H\+T\+T\+PS P\+O\+ST request to the specified url, containing a J\+S\+O\+N-\/serialized \mbox{\hyperlink{structtgbot_1_1Update}{Update}}. In case of an unsuccessful request, we will give up after a reasonable amount of attempts. 
+
+If you\textquotesingle{}d like to make sure that the Webhook request comes from Telegram, we recommend using a secret path in the U\+RL, e.\+g. \href{https://www.example.com/}{\texttt{ https\+://www.\+example.\+com/}}$<$token$>$. Since nobody else knows your bot‘s token, you can be pretty sure it’s us. \begin{DoxyNote}{Note}
+1. You will not be able to receive updates using get\+Updates for as long as an outgoing webhook is set up. 
+
+2. To use a self-\/signed certificate, you need to upload your public key certificate using certificate parameter. Please upload as Input\+File, sending a String will not work. 
+
+3. Ports currently supported for Webhooks\+: 443, 80, 88, 8443. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em url} & H\+T\+T\+PS url to send updates to. Use an empty string to remove webhook integration \\
+\hline
+\mbox{\texttt{ in}}  & {\em certificate} & Upload your public key certificate so that the root certificate in use can be checked. See our self-\/signed guide for details. \\
+\hline
+\mbox{\texttt{ in}}  & {\em max\+\_\+connections} & Maximum allowed number of simultaneous H\+T\+T\+PS connections to the webhook for update delivery, 1-\/100. Defaults to 40. Use lower values to limit the load on your bot‘s server, and higher values to increase your bot’s throughput. \\
+\hline
+\mbox{\texttt{ in}}  & {\em allowed\+\_\+updates} & A J\+S\+O\+N-\/serialized list of the update types you want your bot to receive. For example, specify \mbox{[}“message”, “edited\+\_\+channel\+\_\+post”, “callback\+\_\+query”\mbox{]} to only receive updates of these types. See \mbox{\hyperlink{structtgbot_1_1Update}{Update}} for a complete list of available update types. Specify an empty list to receive all updates regardless of type (default). If not specified, the previous setting will be used. Please note that this parameter doesn\textquotesingle{}t affect updates created before the call to the set\+Webhook, so unwanted updates may be received for a short period of time. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns True on 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a2191556f478a3e2d0d51416f05c03851}\label{classtgbot_1_1Endpoints_a2191556f478a3e2d0d51416f05c03851}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!stopMessageLiveLocation@{stopMessageLiveLocation}}
+\index{stopMessageLiveLocation@{stopMessageLiveLocation}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{stopMessageLiveLocation()}{stopMessageLiveLocation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} tgbot\+::\+Endpoints\+::stop\+Message\+Live\+Location (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id = {\ttfamily 0},  }\item[{const int \&}]{message\+\_\+id = {\ttfamily 0},  }\item[{const std\+::string \&}]{inline\+\_\+message\+\_\+id = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&}]{reply\+\_\+markup = {\ttfamily std\+:\+:make\+\_\+shared$<$\mbox{\hyperlink{structtgbot_1_1Reply}{Reply}}$>$()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to stop updating a live location message before live\+\_\+period expires. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Required if inline\+\_\+message\+\_\+id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em message\+\_\+id} & Required if inline\+\_\+message\+\_\+id is not specified. Identifier of the message with live location to stop \\
+\hline
+\mbox{\texttt{ in}}  & {\em inline\+\_\+message\+\_\+id} & Required if chat\+\_\+id and message\+\_\+id are not specified. Identifier of the inline message \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+markup} & A J\+S\+O\+N-\/serialized object for a new inline keyboard. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, if the message was sent by the bot, the sent \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is returned, otherwise True is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_aec31c86958a5b8a1fbdab9c270638ae1}\label{classtgbot_1_1Endpoints_aec31c86958a5b8a1fbdab9c270638ae1}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!stopPoll@{stopPoll}}
+\index{stopPoll@{stopPoll}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{stopPoll()}{stopPoll()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1Poll_ae965b6a7bf1b4d98765c38a5255eb51c}{Poll\+::ptr}} tgbot\+::\+Endpoints\+::stop\+Poll (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const int \&}]{message\+\_\+id,  }\item[{const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}}}]{reply\+\_\+markup = {\ttfamily std\+:\+:make\+\_\+shared$<$\mbox{\hyperlink{structtgbot_1_1Reply}{Reply}}$>$()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to stop a poll which was sent by the bot. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\mbox{\texttt{ in}}  & {\em message\+\_\+id} & Identifier of the original message with the poll \\
+\hline
+\mbox{\texttt{ in}}  & {\em reply\+\_\+markup} & A J\+S\+O\+N-\/serialized object for a new message inline keyboard. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, the stopped \mbox{\hyperlink{structtgbot_1_1Poll}{Poll}} with the final results is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a96634a7225c87c2112a9bc8d89603ea3}\label{classtgbot_1_1Endpoints_a96634a7225c87c2112a9bc8d89603ea3}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!unbanChatMember@{unbanChatMember}}
+\index{unbanChatMember@{unbanChatMember}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{unbanChatMember()}{unbanChatMember()}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::unban\+Chat\+Member (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id,  }\item[{const int \&}]{user\+\_\+id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to unban a previously kicked user in a supergroup or channel. 
+
+The user will not return to the group or channel automatically, but will be able to join via link, etc. The bot must be an administrator for this to work. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target group or username of the target supergroup or channel (in the format @username) \\
+\hline
+\mbox{\texttt{ in}}  & {\em user\+\_\+id} & Unique identifier of the target user \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns True on success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a07f0d99d66087cf744bf8b90b16892ef}\label{classtgbot_1_1Endpoints_a07f0d99d66087cf744bf8b90b16892ef}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!unpinChatMessage@{unpinChatMessage}}
+\index{unpinChatMessage@{unpinChatMessage}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{unpinChatMessage()}{unpinChatMessage()}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::unpin\+Chat\+Message (\begin{DoxyParamCaption}\item[{const long long \&}]{chat\+\_\+id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to unpin a message in a group, a supergroup, or a channel. 
+
+The bot must be an administrator in the chat for this to work and must have the ‘can\+\_\+pin\+\_\+messages’ admin right in the supergroup or ‘can\+\_\+edit\+\_\+messages’ admin right in the channel. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns True on success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a964caa9fb19bb5f0b7da43be38584f06}\label{classtgbot_1_1Endpoints_a964caa9fb19bb5f0b7da43be38584f06}} 
+\index{tgbot::Endpoints@{tgbot::Endpoints}!uploadStickerFile@{uploadStickerFile}}
+\index{uploadStickerFile@{uploadStickerFile}!tgbot::Endpoints@{tgbot::Endpoints}}
+\doxysubsubsection{\texorpdfstring{uploadStickerFile()}{uploadStickerFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtgbot_1_1File_a35d5b6b40400f685260e6bf076a07a83}{File\+::ptr}} tgbot\+::\+Endpoints\+::upload\+Sticker\+File (\begin{DoxyParamCaption}\item[{const int \&}]{user\+\_\+id,  }\item[{const tools\+::\+Input\+File\+::ptr \&}]{png\+\_\+sticker }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Use this method to upload a .P\+NG file with a sticker for later use in create\+New\+Sticker\+Set and add\+Sticker\+To\+Set methods (can be used multiple times). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em user\+\_\+id} & \mbox{\hyperlink{structtgbot_1_1User}{User}} identifier of sticker file owner \\
+\hline
+\mbox{\texttt{ in}}  & {\em png\+\_\+sticker} & P\+NG image with the sticker, must be up to 512 kilobytes in size, dimensions must not exceed 512px, and either width or height must be exactly 512px. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the uploaded \mbox{\hyperlink{structtgbot_1_1File}{File}} on success. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tgbot/Endpoints.\+h\item 
+src/Endpoints.\+cpp\end{DoxyCompactItemize}
