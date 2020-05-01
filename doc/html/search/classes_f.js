@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['update_549',['Update',['../structtgbot_1_1Update.html',1,'tgbot']]],
-  ['user_550',['User',['../structtgbot_1_1User.html',1,'tgbot']]],
-  ['userprofilephotos_551',['UserProfilePhotos',['../structtgbot_1_1UserProfilePhotos.html',1,'tgbot']]]
+  ['update_550',['Update',['../structtgbot_1_1Update.html',1,'tgbot']]],
+  ['user_551',['User',['../structtgbot_1_1User.html',1,'tgbot']]],
+  ['userprofilephotos_552',['UserProfilePhotos',['../structtgbot_1_1UserProfilePhotos.html',1,'tgbot']]]
 ];
