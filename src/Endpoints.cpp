@@ -1888,15 +1888,15 @@ namespace tgbot
 		return msg;
 	}
 
-	Message::ptr Endpoints::editMessageReplyMarkup(const Reply::ptr &reply_markup, const long long &chat_id, const int &message_id,
-			const std::string &inline_message_id) const noexcept
+	Message::ptr Endpoints::editMessageReplyMarkup(const long long &chat_id, const int &message_id,
+			const std::string &inline_message_id, const Reply::ptr &reply_markup) const noexcept
 	{
 		//HTTP arguments
 		std::vector<tools::HttpArg> http_args;
-		http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 		http_args.push_back(tools::HttpArg("chat_id", chat_id));
 		http_args.push_back(tools::HttpArg("message_id", message_id));
 		http_args.push_back(tools::HttpArg("inline_message_id", inline_message_id));
+		http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/editMessageReplyMarkup", http_args);
 		std::string json = http_client.send_post_req_multipart().m_body;
