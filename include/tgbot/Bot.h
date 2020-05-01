@@ -11,6 +11,9 @@
  * @author Matheus Gabriel Werny de Lima
  * @copyright GNU General Public License v2.0
  * @version
+ * 1.2.2 (01.05.2020)
+ * - Improved the endpoints.
+ * @version
  * 1.2.1 (29.04.2020)
  * - Updated a Doxygen page.
  * @version

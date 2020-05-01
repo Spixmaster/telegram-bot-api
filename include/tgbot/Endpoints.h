@@ -362,7 +362,7 @@ namespace tgbot
 		 */
 		Message::ptr sendPoll(const long long &chat_id, const std::string &question, const std::vector<std::string> &options, const bool &is_anonymous = true,
 				const std::string &type = "regular", const bool &allows_multiple_answers = false, const int &correct_option_id = -1, const std::string &explanation = "",
-				const std::string &explanation_parse_mode = "", const int &open_period = -1, const int &close_date = -1, const bool &is_closed = false,
+				const std::string &explanation_parse_mode = "", const int &open_period = 0, const int &close_date = 0, const bool &is_closed = false,
 				const bool &disable_notification = false, const int &reply_to_message_id = 0, const Reply::ptr &reply_markup = std::make_shared<Reply>()) const noexcept;
 
 		/**
@@ -375,7 +375,7 @@ namespace tgbot
 		 * @param[in] reply_markup
 		 * @return On success, the sent Message is returned.
 		 */
-		Message::ptr sendDice(const long long &chat_id, const std::string &emoji = "", const bool &disable_notification = false, const int &reply_to_message_id = -1,
+		Message::ptr sendDice(const long long &chat_id, const std::string &emoji = "", const bool &disable_notification = false, const int &reply_to_message_id = 0,
 				const Reply::ptr &reply_markup = std::make_shared<Reply>()) const noexcept;
 
 		/**
@@ -637,7 +637,7 @@ namespace tgbot
 		 * @param[in] reply_markup A JSON-serialized object for an inline keyboard.
 		 * @return On success, if edited message is sent by the bot, the edited Message is returned, otherwise True is returned.
 		 */
-		Message::ptr editMessageCaption(const long long &chat_id = 0, const int &message_id = 0, const std::string &inline_message_id = "", const std::string &caption = 0,
+		Message::ptr editMessageCaption(const long long &chat_id = 0, const int &message_id = 0, const std::string &inline_message_id = "", const std::string &caption = "",
 				const std::string &parse_mode = "", const Reply::ptr reply_markup = std::make_shared<Reply>()) const noexcept;
 
 		/**
@@ -657,14 +657,14 @@ namespace tgbot
 
 		/**
 		 * @brief Use this method to edit only the reply markup of messages.
-		 * @param[in] reply_markup Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format \@channelusername)
 		 * @param[in] chat_id Required if inline_message_id is not specified. Identifier of the message to edit
 		 * @param[in] message_id Required if chat_id and message_id are not specified. Identifier of the inline message
 		 * @param[in] inline_message_id A JSON-serialized object for an inline keyboard.
+		 * @param[in] reply_markup Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format \@channelusername)
 		 * @return On success, if edited message is sent by the bot, the edited Message is returned, otherwise True is returned.
 		 */
-		Message::ptr editMessageReplyMarkup(const Reply::ptr &reply_markup, const long long &chat_id = 0, const int &message_id = 0,
-				const std::string &inline_message_id = "") const noexcept;
+		Message::ptr editMessageReplyMarkup(const long long &chat_id = 0, const int &message_id = 0,
+				const std::string &inline_message_id = "", const Reply::ptr &reply_markup = std::make_shared<Reply>()) const noexcept;
 
 		/**
 		 * @brief Use this method to stop a poll which was sent by the bot.
