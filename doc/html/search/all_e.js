@@ -30,7 +30,7 @@ var searchData=
   ['pinchatmessage_307',['pinChatMessage',['../classtgbot_1_1Endpoints.html#ac339ea9dacf571ad715c667390b3cba0',1,'tgbot::Endpoints']]],
   ['pinned_5fmessage_308',['pinned_message',['../structtgbot_1_1Chat.html#a06961b36ef1186e79d23937db2cb4b54',1,'tgbot::Chat::pinned_message()'],['../structtgbot_1_1Message.html#a9e13e8f7548a9209d70f7b609828cde9',1,'tgbot::Message::pinned_message()']]],
   ['point_309',['point',['../structtgbot_1_1MaskPosition.html#a826380dd0be6d235b972dbb2426e6c3c',1,'tgbot::MaskPosition']]],
-  ['poll_310',['Poll',['../structtgbot_1_1Poll.html',1,'tgbot::Poll'],['../structtgbot_1_1Message.html#a4456a09ea931b03075e6d8d5a78d1429',1,'tgbot::Message::poll()'],['../structtgbot_1_1Update.html#a44b3152d70fdb7eb91730b77adb3c7aa',1,'tgbot::Update::poll()'],['../structtgbot_1_1Poll.html#a80a519300c53cc0ab1d9b9b4a35b41fb',1,'tgbot::Poll::Poll()']]],
+  ['poll_310',['Poll',['../structtgbot_1_1Poll.html',1,'tgbot::Poll'],['../structtgbot_1_1Poll.html#a80a519300c53cc0ab1d9b9b4a35b41fb',1,'tgbot::Poll::Poll()'],['../structtgbot_1_1Message.html#a4456a09ea931b03075e6d8d5a78d1429',1,'tgbot::Message::poll()'],['../structtgbot_1_1Update.html#a44b3152d70fdb7eb91730b77adb3c7aa',1,'tgbot::Update::poll()']]],
   ['poll_5fanswer_311',['poll_answer',['../structtgbot_1_1Update.html#ab9539d23ee7be80efe0fc61871f640f2',1,'tgbot::Update']]],
   ['poll_5fid_312',['poll_id',['../structtgbot_1_1PollAnswer.html#af4b2419fed0a63f29e121bb1071db444',1,'tgbot::PollAnswer']]],
   ['pollanswer_313',['PollAnswer',['../structtgbot_1_1PollAnswer.html',1,'tgbot::PollAnswer'],['../structtgbot_1_1PollAnswer.html#aeb2085c32db3eaabfa4a43e48241a330',1,'tgbot::PollAnswer::PollAnswer()']]],
