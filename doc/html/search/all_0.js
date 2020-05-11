@@ -5,7 +5,7 @@ var searchData=
   ['allowed_5fupdates_2',['allowed_updates',['../structtgbot_1_1WebhookInfo.html#ab3473e9aeef872aa21666826f9761e8b',1,'tgbot::WebhookInfo']]],
   ['allows_5fmultiple_5fanswers_3',['allows_multiple_answers',['../structtgbot_1_1Poll.html#a605101aefa871ab1dfd18c9b6222e864',1,'tgbot::Poll']]],
   ['amount_4',['amount',['../structtgbot_1_1LabeledPrice.html#a24eb48cc7d7818bb41bb78a80a6c11bb',1,'tgbot::LabeledPrice']]],
-  ['animation_5',['Animation',['../structtgbot_1_1Animation.html',1,'tgbot::Animation'],['../structtgbot_1_1Game.html#aa6cc9368548abe90e609343f93aefd0b',1,'tgbot::Game::animation()'],['../structtgbot_1_1Message.html#ab70a842cad751c60b322b90ca5ac7213',1,'tgbot::Message::animation()'],['../structtgbot_1_1Animation.html#a1833358d2d3c4ec64ac6ee54b925b9f7',1,'tgbot::Animation::Animation()']]],
+  ['animation_5',['Animation',['../structtgbot_1_1Animation.html',1,'tgbot::Animation'],['../structtgbot_1_1Animation.html#a1833358d2d3c4ec64ac6ee54b925b9f7',1,'tgbot::Animation::Animation()'],['../structtgbot_1_1Game.html#aa6cc9368548abe90e609343f93aefd0b',1,'tgbot::Game::animation()'],['../structtgbot_1_1Message.html#ab70a842cad751c60b322b90ca5ac7213',1,'tgbot::Message::animation()']]],
   ['answercallbackquery_6',['answerCallbackQuery',['../classtgbot_1_1Endpoints.html#a25abb982e69ddb6f00db687d133d3742',1,'tgbot::Endpoints']]],
   ['answerinlinequery_7',['answerInlineQuery',['../classtgbot_1_1Endpoints.html#ae05408d45290ba793c3c84722aaadfb1',1,'tgbot::Endpoints']]],
   ['answerprecheckoutquery_8',['answerPreCheckoutQuery',['../classtgbot_1_1Endpoints.html#a201aac099a72621e97df7aba3acfb3a8',1,'tgbot::Endpoints']]],
