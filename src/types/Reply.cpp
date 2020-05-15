@@ -1,4 +1,5 @@
 #include "tgbot/types/Reply.h"
+#include <string>
 
 namespace tgbot
 {

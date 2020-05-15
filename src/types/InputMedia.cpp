@@ -1,4 +1,5 @@
 #include "tgbot/types/InputMedia.h"
+#include <string>
 
 namespace tgbot
 {
