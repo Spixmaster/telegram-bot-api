@@ -31,7 +31,7 @@ int main(int argc, const char *argv[])
 	keyboard_ptr->resize_keyboard = true;
 	keyboard_ptr->one_time_keyboard = true;
 
-	tgbot::Message::ptr msg = bot->get_endpnts()->sendMessage(proper-chat-id, "<b>What's up!</b>", "HTML", true, false, 0, keyboard_ptr);
+	bot->get_endpnts()->sendMessage(proper-chat-id, "<b>What's up!</b>", "HTML", true, false, 0, keyboard_ptr);
 
 	return EXIT_SUCCESS;
 }

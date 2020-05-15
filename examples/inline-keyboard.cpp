@@ -32,7 +32,7 @@ int main(int argc, const char *argv[])
 
 	tgbot::InlineKeyboardMarkup::ptr keyboard_ptr = std::make_shared<tgbot::InlineKeyboardMarkup>(keyboard);
 
-	tgbot::Message::ptr msg = bot->get_endpnts()->sendMessage(proper-chat-id, "<b>What's up!</b>", "HTML", true, false, 0, keyboard_ptr);
+	bot->get_endpnts()->sendMessage(proper-chat-id, "<b>What's up!</b>", "HTML", true, false, 0, keyboard_ptr);
 
 	return EXIT_SUCCESS;
 }
