@@ -62,36 +62,7 @@ The source code cannot be compiled by itself as there is no main function includ
 The documentation was generated with the help of Doxygen. It is an HTML document and can be found in *./doc/html/index.html*. Open that file with your favourite browser.
 
 ### Example
-Also, look in the examples folder.
-
-```cpp
-#include "tgbot/Bot.h"
-#include <memory>
-
-int main(int argc, const char *argv[])
-{
-	tgbot::Bot::ptr bot = std::make_shared<tgbot::Bot>("your-bot-token");
-	
-	//Command /test
-	bot->get_event_handler()->on_cmd("test", [&bot](const tgbot::Message::ptr &msg)
-	{
-		bot->get_endpnts()->sendMessage(msg->chat->id, "Hey, <b>there</b>.", "HTML", false, 0);
-	});
-
-	//Test listener
-	bot->get_event_handler()->on_non_cmd_msg([&bot](const tgbot::Message::ptr &msg)
-	{
-		bot->get_endpnts()->sendMessage(msg->chat->id, "I hear you.");
-	});
-
-	while(true)
-	{
-		bot->get_event_handler()->long_poll();
-	}
-
-	return EXIT_SUCCESS;
-}
-```
+Look in the examples folder.
 
 ## Changelog
 The changelog can be seen on the documentation's main page.
