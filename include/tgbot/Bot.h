@@ -11,6 +11,12 @@
  * @author Matheus Gabriel Werny de Lima
  * @copyright GNU General Public License v2.0
  * @version
+ * 1.2.5 (15.05.2020)
+ * - Submodule updated.
+ * - Contributing updated.
+ * - Readme updated.
+ * - Examples updated.
+ * @version
  * 1.2.4 (11.05.2020)
  * - Submodule and readme update.
  * @version
@@ -34,7 +40,7 @@
  * @page dev-log Developer log
  * @section dev-log-notes Notes
  * In some constructors (mainly for field "thumb"), I only look for a string value although InputFile would also be possible but I do not know how they would send me that.
- * This is nothing to worry about at it is not even intended that Telegram sends all objects to us. Some are just sent by us.
+ * This is nothing to worry about as it is not even intended that Telegram sends all objects to us. Some are just sent by us.
  */
 
 namespace tgbot
