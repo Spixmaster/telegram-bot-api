@@ -48,38 +48,7 @@ This software is built with the help of third party libraries. It is shown below
 \end{DoxyItemize}\hypertarget{md_README_autotoc_md12}{}\doxysection{Usage}\label{md_README_autotoc_md12}
 The source code cannot be compiled by itself as there is no main function included. It is thought to be used in other software as a library.\hypertarget{md_README_autotoc_md13}{}\doxysubsection{Documentation}\label{md_README_autotoc_md13}
 The documentation was generated with the help of Doxygen. It is an H\+T\+ML document and can be found in $\ast$./doc/html/index.html$\ast$. Open that file with your favourite browser.\hypertarget{md_README_autotoc_md14}{}\doxysubsection{Example}\label{md_README_autotoc_md14}
-Also, look in the examples folder.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{preprocessor}{\#include "tgbot/Bot.h"}}
-\DoxyCodeLine{\textcolor{preprocessor}{\#include <memory>}}
-\DoxyCodeLine{}
-\DoxyCodeLine{\textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *argv[])}
-\DoxyCodeLine{\{}
-\DoxyCodeLine{    \mbox{\hyperlink{classtgbot_1_1Bot_ae960431ade9ddd7bf7c37cb3fa9eacdd}{tgbot::Bot::ptr}} bot = std::make\_shared<tgbot::Bot>(\textcolor{stringliteral}{"your-\/bot-\/token"});}
-\DoxyCodeLine{    }
-\DoxyCodeLine{    \textcolor{comment}{//Command /test}}
-\DoxyCodeLine{    bot-\/>get\_event\_handler()-\/>on\_cmd(\textcolor{stringliteral}{"test"}, [\&bot](\textcolor{keyword}{const} \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{tgbot::Message::ptr}} \&msg)}
-\DoxyCodeLine{    \{}
-\DoxyCodeLine{        bot-\/>get\_endpnts()-\/>sendMessage(msg-\/>chat-\/>id, \textcolor{stringliteral}{"Hey, <b>there</b>."}, \textcolor{stringliteral}{"HTML"}, \textcolor{keyword}{false}, 0);}
-\DoxyCodeLine{    \});}
-\DoxyCodeLine{}
-\DoxyCodeLine{    \textcolor{comment}{//Test listener}}
-\DoxyCodeLine{    bot-\/>get\_event\_handler()-\/>on\_non\_cmd\_msg([\&bot](\textcolor{keyword}{const} \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{tgbot::Message::ptr}} \&msg)}
-\DoxyCodeLine{    \{}
-\DoxyCodeLine{        bot-\/>get\_endpnts()-\/>sendMessage(msg-\/>chat-\/>id, \textcolor{stringliteral}{"I hear you."});}
-\DoxyCodeLine{    \});}
-\DoxyCodeLine{}
-\DoxyCodeLine{    \textcolor{keywordflow}{while}(\textcolor{keyword}{true})}
-\DoxyCodeLine{    \{}
-\DoxyCodeLine{        bot-\/>get\_event\_handler()-\/>long\_poll();}
-\DoxyCodeLine{    \}}
-\DoxyCodeLine{}
-\DoxyCodeLine{    \textcolor{keywordflow}{return} EXIT\_SUCCESS;}
-\DoxyCodeLine{\}}
-\end{DoxyCode}
-\hypertarget{md_README_autotoc_md15}{}\doxysection{Changelog}\label{md_README_autotoc_md15}
+Look in the examples folder.\hypertarget{md_README_autotoc_md15}{}\doxysection{Changelog}\label{md_README_autotoc_md15}
 The changelog can be seen on the documentation\textquotesingle{}s main page.\hypertarget{md_README_autotoc_md16}{}\doxysection{F\+AQ}\label{md_README_autotoc_md16}
 
 \begin{DoxyItemize}
