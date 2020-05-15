@@ -1,4 +1,5 @@
 #include "tgbot/types/PassportElementError.h"
+#include <string>
 
 namespace tgbot
 {

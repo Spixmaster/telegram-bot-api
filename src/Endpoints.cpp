@@ -689,8 +689,8 @@ namespace tgbot
 		//HTTP arguments
 		std::vector<tools::HttpArg> http_args;
 		http_args.push_back(tools::HttpArg("chat_id", chat_id));
-		http_args.push_back(tools::HttpArg("latitude", latitude));
-		http_args.push_back(tools::HttpArg("longitude", longitude));
+		http_args.push_back(tools::HttpArg("latitude", std::to_string(latitude)));
+		http_args.push_back(tools::HttpArg("longitude", std::to_string(longitude)));
 		http_args.push_back(tools::HttpArg("live_period", live_period));
 		http_args.push_back(tools::HttpArg("live_period", live_period));
 		http_args.push_back(tools::HttpArg("disable_notification", disable_notification));
@@ -723,8 +723,8 @@ namespace tgbot
 	{
 		//HTTP arguments
 		std::vector<tools::HttpArg> http_args;
-		http_args.push_back(tools::HttpArg("latitude", latitude));
-		http_args.push_back(tools::HttpArg("longitude", longitude));
+		http_args.push_back(tools::HttpArg("latitude", std::to_string(latitude)));
+		http_args.push_back(tools::HttpArg("longitude", std::to_string(longitude)));
 		http_args.push_back(tools::HttpArg("chat_id", chat_id));
 		http_args.push_back(tools::HttpArg("message_id", message_id));
 		http_args.push_back(tools::HttpArg("inline_message_id", inline_message_id));
@@ -791,8 +791,8 @@ namespace tgbot
 		//HTTP arguments
 		std::vector<tools::HttpArg> http_args;
 		http_args.push_back(tools::HttpArg("chat_id", chat_id));
-		http_args.push_back(tools::HttpArg("latitude", latitude));
-		http_args.push_back(tools::HttpArg("longitude", longitude));
+		http_args.push_back(tools::HttpArg("latitude", std::to_string(latitude)));
+		http_args.push_back(tools::HttpArg("longitude", std::to_string(longitude)));
 		http_args.push_back(tools::HttpArg("title", title));
 		http_args.push_back(tools::HttpArg("address", address));
 		http_args.push_back(tools::HttpArg("foursquare_id", foursquare_id));
