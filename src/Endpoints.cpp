@@ -56,7 +56,7 @@ namespace tgbot
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("result"));
 			}
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		}
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
@@ -99,7 +99,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -121,7 +121,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -145,7 +145,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -169,7 +169,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -204,7 +204,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -235,7 +235,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -272,7 +272,7 @@ namespace tgbot
 					else
 						tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 				else
-					tools::Tools::write_err_log(Messages::field_non_existent("result"));
+					tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 			else
 				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -305,7 +305,7 @@ namespace tgbot
 					else
 						tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 				else
-					tools::Tools::write_err_log(Messages::field_non_existent("result"));
+					tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 			else
 				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -360,7 +360,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -406,7 +406,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -458,7 +458,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -509,7 +509,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -551,7 +551,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -593,7 +593,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -676,7 +676,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -711,7 +711,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -745,7 +745,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -777,7 +777,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -816,7 +816,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -852,7 +852,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -913,7 +913,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -946,7 +946,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -973,7 +973,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -1006,7 +1006,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -1034,7 +1034,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -1062,7 +1062,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -1089,7 +1089,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -1118,7 +1118,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -1155,7 +1155,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -1183,7 +1183,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -1210,7 +1210,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -1236,7 +1236,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -1263,7 +1263,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -1289,7 +1289,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -1316,7 +1316,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -1343,7 +1343,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -1371,7 +1371,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -1397,7 +1397,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -1423,7 +1423,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -1451,7 +1451,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -1492,7 +1492,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -1518,7 +1518,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_int("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -1547,7 +1547,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -1574,7 +1574,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -1600,7 +1600,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -1631,7 +1631,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -1670,7 +1670,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -1707,7 +1707,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -1742,7 +1742,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -1776,7 +1776,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -1881,7 +1881,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -1913,7 +1913,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -1943,7 +1943,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -1970,7 +1970,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -2008,7 +2008,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -2036,7 +2036,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -2065,7 +2065,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -2105,7 +2105,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -2142,7 +2142,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -2169,7 +2169,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -2195,7 +2195,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -2225,7 +2225,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -2271,7 +2271,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -2339,7 +2339,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -2382,7 +2382,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -2410,7 +2410,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -2450,7 +2450,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_bool("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -2483,7 +2483,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -2518,7 +2518,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 
@@ -2563,7 +2563,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("result"));
 			else
-				tools::Tools::write_err_log(Messages::field_non_existent("result"));
+				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
 			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
 

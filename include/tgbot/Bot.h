@@ -11,6 +11,10 @@
  * @author Matheus Gabriel Werny de Lima
  * @copyright GNU General Public License v2.0
  * @version
+ * 1.2.11 (25.05.2020)
+ * - Changed some error output.
+ * - Improved some messages.
+ * @version
  * 1.2.10 (24.05.2020)
  * - Submodule updated.
  * @version
@@ -56,6 +60,7 @@
  * @section dev-log-notes Notes
  * In some constructors (mainly for field "thumb"), I only look for a string value although InputFile would also be possible but I do not know how they would send me that.
  * This is nothing to worry about as it is not even intended that Telegram sends all objects to us. Some are just sent by us.
+ * There is only a field "result" in the JSON object answer if the request was a success.
  */
 
 namespace tgbot
