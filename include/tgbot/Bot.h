@@ -11,6 +11,9 @@
  * @author Matheus Gabriel Werny de Lima
  * @copyright GNU General Public License v2.0
  * @version
+ * 1.2.12 (28.05.2020)
+ * - Submodule updated.
+ * @version
  * 1.2.11 (25.05.2020)
  * - Changed some error output.
  * - Improved some messages.
