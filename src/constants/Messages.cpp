@@ -44,7 +44,7 @@ namespace tgbot
 
 	std::string Messages::field_non_existent(const std::string &field) noexcept
 	{
-		return boost::str(boost::format("There is not field \"%1%\" in the JSON object.") % field);
+		return boost::str(boost::format("There is no field \"%1%\" in the JSON object.") % field);
 	}
 
 	std::string Messages::field_does_not_contain_bool(const std::string &field) noexcept
