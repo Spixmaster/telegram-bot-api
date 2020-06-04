@@ -45,7 +45,7 @@ namespace tgbot
 			if(tools::Tools::starts_w(msg->text, "/"))
 			{
 				//Get argument 0.
-				std::string cmd = tools::Tools::cut_off_first_char(tools::Tools::get_args(msg->text).at(0));
+				const std::string cmd = tools::Tools::cut_off_first_char(tools::Tools::get_args(msg->text).at(0));
 
 				//A known command
 				if(!(m_on_cmd_listener_ls.find(cmd) == m_on_cmd_listener_ls.end()))
