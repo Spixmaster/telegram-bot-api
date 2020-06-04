@@ -14,6 +14,7 @@
  * 1.2.15 (04.06.2020)
  * - Submodule update.
  * - Contributing update.
+ * - Code revision.
  * @version
  * 1.2.14 (31.05.2020)
  * - Submodule update.
