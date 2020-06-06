@@ -3,6 +3,6 @@
 
 namespace tgbot
 {
-	const std::string Constants::version = "1.2.15";
-	const std::string Constants::release = "04.Jun.2020";
+	const std::string Constants::version = "1.3.0";
+	const std::string Constants::release = "06.Jun.2020";
 }

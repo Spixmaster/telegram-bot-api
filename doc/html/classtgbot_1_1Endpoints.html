@@ -154,7 +154,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:abb5a9c87abfc544c5ca6b3f3cdd4c7ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this method to send a native poll.  <a href="classtgbot_1_1Endpoints.html#abb5a9c87abfc544c5ca6b3f3cdd4c7ad">More...</a><br /></td></tr>
 <tr class="separator:abb5a9c87abfc544c5ca6b3f3cdd4c7ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c57988dd3e1e24fe79307f9bf7b9c3a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtgbot_1_1Message.html#a73ccf512df804448e32516793a0bc422">Message::ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtgbot_1_1Endpoints.html#a2c57988dd3e1e24fe79307f9bf7b9c3a">sendDice</a> (const long long &amp;chat_id, const std::string &amp;emoji=&quot;&quot;, const bool &amp;disable_notification=false, const int &amp;reply_to_message_id=0, const <a class="el" href="structtgbot_1_1Reply.html#a6240984dd9d196ecfee6b84ec77b548f">Reply::ptr</a> &amp;reply_markup=std::make_shared&lt; <a class="el" href="structtgbot_1_1Reply.html">Reply</a> &gt;()) const noexcept</td></tr>
-<tr class="memdesc:a2c57988dd3e1e24fe79307f9bf7b9c3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this method to send a dice, which will have a random value from 1 to 6.  <a href="classtgbot_1_1Endpoints.html#a2c57988dd3e1e24fe79307f9bf7b9c3a">More...</a><br /></td></tr>
+<tr class="memdesc:a2c57988dd3e1e24fe79307f9bf7b9c3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this method to send an animated emoji that will display a random value.  <a href="classtgbot_1_1Endpoints.html#a2c57988dd3e1e24fe79307f9bf7b9c3a">More...</a><br /></td></tr>
 <tr class="separator:a2c57988dd3e1e24fe79307f9bf7b9c3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac89a1e2064d2fd990b1f4e3cfa3673ea"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtgbot_1_1Endpoints.html#ac89a1e2064d2fd990b1f4e3cfa3673ea">sendChatAction</a> (const long long &amp;chat_id, const std::string &amp;action) const noexcept</td></tr>
 <tr class="memdesc:ac89a1e2064d2fd990b1f4e3cfa3673ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this method when you need to tell the user that something is happening on the bot's side. The status is set for 5 seconds or less (when a message arrives from your bot, Telegram clients clear its typing status).  <a href="classtgbot_1_1Endpoints.html#ac89a1e2064d2fd990b1f4e3cfa3673ea">More...</a><br /></td></tr>
@@ -231,9 +231,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a182a7b565a87580958905b7d176e1d4f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtgbot_1_1Endpoints.html#a182a7b565a87580958905b7d176e1d4f">setMyCommands</a> (const std::vector&lt; <a class="el" href="structtgbot_1_1BotCommand.html#aaaa346b7d4216ba576b1a213470bff22">BotCommand::ptr</a> &gt; commands) const noexcept</td></tr>
 <tr class="memdesc:a182a7b565a87580958905b7d176e1d4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this method to change the list of the bot's commands.  <a href="classtgbot_1_1Endpoints.html#a182a7b565a87580958905b7d176e1d4f">More...</a><br /></td></tr>
 <tr class="separator:a182a7b565a87580958905b7d176e1d4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acaef927075c7dd3c727aa7b4d74e5c4a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structtgbot_1_1BotCommand.html#aaaa346b7d4216ba576b1a213470bff22">BotCommand::ptr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtgbot_1_1Endpoints.html#acaef927075c7dd3c727aa7b4d74e5c4a">getMyCommands</a> (const std::vector&lt; <a class="el" href="structtgbot_1_1BotCommand.html#aaaa346b7d4216ba576b1a213470bff22">BotCommand::ptr</a> &gt; commands) const noexcept</td></tr>
-<tr class="memdesc:acaef927075c7dd3c727aa7b4d74e5c4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this method to get the current list of the bot's commands. Requires no parameters.  <a href="classtgbot_1_1Endpoints.html#acaef927075c7dd3c727aa7b4d74e5c4a">More...</a><br /></td></tr>
-<tr class="separator:acaef927075c7dd3c727aa7b4d74e5c4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a391640c649ce029beb4ba17fe28022d0"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structtgbot_1_1BotCommand.html#aaaa346b7d4216ba576b1a213470bff22">BotCommand::ptr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtgbot_1_1Endpoints.html#a391640c649ce029beb4ba17fe28022d0">getMyCommands</a> () const noexcept</td></tr>
+<tr class="memdesc:a391640c649ce029beb4ba17fe28022d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this method to get the current list of the bot's commands. Requires no parameters.  <a href="classtgbot_1_1Endpoints.html#a391640c649ce029beb4ba17fe28022d0">More...</a><br /></td></tr>
+<tr class="separator:a391640c649ce029beb4ba17fe28022d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a609582469028cfa4c992d89fc64f5bd7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtgbot_1_1Message.html#a73ccf512df804448e32516793a0bc422">Message::ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtgbot_1_1Endpoints.html#a609582469028cfa4c992d89fc64f5bd7">editMessageText</a> (const std::string &amp;text, const long long &amp;chat_id=0, const int &amp;message_id=0, const std::string &amp;inline_message_id=&quot;&quot;, const std::string &amp;parse_mode=&quot;&quot;, const bool &amp;disable_web_page_preview=false, const <a class="el" href="structtgbot_1_1Reply.html#a6240984dd9d196ecfee6b84ec77b548f">Reply::ptr</a> reply_markup=std::make_shared&lt; <a class="el" href="structtgbot_1_1Reply.html">Reply</a> &gt;()) const noexcept</td></tr>
 <tr class="memdesc:a609582469028cfa4c992d89fc64f5bd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this method to edit text and game messages.  <a href="classtgbot_1_1Endpoints.html#a609582469028cfa4c992d89fc64f5bd7">More...</a><br /></td></tr>
 <tr class="separator:a609582469028cfa4c992d89fc64f5bd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -264,9 +264,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae228397ee24ab1398cd1c45cb7dafa42"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtgbot_1_1Endpoints.html#ae228397ee24ab1398cd1c45cb7dafa42">createNewStickerSet</a> (const int &amp;user_id, const std::string &amp;name, const std::string &amp;title, const std::string &amp;emojis, const std::variant&lt; std::string, tools::InputFile::ptr &gt; &amp;png_sticker=&quot;&quot;, const tools::InputFile::ptr tgs_sticker=std::make_shared&lt; tools::InputFile &gt;(&quot;&quot;), const bool &amp;contains_mask=false, const <a class="el" href="structtgbot_1_1MaskPosition.html#af46ab6797acfdb98a83ca243d9d60087">MaskPosition::ptr</a> &amp;mask_position=std::make_shared&lt; <a class="el" href="structtgbot_1_1MaskPosition.html">MaskPosition</a> &gt;()) const noexcept</td></tr>
 <tr class="memdesc:ae228397ee24ab1398cd1c45cb7dafa42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this method to create a new sticker set owned by a user.  <a href="classtgbot_1_1Endpoints.html#ae228397ee24ab1398cd1c45cb7dafa42">More...</a><br /></td></tr>
 <tr class="separator:ae228397ee24ab1398cd1c45cb7dafa42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1911e98107eba08e1cd990567da6c5c0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtgbot_1_1Endpoints.html#a1911e98107eba08e1cd990567da6c5c0">addStickerToSet</a> (const int &amp;user_id, const std::string &amp;name, const std::variant&lt; std::string, tools::InputFile::ptr &gt; &amp;png_sticker, const std::string &amp;emojis, const tools::InputFile::ptr tgs_sticker=std::make_shared&lt; tools::InputFile &gt;(&quot;&quot;), const <a class="el" href="structtgbot_1_1MaskPosition.html#af46ab6797acfdb98a83ca243d9d60087">MaskPosition::ptr</a> &amp;mask_position=std::make_shared&lt; <a class="el" href="structtgbot_1_1MaskPosition.html">MaskPosition</a> &gt;()) const noexcept</td></tr>
-<tr class="memdesc:a1911e98107eba08e1cd990567da6c5c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this method to add a new sticker to a set created by the bot.  <a href="classtgbot_1_1Endpoints.html#a1911e98107eba08e1cd990567da6c5c0">More...</a><br /></td></tr>
-<tr class="separator:a1911e98107eba08e1cd990567da6c5c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a773f7bde5b0f56bf017e6b4d80714e25"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtgbot_1_1Endpoints.html#a773f7bde5b0f56bf017e6b4d80714e25">addStickerToSet</a> (const int &amp;user_id, const std::string &amp;name, const std::string &amp;emojis, const std::variant&lt; std::string, tools::InputFile::ptr &gt; &amp;png_sticker=&quot;&quot;, const tools::InputFile::ptr tgs_sticker=std::make_shared&lt; tools::InputFile &gt;(&quot;&quot;), const <a class="el" href="structtgbot_1_1MaskPosition.html#af46ab6797acfdb98a83ca243d9d60087">MaskPosition::ptr</a> &amp;mask_position=std::make_shared&lt; <a class="el" href="structtgbot_1_1MaskPosition.html">MaskPosition</a> &gt;()) const noexcept</td></tr>
+<tr class="memdesc:a773f7bde5b0f56bf017e6b4d80714e25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this method to add a new sticker to a set created by the bot.  <a href="classtgbot_1_1Endpoints.html#a773f7bde5b0f56bf017e6b4d80714e25">More...</a><br /></td></tr>
+<tr class="separator:a773f7bde5b0f56bf017e6b4d80714e25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e5ee256129f83c9cce9da53084583f6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtgbot_1_1Endpoints.html#a9e5ee256129f83c9cce9da53084583f6">setStickerPositionInSet</a> (const std::string &amp;sticker, const int &amp;position) const noexcept</td></tr>
 <tr class="memdesc:a9e5ee256129f83c9cce9da53084583f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this method to move a sticker in a set created by the bot to a specific position.  <a href="classtgbot_1_1Endpoints.html#a9e5ee256129f83c9cce9da53084583f6">More...</a><br /></td></tr>
 <tr class="separator:a9e5ee256129f83c9cce9da53084583f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -329,8 +329,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a1911e98107eba08e1cd990567da6c5c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1911e98107eba08e1cd990567da6c5c0">&#9670;&nbsp;</a></span>addStickerToSet()</h2>
+<a id="a773f7bde5b0f56bf017e6b4d80714e25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a773f7bde5b0f56bf017e6b4d80714e25">&#9670;&nbsp;</a></span>addStickerToSet()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -353,14 +353,14 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::variant&lt; std::string, tools::InputFile::ptr &gt; &amp;&#160;</td>
-          <td class="paramname"><em>png_sticker</em>, </td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>emojis</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>emojis</em>, </td>
+          <td class="paramtype">const std::variant&lt; std::string, tools::InputFile::ptr &gt; &amp;&#160;</td>
+          <td class="paramname"><em>png_sticker</em> = <code>&quot;&quot;</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1667,8 +1667,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="acaef927075c7dd3c727aa7b4d74e5c4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acaef927075c7dd3c727aa7b4d74e5c4a">&#9670;&nbsp;</a></span>getMyCommands()</h2>
+<a id="a391640c649ce029beb4ba17fe28022d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a391640c649ce029beb4ba17fe28022d0">&#9670;&nbsp;</a></span>getMyCommands()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1679,8 +1679,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">std::vector&lt; <a class="el" href="structtgbot_1_1BotCommand.html#aaaa346b7d4216ba576b1a213470bff22">BotCommand::ptr</a> &gt; tgbot::Endpoints::getMyCommands </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="structtgbot_1_1BotCommand.html#aaaa346b7d4216ba576b1a213470bff22">BotCommand::ptr</a> &gt;&#160;</td>
-          <td class="paramname"><em>commands</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -2583,14 +2582,14 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Use this method to send a dice, which will have a random value from 1 to 6. </p>
-<p>(Yes, we're aware of the “proper” singular of die. But it's awkward, and we decided to help it change. One dice at a time!) </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Use this method to send an animated emoji that will display a random value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">chat_id</td><td></td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">emoji</td><td></td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">disable_notification</td><td></td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">reply_to_message_id</td><td></td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">reply_markup</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">chat_id</td><td>Unique identifier for the target chat or username of the target channel (in the format @channelusername) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">emoji</td><td>Emoji on which the dice throw animation is based. Currently, must be one of “🎲”, “🎯”, or “🏀”. <a class="el" href="structtgbot_1_1Dice.html" title="This object represents an animated emoji that displays a random value.">Dice</a> can have values 1-6 for “🎲” and “🎯”, and values 1-5 for “🏀”. Defauts to “🎲” </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">disable_notification</td><td>Sends the message silently. Users will receive a notification with no sound. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">reply_to_message_id</td><td>If the message is a reply, ID of the original message </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">reply_markup</td><td>Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user. </td></tr>
   </table>
   </dd>
 </dl>

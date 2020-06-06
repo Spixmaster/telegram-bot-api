@@ -114,8 +114,6 @@ typedef std::shared_ptr&lt; <a class="el" href="structtgbot_1_1InputMedia.html">
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa8963a0a6605c5282f2e04104f4ca0e7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtgbot_1_1InputMediaVideo.html#aa8963a0a6605c5282f2e04104f4ca0e7">InputMediaVideo</a> (const std::string &amp;json)</td></tr>
 <tr class="separator:aa8963a0a6605c5282f2e04104f4ca0e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90edff5387821b937188eb70e8f3a05b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtgbot_1_1InputMediaVideo.html#a90edff5387821b937188eb70e8f3a05b">InputMediaVideo</a> (const std::variant&lt; std::string, tools::InputFile::ptr &gt; &amp;<a class="el" href="structtgbot_1_1InputMediaVideo.html#ad1d5c29a948094da36f1f2e6b6ac4e78">media</a>, const std::variant&lt; std::string, tools::InputFile::ptr &gt; &amp;<a class="el" href="structtgbot_1_1InputMediaVideo.html#a2317e0eded1a8889c2a8cd9be78ccc77">thumb</a>, const std::string &amp;<a class="el" href="structtgbot_1_1InputMediaVideo.html#a35db7df3a70e1829210c893cf817bbfd">caption</a>=&quot;&quot;, const std::string &amp;<a class="el" href="structtgbot_1_1InputMediaVideo.html#ac2db66f82788ab382f205b632f159605">parse_mode</a>=&quot;&quot;, const int &amp;<a class="el" href="structtgbot_1_1InputMediaVideo.html#a6c70539d9c9d2dc4f45b3f772d2ea7dc">width</a>=-1, const int &amp;<a class="el" href="structtgbot_1_1InputMediaVideo.html#ad6cdf5dff21865cf1132f382dc285376">height</a>=-1, const int &amp;<a class="el" href="structtgbot_1_1InputMediaVideo.html#acb0c9dea0c78ce96c45afd0d92710641">duration</a>=-1, const bool &amp;<a class="el" href="structtgbot_1_1InputMediaVideo.html#a2b3da77f38abf0e1f1ad06272fd527aa">supports_streaming</a>=false)</td></tr>
-<tr class="separator:a90edff5387821b937188eb70e8f3a05b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af057cbe1b6493f4b2f8a0691f94df10f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtgbot_1_1InputMediaVideo.html#af057cbe1b6493f4b2f8a0691f94df10f">parse_to_json</a> () const noexcept</td></tr>
 <tr class="memdesc:af057cbe1b6493f4b2f8a0691f94df10f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts itself into a JSON object.  <a href="structtgbot_1_1InputMediaVideo.html#af057cbe1b6493f4b2f8a0691f94df10f">More...</a><br /></td></tr>
 <tr class="separator:af057cbe1b6493f4b2f8a0691f94df10f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -161,7 +159,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stru
 <div class="textblock"><p>Represents a video to be sent. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa8963a0a6605c5282f2e04104f4ca0e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8963a0a6605c5282f2e04104f4ca0e7">&#9670;&nbsp;</a></span>InputMediaVideo() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8963a0a6605c5282f2e04104f4ca0e7">&#9670;&nbsp;</a></span>InputMediaVideo()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -178,83 +176,6 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stru
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">json</td><td>The proper JSON object from which this struct is constructed. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a90edff5387821b937188eb70e8f3a05b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90edff5387821b937188eb70e8f3a05b">&#9670;&nbsp;</a></span>InputMediaVideo() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">tgbot::InputMediaVideo::InputMediaVideo </td>
-          <td>(</td>
-          <td class="paramtype">const std::variant&lt; std::string, tools::InputFile::ptr &gt; &amp;&#160;</td>
-          <td class="paramname"><em>media</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::variant&lt; std::string, tools::InputFile::ptr &gt; &amp;&#160;</td>
-          <td class="paramname"><em>thumb</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>caption</em> = <code>&quot;&quot;</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>parse_mode</em> = <code>&quot;&quot;</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>width</em> = <code>-1</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>height</em> = <code>-1</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>duration</em> = <code>-1</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>supports_streaming</em> = <code>false</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">media</td><td>Passed to the member variable. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">thumb</td><td>Passed to the member variable. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">caption</td><td>Passed to the member variable. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">parse_mode</td><td>Passed to the member variable. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">width</td><td>Passed to the member variable. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">height</td><td>Passed to the member variable. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">duration</td><td>Passed to the member variable. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">supports_streaming</td><td>Passed to the member variable. </td></tr>
   </table>
   </dd>
 </dl>

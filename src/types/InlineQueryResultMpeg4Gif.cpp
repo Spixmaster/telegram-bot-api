@@ -5,8 +5,8 @@
 
 namespace tgbot
 {
-	InlineQueryResultMpeg4Gif::InlineQueryResultMpeg4Gif() : type(), id(), mpeg4_url(), mpeg4_width(), mpeg4_height(), mpeg4_duration(), thumb_url(), title(),
-	caption(), parse_mode(), reply_markup(), input_message_content()
+	InlineQueryResultMpeg4Gif::InlineQueryResultMpeg4Gif() : type(), id(), mpeg4_url(), mpeg4_width(), mpeg4_height(), mpeg4_duration(), thumb_url(), thumb_mime_type(),
+			title(), caption(), parse_mode(), reply_markup(), input_message_content()
 	{}
 
 	InlineQueryResultMpeg4Gif::InlineQueryResultMpeg4Gif(const std::string &json)
@@ -71,6 +71,14 @@ namespace tgbot
 					thumb_url = doc["thumb_url"].GetString();
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_string("thumb_url"));
+			}
+
+			if(doc.HasMember("thumb_mime_type"))
+			{
+				if(doc["thumb_mime_type"].IsString())
+					thumb_url = doc["thumb_mime_type"].GetString();
+				else
+					tools::Tools::write_err_log(Messages::field_does_not_contain_string("thumb_mime_type"));
 			}
 
 			if(doc.HasMember("title"))
@@ -147,6 +155,10 @@ namespace tgbot
 
 		//Field thumb_url
 		json.append("\"thumb_url\": \"" + thumb_url + "\"");
+		json.append(", ");
+
+		//Field thumb_mime_type
+		json.append("\"thumb_mime_type\": \"" + thumb_mime_type + "\"");
 		json.append(", ");
 
 		//Field title

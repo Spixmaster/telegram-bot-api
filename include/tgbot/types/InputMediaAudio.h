@@ -76,19 +76,6 @@ namespace tgbot
 		 */
 		InputMediaAudio(const std::string &json);
 
-		/**
-		 * @param[in] media Passed to the member variable.
-		 * @param[in] thumb Passed to the member variable.
-		 * @param[in] caption Passed to the member variable.
-		 * @param[in] parse_mode Passed to the member variable.
-		 * @param[in] duration Passed to the member variable.
-		 * @param[in] performer Passed to the member variable.
-		 * @param[in] title Passed to the member variable.
-		 */
-		InputMediaAudio(const std::variant<std::string, tools::InputFile::ptr> &media, const std::variant<std::string, tools::InputFile::ptr> &thumb,
-				const std::string &caption = "", const std::string &parse_mode = "", const int &duration = -1, const std::string &performer = "",
-				const std::string &title = "");
-
 		//Member functions
 		/**
 		 * @brief Converts itself into a JSON object.

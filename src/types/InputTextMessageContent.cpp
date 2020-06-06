@@ -58,7 +58,7 @@ namespace tgbot
 
 		//Field parse_mode
 		std::string disable_web_page_preview_bool = disable_web_page_preview ? "true" : "false";
-		json.append("\"disable_web_page_preview\": \"" + disable_web_page_preview_bool + "\"");
+		json.append("\"disable_web_page_preview\": " + disable_web_page_preview_bool);
 
 		json.append("}");
 		return json;

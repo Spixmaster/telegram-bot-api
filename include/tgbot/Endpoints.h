@@ -366,13 +366,12 @@ namespace tgbot
 				const bool &disable_notification = false, const int &reply_to_message_id = 0, const Reply::ptr &reply_markup = std::make_shared<Reply>()) const noexcept;
 
 		/**
-		 * @brief Use this method to send a dice, which will have a random value from 1 to 6.
-		 * @details (Yes, we're aware of the “proper” singular of die. But it's awkward, and we decided to help it change. One dice at a time!)
-		 * @param[in] chat_id
-		 * @param[in] emoji
-		 * @param[in] disable_notification
-		 * @param[in] reply_to_message_id
-		 * @param[in] reply_markup
+		 * @brief Use this method to send an animated emoji that will display a random value.
+		 * @param[in] chat_id Unique identifier for the target chat or username of the target channel (in the format \@channelusername)
+		 * @param[in] emoji Emoji on which the dice throw animation is based. Currently, must be one of “🎲”, “🎯”, or “🏀”. Dice can have values 1-6 for “🎲” and “🎯”, and values 1-5 for “🏀”. Defauts to “🎲”
+		 * @param[in] disable_notification Sends the message silently. Users will receive a notification with no sound.
+		 * @param[in] reply_to_message_id If the message is a reply, ID of the original message
+		 * @param[in] reply_markup Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user.
 		 * @return On success, the sent Message is returned.
 		 */
 		Message::ptr sendDice(const long long &chat_id, const std::string &emoji = "", const bool &disable_notification = false, const int &reply_to_message_id = 0,
@@ -611,7 +610,7 @@ namespace tgbot
 		 * @brief Use this method to get the current list of the bot's commands. Requires no parameters.
 		 * @return Returns Array of BotCommand on success.
 		 */
-		std::vector<BotCommand::ptr> getMyCommands(const std::vector<BotCommand::ptr> commands) const noexcept;
+		std::vector<BotCommand::ptr> getMyCommands() const noexcept;
 
 		/**
 		 * @brief Use this method to edit text and game messages.
@@ -747,8 +746,9 @@ namespace tgbot
 		 * @param[in] mask_position A JSON-serialized object for position where the mask should be placed on faces
 		 * @return Returns True on success.
 		 */
-		bool addStickerToSet(const int &user_id, const std::string &name, const std::variant<std::string, tools::InputFile::ptr> &png_sticker,
-				const std::string &emojis, const tools::InputFile::ptr tgs_sticker = std::make_shared<tools::InputFile>(""),
+		bool addStickerToSet(const int &user_id, const std::string &name, const std::string &emojis,
+				const std::variant<std::string, tools::InputFile::ptr> &png_sticker = "",
+				const tools::InputFile::ptr tgs_sticker = std::make_shared<tools::InputFile>(""),
 				const MaskPosition::ptr &mask_position = std::make_shared<MaskPosition>()) const noexcept;
 
 		/**

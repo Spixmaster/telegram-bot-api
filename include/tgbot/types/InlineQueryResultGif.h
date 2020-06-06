@@ -61,6 +61,11 @@ namespace tgbot
 		 */
 		std::string thumb_url;
 		/**
+		 * @var thumb_mime_type
+		 * @brief Optional. MIME type of the thumbnail, must be one of “image/jpeg”, “image/gif”, or “video/mp4”. Defaults to “image/jpeg”
+		 */
+		std::string thumb_mime_type;
+		/**
 		 * @var title
 		 * @brief Optional. Title for the result
 		 */

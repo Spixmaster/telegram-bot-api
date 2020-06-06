@@ -100,6 +100,11 @@ namespace tgbot
 		 */
 		Message::ptr reply_to_message;
 		/**
+		 * @var via_bot
+		 * @brief Optional. Bot through which the message was sent
+		 */
+		User::ptr via_bot;
+		/**
 		 * @var edit_date
 		 * @brief Optional. Date the message was last edited in Unix time
 		 */
@@ -125,10 +130,10 @@ namespace tgbot
 		 */
 		std::vector<MessageEntity::ptr> entities;
 		/**
-		 * @var caption_entities
-		 * @brief Optional. For messages with a caption, special entities like usernames, URLs, bot commands, etc. that appear in the caption
+		 * @var animation
+		 * @brief Optional. Message is an animation, information about the animation. For backward compatibility, when this field is set, the document field will also be set
 		 */
-		std::vector<MessageEntity::ptr> caption_entities;
+		Animation::ptr animation;
 		/**
 		 * @var audio
 		 * @brief Optional. Message is an audio file, information about the file
@@ -139,16 +144,6 @@ namespace tgbot
 		 * @brief Optional. Message is a general file, information about the file
 		 */
 		Document::ptr document;
-		/**
-		 * @var animation
-		 * @brief Optional. Message is an animation, information about the animation. For backward compatibility, when this field is set, the document field will also be set
-		 */
-		Animation::ptr animation;
-		/**
-		 * @var game
-		 * @brief Optional. Message is a game, information about the game.
-		 */
-		Game::ptr game;
 		/**
 		 * @var photo
 		 * @brief Optional. Message is a photo, available sizes of the photo
@@ -165,45 +160,55 @@ namespace tgbot
 		 */
 		Video::ptr video;
 		/**
-		 * @var voice
-		 * @brief Optional. Message is a voice message, information about the file
-		 */
-		Voice::ptr voice;
-		/**
 		 * @var video_note
 		 * @brief Optional. Message is a video note, information about the video message
 		 */
 		VideoNote::ptr video_note;
+		/**
+		 * @var voice
+		 * @brief Optional. Message is a voice message, information about the file
+		 */
+		Voice::ptr voice;
 		/**
 		 * @var caption
 		 * @brief Optional. Caption for the animation, audio, document, photo, video or voice, 0-1024 characters
 		 */
 		std::string caption;
 		/**
+		 * @var caption_entities
+		 * @brief Optional. For messages with a caption, special entities like usernames, URLs, bot commands, etc. that appear in the caption
+		 */
+		std::vector<MessageEntity::ptr> caption_entities;
+		/**
 		 * @var contact
 		 * @brief Optional. Message is a shared contact, information about the contact
 		 */
 		Contact::ptr contact;
 		/**
-		 * @var location
-		 * @brief Optional. Message is a shared location, information about the location
+		 * @var dice
+		 * @brief Optional. Message is a dice with random value from 1 to 6
 		 */
-		Location::ptr location;
+		Dice::ptr dice;
 		/**
-		 * @var venue
-		 * @brief Optional. Message is a venue, information about the venue
+		 * @var game
+		 * @brief Optional. Message is a game, information about the game.
 		 */
-		Venue::ptr venue;
+		Game::ptr game;
 		/**
 		 * @var poll
 		 * @brief Optional. Message is a native poll, information about the poll
 		 */
 		Poll::ptr poll;
 		/**
-		 * @var dice
-		 * @brief Optional. Message is a dice with random value from 1 to 6
+		 * @var venue
+		 * @brief Optional. Message is a venue, information about the venue
 		 */
-		Dice::ptr dice;
+		Venue::ptr venue;
+		/**
+		 * @var location
+		 * @brief Optional. Message is a shared location, information about the location
+		 */
+		Location::ptr location;
 		/**
 		 * @var new_chat_members
 		 * @brief Optional. New members that were added to the group or supergroup and information about them (the bot itself may be one of these members)

@@ -1,7 +1,7 @@
 var searchData=
 [
   ['address_0',['address',['../structtgbot_1_1InlineQueryResultVenue.html#a774f862c716423947869e1a000062cba',1,'tgbot::InlineQueryResultVenue::address()'],['../structtgbot_1_1InputVenueMessageContent.html#a5aed92d890143f415b63eee6af554e2e',1,'tgbot::InputVenueMessageContent::address()'],['../structtgbot_1_1Venue.html#aadcd73bea4217772285cac2adf2820df',1,'tgbot::Venue::address()']]],
-  ['addstickertoset_1',['addStickerToSet',['../classtgbot_1_1Endpoints.html#a1911e98107eba08e1cd990567da6c5c0',1,'tgbot::Endpoints']]],
+  ['addstickertoset_1',['addStickerToSet',['../classtgbot_1_1Endpoints.html#a773f7bde5b0f56bf017e6b4d80714e25',1,'tgbot::Endpoints']]],
   ['allowed_5fupdates_2',['allowed_updates',['../structtgbot_1_1WebhookInfo.html#ab3473e9aeef872aa21666826f9761e8b',1,'tgbot::WebhookInfo']]],
   ['allows_5fmultiple_5fanswers_3',['allows_multiple_answers',['../structtgbot_1_1Poll.html#a605101aefa871ab1dfd18c9b6222e864',1,'tgbot::Poll']]],
   ['amount_4',['amount',['../structtgbot_1_1LabeledPrice.html#a24eb48cc7d7818bb41bb78a80a6c11bb',1,'tgbot::LabeledPrice']]],

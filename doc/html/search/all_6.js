@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['game_143',['Game',['../structtgbot_1_1Game.html',1,'tgbot::Game'],['../structtgbot_1_1Game.html#ab78501159edb3d969302a4556ec605a4',1,'tgbot::Game::Game()'],['../structtgbot_1_1Message.html#a3459ff4c36cf9182e202dfe5159d9d01',1,'tgbot::Message::game()']]],
+  ['game_143',['Game',['../structtgbot_1_1Game.html',1,'tgbot::Game'],['../structtgbot_1_1Message.html#a3459ff4c36cf9182e202dfe5159d9d01',1,'tgbot::Message::game()'],['../structtgbot_1_1Game.html#ab78501159edb3d969302a4556ec605a4',1,'tgbot::Game::Game()']]],
   ['game_5fshort_5fname_144',['game_short_name',['../structtgbot_1_1CallbackQuery.html#a9a9f218c7afd1e487bb68a16b494b001',1,'tgbot::CallbackQuery::game_short_name()'],['../structtgbot_1_1InlineQueryResultGame.html#ad02683e3db86c3004a3e11856e5ed699',1,'tgbot::InlineQueryResultGame::game_short_name()']]],
   ['gamehighscore_145',['GameHighScore',['../structtgbot_1_1GameHighScore.html',1,'tgbot::GameHighScore'],['../structtgbot_1_1GameHighScore.html#aa9ae9e318df234178c5bc7b0212cd9d3',1,'tgbot::GameHighScore::GameHighScore()']]],
   ['get_5fendpnts_146',['get_endpnts',['../classtgbot_1_1Bot.html#a6af910ebf3c761cc82188939dc9cc90e',1,'tgbot::Bot']]],
@@ -13,7 +13,7 @@ var searchData=
   ['getfile_153',['getFile',['../classtgbot_1_1Endpoints.html#ab8a2cf6f4fd0a3c391fa52cc6b6bb8c2',1,'tgbot::Endpoints']]],
   ['getgamehighscores_154',['getGameHighScores',['../classtgbot_1_1Endpoints.html#adaaba0fdef9e6bd89b9c9dc58e3d144d',1,'tgbot::Endpoints']]],
   ['getme_155',['getMe',['../classtgbot_1_1Endpoints.html#a1ef940443b28731442da6586da74f6c8',1,'tgbot::Endpoints']]],
-  ['getmycommands_156',['getMyCommands',['../classtgbot_1_1Endpoints.html#acaef927075c7dd3c727aa7b4d74e5c4a',1,'tgbot::Endpoints']]],
+  ['getmycommands_156',['getMyCommands',['../classtgbot_1_1Endpoints.html#a391640c649ce029beb4ba17fe28022d0',1,'tgbot::Endpoints']]],
   ['getstickerset_157',['getStickerSet',['../classtgbot_1_1Endpoints.html#a87284fca9e392e71aeadcaf6436de107',1,'tgbot::Endpoints']]],
   ['getupdates_158',['getUpdates',['../classtgbot_1_1Endpoints.html#aecbf0ab9aec71595f83b1fbe048c89e7',1,'tgbot::Endpoints']]],
   ['getuserprofilephotos_159',['getUserProfilePhotos',['../classtgbot_1_1Endpoints.html#abefec1adccfc94bb5c1bf8ae9a5af315',1,'tgbot::Endpoints']]],

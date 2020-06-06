@@ -83,44 +83,52 @@ namespace tgbot
 
 	std::string ReplyKeyboardMarkup::parse_to_json() const noexcept
 	{
-		std::string json = "{\"keyboard\": [";
+		std::string json = "{";
+
+		//Field keyboard
+		std::string keyboard_cont = "[";
 
 		//Rows
 		for(std::size_t j = 0; j < keyboard.size(); ++j)
 		{
-			json.append("[");
+			keyboard_cont.append("[");
 
 			//Columns in row
 			for(std::size_t k = 0; k < keyboard.at(j).size(); ++k)
 			{
 				//Button text
-				json.append("{");
-				json.append("\"text\": \"" + keyboard.at(j).at(k)->text + "\"");
-				json.append(", ");
+				keyboard_cont.append("{");
+				keyboard_cont.append("\"text\": \"" + keyboard.at(j).at(k)->text + "\"");
+				keyboard_cont.append(", ");
 
-				//Options
-				//request_contact
+				/*
+				 * Options
+				 * request_contact
+				 */
 				std::string request_contact_bool = keyboard.at(j).at(k)->request_contact ? "true" : "false";
-				json.append("\"request_contact\": " + request_contact_bool);
-				json.append(", ");
+				keyboard_cont.append("\"request_contact\": " + request_contact_bool);
+				keyboard_cont.append(", ");
 
 				//request_location
 				std::string request_location_bool = keyboard.at(j).at(k)->request_location ? "true" : "false";
-				json.append("\"request_location\": " + request_location_bool);
+				keyboard_cont.append("\"request_location\": " + request_location_bool);
 
-				json.append("}");
+				keyboard_cont.append("}");
 
 				if(k != (keyboard.at(j).size() - 1))
-					json.append(", ");
+					keyboard_cont.append(", ");
 			}
 
-			json.append("]");
+			keyboard_cont.append("]");
 
 			if(j != keyboard.size() - 1)
-				json.append(", ");
+				keyboard_cont.append(", ");
 		}
 
-		json.append("], ");
+		keyboard_cont.append("]");
+
+		json.append("\"keyboard\": " + keyboard_cont);
+		json.append(", ");
 
 		//Field resize_keyboard
 		std::string resize_keyboard_bool = resize_keyboard ? "true" : "false";

@@ -63,7 +63,7 @@ std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516
 \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_abb5a9c87abfc544c5ca6b3f3cdd4c7ad}{send\+Poll}} (const long long \&chat\+\_\+id, const std\+::string \&question, const std\+::vector$<$ std\+::string $>$ \&options, const bool \&is\+\_\+anonymous=true, const std\+::string \&type=\char`\"{}regular\char`\"{}, const bool \&allows\+\_\+multiple\+\_\+answers=false, const int \&correct\+\_\+option\+\_\+id=-\/1, const std\+::string \&explanation=\char`\"{}\char`\"{}, const std\+::string \&explanation\+\_\+parse\+\_\+mode=\char`\"{}\char`\"{}, const int \&open\+\_\+period=0, const int \&close\+\_\+date=0, const bool \&is\+\_\+closed=false, const bool \&disable\+\_\+notification=false, const int \&reply\+\_\+to\+\_\+message\+\_\+id=0, const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&reply\+\_\+markup=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{structtgbot_1_1Reply}{Reply}} $>$()) const noexcept
 \begin{DoxyCompactList}\small\item\em Use this method to send a native poll. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_a2c57988dd3e1e24fe79307f9bf7b9c3a}{send\+Dice}} (const long long \&chat\+\_\+id, const std\+::string \&emoji=\char`\"{}\char`\"{}, const bool \&disable\+\_\+notification=false, const int \&reply\+\_\+to\+\_\+message\+\_\+id=0, const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} \&reply\+\_\+markup=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{structtgbot_1_1Reply}{Reply}} $>$()) const noexcept
-\begin{DoxyCompactList}\small\item\em Use this method to send a dice, which will have a random value from 1 to 6. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Use this method to send an animated emoji that will display a random value. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classtgbot_1_1Endpoints_ac89a1e2064d2fd990b1f4e3cfa3673ea}{send\+Chat\+Action}} (const long long \&chat\+\_\+id, const std\+::string \&action) const noexcept
 \begin{DoxyCompactList}\small\item\em Use this method when you need to tell the user that something is happening on the bot\textquotesingle{}s side. The status is set for 5 seconds or less (when a message arrives from your bot, Telegram clients clear its typing status). \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structtgbot_1_1UserProfilePhotos_ac2ea099e28236cea3da134bed495e3e0}{User\+Profile\+Photos\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_abefec1adccfc94bb5c1bf8ae9a5af315}{get\+User\+Profile\+Photos}} (const int \&user\+\_\+id, const int \&offset=0, const int \&limit=100) const noexcept
@@ -114,7 +114,7 @@ bool \mbox{\hyperlink{classtgbot_1_1Endpoints_a25abb982e69ddb6f00db687d133d3742}
 \begin{DoxyCompactList}\small\item\em Use this method to send answers to callback queries sent from inline keyboards. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classtgbot_1_1Endpoints_a182a7b565a87580958905b7d176e1d4f}{set\+My\+Commands}} (const std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1BotCommand_aaaa346b7d4216ba576b1a213470bff22}{Bot\+Command\+::ptr}} $>$ commands) const noexcept
 \begin{DoxyCompactList}\small\item\em Use this method to change the list of the bot\textquotesingle{}s commands. \end{DoxyCompactList}\item 
-std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1BotCommand_aaaa346b7d4216ba576b1a213470bff22}{Bot\+Command\+::ptr}} $>$ \mbox{\hyperlink{classtgbot_1_1Endpoints_acaef927075c7dd3c727aa7b4d74e5c4a}{get\+My\+Commands}} (const std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1BotCommand_aaaa346b7d4216ba576b1a213470bff22}{Bot\+Command\+::ptr}} $>$ commands) const noexcept
+std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1BotCommand_aaaa346b7d4216ba576b1a213470bff22}{Bot\+Command\+::ptr}} $>$ \mbox{\hyperlink{classtgbot_1_1Endpoints_a391640c649ce029beb4ba17fe28022d0}{get\+My\+Commands}} () const noexcept
 \begin{DoxyCompactList}\small\item\em Use this method to get the current list of the bot\textquotesingle{}s commands. Requires no parameters. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structtgbot_1_1Message_a73ccf512df804448e32516793a0bc422}{Message\+::ptr}} \mbox{\hyperlink{classtgbot_1_1Endpoints_a609582469028cfa4c992d89fc64f5bd7}{edit\+Message\+Text}} (const std\+::string \&text, const long long \&chat\+\_\+id=0, const int \&message\+\_\+id=0, const std\+::string \&inline\+\_\+message\+\_\+id=\char`\"{}\char`\"{}, const std\+::string \&parse\+\_\+mode=\char`\"{}\char`\"{}, const bool \&disable\+\_\+web\+\_\+page\+\_\+preview=false, const \mbox{\hyperlink{structtgbot_1_1Reply_a6240984dd9d196ecfee6b84ec77b548f}{Reply\+::ptr}} reply\+\_\+markup=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{structtgbot_1_1Reply}{Reply}} $>$()) const noexcept
 \begin{DoxyCompactList}\small\item\em Use this method to edit text and game messages. \end{DoxyCompactList}\item 
@@ -136,7 +136,7 @@ bool \mbox{\hyperlink{classtgbot_1_1Endpoints_a706e09389e44c7877515eaed9f71298a}
 \begin{DoxyCompactList}\small\item\em Use this method to upload a .P\+NG file with a sticker for later use in create\+New\+Sticker\+Set and add\+Sticker\+To\+Set methods (can be used multiple times). \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classtgbot_1_1Endpoints_ae228397ee24ab1398cd1c45cb7dafa42}{create\+New\+Sticker\+Set}} (const int \&user\+\_\+id, const std\+::string \&name, const std\+::string \&title, const std\+::string \&emojis, const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&png\+\_\+sticker=\char`\"{}\char`\"{}, const tools\+::\+Input\+File\+::ptr tgs\+\_\+sticker=std\+::make\+\_\+shared$<$ tools\+::\+Input\+File $>$(\char`\"{}\char`\"{}), const bool \&contains\+\_\+mask=false, const \mbox{\hyperlink{structtgbot_1_1MaskPosition_af46ab6797acfdb98a83ca243d9d60087}{Mask\+Position\+::ptr}} \&mask\+\_\+position=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{structtgbot_1_1MaskPosition}{Mask\+Position}} $>$()) const noexcept
 \begin{DoxyCompactList}\small\item\em Use this method to create a new sticker set owned by a user. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classtgbot_1_1Endpoints_a1911e98107eba08e1cd990567da6c5c0}{add\+Sticker\+To\+Set}} (const int \&user\+\_\+id, const std\+::string \&name, const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&png\+\_\+sticker, const std\+::string \&emojis, const tools\+::\+Input\+File\+::ptr tgs\+\_\+sticker=std\+::make\+\_\+shared$<$ tools\+::\+Input\+File $>$(\char`\"{}\char`\"{}), const \mbox{\hyperlink{structtgbot_1_1MaskPosition_af46ab6797acfdb98a83ca243d9d60087}{Mask\+Position\+::ptr}} \&mask\+\_\+position=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{structtgbot_1_1MaskPosition}{Mask\+Position}} $>$()) const noexcept
+bool \mbox{\hyperlink{classtgbot_1_1Endpoints_a773f7bde5b0f56bf017e6b4d80714e25}{add\+Sticker\+To\+Set}} (const int \&user\+\_\+id, const std\+::string \&name, const std\+::string \&emojis, const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&png\+\_\+sticker=\char`\"{}\char`\"{}, const tools\+::\+Input\+File\+::ptr tgs\+\_\+sticker=std\+::make\+\_\+shared$<$ tools\+::\+Input\+File $>$(\char`\"{}\char`\"{}), const \mbox{\hyperlink{structtgbot_1_1MaskPosition_af46ab6797acfdb98a83ca243d9d60087}{Mask\+Position\+::ptr}} \&mask\+\_\+position=std\+::make\+\_\+shared$<$ \mbox{\hyperlink{structtgbot_1_1MaskPosition}{Mask\+Position}} $>$()) const noexcept
 \begin{DoxyCompactList}\small\item\em Use this method to add a new sticker to a set created by the bot. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classtgbot_1_1Endpoints_a9e5ee256129f83c9cce9da53084583f6}{set\+Sticker\+Position\+In\+Set}} (const std\+::string \&sticker, const int \&position) const noexcept
 \begin{DoxyCompactList}\small\item\em Use this method to move a sticker in a set created by the bot to a specific position. \end{DoxyCompactList}\item 
@@ -180,11 +180,11 @@ Contains all endpoints for the Telegram \mbox{\hyperlink{classtgbot_1_1Bot}{Bot}
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classtgbot_1_1Endpoints_a1911e98107eba08e1cd990567da6c5c0}\label{classtgbot_1_1Endpoints_a1911e98107eba08e1cd990567da6c5c0}} 
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a773f7bde5b0f56bf017e6b4d80714e25}\label{classtgbot_1_1Endpoints_a773f7bde5b0f56bf017e6b4d80714e25}} 
 \index{tgbot::Endpoints@{tgbot::Endpoints}!addStickerToSet@{addStickerToSet}}
 \index{addStickerToSet@{addStickerToSet}!tgbot::Endpoints@{tgbot::Endpoints}}
 \doxysubsubsection{\texorpdfstring{addStickerToSet()}{addStickerToSet()}}
-{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::add\+Sticker\+To\+Set (\begin{DoxyParamCaption}\item[{const int \&}]{user\+\_\+id,  }\item[{const std\+::string \&}]{name,  }\item[{const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&}]{png\+\_\+sticker,  }\item[{const std\+::string \&}]{emojis,  }\item[{const tools\+::\+Input\+File\+::ptr}]{tgs\+\_\+sticker = {\ttfamily std\+:\+:make\+\_\+shared$<$tools\+:\+:InputFile$>$(\char`\"{}\char`\"{})},  }\item[{const \mbox{\hyperlink{structtgbot_1_1MaskPosition_af46ab6797acfdb98a83ca243d9d60087}{Mask\+Position\+::ptr}} \&}]{mask\+\_\+position = {\ttfamily std\+:\+:make\+\_\+shared$<$\mbox{\hyperlink{structtgbot_1_1MaskPosition}{Mask\+Position}}$>$()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+{\footnotesize\ttfamily bool tgbot\+::\+Endpoints\+::add\+Sticker\+To\+Set (\begin{DoxyParamCaption}\item[{const int \&}]{user\+\_\+id,  }\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{emojis,  }\item[{const std\+::variant$<$ std\+::string, tools\+::\+Input\+File\+::ptr $>$ \&}]{png\+\_\+sticker = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const tools\+::\+Input\+File\+::ptr}]{tgs\+\_\+sticker = {\ttfamily std\+:\+:make\+\_\+shared$<$tools\+:\+:InputFile$>$(\char`\"{}\char`\"{})},  }\item[{const \mbox{\hyperlink{structtgbot_1_1MaskPosition_af46ab6797acfdb98a83ca243d9d60087}{Mask\+Position\+::ptr}} \&}]{mask\+\_\+position = {\ttfamily std\+:\+:make\+\_\+shared$<$\mbox{\hyperlink{structtgbot_1_1MaskPosition}{Mask\+Position}}$>$()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
 
 
 
@@ -760,11 +760,11 @@ A simple method for testing your bot\textquotesingle{}s auth token. Requires no 
 \begin{DoxyReturn}{Returns}
 Returns basic information about the bot in form of a \mbox{\hyperlink{structtgbot_1_1User}{User}} object. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classtgbot_1_1Endpoints_acaef927075c7dd3c727aa7b4d74e5c4a}\label{classtgbot_1_1Endpoints_acaef927075c7dd3c727aa7b4d74e5c4a}} 
+\mbox{\Hypertarget{classtgbot_1_1Endpoints_a391640c649ce029beb4ba17fe28022d0}\label{classtgbot_1_1Endpoints_a391640c649ce029beb4ba17fe28022d0}} 
 \index{tgbot::Endpoints@{tgbot::Endpoints}!getMyCommands@{getMyCommands}}
 \index{getMyCommands@{getMyCommands}!tgbot::Endpoints@{tgbot::Endpoints}}
 \doxysubsubsection{\texorpdfstring{getMyCommands()}{getMyCommands()}}
-{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1BotCommand_aaaa346b7d4216ba576b1a213470bff22}{Bot\+Command\+::ptr}} $>$ tgbot\+::\+Endpoints\+::get\+My\+Commands (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1BotCommand_aaaa346b7d4216ba576b1a213470bff22}{Bot\+Command\+::ptr}} $>$}]{commands }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{structtgbot_1_1BotCommand_aaaa346b7d4216ba576b1a213470bff22}{Bot\+Command\+::ptr}} $>$ tgbot\+::\+Endpoints\+::get\+My\+Commands (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
 
 
 
@@ -1115,19 +1115,19 @@ On success, the sent \mbox{\hyperlink{structtgbot_1_1Message}{Message}} is retur
 
 
 
-Use this method to send a dice, which will have a random value from 1 to 6. 
+Use this method to send an animated emoji that will display a random value. 
 
-(Yes, we\textquotesingle{}re aware of the “proper” singular of die. But it\textquotesingle{}s awkward, and we decided to help it change. One dice at a time!) 
+
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & \\
+\mbox{\texttt{ in}}  & {\em chat\+\_\+id} & Unique identifier for the target chat or username of the target channel (in the format @channelusername) \\
 \hline
-\mbox{\texttt{ in}}  & {\em emoji} & \\
+\mbox{\texttt{ in}}  & {\em emoji} & Emoji on which the dice throw animation is based. Currently, must be one of “🎲”, “🎯”, or “🏀”. \mbox{\hyperlink{structtgbot_1_1Dice}{Dice}} can have values 1-\/6 for “🎲” and “🎯”, and values 1-\/5 for “🏀”. Defauts to “🎲” \\
 \hline
-\mbox{\texttt{ in}}  & {\em disable\+\_\+notification} & \\
+\mbox{\texttt{ in}}  & {\em disable\+\_\+notification} & Sends the message silently. Users will receive a notification with no sound. \\
 \hline
-\mbox{\texttt{ in}}  & {\em reply\+\_\+to\+\_\+message\+\_\+id} & \\
+\mbox{\texttt{ in}}  & {\em reply\+\_\+to\+\_\+message\+\_\+id} & If the message is a reply, ID of the original message \\
 \hline
-\mbox{\texttt{ in}}  & {\em reply\+\_\+markup} & \\
+\mbox{\texttt{ in}}  & {\em reply\+\_\+markup} & Additional interface options. A J\+S\+O\+N-\/serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

@@ -56,7 +56,15 @@ bool \mbox{\hyperlink{structtgbot_1_1ForceReply_a21fdda630afd67d5d7af329cc45cb9b
 \doxysubsection{Detailed Description}
 Upon receiving a message with this object, Telegram clients will display a reply interface to the user (act as if the user has selected the bot‘s message and tapped ’\+Reply\textquotesingle{}). 
 
-This can be extremely useful if you want to create user-\/friendly step-\/by-\/step interfaces without having to sacrifice privacy mode. 
+This can be extremely useful if you want to create user-\/friendly step-\/by-\/step interfaces without having to sacrifice privacy mode.
+
+Example\+: A poll bot for groups runs in privacy mode (only receives commands, replies to its messages and mentions). There could be two ways to create a new poll\+:
+
+Explain the user how to send a command with parameters (e.\+g. /newpoll question answer1 answer2). May be appealing for hardcore users but lacks modern day polish.
+
+Guide the user through a step-\/by-\/step process. \textquotesingle{}Please send me your question\textquotesingle{}, \textquotesingle{}Cool, now let\textquotesingle{}s add the first answer option\textquotesingle{}, \textquotesingle{}Great. Keep adding answer options, then send /done when you\textquotesingle{}re ready\textquotesingle{}.
+
+The last option is definitely more attractive. And if you use \mbox{\hyperlink{structtgbot_1_1ForceReply}{Force\+Reply}} in your bot\textquotesingle{}s questions, it will receive the user\textquotesingle{}s answers even if it only receives replies, commands and mentions — without any extra work for the user. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{structtgbot_1_1ForceReply_a90cf116e564070cec6a385d125b7764f}\label{structtgbot_1_1ForceReply_a90cf116e564070cec6a385d125b7764f}} 

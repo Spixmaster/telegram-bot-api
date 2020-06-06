@@ -114,8 +114,6 @@ typedef std::shared_ptr&lt; <a class="el" href="structtgbot_1_1InputMedia.html">
 Public Member Functions</h2></td></tr>
 <tr class="memitem:abaf7587f5544735667ed520d6b3b4857"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtgbot_1_1InputMediaAnimation.html#abaf7587f5544735667ed520d6b3b4857">InputMediaAnimation</a> (const std::string &amp;json)</td></tr>
 <tr class="separator:abaf7587f5544735667ed520d6b3b4857"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6162b35ea157d2c969c6958e68b96a39"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtgbot_1_1InputMediaAnimation.html#a6162b35ea157d2c969c6958e68b96a39">InputMediaAnimation</a> (const std::variant&lt; std::string, tools::InputFile::ptr &gt; &amp;<a class="el" href="structtgbot_1_1InputMediaAnimation.html#a201ee2e41b1bf020d9b60845fd4fee32">media</a>, const std::variant&lt; std::string, tools::InputFile::ptr &gt; &amp;<a class="el" href="structtgbot_1_1InputMediaAnimation.html#a5f30117f95b5b4b04552458fc742eb1c">thumb</a>, const std::string &amp;<a class="el" href="structtgbot_1_1InputMediaAnimation.html#a51654c2aba60edf610cd3aa8e77082b2">caption</a>=&quot;&quot;, const std::string &amp;<a class="el" href="structtgbot_1_1InputMediaAnimation.html#adcca1de23dbd3c5c7876305d214ea0e0">parse_mode</a>=&quot;&quot;, const int &amp;<a class="el" href="structtgbot_1_1InputMediaAnimation.html#a14dabad399cb0cbcb6a2ce2a875a8c14">width</a>=-1, const int &amp;<a class="el" href="structtgbot_1_1InputMediaAnimation.html#aff5e0a0b14f443ed6826842ba9b8b322">height</a>=-1, const int &amp;<a class="el" href="structtgbot_1_1InputMediaAnimation.html#abe3f8d5952b1777c1c0ddf780ebdc865">duration</a>=-1)</td></tr>
-<tr class="separator:a6162b35ea157d2c969c6958e68b96a39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28745677f74acd289e4d3cd4fdeade93"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtgbot_1_1InputMediaAnimation.html#a28745677f74acd289e4d3cd4fdeade93">parse_to_json</a> () const noexcept</td></tr>
 <tr class="memdesc:a28745677f74acd289e4d3cd4fdeade93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts itself into a JSON object.  <a href="structtgbot_1_1InputMediaAnimation.html#a28745677f74acd289e4d3cd4fdeade93">More...</a><br /></td></tr>
 <tr class="separator:a28745677f74acd289e4d3cd4fdeade93"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -157,7 +155,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struc
 <div class="textblock"><p>Represents an animation file (GIF or H.264/MPEG-4 AVC video without sound) to be sent. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abaf7587f5544735667ed520d6b3b4857"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abaf7587f5544735667ed520d6b3b4857">&#9670;&nbsp;</a></span>InputMediaAnimation() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abaf7587f5544735667ed520d6b3b4857">&#9670;&nbsp;</a></span>InputMediaAnimation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -174,76 +172,6 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struc
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">json</td><td>The proper JSON object from which this struct is constructed. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a6162b35ea157d2c969c6958e68b96a39"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6162b35ea157d2c969c6958e68b96a39">&#9670;&nbsp;</a></span>InputMediaAnimation() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">tgbot::InputMediaAnimation::InputMediaAnimation </td>
-          <td>(</td>
-          <td class="paramtype">const std::variant&lt; std::string, tools::InputFile::ptr &gt; &amp;&#160;</td>
-          <td class="paramname"><em>media</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::variant&lt; std::string, tools::InputFile::ptr &gt; &amp;&#160;</td>
-          <td class="paramname"><em>thumb</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>caption</em> = <code>&quot;&quot;</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>parse_mode</em> = <code>&quot;&quot;</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>width</em> = <code>-1</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>height</em> = <code>-1</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>duration</em> = <code>-1</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">media</td><td>Passed to the member variable. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">thumb</td><td>Passed to the member variable. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">caption</td><td>Passed to the member variable. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">parse_mode</td><td>Passed to the member variable. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">width</td><td>Passed to the member variable. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">height</td><td>Passed to the member variable. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">duration</td><td>Passed to the member variable. </td></tr>
   </table>
   </dd>
 </dl>

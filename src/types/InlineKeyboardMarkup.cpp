@@ -57,78 +57,85 @@ namespace tgbot
 
 	std::string InlineKeyboardMarkup::parse_to_json() const noexcept
 	{
-		std::string json = "{\"inline_keyboard\": [";
+		std::string json = "{";
+
+		//Field inline_keyboard
+		std::string inline_keyboard_cont = "[";
 
 		//Rows
 		for(std::size_t j = 0; j < inline_keyboard.size(); ++j)
 		{
-			json.append("[");
+			inline_keyboard_cont.append("[");
 
 			//Columns in row
 			for(std::size_t k = 0; k < inline_keyboard.at(j).size(); ++k)
 			{
-				json.append("{");
-				json.append("\"text\": \"" + inline_keyboard.at(j).at(k)->text + "\"");
-				json.append(", ");
+				inline_keyboard_cont.append("{");
+				inline_keyboard_cont.append("\"text\": \"" + inline_keyboard.at(j).at(k)->text + "\"");
+				inline_keyboard_cont.append(", ");
 
 				if(!inline_keyboard.at(j).at(k)->url.empty())
 				{
-					json.append("\"url\": \"" + inline_keyboard.at(j).at(k)->url + "\"");
-					json.append("}");
+					inline_keyboard_cont.append("\"url\": \"" + inline_keyboard.at(j).at(k)->url + "\"");
+					inline_keyboard_cont.append("}");
 				}
 				else if(inline_keyboard.at(j).at(k)->login_url != nullptr)
 				{
 					//login_url
-					json.append("{");
-					json.append("\"url\": \"" + inline_keyboard.at(j).at(k)->login_url->url + "\", ");
-					json.append("\"forward_text\": \"" + inline_keyboard.at(j).at(k)->login_url->forward_text + "\", ");
-					json.append("\"bot_username\": \"" + inline_keyboard.at(j).at(k)->login_url->bot_username + "\", ");
+					inline_keyboard_cont.append("{");
+					inline_keyboard_cont.append("\"url\": \"" + inline_keyboard.at(j).at(k)->login_url->url + "\", ");
+					inline_keyboard_cont.append("\"forward_text\": \"" + inline_keyboard.at(j).at(k)->login_url->forward_text + "\", ");
+					inline_keyboard_cont.append("\"bot_username\": \"" + inline_keyboard.at(j).at(k)->login_url->bot_username + "\", ");
 					std::string request_write_access_bool = inline_keyboard.at(j).at(k)->login_url->request_write_access ? "true" : "false";
-					json.append("\"request_write_access\": \"" + request_write_access_bool + "\"");
-					json.append("}");
+					inline_keyboard_cont.append("\"request_write_access\": " + request_write_access_bool);
+					inline_keyboard_cont.append("}");
 
-					json.append("}");
+					inline_keyboard_cont.append("}");
 				}
 				else if(!inline_keyboard.at(j).at(k)->callback_data.empty())
 				{
-					json.append("\"callback_data\": \"" + inline_keyboard.at(j).at(k)->callback_data + "\"");
-					json.append("}");
+					inline_keyboard_cont.append("\"callback_data\": \"" + inline_keyboard.at(j).at(k)->callback_data + "\"");
+					inline_keyboard_cont.append("}");
 				}
 				else if(!inline_keyboard.at(j).at(k)->switch_inline_query.empty())
 				{
-					json.append("\"switch_inline_query\": \"" + inline_keyboard.at(j).at(k)->switch_inline_query + "\"");
-					json.append("}");
+					inline_keyboard_cont.append("\"switch_inline_query\": \"" + inline_keyboard.at(j).at(k)->switch_inline_query + "\"");
+					inline_keyboard_cont.append("}");
 				}
 				else if(!inline_keyboard.at(j).at(k)->switch_inline_query_current_chat.empty())
 				{
-					json.append("\"switch_inline_query_current_chat\": \"" + inline_keyboard.at(j).at(k)->switch_inline_query_current_chat + "\"");
-					json.append("}");
+					inline_keyboard_cont.append("\"switch_inline_query_current_chat\": \"" + inline_keyboard.at(j).at(k)->switch_inline_query_current_chat + "\"");
+					inline_keyboard_cont.append("}");
 				}
 				else if(inline_keyboard.at(j).at(k)->callback_game != nullptr)
 				{
-					json.append("{");
+					inline_keyboard_cont.append("{");
 					json.append("}");
 
-					json.append("}");
+					inline_keyboard_cont.append("}");
 				}
 				else if(inline_keyboard.at(j).at(k)->pay)
 				{
 					std::string pay_bool = inline_keyboard.at(j).at(k)->pay ? "true" : "false";
-					json.append("\"pay\": \"" + pay_bool + "\"");
-					json.append("}");
+					inline_keyboard_cont.append("\"pay\": " + pay_bool);
+					inline_keyboard_cont.append("}");
 				}
 
 				if(k != inline_keyboard.at(j).size() - 1)
-					json.append(", ");
+					inline_keyboard_cont.append(", ");
 			}
 
-			json.append("]");
+			inline_keyboard_cont.append("]");
 
 			if(j != inline_keyboard.size() - 1)
-				json.append(", ");
+				inline_keyboard_cont.append(", ");
 		}
 
-		json.append("]}");
+		inline_keyboard_cont.append("]");
+
+		json.append("\"inline_keyboard\": " + inline_keyboard_cont);
+
+		json.append("}");
 		return json;
 	}
 }

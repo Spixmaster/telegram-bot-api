@@ -103,7 +103,7 @@ namespace tgbot
 
 		//Field is_bot
 		std::string is_bot_bool = is_bot ? "true" : "false";
-		json.append("\"is_bot\": \"" + is_bot_bool + "\"");
+		json.append("\"is_bot\": " + is_bot_bool);
 		json.append(", ");
 
 		//Field first_name
@@ -124,17 +124,17 @@ namespace tgbot
 
 		//Field can_join_groups
 		std::string can_join_groups_bool = can_join_groups ? "true" : "false";
-		json.append("\"can_join_groups\": \"" + can_join_groups_bool + "\"");
+		json.append("\"can_join_groups\": " + can_join_groups_bool);
 		json.append(", ");
 
 		//Field can_read_all_group_messages
 		std::string can_read_all_group_messages_bool = can_read_all_group_messages ? "true" : "false";
-		json.append("\"can_read_all_group_messages\": \"" + can_read_all_group_messages_bool + "\"");
+		json.append("\"can_read_all_group_messages\": " + can_read_all_group_messages_bool);
 		json.append(", ");
 
 		//Field is_bot
 		std::string supports_inline_queries_bool = supports_inline_queries ? "true" : "false";
-		json.append("\"supports_inline_queries\": \"" + supports_inline_queries_bool + "\"");
+		json.append("\"supports_inline_queries\": " + supports_inline_queries_bool);
 
 		json.append("}");
 		return json;
