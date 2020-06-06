@@ -113,7 +113,7 @@ namespace tgbot
 
 		sticker_cont.append("]");
 
-		json.append("\"sticker\": \"" + sticker_cont + "\"");
+		json.append("\"sticker\": " + sticker_cont);
 		json.append(", ");
 
 		//Field thumb

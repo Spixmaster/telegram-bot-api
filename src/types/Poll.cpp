@@ -174,7 +174,7 @@ namespace tgbot
 		json.append(", ");
 
 		//Field total_voter_count
-		json.append("\"total_voter_count\": \"" + std::to_string(total_voter_count) + "\"");
+		json.append("\"total_voter_count\": " + total_voter_count);
 		json.append(", ");
 
 		//Field is_closed
@@ -197,7 +197,7 @@ namespace tgbot
 		json.append(", ");
 
 		//Field correct_option_id
-		json.append("\"correct_option_id\": \"" + std::to_string(correct_option_id) + "\"");
+		json.append("\"correct_option_id\": " + correct_option_id);
 		json.append(", ");
 
 		//Field explanation
@@ -221,11 +221,11 @@ namespace tgbot
 		json.append(", ");
 
 		//Field open_period
-		json.append("\"open_period\": \"" + std::to_string(open_period) + "\"");
+		json.append("\"open_period\": " + open_period);
 		json.append(", ");
 
 		//Field close_date
-		json.append("\"close_date\": \"" + std::to_string(close_date) + "\"");
+		json.append("\"close_date\": " + close_date);
 
 		json.append("}");
 		return json;

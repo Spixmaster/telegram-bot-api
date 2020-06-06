@@ -63,7 +63,7 @@ namespace tgbot
 
 		data_cont.append("]");
 
-		json.append("\"data\": \"" + data_cont + "\"");
+		json.append("\"data\": " + data_cont);
 		json.append(", ");
 
 		//Field credentials

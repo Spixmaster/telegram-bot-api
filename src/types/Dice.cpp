@@ -46,7 +46,7 @@ namespace tgbot
 		json.append(", ");
 
 		//Field value
-		json.append("\"value\": \"" + std::to_string(value) + "\"");
+		json.append("\"value\": " + value);
 
 		json.append("}");
 		return json;

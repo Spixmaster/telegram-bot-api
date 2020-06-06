@@ -7,9 +7,9 @@
 namespace tgbot
 {
 	Message::Message() : message_id(), from(), date() , chat(), forward_from(), forward_from_chat(), forward_from_message_id(), forward_signature(), forward_sender_name(),
-			forward_date(), reply_to_message(), edit_date(), media_group_id(), author_signature(), text(), entities(), caption_entities(), audio(), document(),
-			animation(), game(), photo(), sticker(), video(), voice(), video_note(), caption(), contact(), location(), venue(), poll(), dice(), new_chat_members(),
-			left_chat_member(), new_chat_title(), delete_chat_photo(), group_chat_created(), supergroup_chat_created(), channel_chat_created(), migrate_to_chat_id(),
+			forward_date(), reply_to_message(), via_bot(), edit_date(), media_group_id(), author_signature(), text(), entities(), animation(), audio(), document(), photo(), sticker(),
+			video(), video_note(), voice(), caption(), caption_entities(), contact(), dice(), game(), poll(), venue(), location(), new_chat_members(), left_chat_member(),
+			new_chat_title(), new_chat_photo(), delete_chat_photo(), group_chat_created(), supergroup_chat_created(), channel_chat_created(), migrate_to_chat_id(),
 			migrate_from_chat_id(), pinned_message(), invoice(), successful_payment(), connected_website(), passport_data(), reply_markup()
 	{}
 
@@ -109,6 +109,14 @@ namespace tgbot
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("reply_to_message"));
 			}
 
+			if(doc.HasMember("via_bot"))
+			{
+				if(doc["via_bot"].IsObject())
+					via_bot = std::make_shared<User>(tools::Tools::get_json_as_string(doc["via_bot"]));
+				else
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("via_bot"));
+			}
+
 			if(doc.HasMember("edit_date"))
 			{
 				if(doc["edit_date"].IsInt())
@@ -159,22 +167,12 @@ namespace tgbot
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("entities"));
 			}
 
-			if(doc.HasMember("caption_entities"))
+			if(doc.HasMember("animation"))
 			{
-				if(doc["caption_entities"].IsArray())
-				{
-					caption_entities.resize(doc["caption_entities"].GetArray().Size());
-
-					for(std::size_t j = 0; j < doc["caption_entities"].GetArray().Size(); ++j)
-					{
-						if(doc["caption_entities"][j].IsObject())
-							caption_entities.at(j) = std::make_shared<MessageEntity>(tools::Tools::get_json_as_string(doc["caption_entities"][j]));
-						else
-							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("caption_entities"));
-					}
-				}
+				if(doc["animation"].IsObject())
+					animation = std::make_shared<Animation>(tools::Tools::get_json_as_string(doc["animation"]));
 				else
-					tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("caption_entities"));
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("animation"));
 			}
 
 			if(doc.HasMember("audio"))
@@ -191,22 +189,6 @@ namespace tgbot
 					document = std::make_shared<Document>(tools::Tools::get_json_as_string(doc["document"]));
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("document"));
-			}
-
-			if(doc.HasMember("animation"))
-			{
-				if(doc["animation"].IsObject())
-					animation = std::make_shared<Animation>(tools::Tools::get_json_as_string(doc["animation"]));
-				else
-					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("animation"));
-			}
-
-			if(doc.HasMember("game"))
-			{
-				if(doc["game"].IsObject())
-					game = std::make_shared<Game>(tools::Tools::get_json_as_string(doc["game"]));
-				else
-					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("game"));
 			}
 
 			if(doc.HasMember("photo"))
@@ -243,20 +225,20 @@ namespace tgbot
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("video"));
 			}
 
-			if(doc.HasMember("voice"))
-			{
-				if(doc["voice"].IsObject())
-					voice = std::make_shared<Voice>(tools::Tools::get_json_as_string(doc["voice"]));
-				else
-					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("voice"));
-			}
-
 			if(doc.HasMember("video_note"))
 			{
 				if(doc["video_note"].IsObject())
 					video_note = std::make_shared<VideoNote>(tools::Tools::get_json_as_string(doc["video_note"]));
 				else
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("video_note"));
+			}
+
+			if(doc.HasMember("voice"))
+			{
+				if(doc["voice"].IsObject())
+					voice = std::make_shared<Voice>(tools::Tools::get_json_as_string(doc["voice"]));
+				else
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("voice"));
 			}
 
 			if(doc.HasMember("caption"))
@@ -267,6 +249,24 @@ namespace tgbot
 					tools::Tools::write_err_log(Messages::field_does_not_contain_string("caption"));
 			}
 
+			if(doc.HasMember("caption_entities"))
+			{
+				if(doc["caption_entities"].IsArray())
+				{
+					caption_entities.resize(doc["caption_entities"].GetArray().Size());
+
+					for(std::size_t j = 0; j < doc["caption_entities"].GetArray().Size(); ++j)
+					{
+						if(doc["caption_entities"][j].IsObject())
+							caption_entities.at(j) = std::make_shared<MessageEntity>(tools::Tools::get_json_as_string(doc["caption_entities"][j]));
+						else
+							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("caption_entities"));
+					}
+				}
+				else
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_arr("caption_entities"));
+			}
+
 			if(doc.HasMember("contact"))
 			{
 				if(doc["contact"].IsObject())
@@ -275,20 +275,12 @@ namespace tgbot
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("contact"));
 			}
 
-			if(doc.HasMember("location"))
+			if(doc.HasMember("dice"))
 			{
-				if(doc["location"].IsObject())
-					location = std::make_shared<Location>(tools::Tools::get_json_as_string(doc["location"]));
+				if(doc["dice"].IsObject())
+					poll = std::make_shared<Poll>(tools::Tools::get_json_as_string(doc["dice"]));
 				else
-					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("location"));
-			}
-
-			if(doc.HasMember("venue"))
-			{
-				if(doc["venue"].IsObject())
-					venue = std::make_shared<Venue>(tools::Tools::get_json_as_string(doc["venue"]));
-				else
-					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("venue"));
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("dice"));
 			}
 
 			if(doc.HasMember("poll"))
@@ -299,12 +291,28 @@ namespace tgbot
 					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("poll"));
 			}
 
-			if(doc.HasMember("dice"))
+			if(doc.HasMember("venue"))
 			{
-				if(doc["dice"].IsObject())
-					poll = std::make_shared<Poll>(tools::Tools::get_json_as_string(doc["dice"]));
+				if(doc["venue"].IsObject())
+					venue = std::make_shared<Venue>(tools::Tools::get_json_as_string(doc["venue"]));
 				else
-					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("dice"));
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("venue"));
+			}
+
+			if(doc.HasMember("location"))
+			{
+				if(doc["location"].IsObject())
+					location = std::make_shared<Location>(tools::Tools::get_json_as_string(doc["location"]));
+				else
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("location"));
+			}
+
+			if(doc.HasMember("game"))
+			{
+				if(doc["game"].IsObject())
+					game = std::make_shared<Game>(tools::Tools::get_json_as_string(doc["game"]));
+				else
+					tools::Tools::write_err_log(Messages::field_does_not_contain_json_obj("game"));
 			}
 
 			if(doc.HasMember("new_chat_members"))
@@ -505,6 +513,10 @@ namespace tgbot
 		json.append("\"reply_to_message\": " + reply_to_message->parse_to_json());
 		json.append(", ");
 
+		//Field via_bot
+		json.append("\"via_bot\": " + via_bot->parse_to_json());
+		json.append(", ");
+
 		//Field edit_date
 		json.append("\"edit_date\": " + edit_date);
 		json.append(", ");
@@ -537,20 +549,8 @@ namespace tgbot
 		json.append("\"entities\": " + entities_cont);
 		json.append(", ");
 
-		//Field caption_entities
-		std::string caption_entities_cont = "[";
-
-		for(std::size_t j = 0; j < caption_entities.size(); ++j)
-		{
-			caption_entities_cont.append(caption_entities.at(j)->parse_to_json());
-
-			if(j != caption_entities.size() - 1)
-				caption_entities_cont.append(", ");
-		}
-
-		caption_entities_cont.append("]");
-
-		json.append("\"caption_entities\": " + caption_entities_cont);
+		//Field animation
+		json.append("\"animation\": " + animation->parse_to_json());
 		json.append(", ");
 
 		//Field audio
@@ -559,14 +559,6 @@ namespace tgbot
 
 		//Field document
 		json.append("\"document\": " + document->parse_to_json());
-		json.append(", ");
-
-		//Field animation
-		json.append("\"animation\": " + animation->parse_to_json());
-		json.append(", ");
-
-		//Field game
-		json.append("\"game\": " + game->parse_to_json());
 		json.append(", ");
 
 		//Field photo
@@ -593,36 +585,56 @@ namespace tgbot
 		json.append("\"video\": " + video->parse_to_json());
 		json.append(", ");
 
-		//Field voice
-		json.append("\"voice\": " + voice->parse_to_json());
-		json.append(", ");
-
 		//Field video_note
 		json.append("\"video_note\": " + video_note->parse_to_json());
+		json.append(", ");
+
+		//Field voice
+		json.append("\"voice\": " + voice->parse_to_json());
 		json.append(", ");
 
 		//Field caption
 		json.append("\"caption\": \"" + caption + "\"");
 		json.append(", ");
 
+		//Field caption_entities
+		std::string caption_entities_cont = "[";
+
+		for(std::size_t j = 0; j < caption_entities.size(); ++j)
+		{
+			caption_entities_cont.append(caption_entities.at(j)->parse_to_json());
+
+			if(j != caption_entities.size() - 1)
+				caption_entities_cont.append(", ");
+		}
+
+		caption_entities_cont.append("]");
+
+		json.append("\"caption_entities\": " + caption_entities_cont);
+		json.append(", ");
+
 		//Field contact
 		json.append("\"contact\": " + contact->parse_to_json());
 		json.append(", ");
 
-		//Field location
-		json.append("\"location\": " + location->parse_to_json());
+		//Field dice
+		json.append("\"dice\": " + dice->parse_to_json());
 		json.append(", ");
 
-		//Field venue
-		json.append("\"venue\": " + venue->parse_to_json());
+		//Field game
+		json.append("\"game\": " + game->parse_to_json());
 		json.append(", ");
 
 		//Field poll
 		json.append("\"poll\": " + poll->parse_to_json());
 		json.append(", ");
 
-		//Field dice
-		json.append("\"dice\": " + dice->parse_to_json());
+		//Field venue
+		json.append("\"venue\": " + venue->parse_to_json());
+		json.append(", ");
+
+		//Field location
+		json.append("\"location\": " + location->parse_to_json());
 		json.append(", ");
 
 		//Field new_chat_members

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['webhookinfo_754',['WebhookInfo',['../structtgbot_1_1WebhookInfo.html#a6b82539908431bd74d6f4246c31c2669',1,'tgbot::WebhookInfo']]]
+  ['webhookinfo_756',['WebhookInfo',['../structtgbot_1_1WebhookInfo.html#a6b82539908431bd74d6f4246c31c2669',1,'tgbot::WebhookInfo']]]
 ];

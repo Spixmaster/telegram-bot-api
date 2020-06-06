@@ -1,0 +1,78 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Matheus Gabriel Werny de Lima
+# This file is distributed under the same license as the pronos-bot package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pronos-bot\n"
+"Report-Msgid-Bugs-To: spixmaster528@gmail.com\n"
+"POT-Creation-Date: 2020-06-06 18:04+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/constants/Messages.cpp:40
+msgid "The element of field \"%1%\" does not contain a JSON array."
+msgstr ""
+
+#: ../src/constants/Messages.cpp:45
+msgid "The element of field \"%1%\" does not contain a JSON object."
+msgstr ""
+
+#: ../src/constants/Messages.cpp:70
+msgid "The element of field \"%1%\" does not contain a string."
+msgstr ""
+
+#: ../src/constants/Messages.cpp:75
+msgid "The element of field \"%1%\" does not contain an integer."
+msgstr ""
+
+#: ../src/constants/Messages.cpp:65
+msgid "The element's element of field \"%1%\" does not contain a JSON object."
+msgstr ""
+
+#: ../src/constants/Messages.cpp:25
+msgid "The field \"%1%\" does not contain a 64 bits integer."
+msgstr ""
+
+#: ../src/constants/Messages.cpp:35
+msgid "The field \"%1%\" does not contain a JSON array."
+msgstr ""
+
+#: ../src/constants/Messages.cpp:30
+msgid "The field \"%1%\" does not contain a JSON object."
+msgstr ""
+
+#: ../src/constants/Messages.cpp:55
+msgid "The field \"%1%\" does not contain a boolean."
+msgstr ""
+
+#: ../src/constants/Messages.cpp:60
+msgid "The field \"%1%\" does not contain a float."
+msgstr ""
+
+#: ../src/constants/Messages.cpp:15
+msgid "The field \"%1%\" does not contain a string."
+msgstr ""
+
+#: ../src/constants/Messages.cpp:20
+msgid "The field \"%1%\" does not contain an integer."
+msgstr ""
+
+#: ../src/constants/Messages.cpp:11
+msgid "The server response is not a JSON object."
+msgstr ""
+
+#: ../src/constants/Messages.cpp:10
+msgid "The to the constructor passed string is not a JSON object."
+msgstr ""
+
+#: ../src/constants/Messages.cpp:50
+msgid "There is no field \"%1%\" in the JSON object."
+msgstr ""

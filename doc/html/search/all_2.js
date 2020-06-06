@@ -27,7 +27,7 @@ var searchData=
   ['caption_5fentities_44',['caption_entities',['../structtgbot_1_1Message.html#a25ce8608569c7e60362a763a0cc1a173',1,'tgbot::Message']]],
   ['channel_5fchat_5fcreated_45',['channel_chat_created',['../structtgbot_1_1Message.html#a7e8f34568d1269487cd0e4668c5fa928',1,'tgbot::Message']]],
   ['channel_5fpost_46',['channel_post',['../structtgbot_1_1Update.html#a81df716beec0165765871fa754af80ea',1,'tgbot::Update']]],
-  ['chat_47',['Chat',['../structtgbot_1_1Chat.html',1,'tgbot::Chat'],['../structtgbot_1_1Chat.html#a00fd6f6c4c1aa23b96b731a522d28686',1,'tgbot::Chat::Chat()'],['../structtgbot_1_1Message.html#ab0492ad7265f31ce6299dbd82f9aca59',1,'tgbot::Message::chat()']]],
+  ['chat_47',['Chat',['../structtgbot_1_1Chat.html',1,'tgbot::Chat'],['../structtgbot_1_1Message.html#ab0492ad7265f31ce6299dbd82f9aca59',1,'tgbot::Message::chat()'],['../structtgbot_1_1Chat.html#a00fd6f6c4c1aa23b96b731a522d28686',1,'tgbot::Chat::Chat()']]],
   ['chat_5finstance_48',['chat_instance',['../structtgbot_1_1CallbackQuery.html#acd5516588eeaad9fa1eed75e8666c381',1,'tgbot::CallbackQuery']]],
   ['chatmember_49',['ChatMember',['../structtgbot_1_1ChatMember.html',1,'tgbot::ChatMember'],['../structtgbot_1_1ChatMember.html#a8e4da172529a118b66ae39192e4da377',1,'tgbot::ChatMember::ChatMember()']]],
   ['chatpermissions_50',['ChatPermissions',['../structtgbot_1_1ChatPermissions.html',1,'tgbot::ChatPermissions'],['../structtgbot_1_1ChatPermissions.html#a3e7e693d098ae9ee6424fa37a0765d01',1,'tgbot::ChatPermissions::ChatPermissions()']]],

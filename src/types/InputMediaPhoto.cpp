@@ -53,10 +53,6 @@ namespace tgbot
 			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
-	InputMediaPhoto::InputMediaPhoto(const std::variant<std::string, tools::InputFile::ptr> &media, const std::string &caption, const std::string &parse_mode) : media(media),
-			caption(caption), parse_mode(parse_mode)
-	{}
-
 	std::string InputMediaPhoto::parse_to_json() const noexcept
 	{
 		std::string json = "{";

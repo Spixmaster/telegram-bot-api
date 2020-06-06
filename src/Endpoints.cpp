@@ -1677,7 +1677,7 @@ namespace tgbot
 		return false;
 	}
 
-	std::vector<BotCommand::ptr> Endpoints::getMyCommands(const std::vector<BotCommand::ptr> commands) const noexcept
+	std::vector<BotCommand::ptr> Endpoints::getMyCommands() const noexcept
 	{
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/getMyCommands");
 		std::string json = http_client.send_get_req().m_body;
@@ -2112,20 +2112,21 @@ namespace tgbot
 		return false;
 	}
 
-	bool Endpoints::addStickerToSet(const int &user_id, const std::string &name, const std::variant<std::string, tools::InputFile::ptr> &png_sticker,
-			const std::string &emojis, const tools::InputFile::ptr tgs_sticker, const MaskPosition::ptr &mask_position) const noexcept
+	bool Endpoints::addStickerToSet(const int &user_id, const std::string &name, const std::string &emojis,
+			const std::variant<std::string, tools::InputFile::ptr> &png_sticker, const tools::InputFile::ptr tgs_sticker,
+			const MaskPosition::ptr &mask_position) const noexcept
 	{
 		//HTTP arguments
 		std::vector<tools::HttpArg> http_args;
 		http_args.push_back(tools::HttpArg("user_id", user_id));
 		http_args.push_back(tools::HttpArg("name", name));
+		http_args.push_back(tools::HttpArg(emojis, emojis));
 
 		if(std::holds_alternative<std::string>(png_sticker))
 			http_args.push_back(tools::HttpArg("png_sticker", std::get<std::string>(png_sticker)));
 		else if(std::holds_alternative<tools::InputFile::ptr>(png_sticker))
 			http_args.push_back(tools::HttpArg("png_sticker", std::get<tools::InputFile::ptr>(png_sticker)));
 
-		http_args.push_back(tools::HttpArg(emojis, emojis));
 		http_args.push_back(tools::HttpArg("tgs_sticker", tgs_sticker));
 		http_args.push_back(tools::HttpArg("mask_position", mask_position->parse_to_json()));
 

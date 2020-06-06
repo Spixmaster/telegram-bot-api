@@ -49,7 +49,7 @@ namespace tgbot
 							}
 						}
 						else
-							tools::Tools::write_err_log(Messages::Messages::field_element_does_not_contain_json_arr("photos"));
+							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_arr("photos"));
 					}
 				}
 				else
@@ -81,7 +81,7 @@ namespace tgbot
 
 		photos_cont.append("]");
 
-		json.append("\"photos\": \"" + photos_cont + "\"");
+		json.append("\"photos\": " + photos_cont);
 
 		json.append("}");
 		return json;

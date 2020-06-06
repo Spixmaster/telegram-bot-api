@@ -97,7 +97,7 @@ namespace tgbot
 
 		//Field has_custom_certificate
 		std::string has_custom_certificate_bool = has_custom_certificate ? "true" : "false";
-		json.append("\"has_custom_certificate\": \"" + has_custom_certificate_bool + "\"");
+		json.append("\"has_custom_certificate\": " + has_custom_certificate_bool);
 		json.append(", ");
 
 		//Field pending_update_count

@@ -61,15 +61,6 @@ namespace tgbot
 		 */
 		InputMediaDocument(const std::string &json);
 
-		/**
-		 * @param[in] media Passed to the member variable.
-		 * @param[in] thumb Passed to the member variable.
-		 * @param[in] caption Passed to the member variable.
-		 * @param[in] parse_mode Passed to the member variable.
-		 */
-		InputMediaDocument(const std::variant<std::string, tools::InputFile::ptr> &media, const std::variant<std::string, tools::InputFile::ptr> &thumb,
-				const std::string &caption = "", const std::string &parse_mode = "");
-
 		//Member functions
 		/**
 		 * @brief Converts itself into a JSON object.

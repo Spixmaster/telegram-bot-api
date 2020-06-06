@@ -50,7 +50,7 @@ var searchData=
   ['start_5fparameter_389',['start_parameter',['../structtgbot_1_1Invoice.html#a9d080734ddb6c7262dd9ee27e91c0be7',1,'tgbot::Invoice']]],
   ['state_390',['state',['../structtgbot_1_1ShippingAddress.html#a99cf36fdd114b6d8ef329e20cbe933fe',1,'tgbot::ShippingAddress']]],
   ['status_391',['status',['../structtgbot_1_1ChatMember.html#af9cce873ede47016f18c9fb62d96c1bd',1,'tgbot::ChatMember']]],
-  ['sticker_392',['Sticker',['../structtgbot_1_1Sticker.html',1,'tgbot::Sticker'],['../structtgbot_1_1Message.html#a1a89aa24cf0b2d011246e8b14c6f8365',1,'tgbot::Message::sticker()'],['../structtgbot_1_1StickerSet.html#a3a780ce07cfe1f6be6ecb64e9926ed20',1,'tgbot::StickerSet::sticker()'],['../structtgbot_1_1Sticker.html#ace3c779103fda2ed0fb0fb565e68ec9f',1,'tgbot::Sticker::Sticker()']]],
+  ['sticker_392',['Sticker',['../structtgbot_1_1Sticker.html',1,'tgbot::Sticker'],['../structtgbot_1_1Sticker.html#ace3c779103fda2ed0fb0fb565e68ec9f',1,'tgbot::Sticker::Sticker()'],['../structtgbot_1_1Message.html#a1a89aa24cf0b2d011246e8b14c6f8365',1,'tgbot::Message::sticker()'],['../structtgbot_1_1StickerSet.html#a3a780ce07cfe1f6be6ecb64e9926ed20',1,'tgbot::StickerSet::sticker()']]],
   ['sticker_5ffile_5fid_393',['sticker_file_id',['../structtgbot_1_1InlineQueryResultCachedSticker.html#a38e66b866eb014f54b14551ee0e08ef1',1,'tgbot::InlineQueryResultCachedSticker']]],
   ['sticker_5fset_5fname_394',['sticker_set_name',['../structtgbot_1_1Chat.html#a5a7954425262884482eb957f83843904',1,'tgbot::Chat']]],
   ['stickerset_395',['StickerSet',['../structtgbot_1_1StickerSet.html',1,'tgbot::StickerSet'],['../structtgbot_1_1StickerSet.html#acc4a14b74d507c975759673d184d8ff3',1,'tgbot::StickerSet::StickerSet()']]],

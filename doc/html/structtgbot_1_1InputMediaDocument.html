@@ -114,8 +114,6 @@ typedef std::shared_ptr&lt; <a class="el" href="structtgbot_1_1InputMedia.html">
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a487505b42fb2805734aac5d33b419d59"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtgbot_1_1InputMediaDocument.html#a487505b42fb2805734aac5d33b419d59">InputMediaDocument</a> (const std::string &amp;json)</td></tr>
 <tr class="separator:a487505b42fb2805734aac5d33b419d59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9186010727b3ff78d6f7e50d6f2c5e39"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtgbot_1_1InputMediaDocument.html#a9186010727b3ff78d6f7e50d6f2c5e39">InputMediaDocument</a> (const std::variant&lt; std::string, tools::InputFile::ptr &gt; &amp;<a class="el" href="structtgbot_1_1InputMediaDocument.html#a6c795384be2c0689e07582ef93383325">media</a>, const std::variant&lt; std::string, tools::InputFile::ptr &gt; &amp;<a class="el" href="structtgbot_1_1InputMediaDocument.html#adcfaf79d25c3b19df7a2c8496747d819">thumb</a>, const std::string &amp;<a class="el" href="structtgbot_1_1InputMediaDocument.html#a9e24e215a8415b0a5464fbe6aaa76cc7">caption</a>=&quot;&quot;, const std::string &amp;<a class="el" href="structtgbot_1_1InputMediaDocument.html#a2d0a474f2ab26c4ab00699919bf5e747">parse_mode</a>=&quot;&quot;)</td></tr>
-<tr class="separator:a9186010727b3ff78d6f7e50d6f2c5e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa51934cc772a1d9d66f3f22953098eff"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtgbot_1_1InputMediaDocument.html#aa51934cc772a1d9d66f3f22953098eff">parse_to_json</a> () const noexcept</td></tr>
 <tr class="memdesc:aa51934cc772a1d9d66f3f22953098eff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts itself into a JSON object.  <a href="structtgbot_1_1InputMediaDocument.html#aa51934cc772a1d9d66f3f22953098eff">More...</a><br /></td></tr>
 <tr class="separator:aa51934cc772a1d9d66f3f22953098eff"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -145,7 +143,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <div class="textblock"><p>Represents a general file to be sent. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a487505b42fb2805734aac5d33b419d59"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a487505b42fb2805734aac5d33b419d59">&#9670;&nbsp;</a></span>InputMediaDocument() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a487505b42fb2805734aac5d33b419d59">&#9670;&nbsp;</a></span>InputMediaDocument()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -162,55 +160,6 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">json</td><td>The proper JSON object from which this struct is constructed. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a9186010727b3ff78d6f7e50d6f2c5e39"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9186010727b3ff78d6f7e50d6f2c5e39">&#9670;&nbsp;</a></span>InputMediaDocument() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">tgbot::InputMediaDocument::InputMediaDocument </td>
-          <td>(</td>
-          <td class="paramtype">const std::variant&lt; std::string, tools::InputFile::ptr &gt; &amp;&#160;</td>
-          <td class="paramname"><em>media</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::variant&lt; std::string, tools::InputFile::ptr &gt; &amp;&#160;</td>
-          <td class="paramname"><em>thumb</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>caption</em> = <code>&quot;&quot;</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>parse_mode</em> = <code>&quot;&quot;</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">media</td><td>Passed to the member variable. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">thumb</td><td>Passed to the member variable. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">caption</td><td>Passed to the member variable. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">parse_mode</td><td>Passed to the member variable. </td></tr>
   </table>
   </dd>
 </dl>

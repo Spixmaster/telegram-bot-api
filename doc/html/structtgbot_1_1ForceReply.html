@@ -131,7 +131,11 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stru
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Upon receiving a message with this object, Telegram clients will display a reply interface to the user (act as if the user has selected the bot‘s message and tapped ’Reply'). </p>
-<p>This can be extremely useful if you want to create user-friendly step-by-step interfaces without having to sacrifice privacy mode. </p>
+<p>This can be extremely useful if you want to create user-friendly step-by-step interfaces without having to sacrifice privacy mode.</p>
+<p>Example: A poll bot for groups runs in privacy mode (only receives commands, replies to its messages and mentions). There could be two ways to create a new poll:</p>
+<p>Explain the user how to send a command with parameters (e.g. /newpoll question answer1 answer2). May be appealing for hardcore users but lacks modern day polish.</p>
+<p>Guide the user through a step-by-step process. 'Please send me your question', 'Cool, now let's add the first answer option', 'Great. Keep adding answer options, then send /done when you're ready'.</p>
+<p>The last option is definitely more attractive. And if you use <a class="el" href="structtgbot_1_1ForceReply.html" title="Upon receiving a message with this object, Telegram clients will display a reply interface to the use...">ForceReply</a> in your bot's questions, it will receive the user's answers even if it only receives replies, commands and mentions — without any extra work for the user. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a90cf116e564070cec6a385d125b7764f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a90cf116e564070cec6a385d125b7764f">&#9670;&nbsp;</a></span>ForceReply()</h2>

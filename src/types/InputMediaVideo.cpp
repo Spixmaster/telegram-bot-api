@@ -93,11 +93,6 @@ namespace tgbot
 			tools::Tools::write_err_log(Messages::constructor_not_get_json_object);
 	}
 
-	InputMediaVideo::InputMediaVideo(const std::variant<std::string, tools::InputFile::ptr> &media, const std::variant<std::string, tools::InputFile::ptr> &thumb, const std::string &caption,
-				const std::string &parse_mode, const int &width, const int &height, const int &duration, const bool & supports_streaming) : media(media), thumb(thumb),
-						caption(caption), parse_mode(parse_mode), width(width), height(height), duration(duration), supports_streaming(supports_streaming)
-	{}
-
 	std::string InputMediaVideo::parse_to_json() const noexcept
 	{
 		std::string json = "{";

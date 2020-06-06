@@ -165,7 +165,7 @@ namespace tgbot
 		json.append(", ");
 
 		//Field selfie
-		json.append("\"selfie\": \"" + selfie->parse_to_json() + "\"");
+		json.append("\"selfie\": " + selfie->parse_to_json());
 		json.append(", ");
 
 		//Field translation

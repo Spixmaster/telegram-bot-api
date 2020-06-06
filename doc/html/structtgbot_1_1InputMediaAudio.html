@@ -114,8 +114,6 @@ typedef std::shared_ptr&lt; <a class="el" href="structtgbot_1_1InputMedia.html">
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac260dbd7864d9f3a9d74f46c3bd0000d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtgbot_1_1InputMediaAudio.html#ac260dbd7864d9f3a9d74f46c3bd0000d">InputMediaAudio</a> (const std::string &amp;json)</td></tr>
 <tr class="separator:ac260dbd7864d9f3a9d74f46c3bd0000d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa252e6c1840a0593dd74a8b93dfc0585"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtgbot_1_1InputMediaAudio.html#aa252e6c1840a0593dd74a8b93dfc0585">InputMediaAudio</a> (const std::variant&lt; std::string, tools::InputFile::ptr &gt; &amp;<a class="el" href="structtgbot_1_1InputMediaAudio.html#add700d321a44053c0d77eebacc51693e">media</a>, const std::variant&lt; std::string, tools::InputFile::ptr &gt; &amp;<a class="el" href="structtgbot_1_1InputMediaAudio.html#aeb90b11293ee8c72ff803823d6ccbe0a">thumb</a>, const std::string &amp;<a class="el" href="structtgbot_1_1InputMediaAudio.html#a8e12d643ad50c9260ec0edd3e566e12d">caption</a>=&quot;&quot;, const std::string &amp;<a class="el" href="structtgbot_1_1InputMediaAudio.html#aea401db5c4607a9deb62bb28ccd4cee7">parse_mode</a>=&quot;&quot;, const int &amp;<a class="el" href="structtgbot_1_1InputMediaAudio.html#a06b3240d549173a43bcfb65c7700f8c1">duration</a>=-1, const std::string &amp;<a class="el" href="structtgbot_1_1InputMediaAudio.html#ae92b446e67b0521f954e91863cdf9747">performer</a>=&quot;&quot;, const std::string &amp;<a class="el" href="structtgbot_1_1InputMediaAudio.html#ac4843a55eef12c6fab59f564e383a01f">title</a>=&quot;&quot;)</td></tr>
-<tr class="separator:aa252e6c1840a0593dd74a8b93dfc0585"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77544f4df460ba8a96650a01eab822df"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtgbot_1_1InputMediaAudio.html#a77544f4df460ba8a96650a01eab822df">parse_to_json</a> () const noexcept</td></tr>
 <tr class="memdesc:a77544f4df460ba8a96650a01eab822df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts itself into a JSON object.  <a href="structtgbot_1_1InputMediaAudio.html#a77544f4df460ba8a96650a01eab822df">More...</a><br /></td></tr>
 <tr class="separator:a77544f4df460ba8a96650a01eab822df"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -157,7 +155,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <div class="textblock"><p>Represents an audio file to be treated as music to be sent. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac260dbd7864d9f3a9d74f46c3bd0000d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac260dbd7864d9f3a9d74f46c3bd0000d">&#9670;&nbsp;</a></span>InputMediaAudio() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac260dbd7864d9f3a9d74f46c3bd0000d">&#9670;&nbsp;</a></span>InputMediaAudio()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -174,76 +172,6 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">json</td><td>The proper JSON object from which this struct is constructed. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aa252e6c1840a0593dd74a8b93dfc0585"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa252e6c1840a0593dd74a8b93dfc0585">&#9670;&nbsp;</a></span>InputMediaAudio() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">tgbot::InputMediaAudio::InputMediaAudio </td>
-          <td>(</td>
-          <td class="paramtype">const std::variant&lt; std::string, tools::InputFile::ptr &gt; &amp;&#160;</td>
-          <td class="paramname"><em>media</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::variant&lt; std::string, tools::InputFile::ptr &gt; &amp;&#160;</td>
-          <td class="paramname"><em>thumb</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>caption</em> = <code>&quot;&quot;</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>parse_mode</em> = <code>&quot;&quot;</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>duration</em> = <code>-1</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>performer</em> = <code>&quot;&quot;</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>title</em> = <code>&quot;&quot;</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">media</td><td>Passed to the member variable. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">thumb</td><td>Passed to the member variable. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">caption</td><td>Passed to the member variable. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">parse_mode</td><td>Passed to the member variable. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">duration</td><td>Passed to the member variable. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">performer</td><td>Passed to the member variable. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">title</td><td>Passed to the member variable. </td></tr>
   </table>
   </dd>
 </dl>
