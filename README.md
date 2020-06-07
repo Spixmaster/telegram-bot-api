@@ -1,6 +1,6 @@
 # telegram-bot-api
 A C++ library for the Telegram bot API.\
-Current state: Bot API 4.8\
+Current state: Bot API 4.9\
 See the [Telegram documentation](https://core.telegram.org/bots/api) for changelogs and documentation. I copied the documentation into the source code according to the Doxygen syntax but the website is the original source.
 
 ## Installation

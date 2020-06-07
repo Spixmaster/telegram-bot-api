@@ -11,6 +11,9 @@
  * @author Matheus Gabriel Werny de Lima
  * @copyright GNU General Public License v2.0
  * @version
+ * 1.3.1 (07.06.2020)
+ * - Readme updated.
+ * @version
  * 1.3.0 (06.06.2020)
  * - Updated to Telegram bot API version 4.9.
  * - Code revision.
