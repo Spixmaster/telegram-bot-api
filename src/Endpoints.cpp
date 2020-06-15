@@ -59,7 +59,7 @@ namespace tgbot
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		}
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return updates;
 	}
@@ -101,7 +101,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -123,7 +123,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -147,7 +147,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return webhook_info;
 	}
@@ -171,7 +171,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return usr;
 	}
@@ -206,7 +206,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -237,7 +237,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -274,7 +274,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 			else
-				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+				tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 			return msg;
 		}
@@ -307,7 +307,7 @@ namespace tgbot
 				else
 					tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 			else
-				tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+				tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 			return msg;
 		}
@@ -362,7 +362,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -408,7 +408,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -460,7 +460,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -511,7 +511,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -553,7 +553,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -595,7 +595,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -678,7 +678,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return msgs;
 	}
@@ -713,7 +713,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -747,7 +747,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -779,7 +779,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -818,7 +818,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -854,7 +854,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -915,7 +915,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -948,7 +948,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -975,7 +975,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1008,7 +1008,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return usr_profile_photos;
 	}
@@ -1036,7 +1036,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return file;
 	}
@@ -1064,7 +1064,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1091,7 +1091,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1120,7 +1120,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1157,7 +1157,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1185,7 +1185,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1212,7 +1212,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1238,7 +1238,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1265,7 +1265,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1291,7 +1291,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1318,7 +1318,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1345,7 +1345,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1373,7 +1373,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1399,7 +1399,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1425,7 +1425,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1453,7 +1453,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return chat;
 	}
@@ -1494,7 +1494,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return admins;
 	}
@@ -1520,7 +1520,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return 0;
 	}
@@ -1549,7 +1549,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return chat_member;
 	}
@@ -1576,7 +1576,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1602,7 +1602,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1633,7 +1633,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1672,7 +1672,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -1709,7 +1709,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return my_cmds;
 	}
@@ -1744,7 +1744,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -1778,7 +1778,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -1883,7 +1883,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -1915,7 +1915,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -1945,7 +1945,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return poll;
 	}
@@ -1972,7 +1972,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -2010,7 +2010,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -2038,7 +2038,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return sticker_set;
 	}
@@ -2067,7 +2067,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return file;
 	}
@@ -2107,7 +2107,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -2145,7 +2145,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -2172,7 +2172,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -2198,7 +2198,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -2228,7 +2228,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -2274,7 +2274,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -2342,7 +2342,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -2385,7 +2385,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -2413,7 +2413,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -2453,7 +2453,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return false;
 	}
@@ -2486,7 +2486,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -2521,7 +2521,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return msg;
 	}
@@ -2566,7 +2566,7 @@ namespace tgbot
 			else
 				tools::Tools::write_err_log_tmp(Messages::field_non_existent("result"));
 		else
-			tools::Tools::write_err_log(Messages::server_resp_not_json_object);
+			tools::Tools::write_err_log_tmp(Messages::server_resp_not_json_object);
 
 		return game_high_score;
 	}
