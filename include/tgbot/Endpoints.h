@@ -82,7 +82,7 @@ namespace tgbot
 		 * @note 1. You will not be able to receive updates using getUpdates for as long as an outgoing webhook is set up.
 		 * @note 2. To use a self-signed certificate, you need to upload your public key certificate using certificate parameter. Please upload as InputFile, sending a String will not work.
 		 * @note 3. Ports currently supported for Webhooks: 443, 80, 88, 8443.
-		 * @param[in] url  	HTTPS url to send updates to. Use an empty string to remove webhook integration
+		 * @param[in] url HTTPS url to send updates to. Use an empty string to remove webhook integration
 		 * @param[in] certificate Upload your public key certificate so that the root certificate in use can be checked. See our self-signed guide for details.
 		 * @param[in] max_connections Maximum allowed number of simultaneous HTTPS connections to the webhook for update delivery, 1-100. Defaults to 40. Use lower values to limit the load on your bot‘s server, and higher values to increase your bot’s throughput.
 		 * @param[in] allowed_updates A JSON-serialized list of the update types you want your bot to receive. For example, specify [“message”, “edited_channel_post”, “callback_query”] to only receive updates of these types. See Update for a complete list of available update types. Specify an empty list to receive all updates regardless of type (default). If not specified, the previous setting will be used. Please note that this parameter doesn't affect updates created before the call to the setWebhook, so unwanted updates may be received for a short period of time.
@@ -498,7 +498,7 @@ namespace tgbot
 
 		/**
 		 * @brief Use this method to change the title of a chat.
-		 * @details itles can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights.
+		 * @details Titles can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights.
 		 * @param[in] chat_id Unique identifier for the target chat or username of the target channel (in the format \@channelusername)
 		 * @param[in] title New chat title, 1-255 characters
 		 * @return Returns True on success.
@@ -615,7 +615,7 @@ namespace tgbot
 		/**
 		 * @brief Use this method to edit text and game messages.
 		 * @param[in] text New text of the message, 1-4096 characters after entities parsing
-		 * @param[in] chat_id  	Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format \@channelusername)
+		 * @param[in] chat_id Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format \@channelusername)
 		 * @param[in] message_id Required if inline_message_id is not specified. Identifier of the message to edit
 		 * @param[in] inline_message_id Required if chat_id and message_id are not specified. Identifier of the inline message
 		 * @param[in] parse_mode Mode for parsing entities in the message text. See formatting options for more details.
@@ -641,7 +641,7 @@ namespace tgbot
 
 		/**
 		 * @brief Use this method to edit animation, audio, document, photo, or video messages.
-		 * @details f a message is a part of a message album, then it can be edited only to a photo or a video. Otherwise, message type can be changed arbitrarily.
+		 * @details If a message is a part of a message album, then it can be edited only to a photo or a video. Otherwise, message type can be changed arbitrarily.
 		 * @details When inline message is edited, new file can't be uploaded. Use previously uploaded file via its file_id or specify a URL.
 		 * @param[in] chat_id Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format \@channelusername)
 		 * @param[in] message_id Required if inline_message_id is not specified. Identifier of the message to edit
