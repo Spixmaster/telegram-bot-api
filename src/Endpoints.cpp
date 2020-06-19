@@ -339,7 +339,10 @@ namespace tgbot
 		if(std::holds_alternative<std::string>(thumb))
 			http_args.push_back(tools::HttpArg("thumb", std::get<std::string>(thumb)));
 		else if(std::holds_alternative<tools::InputFile::ptr>(thumb))
-			http_args.push_back(tools::HttpArg("thumb", std::get<tools::InputFile::ptr>(thumb)));
+		{
+			http_args.push_back(tools::HttpArg("thumb", "attach://" + std::get<tools::InputFile::ptr>(thumb)->m_path));
+			http_args.push_back(tools::HttpArg(std::get<tools::InputFile::ptr>(thumb)->m_path, std::get<tools::InputFile::ptr>(thumb)));
+		}
 
 		http_args.push_back(tools::HttpArg("disable_notification", disable_notification));
 		http_args.push_back(tools::HttpArg("reply_to_message_id", reply_to_message_id));
@@ -383,7 +386,10 @@ namespace tgbot
 		if(std::holds_alternative<std::string>(thumb))
 			http_args.push_back(tools::HttpArg("thumb", std::get<std::string>(thumb)));
 		else if(std::holds_alternative<tools::InputFile::ptr>(thumb))
-			http_args.push_back(tools::HttpArg("thumb", std::get<tools::InputFile::ptr>(thumb)));
+		{
+			http_args.push_back(tools::HttpArg("thumb", "attach://" + std::get<tools::InputFile::ptr>(thumb)->m_path));
+			http_args.push_back(tools::HttpArg(std::get<tools::InputFile::ptr>(thumb)->m_path, std::get<tools::InputFile::ptr>(thumb)));
+		}
 
 		http_args.push_back(tools::HttpArg("caption", caption));
 		http_args.push_back(tools::HttpArg("parse_mode", parse_mode));
@@ -434,7 +440,10 @@ namespace tgbot
 		if(std::holds_alternative<std::string>(thumb))
 			http_args.push_back(tools::HttpArg("thumb", std::get<std::string>(thumb)));
 		else if(std::holds_alternative<tools::InputFile::ptr>(thumb))
-			http_args.push_back(tools::HttpArg("thumb", std::get<tools::InputFile::ptr>(thumb)));
+		{
+			http_args.push_back(tools::HttpArg("thumb", "attach://" + std::get<tools::InputFile::ptr>(thumb)->m_path));
+			http_args.push_back(tools::HttpArg(std::get<tools::InputFile::ptr>(thumb)->m_path, std::get<tools::InputFile::ptr>(thumb)));
+		}
 
 		http_args.push_back(tools::HttpArg("caption", caption));
 		http_args.push_back(tools::HttpArg("parse_mode", parse_mode));
@@ -486,7 +495,10 @@ namespace tgbot
 		if(std::holds_alternative<std::string>(thumb))
 			http_args.push_back(tools::HttpArg("thumb", std::get<std::string>(thumb)));
 		else if(std::holds_alternative<tools::InputFile::ptr>(thumb))
-			http_args.push_back(tools::HttpArg("thumb", std::get<tools::InputFile::ptr>(thumb)));
+		{
+			http_args.push_back(tools::HttpArg("thumb", "attach://" + std::get<tools::InputFile::ptr>(thumb)->m_path));
+			http_args.push_back(tools::HttpArg(std::get<tools::InputFile::ptr>(thumb)->m_path, std::get<tools::InputFile::ptr>(thumb)));
+		}
 
 		http_args.push_back(tools::HttpArg("caption", caption));
 		http_args.push_back(tools::HttpArg("parse_mode", parse_mode));
@@ -573,7 +585,15 @@ namespace tgbot
 
 		http_args.push_back(tools::HttpArg("duration", duration));
 		http_args.push_back(tools::HttpArg("length", length));
-		http_args.push_back(tools::HttpArg("thumb", std::get<std::string>(thumb)));
+
+		if(std::holds_alternative<std::string>(thumb))
+			http_args.push_back(tools::HttpArg("thumb", std::get<std::string>(thumb)));
+		else if(std::holds_alternative<tools::InputFile::ptr>(thumb))
+		{
+			http_args.push_back(tools::HttpArg("thumb", "attach://" + std::get<tools::InputFile::ptr>(thumb)->m_path));
+			http_args.push_back(tools::HttpArg(std::get<tools::InputFile::ptr>(thumb)->m_path, std::get<tools::InputFile::ptr>(thumb)));
+		}
+
 		http_args.push_back(tools::HttpArg("disable_notification", disable_notification));
 		http_args.push_back(tools::HttpArg("reply_to_message_id", reply_to_message_id));
 		http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
@@ -1830,7 +1850,7 @@ namespace tgbot
 			if(std::holds_alternative<tools::InputFile::ptr>(std::get<InputMediaDocument::ptr>(media)->thumb))
 				files_to_upload.push_back(std::get<tools::InputFile::ptr>(std::get<InputMediaDocument::ptr>(media)->thumb)->m_path);
 		}
-		//InputMediaPhoto has not member variable thumb.
+		//InputMediaPhoto does not have the member variable thumb.
 		else if(std::holds_alternative<InputMediaPhoto::ptr>(media))
 		{
 			media_json = std::get<InputMediaPhoto::ptr>(media)->parse_to_json();
@@ -1857,13 +1877,14 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("chat_id", chat_id));
 		http_args.push_back(tools::HttpArg("message_id", message_id));
 		http_args.push_back(tools::HttpArg("inline_message_id", inline_message_id));
+		http_args.push_back(tools::HttpArg("media", media_json));
 		http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 		//Upload the files to the server.
 		for(std::size_t j = 0; j < files_to_upload.size(); ++j)
 		{
-			tools::InputFile::ptr temp = std::make_shared<tools::InputFile>(files_to_upload.at(j));
-			http_args.push_back(tools::HttpArg(files_to_upload.at(j), temp));
+			tools::InputFile::ptr tmp = std::make_shared<tools::InputFile>(files_to_upload.at(j));
+			http_args.push_back(tools::HttpArg(files_to_upload.at(j), tmp));
 		}
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/editMessageMedia", http_args);
