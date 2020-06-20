@@ -37,12 +37,10 @@ namespace tgbot
 			{
 				if(doc["options"].IsArray())
 				{
-					options.resize(doc["options"].GetArray().Size());
-
 					for(std::size_t j = 0; j < doc["options"].GetArray().Size(); ++j)
 					{
 						if(doc["options"][j].IsObject())
-							options.at(j) = std::make_shared<PollOption>(tools::Tools::get_json_as_string(doc["options"][j]));
+							options.push_back(std::make_shared<PollOption>(tools::Tools::get_json_as_string(doc["options"][j])));
 						else
 							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("options"));
 					}
@@ -111,12 +109,10 @@ namespace tgbot
 			{
 				if(doc["explanation_entities"].IsArray())
 				{
-					explanation_entities.resize(doc["explanation_entities"].GetArray().Size());
-
 					for(std::size_t j = 0; j < doc["explanation_entities"].GetArray().Size(); ++j)
 					{
 						if(doc["explanation_entities"][j].IsObject())
-							explanation_entities.at(j) = std::make_shared<MessageEntity>(tools::Tools::get_json_as_string(doc["explanation_entities"][j]));
+							explanation_entities.push_back(std::make_shared<MessageEntity>(tools::Tools::get_json_as_string(doc["explanation_entities"][j])));
 						else
 							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("explanation_entities"));
 					}

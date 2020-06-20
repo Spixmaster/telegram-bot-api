@@ -52,12 +52,10 @@ namespace tgbot
 			{
 				if(doc["sticker"].IsArray())
 				{
-					sticker.resize(doc["sticker"].GetArray().Size());
-
 					for(std::size_t j = 0; j < doc["sticker"].GetArray().Size(); ++j)
 					{
 						if(doc["sticker"][j].IsObject())
-							sticker.at(j) = std::make_shared<Sticker>(tools::Tools::get_json_as_string(doc["sticker"][j]));
+							sticker.push_back(std::make_shared<Sticker>(tools::Tools::get_json_as_string(doc["sticker"][j])));
 						else
 							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("sticker"));
 					}

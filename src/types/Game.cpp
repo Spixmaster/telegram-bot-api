@@ -35,12 +35,10 @@ namespace tgbot
 			{
 				if(doc["photo"].IsArray())
 				{
-					photo.resize(doc["photo"].GetArray().Size());
-
 					for(std::size_t j = 0; j < doc["photo"].GetArray().Size(); ++j)
 					{
 						if(doc["photo"][j].IsObject())
-							photo.at(j) = std::make_shared<PhotoSize>(tools::Tools::get_json_as_string(doc["photo"][j]));
+							photo.push_back(std::make_shared<PhotoSize>(tools::Tools::get_json_as_string(doc["photo"][j])));
 						else
 							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("photo"));
 					}
@@ -61,12 +59,10 @@ namespace tgbot
 			{
 				if(doc["text_entities"].IsArray())
 				{
-					text_entities.resize(doc["text_entities"].GetArray().Size());
-
 					for(std::size_t j = 0; j < doc["text_entities"].GetArray().Size(); ++j)
 					{
 						if(doc["text_entities"][j].IsObject())
-							text_entities.at(j) = std::make_shared<MessageEntity>(tools::Tools::get_json_as_string(doc["text_entities"][j]));
+							text_entities.push_back(std::make_shared<MessageEntity>(tools::Tools::get_json_as_string(doc["text_entities"][j])));
 						else
 							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("text_entities"));
 					}

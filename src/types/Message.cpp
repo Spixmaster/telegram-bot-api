@@ -153,12 +153,10 @@ namespace tgbot
 			{
 				if(doc["entities"].IsArray())
 				{
-					entities.resize(doc["entities"].GetArray().Size());
-
 					for(std::size_t j = 0; j < doc["entities"].GetArray().Size(); ++j)
 					{
 						if(doc["entities"][j].IsObject())
-							entities.at(j) = std::make_shared<MessageEntity>(tools::Tools::get_json_as_string(doc["entities"][j]));
+							entities.push_back(std::make_shared<MessageEntity>(tools::Tools::get_json_as_string(doc["entities"][j])));
 						else
 							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("entities"));
 					}
@@ -195,12 +193,10 @@ namespace tgbot
 			{
 				if(doc["photo"].IsArray())
 				{
-					photo.resize(doc["photo"].GetArray().Size());
-
 					for(std::size_t j = 0; j < doc["photo"].GetArray().Size(); ++j)
 					{
 						if(doc["photo"][j].IsObject())
-							photo.at(j) = std::make_shared<PhotoSize>(tools::Tools::get_json_as_string(doc["photo"][j]));
+							photo.push_back(std::make_shared<PhotoSize>(tools::Tools::get_json_as_string(doc["photo"][j])));
 						else
 							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("photo"));
 					}
@@ -253,12 +249,10 @@ namespace tgbot
 			{
 				if(doc["caption_entities"].IsArray())
 				{
-					caption_entities.resize(doc["caption_entities"].GetArray().Size());
-
 					for(std::size_t j = 0; j < doc["caption_entities"].GetArray().Size(); ++j)
 					{
 						if(doc["caption_entities"][j].IsObject())
-							caption_entities.at(j) = std::make_shared<MessageEntity>(tools::Tools::get_json_as_string(doc["caption_entities"][j]));
+							caption_entities.push_back(std::make_shared<MessageEntity>(tools::Tools::get_json_as_string(doc["caption_entities"][j])));
 						else
 							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("caption_entities"));
 					}
@@ -319,12 +313,10 @@ namespace tgbot
 			{
 				if(doc["new_chat_members"].IsArray())
 				{
-					new_chat_members.resize(doc["new_chat_members"].GetArray().Size());
-
 					for(std::size_t j = 0; j < doc["new_chat_members"].GetArray().Size(); ++j)
 					{
 						if(doc["new_chat_members"][j].IsObject())
-							new_chat_members.at(j) = std::make_shared<User>(tools::Tools::get_json_as_string(doc["new_chat_members"][j]));
+							new_chat_members.push_back(std::make_shared<User>(tools::Tools::get_json_as_string(doc["new_chat_members"][j])));
 						else
 							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("new_chat_members"));
 					}
@@ -351,12 +343,10 @@ namespace tgbot
 			{
 				if(doc["new_chat_photo"].IsArray())
 				{
-					new_chat_photo.resize(doc["new_chat_photo"].GetArray().Size());
-
 					for(std::size_t j = 0; j < doc["new_chat_photo"].GetArray().Size(); ++j)
 					{
 						if(doc["new_chat_photo"][j].IsObject())
-							new_chat_photo.at(j) = std::make_shared<PhotoSize>(tools::Tools::get_json_as_string(doc["new_chat_photo"][j]));
+							new_chat_photo.push_back(std::make_shared<PhotoSize>(tools::Tools::get_json_as_string(doc["new_chat_photo"][j])));
 						else
 							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("new_chat_photo"));
 					}
