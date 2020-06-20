@@ -36,12 +36,10 @@ namespace tgbot
 			{
 				if(doc["file_hashes"].IsArray())
 				{
-					file_hashes.resize(doc["file_hashes"].GetArray().Size());
-
 					for(std::size_t j = 0; j < doc["file_hashes"].GetArray().Size(); ++j)
 					{
 						if(doc["file_hashes"][j].IsString())
-							file_hashes.at(j) = doc["file_hashes"][j].GetString();
+							file_hashes.push_back(doc["file_hashes"][j].GetString());
 						else
 							tools::Tools::write_err_log(Messages::field_element_does_not_contain_string("file_hashes"));
 					}

@@ -69,12 +69,10 @@ namespace tgbot
 			{
 				if(doc["allowed_updates"].IsArray())
 				{
-					allowed_updates.resize(doc["allowed_updates"].GetArray().Size());
-
 					for(std::size_t j = 0; j < doc["allowed_updates"].GetArray().Size(); ++j)
 					{
 						if(doc["allowed_updates"][j].IsObject())
-							allowed_updates.at(j) = doc["allowed_updates"][j].GetString();
+							allowed_updates.push_back(doc["allowed_updates"][j].GetString());
 						else
 							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("allowed_updates"));
 					}

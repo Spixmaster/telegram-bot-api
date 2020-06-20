@@ -36,12 +36,10 @@ namespace tgbot
 			{
 				if(doc["prices"].IsArray())
 				{
-					prices.resize(doc["prices"].GetArray().Size());
-
 					for(std::size_t j = 0; j < doc["prices"].GetArray().Size(); ++j)
 					{
 						if(doc["prices"][j].IsObject())
-							prices.at(j) = std::make_shared<LabeledPrice>(tools::Tools::get_json_as_string(doc["prices"][j]));
+							prices.push_back(std::make_shared<LabeledPrice>(tools::Tools::get_json_as_string(doc["prices"][j])));
 						else
 							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("prices"));
 					}

@@ -29,13 +29,10 @@ namespace tgbot
 					{
 						if(keyboard_array[row].IsArray())
 						{
-							//Reserve enough columns for each row.
-							inline_keyboard.at(row).resize(keyboard_array[row].GetArray().Size());
-
 							for(std::size_t column = 0; column < keyboard_array[row].GetArray().Size(); ++column)
 							{
 								if(keyboard_array[row][column].IsObject())
-									inline_keyboard.at(row).at(column) = std::make_shared<InlineKeyboardButton>(tools::Tools::get_json_as_string(keyboard_array[row][column]));
+									inline_keyboard.at(row).push_back(std::make_shared<InlineKeyboardButton>(tools::Tools::get_json_as_string(keyboard_array[row][column])));
 								else
 									tools::Tools::write_err_log(Messages::field_element_element_does_not_contain_json_obj("inline_keyboard"));
 							}

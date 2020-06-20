@@ -20,12 +20,10 @@ namespace tgbot
 			{
 				if(doc["data"].IsArray())
 				{
-					data.resize(doc["data"].GetArray().Size());
-
 					for(std::size_t j = 0; j < doc["data"].GetArray().Size(); ++j)
 					{
 						if(doc["data"][j].IsObject())
-							data.at(j) = std::make_shared<EncryptedPassportElement>(tools::Tools::get_json_as_string(doc["data"][j]));
+							data.push_back(std::make_shared<EncryptedPassportElement>(tools::Tools::get_json_as_string(doc["data"][j])));
 						else
 							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("data"));
 					}

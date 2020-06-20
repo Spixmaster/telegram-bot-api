@@ -36,12 +36,10 @@ namespace tgbot
 			{
 				if(doc["option_ids"].IsArray())
 				{
-					option_ids.resize(doc["option_ids"].GetArray().Size());
-
 					for(std::size_t j = 0; j < doc["option_ids"].GetArray().Size(); ++j)
 					{
 						if(doc["option_ids"][j].IsInt())
-							option_ids.at(j) = doc["option_ids"][j].GetInt();
+							option_ids.push_back(doc["option_ids"][j].GetInt());
 						else
 							tools::Tools::write_err_log(Messages::field_element_does_not_contain_int("option_ids"));
 					}

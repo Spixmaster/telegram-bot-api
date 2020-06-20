@@ -52,12 +52,10 @@ namespace tgbot
 			{
 				if(doc["files"].IsArray())
 				{
-					files.resize(doc["files"].GetArray().Size());
-
 					for(std::size_t j = 0; j < doc["files"].GetArray().Size(); ++j)
 					{
 						if(doc["files"][j].IsObject())
-							files.at(j) = std::make_shared<PassportFile>(tools::Tools::get_json_as_string(doc["files"][j]));
+							files.push_back(std::make_shared<PassportFile>(tools::Tools::get_json_as_string(doc["files"][j])));
 						else
 							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("files"));
 					}
@@ -94,12 +92,10 @@ namespace tgbot
 			{
 				if(doc["translation"].IsArray())
 				{
-					translation.resize(doc["translation"].GetArray().Size());
-
 					for(std::size_t j = 0; j < doc["translation"].GetArray().Size(); ++j)
 					{
 						if(doc["translation"][j].IsObject())
-							translation.at(j) = std::make_shared<PassportFile>(tools::Tools::get_json_as_string(doc["translation"][j]));
+							translation.push_back(std::make_shared<PassportFile>(tools::Tools::get_json_as_string(doc["translation"][j])));
 						else
 							tools::Tools::write_err_log(Messages::field_element_does_not_contain_json_obj("translation"));
 					}
