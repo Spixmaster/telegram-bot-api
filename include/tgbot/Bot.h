@@ -9,7 +9,10 @@
 /**
  * @mainpage telegram-bot-api
  * @author Matheus Gabriel Werny de Lima
- * @copyright GNU General Public License v2.0
+ * @copyright Apache-2.0 License
+ * @version
+ * 1.3.13 (25.06.2020)
+ * - License changed.
  * @version
  * 1.3.12 (22.06.2020)
  * - Submodule update.
