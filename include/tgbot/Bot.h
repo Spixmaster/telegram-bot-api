@@ -11,6 +11,9 @@
  * @author Matheus Gabriel Werny de Lima
  * @copyright Apache-2.0 License
  * @version
+ * 1.3.14 (03.07.2020)
+ * - Submodule update.
+ * @version
  * 1.3.13 (25.06.2020)
  * - License changed.
  * @version
