@@ -64,7 +64,7 @@ These instructions show how to set up the project in eclipse.
 This project is thought to be used in other software as a library.
 
 ### Documentation
-The documentation was generated with the help of Doxygen. It is an HTML document and can be found in *./doc/html/index.html*. Open that file with your favourite browser.
+The documentation is generated with the help of Doxygen. It is an HTML document and can be found in *./doc/html/index.html*. Open that file with your favourite browser.
 
 ### Example
 Look in the examples folder.
