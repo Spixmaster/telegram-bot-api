@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION "3.18.1")
 
 #General
-project("telegram-bot-api" VERSION 1.3.16 DESCRIPTION "A C++ library for the Telegram bot API.")
+project("telegram-bot-api")
 set(CMAKE_CXX_STANDARD 17)
 
 #Target
