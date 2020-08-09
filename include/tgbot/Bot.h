@@ -14,6 +14,7 @@
  * 1.3.16 (09.08.2020)
  * - Cmake added.
  * - Typo fixed.
+ * - Submodule update.
  * @version
  * 1.3.15 (06.07.2020)
  * - Submodule update.
