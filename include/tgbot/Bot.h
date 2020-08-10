@@ -11,6 +11,9 @@
  * @author Matheus Gabriel Werny de Lima
  * @copyright Apache-2.0 License
  * @version
+ * 1.3.18 (10.08.2020)
+ * - Cmake update.
+ * @version
  * 1.3.17 (09.08.2020)
  * - Cmake update.
  * - Readme update.
