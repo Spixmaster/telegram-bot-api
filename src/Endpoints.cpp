@@ -712,8 +712,8 @@ namespace tgbot
 		http_args.push_back(tools::HttpArg("latitude", std::to_string(latitude)));
 		http_args.push_back(tools::HttpArg("longitude", std::to_string(longitude)));
 		http_args.push_back(tools::HttpArg("live_period", live_period));
-		http_args.push_back(tools::HttpArg("live_period", live_period));
 		http_args.push_back(tools::HttpArg("disable_notification", disable_notification));
+		http_args.push_back(tools::HttpArg("reply_to_message_id", reply_to_message_id));
 		http_args.push_back(tools::HttpArg("reply_markup", reply_markup->parse_to_json()));
 
 		tools::HttpClient http_client("https://api.telegram.org/bot" + m_token + "/sendLocation", http_args);
@@ -2228,6 +2228,8 @@ namespace tgbot
 	{
 		//HTTP arguments
 		std::vector<tools::HttpArg> http_args;
+		http_args.push_back(tools::HttpArg("name", name));
+		http_args.push_back(tools::HttpArg("user_id", user_id));
 
 		if(std::holds_alternative<std::string>(thumb))
 			http_args.push_back(tools::HttpArg("sticker", std::get<std::string>(thumb)));
