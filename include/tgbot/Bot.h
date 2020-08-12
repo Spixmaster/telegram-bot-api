@@ -11,8 +11,13 @@
  * @author Matheus Gabriel Werny de Lima
  * @copyright Apache-2.0 License
  * @version
+ * 1.3.21 (12.08.2020)
+ * - Cmake update.
+ * - Submodule update.
+ * @version
  * 1.3.20 (12.08.2020)
  * - Cmake update.
+ * - Submodule update.
  * @version
  * 1.3.19 (11.08.2020)
  * - Used unused variables.
