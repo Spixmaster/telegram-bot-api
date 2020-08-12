@@ -12,7 +12,7 @@ project("telegram-bot-api")
 set(CMAKE_CXX_STANDARD "17")
 
 #Target
-add_library("telegram-bot-api"
+add_library(${PROJECT_NAME}
     "./src/constants/Constants.cpp"
     "./src/constants/Messages.cpp"
     
@@ -122,25 +122,25 @@ add_library("telegram-bot-api"
     )
 
     #Headers
-target_include_directories("telegram-bot-api" PUBLIC "./include/")
+target_include_directories("${PROJECT_NAME}" PUBLIC "./include/")
 
     #Link libraries
-target_link_libraries("telegram-bot-api" PUBLIC "PocoFoundation")
-target_link_libraries("telegram-bot-api" PUBLIC "PocoNet")
-target_link_libraries("telegram-bot-api" PUBLIC "PocoNetSSL")
-target_link_libraries("telegram-bot-api" PUBLIC "PocoCrypto")
-target_link_libraries("telegram-bot-api" PUBLIC "boost_iostreams")
-target_link_libraries("telegram-bot-api" PUBLIC "boost_filesystem")
-target_link_libraries("telegram-bot-api" PUBLIC "boost_locale")
+target_link_libraries("${PROJECT_NAME}" PUBLIC "PocoFoundation")
+target_link_libraries("${PROJECT_NAME}" PUBLIC "PocoNet")
+target_link_libraries("${PROJECT_NAME}" PUBLIC "PocoNetSSL")
+target_link_libraries("${PROJECT_NAME}" PUBLIC "PocoCrypto")
+target_link_libraries("${PROJECT_NAME}" PUBLIC "boost_iostreams")
+target_link_libraries("${PROJECT_NAME}" PUBLIC "boost_filesystem")
+target_link_libraries("${PROJECT_NAME}" PUBLIC "boost_locale")
 
-target_link_libraries("telegram-bot-api" PUBLIC "tools-cpp")
+target_link_libraries("${PROJECT_NAME}" PUBLIC "tools-cpp")
 
     #Options
         #Optimization
-target_compile_options("telegram-bot-api" PUBLIC "-O3")
+target_compile_options("${PROJECT_NAME}" PUBLIC "-O3")
         #Warnings
-target_compile_options("telegram-bot-api" PUBLIC "-Wall")
-target_compile_options("telegram-bot-api" PUBLIC "-Wextra")
+target_compile_options("${PROJECT_NAME}" PUBLIC "-Wall")
+target_compile_options("${PROJECT_NAME}" PUBLIC "-Wextra")
         #Preprocessor
-target_compile_options("telegram-bot-api" PUBLIC "-MD")
-target_compile_options("telegram-bot-api" PUBLIC "-MP")
+target_compile_options("${PROJECT_NAME}" PUBLIC "-MD")
+target_compile_options("${PROJECT_NAME}" PUBLIC "-MP")
